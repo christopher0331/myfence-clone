@@ -57,7 +57,7 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          <div className="container absolute inset-x-0 bottom-2 md:bottom-4 animate-fade-in">
+          <div className="container absolute inset-x-0 bottom-[-24px] md:bottom-[-48px] animate-fade-in">
             <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
               <div className="bg-foreground text-background p-6 md:p-10">
                 <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
@@ -68,29 +68,29 @@ const Index = () => {
                 </div>
               </div>
               <div className="bg-card text-foreground p-6 md:p-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="flex items-start gap-3">
+                <div className="grid grid-cols-2 divide-x divide-y border-border">
+                  <div className="p-6 flex items-start gap-3">
                     <Hammer className="w-6 h-6 text-primary" aria-hidden="true" />
                     <div>
                       <div className="font-semibold">100's Built</div>
                       <div className="text-sm text-muted-foreground">Custom wood fences</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
+                  <div className="p-6 flex items-start gap-3">
                     <Cpu className="w-6 h-6 text-primary" aria-hidden="true" />
                     <div>
                       <div className="font-semibold">Fence Genius</div>
                       <div className="text-sm text-muted-foreground">Advanced software</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
+                  <div className="p-6 flex items-start gap-3">
                     <Home className="w-6 h-6 text-primary" aria-hidden="true" />
                     <div>
                       <div className="font-semibold">Family Owned</div>
                       <div className="text-sm text-muted-foreground">Father & son team</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
+                  <div className="p-6 flex items-start gap-3">
                     <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
                     <div>
                       <div className="font-semibold">2 Year Warranty</div>
@@ -129,7 +129,7 @@ const Index = () => {
           <Card>
             <CardContent className="p-0 overflow-hidden">
               <AspectRatio ratio={1}>
-                <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
               </AspectRatio>
               <div className="p-4">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
@@ -140,7 +140,7 @@ const Index = () => {
           <Card>
             <CardContent className="p-0 overflow-hidden">
               <AspectRatio ratio={1}>
-                <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
               </AspectRatio>
               <div className="p-4">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
