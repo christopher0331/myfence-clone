@@ -181,7 +181,7 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Architectural trellis accents built to last — perfect for Northwest gardens.</p>
         <Card className="mt-6">
           <CardContent className="p-0 overflow-hidden">
-            <img src={modernImg} alt="Custom cedar trellis pergola over fence line" loading="lazy" className="w-full h-72 md:h-96 object-cover" />
+            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, powered by Fence Genius" loading="lazy" className="w-full h-72 md:h-96 object-cover" />
           </CardContent>
         </Card>
       </section>
