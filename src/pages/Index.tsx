@@ -34,7 +34,7 @@ const Index = () => {
       />
 
       <section
-        className="relative h-screen w-full overflow-hidden border-b -mt-14 md:-mt-20"
+        className="relative h-screen w-full border-b -mt-14 md:-mt-20"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -57,7 +57,7 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          <div className="container absolute inset-x-0 bottom-[-24px] md:bottom-[-48px] animate-fade-in">
+          <div className="container absolute inset-x-0 bottom-[-24px] md:bottom-[-48px] z-10 animate-fade-in">
             <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
               <div className="bg-foreground text-background p-6 md:p-10">
                 <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
