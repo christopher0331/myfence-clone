@@ -33,7 +33,7 @@ const Index = () => {
       />
 
       <section
-        className="relative h-screen w-full overflow-hidden border-b -mt-0 md:-mt-18"
+        className="relative h-screen w-full overflow-hidden border-b -mt-0 md:-mt-0"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
