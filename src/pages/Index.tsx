@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import cedarImg from "@/assets/fences/cedar.jpg";
 import modernImg from "@/assets/fences/horizontal-cedar.jpg";
-import ironImg from "@/assets/fences/wrought-iron.jpg";
+import gallery1 from "@/assets/gallery/gallery1.jpg";
 import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
 
 const Index = () => {
@@ -27,13 +27,13 @@ const Index = () => {
     <main>
       <Seo
         title="Seattle Fence Contractor | MyFence.com"
-        description="Father & son fence company in Seattle using Fence Genius technology. Cedar, vinyl, chain-link, iron. Call (253) 455-1885."
+        description="Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885."
         canonical="https://myfence.com/"
         structuredData={orgLd}
       />
 
       <section
-        className="relative h-screen w-full overflow-hidden border-b"
+        className="relative h-screen w-full overflow-hidden border-b pt-16"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -56,7 +56,7 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          <div className="container absolute inset-x-0 bottom-6 md:bottom-10 animate-fade-in">
+          <div className="container absolute inset-x-0 bottom-2 md:bottom-4 animate-fade-in">
             <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
               <div className="bg-foreground text-background p-6 md:p-10">
                 <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
@@ -127,28 +127,28 @@ const Index = () => {
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={cedarImg} alt="Cedar privacy fence in Seattle backyard" loading="lazy" className="w-full h-56 object-cover" />
+              <img src={cedarImg} alt="Picture frame cedar fence in Seattle backyard" loading="lazy" className="w-full h-56 object-cover" />
               <div className="p-4">
-                <h3 className="font-semibold">Cedar Privacy</h3>
-                <p className="text-sm text-muted-foreground">Classic, durable, beautiful.</p>
+                <h3 className="font-semibold">Picture Frame Fence</h3>
+                <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={modernImg} alt="Modern horizontal cedar fence installation" loading="lazy" className="w-full h-56 object-cover" />
+              <img src={gallery1} alt="Three-rail picture frame cedar fence installation" loading="lazy" className="w-full h-56 object-cover" />
               <div className="p-4">
-                <h3 className="font-semibold">Horizontal Cedar</h3>
-                <p className="text-sm text-muted-foreground">Sleek, modern curb appeal.</p>
+                <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
+                <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={ironImg} alt="Wrought iron fence detail for front yard" loading="lazy" className="w-full h-56 object-cover" />
+              <img src={modernImg} alt="Horizontal lattice top cedar fence" loading="lazy" className="w-full h-56 object-cover" />
               <div className="p-4">
-                <h3 className="font-semibold">Wrought Iron</h3>
-                <p className="text-sm text-muted-foreground">Elegant, secure, long-lasting.</p>
+                <h3 className="font-semibold">Horizontal Lattice Fence</h3>
+                <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
               </div>
             </CardContent>
           </Card>
