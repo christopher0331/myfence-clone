@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import cedarImg from "@/assets/fences/cedar.jpg";
@@ -127,7 +128,9 @@ const Index = () => {
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={cedarImg} alt="Picture frame cedar fence in Seattle backyard" loading="lazy" className="w-full h-56 object-cover" />
+              <AspectRatio ratio={1}>
+                <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+              </AspectRatio>
               <div className="p-4">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
@@ -136,7 +139,9 @@ const Index = () => {
           </Card>
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={gallery1} alt="Three-rail picture frame cedar fence installation" loading="lazy" className="w-full h-56 object-cover" />
+              <AspectRatio ratio={1}>
+                <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+              </AspectRatio>
               <div className="p-4">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
@@ -145,7 +150,9 @@ const Index = () => {
           </Card>
           <Card>
             <CardContent className="p-0 overflow-hidden">
-              <img src={modernImg} alt="Horizontal lattice top cedar fence" loading="lazy" className="w-full h-56 object-cover" />
+              <AspectRatio ratio={1}>
+                <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+              </AspectRatio>
               <div className="p-4">
                 <h3 className="font-semibold">Horizontal Lattice Fence</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
@@ -181,7 +188,7 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Architectural trellis accents built to last — perfect for Northwest gardens.</p>
         <Card className="mt-6">
           <CardContent className="p-0 overflow-hidden">
-            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, powered by Fence Genius" loading="lazy" className="w-full h-72 md:h-96 object-cover" />
+            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, powered by Fence Genius" loading="lazy" className="w-full h-96 md:h-[32rem] object-cover" />
           </CardContent>
         </Card>
       </section>
