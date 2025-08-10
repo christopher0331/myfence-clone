@@ -171,11 +171,11 @@ const Index = () => {
             <iframe
               src="https://seattlefencequote.com/"
               width="100%"
-              height="800"
+              height="750"
               frameBorder={0}
               loading="lazy"
               title="SeattleFenceQuote.com - Instant Online Quote"
-              className="w-full h-[800px]"
+              className="w-full h-[750px]"
             />
           </CardContent>
         </Card>
