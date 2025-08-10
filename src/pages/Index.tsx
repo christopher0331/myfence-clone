@@ -38,7 +38,7 @@ const Index = () => {
           ['--pointer-y' as any]: `${pointer.y}px`,
         }}
       >
-        <div className="relative">
+        <div className="relative h-full w-full">
           <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute left-1/2 top-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2">
               <iframe
