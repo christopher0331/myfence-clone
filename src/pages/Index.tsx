@@ -2,6 +2,7 @@ import { useState } from "react";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -25,7 +26,7 @@ const Index = () => {
       />
 
       <section
-        className="relative overflow-hidden border-b"
+        className="relative h-screen w-full overflow-hidden border-b"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -50,34 +51,54 @@ const Index = () => {
             </div>
           </div>
           <div className="absolute inset-0 -z-0 pointer-events-none bg-gradient-to-b from-background/70 via-background/50 to-background/30" aria-hidden="true"></div>
-          <div className="container py-20 md:py-28">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">Seattle’s Father & Son Fence Pros</h1>
-              <p className="mt-4 text-lg text-muted-foreground">MyFence.com builds beautiful, lasting fences across Seattle using exclusive Fence Genius technology to perfect planning and construction.</p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Button asChild variant="hero" size="lg"><a href="/quote">Get a Virtual Quote</a></Button>
-                <Button asChild variant="secondary" size="lg"><a href="/fence-styles">Explore Styles</a></Button>
+          <div className="container absolute inset-x-0 bottom-6 md:bottom-10 animate-fade-in">
+            <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
+              <div className="bg-foreground text-background p-6 md:p-10">
+                <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
+                <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
+                <p className="mt-3 text-sm opacity-90">MyFence.com is a father & son team using Fence Genius to deliver precise, durable fences across Seattle.</p>
+                <div className="mt-5">
+                  <Button asChild size="lg" variant="secondary"><a href="/quote" className="hover-scale">Free Quotes</a></Button>
+                </div>
               </div>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { t: "Fence Genius", d: "Precision planning" },
-                  { t: "Seattle Local", d: "Licensed & insured" },
-                  { t: "Craftsmanship", d: "Built to last" },
-                ].map((f) => (
-                  <Card key={f.t} className="hover:shadow-elevated transition-shadow">
-                    <CardContent className="py-4">
-                      <div className="text-sm font-semibold">{f.t}</div>
-                      <div className="text-xs text-muted-foreground">{f.d}</div>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="bg-card text-foreground p-6 md:p-8">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="flex items-start gap-3">
+                    <Hammer className="w-6 h-6 text-primary" aria-hidden="true" />
+                    <div>
+                      <div className="font-semibold">100's Built</div>
+                      <div className="text-sm text-muted-foreground">Custom wood fences</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Cpu className="w-6 h-6 text-primary" aria-hidden="true" />
+                    <div>
+                      <div className="font-semibold">Fence Genius</div>
+                      <div className="text-sm text-muted-foreground">Advanced software</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Home className="w-6 h-6 text-primary" aria-hidden="true" />
+                    <div>
+                      <div className="font-semibold">Family Owned</div>
+                      <div className="text-sm text-muted-foreground">Father & son team</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
+                    <div>
+                      <div className="font-semibold">2 Year Warranty</div>
+                      <div className="text-sm text-muted-foreground">Workmanship guaranteed</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container py-12">
+      <section className="container pt-28 md:pt-36 pb-12">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h2 className="text-xl font-semibold">Cedar & Modern Styles</h2>
