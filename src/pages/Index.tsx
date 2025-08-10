@@ -40,9 +40,9 @@ const Index = () => {
       >
         <div className="relative h-full w-full">
           <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute left-1/2 top-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute left-1/2 top-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
               <iframe
-                className="w-full h-full"
+                className="w-full h-full object-cover"
                 src="https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0"
                 allow="autoplay; encrypted-media; picture-in-picture"
                 loading="lazy"
@@ -50,7 +50,6 @@ const Index = () => {
               />
             </div>
           </div>
-          <div className="absolute inset-0 -z-0 pointer-events-none bg-gradient-to-b from-background/70 via-background/50 to-background/30" aria-hidden="true"></div>
           <div className="container absolute inset-x-0 bottom-6 md:bottom-10 animate-fade-in">
             <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
               <div className="bg-foreground text-background p-6 md:p-10">
