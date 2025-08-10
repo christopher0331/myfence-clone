@@ -2,6 +2,13 @@ import { useState } from "react";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/hooks/use-toast";
+import cedarImg from "@/assets/fences/cedar.jpg";
+import modernImg from "@/assets/fences/horizontal-cedar.jpg";
+import ironImg from "@/assets/fences/wrought-iron.jpg";
 import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
 
 const Index = () => {
@@ -39,16 +46,15 @@ const Index = () => {
         }}
       >
         <div className="relative h-full w-full">
-          <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute left-1/2 top-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
-              <iframe
-                className="w-full h-full object-cover"
-                src="https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+          <div className="video-hero" aria-hidden="true">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="MyFence.com installation montage"
+            />
           </div>
           <div className="container absolute inset-x-0 bottom-6 md:bottom-10 animate-fade-in">
             <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
@@ -112,6 +118,113 @@ const Index = () => {
             <p className="text-muted-foreground mt-2">We know Northwest weather and build for longevity — rain or shine.</p>
           </div>
         </div>
+      </section>
+
+      {/* Popular styles */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Our most requested builds in Seattle.</p>
+        <div className="grid md:grid-cols-3 gap-6 mt-6">
+          <Card>
+            <CardContent className="p-0 overflow-hidden">
+              <img src={cedarImg} alt="Cedar privacy fence in Seattle backyard" loading="lazy" className="w-full h-56 object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold">Cedar Privacy</h3>
+                <p className="text-sm text-muted-foreground">Classic, durable, beautiful.</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-0 overflow-hidden">
+              <img src={modernImg} alt="Modern horizontal cedar fence installation" loading="lazy" className="w-full h-56 object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold">Horizontal Cedar</h3>
+                <p className="text-sm text-muted-foreground">Sleek, modern curb appeal.</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-0 overflow-hidden">
+              <img src={ironImg} alt="Wrought iron fence detail for front yard" loading="lazy" className="w-full h-56 object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold">Wrought Iron</h3>
+                <p className="text-sm text-muted-foreground">Elegant, secure, long-lasting.</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Online quote tool embed */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold">Instant Online Quote</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Use our SeattleFenceQuote.com tool to price your fence in minutes.</p>
+        <Card className="mt-6">
+          <CardContent className="p-0">
+            <iframe
+              src="https://seattlefencequote.com/"
+              width="100%"
+              height="800"
+              frameBorder={0}
+              loading="lazy"
+              title="SeattleFenceQuote.com - Instant Online Quote"
+              className="w-full h-[800px]"
+            />
+          </CardContent>
+        </Card>
+        <p className="text-xs text-muted-foreground mt-2">If the tool doesn't load, open it in a new tab: <a href="https://seattlefencequote.com/" className="underline" target="_blank" rel="noopener noreferrer">seattlefencequote.com</a></p>
+      </section>
+
+      {/* Trellis systems */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold">Trellis & Pergola Systems</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Architectural trellis accents built to last — perfect for Northwest gardens.</p>
+        <Card className="mt-6">
+          <CardContent className="p-0 overflow-hidden">
+            <img src={modernImg} alt="Custom cedar trellis pergola over fence line" loading="lazy" className="w-full h-72 md:h-96 object-cover" />
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Contact form */}
+      <section className="container py-12 md:py-20">
+        <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
+        <form
+          className="grid md:grid-cols-2 gap-6 mt-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
+          }}
+        >
+          <div className="grid gap-4">
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" required />
+            </div>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" required />
+            </div>
+            <div>
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" type="tel" />
+            </div>
+          </div>
+          <div className="grid gap-4">
+            <div className="h-full flex flex-col">
+              <Label htmlFor="message">Message</Label>
+              <Textarea id="message" className="min-h-[180px] flex-1" required />
+            </div>
+            <div className="flex gap-3">
+              <Button type="submit">Send message</Button>
+              <Button variant="secondary" asChild>
+                <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+          </div>
+        </form>
       </section>
     </main>
   );
