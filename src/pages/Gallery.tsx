@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 
 const images = [
+  "/lovable-uploads/5f84fd61-a240-4aab-9d39-9728f6a27f36.png",
   "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png",
   "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png",
   "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
