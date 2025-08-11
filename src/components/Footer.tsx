@@ -168,6 +168,9 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} MyFence.com. All rights reserved.
             </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              WA Contractor License: MYFEN**772L3
+            </p>
           </div>
         </div>
       </footer>
