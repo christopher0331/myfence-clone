@@ -230,6 +230,11 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                <div className="absolute inset-x-4 bottom-4">
+                  <p className="text-xs md:text-sm bg-background/70 text-foreground rounded-md px-3 py-2 shadow-elevated backdrop-blur">
+                    Pick your fence style, posts, and upgrades — then draw your fence on your property to get a quick quote.
+                  </p>
+                </div>
               </div>
             </div>
           </CardContent>
