@@ -74,11 +74,11 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          {/* Moved banner below hero */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-b from-transparent to-background" aria-hidden="true" />
         </div>
       </section>
 
-      <section className="container relative z-10 -mt-100 md:-mt-50 pt-10 md:pt-12 pb-0">
+      <section className="container relative z-10 -mt-16 md:-mt-24 lg:-mt-32 pt-10 md:pt-12 pb-0">
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
@@ -272,4 +272,3 @@ const Index = () => {
 };
 
 export default Index;
-
