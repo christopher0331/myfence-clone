@@ -145,33 +145,39 @@ const Index = () => {
         <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Our most requested builds in Seattle.</p>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
-          <Card>
-            <CardContent className="p-0 overflow-hidden">
-              <AspectRatio ratio={1}>
-                <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-              </AspectRatio>
+          <Card className="glass-card">
+            <CardContent className="p-3">
+              <div className="glass-frame">
+                <AspectRatio ratio={1}>
+                  <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                </AspectRatio>
+              </div>
               <div className="p-4">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
               </div>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent className="p-0 overflow-hidden">
-              <AspectRatio ratio={1}>
-                <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-              </AspectRatio>
+          <Card className="glass-card">
+            <CardContent className="p-3">
+              <div className="glass-frame">
+                <AspectRatio ratio={1}>
+                  <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                </AspectRatio>
+              </div>
               <div className="p-4">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
               </div>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent className="p-0 overflow-hidden">
-              <AspectRatio ratio={1}>
-                <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-              </AspectRatio>
+          <Card className="glass-card">
+            <CardContent className="p-3">
+              <div className="glass-frame">
+                <AspectRatio ratio={1}>
+                  <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                </AspectRatio>
+              </div>
               <div className="p-4">
                 <h3 className="font-semibold">Horizontal Lattice Fence</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>

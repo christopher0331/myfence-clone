@@ -116,6 +116,29 @@ All colors MUST be HSL.
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
+
+  /* Glassmorphism utilities using design tokens */
+  .glass-card {
+    position: relative;
+    border-radius: calc(var(--radius) * 1.25);
+    background: hsl(var(--card) / 0.55);
+    border: 1px solid hsl(var(--border) / 0.6);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    box-shadow: var(--shadow-elevated);
+  }
+  .glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, hsl(var(--foreground) / 0.06), transparent 35%);
+    pointer-events: none;
+  }
+  .glass-frame {
+    border-radius: calc(var(--radius) * 1.25);
+    overflow: hidden;
+  }
 }
 
 /* Hero video cover to eliminate letterboxing (16:9 cover) */
