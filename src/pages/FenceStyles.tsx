@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const styles = [
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Classic privacy with sturdy cedar boards and clean lines." },
@@ -39,6 +40,16 @@ const postOptions = [
   },
 ];
 
+const addOns = [
+  { title: 'Upgrade to 4" Screws', desc: 'Use 4" exterior screws for 2x4 rails instead of nails for superior hold and longevity.' },
+  { title: 'Clear Cedar Fence Boards Upgrade', desc: 'Premium clear cedar boards with minimal knots for a refined appearance.' },
+  { title: 'Board on Board Style', desc: 'Overlapping fence boards eliminate gaps for complete privacy.' },
+  { title: '2x4 Rot Board', desc: 'Bottom 2x4 sacrificial board for near-zero ground clearance without exposing cedar to soil.' },
+  { title: 'Pre-Staining', desc: 'Cedar components are stained prior to install for consistent coverage and early protection.' },
+  { title: 'Soil Haul-Away', desc: 'We remove excess soil generated during post hole digging.' },
+  { title: 'Trellis Systems', desc: 'Add trellis features to elevate curb appeal and support plants.' },
+];
+
 const FenceStyles = () => {
   return (
     <main>
@@ -71,24 +82,56 @@ const FenceStyles = () => {
 
         <hr className="my-12 border-border" />
 
-        <h2 id="post-options" className="text-2xl font-semibold tracking-tight">Fence Post Options</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post for your fence. We typically recommend 4.125&quot; x 4.125&quot; x 9' posts for most projects; upgrade options increase strength and longevity.</p>
+        <h2 id="options" className="text-2xl font-semibold tracking-tight">Fence Options</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post and optional upgrades for performance and style.</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {postOptions.map((p) => (
-            <Card key={p.title} className="hover:shadow-elevated transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>{p.title}</span>
-                  <Badge variant="secondary">{p.badge}</Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Tabs defaultValue="posts" className="mt-4">
+          <TabsList className="flex flex-wrap gap-2">
+            <TabsTrigger value="posts">Post Options</TabsTrigger>
+            <TabsTrigger value="addons">Add-On Options</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="posts" className="mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {postOptions.map((p) => (
+                <Card key={p.title} className="hover:shadow-elevated transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between">
+                      <span>{p.title}</span>
+                      <Badge variant="secondary">{p.badge}</Badge>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{p.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="addons" className="mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {addOns.map((a) => (
+                <Card key={a.title} className="hover:shadow-elevated transition-shadow">
+                  <CardHeader>
+                    <CardTitle>{a.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <AspectRatio ratio={1}>
+                      <img
+                        src="/placeholder.svg"
+                        alt={`${a.title} add-on option for Seattle fences by MyFence.com`}
+                        loading="lazy"
+                        className="w-full h-full object-cover rounded-md"
+                      />
+                    </AspectRatio>
+                    <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </section>
     </main>
   );
