@@ -12,6 +12,7 @@ import cedarImg from "@/assets/fences/cedar.jpg";
 import modernImg from "@/assets/fences/horizontal-cedar.jpg";
 import gallery1 from "@/assets/gallery/gallery1.jpg";
 import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -200,24 +201,32 @@ const Index = () => {
         </Card>
       </section>
 
-      {/* Online quote tool embed */}
-      <section className="container py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-bold">Instant Online Quote</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Use our SeattleFenceQuote.com tool to price your fence in minutes.</p>
-        <Card className="mt-6">
+      <section className="container py-12 md:py-16" aria-labelledby="instant-quote-heading">
+        <h2 id="instant-quote-heading" className="text-2xl md:text-3xl font-bold">Instant Online Quote</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Build your fence estimate in minutes with real-time pricing.</p>
+        <Card className="mt-6 glass-card overflow-hidden">
           <CardContent className="p-0">
-            <iframe
-              src="https://seattlefencequote.com/"
-              width="100%"
-              height="750"
-              frameBorder={0}
-              loading="lazy"
-              title="SeattleFenceQuote.com - Instant Online Quote"
-              className="w-full h-[750px]"
-            />
+            <div className="grid md:grid-cols-2">
+              <div className="p-6 md:p-10 flex flex-col justify-center">
+                <div className="text-xs uppercase tracking-wider text-primary/90">Powered by Fence Genius</div>
+                <h3 className="mt-2 text-2xl font-semibold">Start Building Your Estimate</h3>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Real-time pricing</li>
+                  <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Interactive map layout</li>
+                  <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> No obligation — free to use</li>
+                </ul>
+                <div className="mt-6">
+                  <Button size="lg" asChild>
+                    <Link to="/quote" aria-label="Start Building Your Estimate on the quote page">Start Building Your Estimate</Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="relative min-h-[220px] md:min-h-[320px] bg-gradient-primary">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-accent/40 to-card/60" aria-hidden="true" />
+              </div>
+            </div>
           </CardContent>
         </Card>
-        <p className="text-xs text-muted-foreground mt-2">If the tool doesn't load, open it in a new tab: <a href="https://seattlefencequote.com/" className="underline" target="_blank" rel="noopener noreferrer">seattlefencequote.com</a></p>
       </section>
 
       {/* Trellis systems */}
