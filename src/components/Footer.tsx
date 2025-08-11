@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Phone, Youtube, Twitter, Music2, Pin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -36,7 +36,7 @@ const Footer = () => {
               </p>
               <div className="flex items-center text-muted-foreground">
                 <Phone className="h-4 w-4 mr-2" />
-                <span className="font-medium">(555) 123-4567</span>
+                <span className="font-medium">(253) 455-1885</span>
               </div>
             </div>
 
@@ -80,9 +80,9 @@ const Footer = () => {
             {/* Social Media & Legal */}
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">Connect With Us</h3>
-              <div className="flex space-x-4 mb-6">
+              <div className="flex flex-wrap gap-4 mb-6">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/myfence.com.official"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -91,7 +91,7 @@ const Footer = () => {
                   <Facebook className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/myfence.com.official/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -100,24 +100,49 @@ const Footer = () => {
                   <Instagram className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/MyFenceDotCom"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="X (Twitter)"
+                  aria-label="Twitter"
                 >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
+                  <Twitter className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.youtube.com/@fencegenius"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/myfence-com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.pinterest.com/MyFenceDotCom/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Pinterest"
+                >
+                  <Pin className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@myfence.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="TikTok"
+                >
+                  <Music2 className="h-6 w-6" />
                 </a>
               </div>
               <div className="space-y-2">
