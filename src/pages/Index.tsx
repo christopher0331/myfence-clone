@@ -78,7 +78,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="container relative z-10 -mt-16 md:-mt-24 lg:-mt-32 pt-10 md:pt-12 pb-0">
+      <section className="container relative z-10 -mt-24 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
