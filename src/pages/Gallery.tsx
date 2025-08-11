@@ -26,7 +26,14 @@ const Gallery = () => {
         <p className="text-muted-foreground max-w-2xl">A look at our craftsmanship across Seattle neighborhoods. Every project is precisely planned and executed.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {images.map((src, i) => (
-            <img key={i} src={src} alt={`Seattle fence project ${i + 1} by MyFence.com`} loading="lazy" className="w-full h-56 object-cover rounded-lg shadow-elevated" />
+            <div key={i} className="aspect-square w-full overflow-hidden rounded-lg shadow-elevated">
+              <img
+                src={src}
+                alt={`Seattle fence project ${i + 1} by MyFence.com`}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
           ))}
         </div>
       </section>
