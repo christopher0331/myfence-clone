@@ -51,7 +51,7 @@ const Index = () => {
       />
 
       <section
-        className="relative h-screen w-full border-b -mt-14 md:-mt-20"
+        className="relative h-screen w-full border-b"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -78,7 +78,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="container pt-10 md:pt-12 pb-0">
+      <section className="container relative z-10 -mt-16 md:-mt-24 pt-10 md:pt-12 pb-0">
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
