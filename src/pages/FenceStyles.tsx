@@ -16,6 +16,29 @@ const styles = [
   { img: "/lovable-uploads/be14d195-34f5-4c25-9618-a506bed8ecc1.png", title: "Picket Fence", desc: "Timeless neighborhood charm with classic pickets." },
 ];
 
+const postOptions = [
+  {
+    title: '3.5" x 3.5" Fence Posts',
+    badge: 'Not recommended',
+    desc: 'Smaller “4x4” posts with shorter lifespan; more prone to warp and rot over time.',
+  },
+  {
+    title: '4.125" x 4.125" x 9\' Posts',
+    badge: 'Recommended',
+    desc: 'Our most common and recommended post size—great balance of strength, cost, and longevity.',
+  },
+  {
+    title: '5.5" x 5.5" x 10\' (6x6)',
+    badge: 'Longest lasting',
+    desc: 'Premium, heavy-duty posts providing maximum rigidity and the best long-term performance.',
+  },
+  {
+    title: 'Post on Pipe',
+    badge: 'Steel core',
+    desc: 'A steel fence post inserted into a 4.125" x 4.125" x 7\' wood post to resist ground-rot factors.',
+  },
+];
+
 const FenceStyles = () => {
   return (
     <main>
@@ -41,6 +64,27 @@ const FenceStyles = () => {
                   <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-full object-cover rounded-md" />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <hr className="my-12 border-border" />
+
+        <h2 id="post-options" className="text-2xl font-semibold tracking-tight">Fence Post Options</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post for your fence. We typically recommend 4.125&quot; x 4.125&quot; x 9' posts for most projects; upgrade options increase strength and longevity.</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+          {postOptions.map((p) => (
+            <Card key={p.title} className="hover:shadow-elevated transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center justify-between">
+                  <span>{p.title}</span>
+                  <Badge variant="secondary">{p.badge}</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{p.desc}</p>
               </CardContent>
             </Card>
           ))}
