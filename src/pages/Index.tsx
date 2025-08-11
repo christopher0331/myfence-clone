@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Seo from "@/components/Seo";
+import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,7 @@ import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   const orgLd = {
     "@context": "https://schema.org",
@@ -64,7 +66,7 @@ const Index = () => {
                 <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
                 <p className="mt-3 text-sm opacity-90">MyFence.com is a father & son team using Fence Genius to deliver precise, durable fences across Seattle.</p>
                 <div className="mt-5">
-                  <Button asChild size="lg" variant="secondary"><a href="/quote" className="hover-scale">Free Quotes</a></Button>
+                  <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
                 </div>
               </div>
               <div className="bg-card text-foreground p-6 md:p-8">
@@ -233,6 +235,8 @@ const Index = () => {
           </div>
         </form>
       </section>
+
+      <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </main>
   );
 };

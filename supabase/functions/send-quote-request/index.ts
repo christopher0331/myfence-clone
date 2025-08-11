@@ -1,0 +1,106 @@
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+
+const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
+serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
+  try {
+    const { fullName, email, phone, address, projectDescription } = await req.json()
+
+    // Validate required fields
+    if (!fullName || !email || !phone || !address || !projectDescription) {
+      return new Response(
+        JSON.stringify({ error: 'All fields are required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
+    if (!RESEND_API_KEY) {
+      return new Response(
+        JSON.stringify({ error: 'Email service not configured' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
+    const emailBody = `
+New Quote Request from MyFence.com
+
+Customer Information:
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Address: ${address}
+
+Project Description:
+${projectDescription}
+
+This request was submitted through the MyFence.com website.
+    `.trim()
+
+    const emailData = {
+      from: 'MyFence.com <noreply@myfence.com>',
+      to: ['info@myfence.com'],
+      reply_to: email,
+      subject: `New Quote Request from ${fullName}`,
+      text: emailBody,
+      html: `
+        <h2>New Quote Request from MyFence.com</h2>
+        
+        <h3>Customer Information:</h3>
+        <ul>
+          <li><strong>Name:</strong> ${fullName}</li>
+          <li><strong>Email:</strong> ${email}</li>
+          <li><strong>Phone:</strong> ${phone}</li>
+          <li><strong>Address:</strong> ${address}</li>
+        </ul>
+        
+        <h3>Project Description:</h3>
+        <p>${projectDescription.replace(/\n/g, '<br>')}</p>
+        
+        <hr>
+        <p><em>This request was submitted through the MyFence.com website.</em></p>
+      `
+    }
+
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(emailData),
+    })
+
+    if (!response.ok) {
+      const error = await response.text()
+      console.error('Resend API error:', error)
+      return new Response(
+        JSON.stringify({ error: 'Failed to send email' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
+    const result = await response.json()
+    console.log('Email sent successfully:', result)
+
+    return new Response(
+      JSON.stringify({ success: true, id: result.id }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    )
+
+  } catch (error) {
+    console.error('Function error:', error)
+    return new Response(
+      JSON.stringify({ error: 'Internal server error' }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    )
+  }
+})
