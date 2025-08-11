@@ -1,9 +1,17 @@
 import Seo from "@/components/Seo";
-import gallery1 from "@/assets/gallery/gallery1.jpg";
-import gallery2 from "@/assets/gallery/gallery2.jpg";
-import gallery3 from "@/assets/gallery/gallery3.jpg";
 
-const images = [gallery1, gallery2, gallery3, gallery1, gallery2, gallery3];
+const images = [
+  "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png",
+  "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png",
+  "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
+  "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png",
+  "/lovable-uploads/fe0b1d69-f6cd-49d5-9c99-1ed1e70daef5.png",
+  "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
+  "/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png",
+  "/lovable-uploads/8ea10d1b-63ce-44fe-a29f-12f029415560.png",
+  "/lovable-uploads/81e50e54-927c-4bb5-b22e-9cf6336b8154.png",
+  "/lovable-uploads/be14d195-34f5-4c25-9618-a506bed8ecc1.png",
+];
 
 const Gallery = () => {
   return (
