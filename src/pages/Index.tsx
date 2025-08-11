@@ -83,7 +83,7 @@ const Index = () => {
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
-            <p className="mt-3 text-sm opacity-90">MyFence.com is a father & son team using Fence Genius to deliver precise, durable fences across Seattle.</p>
+            <p className="mt-3 text-sm opacity-90">MyFence.com is owned by a father and son team where they have embraced the new industry leading Fence Genius technology to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</p>
             <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
             </div>
