@@ -67,7 +67,9 @@ const FenceStyles = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>{s.title}</span>
-                  <Badge variant="secondary">Popular</Badge>
+                  {s.title === "Picture Frame Fence" && (
+                    <Badge variant="secondary">Most Popular</Badge>
+                  )}
                 </CardTitle>
               </CardHeader>
               <CardContent>
