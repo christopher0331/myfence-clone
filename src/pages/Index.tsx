@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Seo from "@/components/Seo";
 import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,19 @@ import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  // Load Trustindex reviews widget
+  useEffect(() => {
+    const existing = document.querySelector(
+      'script[src*="cdn.trustindex.io/loader.js?48e336f4057150985636f53b367"]'
+    ) as HTMLScriptElement | null;
+    if (existing) return;
+    const s = document.createElement("script");
+    s.src = "https://cdn.trustindex.io/loader.js?48e336f4057150985636f53b367";
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  }, []);
 
   const orgLd = {
     "@context": "https://schema.org",
@@ -171,8 +184,10 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Choosing a Seattle fence contractor is an investment—make it with the father & son team that builds it right the first time. If you’re searching for a fence company near me, our customers agree you’re in the right place.</p>
         <Card className="mt-6">
           <CardContent className="p-6">
-            <div id="trustindex-widget" className="w-full">
-              <p className="text-sm text-muted-foreground">Reviews widget loading. Please provide your Trustindex embed code to display live reviews.</p>
+            <div id="trustindex-widget" className="w-full" aria-live="polite">
+              <noscript>
+                <p className="text-sm text-muted-foreground">Enable JavaScript to view our Trustindex reviews.</p>
+              </noscript>
             </div>
           </CardContent>
         </Card>
