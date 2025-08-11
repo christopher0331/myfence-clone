@@ -59,46 +59,48 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          <div className="container absolute inset-x-0 bottom-[-24px] md:bottom-[-48px] z-10 animate-fade-in">
-            <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
-              <div className="bg-foreground text-background p-6 md:p-10">
-                <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
-                <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
-                <p className="mt-3 text-sm opacity-90">MyFence.com is a father & son team using Fence Genius to deliver precise, durable fences across Seattle.</p>
-                <div className="mt-5">
-                  <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
+          {/* Moved banner below hero */}
+        </div>
+      </section>
+
+      <section className="container pt-10 md:pt-12 pb-0">
+        <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
+          <div className="bg-foreground text-background p-6 md:p-10">
+            <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
+            <p className="mt-3 text-sm opacity-90">MyFence.com is a father & son team using Fence Genius to deliver precise, durable fences across Seattle.</p>
+            <div className="mt-5">
+              <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
+            </div>
+          </div>
+          <div className="bg-card text-foreground p-6 md:p-8">
+            <div className="grid grid-cols-2 divide-x divide-y border-border">
+              <div className="p-6 flex items-start gap-3">
+                <Hammer className="w-6 h-6 text-primary" aria-hidden="true" />
+                <div>
+                  <div className="font-semibold">100's Built</div>
+                  <div className="text-sm text-muted-foreground">Custom wood fences</div>
                 </div>
               </div>
-              <div className="bg-card text-foreground p-6 md:p-8">
-                <div className="grid grid-cols-2 divide-x divide-y border-border">
-                  <div className="p-6 flex items-start gap-3">
-                    <Hammer className="w-6 h-6 text-primary" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold">100's Built</div>
-                      <div className="text-sm text-muted-foreground">Custom wood fences</div>
-                    </div>
-                  </div>
-                  <div className="p-6 flex items-start gap-3">
-                    <Cpu className="w-6 h-6 text-primary" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold">Fence Genius</div>
-                      <div className="text-sm text-muted-foreground">Advanced software</div>
-                    </div>
-                  </div>
-                  <div className="p-6 flex items-start gap-3">
-                    <Home className="w-6 h-6 text-primary" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold">Family Owned</div>
-                      <div className="text-sm text-muted-foreground">Father & son team</div>
-                    </div>
-                  </div>
-                  <div className="p-6 flex items-start gap-3">
-                    <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
-                    <div>
-                      <div className="font-semibold">2 Year Warranty</div>
-                      <div className="text-sm text-muted-foreground">Workmanship guaranteed</div>
-                    </div>
-                  </div>
+              <div className="p-6 flex items-start gap-3">
+                <Cpu className="w-6 h-6 text-primary" aria-hidden="true" />
+                <div>
+                  <div className="font-semibold">Fence Genius</div>
+                  <div className="text-sm text-muted-foreground">Advanced software</div>
+                </div>
+              </div>
+              <div className="p-6 flex items-start gap-3">
+                <Home className="w-6 h-6 text-primary" aria-hidden="true" />
+                <div>
+                  <div className="font-semibold">Family Owned</div>
+                  <div className="text-sm text-muted-foreground">Father & son team</div>
+                </div>
+              </div>
+              <div className="p-6 flex items-start gap-3">
+                <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
+                <div>
+                  <div className="font-semibold">2 Year Warranty</div>
+                  <div className="text-sm text-muted-foreground">Workmanship guaranteed</div>
                 </div>
               </div>
             </div>
@@ -162,6 +164,18 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
+      </section>
+
+      <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">Our reviews are in, and we love them!</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Choosing a Seattle fence contractor is an investment—make it with the father & son team that builds it right the first time. If you’re searching for a fence company near me, our customers agree you’re in the right place.</p>
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            <div id="trustindex-widget" className="w-full">
+              <p className="text-sm text-muted-foreground">Reviews widget loading. Please provide your Trustindex embed code to display live reviews.</p>
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
       {/* Online quote tool embed */}
