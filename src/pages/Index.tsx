@@ -221,7 +221,7 @@ const Index = () => {
                   </Button>
                 </div>
               </div>
-              <div className="relative min-h-[220px] md:min-h-[320px] bg-gradient-to-tr from-primary/20 via-accent/40 to-card/60 p-4 md:p-6 flex items-center justify-center">
+              <div className="relative min-h-[220px] md:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center">
                 <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
                   <img
                     src="/lovable-uploads/f8a11a30-3a13-42cb-8880-f95fd7547c0e.png"
