@@ -22,7 +22,7 @@ const Index = () => {
   useEffect(() => {
     if (!reviewsRef.current) return;
     const s = document.createElement("script");
-    s.src = "https://cdn.trustindex.io/loader.js?48e336f4057150985636f53b367";
+    s.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
     s.async = true;
     s.defer = true;
     reviewsRef.current.appendChild(s);
