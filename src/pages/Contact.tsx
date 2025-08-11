@@ -40,9 +40,38 @@ const Contact = () => {
         <p className="text-muted-foreground max-w-2xl">We’re here to help. Call <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">(253) 455-1885</a> or send us a message below.</p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
-          <p className="text-muted-foreground">
-            Father & son owned and operated. We build with our proprietary Fence Genius technology for superior build quality and unmatched customer clarity from estimate to final walkthrough.
-          </p>
+          <div>
+            <p className="text-muted-foreground">
+              Father & son owned and operated. We build with our proprietary Fence Genius technology for superior build quality and unmatched customer clarity from estimate to final walkthrough.
+            </p>
+
+            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" required />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" required />
+                </div>
+                <div>
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input id="phone" type="tel" />
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="message">How can we help?</Label>
+                  <Textarea id="message" rows={7} required />
+                </div>
+                <div className="flex gap-3">
+                  <Button type="submit" variant="hero">Send Message</Button>
+                  <Button type="button" variant="secondary" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
+                </div>
+              </div>
+            </form>
+          </div>
           <figure>
             <div className="aspect-square w-full overflow-hidden rounded-lg shadow-elevated">
               <img
@@ -55,33 +84,6 @@ const Contact = () => {
             <figcaption className="sr-only">Father and son owned fence company using Fence Genius technology</figcaption>
           </figure>
         </div>
-
-        <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-8">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" required />
-            </div>
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" required />
-            </div>
-            <div>
-              <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" type="tel" />
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="message">How can we help?</Label>
-              <Textarea id="message" rows={7} required />
-            </div>
-            <div className="flex gap-3">
-              <Button type="submit" variant="hero">Send Message</Button>
-              <Button type="button" variant="secondary" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
-            </div>
-          </div>
-        </form>
       </section>
     </main>
   );
