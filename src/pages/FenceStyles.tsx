@@ -7,6 +7,7 @@ import chainlink from "@/assets/fences/chainlink.jpg";
 import vinyl from "@/assets/fences/vinyl.jpg";
 import wroughtIron from "@/assets/fences/wrought-iron.jpg";
 import aluminum from "@/assets/fences/aluminum-slat.jpg";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const styles = [
   { img: cedar, title: "Cedar Privacy", desc: "Timeless beauty with Western Red Cedar for warmth and privacy." },
@@ -38,7 +39,9 @@ const FenceStyles = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-48 object-cover rounded-md" />
+                <AspectRatio ratio={1}>
+                  <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-full object-cover rounded-md" />
+                </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
               </CardContent>
             </Card>
