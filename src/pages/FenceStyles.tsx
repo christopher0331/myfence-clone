@@ -2,7 +2,7 @@ import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 
 const styles = [
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Classic privacy with sturdy cedar boards and clean lines." },
@@ -80,58 +80,51 @@ const FenceStyles = () => {
           ))}
         </div>
 
-        <hr className="my-12 border-border" />
+      </section>
 
-        <h2 id="options" className="text-2xl font-semibold tracking-tight">Fence Options</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post and optional upgrades for performance and style.</p>
+      <section className="container py-10">
+        <h2 id="post-options" className="text-2xl font-semibold tracking-tight">Fence Post Options</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post for your fence. We typically recommend 4.125&quot; x 4.125&quot; x 9' posts for most projects; upgrade options increase strength and longevity.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+          {postOptions.map((p) => (
+            <Card key={p.title} className="hover:shadow-elevated transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center justify-between">
+                  <span>{p.title}</span>
+                  <Badge variant="secondary">{p.badge}</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{p.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
 
-        <Tabs defaultValue="posts" className="mt-4">
-          <TabsList className="flex flex-wrap gap-2">
-            <TabsTrigger value="posts">Post Options</TabsTrigger>
-            <TabsTrigger value="addons">Add-On Options</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="posts" className="mt-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {postOptions.map((p) => (
-                <Card key={p.title} className="hover:shadow-elevated transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      <span>{p.title}</span>
-                      <Badge variant="secondary">{p.badge}</Badge>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{p.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="addons" className="mt-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {addOns.map((a) => (
-                <Card key={a.title} className="hover:shadow-elevated transition-shadow">
-                  <CardHeader>
-                    <CardTitle>{a.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <AspectRatio ratio={1}>
-                      <img
-                        src="/placeholder.svg"
-                        alt={`${a.title} add-on option for Seattle fences by MyFence.com`}
-                        loading="lazy"
-                        className="w-full h-full object-cover rounded-md"
-                      />
-                    </AspectRatio>
-                    <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+      <section className="container py-10">
+        <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight">Add-On Options</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Optional upgrades that enhance durability, privacy, and finish. Images coming soon.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {addOns.map((a) => (
+            <Card key={a.title} className="hover:shadow-elevated transition-shadow">
+              <CardHeader>
+                <CardTitle>{a.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <AspectRatio ratio={1}>
+                  <img
+                    src="/placeholder.svg"
+                    alt={`${a.title} add-on option for Seattle fences by MyFence.com`}
+                    loading="lazy"
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </AspectRatio>
+                <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
     </main>
   );
