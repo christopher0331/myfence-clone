@@ -1,6 +1,12 @@
 import Seo from "@/components/Seo";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import cedarImg from "@/assets/fences/cedar.jpg";
+import modernImg from "@/assets/fences/horizontal-cedar.jpg";
+import vinylImg from "@/assets/fences/vinyl.jpg";
+import ironImg from "@/assets/fences/wrought-iron.jpg";
 
 const Financing = () => {
   const faq = [
@@ -29,9 +35,124 @@ const Financing = () => {
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Financing Made Easy</h1>
-        <p className="text-muted-foreground max-w-2xl">Turn your project into an affordable monthly payment. We’ll help you find a plan that fits your budget.</p>
+        <p className="text-muted-foreground max-w-2xl">Turn your project into an affordable monthly payment. We'll help you find a plan that fits your budget.</p>
+      </section>
 
-        <div className="mt-8">
+      {/* 1. Affordable Fence Financing with MyFence.com */}
+      <section className="container py-8">
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="relative">
+              <AspectRatio ratio={16 / 9}>
+                <img src={cedarImg} alt="Affordable fence financing with MyFence.com - cedar fence" className="h-full w-full object-cover" loading="lazy" />
+              </AspectRatio>
+            </div>
+            <CardContent className="p-6 md:p-10 flex items-center">
+              <div>
+                <h2 className="text-2xl font-semibold">Affordable Fence Financing with MyFence.com</h2>
+                <p className="mt-3 text-muted-foreground">
+                  At MyFence.com, we believe that securing the fence you need shouldn't be a financial burden. That's why we offer flexible and easy financing options through Wisetack, so you can enjoy the privacy, security, and curb appeal your property deserves without breaking the bank. Whether you need a new fence for your home, business, or anything in between, we've got you covered with affordable plans that fit your budget.
+                </p>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+      </section>
+
+      {/* 2. Why Choose Financing through Wisetack? */}
+      <section className="container py-8">
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
+              <div>
+                <h2 className="text-2xl font-semibold">Why Choose Financing through Wisetack?</h2>
+                <p className="mt-3 text-muted-foreground">
+                  Investing in a quality fence is a smart decision, but sometimes paying for it upfront isn't an option. With our financing options, you can get the fence you need today and pay over time with low monthly payments that suit your financial situation. Here's why financing with Wisetack makes sense:
+                </p>
+                <ul className="mt-4 list-disc pl-5 space-y-2 text-muted-foreground">
+                  <li>Financing from $500 – $25,000 <span className="opacity-70">(1)</span></li>
+                  <li>APRs from 0% to 35.9%*</li>
+                  <li>Terms from 3 to 60 months* <span className="opacity-70">(2)</span></li>
+                  <li>No penalties, late fees, or compounding interest</li>
+                  <li>Some services have a max financeable amount of $15,000</li>
+                  <li>Some services have terms up to 24 months only</li>
+                </ul>
+              </div>
+            </CardContent>
+            <div className="order-1 md:order-2">
+              <AspectRatio ratio={16 / 9}>
+                <img src={vinylImg} alt="Wisetack fence financing - vinyl fence" className="h-full w-full object-cover" loading="lazy" />
+              </AspectRatio>
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* 3. Flexible Financing Options */}
+      <section className="container py-8">
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div>
+              <AspectRatio ratio={16 / 9}>
+                <img src={ironImg} alt="Flexible fence financing options - wrought iron fence" className="h-full w-full object-cover" loading="lazy" />
+              </AspectRatio>
+            </div>
+            <CardContent className="p-6 md:p-10 flex items-center">
+              <div>
+                <h2 className="text-2xl font-semibold">Flexible Financing Options</h2>
+                <p className="mt-3 text-muted-foreground">
+                  At MyFence.com, we offer a variety of financing options to fit a wide range of needs. Whether you're looking for low monthly payments or a no-interest promotional offer, we have a plan that works for you. Some of our financing features include:
+                </p>
+                <ul className="mt-4 list-disc pl-5 space-y-2 text-muted-foreground">
+                  <li>Up to six payment plan options: There are multiple options to choose from and some even with zero interest.</li>
+                  <li>Financing Options: You can finance from $500-$25,000.</li>
+                  <li>No Prepayment Penalties: Pay off your balance early without any extra fees—you're in control of your financing.</li>
+                </ul>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+      </section>
+
+      {/* 4. How It Works */}
+      <section className="container py-8">
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
+              <div>
+                <h2 className="text-2xl font-semibold">How It Works</h2>
+                <ol className="mt-4 list-decimal pl-5 space-y-4 text-muted-foreground">
+                  <li>
+                    <p className="text-foreground font-medium">Apply Online</p>
+                    <p>Start the process by filling out our quick and easy application form. It only takes a few minutes to get started.</p>
+                  </li>
+                  <li>
+                    <p className="text-foreground font-medium">Get Approved</p>
+                    <p>Once you've applied, our financing partners will review your application. You'll receive a decision quickly, so you don't have to wait around.</p>
+                  </li>
+                  <li>
+                    <p className="text-foreground font-medium">Choose Your Plan</p>
+                    <p>Based on your approval, you can choose the financing option that works best for you—whether that's a short-term loan or a longer-term payment plan.</p>
+                  </li>
+                  <li>
+                    <p className="text-foreground font-medium">Get Your Fence Installed</p>
+                    <p>Once you're approved, we'll schedule your fence installation. You can rest easy knowing your fence is taken care of, and you can start enjoying the benefits immediately.</p>
+                  </li>
+                </ol>
+              </div>
+            </CardContent>
+            <div className="order-1 md:order-2">
+              <AspectRatio ratio={16 / 9}>
+                <img src={modernImg} alt="How fence financing works - horizontal cedar fence" className="h-full w-full object-cover" loading="lazy" />
+              </AspectRatio>
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      {/* FAQ & Actions */}
+      <section className="container py-10">
+        <div className="mt-2">
           <Accordion type="single" collapsible className="w-full max-w-2xl">
             {faq.map((item, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
@@ -43,8 +164,12 @@ const Financing = () => {
         </div>
 
         <div className="mt-8 flex gap-3">
-          <Button variant="hero" onClick={() => (window.location.href = "/contact")}>Start Application</Button>
-          <Button variant="secondary" onClick={() => (window.location.href = "/quote")}>Estimate My Payment</Button>
+          <Button variant="hero" onClick={() => (window.location.href = "/contact")}>
+            Start Application
+          </Button>
+          <Button variant="secondary" onClick={() => (window.location.href = "/quote")}>
+            Estimate My Payment
+          </Button>
         </div>
       </section>
     </main>
