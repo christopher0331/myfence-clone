@@ -21,21 +21,25 @@ const postOptions = [
   {
     title: '3.5" x 3.5" Fence Posts',
     badge: 'Not recommended',
+    img: '/lovable-uploads/f6023686-8397-4b40-adba-9874bf191350.png',
     desc: 'Smaller “4x4” posts with shorter lifespan; more prone to warp and rot over time.',
   },
   {
     title: '4.125" x 4.125" x 9\' Posts',
     badge: 'Recommended',
+    img: '/lovable-uploads/ad96634b-cce1-43d6-ad83-d21b2b2cd5ca.png',
     desc: 'Our most common and recommended post size—great balance of strength, cost, and longevity.',
   },
   {
     title: '5.5" x 5.5" x 10\' (6x6)',
     badge: 'Longest lasting',
+    img: '/lovable-uploads/3ab63582-2f4d-4294-99aa-f04fd0426960.png',
     desc: 'Premium, heavy-duty posts providing maximum rigidity and the best long-term performance.',
   },
   {
     title: 'Post on Pipe',
     badge: 'Steel core',
+    img: '/lovable-uploads/4240161f-87d0-4bbd-9c54-8d4fe261f7be.png',
     desc: 'A steel fence post inserted into a 4.125" x 4.125" x 7\' wood post to resist ground-rot factors.',
   },
 ];
@@ -97,7 +101,15 @@ const FenceStyles = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
+                <AspectRatio ratio={1}>
+                  <img
+                    src={p.img}
+                    alt={`${p.title} post option for Seattle fences by MyFence.com`}
+                    loading="lazy"
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </AspectRatio>
+                <p className="text-sm text-muted-foreground mt-4">{p.desc}</p>
               </CardContent>
             </Card>
           ))}
