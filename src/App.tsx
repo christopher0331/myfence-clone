@@ -16,7 +16,6 @@ import Financing from "./pages/Financing";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import AreaPage from "./pages/AreaPage";
 
 const queryClient = new QueryClient();
 
@@ -29,19 +28,18 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Header />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/fence-styles" element={<FenceStyles />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/quote" element={<QuoteTool />} />
-              <Route path="/financing" element={<Financing />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-conditions" element={<TermsConditions />} />
-              <Route path="/areas/:slug" element={<AreaPage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/fence-styles" element={<FenceStyles />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/quote" element={<QuoteTool />} />
+            <Route path="/financing" element={<Financing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
           <Footer />
         </BrowserRouter>
       

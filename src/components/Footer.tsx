@@ -27,7 +27,7 @@ const Footer = () => {
       {/* Footer */}
       <footer className="bg-background border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">MyFence.com</h3>
@@ -40,9 +40,9 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Sitemap */}
+            {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">Sitemap</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
@@ -74,31 +74,7 @@ const Footer = () => {
                     Contact
                   </Link>
                 </li>
-                <li>
-                  <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms-conditions" className="text-muted-foreground hover:text-primary transition-colors">
-                    Terms & Conditions
-                  </Link>
-                </li>
               </ul>
-            </div>
-
-            {/* Areas We Serve */}
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">Areas We Serve</h3>
-              <ul className="space-y-2">
-                <li><Link to="/areas/seattle" className="text-muted-foreground hover:text-primary transition-colors">Seattle, WA</Link></li>
-                <li><Link to="/areas/bellevue" className="text-muted-foreground hover:text-primary transition-colors">Bellevue, WA</Link></li>
-                <li><Link to="/areas/redmond" className="text-muted-foreground hover:text-primary transition-colors">Redmond, WA</Link></li>
-                <li><Link to="/areas/issaquah" className="text-muted-foreground hover:text-primary transition-colors">Issaquah, WA</Link></li>
-                <li><Link to="/areas/renton" className="text-muted-foreground hover:text-primary transition-colors">Renton, WA</Link></li>
-                <li><Link to="/areas/maple-valley" className="text-muted-foreground hover:text-primary transition-colors">Maple Valley, WA</Link></li>
-              </ul>
-              <p className="text-xs text-muted-foreground mt-3">Local pages are linked here for SEO discovery.</p>
             </div>
 
             {/* Social Media & Legal */}
