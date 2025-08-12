@@ -1,9 +1,12 @@
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import PaymentCalculator from "@/components/PaymentCalculator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Card } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
 import { getFenceStyleImages } from "@/data/fenceImages";
 
@@ -142,6 +145,15 @@ const PictureFrameFence = () => {
       embedUrl: embedUrl,
       contentUrl: videoUrl,
       thumbnailUrl: [heroImg]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myfence.com/" },
+        { "@type": "ListItem", position: 2, name: "Fence Styles", item: "https://myfence.com/fence-styles" },
+        { "@type": "ListItem", position: 3, name: "Picture Frame Fence", item: canonical }
+      ]
     }
   ];
 
@@ -278,6 +290,169 @@ const PictureFrameFence = () => {
                   </li>
                 </ul>
               </div>
+            </section>
+
+            <section aria-labelledby="key-specs-heading" className="space-y-3">
+              <h2 id="key-specs-heading" className="text-2xl font-semibold tracking-tight">Key specs</h2>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="w-[200px]">Spec</TableHead>
+                      <TableHead>Standard</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Posts</TableCell>
+                      <TableCell>4.125" x 4.125" x 9' set deeper than 2' with ~180 lbs properly mixed concrete</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Rails</TableCell>
+                      <TableCell>Two 2x4 rails, screwed directly into posts for strength</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Pickets</TableCell>
+                      <TableCell>Select-knot cedar (clear cedar upgrade available)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Cap/Trim</TableCell>
+                      <TableCell>Top 2x4 cap; picture-frame trim boards on each panel</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Fasteners</TableCell>
+                      <TableCell>Stainless steel fasteners standard to prevent corrosion/black streaking</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Gates</TableCell>
+                      <TableCell>Matching single/double gates; heavy-duty hardware</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Heights</TableCell>
+                      <TableCell>Common: 4', 5', 6', 8' (others on request)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Finishes</TableCell>
+                      <TableCell>Natural cedar; stain/seal options available</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            </section>
+
+            <section aria-labelledby="options-heading" className="space-y-3">
+              <h2 id="options-heading" className="text-2xl font-semibold tracking-tight">Options & upgrades</h2>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Rot board for added durability at grade</li>
+                <li>Board-on-board privacy (no direct sight lines)</li>
+                <li>4" exterior screws for superior hold</li>
+                <li>6x6 post upgrades</li>
+                <li>Steel core post-on-pipe systems</li>
+                <li>Decorative post caps and trim variants</li>
+                <li>Professional stain and seal options</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="pricing-heading" className="space-y-3">
+              <h2 id="pricing-heading" className="text-2xl font-semibold tracking-tight">Pricing & payment options</h2>
+              <p className="text-muted-foreground max-w-prose">
+                Transparent pricing varies by height, gates, and upgrades. Use the calculator for a quick monthly estimate or request a fast quote.
+              </p>
+              <PaymentCalculator />
+              <p className="text-sm text-muted-foreground">
+                Learn more about financing on our <Link to="/financing" className="text-primary underline">Financing</Link> page.
+              </p>
+            </section>
+
+            <section aria-labelledby="maintenance-heading" className="space-y-3">
+              <h2 id="maintenance-heading" className="text-2xl font-semibold tracking-tight">Maintenance & warranty</h2>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Annual rinse and light clean as needed.</li>
+                <li>Re-seal or stain every 2–3 years if you prefer a consistent tone.</li>
+                <li>Check gate operation and hardware seasonally; tighten if needed.</li>
+                <li>Cedar naturally silvers over time; staining helps preserve color.</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="permits-heading" className="space-y-3">
+              <h2 id="permits-heading" className="text-2xl font-semibold tracking-tight">Permits and HOA notes (Seattle/Eastside)</h2>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Verify property lines, setbacks, and any shared fence agreements.</li>
+                <li>Always call for utility locates before digging.</li>
+                <li>HOA approvals may specify height or look—picture frame is typically HOA-friendly.</li>
+              </ul>
+              <p className="text-sm text-muted-foreground">
+                Questions? <Link to="/fence-styles" className="text-primary underline">See styles</Link> or <Link to="/contact" className="text-primary underline">contact us</Link>.
+              </p>
+            </section>
+
+            <section aria-labelledby="comparison-heading" className="space-y-3">
+              <h2 id="comparison-heading" className="text-2xl font-semibold tracking-tight">Style comparison</h2>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="w-[180px]">Attribute</TableHead>
+                      <TableHead>Picture Frame</TableHead>
+                      <TableHead>Board-on-Board</TableHead>
+                      <TableHead>Horizontal Cedar</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Privacy</TableCell>
+                      <TableCell>High</TableCell>
+                      <TableCell>Very High (overlapping boards)</TableCell>
+                      <TableCell>High</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Look</TableCell>
+                      <TableCell>Clean framed trim</TableCell>
+                      <TableCell>Deep shadow lines</TableCell>
+                      <TableCell>Modern horizontal lines</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Cost</TableCell>
+                      <TableCell>$$</TableCell>
+                      <TableCell>$$$</TableCell>
+                      <TableCell>$$–$$$ (by board width)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Best for lots</TableCell>
+                      <TableCell>Sloped or level</TableCell>
+                      <TableCell>Maximum privacy</TableCell>
+                      <TableCell>Modern homes; level runs preferred</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            </section>
+
+            <section aria-labelledby="testimonials-heading" className="space-y-3">
+              <h2 id="testimonials-heading" className="text-2xl font-semibold tracking-tight">What local homeowners say</h2>
+              <div className="grid gap-4 md:grid-cols-2">
+                <Card className="p-4">
+                  <blockquote>
+                    <p>“The picture frame trim made our yard feel finished. Install was fast and clean.”</p>
+                    <footer className="mt-2 text-sm text-muted-foreground">— A. Nguyen, Bellevue</footer>
+                  </blockquote>
+                </Card>
+                <Card className="p-4">
+                  <blockquote>
+                    <p>“Great privacy and it follows our slope perfectly. Would hire again.”</p>
+                    <footer className="mt-2 text-sm text-muted-foreground">— J. Ramirez, Seattle</footer>
+                  </blockquote>
+                </Card>
+              </div>
+            </section>
+
+            <section aria-labelledby="related-heading" className="space-y-3">
+              <h2 id="related-heading" className="text-2xl font-semibold tracking-tight">Related styles</h2>
+              <ul className="list-disc pl-6 text-muted-foreground">
+                <li><Link to="/fence-styles" className="text-primary underline">Board-on-Board Cedar</Link></li>
+                <li><Link to="/fence-styles" className="text-primary underline">Horizontal Cedar</Link></li>
+                <li><Link to="/fence-styles" className="text-primary underline">Vinyl Privacy</Link></li>
+              </ul>
             </section>
 
             <div className="mt-6 text-sm text-muted-foreground">
