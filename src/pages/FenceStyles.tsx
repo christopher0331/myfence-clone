@@ -49,7 +49,7 @@ const addOns = [
   { title: 'Clear Cedar Fence Boards Upgrade', img: '/lovable-uploads/d27f46a0-cb41-4ed9-917a-44e0969e2f57.png', desc: 'Premium clear cedar boards with minimal knots for a refined appearance.' },
   { title: 'Board on Board Style', img: '/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png', desc: 'Overlapping fence boards eliminate gaps for complete privacy.' },
   { title: '2x4 Rot Board', img: '/lovable-uploads/f24146a2-1913-4499-8e33-5f182b33635e.png', desc: 'Bottom 2x4 sacrificial board for near-zero ground clearance without exposing cedar to soil.' },
-  { title: 'Pre-Staining', img: '/lovable-uploads/db54ffc7-0a53-423c-9a9e-aba4d5a0b308.png', desc: 'Cedar components are stained prior to install for consistent coverage and early protection.' },
+  { title: 'Pre-Staining', img: '/lovable-uploads/64a3d163-65f2-4ddc-a1bb-cc89381508a1.png', desc: 'Cedar components are stained prior to install for consistent coverage and early protection.' },
   { title: 'Soil Haul-Away', img: '/lovable-uploads/19760b8b-24e6-48d2-991f-f1dd5b571776.png', desc: 'We remove excess soil generated during post hole digging.' },
   { title: 'Trellis Systems', img: '/lovable-uploads/793a9940-252a-431c-bc9c-f109022e1b92.png', desc: 'Add trellis features to elevate curb appeal and support plants.' },
 ];
