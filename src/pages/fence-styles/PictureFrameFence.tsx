@@ -292,7 +292,7 @@ const PictureFrameFence = () => {
               </div>
             </section>
 
-            <section aria-labelledby="key-specs-heading" className="space-y-3">
+            <section aria-labelledby="key-specs-heading" className="space-y-3 hidden md:block">
               <h2 id="key-specs-heading" className="text-2xl font-semibold tracking-tight">Key specs</h2>
               <div className="md:overflow-x-auto overflow-x-visible">
                 <Table>
@@ -353,7 +353,7 @@ const PictureFrameFence = () => {
               </ul>
             </section>
 
-            <section aria-labelledby="pricing-heading" className="space-y-3">
+            <section aria-labelledby="pricing-heading" className="space-y-3 hidden md:block">
               <h2 id="pricing-heading" className="text-2xl font-semibold tracking-tight">Pricing & payment options</h2>
               <p className="text-muted-foreground max-w-prose">
                 Transparent pricing varies by height, gates, and upgrades. Use the calculator for a quick monthly estimate or request a fast quote.
@@ -386,7 +386,7 @@ const PictureFrameFence = () => {
               </p>
             </section>
 
-            <section aria-labelledby="comparison-heading" className="space-y-3">
+            <section aria-labelledby="comparison-heading" className="space-y-3 hidden md:block">
               <h2 id="comparison-heading" className="text-2xl font-semibold tracking-tight">Style comparison</h2>
               <div className="md:overflow-x-auto overflow-x-visible">
                 <Table>
