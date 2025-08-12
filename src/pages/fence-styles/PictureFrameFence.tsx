@@ -294,11 +294,11 @@ const PictureFrameFence = () => {
 
             <section aria-labelledby="key-specs-heading" className="space-y-3">
               <h2 id="key-specs-heading" className="text-2xl font-semibold tracking-tight">Key specs</h2>
-              <div className="overflow-x-auto">
+              <div className="md:overflow-x-auto overflow-x-visible">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
-                      <TableHead className="w-[200px]">Spec</TableHead>
+                      <TableHead className="md:w-[200px]">Spec</TableHead>
                       <TableHead>Standard</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -388,11 +388,11 @@ const PictureFrameFence = () => {
 
             <section aria-labelledby="comparison-heading" className="space-y-3">
               <h2 id="comparison-heading" className="text-2xl font-semibold tracking-tight">Style comparison</h2>
-              <div className="overflow-x-auto">
+              <div className="md:overflow-x-auto overflow-x-visible">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
-                      <TableHead className="w-[180px]">Attribute</TableHead>
+                      <TableHead className="md:w-[180px]">Attribute</TableHead>
                       <TableHead>Picture Frame</TableHead>
                       <TableHead>Board-on-Board</TableHead>
                       <TableHead>Horizontal Cedar</TableHead>
