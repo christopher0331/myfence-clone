@@ -16,7 +16,7 @@ import Financing from "./pages/Financing";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-
+import PictureFrameFence from "./pages/fence-styles/PictureFrameFence";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,6 +31,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/fence-styles" element={<FenceStyles />} />
+            <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/quote" element={<QuoteTool />} />
             <Route path="/financing" element={<Financing />} />

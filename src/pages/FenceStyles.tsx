@@ -2,7 +2,7 @@ import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
+import { Link } from "react-router-dom";
 
 const styles = [
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Classic privacy with sturdy cedar boards and clean lines." },
@@ -81,6 +81,15 @@ const FenceStyles = () => {
                   <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-full object-cover rounded-md" />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
+                {s.title === "Picture Frame Fence" && (
+                  <Link
+                    to="/fence-styles/picture-frame-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about Picture Frame Fence"
+                  >
+                    Learn more about Picture Frame Fence →
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}
