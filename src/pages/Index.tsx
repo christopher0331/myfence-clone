@@ -253,59 +253,44 @@ const Index = () => {
       </section>
 
       {/* Contact form */}
-      <section className="relative py-12 md:py-20">
-        {/* Full-width charcoal background */}
-        <div className="pointer-events-none absolute inset-0 left-1/2 w-screen -translate-x-1/2" aria-hidden="true">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/ef222e85-1fd8-4817-a4f7-8467a08663ad.png')] bg-cover bg-center opacity-100" />
-        </div>
-        <div className="container relative">
-          <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
-
-          <form
-            className="grid md:grid-cols-2 gap-6 mt-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
-            }}
-          >
-            <div className="grid gap-4">
-              <div>
-                <Label htmlFor="name">Name</Label>
-                <div className="glass-card p-1 mt-1">
-                  <Input id="name" required className="bg-transparent border-0 focus-visible:ring-0" />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <div className="glass-card p-1 mt-1">
-                  <Input id="email" type="email" required className="bg-transparent border-0 focus-visible:ring-0" />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="phone">Phone</Label>
-                <div className="glass-card p-1 mt-1">
-                  <Input id="phone" type="tel" className="bg-transparent border-0 focus-visible:ring-0" />
-                </div>
-              </div>
+      <section className="container py-12 md:py-20">
+        <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
+        <form
+          className="grid md:grid-cols-2 gap-6 mt-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
+          }}
+        >
+          <div className="grid gap-4">
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" required />
             </div>
-            <div className="grid gap-4">
-              <div className="h-full flex flex-col">
-                <Label htmlFor="message">Message</Label>
-                <div className="glass-card p-1 mt-1 flex-1">
-                  <Textarea id="message" className="min-h-[180px] flex-1 bg-transparent border-0 focus-visible:ring-0" required />
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Button type="submit">Send message</Button>
-                <Button variant="secondary" asChild>
-                  <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" required />
             </div>
-          </form>
-        </div>
+            <div>
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" type="tel" />
+            </div>
+          </div>
+          <div className="grid gap-4">
+            <div className="h-full flex flex-col">
+              <Label htmlFor="message">Message</Label>
+              <Textarea id="message" className="min-h-[180px] flex-1" required />
+            </div>
+            <div className="flex gap-3">
+              <Button type="submit">Send message</Button>
+              <Button variant="secondary" asChild>
+                <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+          </div>
+        </form>
       </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
