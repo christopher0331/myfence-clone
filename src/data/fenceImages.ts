@@ -36,14 +36,18 @@ export const FENCE_STYLE_IMAGES: Record<FenceStyleKey, FenceStyleImages> = {
       alt: "Picture frame cedar fence installed in Seattle by MyFence.com",
     },
     gallery: [
-      {
-        src: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
-        alt: "3-rail picture frame fence detail in Seattle",
-      },
-      {
-        src: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png",
-        alt: "Solid board picture frame cedar fence panel close-up",
-      },
+      { src: "/lovable-uploads/ad4ca7a4-6910-4508-a789-c7a367954f3e.png", alt: "Picture frame cedar fence on rock retaining wall" },
+      { src: "/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png", alt: "Picture frame cedar fence with post caps, long run" },
+      { src: "/lovable-uploads/2ac212df-4601-45ef-8adf-5332eab86f75.png", alt: "Picture frame fence along backyard with cap and trim" },
+      { src: "/lovable-uploads/7586a395-5060-4524-a596-fd70bb61c275.png", alt: "Neighborhood corner lot picture frame cedar fence with gate" },
+      { src: "/lovable-uploads/c13a6e02-2011-4437-a7cb-5de49f6f62b9.png", alt: "Wooded property picture frame fence showing cap and trim detail" },
+      { src: "/lovable-uploads/bc08ad97-c013-4147-9f4e-4bf7d991ee7f.png", alt: "Picture frame fence through trees with consistent top line" },
+      { src: "/lovable-uploads/07de637e-347f-4731-ae87-f86ca8fec0cf.png", alt: "Wide view of picture frame cedar fence and double gate" },
+      { src: "/lovable-uploads/18bcf8ea-1a02-4a94-8c2d-8b4364b7cd7e.png", alt: "Fence Genius planning visualization with picture frame fence" },
+      { src: "/lovable-uploads/129dbf8c-8581-4f19-b2d0-2813d517f092.png", alt: "Picture frame fence and Fence Genius grade-following model" },
+      { src: "/lovable-uploads/9f934060-aa7f-4147-9100-775bb5867e91.png", alt: "Picture frame fence with double gate and Fence Genius design" },
+      { src: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", alt: "3-rail picture frame fence detail in Seattle" },
+      { src: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", alt: "Solid board picture frame cedar fence panel close-up" },
     ],
   },
   "horizontal-cedar": {
