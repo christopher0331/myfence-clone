@@ -15,9 +15,10 @@ const QuoteTool = () => {
           style={{ backgroundImage: "url('/lovable-uploads/28e8e878-729d-417b-ad3f-53643cf19710.png')" }}
           aria-hidden="true"
         />
-        <div className="container relative">
-          <h1 className="text-4xl font-bold tracking-tight mb-3">Instant Online Quote</h1>
-          <p className="text-muted-foreground max-w-2xl">Use our online tool to get real-time pricing for your fence project.</p>
+        <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
+        <div className="container relative z-10">
+          <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Instant Online Quote</h1>
+          <p className="max-w-2xl text-background/90">Use our online tool to get real-time pricing for your fence project.</p>
 
           <Card className="mt-8">
             <CardContent className="p-0">
@@ -32,8 +33,8 @@ const QuoteTool = () => {
               />
             </CardContent>
           </Card>
-          <p className="text-xs text-muted-foreground mt-2">
-            If the tool doesn't load, open it in a new tab: <a href="https://seattlefencequote.com/" className="underline" target="_blank" rel="noopener noreferrer">seattlefencequote.com</a>
+          <p className="text-xs text-background/80 mt-2">
+            If the tool doesn't load, open it in a new tab: <a href="https://seattlefencequote.com/" className="underline text-background" target="_blank" rel="noopener noreferrer">seattlefencequote.com</a>
           </p>
         </div>
       </section>
