@@ -262,45 +262,50 @@ const Index = () => {
         <div className="container relative">
           <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
-          <Card className="mt-6 glass-card">
-            <CardContent className="p-6">
-              <form
-                className="grid md:grid-cols-2 gap-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
-                }}
-              >
-                <div className="grid gap-4">
-                  <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" type="tel" />
-                  </div>
+
+          <form
+            className="grid md:grid-cols-2 gap-6 mt-6"
+            onSubmit={(e) => {
+              e.preventDefault();
+              toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
+            }}
+          >
+            <div className="grid gap-4">
+              <div>
+                <Label htmlFor="name">Name</Label>
+                <div className="glass-card p-1 mt-1">
+                  <Input id="name" required className="bg-transparent border-0 focus-visible:ring-0" />
                 </div>
-                <div className="grid gap-4">
-                  <div className="h-full flex flex-col">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" className="min-h-[180px] flex-1" required />
-                  </div>
-                  <div className="flex gap-3">
-                    <Button type="submit">Send message</Button>
-                    <Button variant="secondary" asChild>
-                      <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+              </div>
+              <div>
+                <Label htmlFor="email">Email</Label>
+                <div className="glass-card p-1 mt-1">
+                  <Input id="email" type="email" required className="bg-transparent border-0 focus-visible:ring-0" />
                 </div>
-              </form>
-            </CardContent>
-          </Card>
+              </div>
+              <div>
+                <Label htmlFor="phone">Phone</Label>
+                <div className="glass-card p-1 mt-1">
+                  <Input id="phone" type="tel" className="bg-transparent border-0 focus-visible:ring-0" />
+                </div>
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <div className="h-full flex flex-col">
+                <Label htmlFor="message">Message</Label>
+                <div className="glass-card p-1 mt-1 flex-1">
+                  <Textarea id="message" className="min-h-[180px] flex-1 bg-transparent border-0 focus-visible:ring-0" required />
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Button type="submit">Send message</Button>
+                <Button variant="secondary" asChild>
+                  <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+            </div>
+          </form>
         </div>
       </section>
 
