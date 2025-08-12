@@ -54,6 +54,12 @@ All colors MUST be HSL.
     --shadow-elevated: 0 10px 30px -10px hsl(161 60% 35% / 0.25);
     --shadow-glow: 0 0 40px hsl(161 60% 45% / 0.35);
     --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Glass tokens */
+    --glass-color: var(--card);
+    --glass-opacity: 0.55;
+    --glass-border-opacity: 0.6;
+    --glass-highlight: 0.06;
   }
 
   .dark {
@@ -93,6 +99,12 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 160 50% 46%;
+
+    /* Glass tokens - dark theme */
+    --glass-color: var(--foreground);
+    --glass-opacity: 0.08;
+    --glass-border-opacity: 0.12;
+    --glass-highlight: 0.08;
   }
 }
 
@@ -121,8 +133,8 @@ All colors MUST be HSL.
   .glass-card {
     position: relative;
     border-radius: calc(var(--radius) * 1.25);
-    background: hsl(var(--card) / 0.55);
-    border: 1px solid hsl(var(--border) / 0.6);
+    background: hsl(var(--glass-color) / var(--glass-opacity));
+    border: 1px solid hsl(var(--foreground) / var(--glass-border-opacity));
     backdrop-filter: blur(12px) saturate(120%);
     -webkit-backdrop-filter: blur(12px) saturate(120%);
     box-shadow: var(--shadow-elevated);
@@ -132,7 +144,7 @@ All colors MUST be HSL.
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(180deg, hsl(var(--foreground) / 0.06), transparent 35%);
+    background: linear-gradient(180deg, hsl(var(--foreground) / var(--glass-highlight)), transparent 35%);
     pointer-events: none;
   }
   .glass-frame {
