@@ -68,7 +68,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     <div className="rounded-lg border bg-card p-6 shadow-sm">
       <h3 className="text-xl font-semibold tracking-tight">Get a Free Quote</h3>
       <p className="text-sm text-muted-foreground mb-4">
-        Tell us about your project and well provide a detailed estimate.
+        Tell us about your project and we'll provide a detailed estimate.
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
@@ -80,6 +80,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             onChange={handleInputChange}
             required
             placeholder="Enter your full name"
+            autoComplete="name"
           />
         </div>
 
@@ -93,6 +94,8 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             onChange={handleInputChange}
             required
             placeholder="your.email@example.com"
+            autoComplete="email"
+            inputMode="email"
           />
         </div>
 
@@ -106,6 +109,8 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             onChange={handleInputChange}
             required
             placeholder="(253) 555-0123"
+            autoComplete="tel"
+            inputMode="tel"
           />
         </div>
 
@@ -118,6 +123,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             onChange={handleInputChange}
             required
             placeholder="Street address, City, State, ZIP"
+            autoComplete="street-address"
           />
         </div>
 
@@ -131,6 +137,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             required
             placeholder="Describe your fencing project: type, length, height, materials..."
             rows={4}
+            autoComplete="off"
           />
         </div>
 

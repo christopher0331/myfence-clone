@@ -94,6 +94,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               onChange={handleInputChange}
               required
               placeholder="Enter your full name"
+              autoComplete="name"
             />
           </div>
 
@@ -107,6 +108,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               onChange={handleInputChange}
               required
               placeholder="your.email@example.com"
+              autoComplete="email"
+              inputMode="email"
             />
           </div>
 
@@ -120,6 +123,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               onChange={handleInputChange}
               required
               placeholder="(253) 555-0123"
+              autoComplete="tel"
+              inputMode="tel"
             />
           </div>
 
@@ -132,6 +137,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               onChange={handleInputChange}
               required
               placeholder="Street address, City, State, ZIP"
+              autoComplete="street-address"
             />
           </div>
 
@@ -145,22 +151,23 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               required
               placeholder="Describe your fencing project: type of fence, approximate length, height, any special requirements..."
               rows={4}
+              autoComplete="off"
             />
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
-              className="flex-1"
+              className="w-full sm:flex-1"
               disabled={isSubmitting}
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="flex-1"
+              className="w-full sm:flex-1"
               disabled={isSubmitting}
             >
               {isSubmitting ? (

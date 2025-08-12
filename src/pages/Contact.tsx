@@ -49,25 +49,25 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" required />
+                  <Input id="name" required autoComplete="name" />
                 </div>
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" required />
+                  <Input id="email" type="email" required autoComplete="email" inputMode="email" />
                 </div>
                 <div>
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" />
+                  <Input id="phone" type="tel" autoComplete="tel" inputMode="tel" />
                 </div>
               </div>
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="message">How can we help?</Label>
-                  <Textarea id="message" rows={7} required />
+                  <Textarea id="message" rows={7} required autoComplete="off" />
                 </div>
-                <div className="flex gap-3">
-                  <Button type="submit" variant="hero">Send Message</Button>
-                  <Button type="button" variant="secondary" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button type="submit" variant="hero" className="w-full sm:w-auto">Send Message</Button>
+                  <Button type="button" variant="secondary" className="w-full sm:w-auto" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
                 </div>
               </div>
             </form>
