@@ -95,6 +95,9 @@ const PictureFrameFence = () => {
     ],
   };
 
+  const videoUrl = "https://youtu.be/9k_jcZ3eEKk?si=rEWXZY0CcnPZYVZ3";
+  const embedUrl = "https://www.youtube.com/embed/9k_jcZ3eEKk";
+
   const structuredData = [
     serviceStructuredData,
     faqStructuredData,
@@ -121,6 +124,15 @@ const PictureFrameFence = () => {
         },
       ],
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: "Picture Frame Fence Installation Video",
+      description: "Step-by-step installation of a picture frame fence.",
+      embedUrl: embedUrl,
+      contentUrl: videoUrl,
+      thumbnailUrl: [heroImg]
+    }
   ];
 
   return (
@@ -247,6 +259,30 @@ const PictureFrameFence = () => {
           <aside className="md:col-span-1">
             <InlineQuoteForm context="Picture Frame Fence Page" />
           </aside>
+        </section>
+
+        <section className="mt-12 space-y-4" aria-labelledby="installation-video-heading">
+          <h2 id="installation-video-heading" className="text-2xl font-semibold tracking-tight">Picture Frame Fence Installation Video</h2>
+          <p className="text-muted-foreground max-w-prose">
+            Watch how we install a picture frame fence step by step.
+          </p>
+          <AspectRatio ratio={16/9}>
+            <iframe
+              src="https://www.youtube.com/embed/9k_jcZ3eEKk?rel=0"
+              title="Picture Frame Fence Installation Video"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="h-full w-full rounded-md"
+            />
+          </AspectRatio>
+          <p className="text-sm">
+            Prefer to watch on YouTube?{" "}
+            <a href="https://youtu.be/9k_jcZ3eEKk?si=rEWXZY0CcnPZYVZ3" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+              Open the installation video
+            </a>
+          </p>
         </section>
       </article>
     </main>
