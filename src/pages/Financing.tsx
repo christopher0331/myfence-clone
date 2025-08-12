@@ -44,7 +44,17 @@ const Financing = () => {
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative">
               <AspectRatio ratio={16 / 9}>
-                <img src={cedarImg} alt="Affordable fence financing with MyFence.com - cedar fence" className="h-full w-full object-cover" loading="lazy" />
+                <div className="relative h-full w-full">
+                  <img src={cedarImg} alt="Affordable fence financing with MyFence.com - cedar fence" className="h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute bottom-3 right-3 rounded-md bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur border border-border shadow">
+                    <img
+                      src="/lovable-uploads/d8855859-ffa0-433c-a0b1-310bea0772c7.png"
+                      alt="Wisetack financing logo"
+                      className="w-24 md:w-28 h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </AspectRatio>
             </div>
             <CardContent className="p-6 md:p-10 flex items-center">
@@ -81,7 +91,17 @@ const Financing = () => {
             </CardContent>
             <div className="order-1 md:order-2">
               <AspectRatio ratio={16 / 9}>
-                <img src={vinylImg} alt="Wisetack fence financing - vinyl fence" className="h-full w-full object-cover" loading="lazy" />
+                <div className="relative h-full w-full">
+                  <img src={vinylImg} alt="Wisetack fence financing - vinyl fence" className="h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute bottom-3 right-3 rounded-md bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur border border-border shadow">
+                    <img
+                      src="/lovable-uploads/d8855859-ffa0-433c-a0b1-310bea0772c7.png"
+                      alt="Wisetack financing logo"
+                      className="w-24 md:w-28 h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </AspectRatio>
             </div>
           </div>
