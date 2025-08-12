@@ -3,10 +3,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import cedarImg from "@/assets/fences/cedar.jpg";
-import modernImg from "@/assets/fences/horizontal-cedar.jpg";
-import vinylImg from "@/assets/fences/vinyl.jpg";
-import ironImg from "@/assets/fences/wrought-iron.jpg";
 
 const Financing = () => {
   const faq = [
@@ -45,7 +41,7 @@ const Financing = () => {
             <div className="relative">
               <AspectRatio ratio={16 / 9}>
                 <div className="relative h-full w-full">
-                  <img src={cedarImg} alt="Affordable fence financing with MyFence.com - cedar fence" className="h-full w-full object-cover" loading="lazy" />
+                  <img src="/lovable-uploads/e52411ee-d747-443a-8932-16c9c7d15783.png" alt="Affordable fence financing - real cedar fence by MyFence.com" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute bottom-3 right-3 rounded-md bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur border border-border shadow">
                     <img
                       src="/lovable-uploads/d8855859-ffa0-433c-a0b1-310bea0772c7.png"
@@ -92,7 +88,7 @@ const Financing = () => {
             <div className="order-1 md:order-2">
               <AspectRatio ratio={16 / 9}>
                 <div className="relative h-full w-full">
-                  <img src={vinylImg} alt="Wisetack fence financing - vinyl fence" className="h-full w-full object-cover" loading="lazy" />
+                  <img src="/lovable-uploads/163ba846-abc0-41a1-b5bf-320f68ae0051.png" alt="Wisetack fence financing - real fence photo" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute bottom-3 right-3 rounded-md bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur border border-border shadow">
                     <img
                       src="/lovable-uploads/d8855859-ffa0-433c-a0b1-310bea0772c7.png"
@@ -114,7 +110,7 @@ const Financing = () => {
           <div className="grid md:grid-cols-2 gap-0">
             <div>
               <AspectRatio ratio={16 / 9}>
-                <img src={ironImg} alt="Flexible fence financing options - wrought iron fence" className="h-full w-full object-cover" loading="lazy" />
+                <img src="/lovable-uploads/d7d271d5-5f96-4b02-94e4-06461d83440f.png" alt="Flexible fence financing options - real cedar fence with top window panels" className="h-full w-full object-cover" loading="lazy" />
               </AspectRatio>
             </div>
             <CardContent className="p-6 md:p-10 flex items-center">
@@ -163,7 +159,7 @@ const Financing = () => {
             </CardContent>
             <div className="order-1 md:order-2">
               <AspectRatio ratio={16 / 9}>
-                <img src={modernImg} alt="How fence financing works - horizontal cedar fence" className="h-full w-full object-cover" loading="lazy" />
+                <img src="/lovable-uploads/d01dc2d4-efdb-4442-87de-2ac676b59fa2.png" alt="How fence financing works - real fence and 3D design" className="h-full w-full object-cover" loading="lazy" />
               </AspectRatio>
             </div>
           </div>
