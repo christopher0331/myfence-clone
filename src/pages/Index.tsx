@@ -253,44 +253,55 @@ const Index = () => {
       </section>
 
       {/* Contact form */}
-      <section className="container py-12 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
-        <form
-          className="grid md:grid-cols-2 gap-6 mt-6"
-          onSubmit={(e) => {
-            e.preventDefault();
-            toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
-          }}
-        >
-          <div className="grid gap-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" required />
-            </div>
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" required />
-            </div>
-            <div>
-              <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" type="tel" />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div className="h-full flex flex-col">
-              <Label htmlFor="message">Message</Label>
-              <Textarea id="message" className="min-h-[180px] flex-1" required />
-            </div>
-            <div className="flex gap-3">
-              <Button type="submit">Send message</Button>
-              <Button variant="secondary" asChild>
-                <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
-          </div>
-        </form>
+      <section className="relative py-12 md:py-20">
+        {/* Full-width charcoal background */}
+        <div className="pointer-events-none absolute inset-0 left-1/2 w-screen -translate-x-1/2" aria-hidden="true">
+          <div className="absolute inset-0 bg-[url('/lovable-uploads/106b2d60-f675-4d8b-aaeb-c5c88ed37f4d.png')] bg-cover bg-center opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
+        </div>
+        <div className="container relative">
+          <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
+          <Card className="mt-6 glass-card">
+            <CardContent className="p-6">
+              <form
+                className="grid md:grid-cols-2 gap-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
+                }}
+              >
+                <div className="grid gap-4">
+                  <div>
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" type="tel" />
+                  </div>
+                </div>
+                <div className="grid gap-4">
+                  <div className="h-full flex flex-col">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" className="min-h-[180px] flex-1" required />
+                  </div>
+                  <div className="flex gap-3">
+                    <Button type="submit">Send message</Button>
+                    <Button variant="secondary" asChild>
+                      <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
