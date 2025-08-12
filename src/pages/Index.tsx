@@ -256,8 +256,7 @@ const Index = () => {
       <section className="relative py-12 md:py-20">
         {/* Full-width charcoal background */}
         <div className="pointer-events-none absolute inset-0 left-1/2 w-screen -translate-x-1/2" aria-hidden="true">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/106b2d60-f675-4d8b-aaeb-c5c88ed37f4d.png')] bg-cover bg-center opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
+          <div className="absolute inset-0 bg-[url('/lovable-uploads/106b2d60-f675-4d8b-aaeb-c5c88ed37f4d.png')] bg-cover bg-center opacity-100" />
         </div>
         <div className="container relative">
           <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
