@@ -153,7 +153,7 @@ const Index = () => {
                   <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
                 </AspectRatio>
               </div>
-              <div className="p-4">
+              <div className="p-4 text-center">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
                 <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
@@ -167,7 +167,7 @@ const Index = () => {
                   <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
                 </AspectRatio>
               </div>
-              <div className="p-4">
+              <div className="p-4 text-center">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
                 <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
@@ -181,7 +181,7 @@ const Index = () => {
                   <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
                 </AspectRatio>
               </div>
-              <div className="p-4">
+              <div className="p-4 text-center">
                 <h3 className="font-semibold">Horizontal Lattice Fence</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
                 <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
