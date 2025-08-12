@@ -3,6 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import PaymentCalculator from "@/components/PaymentCalculator";
 
 const Financing = () => {
   const faq = [
@@ -164,6 +165,11 @@ const Financing = () => {
             </div>
           </div>
         </Card>
+      </section>
+
+      {/* Payment Calculator */}
+      <section className="container py-8">
+        <PaymentCalculator />
       </section>
 
       {/* FAQ & Actions */}
