@@ -172,7 +172,7 @@ const PictureFrameFence = () => {
           <div>
             <h1 className="text-4xl font-bold tracking-tight">Picture Frame Fence</h1>
             <p className="mt-3 text-muted-foreground max-w-prose">
-              A picture frame fence adds a clean, finished border around every panel. Built in select
+              A picture frame fence adds a clean, finished border around every panel. Built in #1 grade
               cedar with precise trim details, it delivers premium curb appeal without sacrificing
               privacy or durability. Our Fence Genius planning technology ensures every post, panel,
               and corner lands exactly where it should.
@@ -228,7 +228,7 @@ const PictureFrameFence = () => {
 
             <h3 className="text-xl font-semibold tracking-tight">Details that matter</h3>
             <p className="text-muted-foreground max-w-prose">
-              Choose standard select-knot cedar or upgrade to clear cedar for the most refined finish.
+              Our standard is #1 grade cedar; upgrade to clear cedar for the most refined finish.
               Add a rot board, board-on-board privacy, or 4" exterior screws for superior hold. For
               maximum post life, we offer 4.125" posts or 6x6 upgrades, and steel core post-on-pipe
               systems. Explore options on our <Link to="/fence-styles#post-options" className="text-primary underline">post options</Link> and
@@ -314,7 +314,7 @@ const PictureFrameFence = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell className="font-medium">Pickets</TableCell>
-                      <TableCell>Select-knot cedar (clear cedar upgrade available)</TableCell>
+                      <TableCell>#1 grade cedar (clear cedar upgrade available)</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="font-medium">Cap/Trim</TableCell>
