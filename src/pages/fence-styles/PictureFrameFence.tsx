@@ -10,7 +10,7 @@ const altHero = "Picture frame cedar fence installed in Seattle by MyFence.com";
 
 const PictureFrameFence = () => {
   const canonical = "https://myfence.com/fence-styles/picture-frame-fence";
-  const structuredData = {
+  const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Picture Frame Fence Installation",
@@ -31,6 +31,51 @@ const PictureFrameFence = () => {
       name: "Fence Genius",
     },
   };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How is a picture frame fence constructed?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Our picture frame fences are built with two 2x4 rails, two trim boards that frame each panel, and a top 2x4 cap for a clean, finished look.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How are rails attached to the posts?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "All 2x4 rails are screwed directly into the fence posts for superior strength and long-term stability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What fence posts and footings do you use?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "We standardize on 4.125\"x4.125\"x9' fence posts set deeper than 2 feet in the ground with approximately 180 pounds of properly mixed concrete.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you use stainless fasteners?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes. We use stainless steel fasteners as standard to prevent corrosion and eliminate black streaking common with galvanized fasteners.",
+        },
+      },
+    ],
+  };
+
+  const structuredData = [serviceStructuredData, faqStructuredData];
 
   return (
     <main>
@@ -88,6 +133,19 @@ const PictureFrameFence = () => {
               maximum post life, we offer 4.125" posts or 6x6 upgrades, and steel core post-on-pipe
               systems. Explore options on our <Link to="/fence-styles#post-options" className="text-primary underline">post options</Link> and
               <Link to="/fence-styles#add-on-options" className="text-primary underline ml-1">add-ons</Link> pages.
+            </p>
+
+            <h3 className="text-xl font-semibold tracking-tight">How we build picture frame fences (our standard)</h3>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>Two 2x4 rails, two trim boards per panel, and a top 2x4 cap for a clean, framed profile.</li>
+              <li>All 2x4 rails are screwed directly into the fence posts for maximum strength and stability.</li>
+              <li>Standard posts: 4.125" x 4.125" x 9' set deeper than 2' with approximately 180 lbs of properly mixed concrete.</li>
+              <li>Stainless steel fasteners used as standard to prevent corrosion and black streaking common with galvanized hardware.</li>
+            </ul>
+
+            <p className="text-muted-foreground max-w-prose">
+              These construction details are part of every MyFence.com installation and further enhanced by
+              our Fence Genius planning technology for precise layouts, reduced change orders, and a premium finish.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
