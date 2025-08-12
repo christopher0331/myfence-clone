@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
 import { getFenceStyleImages } from "@/data/fenceImages";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const images = getFenceStyleImages("picture-frame");
 const heroImg = images.hero.src;
@@ -28,10 +29,17 @@ const PictureFrameFence = () => {
       url: "https://myfence.com",
       telephone: "+1-253-455-1885",
     },
-    areaServed: {
-      "@type": "Place",
-      name: "Seattle, WA metro area",
-    },
+    areaServed: [
+      { "@type": "Place", name: "Seattle, WA" },
+      { "@type": "Place", name: "Bellevue, WA" },
+      { "@type": "Place", name: "Kirkland, WA" },
+      { "@type": "Place", name: "Redmond, WA" },
+      { "@type": "Place", name: "Sammamish, WA" },
+      { "@type": "Place", name: "Issaquah, WA" },
+      { "@type": "Place", name: "Bothell, WA" },
+      { "@type": "Place", name: "Shoreline, WA" },
+      { "@type": "Place", name: "Renton, WA" }
+    ],
     image: [heroImg],
     brand: {
       "@type": "Brand",
@@ -371,6 +379,24 @@ const PictureFrameFence = () => {
               </ul>
             </section>
 
+            <section aria-labelledby="gates-heading" className="space-y-3">
+              <h2 id="gates-heading" className="text-2xl font-semibold tracking-tight">Gates & hardware</h2>
+              <Card className="p-4 md:p-6 glass-card">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                  {[images.gallery[3], images.gallery[8], images.gallery[17]].map((img, idx) => (
+                    <AspectRatio key={idx} ratio={4/3}>
+                      <img src={img?.src} alt={img?.alt} loading="lazy" className="h-full w-full rounded-md object-cover" />
+                    </AspectRatio>
+                  ))}
+                </div>
+                <ul className="list-disc pl-6 mt-4 text-muted-foreground">
+                  <li>Single and double walk/drive gates matched to your fence.</li>
+                  <li>Heavy-duty hinges, latches, and optional self-closing hardware.</li>
+                  <li>Framed gate construction for stability and long-term alignment.</li>
+                </ul>
+              </Card>
+            </section>
+
             <section aria-labelledby="pricing-heading" className="space-y-3 hidden md:block">
               <h2 id="pricing-heading" className="text-2xl font-semibold tracking-tight">Pricing & payment options</h2>
               <p className="text-muted-foreground max-w-prose">
@@ -395,6 +421,87 @@ const PictureFrameFence = () => {
                 <li>Check gate operation and hardware seasonally; tighten if needed.</li>
                 <li>Cedar naturally silvers over time; staining helps preserve color.</li>
               </ul>
+            </section>
+
+            <section aria-labelledby="reviews-mini-heading" className="space-y-3">
+              <h2 id="reviews-mini-heading" className="text-2xl font-semibold tracking-tight">What homeowners say</h2>
+              <Card className="p-4 md:p-6 glass-card">
+                <div className="grid md:grid-cols-3 gap-4">
+                  <figure>
+                    <blockquote className="text-sm">“Beautiful picture frame fence and sturdy gates. Crew was professional and fast.”</blockquote>
+                    <figcaption className="mt-2 text-xs text-muted-foreground">— A. Nguyen, Seattle</figcaption>
+                  </figure>
+                  <figure>
+                    <blockquote className="text-sm">“Accurate quote, clean trim details, and excellent communication.”</blockquote>
+                    <figcaption className="mt-2 text-xs text-muted-foreground">— J. Patel, Bellevue</figcaption>
+                  </figure>
+                  <figure>
+                    <blockquote className="text-sm">“Fence Genius planning nailed the layout on our sloped yard.”</blockquote>
+                    <figcaption className="mt-2 text-xs text-muted-foreground">— R. Lee, Kirkland</figcaption>
+                  </figure>
+                </div>
+              </Card>
+            </section>
+
+            <section aria-labelledby="service-areas-heading" className="space-y-3">
+              <h2 id="service-areas-heading" className="text-2xl font-semibold tracking-tight">Service areas</h2>
+              <p className="text-muted-foreground">We build picture frame fences across the Seattle metro.</p>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-muted-foreground">
+                <li>Seattle</li>
+                <li>Bellevue</li>
+                <li>Kirkland</li>
+                <li>Redmond</li>
+                <li>Sammamish</li>
+                <li>Issaquah</li>
+                <li>Bothell</li>
+                <li>Shoreline</li>
+                <li>Renton</li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="faq-heading" className="space-y-3">
+              <h2 id="faq-heading" className="text-2xl font-semibold tracking-tight">Picture Frame Fence FAQs</h2>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>How long does a cedar picture frame fence last in Seattle?</AccordionTrigger>
+                  <AccordionContent>
+                    With #1 grade cedar, stainless fasteners, and proper install, you can expect 15–25+ years. Stain/seal extends life.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Is this style good for pets and privacy?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes—tight picket spacing limits gaps, and board-on-board upgrades remove direct sight lines for maximum privacy.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Will it handle wind or slopes?</AccordionTrigger>
+                  <AccordionContent>
+                    Our planning accounts for grade changes; rails screw into posts and panels follow terrain. Proper post setting improves wind resistance.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>Do I need HOA approval?</AccordionTrigger>
+                  <AccordionContent>
+                    Many HOAs approve picture frame fences. We’ll provide specs/photos to streamline approval if needed.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </section>
+
+            <section aria-labelledby="about-heading" className="space-y-3">
+              <h2 id="about-heading" className="text-2xl font-semibold tracking-tight">About MyFence.com</h2>
+              <p className="text-muted-foreground max-w-prose">
+                We’re a father & son team serving the Seattle area—licensed, insured, and backed by a 2‑year workmanship warranty. Powered by Fence Genius for precise planning.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild>
+                  <Link to="/quote" aria-label="Start your picture frame fence quote">Start Your Quote</Link>
+                </Button>
+                <Button asChild variant="secondary">
+                  <Link to="/contact" aria-label="Contact MyFence.com">Contact Us</Link>
+                </Button>
+              </div>
             </section>
 
             <section aria-labelledby="permits-heading" className="space-y-3">
