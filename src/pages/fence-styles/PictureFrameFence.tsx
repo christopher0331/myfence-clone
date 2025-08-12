@@ -491,16 +491,30 @@ const PictureFrameFence = () => {
 
             <section aria-labelledby="about-heading" className="space-y-3">
               <h2 id="about-heading" className="text-2xl font-semibold tracking-tight">About MyFence.com</h2>
-              <p className="text-muted-foreground max-w-prose">
-                We’re a father & son team serving the Seattle area—licensed, insured, and backed by a 2‑year workmanship warranty. Powered by Fence Genius for precise planning.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild>
-                  <Link to="/quote" aria-label="Start your picture frame fence quote">Start Your Quote</Link>
-                </Button>
-                <Button asChild variant="secondary">
-                  <Link to="/contact" aria-label="Contact MyFence.com">Contact Us</Link>
-                </Button>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-center">
+                <div>
+                  <p className="text-muted-foreground max-w-prose">
+                    We’re a father & son team serving the Seattle area—licensed, insured, and backed by a 2-year workmanship warranty. Powered by Fence Genius for precise planning.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <Button asChild>
+                      <Link to="/quote" aria-label="Start your picture frame fence quote">Start Your Quote</Link>
+                    </Button>
+                    <Button asChild variant="secondary">
+                      <Link to="/contact" aria-label="Contact MyFence.com">Contact Us</Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
+                  <AspectRatio ratio={4/3}>
+                    <img
+                      src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
+                      alt="Father and son team from MyFence.com in Seattle standing by a cedar fence"
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
+                </div>
               </div>
             </section>
 
