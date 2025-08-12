@@ -59,7 +59,7 @@ const FenceStyles = () => {
     <main>
       <Seo
         title="Fence Styles | MyFence.com Seattle"
-        description="Explore cedar, horizontal, vinyl, chain-link, wrought iron, and aluminum fence styles by MyFence.com in Seattle."
+        description="Explore cedar, horizontal, chain-link, wrought iron, and aluminum fence styles by MyFence.com in Seattle."
         canonical="https://myfence.com/fence-styles"
       />
       <section className="container py-10">

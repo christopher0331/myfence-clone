@@ -328,9 +328,9 @@ const PictureFrameFence = () => {
                       <TableCell>Matching single/double gates; heavy-duty hardware</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Heights</TableCell>
-                      <TableCell>Common: 4', 5', 6', 8' (others on request)</TableCell>
-                    </TableRow>
+                    <TableCell className="font-medium">Heights</TableCell>
+                    <TableCell>Available: 4', 5', 6', 8'</TableCell>
+                  </TableRow>
                     <TableRow>
                       <TableCell className="font-medium">Finishes</TableCell>
                       <TableCell>Natural cedar; stain/seal options available</TableCell>
@@ -451,7 +451,6 @@ const PictureFrameFence = () => {
               <ul className="list-disc pl-6 text-muted-foreground">
                 <li><Link to="/fence-styles" className="text-primary underline">Board-on-Board Cedar</Link></li>
                 <li><Link to="/fence-styles" className="text-primary underline">Horizontal Cedar</Link></li>
-                <li><Link to="/fence-styles" className="text-primary underline">Vinyl Privacy</Link></li>
               </ul>
             </section>
 

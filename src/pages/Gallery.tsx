@@ -19,7 +19,7 @@ const Gallery = () => {
     <main>
       <Seo
         title="Fence Gallery | MyFence.com Seattle"
-        description="View recent fence installations in Seattle by MyFence.com, including cedar, horizontal, iron, vinyl, and more."
+        description="View recent fence installations in Seattle by MyFence.com, including cedar, horizontal, iron, and more."
         canonical="https://myfence.com/gallery"
       />
       <section className="container py-10">
