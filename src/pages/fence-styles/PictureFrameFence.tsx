@@ -206,6 +206,7 @@ const PictureFrameFence = () => {
 
         <section className="mt-10 grid gap-8 md:grid-cols-3">
           <div className="md:col-span-2 space-y-6">
+            <Card className="p-6 md:p-8 glass-card">
             <section aria-labelledby="seattle-common-heading">
               <h2 id="seattle-common-heading" className="text-2xl font-semibold tracking-tight">Why it’s Seattle’s most common fence style</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
@@ -223,9 +224,11 @@ const PictureFrameFence = () => {
               <li>Excellent privacy with clean lines that complement modern and classic homes.</li>
               <li>Precisely planned layouts using Fence Genius to reduce surprises and change orders.</li>
             </ul>
+            </Card>
 
             <Separator />
 
+            <Card className="p-6 md:p-8 glass-card">
             <h3 className="text-xl font-semibold tracking-tight">Details that matter</h3>
             <p className="text-muted-foreground max-w-prose">
               Our standard is #1 grade cedar; upgrade to clear cedar for the most refined finish.
@@ -247,6 +250,7 @@ const PictureFrameFence = () => {
               These construction details are part of every MyFence.com installation and further enhanced by
               our Fence Genius planning technology for precise layouts, reduced change orders, and a premium finish.
             </p>
+            </Card>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <AspectRatio ratio={4/3}>
@@ -266,6 +270,19 @@ const PictureFrameFence = () => {
                 />
               </AspectRatio>
             </div>
+
+            <section aria-labelledby="gallery-heading" className="space-y-3">
+              <h2 id="gallery-heading" className="text-2xl font-semibold tracking-tight text-center">Project Gallery</h2>
+              <Card className="p-4 md:p-6 glass-card">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                  {images.gallery.slice(0, 9).map((img, idx) => (
+                    <AspectRatio key={idx} ratio={4/3}>
+                      <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full rounded-md object-cover" />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </Card>
+            </section>
 
             <section aria-labelledby="fence-genius-heading" className="space-y-3">
               <h3 id="fence-genius-heading" className="text-xl font-semibold tracking-tight">Fence Genius fence planning for picture frame fences</h3>
