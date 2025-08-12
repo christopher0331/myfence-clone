@@ -69,8 +69,8 @@ export default function PaymentCalculator() {
   };
 
   return (
-    <section aria-label="Payment calculator" className="space-y-6">
-      <h2 className="text-2xl font-semibold tracking-tight">Payment calculator</h2>
+    <section aria-label="Finance calculator" className="space-y-6">
+      <h2 className="text-2xl font-semibold tracking-tight">Finance Calculator</h2>
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label className="block text-sm font-medium mb-2" htmlFor="purchase-amount">

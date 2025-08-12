@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
 import { getFenceStyleImages } from "@/data/fenceImages";
@@ -358,6 +359,11 @@ const PictureFrameFence = () => {
               <p className="text-muted-foreground max-w-prose">
                 Transparent pricing varies by height, gates, and upgrades. Use the calculator for a quick monthly estimate or request a fast quote.
               </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="secondary">
+                  <Link to="/quote" aria-label="Use the Virtual Quote Tool from the picture frame page">Use Virtual Quote Tool</Link>
+                </Button>
+              </div>
               <PaymentCalculator />
               <p className="text-sm text-muted-foreground">
                 Learn more about financing on our <Link to="/financing" className="text-primary underline">Financing</Link> page.
