@@ -167,6 +167,32 @@ const PictureFrameFence = () => {
               </AspectRatio>
             </div>
 
+            <section aria-labelledby="fence-genius-heading" className="space-y-3">
+              <h3 id="fence-genius-heading" className="text-xl font-semibold tracking-tight">Powered by Fence Genius</h3>
+              <div className="rounded-lg border bg-card p-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <img
+                    src="/lovable-uploads/38b6f5fc-d1c5-4ebf-a99f-0ea3b357b2a1.png"
+                    alt="MyFence.com powered by Fence Genius logo"
+                    loading="lazy"
+                    className="h-10 w-auto"
+                  />
+                  <p className="text-sm text-muted-foreground">
+                    Our behind-the-scenes planning tech maximizes accuracy and material yield.
+                  </p>
+                </div>
+                <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                  <li>Tear-out and set new posts first for a stable, accurate baseline.</li>
+                  <li>Collect precise measurements: distance between posts and usable post height.</li>
+                  <li>Capture grade change from post to post and any angle changes along the line.</li>
+                  <li>
+                    Fence Genius designs panels to follow ground contour at both the top and bottom, optimizing
+                    material use and delivering the exact result you expect.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
             <div className="mt-6 text-sm text-muted-foreground">
               Looking for something slightly different? Explore our <Link to="/fence-styles" className="text-primary underline">full fence styles</Link>.
             </div>
