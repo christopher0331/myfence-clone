@@ -4,9 +4,11 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import { getFenceStyleImages } from "@/data/fenceImages";
 
-const heroImg = "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
-const altHero = "Picture frame cedar fence installed in Seattle by MyFence.com";
+const images = getFenceStyleImages("picture-frame");
+const heroImg = images.hero.src;
+const altHero = images.hero.alt;
 
 const PictureFrameFence = () => {
   const canonical = "https://myfence.com/fence-styles/picture-frame-fence";
@@ -195,16 +197,16 @@ const PictureFrameFence = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <AspectRatio ratio={4/3}>
                 <img
-                  src="/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"
-                  alt="3-rail picture frame fence detail in Seattle"
+                  src={images.gallery[0]?.src}
+                  alt={images.gallery[0]?.alt}
                   loading="lazy"
                   className="h-full w-full rounded-md object-cover"
                 />
               </AspectRatio>
               <AspectRatio ratio={4/3}>
                 <img
-                  src="/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png"
-                  alt="Solid board picture frame panel in cedar"
+                  src={images.gallery[1]?.src}
+                  alt={images.gallery[1]?.alt}
                   loading="lazy"
                   className="h-full w-full rounded-md object-cover"
                 />
