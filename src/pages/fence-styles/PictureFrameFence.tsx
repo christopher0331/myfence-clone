@@ -3,6 +3,7 @@ import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Link } from "react-router-dom";
 import { getFenceStyleImages } from "@/data/fenceImages";
 
@@ -92,6 +93,15 @@ const PictureFrameFence = () => {
             "Yes. Fence Genius designs each panel to follow the terrain at both the top and bottom edges, delivering a clean, consistent look that matches your site conditions.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Is picture frame the most common fence style in Seattle?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes. It’s the most commonly requested style across Seattle and the Eastside thanks to its privacy, clean trim profile, cedar durability in PNW weather, and HOA-friendly appearance.",
+        },
+      },
     ],
   };
 
@@ -172,8 +182,27 @@ const PictureFrameFence = () => {
           </div>
         </header>
 
+        <section className="mt-6">
+          <Alert>
+            <AlertTitle>Seattle’s Most Common Fence Style</AlertTitle>
+            <AlertDescription>
+              Chosen by homeowners across Seattle and the Eastside for privacy, curb appeal, and durability in PNW weather.
+            </AlertDescription>
+          </Alert>
+        </section>
+
         <section className="mt-10 grid gap-8 md:grid-cols-3">
           <div className="md:col-span-2 space-y-6">
+            <section aria-labelledby="seattle-common-heading">
+              <h2 id="seattle-common-heading" className="text-2xl font-semibold tracking-tight">Why it’s Seattle’s most common fence style</h2>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Excellent privacy with a refined, framed look that fits most neighborhoods and HOAs.</li>
+                <li>Cedar performs well in the Pacific Northwest’s wet climate with proper installation.</li>
+                <li>Easy to customize with rot boards, caps, and trim while keeping costs predictable.</li>
+                <li>Pairs well with sloped lots thanks to Fence Genius grade-following designs.</li>
+              </ul>
+            </section>
+
             <h2 className="text-2xl font-semibold tracking-tight">Why homeowners choose picture frame</h2>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>Finished border trim frames each panel for a refined, custom look.</li>
