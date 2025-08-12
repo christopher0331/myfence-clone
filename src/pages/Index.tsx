@@ -156,6 +156,7 @@ const Index = () => {
               <div className="p-4">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
+                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
@@ -169,6 +170,7 @@ const Index = () => {
               <div className="p-4">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
+                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
@@ -182,6 +184,7 @@ const Index = () => {
               <div className="p-4">
                 <h3 className="font-semibold">Horizontal Lattice Fence</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
+                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
