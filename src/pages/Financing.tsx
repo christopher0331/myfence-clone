@@ -35,6 +35,11 @@ const Financing = () => {
         <p className="text-muted-foreground max-w-2xl">Turn your project into an affordable monthly payment. We'll help you find a plan that fits your budget.</p>
       </section>
 
+      {/* Payment Calculator */}
+      <section className="container py-8">
+        <PaymentCalculator />
+      </section>
+
       {/* 1. Affordable Fence Financing with MyFence.com */}
       <section className="container py-8">
         <Card className="overflow-hidden">
@@ -167,10 +172,6 @@ const Financing = () => {
         </Card>
       </section>
 
-      {/* Payment Calculator */}
-      <section className="container py-8">
-        <PaymentCalculator />
-      </section>
 
       {/* FAQ & Actions */}
       <section className="container py-10">
