@@ -13,7 +13,7 @@ const styles = [
   { img: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png", title: "Horizontal Fence", desc: "Modern horizontal boards for a contemporary curb appeal." },
   { img: "/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style." },
   { img: "/lovable-uploads/8ea10d1b-63ce-44fe-a29f-12f029415560.png", title: "6' Black Hogwire Fence", desc: "Tall black hogwire panels for a bold, modern perimeter." },
-  { img: "/lovable-uploads/81e50e54-927c-4bb5-b22e-9cf6336b8154.png", title: "3' Black Hogwire Fence", desc: "Low-profile black hogwire ideal for gardens and pets." },
+  { img: "/lovable-uploads/e36dcddb-3b17-4206-9c89-e9b9ce5596c9.png", title: "3' Black Hogwire Fence", desc: "Low-profile black hogwire ideal for gardens and pets." },
   { img: "/lovable-uploads/be14d195-34f5-4c25-9618-a506bed8ecc1.png", title: "Picket Fence", desc: "Timeless neighborhood charm with classic pickets." },
 ];
 
