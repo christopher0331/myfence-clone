@@ -72,10 +72,54 @@ const PictureFrameFence = () => {
             "Yes. We use stainless steel fasteners as standard to prevent corrosion and eliminate black streaking common with galvanized fasteners.",
         },
       },
+      {
+        "@type": "Question",
+        name: "What is Fence Genius and how does it improve results?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Fence Genius powers our data-driven design. After we collect precise post-to-post measurements, usable post height, grade changes, and angle adjustments, the software optimizes your layout for accuracy and maximum material yield.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Will my fence follow the ground contour at the top and bottom?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes. Fence Genius designs each panel to follow the terrain at both the top and bottom edges, delivering a clean, consistent look that matches your site conditions.",
+        },
+      },
     ],
   };
 
-  const structuredData = [serviceStructuredData, faqStructuredData];
+  const structuredData = [
+    serviceStructuredData,
+    faqStructuredData,
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: "Fence Genius planning process for picture frame fences",
+      step: [
+        { "@type": "HowToStep", name: "Tear out old fence" },
+        {
+          "@type": "HowToStep",
+          name: "Set new posts",
+          text: "Install 4.125\"x4.125\"x9' posts deeper than 2' with ~180 lbs of properly mixed concrete.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Collect site data",
+          text: "Measure between posts, available post height, grade change, and any angle changes.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Design with Fence Genius",
+          text: "Software designs panels to follow the ground at both top and bottom, maximizing material yield and accuracy.",
+        },
+      ],
+    },
+  ];
 
   return (
     <main>
@@ -168,7 +212,7 @@ const PictureFrameFence = () => {
             </div>
 
             <section aria-labelledby="fence-genius-heading" className="space-y-3">
-              <h3 id="fence-genius-heading" className="text-xl font-semibold tracking-tight">Powered by Fence Genius</h3>
+              <h3 id="fence-genius-heading" className="text-xl font-semibold tracking-tight">Fence Genius fence planning for picture frame fences</h3>
               <div className="rounded-lg border bg-card p-4">
                 <div className="flex items-center gap-3 mb-2">
                   <img
