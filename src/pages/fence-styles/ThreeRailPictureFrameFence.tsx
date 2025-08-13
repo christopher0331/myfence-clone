@@ -174,18 +174,32 @@ const ThreeRailPictureFrameFence = () => {
               ))}
             </div>
 
-            <section aria-labelledby="gallery-heading" className="space-y-3">
-              <h2 id="gallery-heading" className="text-2xl font-semibold tracking-tight text-center">Project Gallery</h2>
-              <Card className="p-4 md:p-6 glass-card">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                  {gallery.map((img) => (
-                    <AspectRatio key={img.src} ratio={4 / 3}>
-                      <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full rounded-md object-cover" />
-                    </AspectRatio>
-                  ))}
+            <section className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">3 Rail Picture Frame Fence Gallery</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                See the strength and craftsmanship of our 3 rail picture frame fences with enhanced structural design.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {gallery.map((image, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white text-sm font-medium">{image.alt}</p>
+                    </div>
+                  </div>
                 </div>
-              </Card>
-            </section>
+              ))}
+            </div>
+          </section>
 
             <section aria-labelledby="fence-genius-heading" className="space-y-3">
               <h3 id="fence-genius-heading" className="text-xl font-semibold tracking-tight">Fence Genius planning for 3 rail designs</h3>
