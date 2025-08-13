@@ -11,8 +11,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Link } from "react-router-dom";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
-const heroImg = "/lovable-uploads/15a13f77-9fdf-4253-9fc2-9888c15816d0.png"; // Craftsman fence with pergola gate
+const heroImg = "/lovable-uploads/1ab1a228-3d1d-4b69-8561-371fabba22e1.png"; // Angled craftsman fence with Fence Genius planning
 const gallery = [
+  { src: "/lovable-uploads/15a13f77-9fdf-4253-9fc2-9888c15816d0.png", alt: "Craftsman fence with pergola gate and cedar construction" },
   { src: "/lovable-uploads/53ff106a-b96e-4b79-b816-4379aba7f89b.png", alt: "Cedar craftsman fence with pergola and alternating board pattern" },
   { src: "/lovable-uploads/3b892c6d-b23a-4d63-ad26-ebb74d1166c7.png", alt: "Long run of craftsman style fence along street with alternating boards" },
   { src: "/lovable-uploads/0e5dfefe-49ce-4d52-b4dc-7cc011fc2a36.png", alt: "Double gate with craftsman style alternating board design" },
@@ -20,7 +21,6 @@ const gallery = [
   { src: "/lovable-uploads/dcd969d9-d333-404b-98a9-c1334925b869.png", alt: "Craftsman fence installation with Fence Genius grade-following model" },
   { src: "/lovable-uploads/152a9d59-7c85-4105-b186-08092819fb4d.png", alt: "Straight run of craftsman fence showing alternating board pattern" },
   { src: "/lovable-uploads/f77a4cb6-6689-40e1-ae50-3546ae7a98f1.png", alt: "Craftsman fence with pergola and Fence Genius design overlay" },
-  { src: "/lovable-uploads/edb6aaa7-2e60-457d-8c5b-930f627e50a0.png", alt: "Angled craftsman fence with Fence Genius planning visualization" },
 ];
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
