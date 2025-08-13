@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
@@ -7,20 +8,39 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import FenceStyles from "./pages/FenceStyles";
-import Gallery from "./pages/Gallery";
-import QuoteTool from "./pages/QuoteTool";
-import Financing from "./pages/Financing";
-import Contact from "./pages/Contact";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsConditions from "./pages/TermsConditions";
-import PictureFrameFence from "./pages/fence-styles/PictureFrameFence";
-import ThreeRailPictureFrameFence from "./pages/fence-styles/ThreeRailPictureFrameFence";
-import CraftsmanStyleFence from "./pages/fence-styles/CraftsmanStyleFence";
-import HorizontalLatticeFence from "./pages/fence-styles/HorizontalLatticeFence";
-const queryClient = new QueryClient();
+
+// Lazy load pages for better performance
+const Index = React.lazy(() => import("./pages/Index"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const FenceStyles = React.lazy(() => import("./pages/FenceStyles"));
+const Gallery = React.lazy(() => import("./pages/Gallery"));
+const QuoteTool = React.lazy(() => import("./pages/QuoteTool"));
+const Financing = React.lazy(() => import("./pages/Financing"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
+const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
+
+// Lazy load fence style pages
+const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
+const ThreeRailPictureFrameFence = React.lazy(() => import("./pages/fence-styles/ThreeRailPictureFrameFence"));
+const CraftsmanStyleFence = React.lazy(() => import("./pages/fence-styles/CraftsmanStyleFence"));
+const HorizontalLatticeFence = React.lazy(() => import("./pages/fence-styles/HorizontalLatticeFence"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+);
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <HelmetProvider>
@@ -32,22 +52,24 @@ const App = () => (
           <ScrollToTop />
           <Header />
           <div className="h-20 md:h-24" aria-hidden="true" />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/fence-styles" element={<FenceStyles />} />
-            <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
-            <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
-          <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
-          <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/quote" element={<QuoteTool />} />
-            <Route path="/financing" element={<Financing />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-conditions" element={<TermsConditions />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/fence-styles" element={<FenceStyles />} />
+              <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
+              <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
+              <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
+              <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/quote" element={<QuoteTool />} />
+              <Route path="/financing" element={<Financing />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
           <Footer />
         </BrowserRouter>
       
