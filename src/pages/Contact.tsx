@@ -9,6 +9,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({ title: "Message sent", description: "Thanks! We'll reach out ASAP." });
+    import("@/lib/effects").then(m => m.burstFirework(window.innerWidth / 2, window.innerHeight / 2));
   };
 
   const orgLd = {
