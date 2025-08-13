@@ -25,6 +25,7 @@ const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureF
 const ThreeRailPictureFrameFence = React.lazy(() => import("./pages/fence-styles/ThreeRailPictureFrameFence"));
 const CraftsmanStyleFence = React.lazy(() => import("./pages/fence-styles/CraftsmanStyleFence"));
 const HorizontalLatticeFence = React.lazy(() => import("./pages/fence-styles/HorizontalLatticeFence"));
+const SolidBoardFence = React.lazy(() => import("./pages/fence-styles/SolidBoardFence"));
 
 // Loading component
 const PageLoader = () => (
@@ -60,6 +61,7 @@ const App = () => (
               <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
               <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
               <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
+              <Route path="/fence-styles/solid-board-fence" element={<SolidBoardFence />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/quote" element={<QuoteTool />} />
               <Route path="/financing" element={<Financing />} />

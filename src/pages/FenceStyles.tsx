@@ -5,11 +5,11 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 
 const styles = [
-  { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Classic privacy with sturdy cedar boards and clean lines." },
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look." },
   { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail." },
   { img: "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png", title: "Craftsman Style Fence", desc: "Distinctive craftsman accents with open top detailing." },
   { img: "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners." },
+  { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option" },
   { img: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png", title: "Horizontal Fence", desc: "Modern horizontal boards for a contemporary curb appeal." },
   { img: "/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style." },
   { img: "/lovable-uploads/8ea10d1b-63ce-44fe-a29f-12f029415560.png", title: "6' Black Hogwire Fence", desc: "Tall black hogwire panels for a bold, modern perimeter." },
@@ -74,6 +74,9 @@ const FenceStyles = () => {
                   {s.title === "Picture Frame Fence" && (
                     <Badge variant="secondary">Most Popular</Badge>
                   )}
+                  {s.badge && (
+                    <Badge variant="secondary">{s.badge}</Badge>
+                  )}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -115,6 +118,15 @@ const FenceStyles = () => {
                     aria-label="Learn more about Horizontal Lattice Fence"
                   >
                     Learn more about Horizontal Lattice Fence →
+                  </Link>
+                )}
+                {s.title === "Solid Board Fence" && (
+                  <Link
+                    to="/fence-styles/solid-board-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about Solid Board Fence"
+                  >
+                    Learn more about Solid Board Fence →
                   </Link>
                 )}
               </CardContent>
