@@ -73,7 +73,7 @@ export default function PaymentCalculator() {
     <section aria-label="Finance calculator" className="space-y-6">
       <h2 className="text-2xl font-semibold tracking-tight">Finance Calculator</h2>
       <div className="space-y-6">
-        <div className="grid gap-6 md:grid-cols-[auto,1fr] items-start">
+        <div className="grid gap-6 md:grid-cols-2 justify-items-center items-start mx-auto max-w-4xl">
           <div className="max-w-xs">
             <label className="block text-sm font-medium mb-2" htmlFor="purchase-amount">
               Enter purchase amount:
