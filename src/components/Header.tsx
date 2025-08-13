@@ -22,7 +22,6 @@ const Header = () => {
             const x = e.clientX || rect.left + rect.width / 2;
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
-            popEmoji(x, y, '🪵');
           }}>
             <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
           </Link>
