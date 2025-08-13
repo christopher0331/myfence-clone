@@ -71,84 +71,83 @@ export default function PaymentCalculator() {
 
   return (
     <section aria-label="Finance calculator" className="space-y-6">
-      <h2 className="text-2xl font-semibold tracking-tight">Finance Calculator</h2>
-      <div className="space-y-6">
-        <div className="grid gap-6 md:grid-cols-2 justify-items-center items-start mx-auto max-w-4xl">
-          <div className="max-w-xs">
-            <label className="block text-sm font-medium mb-2" htmlFor="purchase-amount">
-              Enter purchase amount:
-            </label>
-            <Input
-              id="purchase-amount"
-              value={amountInput}
-              onChange={(e) => setAmountInput(e.target.value)}
-              placeholder="$"
-              inputMode="decimal"
-              aria-label="Purchase amount"
-            />
-            <Button className="mt-4" variant="hero" onClick={onCalculate}>
-              Calculate
-            </Button>
-            <p className="text-sm text-muted-foreground mt-3">
-              Estimates only. Actual APR and terms subject to approval. No penalties, late fees, or compounding interest.
-            </p>
+        <div className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2 justify-items-center items-start mx-auto max-w-4xl">
+            <div className="max-w-xs">
+              <label className="block text-sm font-medium mb-2" htmlFor="purchase-amount">
+                Enter purchase amount:
+              </label>
+              <Input
+                id="purchase-amount"
+                value={amountInput}
+                onChange={(e) => setAmountInput(e.target.value)}
+                placeholder="$"
+                inputMode="decimal"
+                aria-label="Purchase amount"
+              />
+              <Button className="mt-4" variant="hero" onClick={onCalculate}>
+                Calculate
+              </Button>
+              <p className="text-sm text-muted-foreground mt-3">
+                Estimates only. Actual APR and terms subject to approval. No penalties, late fees, or compounding interest.
+              </p>
+            </div>
+
+            <Card className="p-4 md:p-6">
+              <h3 className="text-lg font-semibold tracking-tight">Why financing can be a great fit</h3>
+              <ul className="mt-2 list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Get the fence done right the first time without deferring quality.</li>
+                <li>Predictable monthly payments that fit your budget.</li>
+                <li>No penalties, late fees, or compounding interest.</li>
+                <li>Start sooner—protect pets, security, and privacy now.</li>
+                <li>Pay off early anytime.</li>
+              </ul>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Learn more on our <Link to="/financing" className="text-primary underline">Financing</Link> page.
+              </p>
+            </Card>
           </div>
 
-          <Card className="p-4 md:p-6">
-            <h3 className="text-lg font-semibold tracking-tight">Why financing can be a great fit</h3>
-            <ul className="mt-2 list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Get the fence done right the first time without deferring quality.</li>
-              <li>Predictable monthly payments that fit your budget.</li>
-              <li>No penalties, late fees, or compounding interest.</li>
-              <li>Start sooner—protect pets, security, and privacy now.</li>
-              <li>Pay off early anytime.</li>
-            </ul>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Learn more on our <Link to="/financing" className="text-primary underline">Financing</Link> page.
-            </p>
+          <Card className="w-full p-4 md:p-6">
+            <div className="mb-4">
+              <p className="text-sm font-medium text-muted-foreground">
+                {calculatedFor && calculatedFor > 0
+                  ? `Estimates for ${currency.format(calculatedFor)}`
+                  : "Enter an amount and select Calculate to view estimates"}
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/50">
+                    <TableHead className="whitespace-nowrap">Term length</TableHead>
+                    <TableHead>APR</TableHead>
+                    <TableHead className="text-right">Monthly payment</TableHead>
+                    <TableHead className="text-right">Total interest</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {rows.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center text-muted-foreground">
+                        No estimates to show
+                      </TableCell>
+                    </TableRow>
+                  ) : (
+                    rows.map((r) => (
+                      <TableRow key={r.months}>
+                        <TableCell className="font-medium">{r.months} months</TableCell>
+                        <TableCell>{r.apr.toFixed(1)}%</TableCell>
+                        <TableCell className="text-right">{currency.format(r.monthly)}</TableCell>
+                        <TableCell className="text-right">{currency.format(r.interest)}</TableCell>
+                      </TableRow>
+                    ))
+                  )}
+                </TableBody>
+              </Table>
+            </div>
           </Card>
         </div>
-
-        <Card className="w-full p-4 md:p-6">
-          <div className="mb-4">
-            <p className="text-sm font-medium text-muted-foreground">
-              {calculatedFor && calculatedFor > 0
-                ? `Estimates for ${currency.format(calculatedFor)}`
-                : "Enter an amount and select Calculate to view estimates"}
-            </p>
-          </div>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-muted/50">
-                  <TableHead className="whitespace-nowrap">Term length</TableHead>
-                  <TableHead>APR</TableHead>
-                  <TableHead className="text-right">Monthly payment</TableHead>
-                  <TableHead className="text-right">Total interest</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {rows.length === 0 ? (
-                  <TableRow>
-                    <TableCell colSpan={4} className="text-center text-muted-foreground">
-                      No estimates to show
-                    </TableCell>
-                  </TableRow>
-                ) : (
-                  rows.map((r) => (
-                    <TableRow key={r.months}>
-                      <TableCell className="font-medium">{r.months} months</TableCell>
-                      <TableCell>{r.apr.toFixed(1)}%</TableCell>
-                      <TableCell className="text-right">{currency.format(r.monthly)}</TableCell>
-                      <TableCell className="text-right">{currency.format(r.interest)}</TableCell>
-                    </TableRow>
-                  ))
-                )}
-              </TableBody>
-            </Table>
-          </div>
-        </Card>
-      </div>
     </section>
   );
 }
