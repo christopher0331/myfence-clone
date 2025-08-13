@@ -197,62 +197,80 @@ const ThreeRailPictureFrameFence = () => {
               </div>
             </section>
 
-            <section aria-labelledby="key-specs-heading" className="space-y-3 hidden md:block">
+            <section aria-labelledby="key-specs-heading" className="space-y-3">
               <h2 id="key-specs-heading" className="text-2xl font-semibold tracking-tight">Key specs</h2>
-              <div className="md:overflow-x-auto overflow-x-visible">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead className="md:w-[200px]">Spec</TableHead>
-                      <TableHead>Standard</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell className="font-medium">Posts</TableCell>
-                      <TableCell>4.125" x 4.125" x 9' set deeper than 2' with ~180 lbs properly mixed concrete</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Rails</TableCell>
-                      <TableCell>Three 2x4 rails, screwed directly into posts</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Pickets</TableCell>
-                      <TableCell>#1 grade cedar (clear cedar upgrade available)</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Cap/Trim</TableCell>
-                      <TableCell>Top 2x4 cap; additional trim to complement the third rail</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Fasteners</TableCell>
-                      <TableCell>Stainless fasteners to prevent corrosion/black streaking</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Gates</TableCell>
-                      <TableCell>Matching single/double gates; heavy-duty hardware</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Heights</TableCell>
-                      <TableCell>Available: 4', 5', 6', 8'</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
+              <div className="grid gap-4 md:grid-cols-2">
+                <Card className="p-4 md:p-6">
+                  <div className="md:overflow-x-auto overflow-x-visible">
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="bg-muted/50">
+                          <TableHead className="md:w-[200px]">Spec</TableHead>
+                          <TableHead>Standard</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell className="font-medium">Posts</TableCell>
+                          <TableCell>4.125" x 4.125" x 9' set deeper than 2' with ~180 lbs properly mixed concrete</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Rails</TableCell>
+                          <TableCell>Three 2x4 rails, screwed directly into posts</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Pickets</TableCell>
+                          <TableCell>#1 grade cedar (clear cedar upgrade available)</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Cap/Trim</TableCell>
+                          <TableCell>Top 2x4 cap; additional trim to complement the third rail</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Fasteners</TableCell>
+                          <TableCell>Stainless fasteners to prevent corrosion/black streaking</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Gates</TableCell>
+                          <TableCell>Matching single/double gates; heavy-duty hardware</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium">Heights</TableCell>
+                          <TableCell>Available: 4', 5', 6', 8'</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </div>
+                </Card>
+                <Card className="p-4 md:p-6">
+                  <h3 className="text-xl font-semibold tracking-tight text-center">Options & upgrades</h3>
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 place-items-center">
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">Rot board for added durability at grade</div>
+                    </Card>
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">Board-on-board privacy (no direct sight lines)</div>
+                    </Card>
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">4" exterior screws for superior hold</div>
+                    </Card>
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">6x6 post upgrades</div>
+                    </Card>
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">Steel core post-on-pipe systems</div>
+                    </Card>
+                    <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">Decorative post caps and trim variants</div>
+                    </Card>
+                    <Card className="w-full sm:col-span-2">
+                      <div className="p-3 text-center text-sm text-muted-foreground">Professional stain and seal options</div>
+                    </Card>
+                  </div>
+                </Card>
               </div>
             </section>
 
-            <section aria-labelledby="options-heading" className="space-y-3">
-              <h2 id="options-heading" className="text-2xl font-semibold tracking-tight">Options & upgrades</h2>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Rot board for added durability at grade</li>
-                <li>Board-on-board privacy (no direct sight lines)</li>
-                <li>4" exterior screws for superior hold</li>
-                <li>6x6 post upgrades</li>
-                <li>Steel core post-on-pipe systems</li>
-                <li>Decorative post caps and trim variants</li>
-                <li>Professional stain and seal options</li>
-              </ul>
-            </section>
 
             <section aria-labelledby="gates-heading" className="space-y-3">
               <h2 id="gates-heading" className="text-2xl font-semibold tracking-tight">Gates & hardware</h2>
@@ -287,30 +305,6 @@ const ThreeRailPictureFrameFence = () => {
               </div>
             </section>
 
-            <section aria-labelledby="about-heading" className="space-y-3">
-              <h2 id="about-heading" className="text-2xl font-semibold tracking-tight">About MyFence.com</h2>
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-center">
-                <div>
-                  <p className="text-muted-foreground max-w-prose">
-                    We’re a father & son team serving the Seattle area—licensed, insured, and backed by a
-                    2‑year workmanship warranty. Powered by Fence Genius for precise planning.
-                  </p>
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    <Button asChild>
-                      <Link to="/quote" aria-label="Start your 3 rail picture frame fence quote">Start Your Quote</Link>
-                    </Button>
-                    <Button asChild variant="secondary">
-                      <Link to="/contact" aria-label="Contact MyFence.com">Contact Us</Link>
-                    </Button>
-                  </div>
-                </div>
-                <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-                  <AspectRatio ratio={4 / 3}>
-                    <img src={fatherSonImg} alt="Father and son team from MyFence.com in Seattle standing by a cedar fence" loading="lazy" className="w-full h-full object-cover" />
-                  </AspectRatio>
-                </div>
-              </div>
-            </section>
 
             <section className="mt-6">
               <InlineQuoteForm context="3 Rail Picture Frame Fence page" />
@@ -326,10 +320,6 @@ const ThreeRailPictureFrameFence = () => {
               </Button>
             </Card>
 
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold">Payment Calculator</h3>
-              <PaymentCalculator />
-            </Card>
 
             <Card className="p-4">
               <h3 className="text-lg font-semibold">Service areas</h3>
@@ -347,6 +337,46 @@ const ThreeRailPictureFrameFence = () => {
             </Card>
           </aside>
         </section>
+      <section aria-labelledby="about-heading" className="py-12">
+        <div className="container">
+          <div className="mx-auto max-w-6xl">
+            <h2 id="about-heading" className="text-2xl font-semibold tracking-tight text-center">About MyFence.com</h2>
+            <div className="mt-4 grid md:grid-cols-2 gap-6 items-center">
+              <div>
+                <p className="text-muted-foreground max-w-prose mx-auto md:mx-0">
+                  We’re a father & son team serving the Seattle area—licensed, insured, and backed by a
+                  2‑year workmanship warranty. Powered by Fence Genius for precise planning.
+                </p>
+                <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
+                  <Button asChild>
+                    <Link to="/quote" aria-label="Start your 3 rail picture frame fence quote">Start Your Quote</Link>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <Link to="/contact" aria-label="Contact MyFence.com">Contact Us</Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
+                <AspectRatio ratio={4 / 3}>
+                  <img src={fatherSonImg} alt="Father and son team from MyFence.com in Seattle standing by a cedar fence" loading="lazy" className="w-full h-full object-cover" />
+                </AspectRatio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="payment-calculator-heading" className="py-12">
+        <div className="container">
+          <Card className="max-w-3xl mx-auto p-4 md:p-6">
+            <h2 id="payment-calculator-heading" className="text-2xl font-semibold tracking-tight text-center">Payment Calculator</h2>
+            <div className="mt-4">
+              <PaymentCalculator />
+            </div>
+          </Card>
+        </div>
+      </section>
+
       </article>
     </main>
   );
