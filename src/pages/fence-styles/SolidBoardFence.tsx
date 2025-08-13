@@ -308,15 +308,15 @@ const SolidBoardFence = () => {
             <CardContent className="pt-6">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1987</h2>
+                  <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
                   <p className="text-muted-foreground">
-                    MyFence.com has been serving the Pacific Northwest with honest, reliable fencing solutions for over three decades. We believe in transparency about our products, including the limitations of budget options.
+                    MyFence.com has been serving the Pacific Northwest with honest, reliable fencing solutions for three decades. We believe in transparency about our products, including the limitations of budget options.
                   </p>
                   <p className="text-muted-foreground">
                     Our solid board fence represents an entry-level option that still maintains our commitment to quality installation and honest communication about what you can expect.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">37+ Years Experience</Badge>
+                    <Badge variant="secondary">30+ Years Experience</Badge>
                     <Badge variant="secondary">Family Owned</Badge>
                     <Badge variant="secondary">Honest Advice</Badge>
                   </div>

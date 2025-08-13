@@ -266,15 +266,15 @@ const PictureFrameFence = () => {
             <CardContent className="pt-6">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1987</h2>
+                  <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
                   <p className="text-muted-foreground">
-                    MyFence.com has been serving the Pacific Northwest with premium fencing solutions for over three decades. Our picture frame fences represent the perfect blend of traditional craftsmanship and modern technology.
+                    MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our picture frame fences represent the perfect blend of traditional craftsmanship and modern technology.
                   </p>
                   <p className="text-muted-foreground">
                     Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with Fence Genius precision planning.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">37+ Years Experience</Badge>
+                    <Badge variant="secondary">30+ Years Experience</Badge>
                     <Badge variant="secondary">Family Owned</Badge>
                     <Badge variant="secondary">2-Year Warranty</Badge>
                   </div>
