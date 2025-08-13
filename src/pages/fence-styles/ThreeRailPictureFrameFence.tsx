@@ -109,7 +109,7 @@ const ThreeRailPictureFrameFence = () => {
       />
 
       <article className="container py-10">
-        <header className="grid gap-6 md:grid-cols-2 md:items-center">
+        <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
           <div>
             <h1 className="text-4xl font-bold tracking-tight">3 Rail Picture Frame Fence</h1>
             <p className="mt-3 text-muted-foreground max-w-prose">
@@ -137,8 +137,8 @@ const ThreeRailPictureFrameFence = () => {
           </Alert>
         </section>
 
-        <section className="mt-10 grid gap-8 md:grid-cols-3">
-          <div className="md:col-span-2 space-y-6">
+        <section className="mt-10 space-y-8 max-w-6xl mx-auto">
+          <div className="space-y-6">
             <Card className="p-6 md:p-8 glass-card">
               <h2 className="text-2xl font-semibold tracking-tight">Why homeowners choose 3 rail picture frame</h2>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
@@ -311,31 +311,6 @@ const ThreeRailPictureFrameFence = () => {
             </section>
           </div>
 
-          <aside className="space-y-6">
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold">Get your cost instantly</h3>
-              <p className="text-muted-foreground text-sm mt-1">Use our Virtual Quote Tool for accurate pricing with your exact measurements.</p>
-              <Button asChild className="mt-3 w-full">
-                <Link to="/quote">Open Quote Tool</Link>
-              </Button>
-            </Card>
-
-
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold">Service areas</h3>
-              <ul className="text-sm text-muted-foreground grid grid-cols-2 gap-2">
-                <li>Seattle</li>
-                <li>Bellevue</li>
-                <li>Kirkland</li>
-                <li>Redmond</li>
-                <li>Sammamish</li>
-                <li>Issaquah</li>
-                <li>Bothell</li>
-                <li>Shoreline</li>
-                <li>Renton</li>
-              </ul>
-            </Card>
-          </aside>
         </section>
       <section aria-labelledby="about-heading" className="py-12">
         <div className="container">
