@@ -90,6 +90,15 @@ const FenceStyles = () => {
                     Learn more about Picture Frame Fence →
                   </Link>
                 )}
+                {s.title === "3 Rail Picture Frame Fence" && (
+                  <Link
+                    to="/fence-styles/3-rail-picture-frame-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about 3 Rail Picture Frame Fence"
+                  >
+                    Learn more about 3 Rail Picture Frame Fence →
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}
