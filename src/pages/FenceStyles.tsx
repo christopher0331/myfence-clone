@@ -99,6 +99,15 @@ const FenceStyles = () => {
                     Learn more about 3 Rail Picture Frame Fence →
                   </Link>
                 )}
+                {s.title === "Craftsman Style Fence" && (
+                  <Link
+                    to="/fence-styles/craftsman-style-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about Craftsman Style Fence"
+                  >
+                    Learn more about Craftsman Style Fence →
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}
