@@ -86,51 +86,19 @@ const Index = () => {
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
             <p className="mt-3 text-sm opacity-90">MyFence.com is owned by a father and son team where they have embraced the new industry leading Fence Genius technology to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</p>
             <div className="mt-5">
-              <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-                <AspectRatio ratio={4/3}>
-                  <img
-                    src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
-                    alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </AspectRatio>
-              </div>
-            </div>
-            <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
             </div>
           </div>
-          <div className="bg-card text-foreground p-6 md:p-8">
-            <div className="grid grid-cols-2 divide-x divide-y border-border">
-              <div className="p-6 flex items-start gap-3">
-                <Hammer className="w-6 h-6 text-primary" aria-hidden="true" />
-                <div>
-                  <div className="font-semibold">100's Built</div>
-                  <div className="text-sm text-muted-foreground">Custom wood fences</div>
-                </div>
-              </div>
-              <div className="p-6 flex items-start gap-3">
-                <Cpu className="w-6 h-6 text-primary" aria-hidden="true" />
-                <div>
-                  <div className="font-semibold">Fence Genius</div>
-                  <div className="text-sm text-muted-foreground">Advanced software</div>
-                </div>
-              </div>
-              <div className="p-6 flex items-start gap-3">
-                <Home className="w-6 h-6 text-primary" aria-hidden="true" />
-                <div>
-                  <div className="font-semibold">Family Owned</div>
-                  <div className="text-sm text-muted-foreground">Father & son team</div>
-                </div>
-              </div>
-              <div className="p-6 flex items-start gap-3">
-                <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
-                <div>
-                  <div className="font-semibold">2 Year Warranty</div>
-                  <div className="text-sm text-muted-foreground">Workmanship guaranteed</div>
-                </div>
-              </div>
+          <div className="bg-card text-foreground p-6 md:p-8 flex items-center justify-center">
+            <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
+              <AspectRatio ratio={21/9}>
+                <img
+                  src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
+                  alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>

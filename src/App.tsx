@@ -29,6 +29,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Header />
+          <div className="h-20 md:h-24" aria-hidden="true" />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/fence-styles" element={<FenceStyles />} />
