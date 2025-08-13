@@ -17,7 +17,8 @@ const gallery = [
   { src: "/lovable-uploads/913ab5db-5bb0-4601-b16b-cb82980c1a02.png", alt: "Cedar 3 rail picture frame fence with craftsman look" },
   { src: "/lovable-uploads/202129bf-e11e-4b28-92ba-83866ca6e42d.png", alt: "Three rail picture frame fence with stepped grade" },
   { src: "/lovable-uploads/90c5c403-5b3c-4b79-b1fa-22abb96787a8.png", alt: "Close-up of 3 rail picture frame fence rails and trim" },
-  { src: "/lovable-uploads/38b6f5fc-d1c5-4ebf-a99f-0ea3b357b2a1.png", alt: "MyFence.com powered by Fence Genius" },
+  { src: "/lovable-uploads/fb1299f7-72f9-4c43-b762-a1ba637b5732.png", alt: "Long run of cedar 3-rail picture frame fence in Seattle" },
+  { src: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png", alt: "Cedar gate in matching 3-rail picture frame style" },
 ];
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
