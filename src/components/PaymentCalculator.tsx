@@ -71,8 +71,8 @@ export default function PaymentCalculator() {
   return (
     <section aria-label="Finance calculator" className="space-y-6">
       <h2 className="text-2xl font-semibold tracking-tight">Finance Calculator</h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        <div>
+      <div className="space-y-6">
+        <div className="max-w-xs">
           <label className="block text-sm font-medium mb-2" htmlFor="purchase-amount">
             Enter purchase amount:
           </label>
@@ -92,7 +92,7 @@ export default function PaymentCalculator() {
           </p>
         </div>
 
-        <Card className="p-4 md:p-6">
+        <Card className="w-full p-4 md:p-6">
           <div className="mb-4">
             <p className="text-sm font-medium text-muted-foreground">
               {calculatedFor && calculatedFor > 0

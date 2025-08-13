@@ -343,7 +343,7 @@ const ThreeRailPictureFrameFence = () => {
 
       <section aria-labelledby="payment-calculator-heading" className="py-12">
         <div className="container">
-          <Card className="max-w-3xl mx-auto p-4 md:p-6">
+          <Card className="max-w-6xl mx-auto p-4 md:p-6">
             <h2 id="payment-calculator-heading" className="text-2xl font-semibold tracking-tight text-center">Payment Calculator</h2>
             <div className="mt-4">
               <PaymentCalculator />
