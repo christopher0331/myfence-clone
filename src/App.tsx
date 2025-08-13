@@ -19,6 +19,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PictureFrameFence from "./pages/fence-styles/PictureFrameFence";
 import ThreeRailPictureFrameFence from "./pages/fence-styles/ThreeRailPictureFrameFence";
 import CraftsmanStyleFence from "./pages/fence-styles/CraftsmanStyleFence";
+import HorizontalLatticeFence from "./pages/fence-styles/HorizontalLatticeFence";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -36,7 +37,8 @@ const App = () => (
             <Route path="/fence-styles" element={<FenceStyles />} />
             <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
             <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
-            <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
+          <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
+          <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/quote" element={<QuoteTool />} />
             <Route path="/financing" element={<Financing />} />
