@@ -38,6 +38,13 @@ const FenceGenius = () => {
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/850adb64-a0e3-437e-a783-9c2df4f87989.png" 
+                alt="Fence Genius Logo - Revolutionary fence construction technology"
+                className="h-20 mx-auto mb-4"
+              />
+            </div>
             <h1 className="text-5xl font-bold tracking-tight mb-6 text-background">
               Fence Genius Technology
             </h1>
