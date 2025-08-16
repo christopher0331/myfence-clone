@@ -7,7 +7,6 @@ import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
-import hogwireCropped from "@/assets/6ft-hogwire-cropped.png";
 
 const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
@@ -323,7 +322,7 @@ const ThreeFtBlackHogwireFence = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
               <div>
                 <img
-                  src={hogwireCropped}
+                  src="/lovable-uploads/02ec9ce3-6706-49f2-af0e-d95bab2cda3f.png"
                   alt="6' Black Hogwire Fence with cedar frame"
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
