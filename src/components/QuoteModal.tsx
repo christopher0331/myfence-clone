@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { callEdgeFunction } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -39,42 +39,33 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     try {
       console.log('Submitting quote request with data:', formData);
       
-      // Direct fetch to Supabase edge function
-      const response = await fetch('https://vcrkvdtlnhihglgahfcr.supabase.co/functions/v1/send-quote-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjcmt2ZHRsbmhpaGdsZ2FoZmNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxMjM2MTksImV4cCI6MjA0OTY5OTYxOX0.rNFVXl5gYvjjWz3MO2WXPzr_fFf7jYtWAqJKCYI2EwI',
-        },
-        body: JSON.stringify(formData),
+      // Use Supabase client to call edge function
+      const { data, error } = await supabase.functions.invoke('send-quote-request', {
+        body: formData,
       });
 
-      console.log('Quote request response status:', response.status);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Quote request error:', errorText);
-        throw new Error(`Failed to send quote request: ${response.status} ${errorText}`);
+      if (error) {
+        console.error('Quote request error:', error);
+        throw new Error(`Failed to send quote request: ${error.message}`);
       }
 
-      const result = await response.json();
-      console.log('Quote request sent successfully:', result);
-        
-        toast({
-          title: "Quote Request Sent!",
-          description: "We'll get back to you within 24 hours with a detailed quote.",
-        });
-        
-        // Reset form
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          address: "",
-          projectDescription: ""
-        });
-        
-        onClose();
+      console.log('Quote request sent successfully:', data);
+
+      toast({
+        title: "Quote Request Sent!",
+        description: "We'll get back to you within 24 hours with a detailed quote.",
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+        projectDescription: ""
+      });
+      
+      onClose();
     } catch (error) {
       console.error('Quote request submission error:', error);
       toast({

@@ -7,13 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Label } from "@/components/ui/label";
-import { toast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import cedarImg from "@/assets/fences/cedar.jpg";
 import modernImg from "@/assets/fences/horizontal-cedar.jpg";
 import gallery1 from "@/assets/gallery/gallery1.jpg";
 import { Cpu, Home, ShieldCheck, Hammer, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { callEdgeFunction } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -27,6 +27,7 @@ const Index = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const { toast } = useToast();
 
   const reviewsRef = useRef<HTMLDivElement | null>(null);
   // Load Trustindex reviews widget into the section container
@@ -58,26 +59,17 @@ const Index = () => {
     try {
       console.log('Submitting contact form with data:', formData);
       
-      // Direct fetch to Supabase edge function
-      const response = await fetch('https://vcrkvdtlnhihglgahfcr.supabase.co/functions/v1/send-contact-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjcmt2ZHRsbmhpaGdsZ2FoZmNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxMjM2MTksImV4cCI6MjA0OTY5OTYxOX0.rNFVXl5gYvjjWz3MO2WXPzr_fFf7jYtWAqJKCYI2EwI',
-        },
-        body: JSON.stringify(formData),
+      // Use Supabase client to call edge function
+      const { data, error } = await supabase.functions.invoke('send-contact-form', {
+        body: formData,
       });
 
-      console.log('Response status:', response.status);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Response error:', errorText);
-        throw new Error(`Failed to send message: ${response.status} ${errorText}`);
+      if (error) {
+        console.error('Contact form error:', error);
+        throw new Error(`Failed to send message: ${error.message}`);
       }
 
-      const result = await response.json();
-      console.log('Email sent successfully:', result);
+      console.log('Email sent successfully:', data);
 
       // Success - trigger effects
       const formElement = document.querySelector('#contact-form');
