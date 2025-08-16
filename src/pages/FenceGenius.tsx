@@ -172,14 +172,14 @@ const FenceGenius = () => {
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">Custom Manufacturing & Delivery</h3>
-                      <p className="text-muted-foreground mb-4">Based on the algorithmic calculations, we manufacture the entire custom contour following fence system and deliver it ready for installation.</p>
+                      <h3 className="text-xl font-semibold mb-3">Detailed Preview & Approval</h3>
+                      <p className="text-muted-foreground mb-4">You receive a detailed PDF packet showing exactly what the fence will look like, with measurements so you know what to expect. Changes are as easy as a click of a button.</p>
                       <img 
-                        src="/lovable-uploads/7394d658-efc7-4d06-bbd8-2b60655e4fb0.png" 
-                        alt="Custom contour following fence system loaded on trailer ready for installation"
+                        src="/lovable-uploads/818b4ccb-e771-4819-84c3-b8cf621f070b.png" 
+                        alt="Detailed PDF preview showing aerial view and 3D rendering of fence layout through customer's terrain"
                         className="w-full rounded-lg mb-3"
                       />
-                      <p className="text-sm text-muted-foreground italic">Complete fence system manufactured to exact specifications and ready for installation</p>
+                      <p className="text-sm text-muted-foreground italic">Complete PDF packet with aerial view and 3D rendering for customer approval</p>
                     </div>
                   </div>
                 </CardContent>
@@ -190,8 +190,14 @@ const FenceGenius = () => {
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">Detailed Preview & Approval</h3>
-                      <p className="text-muted-foreground">You receive a detailed PDF packet showing exactly what the fence will look like, with measurements so you know what to expect. Changes are as easy as a click of a button.</p>
+                      <h3 className="text-xl font-semibold mb-3">Custom Manufacturing & Delivery</h3>
+                      <p className="text-muted-foreground mb-4">Based on the algorithmic calculations, we manufacture the entire custom contour following fence system and deliver it ready for installation.</p>
+                      <img 
+                        src="/lovable-uploads/7394d658-efc7-4d06-bbd8-2b60655e4fb0.png" 
+                        alt="Custom contour following fence system loaded on trailer ready for installation"
+                        className="w-full rounded-lg mb-3"
+                      />
+                      <p className="text-sm text-muted-foreground italic">Complete fence system manufactured to exact specifications and ready for installation</p>
                     </div>
                   </div>
                 </CardContent>
