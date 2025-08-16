@@ -176,46 +176,88 @@ const BlackHogwireFence = () => {
         {/* Detailed Style Description */}
         <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">About Black Hogwire Fencing</h2>
-              <div className="prose prose-lg max-w-none">
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-4">Style & Construction Details</h3>
-                      <p className="text-muted-foreground mb-4">
-                        The 6' Black Hogwire Fence combines the robust security of powder-coated steel panels with the timeless appeal of cedar framing. This unique fencing style features the same premium cedar frame construction as our popular <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence</Link>, ensuring consistent quality and aesthetic appeal across your property.
-                      </p>
-                      <p className="text-muted-foreground mb-4">
-                        The black powder-coated steel hogwire panels feature precise 4"x4" square openings that provide excellent visibility while maintaining security boundaries. Unlike traditional solid fencing, this semi-transparent design allows natural light to filter through while preserving your connection to the surrounding landscape.
-                      </p>
-                      <p className="text-muted-foreground">
-                        Each panel is professionally framed with premium cedar rails and posts, using the same construction techniques that have made our <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence style</Link> Seattle's most popular choice for over three decades.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-4">Perfect for the Pacific Northwest</h3>
-                      <p className="text-muted-foreground mb-4">
-                        Seattle homeowners particularly value the Black Hogwire Fence for its ability to work harmoniously with the region's natural beauty. The dark steel finish complements the Pacific Northwest's lush greenery and provides a sophisticated backdrop that doesn't compete with your landscaping.
-                      </p>
-                      <p className="text-muted-foreground mb-4">
-                        This style is especially popular in neighborhoods like Bellevue, Kirkland, and Redmond where homes often back up to wooded areas or greenbelt spaces. The fence allows you to maintain those coveted forest views while creating a secure boundary that keeps local wildlife out and your family pets safely contained.
-                      </p>
-                      <p className="text-muted-foreground">
-                        The cedar frame construction is naturally suited to Washington's climate, offering excellent resistance to moisture while aging beautifully over time. When pre-stained to match the steel's longevity, this fencing solution provides decades of reliable performance in our wet winters and dry summers.
-                      </p>
-                    </CardContent>
-                  </Card>
+            <h2 className="text-3xl font-bold text-center mb-12">About Black Hogwire Fencing</h2>
+            
+            {/* Style & Construction Details */}
+            <Card className="overflow-hidden mb-8">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/7f467c89-d3c2-4358-8880-019c3b17581a.png" 
+                      alt="Black hogwire fence panel construction detail showing steel frame and cedar posts" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
                 </div>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Why Choose Black Hogwire Over Traditional Fencing?</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                <CardContent className="p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Style & Construction Details</h3>
+                    <p className="text-muted-foreground mb-4">
+                      The 6' Black Hogwire Fence combines the robust security of powder-coated steel panels with the timeless appeal of cedar framing. This unique fencing style features the same premium cedar frame construction as our popular <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence</Link>, ensuring consistent quality and aesthetic appeal across your property.
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      The black powder-coated steel hogwire panels feature precise 4"x4" square openings that provide excellent visibility while maintaining security boundaries. Unlike traditional solid fencing, this semi-transparent design allows natural light to filter through while preserving your connection to the surrounding landscape.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Each panel is professionally framed with premium cedar rails and posts, using the same construction techniques that have made our <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence style</Link> Seattle's most popular choice for over three decades.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            {/* Perfect for the Pacific Northwest */}
+            <Card className="overflow-hidden mb-8">
+              <div className="grid md:grid-cols-2 gap-0">
+                <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Perfect for the Pacific Northwest</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Seattle homeowners particularly value the Black Hogwire Fence for its ability to work harmoniously with the region's natural beauty. The dark steel finish complements the Pacific Northwest's lush greenery and provides a sophisticated backdrop that doesn't compete with your landscaping.
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      This style is especially popular in neighborhoods like Bellevue, Kirkland, and Redmond where homes often back up to wooded areas or greenbelt spaces. The fence allows you to maintain those coveted forest views while creating a secure boundary that keeps local wildlife out and your family pets safely contained.
+                    </p>
+                    <p className="text-muted-foreground">
+                      The cedar frame construction is naturally suited to Washington's climate, offering excellent resistance to moisture while aging beautifully over time. When pre-stained to match the steel's longevity, this fencing solution provides decades of reliable performance in our wet winters and dry summers.
+                    </p>
+                  </div>
+                </CardContent>
+                <div className="order-1 md:order-2">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/26313a9e-b7aa-4a31-8d3d-ca0abe3e0df8.png" 
+                      alt="Black hogwire fence with cedar frame in Pacific Northwest backyard setting" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Why Choose Black Hogwire */}
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/bc3f0275-e178-4cd4-8731-8c9c78f95185.png" 
+                      alt="Long section of black hogwire fencing showing visual openness and security" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+                <CardContent className="p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Why Choose Black Hogwire Over Traditional Fencing?</h3>
+                    <div className="space-y-6">
                       <div>
-                        <h4 className="font-semibold mb-2">Visual Benefits</h4>
-                        <ul className="text-muted-foreground space-y-1">
+                        <h4 className="font-semibold mb-3 text-lg">Visual Benefits</h4>
+                        <ul className="text-muted-foreground space-y-2">
                           <li>• Maintains sight lines to preserve views</li>
                           <li>• Creates defined boundaries without visual barriers</li>
                           <li>• Complements both modern and traditional architecture</li>
@@ -223,8 +265,8 @@ const BlackHogwireFence = () => {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Practical Advantages</h4>
-                        <ul className="text-muted-foreground space-y-1">
+                        <h4 className="font-semibold mb-3 text-lg">Practical Advantages</h4>
+                        <ul className="text-muted-foreground space-y-2">
                           <li>• Superior wildlife deterrent for Seattle-area properties</li>
                           <li>• Excellent pet containment with visibility for monitoring</li>
                           <li>• Lower wind resistance than solid panel fencing</li>
@@ -232,10 +274,10 @@ const BlackHogwireFence = () => {
                         </ul>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
               </div>
-            </div>
+            </Card>
           </div>
         </section>
 
