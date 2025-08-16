@@ -47,8 +47,8 @@ This request was submitted through the MyFence.com website.
     `.trim()
 
     const emailData = {
-      from: 'MyFence.com <noreply@myfence.com>',
-      to: ['info@myfence.com'],
+      from: 'MyFence.com <onboarding@resend.dev>',
+      to: ['andrew.knudsen25@gmail.com'],
       reply_to: email,
       subject: `New Quote Request from ${fullName}`,
       text: emailBody,
