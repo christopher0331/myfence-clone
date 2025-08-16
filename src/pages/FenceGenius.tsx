@@ -169,7 +169,7 @@ const FenceGenius = () => {
                       <h3 className="text-xl font-semibold mb-3">Smart Adaptation</h3>
                       <p className="text-muted-foreground mb-4">Choose between smoothed top or stepped top, while the bottom dynamically works on a different algorithm to adjust to point-to-point locations.</p>
                       <img 
-                        src="/lovable-uploads/c5a511dc-148f-487f-acee-4606e83f4027.png" 
+                        src="/lovable-uploads/44978e33-a78f-4e38-aee3-4ec81ae4d29e.png" 
                         alt="Fence Genius smart adaptation showing flat smoothed top versus stepped top fence configurations"
                         className="w-full rounded-lg mb-3"
                       />
