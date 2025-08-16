@@ -5,6 +5,7 @@ import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
 const navItems = [
   { to: "/fence-styles", label: "Fence Styles" },
+  { to: "/fence-genius", label: "Fence Genius" },
   { to: "/gallery", label: "Gallery" },
   { to: "/quote", label: "Virtual Quote Tool" },
   { to: "/financing", label: "Financing" },
@@ -25,7 +26,9 @@ const Header = () => {
           }}>
             <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
           </Link>
-          <Badge variant="secondary" className="hidden md:inline-flex">Fence Genius Certified</Badge>
+          <Badge variant="secondary" className="hidden md:inline-flex">
+            <Link to="/fence-genius" className="hover:underline">Fence Genius Certified</Link>
+          </Badge>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">

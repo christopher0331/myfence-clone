@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -43,7 +44,7 @@ const Contact = () => {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
           <div>
             <p className="text-muted-foreground">
-              Father & son owned and operated. We build with our proprietary Fence Genius technology for superior build quality and unmatched customer clarity from estimate to final walkthrough.
+              Father & son owned and operated. We build with our proprietary <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for superior build quality and unmatched customer clarity from estimate to final walkthrough.
             </p>
 
             <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">

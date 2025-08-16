@@ -181,7 +181,7 @@ const PictureFrameFence = () => {
                   <h3 className="font-semibold">Fence Genius Planning</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Precisely planned layouts using Fence Genius technology to reduce surprises and change orders.
+                  Precisely planned layouts using <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> to reduce surprises and change orders.
                 </p>
               </div>
               
@@ -255,7 +255,7 @@ const PictureFrameFence = () => {
                   
                   <h3 className="text-xl font-semibold">Fence Genius Technology</h3>
                   <p className="text-muted-foreground">
-                    Our proprietary planning software ensures every panel follows the ground contour perfectly, delivering the exact result you expect.
+                    Our proprietary <Link to="/fence-genius" className="text-primary hover:underline">planning software</Link> ensures every panel follows the ground contour perfectly, delivering the exact result you expect.
                   </p>
                 </div>
               </div>
@@ -272,7 +272,7 @@ const PictureFrameFence = () => {
                     MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our picture frame fences represent the perfect blend of traditional craftsmanship and modern technology.
                   </p>
                   <p className="text-muted-foreground">
-                    Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with Fence Genius precision planning.
+                    Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius precision planning</Link>.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">30+ Years Experience</Badge>

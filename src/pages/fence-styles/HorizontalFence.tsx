@@ -376,7 +376,7 @@ const HorizontalFence = () => {
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
                     <p className="text-muted-foreground">
-                      MyFence.com has been perfecting horizontal fence construction for over three decades. Our framed approach ensures your investment will provide lasting beauty and functionality far beyond traditional installations.
+                       MyFence.com has been perfecting horizontal fence construction for over three decades. Our framed approach combined with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> ensures your investment will provide lasting beauty and functionality far beyond traditional installations.
                     </p>
                     <p className="text-muted-foreground">
                       Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering superior construction that stands the test of time.

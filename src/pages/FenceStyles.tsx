@@ -64,7 +64,7 @@ const FenceStyles = () => {
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Fence Styles for Every Seattle Home</h1>
-        <p className="text-muted-foreground max-w-2xl">We design and build fences that fit your property, lifestyle, and budget — backed by our exclusive Fence Genius technology for perfect planning.</p>
+        <p className="text-muted-foreground max-w-2xl">We design and build fences that fit your property, lifestyle, and budget — backed by our exclusive <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for perfect planning.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {styles.map((s) => (
             <Card key={s.title} className="overflow-hidden hover:shadow-elevated transition-shadow">

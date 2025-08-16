@@ -1,4 +1,5 @@
 import Seo from "@/components/Seo";
+import { Link } from "react-router-dom";
 
 const images = [
   "/lovable-uploads/5f84fd61-a240-4aab-9d39-9728f6a27f36.png",
@@ -24,7 +25,7 @@ const Gallery = () => {
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Project Gallery</h1>
-        <p className="text-muted-foreground max-w-2xl">A look at our craftsmanship across Seattle neighborhoods. Every project is precisely planned and executed.</p>
+        <p className="text-muted-foreground max-w-2xl">A look at our craftsmanship across Seattle neighborhoods. Every project is precisely planned using <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> and executed to perfection.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {images.map((src, i) => (
             <div key={i} className="aspect-square w-full overflow-hidden rounded-lg shadow-elevated">

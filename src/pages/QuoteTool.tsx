@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const QuoteTool = () => {
   return (
@@ -18,7 +19,7 @@ const QuoteTool = () => {
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
         <div className="container relative z-10">
           <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Instant Online Quote</h1>
-          <p className="max-w-2xl text-background/90">Use our online tool to get real-time pricing for your fence project.</p>
+          <p className="max-w-2xl text-background/90">Use our online tool to get real-time pricing for your fence project. After your quote, we'll use <Link to="/fence-genius" className="underline hover:no-underline text-background">Fence Genius technology</Link> to ensure perfect installation.</p>
 
           <Card className="mt-8">
             <CardContent className="p-0">

@@ -84,7 +84,7 @@ const Index = () => {
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
-            <p className="mt-3 text-sm opacity-90">MyFence.com is owned by a father and son team where they have embraced the new industry leading Fence Genius technology to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</p>
+            <p className="mt-3 text-sm opacity-90">MyFence.com is owned by a father and son team where they have embraced the new industry leading <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius technology</Link> to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</p>
             <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
             </div>
@@ -112,7 +112,7 @@ const Index = () => {
           </div>
           <div>
             <h2 className="text-xl font-semibold">Transparent Pricing</h2>
-            <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with Fence Genius.</p>
+            <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
           <div>
             <h2 className="text-xl font-semibold">Proudly Seattle</h2>
@@ -191,7 +191,7 @@ const Index = () => {
           <CardContent className="p-0">
             <div className="grid md:grid-cols-2">
               <div className="p-6 md:p-10 flex flex-col justify-center">
-                <div className="text-xs uppercase tracking-wider text-primary/90">Powered by Fence Genius</div>
+                <div className="text-xs uppercase tracking-wider text-primary/90">Powered by <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius</Link></div>
                 <h3 className="mt-2 text-2xl font-semibold">Start Building Your Estimate</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Real-time pricing</li>
@@ -230,7 +230,7 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Architectural trellis accents built to last — perfect for Northwest gardens.</p>
         <Card className="mt-6">
           <CardContent className="p-0 overflow-hidden">
-            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, powered by Fence Genius" loading="lazy" className="w-full h-96 md:h-[32rem] object-cover" />
+            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, designed with Fence Genius technology" loading="lazy" className="w-full h-96 md:h-[32rem] object-cover" />
           </CardContent>
         </Card>
       </section>
