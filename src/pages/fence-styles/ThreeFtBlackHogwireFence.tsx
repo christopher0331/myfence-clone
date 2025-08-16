@@ -8,7 +8,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 
-const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
+const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
 const ThreeFtBlackHogwireFence = () => {
   const structuredData = {
