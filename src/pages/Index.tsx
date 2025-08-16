@@ -11,12 +11,21 @@ import { toast } from "@/hooks/use-toast";
 import cedarImg from "@/assets/fences/cedar.jpg";
 import modernImg from "@/assets/fences/horizontal-cedar.jpg";
 import gallery1 from "@/assets/gallery/gallery1.jpg";
-import { Cpu, Home, ShieldCheck, Hammer } from "lucide-react";
+import { Cpu, Home, ShieldCheck, Hammer, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const reviewsRef = useRef<HTMLDivElement | null>(null);
   // Load Trustindex reviews widget into the section container
@@ -32,6 +41,63 @@ const Index = () => {
       if (reviewsRef.current) reviewsRef.current.innerHTML = "";
     };
   }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://vcrkvdtlnhihglgahfcr.supabase.co/functions/v1/send-contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      // Success - trigger effects
+      const formElement = document.querySelector('#contact-form');
+      if (formElement) {
+        const rect = formElement.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        
+        // Import effects dynamically to avoid blocking
+        import("@/lib/effects").then(m => {
+          m.burstFirework(x, y);
+          m.popEmoji(x - 50, y - 100, "🎉");
+        });
+      }
+
+      setIsFormSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const orgLd = {
     "@context": "https://schema.org",
@@ -239,47 +305,95 @@ const Index = () => {
       <section className="container py-12 md:py-20">
         <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
-        <form
-          className="grid md:grid-cols-2 gap-6 mt-6"
-          onSubmit={(e) => {
-            e.preventDefault();
-            toast({ title: "Message sent", description: "Thanks! We'll get back to you shortly." });
-            // celebratory firework
-            import("@/lib/effects").then(m => m.burstFirework(window.innerWidth / 2, window.innerHeight / 2));
-          }}
-        >
-          <div className="grid gap-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" required />
-            </div>
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" required />
-            </div>
-            <div>
-              <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" type="tel" required />
-            </div>
-            <div>
-              <Label htmlFor="address">Address</Label>
-              <Input id="address" required />
-            </div>
-          </div>
-          <div className="grid gap-4">
-            <div className="h-full flex flex-col">
-              <Label htmlFor="message">Message</Label>
-              <Textarea id="message" className="min-h-[180px] flex-1 mt-2" required />
-            </div>
-            <div className="flex gap-3">
-              <Button type="submit">Send message</Button>
-              <Button variant="secondary" asChild>
-                <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground">We'll wire this form to Resend email delivery next; please provide your API key to finalize.</p>
-          </div>
-        </form>
+        
+        <Card className="mt-6">
+          <CardContent className="p-6">
+            {isFormSubmitted ? (
+              <div className="text-center py-12">
+                <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-green-700 mb-2">Form Successfully Sent!</h3>
+                <p className="text-muted-foreground mb-6">
+                  Thank you for your message. We'll get back to you within 24 hours.
+                </p>
+                <Button variant="secondary" asChild>
+                  <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+                </Button>
+              </div>
+            ) : (
+              <form
+                id="contact-form"
+                className="grid md:grid-cols-2 gap-6"
+                onSubmit={handleSubmit}
+              >
+                <div className="grid gap-4">
+                  <div>
+                    <Label htmlFor="name">Name</Label>
+                    <Input 
+                      id="name" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input 
+                      id="email" 
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input 
+                      id="phone" 
+                      name="phone"
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="address">Address</Label>
+                    <Input 
+                      id="address" 
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                </div>
+                <div className="grid gap-4">
+                  <div className="h-full flex flex-col">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      className="min-h-[180px] flex-1 mt-2" 
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div className="flex gap-3">
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send message"}
+                    </Button>
+                    <Button variant="secondary" asChild>
+                      <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+                    </Button>
+                  </div>
+                </div>
+              </form>
+            )}
+          </CardContent>
+        </Card>
       </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
