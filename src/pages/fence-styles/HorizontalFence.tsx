@@ -8,7 +8,7 @@ import InlineQuoteForm from '@/components/forms/InlineQuoteForm';
 import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 
-const heroImage = "/lovable-uploads/ef70b87f-116f-4698-9fc8-c09dc900a2b9.png";
+const heroImage = "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png";
 
 const galleryImages = [
   {
