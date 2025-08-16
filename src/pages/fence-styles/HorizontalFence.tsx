@@ -6,6 +6,7 @@ import { Shield, Award, Clock, Wrench, Star, CheckCircle } from 'lucide-react';
 import QuoteModal from '@/components/QuoteModal';
 import InlineQuoteForm from '@/components/forms/InlineQuoteForm';
 import VirtualQuoteTool from '@/components/VirtualQuoteTool';
+import PaymentCalculator from '@/components/PaymentCalculator';
 import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 
@@ -258,61 +259,158 @@ const HorizontalFence = () => {
           </div>
         </section>
 
-        {/* Company Info */}
-        <section className="bg-muted/50 py-16">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">Family-Owned Excellence Since 1994</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                With over 30 years of experience, we take pride in delivering superior horizontal fence 
-                construction that stands the test of time. Our framed approach ensures your investment 
-                will provide lasting beauty and functionality for decades to come.
-              </p>
-              <div className="flex flex-wrap justify-center gap-8 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
-                  <div className="text-muted-foreground">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">1000+</div>
-                  <div className="text-muted-foreground">Fences Installed</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">5★</div>
-                  <div className="text-muted-foreground">Average Rating</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16">
+        {/* About Horizontal Fencing */}
+        <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
-            <Card className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-8 md:p-12">
-              <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready For Your Premium Horizontal Fence?
-                </h2>
-                <p className="text-xl mb-8 text-primary-foreground/90">
-                  Get a free quote today and discover why our framed horizontal fence construction 
-                  is the choice of discerning homeowners who demand the best.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg" 
-                    variant="secondary"
-                    onClick={() => setIsQuoteModalOpen(true)}
-                    className="bg-background text-foreground hover:bg-background/90"
-                  >
-                    Get Free Quote Today
-                  </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary">
-                    <Link to="/contact">Contact Our Experts</Link>
-                  </Button>
+            <h2 className="text-3xl font-bold text-center mb-12">About Horizontal Cedar Fencing</h2>
+            
+            {/* Framed Construction Details */}
+            <Card className="overflow-hidden mb-8">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/ef70b87f-116f-4698-9fc8-c09dc900a2b9.png" 
+                      alt="Professional horizontal cedar fence with external 2x4 frame construction" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+                <CardContent className="p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Superior Framed Construction</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Unlike traditional horizontal fences that are simply nailed to posts, our horizontal cedar fence features a professional external 2x4 cedar frame system. This provides superior structural integrity and longevity compared to standard installations.
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      The frame is secured to fence posts using 6" exterior rated screws for maximum holding power, while the center vertical 2x4 rail prevents fence board drooping - a critical feature missing in traditional horizontal installations.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Every component uses premium grade 1 cedar with stainless steel fasteners to prevent rust staining and ensure long-lasting connections in the Pacific Northwest climate.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            {/* Perfect for Modern Homes */}
+            <Card className="overflow-hidden mb-8">
+              <div className="grid md:grid-cols-2 gap-0">
+                <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Perfect for Modern Homes</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Horizontal fencing has become increasingly popular in Seattle and the Eastside for its clean, contemporary aesthetic. The horizontal lines create a sense of width and openness while providing complete privacy.
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      This style complements both modern and traditional architecture, making it a versatile choice for neighborhoods like Bellevue, Kirkland, and Redmond. The natural cedar ages beautifully, developing a weathered silver-gray patina that enhances the modern look.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Our clear cedar upgrade option provides the ultimate in beauty with minimal knots and consistent grain patterns for homeowners who want the premium appearance that matches their home's value.
+                    </p>
+                  </div>
+                </CardContent>
+                <div className="order-1 md:order-2">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/ae3ed7fa-7d59-43e7-91b5-9a8187f353d3.png" 
+                      alt="Horizontal cedar fence gate with modern metal posts in residential setting" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
                 </div>
               </div>
             </Card>
+
+            {/* Why Choose Our Method */}
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/64d7349c-738e-4be3-984c-a966eb7637ca.png" 
+                      alt="Double horizontal fence gate showing proper diagonal bracing and construction quality" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+                <CardContent className="p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Why Our Construction Method Matters</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-3 text-lg">Structural Advantages</h4>
+                        <ul className="text-muted-foreground space-y-2">
+                          <li>• External frame prevents board sagging over time</li>
+                          <li>• Center vertical rail provides crucial middle support</li>
+                          <li>• 6" screws create superior connection strength</li>
+                          <li>• Proper drainage prevents water accumulation</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-3 text-lg">Long-term Performance</h4>
+                        <ul className="text-muted-foreground space-y-2">
+                          <li>• Maintains straight lines for years without warping</li>
+                          <li>• Stainless steel fasteners prevent black streaking</li>
+                          <li>• Frame design allows for thermal expansion</li>
+                          <li>• Built to withstand Pacific Northwest weather</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* About the Company */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <Card className="mb-12">
+              <CardContent className="pt-6">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
+                    <p className="text-muted-foreground">
+                      MyFence.com has been perfecting horizontal fence construction for over three decades. Our framed approach ensures your investment will provide lasting beauty and functionality far beyond traditional installations.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering superior construction that stands the test of time.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">30+ Years Experience</Badge>
+                      <Badge variant="secondary">Family Owned</Badge>
+                      <Badge variant="secondary">2-Year Warranty</Badge>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <img
+                      src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
+                      alt="MyFence.com father and son team with over 37 years of fencing expertise"
+                      className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Finance Calculator */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Make your Horizontal Fence project more affordable with our financing options. Calculate your monthly payment and see how easy it is to get started.
+              </p>
+            </div>
+            <PaymentCalculator />
           </div>
         </section>
 

@@ -7,6 +7,7 @@ import { CheckCircle, Users, DollarSign, AlertTriangle, ArrowLeft, Phone, Mail }
 import QuoteModal from "@/components/QuoteModal";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import PaymentCalculator from "@/components/PaymentCalculator";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 
@@ -304,36 +305,6 @@ const SolidBoardFence = () => {
             </CardContent>
           </Card>
 
-          {/* About the Company */}
-          <Card className="mb-12">
-            <CardContent className="pt-6">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-4">
-                  <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
-                  <p className="text-muted-foreground">
-                    MyFence.com has been serving the Pacific Northwest with honest, reliable fencing solutions for three decades. We believe in transparency about our products, including the limitations of budget options.
-                  </p>
-                  <p className="text-muted-foreground">
-                    Our solid board fence represents an entry-level option that still maintains our commitment to quality installation and honest communication about what you can expect.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">30+ Years Experience</Badge>
-                    <Badge variant="secondary">Family Owned</Badge>
-                    <Badge variant="secondary">Honest Advice</Badge>
-                  </div>
-                </div>
-                <div className="relative">
-                  <img
-                    src={fatherSonImg}
-                    alt="MyFence.com father and son team with over 37 years of fencing expertise"
-                    className="w-full h-80 object-cover rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
           {/* CTA Section */}
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="pt-6">
@@ -360,6 +331,127 @@ const SolidBoardFence = () => {
           </Card>
 
           <Separator className="my-12" />
+
+          {/* About Solid Board Fencing */}
+          <section className="py-16 bg-secondary/20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12">About Solid Board Fencing</h2>
+              
+              {/* Budget-Friendly Construction */}
+              <Card className="overflow-hidden mb-8">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative">
+                    <div className="h-full w-full">
+                      <img 
+                        src="/lovable-uploads/cf328f99-f352-4f8e-85f2-c95ccad2a4e7.png" 
+                        alt="Fresh cedar solid board fence installation showing budget-friendly construction" 
+                        className="h-full w-full object-cover min-h-[300px]" 
+                        loading="lazy" 
+                      />
+                    </div>
+                  </div>
+                  <CardContent className="p-6 md:p-10 flex items-center">
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-4">Budget-Friendly Construction</h3>
+                      <p className="text-muted-foreground mb-4">
+                        Our solid board fence represents the most economical fencing option available, featuring a streamlined 2-rail construction that keeps material costs down while still providing functional privacy for your property.
+                      </p>
+                      <p className="text-muted-foreground mb-4">
+                        Even at this price point, we maintain our commitment to quality by using stainless steel fasteners to prevent black streaking and ensuring professional installation techniques for the best possible performance.
+                      </p>
+                      <p className="text-muted-foreground">
+                        This fence style is perfect for budget-conscious property owners who need immediate privacy but are working within tight financial constraints or temporary situations.
+                      </p>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+
+              {/* Understanding the Trade-offs */}
+              <Card className="overflow-hidden mb-8">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-4">Understanding the Trade-offs</h3>
+                      <p className="text-muted-foreground mb-4">
+                        We believe in complete transparency about our products. While this fence provides immediate privacy at the lowest cost, the lack of a top cap means fence boards are vulnerable to weather damage over time.
+                      </p>
+                      <p className="text-muted-foreground mb-4">
+                        The exposed grain at the top of the boards can absorb rainwater, potentially leading to rot in the Pacific Northwest's wet climate. This is why we often recommend our <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame</Link> or <Link to="/fence-styles/craftsman-style-fence" className="text-primary hover:underline">Craftsman Style</Link> fences for long-term installations.
+                      </p>
+                      <p className="text-muted-foreground">
+                        However, for rental properties, temporary privacy needs, or situations where immediate cost savings are the priority, this fence serves its purpose effectively.
+                      </p>
+                    </div>
+                  </CardContent>
+                  <div className="order-1 md:order-2">
+                    <div className="h-full w-full">
+                      <img 
+                        src="/lovable-uploads/05c3b669-599a-45a4-8f5b-1ab86199a24a.png" 
+                        alt="Before and after comparison showing weathered fence replacement with new solid board fence" 
+                        className="h-full w-full object-cover min-h-[300px]" 
+                        loading="lazy" 
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Professional Installation Matters */}
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative">
+                    <div className="h-full w-full">
+                      <img 
+                        src="/lovable-uploads/30c81d4a-1f53-4e00-b4d8-b01bbab735b3.png" 
+                        alt="Solid board fence with MyFence.com branding showcasing professional installation" 
+                        className="h-full w-full object-cover min-h-[300px]" 
+                        loading="lazy" 
+                      />
+                    </div>
+                  </div>
+                  <CardContent className="p-6 md:p-10 flex items-center">
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-4">Professional Installation Matters</h3>
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="font-semibold mb-3 text-lg">Quality Within Budget</h4>
+                          <ul className="text-muted-foreground space-y-2">
+                            <li>• Stainless steel fasteners prevent rust staining</li>
+                            <li>• Proper board alignment and spacing</li>
+                            <li>• Professional post setting techniques</li>
+                            <li>• Immediate privacy and property definition</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-lg">When This Fence Works Best</h4>
+                          <ul className="text-muted-foreground space-y-2">
+                            <li>• Temporary privacy needs</li>
+                            <li>• Rental property situations</li>
+                            <li>• Tight budget constraints</li>
+                            <li>• Quick property boundary definition</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            </div>
+          </section>
+
+          {/* Finance Calculator */}
+          <section className="py-16">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Make your Solid Board Fence project more affordable with our financing options. Calculate your monthly payment and see how easy it is to get started.
+                </p>
+              </div>
+              <PaymentCalculator />
+            </div>
+          </section>
 
           {/* Virtual Quote Tool */}
           <VirtualQuoteTool fenceStyleName="Solid Board Fence" />

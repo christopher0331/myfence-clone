@@ -6,7 +6,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
@@ -368,8 +368,49 @@ const CraftsmanStyleFence = () => {
           </div>
         </section>
 
-        <section className="py-8">
-          <div className="container">
+        {/* About Craftsman Style Fencing */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">About Craftsman Style Fencing</h2>
+            
+            {/* Unique Alternating Pattern */}
+            <Card className="overflow-hidden mb-8">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative">
+                  <div className="h-full w-full">
+                    <img 
+                      src="/lovable-uploads/53ff106a-b96e-4b79-b816-4379aba7f89b.png" 
+                      alt="Craftsman fence with pergola and alternating board pattern construction" 
+                      className="h-full w-full object-cover min-h-[300px]" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+                <CardContent className="p-6 md:p-10 flex items-center">
+                  <div>
+                    <h3 className="text-2xl font-semibold mb-4">Unique Alternating Board Pattern</h3>
+                    <p className="text-muted-foreground mb-4">
+                      The craftsman style fence features a distinctive alternating board pattern with 5' and 6' fence boards, creating 12" gaps that allow wind to flow through while maintaining substantial privacy.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Built with the same premium cedar frame construction as our popular <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence</Link>, but with added architectural interest.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* Finance Calculator */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Make your Craftsman Style Fence project more affordable with our financing options.
+              </p>
+            </div>
             <PaymentCalculator />
           </div>
         </section>
