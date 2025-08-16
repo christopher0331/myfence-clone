@@ -32,7 +32,7 @@ const FenceGenius = () => {
       <section className="relative py-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-center bg-cover bg-fixed"
-          style={{ backgroundImage: "url('/lovable-uploads/28e8e878-729d-417b-ad3f-53643cf19710.png')" }}
+          style={{ backgroundImage: "url('/lovable-uploads/800f15ac-11f8-4b66-9a04-f21095de923d.png')" }}
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
