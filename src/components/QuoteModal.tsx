@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { callEdgeFunction } from "@/lib/supabase";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -38,31 +39,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     try {
       console.log('Submitting quote request with data:', formData);
       
-      // Use environment variables for Supabase configuration
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-      
-      if (!supabaseUrl || !supabaseAnonKey) {
-        throw new Error('Supabase configuration is missing. Please check your environment variables.');
-      }
-      
-      const functionUrl = `${supabaseUrl}/functions/v1/send-quote-request`;
-      console.log('Calling function at:', functionUrl);
-      
-      const response = await fetch(functionUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log('Quote request response status:', response.status);
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Quote request sent successfully:', result);
+      // Use Supabase client to call the edge function
+      const result = await callEdgeFunction('send-quote-request', formData);
+      console.log('Quote request sent successfully:', result);
         
         toast({
           title: "Quote Request Sent!",
@@ -79,11 +58,6 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         });
         
         onClose();
-      } else {
-        const errorText = await response.text();
-        console.error('Quote request error:', errorText);
-        throw new Error(`Failed to send quote request: ${response.status} ${errorText}`);
-      }
     } catch (error) {
       console.error('Quote request submission error:', error);
       toast({

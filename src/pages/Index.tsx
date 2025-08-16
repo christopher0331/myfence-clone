@@ -13,6 +13,7 @@ import modernImg from "@/assets/fences/horizontal-cedar.jpg";
 import gallery1 from "@/assets/gallery/gallery1.jpg";
 import { Cpu, Home, ShieldCheck, Hammer, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { callEdgeFunction } from "@/lib/supabase";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -57,35 +58,8 @@ const Index = () => {
     try {
       console.log('Submitting contact form with data:', formData);
       
-      // Use environment variables for Supabase configuration
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-      
-      if (!supabaseUrl || !supabaseAnonKey) {
-        throw new Error('Supabase configuration is missing. Please check your environment variables.');
-      }
-      
-      const functionUrl = `${supabaseUrl}/functions/v1/send-contact-form`;
-      console.log('Calling function at:', functionUrl);
-      
-      const response = await fetch(functionUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log('Response status:', response.status);
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Response error:', errorText);
-        throw new Error(`Failed to send message: ${response.status} ${errorText}`);
-      }
-
-      const result = await response.json();
+      // Use Supabase client to call the edge function
+      const result = await callEdgeFunction('send-contact-form', formData);
       console.log('Email sent successfully:', result);
 
       // Success - trigger effects
