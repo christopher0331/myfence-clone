@@ -259,7 +259,11 @@ const Index = () => {
             </div>
             <div>
               <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" type="tel" />
+              <Input id="phone" type="tel" required />
+            </div>
+            <div>
+              <Label htmlFor="address">Address</Label>
+              <Input id="address" required />
             </div>
           </div>
           <div className="grid gap-4">
