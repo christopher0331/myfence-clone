@@ -149,7 +149,13 @@ const FenceGenius = () => {
                     <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Algorithmic Calculation</h3>
-                      <p className="text-muted-foreground">We upload the measurements to the Fence Genius software, which calculates the perfect way to build any fence style, maximizing material yield for more fence for your dollar.</p>
+                      <p className="text-muted-foreground mb-4">We upload the measurements to the Fence Genius software, which calculates the perfect way to build any fence style, maximizing material yield for more fence for your dollar.</p>
+                      <img 
+                        src="/lovable-uploads/123b8fa8-bbd2-4d47-9776-532daa49bfd8.png" 
+                        alt="Fence Genius software showing algorithmic calculations for terrain adaptation and fence contour optimization"
+                        className="w-full rounded-lg mb-3"
+                      />
+                      <p className="text-sm text-muted-foreground italic">Software visualization showing algorithmic terrain adaptation and contour calculations</p>
                     </div>
                   </div>
                 </CardContent>
