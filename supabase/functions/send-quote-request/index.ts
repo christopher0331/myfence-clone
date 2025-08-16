@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { Resend } from "npm:resend@2.0.0"
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+const resend = new Resend(Deno.env.get('RESEND_API_KEY'))
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -23,7 +24,7 @@ serve(async (req) => {
       )
     }
 
-    if (!RESEND_API_KEY) {
+    if (!resend.apiKey) {
       return new Response(
         JSON.stringify({ error: 'Email service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -70,29 +71,20 @@ This request was submitted through the MyFence.com website.
       `
     }
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailData),
-    })
+    const { data: result, error: resendError } = await resend.emails.send(emailData)
 
-    if (!response.ok) {
-      const error = await response.text()
-      console.error('Resend API error:', error)
+    if (resendError) {
+      console.error('Resend API error:', resendError)
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
 
-    const result = await response.json()
     console.log('Email sent successfully:', result)
 
     return new Response(
-      JSON.stringify({ success: true, id: result.id }),
+      JSON.stringify({ success: true, id: result?.id }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
 
