@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const FenceGenius = () => {
   const structuredData = {
@@ -229,83 +230,95 @@ const FenceGenius = () => {
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png" 
-                  alt="Fence Genius software preview compared to actual installed fence showing perfect match"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Perfect terrain adaptation with smooth top rail</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/craftsman-style" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png" 
+                    alt="Fence Genius software preview compared to actual installed fence showing perfect match"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Perfect terrain adaptation with smooth top rail</p>
+                  </CardContent>
+                </Card>
+              </Link>
               
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/3678984e-bf2a-455f-ad3d-bc681fb586d8.png" 
-                  alt="Complex curved fence section showing software accuracy"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Complex curved sections calculated perfectly</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/3678984e-bf2a-455f-ad3d-bc681fb586d8.png" 
+                    alt="Complex curved fence section showing software accuracy"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Complex curved sections calculated perfectly</p>
+                  </CardContent>
+                </Card>
+              </Link>
               
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/c62bb0dd-0907-4cbb-acd4-aa52eceb6fa2.png" 
-                  alt="Stepped fence design matching software preview exactly"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Stepped design with precise measurements</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c62bb0dd-0907-4cbb-acd4-aa52eceb6fa2.png" 
+                    alt="Stepped fence design matching software preview exactly"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Stepped design with precise measurements</p>
+                  </CardContent>
+                </Card>
+              </Link>
               
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/0bc68390-5573-45cd-ad88-fb9e8a21a5e9.png" 
-                  alt="Gate integration calculated by Fence Genius software"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Gate integration calculated seamlessly</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/solid-board" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/0bc68390-5573-45cd-ad88-fb9e8a21a5e9.png" 
+                    alt="Gate integration calculated by Fence Genius software"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Gate integration calculated seamlessly</p>
+                  </CardContent>
+                </Card>
+              </Link>
               
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/5ea38495-32f1-4638-bc1f-4c1743d777f4.png" 
-                  alt="Sloped terrain fence perfectly matching software calculations"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Challenging slope handled algorithmically</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5ea38495-32f1-4638-bc1f-4c1743d777f4.png" 
+                    alt="Sloped terrain fence perfectly matching software calculations"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Challenging slope handled algorithmically</p>
+                  </CardContent>
+                </Card>
+              </Link>
               
-              <Card className="overflow-hidden">
-                <img 
-                  src="/lovable-uploads/09ec72a6-74c9-469d-b523-3b02ca8d85b4.png" 
-                  alt="Multi-section fence showing consistent quality through Fence Genius"
-                  className="w-full aspect-square object-cover"
-                  width="1080"
-                  height="1080"
-                />
-                <CardContent className="p-4">
-                  <p className="text-sm text-muted-foreground">Multi-section consistency guaranteed</p>
-                </CardContent>
-              </Card>
+              <Link to="/fence-styles/three-rail-picture-frame" className="block hover:opacity-80 transition-opacity">
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/09ec72a6-74c9-469d-b523-3b02ca8d85b4.png" 
+                    alt="Multi-section fence showing consistent quality through Fence Genius"
+                    className="w-full aspect-square object-cover"
+                    width="1080"
+                    height="1080"
+                  />
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Multi-section consistency guaranteed</p>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </div>
