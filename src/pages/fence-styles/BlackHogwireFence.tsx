@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import PaymentCalculator from "@/components/PaymentCalculator";
+
+const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const BlackHogwireFence = () => {
   return (
@@ -260,6 +263,53 @@ const BlackHogwireFence = () => {
                 </Card>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* About the Company */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <Card className="mb-12">
+              <CardContent className="pt-6">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
+                    <p className="text-muted-foreground">
+                      MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our black hogwire fences represent the perfect blend of traditional craftsmanship and modern security technology.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with Fence Genius precision planning.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">30+ Years Experience</Badge>
+                      <Badge variant="secondary">Family Owned</Badge>
+                      <Badge variant="secondary">2-Year Warranty</Badge>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <img
+                      src={fatherSonImg}
+                      alt="MyFence.com father and son team with over 37 years of fencing expertise"
+                      className="w-full h-80 object-cover rounded-lg shadow-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Finance Calculator */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Make your Black Hogwire Fence project more affordable with our financing options. Calculate your monthly payment and see how easy it is to get started.
+              </p>
+            </div>
+            <PaymentCalculator />
           </div>
         </section>
 
