@@ -36,15 +36,23 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/functions/v1/send-quote-request', {
+      console.log('Submitting quote request with data:', formData);
+      
+      const response = await fetch('https://vcrkvdtlnhihglgahfcr.supabase.co/functions/v1/send-quote-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjcmt2ZHRsbmhpaGdsZ2FoZmNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxMjM2MTksImV4cCI6MjA0OTY5OTYxOX0.rNFVXl5gYvjjWz3MO2WXPzr_fFf7jYtWAqJKCYI2EwI'}`,
         },
         body: JSON.stringify(formData),
       });
 
+      console.log('Quote request response status:', response.status);
+
       if (response.ok) {
+        const result = await response.json();
+        console.log('Quote request sent successfully:', result);
+        
         toast({
           title: "Quote Request Sent!",
           description: "We'll get back to you within 24 hours with a detailed quote.",
@@ -61,12 +69,15 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         
         onClose();
       } else {
-        throw new Error('Failed to send quote request');
+        const errorText = await response.text();
+        console.error('Quote request error:', errorText);
+        throw new Error(`Failed to send quote request: ${response.status} ${errorText}`);
       }
     } catch (error) {
+      console.error('Quote request submission error:', error);
       toast({
         title: "Error",
-        description: "Failed to send quote request. Please try again or call us directly at (253) 455-1885.",
+        description: `Failed to send quote request: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again or call us directly at (253) 455-1885.`,
         variant: "destructive",
       });
     } finally {
