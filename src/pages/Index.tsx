@@ -57,11 +57,22 @@ const Index = () => {
     try {
       console.log('Submitting contact form with data:', formData);
       
-      const response = await fetch('https://vcrkvdtlnhihglgahfcr.supabase.co/functions/v1/send-contact-form', {
+      // Use environment variables for Supabase configuration
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error('Supabase configuration is missing. Please check your environment variables.');
+      }
+      
+      const functionUrl = `${supabaseUrl}/functions/v1/send-contact-form`;
+      console.log('Calling function at:', functionUrl);
+      
+      const response = await fetch(functionUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjcmt2ZHRsbmhpaGdsZ2FoZmNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxMjM2MTksImV4cCI6MjA0OTY5OTYxOX0.rNFVXl5gYvjjWz3MO2WXPzr_fFf7jYtWAqJKCYI2EwI'}`,
+          'Authorization': `Bearer ${supabaseAnonKey}`,
         },
         body: JSON.stringify(formData),
       });
