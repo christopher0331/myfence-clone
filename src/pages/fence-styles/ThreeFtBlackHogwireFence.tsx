@@ -319,18 +319,33 @@ const ThreeFtBlackHogwireFence = () => {
                 Looking for additional security or privacy? Consider our 6' Black Hogwire fence for the same great construction with added height.
               </p>
             </div>
-            <div className="flex justify-center">
-              <Card className="max-w-md">
-                <CardContent className="p-6 text-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+              <div>
+                <img
+                  src="/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png"
+                  alt="6' Black Hogwire Fence with cedar frame"
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
+              <Card>
+                <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">6' Black Hogwire Fence</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Same great construction and visual openness, but with additional height for enhanced security and privacy.
-                  </p>
-                  <Button asChild>
-                    <Link to="/fence-styles/black-hogwire-fence">
-                      View 6' Option
-                    </Link>
-                  </Button>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Same great construction and visual openness, but with additional height for enhanced security and privacy.
+                    </p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li>• Enhanced security with 6-foot height</li>
+                      <li>• Same cedar frame and powder-coated steel</li>
+                      <li>• Ideal for wooded properties</li>
+                      <li>• Maintains visual openness</li>
+                    </ul>
+                    <Button asChild className="w-full">
+                      <Link to="/fence-styles/black-hogwire-fence">
+                        View 6' Option
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
