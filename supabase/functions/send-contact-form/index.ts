@@ -48,7 +48,7 @@ This message was submitted through the MyFence.com contact form.
 
     const emailData = {
       from: 'MyFence.com <onboarding@resend.dev>',
-      to: ['andrew.knudsen25@gmail.com'],
+      to: ['info@myfence.com'],
       reply_to: email,
       subject: `New Contact Form Message from ${name}`,
       text: emailBody,
