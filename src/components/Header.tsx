@@ -23,7 +23,7 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-xl font-semibold tracking-tight bg-orange-600 text-white px-4 py-2 rounded-lg">MyFence.com</span>
+            <span className="text-xl font-semibold tracking-tight bg-gradient-primary text-primary-foreground px-4 py-2 rounded-lg">MyFence.com</span>
           </Link>
           <Badge variant="secondary" className="hidden md:inline-flex">Fence Genius Certified</Badge>
         </div>
