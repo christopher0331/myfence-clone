@@ -160,6 +160,12 @@ const Footer = () => {
                 >
                   Terms & Conditions
                 </Link>
+                <Link
+                  to="/fence-genius"
+                  className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Fence Genius Technology
+                </Link>
               </div>
             </div>
           </div>
