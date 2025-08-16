@@ -322,7 +322,7 @@ const ThreeFtBlackHogwireFence = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
               <div>
                 <img
-                  src="/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png"
+                  src="/lovable-uploads/02ec9ce3-6706-49f2-af0e-d95bab2cda3f.png"
                   alt="6' Black Hogwire Fence with cedar frame"
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
