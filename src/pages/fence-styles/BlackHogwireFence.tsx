@@ -184,8 +184,8 @@ const BlackHogwireFence = () => {
                 <div className="relative">
                   <div className="h-full w-full">
                     <img 
-                      src="/lovable-uploads/7f467c89-d3c2-4358-8880-019c3b17581a.png" 
-                      alt="Black hogwire fence panel construction detail showing steel frame and cedar posts" 
+                      src="/lovable-uploads/d1bc30ce-d724-4e3b-afe1-c8c833f5c32d.png" 
+                      alt="Black hogwire fence with cedar frame showing robust construction and security features" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 
                     />
@@ -228,8 +228,8 @@ const BlackHogwireFence = () => {
                 <div className="order-1 md:order-2">
                   <div className="h-full w-full">
                     <img 
-                      src="/lovable-uploads/26313a9e-b7aa-4a31-8d3d-ca0abe3e0df8.png" 
-                      alt="Black hogwire fence with cedar frame in Pacific Northwest backyard setting" 
+                      src="/lovable-uploads/51daca50-4efb-4dc1-908e-73ae3e892ed0.png" 
+                      alt="Black hogwire fence in Pacific Northwest setting showing harmony with lush landscaping" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 
                     />
@@ -244,8 +244,8 @@ const BlackHogwireFence = () => {
                 <div className="relative">
                   <div className="h-full w-full">
                     <img 
-                      src="/lovable-uploads/bc3f0275-e178-4cd4-8731-8c9c78f95185.png" 
-                      alt="Long section of black hogwire fencing showing visual openness and security" 
+                      src="/lovable-uploads/8bf70156-79e4-4814-aa6c-fe6011fa6c27.png" 
+                      alt="Black hogwire fence installation showing visual openness and secure boundaries" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 
                     />
