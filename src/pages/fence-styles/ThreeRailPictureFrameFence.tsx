@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
@@ -320,6 +321,9 @@ const ThreeRailPictureFrameFence = () => {
               </div>
             </section>
 
+
+            {/* Virtual Quote Tool */}
+            <VirtualQuoteTool fenceStyleName="3 Rail Picture Frame Fence" />
 
             <section className="mt-6">
               <InlineQuoteForm context="3 Rail Picture Frame Fence page" />

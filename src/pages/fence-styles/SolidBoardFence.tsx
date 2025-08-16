@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { CheckCircle, Users, DollarSign, AlertTriangle, ArrowLeft, Phone, Mail } from "lucide-react";
 import QuoteModal from "@/components/QuoteModal";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 
@@ -359,6 +360,9 @@ const SolidBoardFence = () => {
           </Card>
 
           <Separator className="my-12" />
+
+          {/* Virtual Quote Tool */}
+          <VirtualQuoteTool fenceStyleName="Solid Board Fence" />
 
           {/* Inline Quote Form */}
           <div className="max-w-2xl mx-auto">

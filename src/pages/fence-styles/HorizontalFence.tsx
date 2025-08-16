@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Shield, Award, Clock, Wrench, Star, CheckCircle } from 'lucide-react';
 import QuoteModal from '@/components/QuoteModal';
 import InlineQuoteForm from '@/components/forms/InlineQuoteForm';
+import VirtualQuoteTool from '@/components/VirtualQuoteTool';
 import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 
@@ -314,6 +315,9 @@ const HorizontalFence = () => {
             </Card>
           </div>
         </section>
+
+        {/* Virtual Quote Tool */}
+        <VirtualQuoteTool fenceStyleName="Horizontal Fence" />
 
         {/* Inline Quote Form */}
         <section className="py-16 bg-muted/30">

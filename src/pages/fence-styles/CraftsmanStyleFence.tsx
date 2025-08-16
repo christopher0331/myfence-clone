@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
@@ -328,6 +329,9 @@ const CraftsmanStyleFence = () => {
                 </details>
               </div>
             </section>
+
+            {/* Virtual Quote Tool */}
+            <VirtualQuoteTool fenceStyleName="Craftsman Style Fence" />
 
             <section className="mt-6">
               <InlineQuoteForm context="Craftsman Style Fence page" />
