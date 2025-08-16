@@ -269,7 +269,7 @@ const Index = () => {
           <div className="grid gap-4">
             <div className="h-full flex flex-col">
               <Label htmlFor="message">Message</Label>
-              <Textarea id="message" className="min-h-[180px] flex-1" required />
+              <Textarea id="message" className="min-h-[180px] flex-1 mt-2" required />
             </div>
             <div className="flex gap-3">
               <Button type="submit">Send message</Button>
