@@ -5,7 +5,6 @@ import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
 const navItems = [
   { to: "/fence-styles", label: "Fence Styles" },
-  { to: "/fence-genius", label: "Fence Genius" },
   { to: "/gallery", label: "Gallery" },
   { to: "/quote", label: "Virtual Quote Tool" },
   { to: "/financing", label: "Financing" },
