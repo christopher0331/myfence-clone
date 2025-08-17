@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
@@ -114,15 +115,15 @@ const PicketFence = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-4">2-Year Warranty</h3>
-                  <p className="text-muted-foreground">
-                    We stand behind our workmanship with a comprehensive 2-year warranty on all installations for your peace of mind.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card>
+                  <CardContent className="p-6 text-center">
+                    <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-4">{WARRANTY_CONSTANTS.SHORT_TITLE}</h3>
+                    <p className="text-muted-foreground">
+                      {WARRANTY_CONSTANTS.CARD_DESCRIPTION}
+                    </p>
+                  </CardContent>
+                </Card>
             </div>
           </div>
         </section>
@@ -386,7 +387,7 @@ const PicketFence = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">2-year warranty on all installations</span>
+                    <span className="text-sm">{WARRANTY_CONSTANTS.INLINE_TEXT}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>

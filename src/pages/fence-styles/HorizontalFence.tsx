@@ -9,6 +9,7 @@ import VirtualQuoteTool from '@/components/VirtualQuoteTool';
 import PaymentCalculator from '@/components/PaymentCalculator';
 import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const heroImage = "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png";
 
@@ -379,12 +380,12 @@ const HorizontalFence = () => {
                        MyFence.com has been perfecting horizontal fence construction for over three decades. Our framed approach combined with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> ensures your investment will provide lasting beauty and functionality far beyond traditional installations.
                     </p>
                     <p className="text-muted-foreground">
-                      Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering superior construction that stands the test of time.
+                      {WARRANTY_CONSTANTS.ABOUT_TEXT}, we take pride in delivering superior construction that stands the test of time.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary">30+ Years Experience</Badge>
                       <Badge variant="secondary">Family Owned</Badge>
-                      <Badge variant="secondary">2-Year Warranty</Badge>
+                      <Badge variant="secondary">{WARRANTY_CONSTANTS.BADGE_TEXT}</Badge>
                     </div>
                   </div>
                   <div className="relative">

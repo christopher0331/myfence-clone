@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Link } from "react-router-dom";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
 const heroImg = "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"; // 3-rail detail
@@ -339,7 +340,7 @@ const ThreeRailPictureFrameFence = () => {
               <div>
                 <p className="text-muted-foreground max-w-prose mx-auto md:mx-0">
                   We’re a father & son team serving the Seattle area—licensed, insured, and backed by a
-                  2‑year workmanship warranty. Powered by Fence Genius for precise planning.
+                  {WARRANTY_CONSTANTS.INLINE_TEXT}. Powered by Fence Genius for precise planning.
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
                   <Button asChild>

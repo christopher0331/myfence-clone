@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -320,12 +321,12 @@ const BlackHogwireFence = () => {
                       MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our black hogwire fences represent the perfect blend of traditional craftsmanship and modern security technology.
                     </p>
                     <p className="text-muted-foreground">
-                      Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with Fence Genius precision planning.
+                      {WARRANTY_CONSTANTS.ABOUT_TEXT}, we take pride in delivering exceptional results with Fence Genius precision planning.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary">30+ Years Experience</Badge>
                       <Badge variant="secondary">Family Owned</Badge>
-                      <Badge variant="secondary">2-Year Warranty</Badge>
+                      <Badge variant="secondary">{WARRANTY_CONSTANTS.BADGE_TEXT}</Badge>
                     </div>
                   </div>
                   <div className="relative">

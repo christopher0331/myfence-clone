@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
@@ -365,7 +366,7 @@ const ThreeFtBlackHogwireFence = () => {
                   <li>• Licensed and insured professionals</li>
                   <li>• Specialized in Pacific Northwest fencing solutions</li>
                   <li>• Quality materials sourced locally when possible</li>
-                  <li>• Comprehensive warranty on all installations</li>
+                  <li>• {WARRANTY_CONSTANTS.BULLET_POINT}</li>
                   <li>• Free consultations and estimates</li>
                 </ul>
               </div>

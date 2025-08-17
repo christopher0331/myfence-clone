@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -163,7 +164,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         </Button>
       </form>
       <div className="text-center text-xs text-muted-foreground mt-4 space-y-2">
-        <p>✓ <strong>2-Year Workmanship Warranty</strong> on all installations</p>
+        <p>✓ <strong>{WARRANTY_CONSTANTS.TITLE}</strong> on all installations</p>
         <p>Prefer to talk? Call us at <strong>(253) 455-1885</strong></p>
       </div>
     </div>

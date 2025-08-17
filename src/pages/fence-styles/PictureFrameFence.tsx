@@ -10,6 +10,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { getFenceStyleImages } from "@/data/fenceImages";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const images = getFenceStyleImages("picture-frame");
 const heroImg = images.hero.src;
@@ -272,12 +273,12 @@ const PictureFrameFence = () => {
                     MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our picture frame fences represent the perfect blend of traditional craftsmanship and modern technology.
                   </p>
                   <p className="text-muted-foreground">
-                    Licensed, insured, and backed by a 2-year workmanship warranty, we take pride in delivering exceptional results with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius precision planning</Link>.
+                    {WARRANTY_CONSTANTS.ABOUT_TEXT}, we take pride in delivering exceptional results with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius precision planning</Link>.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">30+ Years Experience</Badge>
                     <Badge variant="secondary">Family Owned</Badge>
-                    <Badge variant="secondary">2-Year Warranty</Badge>
+                    <Badge variant="secondary">{WARRANTY_CONSTANTS.BADGE_TEXT}</Badge>
                   </div>
                 </div>
                 <div className="relative">
