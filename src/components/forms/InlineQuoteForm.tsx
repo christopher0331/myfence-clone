@@ -5,6 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { burstFirework } from "@/lib/effects";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -38,13 +40,21 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           : formData.projectDescription,
       };
 
-      const response = await fetch("/api/functions/v1/send-quote-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      console.log('Submitting quote request with data:', payload);
+
+      const { data, error } = await supabase.functions.invoke('send-quote-request', {
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error("Failed to send quote request");
+      if (error) {
+        console.error('Quote request error:', error);
+        throw error;
+      }
+
+      console.log('Quote request sent successfully:', data);
+      
+      // Trigger fireworks animation
+      burstFirework();
 
       toast({
         title: "Quote Request Sent!",
@@ -53,6 +63,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
 
       setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "" });
     } catch (err) {
+      console.error('Quote request submission error:', err);
       toast({
         title: "Error",
         description:

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { burstFirework } from "@/lib/effects";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -50,6 +51,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
       }
 
       console.log('Quote request sent successfully:', data);
+      
+      // Trigger fireworks animation
+      burstFirework();
 
       toast({
         title: "Quote Request Sent!",
