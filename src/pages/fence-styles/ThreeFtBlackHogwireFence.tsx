@@ -63,7 +63,7 @@ const ThreeFtBlackHogwireFence = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" asChild>
-                    <Link to="/quote-tool">Get Quote</Link>
+                    <Link to="/quote">Get Quote</Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <Link to="/contact">Contact Us</Link>
