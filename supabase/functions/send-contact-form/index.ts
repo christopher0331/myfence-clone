@@ -18,11 +18,11 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Request body parsed:', requestBody)
     
-    const { name, email, phone, address, message } = requestBody
+    const { name, email, phone, message } = requestBody
 
     console.log('Validating fields...')
     // Validate required fields
-    if (!name || !email || !phone || !address || !message) {
+    if (!name || !email || !message) {
       console.log('Validation failed - missing fields')
       return new Response(
         JSON.stringify({ error: 'All fields are required' }),
@@ -48,8 +48,7 @@ New Contact Form Submission from MyFence.com
 Customer Information:
 Name: ${name}
 Email: ${email}
-Phone: ${phone}
-Address: ${address}
+Phone: ${phone || 'Not provided'}
 
 Message:
 ${message}
@@ -71,8 +70,7 @@ This message was submitted through the MyFence.com contact form.
         <ul>
           <li><strong>Name:</strong> ${name}</li>
           <li><strong>Email:</strong> ${email}</li>
-          <li><strong>Phone:</strong> ${phone}</li>
-          <li><strong>Address:</strong> ${address}</li>
+          <li><strong>Phone:</strong> ${phone || 'Not provided'}</li>
         </ul>
         
         <h3>Message:</h3>
