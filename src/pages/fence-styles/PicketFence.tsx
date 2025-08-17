@@ -86,7 +86,7 @@ const PicketFence = () => {
             <h2 className="text-3xl font-bold text-center mb-12">
               Why Choose a Traditional Picket Fence?
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card>
                 <CardContent className="p-6 text-center">
                   <Home className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -111,6 +111,15 @@ const PicketFence = () => {
                   <h3 className="text-xl font-semibold mb-4">Trellis Options</h3>
                   <p className="text-muted-foreground">
                     Optional trellis systems make your property more inviting and create beautiful garden focal points at gates and entrances.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-4">2-Year Warranty</h3>
+                  <p className="text-muted-foreground">
+                    We stand behind our workmanship with a comprehensive 2-year warranty on all installations for your peace of mind.
                   </p>
                 </CardContent>
               </Card>

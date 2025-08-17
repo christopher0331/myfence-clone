@@ -185,8 +185,8 @@ const Index = () => {
             <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
           <div>
-            <h2 className="text-xl font-semibold">Proudly Seattle</h2>
-            <p className="text-muted-foreground mt-2">We know Northwest weather and build for longevity — rain or shine.</p>
+            <h2 className="text-xl font-semibold">2-Year Workmanship Warranty</h2>
+            <p className="text-muted-foreground mt-2">We stand behind our work with a comprehensive 2-year warranty on all installations — your peace of mind guaranteed.</p>
           </div>
         </div>
       </section>

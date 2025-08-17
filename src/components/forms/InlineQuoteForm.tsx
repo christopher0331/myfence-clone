@@ -162,9 +162,10 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           )}
         </Button>
       </form>
-      <p className="text-center text-xs text-muted-foreground mt-4">
-        Prefer to talk? Call us at <strong>(253) 455-1885</strong>
-      </p>
+      <div className="text-center text-xs text-muted-foreground mt-4 space-y-2">
+        <p>✓ <strong>2-Year Workmanship Warranty</strong> on all installations</p>
+        <p>Prefer to talk? Call us at <strong>(253) 455-1885</strong></p>
+      </div>
     </div>
   );
 };

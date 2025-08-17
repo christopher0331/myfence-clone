@@ -190,7 +190,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
           </div>
         </form>
 
-        <div className="text-center text-sm text-muted-foreground border-t pt-4">
+        <div className="text-center text-sm text-muted-foreground border-t pt-4 space-y-2">
+          <p>✓ <strong>2-Year Workmanship Warranty</strong> on all installations</p>
           <p>Questions? Call us directly at <strong>(253) 455-1885</strong></p>
         </div>
       </DialogContent>
