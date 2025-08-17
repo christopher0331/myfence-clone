@@ -386,7 +386,7 @@ const PicketFence = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">5-year warranty on all installations</span>
+                    <span className="text-sm">2-year warranty on all installations</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
