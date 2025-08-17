@@ -5,12 +5,58 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent", description: "Thanks! We'll reach out ASAP." });
-    import("@/lib/effects").then(m => m.burstFirework(window.innerWidth / 2, window.innerHeight / 2));
+    setIsSubmitting(true);
+
+    try {
+      console.log('Submitting contact form with data:', formData);
+
+      const { data, error } = await supabase.functions.invoke('send-contact-form', {
+        body: JSON.stringify(formData),
+      });
+
+      if (error) {
+        console.error('Contact form error:', error);
+        throw error;
+      }
+
+      console.log('Contact form sent successfully:', data);
+      
+      // Trigger fireworks animation
+      import("@/lib/effects").then(m => m.burstFirework(window.innerWidth / 2, window.innerHeight / 2));
+
+      toast({ title: "Message sent", description: "Thanks! We'll reach out ASAP." });
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or call us directly at (253) 455-1885.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const orgLd = {
@@ -39,53 +85,117 @@ const Contact = () => {
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Us</h1>
-        <p className="text-muted-foreground max-w-2xl">We’re here to help. Call <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">(253) 455-1885</a> or send us a message below.</p>
+        <p className="text-muted-foreground max-w-2xl">We're here to help. Call <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">(253) 455-1885</a> or send us a message below.</p>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
-          <div>
-            <p className="text-muted-foreground">
-              Father & son owned and operated. We build with our proprietary <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for superior build quality and unmatched customer clarity from estimate to final walkthrough.
+        {isSubmitted ? (
+          <div className="mt-8 text-center py-12 bg-card rounded-lg border shadow-sm">
+            <div className="text-6xl mb-4">🎉</div>
+            <h2 className="text-2xl font-semibold mb-2">Message Sent Successfully!</h2>
+            <p className="text-muted-foreground mb-6">
+              Thank you for contacting us! We'll get back to you within 24 hours.
             </p>
-
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" required autoComplete="name" />
-                </div>
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" required autoComplete="email" inputMode="email" />
-                </div>
-                <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" autoComplete="tel" inputMode="tel" />
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="message">How can we help?</Label>
-                  <Textarea id="message" rows={7} required autoComplete="off" />
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button type="submit" variant="hero" className="w-full sm:w-auto">Send Message</Button>
-                  <Button type="button" variant="secondary" className="w-full sm:w-auto" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <figure>
-            <div className="aspect-square w-full overflow-hidden rounded-lg shadow-elevated">
-              <img
-                src="/lovable-uploads/5f84fd61-a240-4aab-9d39-9728f6a27f36.png"
-                alt="Father and son fence contractors in Seattle from MyFence.com"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button 
+                onClick={() => setIsSubmitted(false)} 
+                variant="outline"
+              >
+                Send Another Message
+              </Button>
+              <Button 
+                onClick={() => (window.location.href = "tel:12534551885")} 
+                variant="hero"
+              >
+                Call Us Now
+              </Button>
             </div>
-            <figcaption className="sr-only">Father and son owned fence company using Fence Genius technology</figcaption>
-          </figure>
-        </div>
+          </div>
+        ) : (
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
+            <div>
+              <p className="text-muted-foreground">
+                Father & son owned and operated. We build with our proprietary <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for superior build quality and unmatched customer clarity from estimate to final walkthrough.
+              </p>
+
+              <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="name">Name</Label>
+                    <Input 
+                      id="name" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required 
+                      autoComplete="name" 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input 
+                      id="email" 
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required 
+                      autoComplete="email" 
+                      inputMode="email" 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input 
+                      id="phone" 
+                      name="phone"
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      autoComplete="tel" 
+                      inputMode="tel" 
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="message">How can we help?</Label>
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={7} 
+                      required 
+                      autoComplete="off" 
+                    />
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="submit" variant="hero" className="w-full sm:w-auto" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+                        </>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </Button>
+                    <Button type="button" variant="secondary" className="w-full sm:w-auto" onClick={() => (window.location.href = "tel:12534551885")}>Call Now</Button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <figure>
+              <div className="aspect-square w-full overflow-hidden rounded-lg shadow-elevated">
+                <img
+                  src="/lovable-uploads/5f84fd61-a240-4aab-9d39-9728f6a27f36.png"
+                  alt="Father and son fence contractors in Seattle from MyFence.com"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <figcaption className="sr-only">Father and son owned fence company using Fence Genius technology</figcaption>
+            </figure>
+          </div>
+        )}
       </section>
     </main>
   );
