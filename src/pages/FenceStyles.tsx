@@ -8,7 +8,7 @@ const styles = [
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look." },
   { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail." },
   { img: "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png", title: "Craftsman Style Fence", desc: "Distinctive craftsman accents with open top detailing." },
-  { img: "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners." },
+  { img: "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners." },
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option" },
   { img: "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png", title: "Horizontal Fence", desc: "Framed horizontal fence with center rail support for maximum durability.", badge: "Fan Favorite" },
   { img: "/lovable-uploads/304e6ac7-d932-4522-a07f-a481b9dac9c2.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style." },
