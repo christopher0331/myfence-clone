@@ -10,7 +10,6 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 // Images for Solid Board Fence
 const heroImg = "/lovable-uploads/ee554667-1407-47ea-a6f4-ec25700f4bcb.png"; // New cedar fence installation
@@ -25,7 +24,6 @@ const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
 
 const SolidBoardFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const isMobile = useIsMobile();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -124,8 +122,7 @@ const SolidBoardFence = () => {
               <img
                 src={heroImg}
                 alt="New cedar solid board fence installation with clean lines and professional construction"
-                className="w-full object-cover rounded-lg shadow-2xl"
-                style={{ height: isMobile ? '300px' : '500px' }}
+                className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
@@ -216,7 +213,7 @@ const SolidBoardFence = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.slice(0, isMobile ? 3 : gallery.length).map((image, index) => (
+              {gallery.map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={image.src}
@@ -457,17 +454,7 @@ const SolidBoardFence = () => {
           </section>
 
           {/* Virtual Quote Tool */}
-          {isMobile ? (
-            <div className="text-center py-8">
-              <Button size="lg" asChild>
-                <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
-                  Get Virtual Quote
-                </a>
-              </Button>
-            </div>
-          ) : (
-            <VirtualQuoteTool fenceStyleName="Solid Board Fence" />
-          )}
+          <VirtualQuoteTool fenceStyleName="Solid Board Fence" />
 
           {/* Inline Quote Form */}
           <div className="max-w-2xl mx-auto">

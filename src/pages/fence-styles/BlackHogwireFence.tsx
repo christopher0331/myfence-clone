@@ -8,12 +8,10 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const BlackHogwireFence = () => {
-  const isMobile = useIsMobile();
   return (
     <>
       <Seo
@@ -59,7 +57,6 @@ const BlackHogwireFence = () => {
                   src="/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png"
                   alt="6' Black Hogwire Fence installed in residential backyard with cedar frame"
                   className="rounded-lg shadow-2xl w-full"
-                  style={{ height: isMobile ? '300px' : 'auto', objectFit: 'cover' }}
                   loading="eager"
                 />
               </div>
@@ -126,22 +123,18 @@ const BlackHogwireFence = () => {
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
               />
-              {!isMobile && (
-                <>
-                  <img
-                    src="/lovable-uploads/bc3f0275-e178-4cd4-8731-8c9c78f95185.png"
-                    alt="Long section of black hogwire fencing with landscaping"
-                    className="rounded-lg shadow-lg w-full h-64 object-cover"
-                    loading="lazy"
-                  />
-                  <img
-                    src="/lovable-uploads/f42d189c-5d7d-499c-9363-7b3f3177ad07.png"
-                    alt="Black hogwire fence showing brand marking"
-                    className="rounded-lg shadow-lg w-full h-64 object-cover"
-                    loading="lazy"
-                  />
-                </>
-              )}
+              <img
+                src="/lovable-uploads/bc3f0275-e178-4cd4-8731-8c9c78f95185.png"
+                alt="Long section of black hogwire fencing with landscaping"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <img
+                src="/lovable-uploads/f42d189c-5d7d-499c-9363-7b3f3177ad07.png"
+                alt="Black hogwire fence showing brand marking"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
@@ -364,17 +357,7 @@ const BlackHogwireFence = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        {isMobile ? (
-          <div className="text-center py-8">
-            <Button size="lg" asChild>
-              <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
-                Get Virtual Quote
-              </a>
-            </Button>
-          </div>
-        ) : (
-          <VirtualQuoteTool fenceStyleName="6' Black Hogwire Fence" />
-        )}
+        <VirtualQuoteTool fenceStyleName="Black Hogwire Fence" />
 
         {/* Contact Form */}
         <section className="py-16">

@@ -2,7 +2,6 @@ import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -27,7 +26,6 @@ const gallery = [
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const ThreeRailPictureFrameFence = () => {
-  const isMobile = useIsMobile();
   const canonical = "https://myfence.com/fence-styles/3-rail-picture-frame-fence";
 
   const serviceStructuredData = {
@@ -130,7 +128,7 @@ const ThreeRailPictureFrameFence = () => {
           </div>
           <div>
             <AspectRatio ratio={16 / 9}>
-              <img src={heroImg} alt="3 rail picture frame fence detail in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" style={{ height: isMobile ? '300px' : '500px' }} />
+              <img src={heroImg} alt="3 rail picture frame fence detail in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
             </AspectRatio>
           </div>
         </header>
@@ -187,7 +185,7 @@ const ThreeRailPictureFrameFence = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.slice(0, isMobile ? 4 : gallery.length).map((image, index) => (
+              {gallery.map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={image.src}
@@ -326,17 +324,7 @@ const ThreeRailPictureFrameFence = () => {
 
 
             {/* Virtual Quote Tool */}
-            {isMobile ? (
-              <div className="text-center py-8">
-                <Button size="lg" asChild>
-                  <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
-                    Get Virtual Quote
-                  </a>
-                </Button>
-              </div>
-            ) : (
-              <VirtualQuoteTool fenceStyleName="3 Rail Picture Frame Fence" />
-            )}
+            <VirtualQuoteTool fenceStyleName="3 Rail Picture Frame Fence" />
 
             <section className="mt-6">
               <InlineQuoteForm context="3 Rail Picture Frame Fence page" />
