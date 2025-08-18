@@ -257,7 +257,23 @@ const Index = () => {
       <section className="container py-12 md:py-16" aria-labelledby="instant-quote-heading">
         <h2 id="instant-quote-heading" className="text-2xl md:text-3xl font-bold">Instant Online Quote</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Build your fence estimate in minutes with real-time pricing.</p>
-        <Card className="mt-6 glass-card overflow-hidden">
+        
+        {/* Mobile version - Simple button to external site */}
+        <Card className="mt-6 glass-card overflow-hidden md:hidden">
+          <CardContent className="p-6 text-center">
+            <div className="text-xs uppercase tracking-wider text-primary/90 mb-2">Powered by <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius</Link></div>
+            <h3 className="text-xl font-semibold mb-4">Get Your Virtual Quote</h3>
+            <p className="text-muted-foreground mb-6">Use our interactive tool to design your fence and get instant pricing.</p>
+            <Button size="lg" className="w-full" asChild>
+              <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer" aria-label="Get Virtual Quote on SeattleFenceQuote.com">
+                Get Virtual Quote
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Desktop version - Full layout */}
+        <Card className="mt-6 glass-card overflow-hidden hidden md:block">
           <CardContent className="p-0">
             <div className="grid lg:grid-cols-2">
               <div className="p-6 md:p-10 flex flex-col justify-center">
@@ -274,7 +290,7 @@ const Index = () => {
                   </Button>
                 </div>
               </div>
-              <div className="relative min-h-[220px] lg:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center hidden sm:block">
+              <div className="relative min-h-[220px] lg:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center">
                 <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
                   <img
                     src="/lovable-uploads/f8a11a30-3a13-42cb-8880-f95fd7547c0e.png"
