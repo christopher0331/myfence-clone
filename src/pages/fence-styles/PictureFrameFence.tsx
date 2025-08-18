@@ -117,7 +117,7 @@ const PictureFrameFence = () => {
               <img
                 src={heroImg}
                 alt={altHero}
-                className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
+                className="w-full h-[300px] md:h-[500px] object-cover rounded-lg shadow-2xl"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
