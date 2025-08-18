@@ -156,12 +156,12 @@ const Index = () => {
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
             <div className="mt-5">
-              <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
+              <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale w-full sm:w-auto">Free Quotes</Button>
             </div>
           </div>
-          <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center">
+          <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
             <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-              <AspectRatio ratio={21/9}>
+              <AspectRatio ratio={16/9} className="md:aspect-[21/9]">
                 <img
                   src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
                   alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
@@ -174,17 +174,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="container pt-28 md:pt-36 pb-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
+      <section className="container pt-20 md:pt-28 lg:pt-36 pb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="text-center sm:text-left">
             <h2 className="text-xl font-semibold">Cedar & Modern Styles</h2>
             <p className="text-muted-foreground mt-2">From classic cedar privacy to sleek horizontal and metal accents, we bring your vision to life.</p>
           </div>
-          <div>
+          <div className="text-center sm:text-left">
             <h2 className="text-xl font-semibold">Transparent Pricing</h2>
             <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
-          <div>
+          <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
             <h2 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h2>
             <p className="text-muted-foreground mt-2">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
@@ -195,7 +195,7 @@ const Index = () => {
       <section className="container py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Our most requested builds in Seattle.</p>
-        <div className="grid md:grid-cols-3 gap-6 mt-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
           <Card className="glass-card">
             <CardContent className="p-3">
               <div className="glass-frame">
@@ -206,7 +206,7 @@ const Index = () => {
               <div className="p-4 text-center">
                 <h3 className="font-semibold">Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
-                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
+                <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
@@ -220,11 +220,11 @@ const Index = () => {
               <div className="p-4 text-center">
                 <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
-                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
+                <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
-          <Card className="glass-card">
+          <Card className="glass-card sm:col-span-2 lg:col-span-1">
             <CardContent className="p-3">
               <div className="glass-frame">
                 <AspectRatio ratio={1}>
@@ -234,7 +234,7 @@ const Index = () => {
               <div className="p-4 text-center">
                 <h3 className="font-semibold">Horizontal Lattice Fence</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
-                <Button className="mt-3" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
+                <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
               </div>
             </CardContent>
           </Card>
@@ -259,7 +259,7 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Build your fence estimate in minutes with real-time pricing.</p>
         <Card className="mt-6 glass-card overflow-hidden">
           <CardContent className="p-0">
-            <div className="grid md:grid-cols-2">
+            <div className="grid lg:grid-cols-2">
               <div className="p-6 md:p-10 flex flex-col justify-center">
                 <div className="text-xs uppercase tracking-wider text-primary/90">Powered by <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius</Link></div>
                 <h3 className="mt-2 text-2xl font-semibold">Start Building Your Estimate</h3>
@@ -269,12 +269,12 @@ const Index = () => {
                   <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> No obligation — free to use</li>
                 </ul>
                 <div className="mt-6">
-                  <Button size="lg" asChild>
+                  <Button size="lg" className="w-full sm:w-auto" asChild>
                     <Link to="/quote" aria-label="Start Building Your Estimate on the quote page">Start Building Your Estimate</Link>
                   </Button>
                 </div>
               </div>
-              <div className="relative min-h-[220px] md:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center">
+              <div className="relative min-h-[220px] lg:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center hidden sm:block">
                 <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
                   <img
                     src="/lovable-uploads/f8a11a30-3a13-42cb-8880-f95fd7547c0e.png"
@@ -300,7 +300,7 @@ const Index = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Architectural trellis accents built to last — perfect for Northwest gardens.</p>
         <Card className="mt-6">
           <CardContent className="p-0 overflow-hidden">
-            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, designed with Fence Genius technology" loading="lazy" className="w-full h-96 md:h-[32rem] object-cover" />
+            <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, designed with Fence Genius technology" loading="lazy" className="w-full h-64 sm:h-80 md:h-96 lg:h-[32rem] object-cover" />
           </CardContent>
         </Card>
       </section>
@@ -326,7 +326,7 @@ const Index = () => {
             ) : (
               <form
                 id="contact-form"
-                className="grid md:grid-cols-2 gap-6"
+                className="grid lg:grid-cols-2 gap-6"
                 onSubmit={handleSubmit}
               >
                 <div className="grid gap-4">
@@ -385,11 +385,11 @@ const Index = () => {
                       required 
                     />
                   </div>
-                  <div className="flex gap-3">
-                    <Button type="submit" disabled={isSubmitting}>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="submit" disabled={isSubmitting} className="flex-1">
                       {isSubmitting ? "Sending..." : "Send message"}
                     </Button>
-                    <Button variant="secondary" asChild>
+                    <Button variant="secondary" className="flex-1" asChild>
                       <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
                     </Button>
                   </div>
