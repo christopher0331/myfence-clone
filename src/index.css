@@ -155,28 +155,30 @@ All colors MUST be HSL.
   }
 }
 
-/* Hero video with reduced zoom for better content visibility */
+/* Hero video sized to fit within container showing full content */
 .video-hero {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .video-hero iframe {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /* Reduced zoom to 75% - show full height with letterboxing */
-  width: 75vw;
-  height: 42.1875vw; /* 9/16 * 75vw */
+  /* Size video to fit within container with full content visible */
+  width: 60vw;
+  height: 33.75vw; /* 9/16 * 60vw */
+  max-width: 90%;
+  max-height: 90%;
 }
-/* On tall/narrow viewports, adjust accordingly */
-@media (max-aspect-ratio: 16/9) {
+/* On mobile, make it even smaller to ensure full content is visible */
+@media (max-width: 768px) {
   .video-hero iframe {
-    width: 133.33vh; /* 16/9 * 75vh */
-    height: 75vh;
+    width: 85vw;
+    height: 47.8125vw; /* 9/16 * 85vw */
+    max-height: 75%;
   }
 }
 
