@@ -123,7 +123,7 @@ const Index = () => {
       />
 
       <section
-        className="relative h-64 sm:h-72 md:h-screen w-full border-b mt-20 md:mt-24"
+        className="relative h-64 sm:h-72 md:h-screen w-full border-b"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
