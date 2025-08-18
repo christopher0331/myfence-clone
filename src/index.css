@@ -155,30 +155,30 @@ All colors MUST be HSL.
   }
 }
 
-/* Hero video sized to fit within container showing full content */
+/* Hero video cover style - fills width, crops letterboxing */
 .video-hero {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .video-hero iframe {
-  /* Size video to fit within container with full content visible */
-  width: 60vw;
-  height: 33.75vw; /* 9/16 * 60vw */
-  max-width: 90%;
-  max-height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Full width coverage, crop top/bottom letterboxing */
+  width: 100%;
+  height: 56.25%; /* 9/16 * 100% */
+  min-width: 100%;
+  min-height: 100%;
 }
-/* On mobile, extend to edges and show full content */
-@media (max-width: 768px) {
+/* On tall/narrow viewports, ensure full height coverage */
+@media (max-aspect-ratio: 16/9) {
   .video-hero iframe {
-    width: 100vw;
-    height: 56.25vw; /* 9/16 * 100vw */
-    max-height: 100%;
+    width: 177.78%; /* 16/9 * 100% */
+    height: 100%;
   }
 }
 
