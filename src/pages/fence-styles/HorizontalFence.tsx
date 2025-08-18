@@ -10,6 +10,7 @@ import PaymentCalculator from '@/components/PaymentCalculator';
 import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const heroImage = "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png";
 
@@ -43,6 +44,7 @@ const galleryImages = [
 
 const HorizontalFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -135,7 +137,8 @@ const HorizontalFence = () => {
               <img
                 src={heroImage}
                 alt="Professional horizontal cedar fence installation"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                className="rounded-lg shadow-2xl w-full"
+                style={{ height: isMobile ? '300px' : 'auto', objectFit: 'cover' }}
                 loading="eager"
               />
             </div>
@@ -146,7 +149,7 @@ const HorizontalFence = () => {
         <section className="container mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">Our Horizontal Fence Gallery</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryImages.map((image, index) => (
+            {galleryImages.slice(0, isMobile ? 4 : galleryImages.length).map((image, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
                 <div className="relative overflow-hidden">
                   <img
@@ -416,7 +419,17 @@ const HorizontalFence = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Horizontal Fence" />
+        {isMobile ? (
+          <div className="text-center py-8">
+            <Button size="lg" asChild>
+              <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                Get Virtual Quote
+              </a>
+            </Button>
+          </div>
+        ) : (
+          <VirtualQuoteTool fenceStyleName="Horizontal Cedar Fence" />
+        )}
 
         {/* Inline Quote Form */}
         <section className="py-16 bg-muted/30">

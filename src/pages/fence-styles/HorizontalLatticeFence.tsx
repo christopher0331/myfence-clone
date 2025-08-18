@@ -9,6 +9,7 @@ import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Images for Horizontal Lattice Fence
 const heroImg = "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png"; // Corner horizontal lattice fence with beautiful landscaping
@@ -27,6 +28,7 @@ const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
 
 const HorizontalLatticeFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -125,7 +127,8 @@ const HorizontalLatticeFence = () => {
               <img
                 src={heroImg}
                 alt="Beautiful horizontal lattice fence with craftsman foundation and landscaping"
-                className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
+                className="w-full object-cover rounded-lg shadow-2xl"
+                style={{ height: isMobile ? '300px' : '500px' }}
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
@@ -216,7 +219,7 @@ const HorizontalLatticeFence = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.map((image, index) => (
+              {gallery.slice(0, isMobile ? 4 : gallery.length).map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={image.src}
@@ -329,7 +332,17 @@ const HorizontalLatticeFence = () => {
           <Separator className="my-12" />
 
           {/* Virtual Quote Tool */}
-          <VirtualQuoteTool fenceStyleName="Horizontal Lattice Fence" />
+          {isMobile ? (
+            <div className="text-center py-8">
+              <Button size="lg" asChild>
+                <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                  Get Virtual Quote
+                </a>
+              </Button>
+            </div>
+          ) : (
+            <VirtualQuoteTool fenceStyleName="Horizontal Lattice Fence" />
+          )}
 
           {/* Inline Quote Form */}
           <div className="max-w-2xl mx-auto">

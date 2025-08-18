@@ -8,10 +8,12 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
 const PicketFence = () => {
+  const isMobile = useIsMobile();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -74,7 +76,8 @@ const PicketFence = () => {
                 <img
                   src="/lovable-uploads/2a60013b-3add-48a8-9881-e5c6c8baf7fd.png"
                   alt="Traditional picket fence with dog ear boards and black posts"
-                  className="rounded-lg shadow-lg w-full h-auto"
+                  className="rounded-lg shadow-lg w-full"
+                  style={{ height: isMobile ? '300px' : 'auto', objectFit: 'cover' }}
                 />
               </div>
             </div>
@@ -155,16 +158,18 @@ const PicketFence = () => {
                   Gate entrance with optional trellis arbor
                 </p>
               </div>
-              <div className="space-y-2">
-                <img
-                  src="/lovable-uploads/c710a5aa-d0b0-4201-93c7-f3902d2dd091.png"
-                  alt="Picket fence gate detail with trellis overhead"
-                  className="rounded-lg shadow-md w-full h-auto"
-                />
-                <p className="text-sm text-muted-foreground text-center">
-                  Close-up of gate detail with trellis feature
-                </p>
-              </div>
+              {!isMobile && (
+                <div className="space-y-2">
+                  <img
+                    src="/lovable-uploads/c710a5aa-d0b0-4201-93c7-f3902d2dd091.png"
+                    alt="Picket fence gate detail with trellis overhead"
+                    className="rounded-lg shadow-md w-full h-auto"
+                  />
+                  <p className="text-sm text-muted-foreground text-center">
+                    Close-up of gate detail with trellis feature
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -417,7 +422,17 @@ const PicketFence = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Traditional Picket Fence" />
+        {isMobile ? (
+          <div className="text-center py-8">
+            <Button size="lg" asChild>
+              <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                Get Virtual Quote
+              </a>
+            </Button>
+          </div>
+        ) : (
+          <VirtualQuoteTool fenceStyleName="Traditional Picket Fence" />
+        )}
 
         {/* Contact Form */}
         <section className="py-16 bg-secondary/30">

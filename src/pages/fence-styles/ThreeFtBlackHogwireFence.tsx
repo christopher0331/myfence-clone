@@ -8,10 +8,12 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png";
 
 const ThreeFtBlackHogwireFence = () => {
+  const isMobile = useIsMobile();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -74,7 +76,8 @@ const ThreeFtBlackHogwireFence = () => {
                 <img
                   src="/lovable-uploads/8b824630-caac-4d82-8592-5043d8f1a099.png"
                   alt="3' Black Hogwire Fence with cedar frame in wooded setting"
-                  className="rounded-lg shadow-lg w-full h-auto"
+                  className="rounded-lg shadow-lg w-full"
+                  style={{ height: isMobile ? '300px' : 'auto', objectFit: 'cover' }}
                 />
               </div>
             </div>
@@ -146,16 +149,18 @@ const ThreeFtBlackHogwireFence = () => {
                   Detailed view of cedar frame and hogwire construction
                 </p>
               </div>
-              <div className="space-y-2">
-                <img
-                  src="/lovable-uploads/7bdb7009-0fec-4c97-935d-471cda904f04.png"
-                  alt="3' Black Hogwire fence in wooded backyard setting"
-                  className="rounded-lg shadow-md w-full h-auto"
-                />
-                <p className="text-sm text-muted-foreground text-center">
-                  Perfect integration with wooded backdrops
-                </p>
-              </div>
+              {!isMobile && (
+                <div className="space-y-2">
+                  <img
+                    src="/lovable-uploads/7bdb7009-0fec-4c97-935d-471cda904f04.png"
+                    alt="3' Black Hogwire fence in wooded backyard setting"
+                    className="rounded-lg shadow-md w-full h-auto"
+                  />
+                  <p className="text-sm text-muted-foreground text-center">
+                    Perfect integration with wooded backdrops
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -395,7 +400,17 @@ const ThreeFtBlackHogwireFence = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="3' Black Hogwire Fence" />
+        {isMobile ? (
+          <div className="text-center py-8">
+            <Button size="lg" asChild>
+              <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                Get Virtual Quote
+              </a>
+            </Button>
+          </div>
+        ) : (
+          <VirtualQuoteTool fenceStyleName="3' Black Hogwire Fence" />
+        )}
 
         {/* Contact Form */}
         <section className="py-16">

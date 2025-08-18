@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -28,6 +29,7 @@ const gallery = [
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const CraftsmanStyleFence = () => {
+  const isMobile = useIsMobile();
   const canonical = "https://myfence.com/fence-styles/craftsman-style-fence";
 
   const serviceStructuredData = {
@@ -130,7 +132,7 @@ const CraftsmanStyleFence = () => {
           </div>
           <div>
             <AspectRatio ratio={16 / 9}>
-              <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
+              <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" style={{ height: isMobile ? '300px' : '500px' }} />
             </AspectRatio>
           </div>
         </header>
@@ -190,7 +192,7 @@ const CraftsmanStyleFence = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.map((image, index) => (
+              {gallery.slice(0, isMobile ? 4 : gallery.length).map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <img
                     src={image.src}
@@ -332,7 +334,17 @@ const CraftsmanStyleFence = () => {
             </section>
 
             {/* Virtual Quote Tool */}
-            <VirtualQuoteTool fenceStyleName="Craftsman Style Fence" />
+            {isMobile ? (
+              <div className="text-center py-8">
+                <Button size="lg" asChild>
+                  <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                    Get Virtual Quote
+                  </a>
+                </Button>
+              </div>
+            ) : (
+              <VirtualQuoteTool fenceStyleName="Craftsman Style Fence" />
+            )}
 
             <section className="mt-6">
               <InlineQuoteForm context="Craftsman Style Fence page" />
