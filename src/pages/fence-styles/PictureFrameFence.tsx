@@ -310,7 +310,7 @@ const PictureFrameFence = () => {
                   >
                     Get Free Quote Today
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary">
                     <Link to="/contact">Contact Our Experts</Link>
                   </Button>
                 </div>
