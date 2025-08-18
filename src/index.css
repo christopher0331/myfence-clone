@@ -173,12 +173,12 @@ All colors MUST be HSL.
   max-width: 90%;
   max-height: 90%;
 }
-/* On mobile, make it even smaller to ensure full content is visible */
+/* On mobile, extend to edges and show full content */
 @media (max-width: 768px) {
   .video-hero iframe {
-    width: 85vw;
-    height: 47.8125vw; /* 9/16 * 85vw */
-    max-height: 75%;
+    width: 100vw;
+    height: 56.25vw; /* 9/16 * 100vw */
+    max-height: 100%;
   }
 }
 
