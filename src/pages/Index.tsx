@@ -155,13 +155,16 @@ const Index = () => {
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
+            <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
+              MyFence.com is a father and son fence company serving the Seattle area. We combine traditional craftsmanship with innovative Fence Genius technology to deliver exceptional results. As a family-owned business, we take pride in building lasting relationships with our customers and creating fences that enhance your property for years to come.
+            </p>
             <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale w-full sm:w-auto">Free Quotes</Button>
             </div>
           </div>
           <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
             <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-              <AspectRatio ratio={16/9} className="md:aspect-[21/9]">
+              <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
                 <img
                   src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
                   alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
