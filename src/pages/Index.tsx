@@ -123,7 +123,7 @@ const Index = () => {
       />
 
       <section
-        className="relative h-40 sm:h-56 md:h-screen w-full border-b"
+        className="relative h-48 sm:h-56 md:h-screen w-full border-b mt-16 md:mt-0"
         onMouseMove={(e) => {
           const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
           setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -150,17 +150,20 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="container relative z-10 -mt-24 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
+      <section className="container relative z-10 -mt-16 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
-            <p className="mt-3 text-sm opacity-90">MyFence.com is owned by a father and son team where they have embraced the new industry leading <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius technology</Link> to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</p>
+            <p className="mt-3 text-sm opacity-90">
+              <span className="md:hidden">Father & son team using <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius technology</Link> for pre-fabricated fence systems.</span>
+              <span className="hidden md:inline">MyFence.com is owned by a father and son team where they have embraced the new industry leading <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius technology</Link> to give customers a whole new level of expectations for their fence purchasing experience. Using the new software enables us at MyFence.com to pre-fabricate our fence & gate systems to your exact approval.</span>
+            </p>
             <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale">Free Quotes</Button>
             </div>
           </div>
-          <div className="bg-card text-foreground p-6 md:p-8 flex items-center justify-center">
+          <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center">
             <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
               <AspectRatio ratio={21/9}>
                 <img
