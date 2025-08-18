@@ -207,9 +207,25 @@ const PictureFrameFence = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {images.gallery.slice(0, 9).map((image, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {images.gallery.slice(0, 4).map((image, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 block md:block">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white text-sm font-medium">{image.alt}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {/* Show additional images only on desktop */}
+              {images.gallery.slice(4, 9).map((image, index) => (
+                <div key={index + 4} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hidden lg:block">
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -320,8 +336,34 @@ const PictureFrameFence = () => {
 
           <Separator className="my-12" />
 
-          {/* Virtual Quote Tool */}
-          <VirtualQuoteTool fenceStyleName="Picture Frame Fence" />
+          {/* Virtual Quote Tool - Desktop Only */}
+          <div className="hidden md:block">
+            <VirtualQuoteTool fenceStyleName="Picture Frame Fence" />
+          </div>
+
+          {/* Mobile Quote Tool Button */}
+          <div className="block md:hidden">
+            <Card className="bg-primary text-primary-foreground">
+              <CardContent className="pt-6">
+                <div className="text-center space-y-6">
+                  <h2 className="text-2xl font-bold">Get Your Virtual Quote</h2>
+                  <p className="text-lg opacity-90">
+                    Use our advanced quote tool to get an instant estimate for your picture frame fence project.
+                  </p>
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    asChild
+                    className="text-primary"
+                  >
+                    <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer">
+                      Start Virtual Quote Tool
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Inline Quote Form */}
           <div className="max-w-2xl mx-auto">
