@@ -155,7 +155,7 @@ All colors MUST be HSL.
   }
 }
 
-/* Hero video cover to eliminate letterboxing (16:9 cover) */
+/* Hero video with reduced zoom for better content visibility */
 .video-hero {
   position: absolute;
   inset: 0;
@@ -168,15 +168,15 @@ All colors MUST be HSL.
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* Default to full width; crop top/bottom on wide screens */
-  width: 100vw;
-  height: 56.25vw; /* 9/16 * 100vw */
+  /* Reduced zoom - show more content with potential letterboxing */
+  width: 90vw;
+  height: 50.625vw; /* 9/16 * 90vw */
 }
-/* On tall/narrow viewports, ensure full height; crop sides if needed */
+/* On tall/narrow viewports, adjust accordingly */
 @media (max-aspect-ratio: 16/9) {
   .video-hero iframe {
-    width: 177.78vh; /* 16/9 * 100vh */
-    height: 100vh;
+    width: 160vh; /* 16/9 * 90vh */
+    height: 90vh;
   }
 }
 
