@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const styles = [
@@ -219,6 +220,13 @@ const FenceStyles = () => {
                   />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
+                {a.title === "Pre-Staining" && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/pre-staining-cedar-fence">
+                      Learn More About Pre-Staining
+                    </Link>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
