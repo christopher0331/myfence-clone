@@ -22,6 +22,7 @@ const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
 const FenceGenius = React.lazy(() => import("./pages/FenceGenius"));
 const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
 const PreStaining = React.lazy(() => import("./pages/PreStaining"));
+const Blog = React.lazy(() => import("./pages/Blog"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -82,6 +83,7 @@ const App = () => (
               <Route path="/fence-genius" element={<FenceGenius />} />
               <Route path="/should-i-stain-my-fence" element={<FenceStaining />} />
               <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
+              <Route path="/blog" element={<Blog />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
