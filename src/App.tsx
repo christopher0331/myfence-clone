@@ -20,6 +20,7 @@ const Contact = React.lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
 const FenceGenius = React.lazy(() => import("./pages/FenceGenius"));
+const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -78,6 +79,7 @@ const App = () => (
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
               <Route path="/fence-genius" element={<FenceGenius />} />
+              <Route path="/should-i-stain-my-fence" element={<FenceStaining />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
