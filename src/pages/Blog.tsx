@@ -68,6 +68,42 @@ const blogArticles = [
     image: "/lovable-uploads/92eb7242-9591-46bf-96c5-a1c66b6fe149.png",
     readTime: "4 min read",
     publishDate: "December 2024"
+  },
+  {
+    id: "fence-ownership",
+    title: "How to Tell If a Fence Is Yours or Neighbors",
+    category: "Legal",
+    description: "Learn how to determine fence ownership, understand property boundaries, and resolve disputes with neighbors in Washington State.",
+    image: "/lovable-uploads/815744dc-6440-4c65-917a-afb302ed2788.png",
+    readTime: "6 min read",
+    publishDate: "January 2025"
+  },
+  {
+    id: "street-setback",
+    title: "How Far Does My Fence Have To Be From The Street? A Guide To Washington State Fence Laws",
+    category: "Legal",
+    description: "Understand Washington State setback requirements, municipal codes, and legal guidelines for fence placement near streets and sidewalks.",
+    image: "/lovable-uploads/793a9940-252a-431c-bc9c-f109022e1b92.png",
+    readTime: "8 min read",
+    publishDate: "January 2025"
+  },
+  {
+    id: "property-line",
+    title: "Can You Build a Fence on the Property Line?",
+    category: "Legal",
+    description: "Discover the rules and regulations for building fences on property lines, including permits, neighbor agreements, and legal considerations.",
+    image: "/lovable-uploads/913ab5db-5bb0-4601-b16b-cb82980c1a02.png",
+    readTime: "5 min read",
+    publishDate: "January 2025"
+  },
+  {
+    id: "material-cost-2025",
+    title: "What Is The Material Cost For Wood Fence in 2025?",
+    category: "Pricing",
+    description: "Get detailed pricing for wood fence materials in 2025, including cedar, pine, and composite options with current market rates.",
+    image: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
+    readTime: "7 min read",
+    publishDate: "January 2025"
   }
 ];
 
