@@ -7,34 +7,27 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
-import heroFenceSeattle from "@/assets/blog/hero-fence-seattle.jpg";
-import heroFenceCost from "@/assets/blog/hero-fence-cost.jpg";
-import heroFenceMaintenance from "@/assets/blog/hero-fence-maintenance.jpg";
-import fenceLongevity from "@/assets/blog/fence-longevity.jpg";
-import fenceCost6ft from "@/assets/blog/fence-cost-6ft.jpg";
-import fenceCost2025 from "@/assets/blog/fence-cost-2025.jpg";
-import neighborFenceCost from "@/assets/blog/neighbor-fence-cost.jpg";
 
 const heroSlides = [
   {
     id: 1,
     title: "Expert Fence Installation in Seattle",
     subtitle: "Quality cedar fencing built to last in the Pacific Northwest",
-    image: heroFenceSeattle,
+    image: "/lovable-uploads/2a60013b-3add-48a8-9881-e5c6c8baf7fd.png",
     link: "/fence-styles"
   },
   {
     id: 2,
     title: "Transparent Fence Pricing",
     subtitle: "Get accurate quotes for your Seattle fence project",
-    image: heroFenceCost,
+    image: "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png",
     link: "/quote-tool"
   },
   {
     id: 3,
     title: "Fence Maintenance & Care",
     subtitle: "Keep your investment protected with proper maintenance",
-    image: heroFenceMaintenance,
+    image: "/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png",
     link: "/should-i-stain-my-fence"
   }
 ];
@@ -45,7 +38,7 @@ const blogArticles = [
     title: "How Long Should a Wooden Fence Last in Seattle, Washington?",
     category: "Maintenance",
     description: "Discover the expected lifespan of wooden fences in Seattle's unique climate and learn how to maximize your fence's durability against Pacific Northwest weather conditions.",
-    image: fenceLongevity,
+    image: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png",
     readTime: "5 min read",
     publishDate: "December 2024"
   },
@@ -54,7 +47,7 @@ const blogArticles = [
     title: "How Much Does a 6-Foot Privacy Fence Cost in Seattle?",
     category: "Pricing",
     description: "Get a comprehensive breakdown of 6-foot privacy fence costs in Seattle, including materials, labor, and factors that affect your total investment.",
-    image: fenceCost6ft,
+    image: "/lovable-uploads/840c5f7f-0578-45fa-9b5c-195760503695.png",
     readTime: "7 min read",
     publishDate: "December 2024"
   },
@@ -63,7 +56,7 @@ const blogArticles = [
     title: "How Much Does a Wooden Fence Cost in Seattle in 2025?",
     category: "Pricing",
     description: "Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.",
-    image: fenceCost2025,
+    image: "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png",
     readTime: "6 min read",
     publishDate: "January 2025"
   },
@@ -72,7 +65,7 @@ const blogArticles = [
     title: "Should My Neighbor Split Our Fence Cost With Me?",
     category: "Legal",
     description: "Navigate the complexities of shared fence costs with neighbors, including Washington State laws and best practices for property line fencing.",
-    image: neighborFenceCost,
+    image: "/lovable-uploads/92eb7242-9591-46bf-96c5-a1c66b6fe149.png",
     readTime: "4 min read",
     publishDate: "December 2024"
   }
