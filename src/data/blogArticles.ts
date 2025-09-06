@@ -1,12 +1,12 @@
 export const blogArticles = [
   {
-    id: "longevity",
-    title: "How Long Should a Wooden Fence Last in Seattle, Washington?",
-    category: "Maintenance",
-    description: "Discover the expected lifespan of wooden fences in Seattle's unique climate and learn how to maximize your fence's durability against Pacific Northwest weather conditions.",
-    image: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png",
-    readTime: "5 min read",
-    publishDate: "December 2024"
+    id: "virtual-quote-tool",
+    title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
+    category: "Pricing",
+    description: "Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing.",
+    image: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
+    readTime: "6 min read",
+    publishDate: "January 2025"
   },
   {
     id: "6ft-cost",
@@ -87,15 +87,6 @@ export const blogArticles = [
     description: "Complete guide to fence staining in Seattle - brushing vs spraying techniques, best practices, and step-by-step instructions for lasting results.",
     image: "/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png",
     readTime: "10 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "virtual-quote-tool",
-    title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
-    category: "Pricing",
-    description: "Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing.",
-    image: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
-    readTime: "6 min read",
     publishDate: "January 2025"
   }
 ];
