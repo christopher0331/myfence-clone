@@ -162,11 +162,16 @@ const FenceCleaningStaining = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Recommended Seattle Professional</h3>
                     <p className="mb-3">
-                      <strong>NW Pro Wash LLC</strong> specializes in fence softwashing and pre-stain preparation throughout the Seattle area. They use professional-grade equipment and eco-friendly solutions to prepare your fence for optimal stain adhesion.
+                      <strong><a href="https://www.pnwproclean.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">NW Pro Wash LLC</a></strong> specializes in fence softwashing and pre-stain preparation throughout the Seattle area. They use professional-grade equipment and eco-friendly solutions to prepare your fence for optimal stain adhesion.
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mb-3">
                       Professional cleaning is especially recommended for first-time staining or fences that haven't been maintained in several years.
                     </p>
+                    <Button asChild variant="outline" size="sm">
+                      <a href="https://www.pnwproclean.com/" target="_blank" rel="noopener noreferrer">
+                        Visit NW Pro Wash LLC
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardContent>
