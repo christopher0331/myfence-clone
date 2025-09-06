@@ -124,41 +124,43 @@ const Blog = () => {
               <TabsContent value="all" className="space-y-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {blogArticles.map((article) => (
-                    <Card key={article.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                      <CardHeader className="p-0">
-                        <AspectRatio ratio={4/3}>
-                          <OptimizedImage
-                            src={article.image}
-                            alt={article.title}
-                            className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </AspectRatio>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                            {article.category}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {article.readTime}
-                          </span>
-                        </div>
-                        <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                          {article.title}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">
-                            {article.publishDate}
-                          </span>
-                          <Button variant="outline" size="sm">
-                            Read More
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <Link key={article.id} to={`/blog/${article.id}`}>
+                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
+                        <CardHeader className="p-0">
+                          <AspectRatio ratio={4/3}>
+                            <OptimizedImage
+                              src={article.image}
+                              alt={article.title}
+                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </AspectRatio>
+                        </CardHeader>
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                              {article.category}
+                            </span>
+                            <span className="text-xs text-muted-foreground">
+                              {article.readTime}
+                            </span>
+                          </div>
+                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                            {article.description}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">
+                              {article.publishDate}
+                            </span>
+                            <Button variant="outline" size="sm">
+                              Read More
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </TabsContent>
@@ -166,41 +168,43 @@ const Blog = () => {
               <TabsContent value="maintenance" className="space-y-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {blogArticles.filter(article => article.category === "Maintenance").map((article) => (
-                    <Card key={article.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                      <CardHeader className="p-0">
-                        <AspectRatio ratio={4/3}>
-                          <OptimizedImage
-                            src={article.image}
-                            alt={article.title}
-                            className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </AspectRatio>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                            {article.category}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {article.readTime}
-                          </span>
-                        </div>
-                        <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                          {article.title}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">
-                            {article.publishDate}
-                          </span>
-                          <Button variant="outline" size="sm">
-                            Read More
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <Link key={article.id} to={`/blog/${article.id}`}>
+                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
+                        <CardHeader className="p-0">
+                          <AspectRatio ratio={4/3}>
+                            <OptimizedImage
+                              src={article.image}
+                              alt={article.title}
+                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </AspectRatio>
+                        </CardHeader>
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                              {article.category}
+                            </span>
+                            <span className="text-xs text-muted-foreground">
+                              {article.readTime}
+                            </span>
+                          </div>
+                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                            {article.description}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">
+                              {article.publishDate}
+                            </span>
+                            <Button variant="outline" size="sm">
+                              Read More
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </TabsContent>
@@ -250,41 +254,43 @@ const Blog = () => {
               <TabsContent value="legal" className="space-y-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {blogArticles.filter(article => article.category === "Legal").map((article) => (
-                    <Card key={article.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                      <CardHeader className="p-0">
-                        <AspectRatio ratio={4/3}>
-                          <OptimizedImage
-                            src={article.image}
-                            alt={article.title}
-                            className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </AspectRatio>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                            {article.category}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {article.readTime}
-                          </span>
-                        </div>
-                        <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                          {article.title}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">
-                            {article.publishDate}
-                          </span>
-                          <Button variant="outline" size="sm">
-                            Read More
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <Link key={article.id} to={`/blog/${article.id}`}>
+                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
+                        <CardHeader className="p-0">
+                          <AspectRatio ratio={4/3}>
+                            <OptimizedImage
+                              src={article.image}
+                              alt={article.title}
+                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </AspectRatio>
+                        </CardHeader>
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                              {article.category}
+                            </span>
+                            <span className="text-xs text-muted-foreground">
+                              {article.readTime}
+                            </span>
+                          </div>
+                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                            {article.description}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">
+                              {article.publishDate}
+                            </span>
+                            <Button variant="outline" size="sm">
+                              Read More
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </TabsContent>
