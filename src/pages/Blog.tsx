@@ -212,7 +212,8 @@ const Blog = () => {
               <TabsContent value="pricing" className="space-y-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {blogArticles.filter(article => article.category === "Pricing").map((article) => (
-                    <Card key={article.id} className="group cursor-pointer hover:shadow-lg transition-shadow">
+                    <Link key={article.id} to={`/blog/${article.id}`}>
+                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
                       <CardHeader className="p-0">
                         <AspectRatio ratio={4/3}>
                           <OptimizedImage
@@ -247,6 +248,7 @@ const Blog = () => {
                         </div>
                       </CardContent>
                     </Card>
+                    </Link>
                   ))}
                 </div>
               </TabsContent>
