@@ -3,11 +3,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import BlogSection from "./components/BlogSection";
 
 // Lazy load pages for better performance
 const Index = React.lazy(() => import("./pages/Index"));
@@ -51,46 +52,56 @@ const queryClient = new QueryClient({
   },
 });
 
+const AppContent = () => {
+  const location = useLocation();
+  const showBlogSection = location.pathname !== "/blog";
+
+  return (
+    <>
+      <ScrollToTop />
+      <Header />
+      <div className="h-20 md:h-24" aria-hidden="true" />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/fence-styles" element={<FenceStyles />} />
+          <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
+          <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
+          <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
+          <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
+          <Route path="/fence-styles/solid-board-fence" element={<SolidBoardFence />} />
+          <Route path="/fence-styles/horizontal-fence" element={<HorizontalFence />} />
+          <Route path="/fence-styles/black-hogwire-fence" element={<BlackHogwireFence />} />
+          <Route path="/fence-styles/three-ft-black-hogwire-fence" element={<ThreeFtBlackHogwireFence />} />
+          <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/quote" element={<QuoteTool />} />
+          <Route path="/financing" element={<Financing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/fence-genius" element={<FenceGenius />} />
+          <Route path="/should-i-stain-my-fence" element={<FenceStaining />} />
+          <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
+          <Route path="/blog" element={<Blog />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      {showBlogSection && <BlogSection />}
+      <Footer />
+    </>
+  );
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
-      
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Header />
-          <div className="h-20 md:h-24" aria-hidden="true" />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/fence-styles" element={<FenceStyles />} />
-              <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
-              <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
-              <Route path="/fence-styles/craftsman-style-fence" element={<CraftsmanStyleFence />} />
-              <Route path="/fence-styles/horizontal-lattice-fence" element={<HorizontalLatticeFence />} />
-              <Route path="/fence-styles/solid-board-fence" element={<SolidBoardFence />} />
-              <Route path="/fence-styles/horizontal-fence" element={<HorizontalFence />} />
-              <Route path="/fence-styles/black-hogwire-fence" element={<BlackHogwireFence />} />
-              <Route path="/fence-styles/three-ft-black-hogwire-fence" element={<ThreeFtBlackHogwireFence />} />
-              <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/quote" element={<QuoteTool />} />
-              <Route path="/financing" element={<Financing />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-conditions" element={<TermsConditions />} />
-              <Route path="/fence-genius" element={<FenceGenius />} />
-              <Route path="/should-i-stain-my-fence" element={<FenceStaining />} />
-              <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
-              <Route path="/blog" element={<Blog />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-          <Footer />
-        </BrowserRouter>
-      
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </QueryClientProvider>
   </HelmetProvider>
 );
