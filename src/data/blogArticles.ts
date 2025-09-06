@@ -88,5 +88,14 @@ export const blogArticles = [
     image: "/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png",
     readTime: "10 min read",
     publishDate: "January 2025"
+  },
+  {
+    id: "virtual-quote-tool",
+    title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
+    category: "Pricing",
+    description: "Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing.",
+    image: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
+    readTime: "6 min read",
+    publishDate: "January 2025"
   }
 ];

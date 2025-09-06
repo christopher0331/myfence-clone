@@ -28,6 +28,7 @@ const Blog = React.lazy(() => import("./pages/Blog"));
 // Lazy load blog post pages
 const FenceCleaningStaining = React.lazy(() => import("./pages/blog/FenceCleaningStaining"));
 const HowToStainFence = React.lazy(() => import("./pages/blog/HowToStainFence"));
+const VirtualQuoteToolBlog = React.lazy(() => import("./pages/blog/VirtualQuoteTool"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -88,8 +89,9 @@ const AppContent = () => {
           <Route path="/should-i-stain-my-fence" element={<FenceStaining />} />
           <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
-          <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
+            <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
+            <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
+            <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolBlog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
