@@ -21,14 +21,19 @@ const SixFtFenceCostBlog = () => {
       "name": "Seattle Fence Pros"
     },
     "datePublished": "2024-12-01",
-    "dateModified": "2024-12-01"
+    "dateModified": "2024-12-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://seattlefence.com/blog/fence-cost-seattle"
+    }
   };
 
   return (
     <>
       <Seo
-        title="How Much Does a 6-Foot Privacy Fence Cost in Seattle? | 2025 Pricing Guide"
-        description="Get a comprehensive breakdown of 6-foot privacy fence costs in Seattle, including materials, labor, and factors that affect your total investment. Professional installation from $42-60/linear foot."
+        title="Fence Cost Seattle: 6-Foot Privacy Fence Pricing Guide 2025"
+        description="Complete Seattle fence cost breakdown for 6-foot privacy fencing. Materials, labor, and installation pricing. Professional cedar fence installation from $42-60/LF."
+        canonical="https://seattlefence.com/blog/fence-cost-seattle"
         structuredData={structuredData}
       />
       

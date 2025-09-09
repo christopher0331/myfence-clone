@@ -9,9 +9,9 @@ export const blogArticles = [
     publishDate: "January 2025"
   },
   {
-    id: "6ft-cost",
+    id: "fence-cost-seattle",
     title: "How Much Does a 6-Foot Privacy Fence Cost in Seattle?",
-    category: "Pricing",
+    category: "Pricing", 
     description: "Get a comprehensive breakdown of 6-foot privacy fence costs in Seattle, including materials, labor, and factors that affect your total investment.",
     image: "/lovable-uploads/840c5f7f-0578-45fa-9b5c-195760503695.png",
     readTime: "7 min read",
