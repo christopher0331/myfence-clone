@@ -281,7 +281,7 @@ const WoodenFenceCost2025 = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button 
                         size="lg" 
-                        onClick={() => navigate('/quote-tool')}
+                        onClick={() => navigate('/quote')}
                         className="bg-primary hover:bg-primary/90"
                       >
                         Get Instant Quote

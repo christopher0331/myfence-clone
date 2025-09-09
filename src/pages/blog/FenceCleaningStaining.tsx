@@ -232,7 +232,7 @@ const FenceCleaningStaining = () => {
                 Get a free quote for professional fence staining in Seattle
               </p>
               <Button asChild size="lg">
-                <Link to="/quote-tool">Get Free Quote</Link>
+                <Link to="/quote">Get Free Quote</Link>
               </Button>
             </div>
           </div>

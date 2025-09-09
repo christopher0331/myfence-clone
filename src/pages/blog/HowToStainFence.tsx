@@ -330,7 +330,7 @@ const HowToStainFence = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
-                  <Link to="/quote-tool">Get Free Quote</Link>
+                  <Link to="/quote">Get Free Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/blog/fence-cleaning-staining">Read Cleaning Guide</Link>

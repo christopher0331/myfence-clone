@@ -22,7 +22,7 @@ const heroSlides = [
     title: "Transparent Fence Pricing",
     subtitle: "Get accurate quotes for your Seattle fence project",
     image: "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png",
-    link: "/quote-tool"
+    link: "/quote"
   },
   {
     id: 3,
@@ -311,7 +311,7 @@ const Blog = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <Link to="/quote-tool">Get Free Quote</Link>
+                <Link to="/quote">Get Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/contact">Contact Us</Link>

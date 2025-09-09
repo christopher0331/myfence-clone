@@ -349,7 +349,7 @@ const SixFtFenceCostBlog = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Button asChild>
-                        <Link to="/quote-tool">
+                        <Link to="/quote">
                           Get My Instant Quote
                         </Link>
                       </Button>
