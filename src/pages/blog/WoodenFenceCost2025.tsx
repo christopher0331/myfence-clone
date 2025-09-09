@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
-import PaymentCalculator from "@/components/PaymentCalculator";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { useNavigate } from "react-router-dom";
 
@@ -224,7 +223,7 @@ const WoodenFenceCost2025 = () => {
                       Don't let budget constraints hold you back. We offer flexible financing options through Wisetack, 
                       so you can get the fence you need today and pay over time with competitive rates.
                     </p>
-                    <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-lg mb-6">
+                    <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-lg mb-4">
                       <h3 className="text-lg font-semibold mb-2">Financing Benefits:</h3>
                       <ul className="space-y-2 text-muted-foreground">
                         <li className="flex items-start gap-2">
@@ -245,7 +244,6 @@ const WoodenFenceCost2025 = () => {
                         </li>
                       </ul>
                     </div>
-                    <PaymentCalculator />
                   </CardContent>
                 </Card>
               </section>
