@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import PaymentCalculator from "@/components/PaymentCalculator";
+import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { useNavigate } from "react-router-dom";
 
 const WoodenFenceCost2025 = () => {
@@ -209,6 +211,47 @@ const WoodenFenceCost2025 = () => {
                     </div>
                   </CardContent>
                 </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card className="border-primary/20 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950">
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <DollarSign className="h-6 w-6 text-primary" />
+                      Financing Your Fence Project
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-6">
+                      Don't let budget constraints hold you back. We offer flexible financing options through Wisetack, 
+                      so you can get the fence you need today and pay over time with competitive rates.
+                    </p>
+                    <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-lg mb-6">
+                      <h3 className="text-lg font-semibold mb-2">Financing Benefits:</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          No penalties, late fees, or compounding interest
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          Financing from $500 – $25,000
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          Quick approval process
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          Flexible payment terms from 3-60 months
+                        </li>
+                      </ul>
+                    </div>
+                    <PaymentCalculator />
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <VirtualQuoteTool fenceStyleName="wooden fence" />
               </section>
 
               <section className="mb-8">
