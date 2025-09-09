@@ -18,7 +18,7 @@ export const blogArticles = [
     publishDate: "December 2024"
   },
   {
-    id: "2025-cost",
+    id: "seattle-fence-cost-2025",
     title: "How Much Does a Wooden Fence Cost in Seattle in 2025?",
     category: "Pricing",
     description: "Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.",

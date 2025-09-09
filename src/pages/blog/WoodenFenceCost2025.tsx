@@ -27,7 +27,7 @@ const WoodenFenceCost2025 = () => {
     "dateModified": "2025-01-01",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://seattlefence.com/blog/wooden-fence-cost-2025"
+      "@id": "https://seattlefence.com/blog/seattle-fence-cost-2025"
     }
   };
 
