@@ -6,8 +6,8 @@ interface VirtualQuoteToolProps {
 
 const VirtualQuoteTool = ({ fenceStyleName }: VirtualQuoteToolProps) => {
   return (
-    <section className="py-16 bg-gradient-to-br from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-br from-background to-secondary/20 -mx-8 px-8">
+      <div className="w-full px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">
             Use our virtual tool to estimate your {fenceStyleName} costs for your property
@@ -17,7 +17,7 @@ const VirtualQuoteTool = ({ fenceStyleName }: VirtualQuoteToolProps) => {
           </p>
         </div>
         
-        <Card className="max-w-5xl mx-auto">
+        <Card className="w-full">
           <CardContent className="p-0">
             <iframe
               src="https://seattlefencequote.com/"
