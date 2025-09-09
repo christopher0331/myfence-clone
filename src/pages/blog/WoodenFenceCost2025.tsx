@@ -61,8 +61,8 @@ const WoodenFenceCost2025 = () => {
               
               <div className="relative rounded-lg overflow-hidden mb-8">
                 <OptimizedImage
-                  src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
-                  alt="Wooden fence installation in Seattle 2025"
+                  src="/lovable-uploads/bb49b3f6-591c-4d04-a5b6-76035974c693.png"
+                  alt="Professional fence builders in Seattle 2025"
                   className="w-full h-64 object-cover"
                 />
               </div>
