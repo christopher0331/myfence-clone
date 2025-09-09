@@ -272,10 +272,6 @@ const WoodenFenceCost2025 = () => {
               </section>
 
               <section className="mb-8">
-                <VirtualQuoteTool fenceStyleName="wooden fence" />
-              </section>
-
-              <section className="mb-8">
                 <Card className="border-primary/20">
                   <CardContent className="p-6 text-center">
                     <h2 className="text-2xl font-bold mb-4">Ready to Get Your Fence Quote?</h2>
@@ -303,6 +299,11 @@ const WoodenFenceCost2025 = () => {
               </section>
             </div>
           </article>
+        </div>
+        
+        {/* Virtual Quote Tool - Full Width Outside Container */}
+        <div className="w-full">
+          <VirtualQuoteTool fenceStyleName="wooden fence" />
         </div>
       </main>
     </>
