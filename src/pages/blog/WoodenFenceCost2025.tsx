@@ -1,0 +1,248 @@
+import { Clock, DollarSign, Shield, Ruler, Home, CheckCircle, AlertTriangle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
+import OptimizedImage from "@/components/OptimizedImage";
+import { useNavigate } from "react-router-dom";
+
+const WoodenFenceCost2025 = () => {
+  const navigate = useNavigate();
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Much Does a Wooden Fence Cost in Seattle in 2025?",
+    "description": "Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.",
+    "author": {
+      "@type": "Person",
+      "name": "Seattle Fence Company"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Seattle Fence Company"
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://seattlefence.com/blog/wooden-fence-cost-2025"
+    }
+  };
+
+  return (
+    <>
+      <Seo
+        title="How Much Does a Wooden Fence Cost in Seattle in 2025? | Updated Pricing Guide"
+        description="Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners. Prices from $35-60/LF."
+        structuredData={structuredData}
+      />
+      
+      <main className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+        <div className="container mx-auto px-4 py-8">
+          <article className="max-w-4xl mx-auto">
+            <header className="text-center mb-8">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <Badge variant="secondary">Pricing</Badge>
+                <span className="text-sm text-muted-foreground flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  6 min read
+                </span>
+                <span className="text-sm text-muted-foreground">January 2025</span>
+              </div>
+              
+              <h1 className="text-4xl font-bold mb-4">
+                How Much Does a Wooden Fence Cost in Seattle in 2025?
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8">
+                Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.
+              </p>
+              
+              <div className="relative rounded-lg overflow-hidden mb-8">
+                <OptimizedImage
+                  src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
+                  alt="Wooden fence installation in Seattle 2025"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </header>
+
+            <div className="prose prose-lg max-w-none">
+              <section className="mb-8">
+                <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <CheckCircle className="h-6 w-6 text-green-600" />
+                      Great News for 2025: Prices Have Come Down!
+                    </h2>
+                    <p className="mb-4">
+                      Thankfully, prices have come way down from the COVID-19 heights caused by supply chain issues. 
+                      Right now is a great time to purchase a fence as our lumber market is secure and stable.
+                    </p>
+                    <div className="bg-white/60 dark:bg-gray-800/60 p-4 rounded-lg">
+                      <p className="font-semibold text-lg text-center">
+                        Current Seattle Fence Pricing: <span className="text-primary">$35 - $60 per linear foot</span>
+                      </p>
+                      <p className="text-sm text-center text-muted-foreground mt-1">
+                        *Before any upgrades, depending on style, height, and utility
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card>
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <Home className="h-6 w-6 text-primary" />
+                      Seattle Height Restrictions & Front Yard Options
+                    </h2>
+                    <div className="bg-yellow-50 dark:bg-yellow-950 p-4 rounded-lg mb-4">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <strong>Important:</strong> Seattle has many height restrictions, including a <strong>4-foot limitation for front yards</strong>.
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mb-4">
+                      For front yard fencing that complies with Seattle regulations, we recommend:
+                    </p>
+                    <ul className="space-y-3 mb-4">
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <strong>Traditional Picket Fences:</strong> Classic, attractive, and budget-friendly option for securing your front yard.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <strong>Newly Introduced Hogwire Panels:</strong> Modern, stylish, and cost-effective solution that provides security while maintaining visibility.
+                        </div>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card className="bg-gradient-to-r from-primary/5 to-secondary/5">
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <Shield className="h-6 w-6 text-primary" />
+                      Backyard Privacy Solutions
+                    </h2>
+                    <p className="mb-4">
+                      When looking to secure privacy for your backyard, a traditional 6-foot fence is the best option for you.
+                    </p>
+                    <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-lg mb-4">
+                      <h3 className="text-lg font-semibold mb-2">6-Foot Cedar Privacy Fence</h3>
+                      <p className="mb-2"><strong>Price: $46 - $47 per linear foot</strong></p>
+                      <p className="text-sm text-muted-foreground">
+                        This gets you a beautiful, long-lasting cedar fence that provides excellent privacy and adds value to your property.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card>
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <Ruler className="h-6 w-6 text-primary" />
+                      8-Foot Fence Options & Requirements
+                    </h2>
+                    <p className="mb-4">
+                      To go up to 8 feet, you can add up to an additional 2 feet of height, but it has to be lattice or a trellis to allow wind to go through.
+                    </p>
+                    <div className="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg">
+                      <h3 className="font-semibold mb-2">8-Foot Fence Considerations:</h3>
+                      <ul className="space-y-2">
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Top 2 feet must be lattice or trellis design</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Wind flow requirement for safety and compliance</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Adds substantial cost but sometimes necessary for long-lasting privacy</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card className="bg-gradient-to-r from-secondary/5 to-primary/5">
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <DollarSign className="h-6 w-6 text-primary" />
+                      Factors That Influence Your Fence Cost
+                    </h2>
+                    <div className="grid md:grid-cols-3 gap-4 mb-6">
+                      <div className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                        <h3 className="font-semibold mb-2">Style Selection</h3>
+                        <p className="text-sm text-muted-foreground">
+                          From basic picket to premium privacy designs
+                        </p>
+                      </div>
+                      <div className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                        <h3 className="font-semibold mb-2">Height Requirements</h3>
+                        <p className="text-sm text-muted-foreground">
+                          4ft front yard to 8ft privacy options
+                        </p>
+                      </div>
+                      <div className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                        <h3 className="font-semibold mb-2">Utility & Function</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Security, privacy, or decorative purposes
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-8">
+                <Card className="border-primary/20">
+                  <CardContent className="p-6 text-center">
+                    <h2 className="text-2xl font-bold mb-4">Ready to Get Your Fence Quote?</h2>
+                    <p className="text-lg text-muted-foreground mb-6">
+                      Take advantage of current market conditions and secure lumber prices for your Seattle fence project.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button 
+                        size="lg" 
+                        onClick={() => navigate('/quote-tool')}
+                        className="bg-primary hover:bg-primary/90"
+                      >
+                        Get Instant Quote
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="lg"
+                        onClick={() => navigate('/contact')}
+                      >
+                        Schedule Consultation
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </section>
+            </div>
+          </article>
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default WoodenFenceCost2025;
