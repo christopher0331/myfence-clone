@@ -63,7 +63,7 @@ const WoodenFenceCost2025 = () => {
                 <OptimizedImage
                   src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
                   alt="Wooden fence installation in Seattle 2025"
-                  className="w-full h-64 object-cover object-[0_130px]"
+                  className="w-full h-64 object-cover object-[0_-260px]"
                 />
               </div>
             </header>
