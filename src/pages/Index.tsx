@@ -8,10 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import cedarImg from "@/assets/fences/cedar.jpg";
-import modernImg from "@/assets/fences/horizontal-cedar.jpg";
-import gallery1 from "@/assets/gallery/gallery1.jpg";
-import { Cpu, Home, ShieldCheck, Hammer, CheckCircle } from "lucide-react";
+import { CheckCircle, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -31,6 +28,7 @@ const Index = () => {
   const { toast } = useToast();
 
   const reviewsRef = useRef<HTMLDivElement | null>(null);
+  
   // Load Trustindex reviews widget into the section container
   useEffect(() => {
     if (!reviewsRef.current) return;
@@ -246,7 +244,7 @@ const Index = () => {
 
       <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
         <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">Our reviews are in, and we love them!</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Choosing a Seattle fence contractor is an investment—make it with the father & son team that builds it right the first time. If you’re searching for a fence company near me, our customers agree you’re in the right place.</p>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Choosing a Seattle fence contractor is an investment—make it with the father & son team that builds it right the first time. If you're searching for a fence company near me, our customers agree you're in the right place.</p>
         <Card className="mt-6">
           <CardContent className="p-6">
             <div ref={reviewsRef} className="w-full" aria-live="polite"></div>
@@ -327,7 +325,7 @@ const Index = () => {
       {/* Contact form */}
       <section className="container py-12 md:py-20">
         <h2 className="text-2xl md:text-3xl font-bold">Contact Us</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We’ll reply quickly.</p>
+        <p className="text-muted-foreground mt-2 max-w-2xl">Tell us about your project. We'll reply quickly.</p>
         
         <Card className="mt-6">
           <CardContent className="p-6">
@@ -348,70 +346,86 @@ const Index = () => {
                 className="grid lg:grid-cols-2 gap-6"
                 onSubmit={handleSubmit}
               >
-                <div className="grid gap-4">
+                <div className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input 
-                      id="name" 
+                    <Label htmlFor="name" className="text-sm font-medium">
+                      Name *
+                    </Label>
+                    <Input
+                      id="name"
                       name="name"
+                      type="text"
+                      required
                       value={formData.name}
                       onChange={handleInputChange}
-                      required 
+                      className="mt-1"
+                      aria-describedby="name-required"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input 
-                      id="email" 
+                    <Label htmlFor="email" className="text-sm font-medium">
+                      Email *
+                    </Label>
+                    <Input
+                      id="email"
                       name="email"
-                      type="email" 
+                      type="email"
+                      required
                       value={formData.email}
                       onChange={handleInputChange}
-                      required 
+                      className="mt-1"
+                      aria-describedby="email-required"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input 
-                      id="phone" 
+                    <Label htmlFor="phone" className="text-sm font-medium">
+                      Phone
+                    </Label>
+                    <Input
+                      id="phone"
                       name="phone"
-                      type="tel" 
+                      type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      required 
+                      className="mt-1"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="address">Address</Label>
-                    <Input 
-                      id="address" 
+                    <Label htmlFor="address" className="text-sm font-medium">
+                      Property Address
+                    </Label>
+                    <Input
+                      id="address"
                       name="address"
+                      type="text"
                       value={formData.address}
                       onChange={handleInputChange}
-                      required 
+                      className="mt-1"
+                      placeholder="Seattle, WA"
                     />
                   </div>
                 </div>
-                <div className="grid gap-4">
-                  <div className="h-full flex flex-col">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
+                <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="message" className="text-sm font-medium">
+                      Project Details
+                    </Label>
+                    <Textarea
+                      id="message"
                       name="message"
-                      className="min-h-[180px] flex-1 mt-2" 
                       value={formData.message}
                       onChange={handleInputChange}
-                      required 
+                      className="mt-1 min-h-[200px] resize-none"
+                      placeholder="Tell us about your fence project..."
                     />
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button type="submit" disabled={isSubmitting} className="flex-1">
-                      {isSubmitting ? "Sending..." : "Send message"}
-                    </Button>
-                    <Button variant="secondary" className="flex-1" asChild>
-                      <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-                    </Button>
-                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full lg:w-auto px-8"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
                 </div>
               </form>
             )}
