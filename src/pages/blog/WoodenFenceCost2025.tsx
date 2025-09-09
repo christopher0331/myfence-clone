@@ -272,7 +272,9 @@ const WoodenFenceCost2025 = () => {
               </section>
 
               <section className="mb-8">
-                <VirtualQuoteTool fenceStyleName="wooden fence" />
+                <div className="w-full max-w-none -mx-4 px-4">
+                  <VirtualQuoteTool fenceStyleName="wooden fence" />
+                </div>
               </section>
 
               <section className="mb-8">
