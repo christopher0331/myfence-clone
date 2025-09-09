@@ -52,8 +52,8 @@ const BlogSection = () => {
                   <span className="text-xs text-muted-foreground">
                     {article.publishDate}
                   </span>
-                  <Button variant="outline" size="sm">
-                    Read More
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to={`/blog/${article.id}`}>Read More</Link>
                   </Button>
                 </div>
               </CardContent>

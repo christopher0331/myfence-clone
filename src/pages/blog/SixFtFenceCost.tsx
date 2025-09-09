@@ -291,24 +291,34 @@ const SixFtFenceCostBlog = () => {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold mb-4">Factors That Can Increase Your 6-Foot Fence Cost</h2>
+                  <h2 className="text-2xl font-bold mb-4">What Other Companies Charge Extra For (But We Don't)</h2>
+                  
+                  <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 mb-6">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-600" />
+                        No Hidden Fees or Surprise Charges
+                      </h3>
+                      <p className="mb-2">
+                        <strong>Unlike many competitors, we do NOT charge extra for:</strong>
+                      </p>
+                      <ul className="space-y-1 text-green-800">
+                        <li>• Rocky soil conditions</li>
+                        <li>• Working around utility lines</li>
+                        <li>• Basic permitting assistance</li>
+                      </ul>
+                      <p className="mt-3 text-sm">
+                        Our quoted price includes handling these common site conditions that are part of professional fence installation.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  
+                  <h3 className="text-lg font-semibold mb-4">Factors That May Increase Costs</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                       <div>
                         <strong>Steep Slopes:</strong> Hillside installations require stepped panels or racked fencing, increasing material and labor costs by 15-30%.
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <strong>Rocky Soil:</strong> Hard clay or rocky conditions may require special equipment for post holes, adding $5-10 per post.
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <strong>Utility Lines:</strong> Hand-digging around utilities increases labor time and costs.
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -320,7 +330,7 @@ const SixFtFenceCostBlog = () => {
                     <li className="flex items-start gap-3">
                       <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                       <div>
-                        <strong>Permits:</strong> Some Seattle neighborhoods require permits, typically costing $50-200.
+                        <strong>Premium Upgrades:</strong> Custom designs, decorative elements, or specialty hardware will increase the total project cost.
                       </div>
                     </li>
                   </ul>
