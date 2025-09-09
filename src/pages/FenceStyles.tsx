@@ -57,6 +57,7 @@ const addOns = [
 ];
 
 const FenceStyles = () => {
+  console.log('FenceStyles component rendered with', addOns.length, 'addOns');
   return (
     <main>
       <Seo
