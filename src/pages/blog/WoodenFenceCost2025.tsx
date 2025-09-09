@@ -93,6 +93,19 @@ const WoodenFenceCost2025 = () => {
                 </div>
               </section>
 
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <OptimizedImage
+                  src="/lovable-uploads/07de637e-347f-4731-ae87-f86ca8fec0cf.png"
+                  alt="Wide view of picture frame cedar fence and double gate - Seattle installation"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <OptimizedImage
+                  src="/lovable-uploads/a06e4397-cdd0-4a58-9755-5aa1b0afd8c2.png"
+                  alt="Backyard picture frame cedar fence with gate and arbor - professional work"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
+
               <section className="mb-8">
                 <Card className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
                   <CardContent className="p-6">
@@ -115,6 +128,14 @@ const WoodenFenceCost2025 = () => {
                   </CardContent>
                 </Card>
               </section>
+
+              <div className="mb-8">
+                <OptimizedImage
+                  src="/lovable-uploads/1437b79e-8006-437b-b489-6428ff12ade9.png"
+                  alt="Picture frame fence corner with pergola and flowering tree - Seattle fence installation"
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
 
               <section className="mb-8">
                 <Card>
@@ -151,6 +172,19 @@ const WoodenFenceCost2025 = () => {
                   </CardContent>
                 </Card>
               </section>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <OptimizedImage
+                  src="/lovable-uploads/e0a73408-c5ab-4748-9378-9494e3f88cbd.png"
+                  alt="Picture frame cedar fence gate with hardware - professional installation"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <OptimizedImage
+                  src="/lovable-uploads/aee63bcb-0a8d-4983-85a3-2ecff1277f53.png"
+                  alt="Close-up of picture frame fence line with post caps showing quality materials"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
 
               <section className="mb-8">
                 <Card className="bg-gradient-to-r from-primary/5 to-secondary/5">

@@ -184,6 +184,19 @@ const SixFtFenceCostBlog = () => {
                   </div>
                 </section>
 
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <img 
+                    src="/lovable-uploads/bc08ad97-c013-4147-9f4e-4bf7d991ee7f.png" 
+                    alt="Picture frame fence through trees with consistent top line - quality installation"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <img 
+                    src="/lovable-uploads/7b4d4dc3-c1cc-4f43-9fb0-fbcd570a1b17.png" 
+                    alt="Pergola detail over picture frame fence showing craftsmanship"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+
                 <Card className="border-orange-200 bg-orange-50">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -260,6 +273,14 @@ const SixFtFenceCostBlog = () => {
                     </Card>
                   </div>
                 </section>
+
+                <div className="mb-8">
+                  <img 
+                    src="/lovable-uploads/bd583fb2-b610-4156-bd27-3e7f528192e1.png" 
+                    alt="Garden-side view of picture frame cedar fence demonstrating quality materials"
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </div>
 
                 <section>
                   <h2 className="text-2xl font-bold mb-4">Sample 6-Foot Fence Project Costs</h2>

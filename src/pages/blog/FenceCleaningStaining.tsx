@@ -156,6 +156,14 @@ const FenceCleaningStaining = () => {
               </Card>
             </div>
 
+            <div className="mb-8">
+              <OptimizedImage
+                src="/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png"
+                alt="Solid board picture frame cedar fence panel close-up showing quality that needs proper cleaning"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
+
             <h3>Pressure Washing</h3>
             <p>
               While pressure washing can remove surface dirt, it can also damage wood fibers if not done correctly. High pressure can create furry wood grain that interferes with stain absorption.
@@ -211,6 +219,14 @@ const FenceCleaningStaining = () => {
               <li><strong>Rinse thoroughly:</strong> Remove all cleaning residue</li>
               <li><strong>Allow to dry:</strong> Wait 48-72 hours before staining</li>
             </ol>
+
+            <div className="mb-8">
+              <OptimizedImage
+                src="/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"
+                alt="3-rail picture frame fence detail showing proper cleaning maintenance"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
 
             <h2>Timeline and Frequency Recommendations</h2>
             <ul>

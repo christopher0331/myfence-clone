@@ -215,6 +215,19 @@ const HowToStainFence = () => {
               </CardContent>
             </Card>
 
+            <div className="grid md:grid-cols-2 gap-6 my-8">
+              <OptimizedImage
+                src="/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png"
+                alt="Picture frame cedar fence with post caps showing professional staining preparation"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <OptimizedImage
+                src="/lovable-uploads/76312c18-6afb-42d7-916a-5dae8fceadbb.png"
+                alt="Picture frame fence beside garden plantings ready for maintenance staining"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+
             <h2>Tools and Materials Needed</h2>
 
             <h3>Essential Equipment</h3>
@@ -256,6 +269,14 @@ const HowToStainFence = () => {
               <li><strong>Maintain wet edge</strong> to prevent lap marks</li>
               <li><strong>Back-brush spray applications</strong> for better penetration</li>
             </ol>
+
+            <div className="mb-8">
+              <OptimizedImage
+                src="/lovable-uploads/c13a6e02-2011-4437-a7cb-5de49f6f62b9.png"
+                alt="Wooded property picture frame fence showing proper stain application technique"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
 
             <h3>Drying and Curing</h3>
             <ul>
