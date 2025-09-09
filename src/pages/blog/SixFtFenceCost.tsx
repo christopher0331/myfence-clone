@@ -318,7 +318,7 @@ const SixFtFenceCostBlog = () => {
                     <li className="flex items-start gap-3">
                       <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                       <div>
-                        <strong>Steep Slopes:</strong> Hillside installations require stepped panels or racked fencing, increasing material and labor costs by 15-30%.
+                        <strong>Steep Slopes:</strong> While some contractors need to step their panels due to difficulty building to steep contours, our Fence Genius technology perfectly solves how to build form-fitting panels offsite for perfect installation. However, steep terrain requires shorter panels and more materials, increasing both material and labor costs by 15-30%.
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
