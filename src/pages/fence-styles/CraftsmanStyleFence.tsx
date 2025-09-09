@@ -288,6 +288,9 @@ const CraftsmanStyleFence = () => {
                       <div className="p-3 text-center text-sm text-muted-foreground">Steel core post-on-pipe systems</div>
                     </Card>
                     <Card className="w-full">
+                      <div className="p-3 text-center text-sm text-muted-foreground">2 foot lattice topper for 8 foot height</div>
+                    </Card>
+                    <Card className="w-full">
                       <div className="p-3 text-center text-sm text-muted-foreground">Decorative post caps and trim variants</div>
                     </Card>
                     <Card className="w-full sm:col-span-2">
