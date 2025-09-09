@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, X, Clock, Thermometer, Droplets } from "lucide-react";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import fenceStainingProcess from "@/assets/blog/fence-staining-process.jpg";
+import fenceCleaningBeforeAfter from "@/assets/blog/fence-cleaning-before-after.jpg";
 
 const HowToStainFence = () => {
   const structuredData = {
@@ -125,6 +127,14 @@ const HowToStainFence = () => {
             </div>
 
             <h2>Brushing vs Spraying: Complete Comparison</h2>
+            
+            <div className="mb-8">
+              <OptimizedImage
+                src={fenceStainingProcess}
+                alt="Professional fence staining process showing proper brushing technique"
+                className="w-full h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
 
             <div className="grid md:grid-cols-2 gap-8 my-8">
               <Card>
@@ -234,6 +244,13 @@ const HowToStainFence = () => {
             <h2>Step-by-Step Staining Process</h2>
 
             <h3>Preparation (Critical Step)</h3>
+            <div className="mb-6">
+              <OptimizedImage
+                src={fenceCleaningBeforeAfter}
+                alt="Before and after comparison showing properly cleaned fence ready for staining"
+                className="w-full h-48 object-cover rounded-lg shadow-md"
+              />
+            </div>
             <ol>
               <li><strong>Clean the fence thoroughly</strong> (see our fence cleaning guide)</li>
               <li><strong>Allow 48-72 hours drying time</strong> after cleaning</li>
