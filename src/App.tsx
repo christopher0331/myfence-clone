@@ -29,6 +29,7 @@ const Blog = React.lazy(() => import("./pages/Blog"));
 const FenceCleaningStaining = React.lazy(() => import("./pages/blog/FenceCleaningStaining"));
 const HowToStainFence = React.lazy(() => import("./pages/blog/HowToStainFence"));
 const VirtualQuoteToolBlog = React.lazy(() => import("./pages/blog/VirtualQuoteTool"));
+const SixFtFenceCostBlog = React.lazy(() => import("./pages/blog/SixFtFenceCost"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -92,6 +93,7 @@ const AppContent = () => {
             <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
             <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
             <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolBlog />} />
+            <Route path="/blog/6ft-cost" element={<SixFtFenceCostBlog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
