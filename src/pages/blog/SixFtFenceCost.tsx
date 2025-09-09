@@ -4,9 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowLeft, DollarSign, Clock, CheckCircle, AlertTriangle, Star, Shield } from "lucide-react";
 import Seo from "@/components/Seo";
-import cedarPrivacyFence from "@/assets/blog/cedar-privacy-fence-seattle.jpg";
-import fencePostTypes from "@/assets/blog/fence-post-types.jpg";
-import fenceInstallationTeam from "@/assets/blog/fence-installation-team.jpg";
 
 const SixFtFenceCostBlog = () => {
   const structuredData = {
@@ -199,13 +196,6 @@ const SixFtFenceCostBlog = () => {
                     <Star className="h-6 w-6 text-primary" />
                     What Makes Our 6-Foot Fences Stand Apart
                   </h2>
-                  <div className="mb-6">
-                    <img 
-                      src={cedarPrivacyFence} 
-                      alt="Premium 6-foot cedar privacy fence showcasing quality materials and craftsmanship"
-                      className="w-full h-64 object-cover rounded-lg shadow-lg"
-                    />
-                  </div>
                   <p className="mb-4">
                     We pride ourselves on never compromising on quality. Even our minimum standard includes:
                   </p>
@@ -252,14 +242,6 @@ const SixFtFenceCostBlog = () => {
                     </Card>
                   </div>
                 </section>
-
-                <div className="mb-8">
-                  <img 
-                    src={fencePostTypes} 
-                    alt="Different fence post types and materials comparison"
-                    className="w-full h-48 object-cover rounded-lg shadow-lg"
-                  />
-                </div>
 
                 <section>
                   <h2 className="text-2xl font-bold mb-4">Sample 6-Foot Fence Project Costs</h2>

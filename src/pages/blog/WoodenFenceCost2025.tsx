@@ -6,10 +6,6 @@ import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { useNavigate } from "react-router-dom";
-import cedarPrivacyFence from "@/assets/blog/cedar-privacy-fence-seattle.jpg";
-import fenceInstallationTeam from "@/assets/blog/fence-installation-team.jpg";
-import fenceCostCalculator from "@/assets/blog/fence-cost-calculator.jpg";
-import picketFenceSeattle from "@/assets/blog/picket-fence-seattle.jpg";
 
 const WoodenFenceCost2025 = () => {
   const navigate = useNavigate();
@@ -138,13 +134,6 @@ const WoodenFenceCost2025 = () => {
                     <p className="mb-4">
                       For front yard fencing that complies with Seattle regulations, we recommend:
                     </p>
-                    <div className="mb-6">
-                      <OptimizedImage
-                        src={picketFenceSeattle}
-                        alt="Traditional white picket fence in Seattle front yard"
-                        className="w-full h-48 object-cover rounded-lg shadow-md"
-                      />
-                    </div>
                     <ul className="space-y-3 mb-4">
                       <li className="flex items-start gap-3">
                         <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -173,13 +162,6 @@ const WoodenFenceCost2025 = () => {
                     <p className="mb-4">
                       When looking to secure privacy for your backyard, a traditional 6-foot fence is the best option for you.
                     </p>
-                    <div className="mb-6">
-                      <OptimizedImage
-                        src={cedarPrivacyFence}
-                        alt="Beautiful 6-foot cedar privacy fence in Seattle backyard"
-                        className="w-full h-64 object-cover rounded-lg shadow-md"
-                      />
-                    </div>
                     <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-lg mb-4">
                       <h3 className="text-lg font-semibold mb-2">6-Foot Cedar Privacy Fence</h3>
                       <p className="mb-2"><strong>Price: $46 - $47 per linear foot</strong></p>
@@ -229,13 +211,6 @@ const WoodenFenceCost2025 = () => {
                       <DollarSign className="h-6 w-6 text-primary" />
                       Factors That Influence Your Fence Cost
                     </h2>
-                    <div className="mb-6">
-                      <OptimizedImage
-                        src={fenceCostCalculator}
-                        alt="Professional fence cost estimation tools and calculator"
-                        className="w-full h-48 object-cover rounded-lg shadow-md"
-                      />
-                    </div>
                     <div className="grid md:grid-cols-3 gap-4 mb-6">
                       <div className="text-center p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg">
                         <h3 className="font-semibold mb-2">Style Selection</h3>

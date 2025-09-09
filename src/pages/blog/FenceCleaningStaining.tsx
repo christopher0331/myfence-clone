@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, AlertCircle, Clock, Phone } from "lucide-react";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
-import fenceCleaningBeforeAfter from "@/assets/blog/fence-cleaning-before-after.jpg";
 
 const FenceCleaningStaining = () => {
   const structuredData = {
@@ -100,14 +99,6 @@ const FenceCleaningStaining = () => {
             </Card>
 
             <h2>Cleaning Methods Compared</h2>
-            
-            <div className="mb-8">
-              <OptimizedImage
-                src={fenceCleaningBeforeAfter}
-                alt="Before and after comparison of professional fence cleaning results"
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-            </div>
 
             <h3>Softwashing (Professional Recommended)</h3>
             <p>
