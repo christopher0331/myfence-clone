@@ -62,9 +62,9 @@ const WoodenFenceCost2025 = () => {
               
               <div className="relative rounded-lg overflow-hidden mb-8">
                 <OptimizedImage
-                  src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
-                  alt="Wooden fence installation in Seattle 2025"
-                  className="w-full h-64 object-cover object-[0_-150px]"
+                  src="/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png"
+                  alt="Beautiful cedar privacy fence installed in Seattle showing professional craftsmanship"
+                  className="w-full h-64 object-cover"
                 />
               </div>
             </header>
@@ -205,6 +205,18 @@ const WoodenFenceCost2025 = () => {
               </section>
 
               <section className="mb-8">
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <OptimizedImage
+                    src="/lovable-uploads/ad4ca7a4-6910-4508-a789-c7a367954f3e.png"
+                    alt="Picture frame cedar fence on rock retaining wall - quality Seattle installation"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <OptimizedImage
+                    src="/lovable-uploads/2ac212df-4601-45ef-8adf-5332eab86f75.png"
+                    alt="Picture frame fence along backyard with cap and trim - professional Seattle fence work"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
                 <Card className="bg-gradient-to-r from-secondary/5 to-primary/5">
                   <CardContent className="p-6">
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">

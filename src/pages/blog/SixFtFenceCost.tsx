@@ -69,9 +69,27 @@ const SixFtFenceCostBlog = () => {
             <article className="prose prose-lg max-w-none">
               <div className="mb-8">
                 <img 
-                  src="/lovable-uploads/840c5f7f-0578-45fa-9b5c-195760503695.png" 
-                  alt="Beautiful 6-foot privacy fence installed in Seattle backyard with cedar materials"
+                  src="/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png" 
+                  alt="Beautiful 6-foot cedar privacy fence showing professional installation and post caps"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
+                />
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
+                <img 
+                  src="/lovable-uploads/200fbe25-bf04-4245-812e-ab3d518b830d.png" 
+                  alt="Long run of picture frame fence along lawn - Seattle fence installation"
+                  className="w-full h-32 object-cover rounded-lg"
+                />
+                <img 
+                  src="/lovable-uploads/76312c18-6afb-42d7-916a-5dae8fceadbb.png" 
+                  alt="Picture frame fence beside garden plantings showing quality craftsmanship"
+                  className="w-full h-32 object-cover rounded-lg"
+                />
+                <img 
+                  src="/lovable-uploads/c13a6e02-2011-4437-a7cb-5de49f6f62b9.png" 
+                  alt="Wooded property picture frame fence showing cap and trim detail"
+                  className="w-full h-32 object-cover rounded-lg"
                 />
               </div>
 

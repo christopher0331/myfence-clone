@@ -68,10 +68,23 @@ const FenceCleaningStaining = () => {
               <div>
                 <OptimizedImage
                   src="/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png"
-                  alt="Professional fence cleaning for staining preparation"
+                  alt="Professional fence cleaning preparation showing difference in fence maintenance"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
               </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <OptimizedImage
+                src="/lovable-uploads/b19c0981-a9da-4706-acfa-30228d21d207.png"
+                alt="Team member working on fence maintenance demonstrating professional approach"
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <OptimizedImage
+                src="/lovable-uploads/f4ccaaf1-a657-4fe7-aae6-8c3b61025cde.png"
+                alt="Professional fence installation team showing attention to detail"
+                className="w-full h-48 object-cover rounded-lg"
+              />
             </div>
           </div>
         </section>

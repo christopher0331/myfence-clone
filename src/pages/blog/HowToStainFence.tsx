@@ -65,11 +65,16 @@ const HowToStainFence = () => {
                   <span>January 2025</span>
                 </div>
               </div>
-              <div>
+              <div className="space-y-4">
                 <OptimizedImage
-                  src="/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png"
-                  alt="Professional fence staining in progress"
-                  className="w-full h-[400px] object-cover rounded-lg"
+                  src="/lovable-uploads/7586a395-5060-4524-a596-fd70bb61c275.png"
+                  alt="Beautifully stained cedar fence showing rich wood tones and professional finish"
+                  className="w-full h-[300px] object-cover rounded-lg"
+                />
+                <OptimizedImage
+                  src="/lovable-uploads/bd583fb2-b610-4156-bd27-3e7f528192e1.png"
+                  alt="Garden-side view of stained cedar fence demonstrating proper stain application"
+                  className="w-full h-[300px] object-cover rounded-lg"
                 />
               </div>
             </div>
