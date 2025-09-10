@@ -183,6 +183,15 @@ const FenceStyles = () => {
                     Learn more about 3' Black Hogwire Fence →
                   </Link>
                 )}
+                {s.title === "5' Galvanized Hogwire Fence" && (
+                  <Link
+                    to="/fence-styles/galvanized-hogwire-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about 5' Galvanized Hogwire Fence"
+                  >
+                    Learn more about 5' Galvanized Hogwire Fence →
+                  </Link>
+                )}
                 {s.title === "Picket Fence" && (
                   <Link
                     to="/fence-styles/picket-fence"
