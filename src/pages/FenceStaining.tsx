@@ -42,8 +42,8 @@ const FenceStaining = () => {
   return (
     <>
       <Seo
-        title="Should I Stain My Cedar Fence? Complete Seattle Guide 2024"
-        description="Expert guide on cedar fence staining in Seattle. Learn why staining every 3-5 years saves money, prevents damage, and extends fence life in the Pacific Northwest's rainy climate."
+        title="Cedar Fence Staining Seattle: Complete Pacific Northwest Guide"
+        description="Professional cedar fence staining guide for Seattle's wet climate. Protect your investment with expert tips. 30+ years experience. Call (253) 455-1885."
         canonical="https://myfence.com/should-i-stain-my-fence"
         structuredData={structuredData}
       />

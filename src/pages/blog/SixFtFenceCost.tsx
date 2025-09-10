@@ -31,8 +31,8 @@ const SixFtFenceCostBlog = () => {
   return (
     <>
       <Seo
-        title="Fence Cost Seattle: 6-Foot Privacy Fence Pricing Guide 2025"
-        description="Complete Seattle fence cost breakdown for 6-foot privacy fencing. Materials, labor, and installation pricing. Professional cedar fence installation from $42-60/LF."
+        title="6ft Fence Cost Seattle 2025: Complete Installation Pricing Guide"
+        description="Complete Seattle 6-foot fence cost breakdown for 2025. Cedar privacy fencing $42-60/LF. Materials, labor, permits included. Call (253) 455-1885 for quotes."
         canonical="https://seattlefence.com/blog/fence-cost-seattle"
         structuredData={structuredData}
       />

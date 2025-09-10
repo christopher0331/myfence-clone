@@ -61,9 +61,33 @@ const FenceStyles = () => {
   return (
     <main>
       <Seo
-        title="Fence Styles | MyFence.com Seattle"
-        description="Explore cedar, horizontal, chain-link, wrought iron, and aluminum fence styles by MyFence.com in Seattle."
+        title="Seattle Fence Styles: Cedar, Horizontal, Hogwire | MyFence.com"
+        description="Expert fence styles in Seattle, WA: picture frame cedar, horizontal, hogwire, craftsman designs. 30+ years experience. Call (253) 455-1885 for free estimates."
         canonical="https://myfence.com/fence-styles"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Fence Installation Services",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "MyFence.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seattle",
+              "addressRegion": "WA",
+              "addressCountry": "US"
+            },
+            "telephone": "+1-253-455-1885"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Seattle",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Washington"
+            }
+          }
+        }}
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Fence Styles for Every Seattle Home</h1>

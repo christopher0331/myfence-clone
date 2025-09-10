@@ -49,8 +49,8 @@ const SolidBoardFence = () => {
   return (
     <>
       <Seo
-        title="Solid Board Fence | Budget-Friendly Privacy Fence | MyFence.com"
-        description="Economical solid board fencing with 2 rails and stainless steel fasteners. Most budget-friendly fence option for privacy. Professional installation available."
+        title="Budget Solid Board Fence Seattle | Economical Cedar Privacy Fencing"
+        description="Affordable solid board cedar fence in Seattle. Budget-friendly option with 2 rails, stainless steel fasteners. Quality installation. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/solid-board-fence"
         structuredData={structuredData}
       />

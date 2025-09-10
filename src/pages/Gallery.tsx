@@ -19,9 +19,25 @@ const Gallery = () => {
   return (
     <main>
       <Seo
-        title="Fence Gallery | MyFence.com Seattle"
-        description="View recent fence installations in Seattle by MyFence.com, including cedar, horizontal, iron, and more."
+        title="Seattle Fence Installation Gallery | MyFence.com Project Photos"
+        description="View stunning fence installations across Seattle neighborhoods. Cedar, horizontal, hogwire, and custom designs. 30+ years craftsmanship. Call (253) 455-1885."
         canonical="https://myfence.com/gallery"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Seattle Fence Installation Gallery",
+          "description": "Professional fence installations in Seattle, Washington",
+          "creator": {
+            "@type": "LocalBusiness",
+            "name": "MyFence.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seattle",
+              "addressRegion": "WA"
+            },
+            "telephone": "+1-253-455-1885"
+          }
+        }}
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Project Gallery</h1>

@@ -44,8 +44,8 @@ const PictureFrameFence = () => {
   return (
     <>
       <Seo
-        title="Picture Frame Fence | Premium Cedar Privacy | MyFence.com"
-        description="Premium picture frame cedar fences in Seattle. Clean trim, strong structure, and precise planning with Fence Genius. Get a fast, free quote today."
+        title="Picture Frame Cedar Fence Seattle | Premium Privacy Fencing"
+        description="Seattle's most popular picture frame cedar fence. Clean trim details, strong construction, 30+ years experience. Free estimates. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/picture-frame-fence"
         structuredData={structuredData}
       />

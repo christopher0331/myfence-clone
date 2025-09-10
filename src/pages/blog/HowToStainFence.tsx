@@ -31,8 +31,8 @@ const HowToStainFence = () => {
   return (
     <>
       <Seo
-        title="How Do I Stain My Fence? Complete Seattle Staining Guide | Best Techniques"
-        description="Complete guide to fence staining in Seattle - brushing vs spraying techniques, best practices, and step-by-step instructions for lasting results."
+        title="How to Stain a Cedar Fence: Professional Seattle Guide & Techniques"
+        description="Professional cedar fence staining guide for Seattle's climate. Brushing vs spraying, best products, step-by-step process. 30+ years experience. Call (253) 455-1885."
         canonical="https://seattlefence.com/blog/how-to-stain-fence"
         structuredData={structuredData}
       />

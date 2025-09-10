@@ -15,9 +15,34 @@ const BlackHogwireFence = () => {
   return (
     <>
       <Seo
-        title="6' Black Hogwire Fence - Secure & Visually Open Fencing | MyFence.com"
-        description="Secure your property with our 6' Black Hogwire Fence. Perfect for wooded backyards - keeps animals out while maintaining visual openness. Cedar frame with powder-coated steel."
+        title="6' Black Hogwire Fence Seattle | Security & Style Combined"
+        description="Secure 6' black hogwire fence for Seattle properties. Perfect for wooded backyards - keeps animals out while maintaining openness. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/black-hogwire-fence"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "6 Foot Black Hogwire Fence",
+          "description": "Secure black hogwire fence with cedar frame and powder-coated steel panels",
+          "brand": {
+            "@type": "Brand",
+            "name": "MyFence.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "manufacturer": {
+            "@type": "LocalBusiness",
+            "name": "MyFence.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seattle",
+              "addressRegion": "WA"
+            },
+            "telephone": "+1-253-455-1885"
+          }
+        }}
       />
       
       <div className="min-h-screen bg-background">

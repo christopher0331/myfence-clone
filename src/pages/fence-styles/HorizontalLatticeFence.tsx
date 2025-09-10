@@ -52,8 +52,8 @@ const HorizontalLatticeFence = () => {
   return (
     <>
       <Seo
-        title="Horizontal Lattice Fence | Premium 5/8 Inch Thick Lattice | MyFence.com"
-        description="Professional horizontal lattice fencing with craftsman foundation, full 5/8 inch thick lattice strips, and stainless steel fasteners. Superior quality that won't streak or fail."
+        title="Horizontal Lattice Fence Seattle | Premium 5/8 Inch Thick Cedar Strips"
+        description="Premium horizontal lattice fence with 5/8 inch thick strips, craftsman foundation, stainless steel fasteners. Seattle's finest lattice work. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/horizontal-lattice-fence"
         structuredData={structuredData}
       />

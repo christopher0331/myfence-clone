@@ -6,9 +6,27 @@ const QuoteTool = () => {
   return (
     <main>
       <Seo
-        title="Instant Online Quote | MyFence.com Seattle"
-        description="Get an instant fence quote online with our secure tool. See pricing for your project in minutes."
+        title="Free Seattle Fence Quote Tool | Instant Online Estimates 2024"
+        description="Get instant fence quotes for Seattle properties. Real-time pricing for cedar, horizontal, hogwire fences. Powered by Fence Genius. Call (253) 455-1885."
         canonical="https://myfence.com/quote"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Seattle Fence Quote Tool",
+          "description": "Instant online fence quote calculator for Seattle properties",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "MyFence.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seattle",
+              "addressRegion": "WA"
+            },
+            "telephone": "+1-253-455-1885"
+          }
+        }}
       />
       <section className="relative py-10">
         <div
