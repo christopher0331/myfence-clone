@@ -27,7 +27,7 @@ export const blogArticles = [
     publishDate: "January 2025"
   },
   {
-    id: "neighbor-split",
+    id: "fence-cost-shared-with-neighbor",
     title: "Should My Neighbor Split Our Fence Cost With Me?",
     category: "Legal",
     description: "Navigate the complexities of shared fence costs with neighbors, including Washington State laws and best practices for property line fencing.",
