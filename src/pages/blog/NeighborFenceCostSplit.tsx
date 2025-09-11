@@ -3,6 +3,7 @@ import { Clock, Calendar, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import OptimizedImage from "@/components/OptimizedImage";
 import Seo from "@/components/Seo";
+import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { useNavigate } from "react-router-dom";
 
 const NeighborFenceCostSplit = () => {
@@ -75,6 +76,8 @@ const NeighborFenceCostSplit = () => {
             <p className="text-xl text-muted-foreground leading-relaxed">
               One of the most common questions homeowners ask when considering a fence installation is whether their neighbor should help pay for it. In Washington State, the law provides clear guidance on this matter, and with modern tools like our Fence Genius proposal system, reaching a fair agreement has never been easier.
             </p>
+            
+            <LegalDisclaimer />
           </div>
 
           {/* Washington State Law Section */}
