@@ -154,7 +154,7 @@ const Index = () => {
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight">Your Local Seattle Fence Contractor</h2>
             <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
-              MyFence.com is a father and son fence company serving the Seattle area. We combine traditional craftsmanship with innovative Fence Genius technology to deliver exceptional results. As a family-owned business, we take pride in building lasting relationships with our customers and creating fences that enhance your property for years to come.
+              MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! With zero subcontracting, everything is done in-house by our skilled team. We combine traditional craftsmanship with innovative Fence Genius technology to deliver exceptional results and build lasting relationships with our customers.
             </p>
             <div className="mt-5">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale w-full sm:w-auto">Free Quotes</Button>
