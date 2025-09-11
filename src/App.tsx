@@ -96,7 +96,7 @@ const AppContent = () => {
           <Route path="/blog" element={<Blog />} />
               <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
               <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
-              <Route path="/blog/neighbor-split" element={<NeighborFenceCostSplit />} />
+              <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplit />} />
             <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolBlog />} />
             <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostBlog />} />
             <Route path="/blog/seattle-fence-cost-2025" element={<WoodenFenceCost2025Blog />} />

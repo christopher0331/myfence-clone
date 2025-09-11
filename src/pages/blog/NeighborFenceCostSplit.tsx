@@ -371,16 +371,16 @@ const NeighborFenceCostSplit = () => {
             <div className="bg-primary/5 rounded-2xl p-12 border border-primary/20">
               <h2 className="text-3xl font-bold mb-4">Ready to Create Your Fence Proposal?</h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Don't let fence cost disputes strain neighbor relationships. Our Fence Genius system provides the transparency and professionalism needed for successful agreements.
+                Don't let fence cost disputes strain neighbor relationships. Get a professional fence estimate to present to your neighbor for transparent cost sharing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg"
-                  onClick={() => navigate('/quote-tool')} 
+                  onClick={() => navigate('/quote')} 
                   className="flex items-center gap-2"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Try Fence Genius
+                  Get Virtual Estimate
                 </Button>
                 <Button 
                   size="lg"
