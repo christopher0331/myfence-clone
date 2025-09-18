@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
+import { supabase } from "@/integrations/supabase/client";
 
 const riddles = [
   {
@@ -135,28 +136,24 @@ const Discounts = () => {
         message: data.message || "Discount wheel submission"
       };
 
-      const response = await fetch('/functions/v1/send-discount-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailData),
+      const { data: responseData, error } = await supabase.functions.invoke('send-discount-email', {
+        body: emailData,
       });
 
-      if (response.ok) {
-        toast.success("Congratulations! Your discount has been submitted. We'll contact you soon!");
-        setShowContactForm(false);
-        // Reset the game
-        setIsCorrect(false);
-        setUserAnswer("");
-        setSelectedDiscount("");
-        setWheelRotation(0);
-        setAttempts(0);
-        setShowHint(false);
-        form.reset();
-      } else {
-        throw new Error('Failed to send email');
+      if (error) {
+        throw error;
       }
+      
+      toast.success("Congratulations! Your discount has been submitted. We'll contact you soon!");
+      setShowContactForm(false);
+      // Reset the game
+      setIsCorrect(false);
+      setUserAnswer("");
+      setSelectedDiscount("");
+      setWheelRotation(0);
+      setAttempts(0);
+      setShowHint(false);
+      form.reset();
     } catch (error) {
       toast.error("There was an error submitting your information. Please try again.");
     }
