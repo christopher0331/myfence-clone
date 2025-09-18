@@ -3,11 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
@@ -59,14 +56,6 @@ const discounts = [
   "Free Man Gate"
 ];
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  message: z.string().optional(),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Discounts = () => {
   const [currentRiddleIndex, setCurrentRiddleIndex] = useState(0);
@@ -79,9 +68,10 @@ const Discounts = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [attempts, setAttempts] = useState(0);
 
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-  });
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  const [formPhone, setFormPhone] = useState("");
+  const [formMessage, setFormMessage] = useState("");
 
   // Get daily riddle based on current date
   useEffect(() => {
@@ -124,19 +114,30 @@ const Discounts = () => {
     }, 3000);
   };
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
     try {
+      if (!formName.trim() || !formEmail.trim() || !formPhone.trim()) {
+        toast.error("Please fill in name, email, and phone.");
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(formEmail)) {
+        toast.error("Please enter a valid email address.");
+        return;
+      }
+
       const emailData = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
+        name: formName,
+        email: formEmail,
+        phone: formPhone,
         riddle: riddles[currentRiddleIndex].question,
         answer: riddles[currentRiddleIndex].answer,
         discount: selectedDiscount,
-        message: data.message || "Discount wheel submission"
+        message: formMessage || "Discount wheel submission",
       };
 
-      const { data: responseData, error } = await supabase.functions.invoke('send-discount-email', {
+      const { error } = await supabase.functions.invoke('send-discount-email', {
         body: emailData,
       });
 
@@ -153,12 +154,14 @@ const Discounts = () => {
       setWheelRotation(0);
       setAttempts(0);
       setShowHint(false);
-      form.reset();
+      setFormName("");
+      setFormEmail("");
+      setFormPhone("");
+      setFormMessage("");
     } catch (error) {
       toast.error("There was an error submitting your information. Please try again.");
     }
   };
-
   const currentRiddle = riddles[currentRiddleIndex];
 
   return (
@@ -288,69 +291,31 @@ const Discounts = () => {
                   </p>
                 </div>
                 
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Name</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input type="email" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Additional Message (Optional)</FormLabel>
-                          <FormControl>
-                            <Textarea {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <Button type="submit" className="w-full">
-                      Claim My Discount!
-                    </Button>
-                  </form>
-                </Form>
+                <form onSubmit={onSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" value={formName} onChange={(e) => setFormName(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Additional Message (Optional)</Label>
+                    <Textarea id="message" value={formMessage} onChange={(e) => setFormMessage(e.target.value)} />
+                  </div>
+
+                  <Button type="submit" className="w-full">
+                    Claim My Discount!
+                  </Button>
+                </form>
               </div>
             </DialogContent>
           </Dialog>
