@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
+import { burstFirework } from "@/lib/effects";
 
 const riddles = [
   {
@@ -48,9 +49,9 @@ const riddles = [
 ];
 
 const discounts = [
-  "15% off pre-staining fence",
-  "Free credit card processing",
-  "3% fence discount", 
+  "15% Off Pre-Staining Fence",
+  "Free Credit Card Processing",
+  "3% Fence Discount", 
   "15% Clear Cedar Discount",
   "Free Panel Within System",
   "Free Man Gate"
@@ -112,6 +113,10 @@ const Discounts = () => {
     setTimeout(() => {
       setIsSpinning(false);
       setSelectedDiscount(discounts[randomSegment]);
+      // Trigger confetti effect
+      burstFirework(window.innerWidth / 2, window.innerHeight / 2);
+      setTimeout(() => burstFirework(window.innerWidth / 3, window.innerHeight / 3), 200);
+      setTimeout(() => burstFirework((window.innerWidth / 3) * 2, window.innerHeight / 3), 400);
       setShowContactForm(true);
     }, 7000);
   };
@@ -246,9 +251,25 @@ const Discounts = () => {
                       >
                         {discounts.map((discount, index) => {
                           const angle = (360 / discounts.length) * index + (360 / discounts.length / 2);
-                          const radius = 120;
+                          const radius = 110;
                           const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
                           const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
+                          
+                          // Split text into multiple lines if too long
+                          const words = discount.split(' ');
+                          const lines = [];
+                          let currentLine = '';
+                          
+                          for (const word of words) {
+                            if (currentLine.length + word.length > 12) {
+                              lines.push(currentLine.trim());
+                              currentLine = word;
+                            } else {
+                              currentLine += (currentLine ? ' ' : '') + word;
+                            }
+                          }
+                          if (currentLine) lines.push(currentLine.trim());
+                          
                           return (
                             <div
                               key={index}
@@ -257,12 +278,16 @@ const Discounts = () => {
                                 top: '50%',
                                 left: '50%',
                                 transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-                                width: '70px',
-                                textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                                width: '80px',
+                                textShadow: '2px 2px 4px rgba(0,0,0,0.9)',
                                 zIndex: 10
                               }}
                             >
-                              {discount}
+                              {lines.map((line, lineIndex) => (
+                                <div key={lineIndex} className="block">
+                                  {line}
+                                </div>
+                              ))}
                             </div>
                           );
                         })}
