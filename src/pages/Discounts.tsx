@@ -68,10 +68,12 @@ const Discounts = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [attempts, setAttempts] = useState(0);
 
-  const [formName, setFormName] = useState("");
+  const [formFirstName, setFormFirstName] = useState("");
+  const [formLastName, setFormLastName] = useState("");
+  const [formAddress, setFormAddress] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formPhone, setFormPhone] = useState("");
-  const [formMessage, setFormMessage] = useState("");
+  const [formDescription, setFormDescription] = useState("");
 
   // Get daily riddle based on current date
   useEffect(() => {
@@ -117,8 +119,8 @@ const Discounts = () => {
   const onSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      if (!formName.trim() || !formEmail.trim() || !formPhone.trim()) {
-        toast.error("Please fill in name, email, and phone.");
+      if (!formFirstName.trim() || !formLastName.trim() || !formEmail.trim() || !formPhone.trim()) {
+        toast.error("Please fill in all required fields.");
         return;
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -128,13 +130,15 @@ const Discounts = () => {
       }
 
       const emailData = {
-        name: formName,
+        firstName: formFirstName,
+        lastName: formLastName,
+        address: formAddress,
         email: formEmail,
         phone: formPhone,
         riddle: riddles[currentRiddleIndex].question,
         answer: riddles[currentRiddleIndex].answer,
         discount: selectedDiscount,
-        message: formMessage || "Discount wheel submission",
+        description: formDescription || "Discount wheel submission",
       };
 
       const { error } = await supabase.functions.invoke('send-discount-email', {
@@ -154,10 +158,12 @@ const Discounts = () => {
       setWheelRotation(0);
       setAttempts(0);
       setShowHint(false);
-      setFormName("");
+      setFormFirstName("");
+      setFormLastName("");
+      setFormAddress("");
       setFormEmail("");
       setFormPhone("");
-      setFormMessage("");
+      setFormDescription("");
     } catch (error) {
       toast.error("There was an error submitting your information. Please try again.");
     }
@@ -238,19 +244,21 @@ const Discounts = () => {
                         }}
                       >
                         {discounts.map((discount, index) => {
-                          const angle = (360 / discounts.length) * index;
+                          const angle = (360 / discounts.length) * index + (360 / discounts.length / 2);
+                          const radius = 120;
+                          const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
+                          const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
                           return (
                             <div
                               key={index}
-                              className="absolute text-xs font-semibold text-white p-2 text-center"
+                              className="absolute text-xs font-bold text-white text-center leading-tight"
                               style={{
                                 top: '50%',
                                 left: '50%',
-                                transform: `rotate(${angle + 30}deg) translateX(100px) rotate(-${angle + 30}deg)`,
-                                transformOrigin: '0 0',
-                                width: '80px',
-                                marginTop: '-10px',
-                                marginLeft: '-40px'
+                                transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
+                                width: '70px',
+                                textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                                zIndex: 10
                               }}
                             >
                               {discount}
@@ -280,7 +288,7 @@ const Discounts = () => {
           </Card>
 
           <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
-            <DialogContent className="max-w-md">
+            <DialogContent className="max-w-lg">
               <DialogHeader>
                 <DialogTitle>Congratulations! 🎉</DialogTitle>
               </DialogHeader>
@@ -292,13 +300,24 @@ const Discounts = () => {
                 </div>
                 
                 <form onSubmit={onSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" value={formName} onChange={(e) => setFormName(e.target.value)} required />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input id="firstName" value={formFirstName} onChange={(e) => setFormFirstName(e.target.value)} required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input id="lastName" value={formLastName} onChange={(e) => setFormLastName(e.target.value)} required />
+                    </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="address">Address</Label>
+                    <Input id="address" value={formAddress} onChange={(e) => setFormAddress(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address</Label>
                     <Input id="email" type="email" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} required />
                   </div>
 
@@ -308,8 +327,14 @@ const Discounts = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Additional Message (Optional)</Label>
-                    <Textarea id="message" value={formMessage} onChange={(e) => setFormMessage(e.target.value)} />
+                    <Label htmlFor="description">Project Description</Label>
+                    <Textarea 
+                      id="description" 
+                      value={formDescription} 
+                      onChange={(e) => setFormDescription(e.target.value)}
+                      placeholder="Tell us about your fencing project..."
+                      rows={3}
+                    />
                   </div>
 
                   <Button type="submit" className="w-full">
