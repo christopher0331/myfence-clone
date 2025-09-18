@@ -8,13 +8,15 @@ const corsHeaders = {
 };
 
 interface DiscountEmailRequest {
-  name: string;
+  firstName: string;
+  lastName: string;
+  address?: string;
   email: string;
   phone: string;
   riddle: string;
   answer: string;
   discount: string;
-  message?: string;
+  description?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -24,10 +26,10 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, phone, riddle, answer, discount, message }: DiscountEmailRequest = await req.json();
+    const { firstName, lastName, address, email, phone, riddle, answer, discount, description }: DiscountEmailRequest = await req.json();
 
     // Validate required fields
-    if (!name || !email || !riddle || !answer || !discount) {
+    if (!firstName || !lastName || !email || !riddle || !answer || !discount) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
         {
@@ -50,9 +52,10 @@ const handler = async (req: Request): Promise<Response> => {
         
         <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h2 style="color: #374151; margin-top: 0;">Customer Information</h2>
-          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          ${address ? `<p><strong>Address:</strong> ${address}</p>` : ''}
         </div>
 
         <div style="background-color: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -62,10 +65,10 @@ const handler = async (req: Request): Promise<Response> => {
           <p><strong>Won Discount:</strong> <span style="color: #dc2626; font-weight: bold;">${discount}</span></p>
         </div>
 
-        ${message ? `
+        ${description ? `
         <div style="background-color: #fffbeb; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h2 style="color: #92400e; margin-top: 0;">Additional Message</h2>
-          <p>${message}</p>
+          <h2 style="color: #92400e; margin-top: 0;">Project Description</h2>
+          <p>${description}</p>
         </div>
         ` : ''}
 
@@ -79,16 +82,17 @@ const handler = async (req: Request): Promise<Response> => {
 New Discount Winner!
 
 Customer Information:
-Name: ${name}
+Name: ${firstName} ${lastName}
 Email: ${email}
 Phone: ${phone}
+${address ? `Address: ${address}` : ''}
 
 Riddle Challenge Results:
 Today's Riddle: "${riddle}"
 Correct Answer: ${answer}
 Won Discount: ${discount}
 
-${message ? `Additional Message: ${message}` : ''}
+${description ? `Project Description: ${description}` : ''}
 
 This email was generated from the MyFence.com discount wheel challenge.
     `;

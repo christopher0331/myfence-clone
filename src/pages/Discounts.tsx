@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -102,7 +102,7 @@ const Discounts = () => {
     if (isSpinning) return;
     
     setIsSpinning(true);
-    const spins = 5 + Math.random() * 5; // 5-10 full rotations
+    const spins = 8 + Math.random() * 4; // 8-12 full rotations
     const segmentAngle = 360 / discounts.length;
     const randomSegment = Math.floor(Math.random() * discounts.length);
     const finalAngle = (spins * 360) + (randomSegment * segmentAngle) + (segmentAngle / 2);
@@ -113,7 +113,7 @@ const Discounts = () => {
       setIsSpinning(false);
       setSelectedDiscount(discounts[randomSegment]);
       setShowContactForm(true);
-    }, 3000);
+    }, 7000);
   };
 
   const onSubmit = async (e: any) => {
@@ -229,9 +229,10 @@ const Discounts = () => {
                   <div className="flex justify-center">
                     <div className="relative">
                       <div 
-                        className={`w-80 h-80 rounded-full border-8 border-primary transition-transform duration-3000 ease-out ${isSpinning ? 'animate-spin' : ''}`}
+                        className="w-80 h-80 rounded-full border-8 border-primary"
                         style={{ 
                           transform: `rotate(${wheelRotation}deg)`,
+                          transition: isSpinning ? 'transform 7s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
                           background: `conic-gradient(
                             from 0deg,
                             hsl(var(--primary)) 0deg 60deg,
@@ -291,6 +292,9 @@ const Discounts = () => {
             <DialogContent className="max-w-lg">
               <DialogHeader>
                 <DialogTitle>Congratulations! 🎉</DialogTitle>
+                <DialogDescription>
+                  Enter your contact information to claim your discount
+                </DialogDescription>
               </DialogHeader>
               <div className="space-y-4">
                 <div className="text-center p-4 bg-green-50 rounded-lg">
