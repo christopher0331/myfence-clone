@@ -45,6 +45,76 @@ const riddles = [
     question: "I'm a measurement of height, making sure your fence looks just right. Six of me is common and true. What am I?",
     answer: "foot",
     hint: "A unit of measurement"
+  },
+  {
+    question: "I'm strong as steel but lighter in weight, I won't rust or rot, that's my fate. What material am I?",
+    answer: "vinyl",
+    hint: "A synthetic material that's maintenance-free"
+  },
+  {
+    question: "I'm woven like a net but strong as can be, keeping your pets safe and letting you see. What am I?",
+    answer: "chainlink",
+    hint: "A type of fence made from interlocked metal links"
+  },
+  {
+    question: "I have pickets that point to the sky, decorative and charming, I catch every eye. What style am I?",
+    answer: "picket",
+    hint: "A classic American fence style with pointed tops"
+  },
+  {
+    question: "I'm elegant and ornate, with curves so divine, often painted black, I'm a classic design. What am I?",
+    answer: "iron",
+    hint: "A metal fence material often used for decorative purposes"
+  },
+  {
+    question: "I run along the ground where your fence will stand, marking the boundary of your land. What am I?",
+    answer: "property line",
+    hint: "The legal boundary of your yard"
+  },
+  {
+    question: "I'm put in concrete to make posts stay strong, keeping your fence standing all year long. What am I?",
+    answer: "footing",
+    hint: "The foundation that secures fence posts"
+  },
+  {
+    question: "I'm a barrier that's solid, you can't see through me, perfect for privacy as private as can be. What style am I?",
+    answer: "privacy",
+    hint: "A fence style designed to block views"
+  },
+  {
+    question: "I'm clear and protective, I make wood shine bright, keeping the elements away day and night. What am I?",
+    answer: "sealant",
+    hint: "A protective coating for wood fences"
+  },
+  {
+    question: "I connect the sections, keeping them tight, without me your fence wouldn't look right. What hardware am I?",
+    answer: "bracket",
+    hint: "Metal pieces that join fence components"
+  },
+  {
+    question: "I'm the space between pickets, not too wide or narrow, I let light pass through like a wooden arrow. What am I?",
+    answer: "gap",
+    hint: "The opening between fence boards"
+  },
+  {
+    question: "I'm dug in the earth before posts are placed, making sure your fence line is properly spaced. What am I?",
+    answer: "hole",
+    hint: "The excavation for fence post installation"
+  },
+  {
+    question: "I'm slanted and topped with caps so neat, keeping water away from where posts meet. What am I?",
+    answer: "cap",
+    hint: "The protective top piece on fence posts"
+  },
+  {
+    question: "I swing both ways and latch with a click, keeping your yard secure with just one quick trick. What am I?",
+    answer: "latch",
+    hint: "The mechanism that keeps gates closed"
+  },
+  {
+    question: "I measure the distance from post to post, getting this wrong would cost you the most. What measurement am I?",
+    answer: "spacing",
+    hint: "The distance between fence supports"
   }
 ];
 
