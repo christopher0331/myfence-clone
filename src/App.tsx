@@ -17,6 +17,7 @@ const FenceStyles = React.lazy(() => import("./pages/FenceStyles"));
 const Gallery = React.lazy(() => import("./pages/Gallery"));
 const QuoteTool = React.lazy(() => import("./pages/QuoteTool"));
 const Financing = React.lazy(() => import("./pages/Financing"));
+const Discounts = React.lazy(() => import("./pages/Discounts"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
@@ -86,8 +87,9 @@ const AppContent = () => {
           <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<QuoteTool />} />
-          <Route path="/financing" element={<Financing />} />
-          <Route path="/contact" element={<Contact />} />
+            <Route path="/financing" element={<Financing />} />
+            <Route path="/discounts" element={<Discounts />} />
+            <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/fence-genius" element={<FenceGenius />} />

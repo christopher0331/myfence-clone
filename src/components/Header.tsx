@@ -7,6 +7,7 @@ const navItems = [
   { to: "/fence-styles", label: "Fence Styles" },
   { to: "/gallery", label: "Gallery" },
   { to: "/quote", label: "Virtual Quote Tool" },
+  { to: "/discounts", label: "Discounts" },
   { to: "/financing", label: "Financing" },
   { to: "/contact", label: "Contact us" },
 ];
