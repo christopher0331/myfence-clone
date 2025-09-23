@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PaymentCalculator from "@/components/PaymentCalculator";
-import wisetackPhone from "@/assets/wisetack-phone-6months.png";
+import wisetackPhone from "@/assets/wisetack-phone-6months-fixed.png";
 
 const Financing = () => {
   const faq = [
