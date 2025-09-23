@@ -118,7 +118,7 @@ const Discounts = () => {
   const [selectedDiscount, setSelectedDiscount] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
   const [attempts, setAttempts] = useState(0);
-  const [clickInterval, setClickInterval] = useState<NodeJS.Timeout | null>(null);
+  const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
@@ -134,28 +134,73 @@ const Discounts = () => {
     setCurrentRiddleIndex(dayOfYear % riddles.length);
   }, []);
 
-  // Create clicking sound effect
+  // Create mechanical clicking sound effect
   const playClickSound = () => {
     try {
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
+      
+      // Create a more mechanical click sound with multiple frequencies
+      const oscillator1 = audioContext.createOscillator();
+      const oscillator2 = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
+      const filter = audioContext.createBiquadFilter();
       
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      oscillator1.connect(gainNode);
+      oscillator2.connect(gainNode);
+      gainNode.connect(filter);
+      filter.connect(audioContext.destination);
       
-      oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.1);
+      // Sharp mechanical click frequencies
+      oscillator1.frequency.setValueAtTime(1200, audioContext.currentTime);
+      oscillator2.frequency.setValueAtTime(800, audioContext.currentTime);
       
-      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+      // Quick decay for sharp click
+      gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.05);
       
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.1);
+      // High-pass filter for crisp sound
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(400, audioContext.currentTime);
+      
+      oscillator1.start(audioContext.currentTime);
+      oscillator1.stop(audioContext.currentTime + 0.05);
+      oscillator2.start(audioContext.currentTime);
+      oscillator2.stop(audioContext.currentTime + 0.05);
     } catch (error) {
       // Fallback for browsers that don't support Web Audio API
       console.log("Click sound not supported");
     }
+  };
+
+  // Simulate wheel clicking with easing
+  const startWheelClicking = () => {
+    const segmentAngle = 360 / discounts.length;
+    const totalDuration = 7000; // 7 seconds
+    let currentTime = 0;
+    
+    const scheduleClick = () => {
+      if (currentTime >= totalDuration) {
+        return; // Stop scheduling clicks
+      }
+      
+      playClickSound();
+      
+      // Calculate next interval using easing function (starts fast, slows down)
+      const progress = currentTime / totalDuration;
+      const easeOut = 1 - Math.pow(1 - progress, 3); // Cubic ease-out
+      
+      // Start with 50ms intervals, end with 500ms intervals
+      const baseInterval = 50;
+      const maxInterval = 500;
+      const currentInterval = baseInterval + (maxInterval - baseInterval) * easeOut;
+      
+      currentTime += currentInterval;
+      
+      const timeout = setTimeout(scheduleClick, currentInterval);
+      setClickTimeout(timeout);
+    };
+    
+    scheduleClick();
   };
 
   const checkAnswer = () => {
@@ -193,11 +238,8 @@ const Discounts = () => {
     
     setIsSpinning(true);
     
-    // Start clicking sound effect
-    const interval = setInterval(() => {
-      playClickSound();
-    }, 100); // Click every 100ms
-    setClickInterval(interval);
+    // Start mechanical clicking sound that slows down with the wheel
+    startWheelClicking();
     
     const spins = 8 + Math.random() * 4; // 8-12 full rotations
     const segmentAngle = 360 / discounts.length;
@@ -207,10 +249,10 @@ const Discounts = () => {
     setWheelRotation(finalAngle);
     
     setTimeout(() => {
-      // Stop clicking sound
-      if (clickInterval) {
-        clearInterval(clickInterval);
-        setClickInterval(null);
+      // Stop clicking sound immediately when wheel stops
+      if (clickTimeout) {
+        clearTimeout(clickTimeout);
+        setClickTimeout(null);
       }
       
       setIsSpinning(false);
@@ -272,10 +314,10 @@ const Discounts = () => {
       setFormPhone("");
       setFormDescription("");
       
-      // Clean up any remaining click interval
-      if (clickInterval) {
-        clearInterval(clickInterval);
-        setClickInterval(null);
+      // Clean up any remaining click timeout
+      if (clickTimeout) {
+        clearTimeout(clickTimeout);
+        setClickTimeout(null);
       }
     } catch (error) {
       toast.error("There was an error submitting your information. Please try again.");
