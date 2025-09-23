@@ -250,14 +250,12 @@ const Discounts = () => {
   };
 
   const spinWheel = () => {
-    if (isSpinning || hasPlayedToday) return;
+    if (isSpinning || hasPlayedToday) {
+      toast.error("You've already played today!");
+      return;
+    }
     
     setIsSpinning(true);
-    
-    // Mark that user has played today
-    const today = new Date().toDateString();
-    localStorage.setItem('lastDiscountPlayDate', today);
-    setHasPlayedToday(true);
     
     // Start mechanical clicking sound that slows down with the wheel
     startWheelClicking();
@@ -270,6 +268,27 @@ const Discounts = () => {
     setWheelRotation(finalAngle);
     
     setTimeout(() => {
+      // Double-check if user has already played before showing results
+      const todayString = new Date().toDateString();
+      const lastPlayDate = localStorage.getItem('lastDiscountPlayDate');
+      
+      if (lastPlayDate === todayString) {
+        // Stop everything and don't show congratulations
+        setShouldClick(false);
+        if (clickTimeout) {
+          clearTimeout(clickTimeout);
+          setClickTimeout(null);
+        }
+        setIsSpinning(false);
+        setHasPlayedToday(true);
+        toast.error("You've already played today!");
+        return;
+      }
+      
+      // Mark that user has played today only when wheel completes
+      localStorage.setItem('lastDiscountPlayDate', todayString);
+      setHasPlayedToday(true);
+      
       // Stop clicking sound immediately when wheel stops
       setShouldClick(false);
       if (clickTimeout) {
@@ -281,7 +300,7 @@ const Discounts = () => {
       setSelectedDiscount(discounts[randomSegment]);
       // Trigger confetti effect
       burstFirework(window.innerWidth / 2, window.innerHeight / 2);
-      setTimeout(() => burstFirework(window.innerWidth / 3, window.innerHeight / 3), 200);
+      setTimeout(() => burstFirework(window.innerWidth / 3, window.innerWidth / 3), 200);
       setTimeout(() => burstFirework((window.innerWidth / 3) * 2, window.innerHeight / 3), 400);
       setShowContactForm(true);
     }, 7000);
