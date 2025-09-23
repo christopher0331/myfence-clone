@@ -30,6 +30,261 @@ const Financing = () => {
         canonical="https://myfence.com/financing"
         structuredData={faqLd}
       />
+      {/* Wisetack Financing Section */}
+      <section>
+        <style>{`
+          .section-code-example {
+            color: var(--dark-slate-blue);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 6vw;
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .container-code-example {
+            z-index: 1;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .content-code-example-1 {
+            grid-column-gap: 40px;
+            grid-row-gap: 40px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+          }
+
+          .box-code-example {
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 55%;
+            display: flex;
+          }
+
+          .margin-bot-24-code-example {
+            margin-bottom: 24px;
+          }
+
+          .title-code-example {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 50px;
+            line-height: 140%;
+          }
+
+          .paragraph-code-example-lg {
+            color:#31364c;
+            margin-bottom: 0;
+            margin-top: 0px;
+            font-family: Montserrat, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 150%;
+          }
+
+          .link-blue {
+            color:#156ed7;
+            font-weight: 600;
+          }
+
+          .list-code-example {
+            grid-row-gap: 8px;
+            flex-direction: column;
+            margin-bottom: 0;
+            margin-top:0px;
+            font-size: 18px;
+            display: flex;
+          }
+
+          .banner-code-example {
+            background-color:#eafafb;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            display: flex;
+          }
+
+          .text-weight-semibold {
+            font-weight: 600;
+          }
+
+          .btn-code-example {
+            background-color:#0c4e9e;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-radius: 2px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 32px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all .25s cubic-bezier(.25,.46,.45,.94);
+            display: flex;
+          }
+
+          .link-green {
+            color:#07c0ca;
+            text-decoration: underline;
+          }
+
+          @media screen and (max-width: 991px) {
+            .iphone-img-code-example {
+              top: auto;
+              bottom: 0px;
+            }
+
+            .title-code-example {
+              font-size: 32px;
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            .iphone-img-code-example {
+              width: 60%;
+            }
+
+            .box-code-example {
+              max-width: 100%;
+            }
+
+            .paragraph-code-example {
+              font-size: 16px;
+            }
+
+            .btn-code-example {
+              font-size: 12px;
+            }
+
+            .content-code-example-1 {
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: reverse;
+              -webkit-flex-direction: column-reverse;
+              -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+              grid-row-gap: 20px;
+            }
+
+            .title-code-example {
+              font-size: 26px;
+            }
+
+            .paragraph-code-example-lg {
+              font-size: 16px;
+            }
+          }
+
+          @media screen and (max-width: 479px) {
+            .section-code-example {
+              padding: 60px 16px;
+            }
+
+            .iphone-img-code-example {
+              position: relative;
+              left: 0px;
+              display: block;
+              width: 100%;
+              margin-right: auto;
+              margin-left: auto;
+            }
+
+            .box-code-example {
+              width: 100%;
+              max-width: none;
+              min-width: 100%;
+            }
+
+            .container-code-example {
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+              flex-direction: column;
+            }
+
+            .btn-code-example {
+              width: 100%;
+              min-width: 0px;
+            }
+
+            .title-code-example {
+              font-size: 24px;
+            }
+          }
+        `}</style>
+        
+        <div className="section-code-example">
+          <div className="container-code-example">
+            <div className="content-code-example-1">
+              <div className="box-code-example">
+                <div className="margin-bot-24-code-example">
+                  <h2 className="title-code-example">We offer financing</h2>
+                </div>
+                <div className="margin-bot-24-code-example">
+                  <p className="paragraph-code-example-lg">
+                    We've partnered with <a href="https://www.wisetack.com/" target="_blank" className="link-blue">Wisetack</a> to offer our customers flexible financing options, so you can pay over time rather than all at once. The application takes about a minute to complete, and checking your options does not impact your credit score.
+                  </p>
+                </div>
+                <div className="margin-bot-24-code-example">
+                  <ul role="list" className="list-code-example">
+                    <li className="list-item-code-example">Finance projects up to $25,000*</li>
+                    <li className="list-item-code-example">Loan options from 3 to 60 months*</li>
+                    <li className="list-item-code-example">APRs range from 0 to 35.9%*</li>
+                    <li className="list-item-code-example">No hidden fees or compounding interest</li>
+                  </ul>
+                </div>
+                <div className="margin-bot-24-code-example">
+                  <div className="banner-code-example">
+                    <p className="paragraph-code-example-lg text-weight-semibold">
+                      0% APR available up to 12 months* for eligible customers
+                    </p>
+                  </div>
+                </div>
+                <div className="margin-bot-24-code-example">
+                  <p className="paragraph-code-example-lg">
+                    <a href="#" className="link-blue">Prequalify today</a> with no impact to your credit and contact us to learn about financing your next project!
+                  </p>
+                </div>
+                <div className="margin-bot-24-code-example">
+                  <a href="#" className="btn-code-example w-button">PREQUALIFY NOW</a>
+                </div>
+                <p className="paragraph-code-example">
+                  *All financing is subject to credit approval. Your terms may vary. Payment options through Wisetack are provided by our <a href="https://www.wisetack.com/lenders" target="_blank" className="link-green">lending partners</a>. For example, a $1,200 purchase could cost $104.89 a month for 12 months, based on an 8.9% APR, or $400 a month for 3 months, based on a 0% APR. Offers range from 0-35.9% APR based on creditworthiness. State interest rate caps may apply. No other financing charges or participation fees. See additional terms at <a href="https://www.wisetack.com/faqs" target="_blank" className="link-green">https://www.wisetack.com/faqs</a>.
+                </p>
+              </div>
+              <img 
+                src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png" 
+                loading="lazy" 
+                width="404" 
+                sizes="(max-width: 479px) 93vw, (max-width: 767px) 53vw, 35vw" 
+                alt="" 
+                srcSet="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-500.png 500w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-800.png 800w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png 808w" 
+                className="iphone-img-code-example"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Financing Made Easy</h1>
         <p className="text-muted-foreground max-w-2xl">Turn your project into an affordable monthly payment. We'll help you find a plan that fits your budget.</p>
