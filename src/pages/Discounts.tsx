@@ -13,108 +13,88 @@ import { burstFirework } from "@/lib/effects";
 const riddles = [
   {
     question: "I stand tall to mark your ground, keeping strangers from coming around. What am I?",
-    answer: "fence",
+    answers: ["fence"],
     hint: "It's our main business!"
   },
   {
     question: "I'm made of wood that's aromatic and red, resistant to weather and bugs that are dread. What wood am I?",
-    answer: "cedar",
+    answers: ["cedar"],
     hint: "Think of a tree that smells great and resists rot"
   },
   {
     question: "I'm the opening that lets you through, with hinges and latches, I swing for you. What am I?",
-    answer: "gate",
+    answers: ["gate"],
     hint: "An entrance in your fence"
   },
   {
     question: "I protect your fence from sun and rain, making it last without much pain. What process am I?",
-    answer: "staining",
+    answers: ["stain", "staining"],
     hint: "A treatment that adds color and protection"
   },
   {
     question: "I'm horizontal and I'm not a post, between the verticals I like to boast. What am I?",
-    answer: "rail",
+    answers: ["2x4", "rail"],
     hint: "The crosspiece that connects fence posts"
   },
   {
     question: "I go deep in the ground, holding everything sound. Without me your fence would fall down. What am I?",
-    answer: "post",
+    answers: ["post"],
     hint: "The vertical support buried in the ground"
   },
   {
     question: "I'm a measurement of height, making sure your fence looks just right. Six of me is common and true. What am I?",
-    answer: "foot",
+    answers: ["foot"],
     hint: "A unit of measurement"
   },
   {
-    question: "I'm strong as steel but lighter in weight, I won't rust or rot, that's my fate. What material am I?",
-    answer: "vinyl",
-    hint: "A synthetic material that's maintenance-free"
-  },
-  {
-    question: "I'm woven like a net but strong as can be, keeping your pets safe and letting you see. What am I?",
-    answer: "chainlink",
-    hint: "A type of fence made from interlocked metal links"
-  },
-  {
     question: "I have pickets that point to the sky, decorative and charming, I catch every eye. What style am I?",
-    answer: "picket",
+    answers: ["picket"],
     hint: "A classic American fence style with pointed tops"
   },
   {
-    question: "I'm elegant and ornate, with curves so divine, often painted black, I'm a classic design. What am I?",
-    answer: "iron",
-    hint: "A metal fence material often used for decorative purposes"
-  },
-  {
     question: "I run along the ground where your fence will stand, marking the boundary of your land. What am I?",
-    answer: "property line",
+    answers: ["property line"],
     hint: "The legal boundary of your yard"
   },
   {
     question: "I'm put in concrete to make posts stay strong, keeping your fence standing all year long. What am I?",
-    answer: "footing",
+    answers: ["concrete", "footing"],
     hint: "The foundation that secures fence posts"
   },
   {
     question: "I'm a barrier that's solid, you can't see through me, perfect for privacy as private as can be. What style am I?",
-    answer: "privacy",
+    answers: ["privacy"],
     hint: "A fence style designed to block views"
   },
   {
     question: "I'm clear and protective, I make wood shine bright, keeping the elements away day and night. What am I?",
-    answer: "sealant",
+    answers: ["staining", "sealer", "sealant"],
     hint: "A protective coating for wood fences"
   },
   {
     question: "I connect the sections, keeping them tight, without me your fence wouldn't look right. What hardware am I?",
-    answer: "bracket",
+    answers: ["screws"],
     hint: "Metal pieces that join fence components"
   },
   {
     question: "I'm the space between pickets, not too wide or narrow, I let light pass through like a wooden arrow. What am I?",
-    answer: "gap",
+    answers: ["gap"],
     hint: "The opening between fence boards"
   },
   {
     question: "I'm dug in the earth before posts are placed, making sure your fence line is properly spaced. What am I?",
-    answer: "hole",
+    answers: ["hole"],
     hint: "The excavation for fence post installation"
   },
   {
     question: "I'm slanted and topped with caps so neat, keeping water away from where posts meet. What am I?",
-    answer: "cap",
+    answers: ["post cap", "cap"],
     hint: "The protective top piece on fence posts"
   },
   {
     question: "I swing both ways and latch with a click, keeping your yard secure with just one quick trick. What am I?",
-    answer: "latch",
+    answers: ["latch"],
     hint: "The mechanism that keeps gates closed"
-  },
-  {
-    question: "I measure the distance from post to post, getting this wrong would cost you the most. What measurement am I?",
-    answer: "spacing",
-    hint: "The distance between fence supports"
   }
 ];
 
@@ -155,18 +135,32 @@ const Discounts = () => {
 
   const checkAnswer = () => {
     const currentRiddle = riddles[currentRiddleIndex];
-    if (userAnswer.toLowerCase().trim() === currentRiddle.answer.toLowerCase()) {
+    const userAnswerLower = userAnswer.toLowerCase().trim();
+    const isAnswerCorrect = currentRiddle.answers.some(answer => 
+      answer.toLowerCase() === userAnswerLower
+    );
+    
+    if (isAnswerCorrect) {
       setIsCorrect(true);
       toast.success("Correct! You can now spin the wheel for your discount!");
     } else {
       setAttempts(prev => prev + 1);
-      if (attempts >= 2) {
+      if (attempts >= 1) {
         setShowHint(true);
         toast.error("Incorrect answer. Here's a hint!");
       } else {
         toast.error("Incorrect answer. Try again!");
       }
     }
+  };
+
+  const getNewRiddle = () => {
+    const newIndex = Math.floor(Math.random() * riddles.length);
+    setCurrentRiddleIndex(newIndex);
+    setUserAnswer("");
+    setAttempts(0);
+    setShowHint(false);
+    setIsCorrect(false);
   };
 
   const spinWheel = () => {
@@ -211,7 +205,7 @@ const Discounts = () => {
         email: formEmail,
         phone: formPhone,
         riddle: riddles[currentRiddleIndex].question,
-        answer: riddles[currentRiddleIndex].answer,
+        answer: riddles[currentRiddleIndex].answers[0],
         discount: selectedDiscount,
         description: formDescription || "Discount wheel submission",
       };
@@ -281,17 +275,27 @@ const Discounts = () => {
               )}
 
               {!isCorrect && (
-                <div className="flex gap-4 justify-center">
-                  <Input
-                    placeholder="Enter your answer..."
-                    value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && checkAnswer()}
-                    className="max-w-md"
-                  />
-                  <Button onClick={checkAnswer} disabled={!userAnswer.trim()}>
-                    Submit Answer
-                  </Button>
+                <div className="space-y-4">
+                  <div className="flex gap-4 justify-center">
+                    <Input
+                      placeholder="Enter your answer..."
+                      value={userAnswer}
+                      onChange={(e) => setUserAnswer(e.target.value)}
+                      onKeyPress={(e) => e.key === 'Enter' && checkAnswer()}
+                      className="max-w-md"
+                    />
+                    <Button onClick={checkAnswer} disabled={!userAnswer.trim()}>
+                      Submit Answer
+                    </Button>
+                  </div>
+                  
+                  {attempts >= 2 && (
+                    <div className="flex justify-center">
+                      <Button variant="outline" onClick={getNewRiddle}>
+                        Get New Riddle
+                      </Button>
+                    </div>
+                  )}
                 </div>
               )}
 
