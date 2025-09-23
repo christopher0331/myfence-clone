@@ -120,6 +120,7 @@ const Discounts = () => {
   const [attempts, setAttempts] = useState(0);
   const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
   const [shouldClick, setShouldClick] = useState(false);
+  const [hasPlayedToday, setHasPlayedToday] = useState(false);
 
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
@@ -133,6 +134,14 @@ const Discounts = () => {
     const today = new Date();
     const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000);
     setCurrentRiddleIndex(dayOfYear % riddles.length);
+    
+    // Check if user has already played today
+    const todayString = today.toDateString();
+    const lastPlayDate = localStorage.getItem('lastDiscountPlayDate');
+    
+    if (lastPlayDate === todayString) {
+      setHasPlayedToday(true);
+    }
   }, []);
 
   // Create mechanical clicking sound effect
@@ -241,9 +250,14 @@ const Discounts = () => {
   };
 
   const spinWheel = () => {
-    if (isSpinning) return;
+    if (isSpinning || hasPlayedToday) return;
     
     setIsSpinning(true);
+    
+    // Mark that user has played today
+    const today = new Date().toDateString();
+    localStorage.setItem('lastDiscountPlayDate', today);
+    setHasPlayedToday(true);
     
     // Start mechanical clicking sound that slows down with the wheel
     startWheelClicking();
@@ -395,7 +409,7 @@ const Discounts = () => {
                 </div>
               )}
 
-              {isCorrect && (
+              {isCorrect && !hasPlayedToday && (
                 <div className="text-center space-y-6">
                   <div className="text-2xl text-green-600 font-semibold">
                     🎉 Correct! Now spin the wheel! 🎉
@@ -473,11 +487,27 @@ const Discounts = () => {
                   <Button 
                     size="lg" 
                     onClick={spinWheel} 
-                    disabled={isSpinning}
+                    disabled={isSpinning || hasPlayedToday}
                     className="text-lg px-8 py-4"
                   >
                     {isSpinning ? "Spinning..." : "Spin the Wheel!"}
                   </Button>
+                </div>
+              )}
+
+              {isCorrect && hasPlayedToday && (
+                <div className="text-center space-y-4">
+                  <div className="text-2xl text-green-600 font-semibold">
+                    🎉 Correct Answer! 🎉
+                  </div>
+                  <div className="p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <div className="text-lg font-semibold text-yellow-800 mb-2">
+                      You've already played today! 
+                    </div>
+                    <div className="text-yellow-700">
+                      Come back tomorrow for another chance to win exclusive discounts!
+                    </div>
+                  </div>
                 </div>
               )}
             </CardContent>
