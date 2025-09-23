@@ -272,12 +272,11 @@ const Financing = () => {
                 </p>
               </div>
               <img 
-                src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png" 
+                src="/src/assets/wisetack-phone-updated.png" 
                 loading="lazy" 
                 width="404" 
                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 53vw, 35vw" 
-                alt="" 
-                srcSet="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-500.png 500w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-800.png 800w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png 808w" 
+                alt="Wisetack financing app showing 6 month interest-free payment options" 
                 className="iphone-img-code-example"
               />
             </div>
