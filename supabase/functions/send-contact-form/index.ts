@@ -18,11 +18,16 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Request body parsed:', requestBody)
     
-    const { name, email, phone, message } = requestBody
+    const { name, email, phone, message, firstName, lastName, address, description } = requestBody
 
     console.log('Validating fields...')
+    
+    // Handle both old contact form format (name, message) and new format (firstName, lastName, description)
+    const customerName = name || (firstName && lastName ? `${firstName} ${lastName}` : '')
+    const customerMessage = message || description || ''
+    
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!customerName || !email || !customerMessage) {
       console.log('Validation failed - missing fields')
       return new Response(
         JSON.stringify({ error: 'All fields are required' }),
@@ -46,12 +51,12 @@ serve(async (req) => {
 New Contact Form Submission from MyFence.com
 
 Customer Information:
-Name: ${name}
+Name: ${customerName}
 Email: ${email}
-Phone: ${phone || 'Not provided'}
+Phone: ${phone || 'Not provided'}${address ? `\nAddress: ${address}` : ''}
 
 Message:
-${message}
+${customerMessage}
 
 This message was submitted through the MyFence.com contact form.
     `.trim()
@@ -61,20 +66,21 @@ This message was submitted through the MyFence.com contact form.
       from: 'MyFence.com <onboarding@resend.dev>',
       to: ['info@myfence.com'],
       reply_to: email,
-      subject: `New Contact Form Message from ${name}`,
+      subject: `New Contact Form Message from ${customerName}`,
       text: emailBody,
       html: `
         <h2>New Contact Form Submission from MyFence.com</h2>
         
         <h3>Customer Information:</h3>
         <ul>
-          <li><strong>Name:</strong> ${name}</li>
+          <li><strong>Name:</strong> ${customerName}</li>
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Phone:</strong> ${phone || 'Not provided'}</li>
+          ${address ? `<li><strong>Address:</strong> ${address}</li>` : ''}
         </ul>
         
         <h3>Message:</h3>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${customerMessage.replace(/\n/g, '<br>')}</p>
         
         <hr>
         <p><em>This message was submitted through the MyFence.com contact form.</em></p>
