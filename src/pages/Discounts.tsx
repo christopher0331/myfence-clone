@@ -118,6 +118,7 @@ const Discounts = () => {
   const [selectedDiscount, setSelectedDiscount] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
   const [attempts, setAttempts] = useState(0);
+  const [clickInterval, setClickInterval] = useState<NodeJS.Timeout | null>(null);
 
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
@@ -132,6 +133,30 @@ const Discounts = () => {
     const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000);
     setCurrentRiddleIndex(dayOfYear % riddles.length);
   }, []);
+
+  // Create clicking sound effect
+  const playClickSound = () => {
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.1);
+      
+      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.1);
+    } catch (error) {
+      // Fallback for browsers that don't support Web Audio API
+      console.log("Click sound not supported");
+    }
+  };
 
   const checkAnswer = () => {
     const currentRiddle = riddles[currentRiddleIndex];
@@ -167,6 +192,13 @@ const Discounts = () => {
     if (isSpinning) return;
     
     setIsSpinning(true);
+    
+    // Start clicking sound effect
+    const interval = setInterval(() => {
+      playClickSound();
+    }, 100); // Click every 100ms
+    setClickInterval(interval);
+    
     const spins = 8 + Math.random() * 4; // 8-12 full rotations
     const segmentAngle = 360 / discounts.length;
     const randomSegment = Math.floor(Math.random() * discounts.length);
@@ -175,6 +207,12 @@ const Discounts = () => {
     setWheelRotation(finalAngle);
     
     setTimeout(() => {
+      // Stop clicking sound
+      if (clickInterval) {
+        clearInterval(clickInterval);
+        setClickInterval(null);
+      }
+      
       setIsSpinning(false);
       setSelectedDiscount(discounts[randomSegment]);
       // Trigger confetti effect
@@ -233,6 +271,12 @@ const Discounts = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
+      
+      // Clean up any remaining click interval
+      if (clickInterval) {
+        clearInterval(clickInterval);
+        setClickInterval(null);
+      }
     } catch (error) {
       toast.error("There was an error submitting your information. Please try again.");
     }
