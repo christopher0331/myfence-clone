@@ -68,7 +68,7 @@ const riddles = [
   },
   {
     question: "I'm clear and protective, I make wood shine bright, keeping the elements away day and night. What am I?",
-    answers: ["staining", "sealer", "sealant"],
+    answers: ["staining", "sealer", "sealant", "stain"],
     hint: "A protective coating for wood fences"
   },
   {
