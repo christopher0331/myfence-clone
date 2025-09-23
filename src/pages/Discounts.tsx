@@ -580,7 +580,7 @@ const Discounts = () => {
                       </Button>
                       <Button 
                         variant="outline"
-                        onClick={() => window.location.href = '/quote-tool'}
+                        onClick={() => window.location.href = '/quote'}
                         className="w-full"
                       >
                         Try Our Virtual Estimating Tool
