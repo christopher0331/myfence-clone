@@ -121,6 +121,7 @@ const Discounts = () => {
   const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
   const [shouldClick, setShouldClick] = useState(false);
   const [hasPlayedToday, setHasPlayedToday] = useState(false);
+  const [showAlreadyPlayedForm, setShowAlreadyPlayedForm] = useState(false);
 
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
@@ -304,6 +305,50 @@ const Discounts = () => {
       setTimeout(() => burstFirework((window.innerWidth / 3) * 2, window.innerHeight / 3), 400);
       setShowContactForm(true);
     }, 7000);
+  };
+
+  const onSubmitAlreadyPlayed = async (e: any) => {
+    e.preventDefault();
+    try {
+      if (!formFirstName.trim() || !formLastName.trim() || !formEmail.trim() || !formPhone.trim()) {
+        toast.error("Please fill in all required fields.");
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(formEmail)) {
+        toast.error("Please enter a valid email address.");
+        return;
+      }
+
+      const emailData = {
+        firstName: formFirstName,
+        lastName: formLastName,
+        address: formAddress,
+        email: formEmail,
+        phone: formPhone,
+        description: formDescription || "General inquiry from discount page",
+      };
+
+      const { error } = await supabase.functions.invoke('send-contact-form', {
+        body: emailData,
+      });
+
+      if (error) {
+        throw error;
+      }
+      
+      toast.success("Thank you! We'll contact you soon about your fencing project.");
+      setShowAlreadyPlayedForm(false);
+      // Reset form
+      setFormFirstName("");
+      setFormLastName("");
+      setFormAddress("");
+      setFormEmail("");
+      setFormPhone("");
+      setFormDescription("");
+    } catch (error) {
+      toast.error("There was an error submitting your information. Please try again.");
+    }
   };
 
   const onSubmit = async (e: any) => {
@@ -523,8 +568,23 @@ const Discounts = () => {
                     <div className="text-lg font-semibold text-yellow-800 mb-2">
                       You've already played today! 
                     </div>
-                    <div className="text-yellow-700">
+                    <div className="text-yellow-700 mb-4">
                       Come back tomorrow for another chance to win exclusive discounts!
+                    </div>
+                    <div className="space-y-3">
+                      <Button 
+                        onClick={() => setShowAlreadyPlayedForm(true)}
+                        className="w-full"
+                      >
+                        Get a Free Quote
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        onClick={() => window.open('/quote-tool', '_blank')}
+                        className="w-full"
+                      >
+                        Try Our Virtual Estimating Tool
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -587,6 +647,62 @@ const Discounts = () => {
 
                   <Button type="submit" className="w-full">
                     Claim My Discount!
+                  </Button>
+                </form>
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          {/* Contact form for users who already played */}
+          <Dialog open={showAlreadyPlayedForm} onOpenChange={setShowAlreadyPlayedForm}>
+            <DialogContent className="max-w-lg">
+              <DialogHeader>
+                <DialogTitle>Get Your Free Quote</DialogTitle>
+                <DialogDescription>
+                  Tell us about your fencing project and we'll get back to you with a personalized quote
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-4">
+                <form onSubmit={onSubmitAlreadyPlayed} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="alreadyPlayedFirstName">First Name</Label>
+                      <Input id="alreadyPlayedFirstName" value={formFirstName} onChange={(e) => setFormFirstName(e.target.value)} required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="alreadyPlayedLastName">Last Name</Label>
+                      <Input id="alreadyPlayedLastName" value={formLastName} onChange={(e) => setFormLastName(e.target.value)} required />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="alreadyPlayedAddress">Address</Label>
+                    <Input id="alreadyPlayedAddress" value={formAddress} onChange={(e) => setFormAddress(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="alreadyPlayedEmail">Email Address</Label>
+                    <Input id="alreadyPlayedEmail" type="email" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="alreadyPlayedPhone">Phone</Label>
+                    <Input id="alreadyPlayedPhone" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="alreadyPlayedDescription">Project Description</Label>
+                    <Textarea 
+                      id="alreadyPlayedDescription" 
+                      value={formDescription} 
+                      onChange={(e) => setFormDescription(e.target.value)}
+                      placeholder="Tell us about your fencing project..."
+                      rows={3}
+                    />
+                  </div>
+
+                  <Button type="submit" className="w-full">
+                    Get My Free Quote!
                   </Button>
                 </form>
               </div>
