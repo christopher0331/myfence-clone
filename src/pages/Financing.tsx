@@ -255,7 +255,7 @@ const Financing = () => {
                 <div className="margin-bot-24-code-example">
                   <div className="banner-code-example">
                     <p className="paragraph-code-example-lg text-weight-semibold">
-                      0% APR available up to 12 months* for eligible customers
+                      0% APR available up to 6 months* for eligible customers
                     </p>
                   </div>
                 </div>
