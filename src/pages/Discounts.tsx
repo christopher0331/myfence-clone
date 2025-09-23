@@ -119,6 +119,7 @@ const Discounts = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [shouldClick, setShouldClick] = useState(false);
 
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
@@ -174,12 +175,14 @@ const Discounts = () => {
 
   // Simulate wheel clicking with easing
   const startWheelClicking = () => {
+    setShouldClick(true);
     const segmentAngle = 360 / discounts.length;
     const totalDuration = 7000; // 7 seconds
     let currentTime = 0;
     
     const scheduleClick = () => {
-      if (currentTime >= totalDuration) {
+      if (currentTime >= totalDuration || !shouldClick) {
+        setShouldClick(false);
         return; // Stop scheduling clicks
       }
       
@@ -196,7 +199,11 @@ const Discounts = () => {
       
       currentTime += currentInterval;
       
-      const timeout = setTimeout(scheduleClick, currentInterval);
+      const timeout = setTimeout(() => {
+        if (shouldClick) {
+          scheduleClick();
+        }
+      }, currentInterval);
       setClickTimeout(timeout);
     };
     
@@ -250,6 +257,7 @@ const Discounts = () => {
     
     setTimeout(() => {
       // Stop clicking sound immediately when wheel stops
+      setShouldClick(false);
       if (clickTimeout) {
         clearTimeout(clickTimeout);
         setClickTimeout(null);
@@ -307,6 +315,7 @@ const Discounts = () => {
       setWheelRotation(0);
       setAttempts(0);
       setShowHint(false);
+      setShouldClick(false);
       setFormFirstName("");
       setFormLastName("");
       setFormAddress("");
@@ -315,6 +324,7 @@ const Discounts = () => {
       setFormDescription("");
       
       // Clean up any remaining click timeout
+      setShouldClick(false);
       if (clickTimeout) {
         clearTimeout(clickTimeout);
         setClickTimeout(null);
