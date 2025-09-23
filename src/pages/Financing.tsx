@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PaymentCalculator from "@/components/PaymentCalculator";
-import wisetackPhone from "@/assets/wisetack-phone-6months-fixed.png";
 
 const Financing = () => {
   const faq = [
@@ -273,11 +272,12 @@ const Financing = () => {
                 </p>
               </div>
               <img 
-                src={wisetackPhone}
+                src="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png" 
                 loading="lazy" 
                 width="404" 
                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 53vw, 35vw" 
-                alt="Wisetack financing phone app showing 6 month payment plans" 
+                alt="" 
+                srcSet="https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-500.png 500w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup-p-800.png 800w, https://cdn.prod.website-files.com/5f194315e6b47c1697925302/669ba19f4113ec5bb7fe149b_phone-mockup.png 808w" 
                 className="iphone-img-code-example"
               />
             </div>
