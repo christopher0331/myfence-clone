@@ -27,10 +27,19 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
 
       if (error) {
         console.error('Error generating summary:', error);
+        
+        // Handle specific error messages
+        let errorMessage = "Please try again later.";
+        if (error.message?.includes('Rate limit')) {
+          errorMessage = "Too many requests. Please wait a moment and try again.";
+        } else if (error.message?.includes('Payment required')) {
+          errorMessage = "AI credits depleted. Please contact support.";
+        }
+        
         toast({
           variant: "destructive",
           title: "Failed to generate summary",
-          description: "Please try again later.",
+          description: errorMessage,
         });
         setIsExpanded(false);
         return;
