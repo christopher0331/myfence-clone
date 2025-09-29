@@ -255,6 +255,13 @@ const FenceStyles = () => {
                   />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
+                {a.title === "Upgrade to 4\" Screws" && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/fence-upgrades/exterior-screws">
+                      Learn More About Exterior Screws
+                    </Link>
+                  </Button>
+                )}
                 {a.title === "Pre-Staining" && (
                   <Button asChild className="mt-4 w-full">
                     <Link to="/pre-staining-cedar-fence">
