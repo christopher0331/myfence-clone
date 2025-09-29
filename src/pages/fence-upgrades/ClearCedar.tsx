@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import clearCedarUpgrade from "@/assets/fences/clear-cedar-upgrade.png";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const ClearCedar = () => {
   return (
@@ -50,6 +51,14 @@ const ClearCedar = () => {
             Transform your property's appearance with knot-free clear cedar boards that deliver unmatched visual appeal and lasting uniformity for your Seattle fence.
           </p>
         </div>
+      </section>
+
+      {/* AI Summary Section */}
+      <section className="container py-8">
+        <ArticleSummary 
+          pageTitle="Clear Cedar Fence Upgrade"
+          pageContent="Clear cedar boards offer a premium upgrade for your fence with zero knots, providing unmatched visual appeal and durability. Unlike standard tight-knot cedar, clear cedar features uniform grain patterns, consistent color, and eliminates common issues like knot shrinkage, cracks, and potential weaknesses. This upgrade creates a sophisticated, high-end look that enhances curb appeal and property value. Clear cedar boards are ideal for homeowners planning to sell, those who frequently entertain outdoors, or anyone taking pride in their property's appearance. The knot-free boards allow for cleaner cuts, tighter joints, and a more refined installation. While tight knot cedar can develop gaps around knots as they shrink over time, clear cedar maintains its integrity and appearance throughout its lifespan. The investment in clear cedar pays dividends through superior aesthetics, enhanced durability, and lasting beauty that won't compromise over the years."
+        />
       </section>
 
       {/* Main Content */}
