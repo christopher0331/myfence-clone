@@ -1,7 +1,9 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+const geminiApiKey = Deno.env.get('GOOGLE_GEMINI_API_KEY');
+const openaiApiKey = Deno.env.get('OPENAI_API_KEY');
+const grokApiKey = Deno.env.get('GROK_API_KEY');
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -17,18 +19,7 @@ serve(async (req) => {
   try {
     const { pageTitle, pageContent } = await req.json();
 
-    if (!lovableApiKey) {
-      console.error('LOVABLE_API_KEY is not configured');
-      return new Response(
-        JSON.stringify({ error: 'API key not configured' }), 
-        { 
-          status: 500, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-        }
-      );
-    }
-
-    console.log('Generating summary for:', pageTitle);
+    console.log('Generating summaries for:', pageTitle);
 
     const prompt = `You are a helpful assistant for MyFence.com, a professional fencing company in Seattle. 
 Summarize the following article about "${pageTitle}" in 4-5 concise bullet points. 
@@ -41,62 +32,106 @@ ${pageContent}
 
 Format your response as bullet points starting with •`;
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${lovableApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          { role: 'system', content: 'You are a helpful assistant that creates concise, professional summaries for fence upgrade options.' },
-          { role: 'user', content: prompt }
-        ],
+    // Call all three AI providers in parallel
+    const [geminiResult, chatgptResult, grokResult] = await Promise.allSettled([
+      // Gemini (Google Direct API)
+      fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=' + geminiApiKey, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: prompt }]
+          }],
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 500,
+          }
+        })
+      }).then(async (res) => {
+        if (!res.ok) throw new Error(`Gemini API error: ${res.status}`);
+        const data = await res.json();
+        return data.candidates[0].content.parts[0].text;
+      }).catch((error) => {
+        console.error('Gemini error:', error);
+        return null;
       }),
+
+      // ChatGPT (OpenAI)
+      fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${openaiApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-5-mini-2025-08-07',
+          messages: [
+            { role: 'system', content: 'You are a helpful assistant that creates concise, professional summaries for fence upgrade options.' },
+            { role: 'user', content: prompt }
+          ],
+          max_completion_tokens: 500,
+        })
+      }).then(async (res) => {
+        if (!res.ok) throw new Error(`OpenAI API error: ${res.status}`);
+        const data = await res.json();
+        return data.choices[0].message.content;
+      }).catch((error) => {
+        console.error('ChatGPT error:', error);
+        return null;
+      }),
+
+      // Grok (xAI)
+      fetch('https://api.x.ai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${grokApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'grok-2-latest',
+          messages: [
+            { role: 'system', content: 'You are a helpful assistant that creates concise, professional summaries for fence upgrade options.' },
+            { role: 'user', content: prompt }
+          ],
+          max_tokens: 500,
+          temperature: 0.7,
+        })
+      }).then(async (res) => {
+        if (!res.ok) throw new Error(`Grok API error: ${res.status}`);
+        const data = await res.json();
+        return data.choices[0].message.content;
+      }).catch((error) => {
+        console.error('Grok error:', error);
+        return null;
+      })
+    ]);
+
+    const summaries = {
+      gemini: geminiResult.status === 'fulfilled' ? geminiResult.value : null,
+      chatgpt: chatgptResult.status === 'fulfilled' ? chatgptResult.value : null,
+      grok: grokResult.status === 'fulfilled' ? grokResult.value : null,
+    };
+
+    // Log which providers succeeded
+    console.log('Summary generation results:', {
+      gemini: !!summaries.gemini,
+      chatgpt: !!summaries.chatgpt,
+      grok: !!summaries.grok
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('AI Gateway error:', response.status, errorText);
-      
-      // Handle specific error codes
-      if (response.status === 429) {
-        return new Response(
-          JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }), 
-          { 
-            status: 429, 
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-          }
-        );
-      }
-      
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ error: 'Payment required. Please add credits to your Lovable AI workspace.' }), 
-          { 
-            status: 402, 
-            headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-          }
-        );
-      }
-      
+    // At least one provider must succeed
+    if (!summaries.gemini && !summaries.chatgpt && !summaries.grok) {
       return new Response(
-        JSON.stringify({ error: 'Failed to generate summary' }), 
+        JSON.stringify({ error: 'All AI providers failed to generate summaries' }), 
         { 
-          status: response.status, 
+          status: 500, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
         }
       );
     }
 
-    const data = await response.json();
-    const summary = data.choices[0].message.content;
-
-    console.log('Summary generated successfully');
-
     return new Response(
-      JSON.stringify({ summary }), 
+      JSON.stringify({ summaries }), 
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       }

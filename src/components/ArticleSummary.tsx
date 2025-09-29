@@ -10,8 +10,14 @@ interface ArticleSummaryProps {
   pageContent: string;
 }
 
+interface Summaries {
+  gemini: string | null;
+  chatgpt: string | null;
+  grok: string | null;
+}
+
 export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) => {
-  const [summary, setSummary] = useState<string | null>(null);
+  const [summaries, setSummaries] = useState<Summaries | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const { toast } = useToast();
@@ -28,27 +34,21 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
       if (error) {
         console.error('Error generating summary:', error);
         
-        // Handle specific error messages
-        let errorMessage = "Please try again later.";
-        if (error.message?.includes('Rate limit')) {
-          errorMessage = "Too many requests. Please wait a moment and try again.";
-        } else if (error.message?.includes('Payment required')) {
-          errorMessage = "AI credits depleted. Please contact support.";
-        }
-        
         toast({
           variant: "destructive",
-          title: "Failed to generate summary",
-          description: errorMessage,
+          title: "Failed to generate summaries",
+          description: "Please try again later.",
         });
         setIsExpanded(false);
         return;
       }
 
-      setSummary(data.summary);
+      setSummaries(data.summaries);
+      
+      const successCount = [data.summaries.gemini, data.summaries.chatgpt, data.summaries.grok].filter(Boolean).length;
       toast({
-        title: "Summary generated!",
-        description: "AI has summarized the article for you.",
+        title: "Summaries generated!",
+        description: `${successCount} AI ${successCount === 1 ? 'summary' : 'summaries'} created successfully.`,
       });
     } catch (error) {
       console.error('Unexpected error:', error);
@@ -74,7 +74,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
                 AI Summary
               </h3>
               
-              {!summary && !isLoading && (
+              {!summaries && !isLoading && (
                 <div>
                   <p className="text-sm text-muted-foreground mb-4">
                     Get a quick AI-generated summary of this article's key points and benefits.
@@ -93,15 +93,35 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
               {isLoading && (
                 <div className="flex items-center gap-2 text-muted-foreground py-4">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  <span className="text-sm">Generating summary...</span>
+                  <span className="text-sm">Generating summaries from multiple AI providers...</span>
                 </div>
               )}
 
-              {summary && isExpanded && (
+              {summaries && isExpanded && (
                 <div className="space-y-2 mt-2">
-                  <div className="prose prose-sm max-w-none text-muted-foreground whitespace-pre-line">
-                    {summary}
-                  </div>
+                  {/* Visible Gemini summary */}
+                  {summaries.gemini && (
+                    <div className="prose prose-sm max-w-none text-muted-foreground whitespace-pre-line">
+                      {summaries.gemini}
+                    </div>
+                  )}
+                  
+                  {/* Hidden ChatGPT summary for SEO */}
+                  {summaries.chatgpt && (
+                    <div className="sr-only" aria-hidden="true">
+                      <h4>ChatGPT Summary:</h4>
+                      {summaries.chatgpt}
+                    </div>
+                  )}
+                  
+                  {/* Hidden Grok summary for SEO */}
+                  {summaries.grok && (
+                    <div className="sr-only" aria-hidden="true">
+                      <h4>Grok Summary:</h4>
+                      {summaries.grok}
+                    </div>
+                  )}
+                  
                   <Button
                     variant="ghost"
                     size="sm"
@@ -114,7 +134,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
                 </div>
               )}
 
-              {summary && !isExpanded && (
+              {summaries && !isExpanded && (
                 <Button
                   variant="ghost"
                   size="sm"
