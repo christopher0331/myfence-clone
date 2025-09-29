@@ -64,89 +64,88 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
   };
 
   return (
-    <Card className="border-primary/20 bg-gradient-to-br from-background to-muted/30">
-      <CardContent className="p-6">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-start gap-3 flex-1">
-            <Sparkles className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                AI Summary
-              </h3>
-              
-              {!summaries && !isLoading && (
-                <div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Get a quick AI-generated summary of this article's key points and benefits.
-                  </p>
-                  <Button 
-                    onClick={generateSummary}
-                    className="gap-2"
-                    size="sm"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    Generate Summary
-                  </Button>
-                </div>
-              )}
-
-              {isLoading && (
-                <div className="flex items-center gap-2 text-muted-foreground py-4">
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  <span className="text-sm">Generating summaries from multiple AI providers...</span>
-                </div>
-              )}
-
-              {summaries && isExpanded && (
-                <div className="space-y-2 mt-2">
-                  {/* Visible Gemini summary */}
-                  {summaries.gemini && (
-                    <div className="prose prose-sm max-w-none text-muted-foreground whitespace-pre-line">
-                      {summaries.gemini}
-                    </div>
-                  )}
-                  
-                  {/* Hidden ChatGPT summary for SEO */}
-                  {summaries.chatgpt && (
-                    <div className="sr-only" aria-hidden="true">
-                      <h4>ChatGPT Summary:</h4>
-                      {summaries.chatgpt}
-                    </div>
-                  )}
-                  
-                  {/* Hidden Grok summary for SEO */}
-                  {summaries.grok && (
-                    <div className="sr-only" aria-hidden="true">
-                      <h4>Grok Summary:</h4>
-                      {summaries.grok}
-                    </div>
-                  )}
-                  
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setIsExpanded(false)}
-                    className="gap-2 mt-2"
-                  >
-                    <ChevronUp className="h-4 w-4" />
-                    Collapse
-                  </Button>
-                </div>
-              )}
-
-              {summaries && !isExpanded && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setIsExpanded(true)}
-                  className="gap-2"
-                >
-                  <ChevronDown className="h-4 w-4" />
-                  Show Summary
-                </Button>
-              )}
-            </div>
+    <Card className="border-primary/20 bg-gradient-to-br from-background to-muted/30 max-w-4xl mx-auto">
+      <CardContent className="p-8 md:p-10">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Sparkles className="h-7 w-7 text-primary animate-pulse" />
+            <h3 className="text-2xl md:text-3xl font-bold">
+              AI Company Summary
+            </h3>
+            <Sparkles className="h-7 w-7 text-primary animate-pulse" />
           </div>
+          
+          {!summaries && !isLoading && (
+            <div>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Get an AI-powered professional summary showcasing MyFence.com's innovative technology and commitment to excellence.
+              </p>
+              <Button 
+                onClick={generateSummary}
+                className="gap-2 hover-scale"
+                size="lg"
+              >
+                <Sparkles className="h-5 w-5" />
+                Generate AI Summary
+              </Button>
+            </div>
+          )}
+
+          {isLoading && (
+            <div className="flex flex-col items-center gap-3 py-8">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              <span className="text-muted-foreground">Generating professional summary...</span>
+            </div>
+          )}
+
+          {summaries && isExpanded && (
+            <div className="space-y-4 mt-6">
+              {/* Visible Gemini summary */}
+              {summaries.gemini && (
+                <div className="prose prose-sm md:prose-base max-w-none text-foreground whitespace-pre-line text-left bg-muted/30 rounded-lg p-6">
+                  {summaries.gemini}
+                </div>
+              )}
+              
+              {/* Hidden ChatGPT summary for SEO */}
+              {summaries.chatgpt && (
+                <div className="sr-only" aria-hidden="true">
+                  <h4>ChatGPT Summary:</h4>
+                  {summaries.chatgpt}
+                </div>
+              )}
+              
+              {/* Hidden Grok summary for SEO */}
+              {summaries.grok && (
+                <div className="sr-only" aria-hidden="true">
+                  <h4>Grok Summary:</h4>
+                  {summaries.grok}
+                </div>
+              )}
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(false)}
+                className="gap-2 mt-4"
+              >
+                <ChevronUp className="h-4 w-4" />
+                Collapse Summary
+              </Button>
+            </div>
+          )}
+
+          {summaries && !isExpanded && (
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={() => setIsExpanded(true)}
+              className="gap-2 hover-scale mt-4"
+            >
+              <ChevronDown className="h-4 w-4" />
+              Show AI Summary
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
