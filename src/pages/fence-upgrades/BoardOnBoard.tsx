@@ -54,14 +54,14 @@ const BoardOnBoard = () => {
 
       {/* Main Content */}
       <section className="container py-12">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div>
             <h2 className="text-3xl font-semibold mb-4">Why We Love Board on Board</h2>
             <p className="text-muted-foreground mb-6">
               The board on board style is one of our personal favorites, not only for its exceptional visual appeal but also for its practical utility. This design features overlapping fence boards that eliminate the traditional gaps found in standard fencing, delivering benefits that matter to Seattle homeowners.
             </p>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4">
               <div className="flex gap-3">
                 <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
@@ -91,7 +91,33 @@ const BoardOnBoard = () => {
                   </p>
                 </div>
               </div>
-              
+            </div>
+          </div>
+
+          <div>
+            <img
+              src="/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png"
+              alt="Board on board fence showing overlapping boards and 3D depth effect"
+              className="w-full rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          <div className="order-2 lg:order-1">
+            <img
+              src={boardOnBoardCraftsman}
+              alt="Craftsman style board on board fence with decorative pergola"
+              className="w-full rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          
+          <div className="order-1 lg:order-2">
+            <h2 className="text-3xl font-semibold mb-4">Additional Benefits</h2>
+            
+            <div className="space-y-4">
               <div className="flex gap-3">
                 <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
@@ -113,7 +139,7 @@ const BoardOnBoard = () => {
               </div>
             </div>
 
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-primary/5 border-primary/20 mt-6">
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">A Favorite for Good Reason</h3>
                 <p className="text-sm text-muted-foreground">
@@ -122,29 +148,10 @@ const BoardOnBoard = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
 
+        <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <div className="grid grid-cols-1 gap-4 mb-6">
-              <img
-                src="/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png"
-                alt="Board on board fence showing overlapping boards and 3D depth effect"
-                className="w-full rounded-lg shadow-lg"
-                loading="lazy"
-              />
-              <img
-                src={boardOnBoardCraftsman}
-                alt="Craftsman style board on board fence with decorative pergola"
-                className="w-full rounded-lg shadow-lg"
-                loading="lazy"
-              />
-              <img
-                src={boardOnBoardCorner}
-                alt="Board on board corner fence installation with craftsman style top"
-                className="w-full rounded-lg shadow-lg"
-                loading="lazy"
-              />
-            </div>
-            
             <h2 className="text-3xl font-semibold mb-4">How Board on Board Works</h2>
             <p className="text-muted-foreground mb-4">
               Unlike traditional fencing where boards are installed side-by-side with gaps between them, board on board construction alternates boards on opposite sides of the horizontal rails. This creates an overlap pattern that eliminates any possibility of seeing through the fence.
@@ -185,6 +192,15 @@ const BoardOnBoard = () => {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+
+          <div>
+            <img
+              src={boardOnBoardCorner}
+              alt="Board on board corner fence installation with craftsman style top"
+              className="w-full rounded-lg shadow-lg"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
