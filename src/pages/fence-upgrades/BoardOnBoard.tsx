@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, Eye, Shield, Dog } from "lucide-react";
+import boardOnBoardCraftsman from "@/assets/fences/board-on-board-craftsman.png";
+import boardOnBoardCorner from "@/assets/fences/board-on-board-corner.png";
 
 const BoardOnBoard = () => {
   return (
@@ -122,12 +124,26 @@ const BoardOnBoard = () => {
           </div>
 
           <div>
-            <img
-              src="/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png"
-              alt="Board on board fence showing overlapping boards and 3D depth effect"
-              className="w-full rounded-lg shadow-lg mb-6"
-              loading="lazy"
-            />
+            <div className="grid grid-cols-1 gap-4 mb-6">
+              <img
+                src="/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png"
+                alt="Board on board fence showing overlapping boards and 3D depth effect"
+                className="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+              <img
+                src={boardOnBoardCraftsman}
+                alt="Craftsman style board on board fence with decorative pergola"
+                className="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+              <img
+                src={boardOnBoardCorner}
+                alt="Board on board corner fence installation with craftsman style top"
+                className="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+            </div>
             
             <h2 className="text-3xl font-semibold mb-4">How Board on Board Works</h2>
             <p className="text-muted-foreground mb-4">
