@@ -12,6 +12,7 @@ import { CheckCircle, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -190,6 +191,14 @@ const Index = () => {
             <p className="text-muted-foreground mt-2">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
         </div>
+      </section>
+
+      {/* AI Company Summary */}
+      <section className="container py-12 md:py-16">
+        <ArticleSummary 
+          pageTitle="MyFence.com Company Overview"
+          pageContent="Write a professional company summary for MyFence.com, a Seattle-area wood fence contractor that is family-owned and operated by a father-and-son team of engineers. Highlight how MyFence.com leverages exclusive technology developed by its sister company, Fence Genius, to revolutionize the outdated fence construction industry. The Fence Genius system includes software and manufacturing technology that enables off-site prefabrication of custom, slope-following fence panels and gates, ensuring unmatched precision, quality, and efficiency. Emphasize that MyFence.com is the only contractor in the market using this patented system. Despite using advanced technology and delivering higher-quality results, their pricing remains competitive with traditional installers. The company is committed to raising standards in fence building and is rapidly growing in Seattle, WA and the surrounding region."
+        />
       </section>
 
       {/* Popular styles */}
