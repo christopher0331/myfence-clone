@@ -127,10 +127,24 @@ const ClearCedar = () => {
             <img
               src="/lovable-uploads/d27f46a0-cb41-4ed9-917a-44e0969e2f57.png"
               alt="Clear cedar fence boards showing uniform grain without knots"
-              className="w-full rounded-lg shadow-lg mb-6"
+              className="w-full rounded-lg shadow-lg"
               loading="lazy"
             />
-            
+          </div>
+        </div>
+
+        {/* Second Row - Image Left, Content Right */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div>
+            <img
+              src={clearCedarUpgrade}
+              alt="Premium clear cedar fence installation showcasing uniform boards without knots"
+              className="w-full rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          
+          <div>
             <h2 className="text-3xl font-semibold mb-4">The Knot Problem</h2>
             <p className="text-muted-foreground mb-4">
               While tight knot Western Red Cedar is a quality material, knots present several challenges over the life of your fence:
@@ -172,58 +186,8 @@ const ClearCedar = () => {
             </Card>
           </div>
         </div>
-
-        {/* Additional Image Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <img
-              src={clearCedarUpgrade}
-              alt="Premium clear cedar fence installation showcasing uniform boards without knots"
-              className="w-full rounded-lg shadow-lg"
-              loading="lazy"
-            />
-          </div>
-          
-          <div className="order-1 lg:order-2">
-            <h2 className="text-3xl font-semibold mb-4">Real-World Results</h2>
-            <p className="text-muted-foreground mb-6">
-              See the difference clear cedar makes in actual installations. This fence demonstrates the clean, consistent appearance that only knot-free boards can provide. Notice the uniform color and grain pattern that creates a sophisticated, high-end look for your property.
-            </p>
-            
-            <div className="space-y-4">
-              <div className="flex gap-3">
-                <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Consistent Throughout</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Every board maintains the same premium quality, creating a cohesive look across your entire fence line.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-3">
-                <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Professional Finish</h3>
-                  <p className="text-sm text-muted-foreground">
-                    The absence of knots allows for cleaner cuts and tighter joints, resulting in a more refined installation.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-3">
-                <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Enhanced Curb Appeal</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Clear cedar fencing becomes a statement piece that elevates your entire property's appearance.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
+
 
       {/* Comparison Section */}
       <section className="bg-muted/50 py-12">
