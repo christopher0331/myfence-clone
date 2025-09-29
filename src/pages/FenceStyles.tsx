@@ -269,6 +269,13 @@ const FenceStyles = () => {
                     </Link>
                   </Button>
                 )}
+                {a.title === "Board on Board Style" && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/fence-upgrades/board-on-board">
+                      Learn More About Board on Board
+                    </Link>
+                  </Button>
+                )}
                 {a.title === "Pre-Staining" && (
                   <Button asChild className="mt-4 w-full">
                     <Link to="/pre-staining-cedar-fence">

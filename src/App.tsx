@@ -28,6 +28,7 @@ const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
 const PreStaining = React.lazy(() => import("./pages/PreStaining"));
 const ExteriorScrews = React.lazy(() => import("./pages/fence-upgrades/ExteriorScrews"));
 const ClearCedar = React.lazy(() => import("./pages/fence-upgrades/ClearCedar"));
+const BoardOnBoard = React.lazy(() => import("./pages/fence-upgrades/BoardOnBoard"));
 const Blog = React.lazy(() => import("./pages/Blog"));
 
 // Lazy load blog post pages
@@ -101,6 +102,7 @@ const AppContent = () => {
           <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
           <Route path="/fence-upgrades/exterior-screws" element={<ExteriorScrews />} />
           <Route path="/fence-upgrades/clear-cedar" element={<ClearCedar />} />
+          <Route path="/fence-upgrades/board-on-board" element={<BoardOnBoard />} />
           <Route path="/blog" element={<Blog />} />
               <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
               <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
