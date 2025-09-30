@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Calculator, Palette, MousePointer, DollarSign, Clock, CheckCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const VirtualQuoteToolBlog = () => {
   const structuredData = {
@@ -62,9 +63,17 @@ const VirtualQuoteToolBlog = () => {
               </p>
             </div>
 
+            {/* AI Summary Section */}
+            <div className="mb-12">
+              <ArticleSummary 
+                pageTitle="Get Your Instant Fence Quote with Our Advanced Virtual Tool"
+                pageContent={`Discover our revolutionary virtual quote tool powered by Fence Genius technology that provides accurate instant pricing for your Seattle fence project. Choose from an extensive library of fence styles including privacy fences, decorative options, security fencing, and specialty styles. Customize every detail with fence post options (cedar, pressure-treated, steel, composite) and premium upgrades (post caps, heavy-duty hardware, staining, gates, lattice additions). The innovative property mapping system lets you draw your fence line on satellite imagery, mark obstacles, add gates, and note special conditions. The tool automatically calculates linear footage, accounts for terrain difficulty, and provides real-time pricing that's typically within 5-10% of final costs. Get instant material costs, labor estimates, permit fees, timeline projections, and financing options - all specifically calibrated for the Seattle market with local building codes, climate considerations, and terrain challenges. Save time, compare options, and get accurate pricing without sales pressure.`}
+              />
+            </div>
+
             <article className="prose prose-lg max-w-none">
               <div className="mb-8">
-                <img 
+                <img
                   src="/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png" 
                   alt="Seattle Fence Pros virtual quote tool interface showing fence customization options"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"

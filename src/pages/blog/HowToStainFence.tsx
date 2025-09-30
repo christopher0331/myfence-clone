@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, X, Clock, Thermometer, Droplets } from "lucide-react";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const HowToStainFence = () => {
   const structuredData = {
@@ -79,6 +80,14 @@ const HowToStainFence = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* AI Summary Section */}
+        <section className="py-12 px-4">
+          <ArticleSummary 
+            pageTitle="How Do I Stain My Fence?"
+            pageContent={`Master fence staining with this comprehensive guide for Seattle's unique climate. Choose the right stain for Pacific Northwest conditions - semi-transparent stains show wood grain with 2-4 years protection, semi-solid provides 3-5 years, and solid stain offers maximum 4-6 years protection. Perfect weather conditions are crucial: 50-85°F temperature, below 70% humidity, and best application months are May through September. Compare brushing versus spraying methods - brushing provides deeper penetration and longer-lasting results (6-8 years) but is time-intensive, while spraying offers fast application and professional appearance but shorter lifespan (3-5 years). Professional recommendation: brush first coat for deep penetration, then light spray for even coverage. Essential tools include natural bristle brushes, airless sprayers, and proper safety gear. Critical preparation steps include thorough cleaning (48-72 hours drying), weather checking, and proper surface prep. Avoid common mistakes like staining wet wood, ignoring weather, applying too thick, and rushing the process. Maintenance schedules differ: brushed applications last 6-8 years, sprayed 3-5 years.`}
+          />
         </section>
 
         {/* Content Section */}

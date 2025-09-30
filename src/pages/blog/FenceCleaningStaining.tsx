@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, AlertCircle, Clock, Phone } from "lucide-react";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const FenceCleaningStaining = () => {
   const structuredData = {
@@ -87,6 +88,14 @@ const FenceCleaningStaining = () => {
               />
             </div>
           </div>
+        </section>
+
+        {/* AI Summary Section */}
+        <section className="py-12 px-4">
+          <ArticleSummary 
+            pageTitle="How Should I Clean My Fence for Staining?"
+            pageContent={`Proper fence cleaning is essential for a successful stain application in Seattle's climate. This comprehensive guide covers professional softwashing techniques versus pressure washing, when to hire specialists like NW Pro Wash LLC, and DIY cleaning steps. Softwashing uses low-pressure water with specialized cleaning solutions to remove organic growth without damaging wood fibers - it's particularly effective for Seattle's moss, algae, and mildew. Professional cleaning is strongly recommended for never-stained fences, visible mold growth, or heavy dirt accumulation. For first-time staining or heavily soiled fences, professional softwashing services provide the best preparation. The investment in proper cleaning extends your stain's lifespan and protects your fence for years to come. Learn the signs your fence needs professional cleaning, proper drying times (48-72 hours), and maintenance schedules for Seattle's unique climate conditions.`}
+          />
         </section>
 
         {/* Content Section */}

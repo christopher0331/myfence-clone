@@ -6,6 +6,7 @@ import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { useNavigate } from "react-router-dom";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const WoodenFenceCost2025 = () => {
   const navigate = useNavigate();
@@ -68,6 +69,14 @@ const WoodenFenceCost2025 = () => {
                 />
               </div>
             </header>
+
+            {/* AI Summary Section */}
+            <div className="mb-12">
+              <ArticleSummary 
+                pageTitle="How Much Does a Wooden Fence Cost in Seattle in 2025?"
+                pageContent={`Updated 2025 wooden fence pricing guide for Seattle homeowners. Great news: prices have come down significantly from COVID-19 peaks, with current Seattle fence pricing at $35-60 per linear foot before upgrades. The lumber market is now secure and stable, making 2025 an excellent time to purchase. Seattle has specific height restrictions including a 4-foot limitation for front yards - recommended solutions include traditional picket fences and newly introduced hogwire panels. For backyard privacy, a traditional 6-foot cedar fence costs $46-47 per linear foot, providing excellent privacy and property value. To reach 8-foot height, top 2 feet must be lattice or trellis for wind flow. Factors influencing cost include style selection (basic picket to premium privacy), height requirements (4ft front yard to 8ft options), and utility/function (security, privacy, decorative). Cedar remains the gold standard for Seattle installations due to natural moisture and insect resistance. Financing options available through Wisetack with no penalties, late fees, or compounding interest, covering projects from $500-$25,000 with flexible 3-60 month terms. Seattle's marine climate and municipal regulations require proper installation techniques.`}
+              />
+            </div>
 
             <div className="prose prose-lg max-w-none">
               <section className="mb-8">

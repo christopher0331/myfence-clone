@@ -5,6 +5,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import Seo from "@/components/Seo";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { useNavigate } from "react-router-dom";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const NeighborFenceCostSplit = () => {
   const navigate = useNavigate();
@@ -71,6 +72,14 @@ const NeighborFenceCostSplit = () => {
         </header>
 
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+          {/* AI Summary Section */}
+          <div className="mb-12">
+            <ArticleSummary 
+              pageTitle="Should My Neighbor Split Our Fence Cost With Me?"
+              pageContent={`Navigate shared fence costs with neighbors using Washington State RCW 16.60.020 laws and modern Fence Genius proposal tools. Washington State's "partition fence" principle establishes the 50/50 rule - when a fence is erected on the boundary line and the adjoining owner uses it to enclose their property, they must pay half the value. Neighbors must pay when: fence is on property line, serves as partition between properties, neighbor uses fence to enclose property, and fence benefits both properties. Legal notice process requires: written notice to neighbor, 30 days response time, 50/50 cost split if agreed, or legal cost recovery if refused. Our Fence Genius system modernizes negotiations with professional proposals featuring detailed cost breakdowns, visual property maps, transparent pricing per linear foot, and proper documentation. If neighbor refuses after proper notice (RCW 16.60.040), you can: build entire fence yourself, sue to recover half the reasonable cost, and collect attorney fees if successful. Best practices include: get professional survey, check building codes, obtain permits, document everything, present professional proposals, offer multiple options, be transparent, and plan maintenance responsibilities. Special considerations for upgrade costs and maintenance responsibilities.`}
+            />
+          </div>
+
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-xl text-muted-foreground leading-relaxed">

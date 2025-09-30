@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowLeft, DollarSign, Clock, CheckCircle, AlertTriangle, Star, Shield } from "lucide-react";
 import Seo from "@/components/Seo";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 const SixFtFenceCostBlog = () => {
   const structuredData = {
@@ -66,9 +67,17 @@ const SixFtFenceCostBlog = () => {
               </p>
             </div>
 
+            {/* AI Summary Section */}
+            <div className="mb-12">
+              <ArticleSummary 
+                pageTitle="How Much Does a 6-Foot Privacy Fence Cost in Seattle?"
+                pageContent={`Comprehensive breakdown of 2025 Seattle 6-foot privacy fence costs with Fence Genius technology guaranteeing competitive pricing and superior quality. Pricing tiers: Basic 6-foot privacy fence $42-50/linear foot (standard cedar, basic posts, standard hardware), High-quality $50-60/linear foot (premium materials, upgraded posts, enhanced techniques), Premium custom $60+/linear foot (custom designs, difficult terrain, specialty features). Cost factors include: material quality (grade of cedar, post size, hardware), terrain and access (slopes, rocky soil, difficult access), linear footage (longer runs have better per-foot pricing), and gates/features (post caps, decorative elements). WARNING: Quotes under $42/linear foot indicate corner-cutting with lower-grade lumber, inadequate posts, galvanized screws that rust, shallow post holes, and no proper drainage. Our minimum standards include: Grade 1 cedar boards, premium 4.125" x 4.125" x 9' posts (oversized), stainless steel fasteners (no rust), and engineered installation with proper spacing, concrete footings. Sample costs: 100LF $4,200-6,000, 200LF $8,400-12,000, 300LF $12,600-18,000. Financing available through Wisetack. Always invest in correct company first time rather than cheap alternatives.`}
+              />
+            </div>
+
             <article className="prose prose-lg max-w-none">
               <div className="mb-8">
-                <img 
+                <img
                   src="/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png" 
                   alt="Beautiful 6-foot cedar privacy fence showing professional installation and post caps"
                   className="w-full h-64 object-cover rounded-lg shadow-lg"
