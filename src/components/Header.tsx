@@ -38,7 +38,7 @@ const Header = () => {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `text-sm transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
+                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
               }
             >
               {item.label}
