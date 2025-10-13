@@ -26,11 +26,123 @@ const ServiceAreaTemplate = ({
   localSolutions = [],
   climateDescription = ""
 }: ServiceAreaTemplateProps) => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `https://myfence.com/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`,
+    "name": "MyFence.com",
+    "image": "https://myfence.com/og-image.png",
+    "url": "https://myfence.com",
+    "telephone": "+12534551885",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22927 257th Ave SE",
+      "addressLocality": "Maple Valley",
+      "addressRegion": "WA",
+      "postalCode": "98038",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "47.3394",
+      "longitude": "-122.0461"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Andrew Knudsen"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": city,
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Washington",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": state
+        }
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fence Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fence Installation",
+            "description": `Professional fence installation services in ${city}, ${state}`,
+            "areaServed": {
+              "@type": "City",
+              "name": city
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fence Repair",
+            "description": `Expert fence repair and maintenance in ${city}, ${state}`,
+            "areaServed": {
+              "@type": "City",
+              "name": city
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fence Staining",
+            "description": `Professional fence staining and finishing services in ${city}, ${state}`,
+            "areaServed": {
+              "@type": "City",
+              "name": city
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fence Replacement",
+            "description": `Complete fence replacement services in ${city}, ${state}`,
+            "areaServed": {
+              "@type": "City",
+              "name": city
+            }
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.facebook.com/myfence",
+      "https://www.instagram.com/myfence"
+    ]
+  };
+
   return (
     <>
       <Seo 
         title={`Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
         description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
+        structuredData={structuredData}
       />
       
       <div className="min-h-screen">
