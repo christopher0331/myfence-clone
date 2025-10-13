@@ -21,14 +21,14 @@ const navItems = [
 ];
 
 const serviceAreas = [
-  { to: "/service-areas/federal-way", label: "Federal Way, WA" },
+  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
+  { to: "/service-areas/seattle", label: "Seattle, WA" },
   { to: "/service-areas/redmond", label: "Redmond, WA" },
   { to: "/service-areas/sammamish", label: "Sammamish, WA" },
-  { to: "/service-areas/seattle", label: "Seattle, WA" },
-  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
   { to: "/service-areas/renton", label: "Renton, WA" },
+  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
   { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
-  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
+  { to: "/service-areas/federal-way", label: "Federal Way, WA" },
 ];
 
 const Header = () => {
