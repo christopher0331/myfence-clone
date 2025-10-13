@@ -19,9 +19,9 @@ const ServiceAreaTemplate = ({ city, state, zipCodes = [] }: ServiceAreaTemplate
         description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
       />
       
-      <div className="min-h-screen pt-20 md:pt-24">
+      <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-6">
