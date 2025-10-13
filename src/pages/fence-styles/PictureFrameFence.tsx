@@ -20,6 +20,31 @@ const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
 const PictureFrameFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fence Styles",
+        "item": "https://myfence.com/fence-styles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Picture Frame Fence",
+        "item": "https://myfence.com/fence-styles/picture-frame-fence"
+      }
+    ]
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -47,7 +72,7 @@ const PictureFrameFence = () => {
         title="Picture Frame Cedar Fence Seattle | Premium Privacy Fencing"
         description="Seattle's most popular picture frame cedar fence. Clean trim details, strong construction, 30+ years experience. Free estimates. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/picture-frame-fence"
-        structuredData={structuredData}
+        structuredData={[breadcrumbData, structuredData]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">

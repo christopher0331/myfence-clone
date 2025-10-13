@@ -12,6 +12,25 @@ const Financing = () => {
     { q: "Is there a minimum project size?", a: "Financing typically starts at $2,500. Ask us for details based on your project." },
   ];
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Financing",
+        "item": "https://myfence.com/financing"
+      }
+    ]
+  };
+
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -28,7 +47,7 @@ const Financing = () => {
         title="Fence Financing | MyFence.com Seattle"
         description="Flexible fence financing options for Seattle homeowners. Quick approvals and competitive rates."
         canonical="https://myfence.com/financing"
-        structuredData={faqLd}
+        structuredData={[breadcrumbData, faqLd]}
       />
       {/* Wisetack Financing Section */}
       <section>

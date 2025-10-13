@@ -58,13 +58,33 @@ const addOns = [
 
 const FenceStyles = () => {
   console.log('FenceStyles component rendered with', addOns.length, 'addOns');
+  
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fence Styles",
+        "item": "https://myfence.com/fence-styles"
+      }
+    ]
+  };
+
   return (
     <main>
       <Seo
         title="Seattle Fence Styles: Cedar, Horizontal, Hogwire | MyFence.com"
         description="Expert fence styles in Seattle, WA: picture frame cedar, horizontal, hogwire, craftsman designs. 30+ years experience. Call (253) 455-1885 for free estimates."
         canonical="https://myfence.com/fence-styles"
-        structuredData={{
+        structuredData={[breadcrumbData, {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Fence Installation Services",
@@ -87,7 +107,7 @@ const FenceStyles = () => {
               "name": "Washington"
             }
           }
-        }}
+        }]}
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Fence Styles for Every Seattle Home</h1>

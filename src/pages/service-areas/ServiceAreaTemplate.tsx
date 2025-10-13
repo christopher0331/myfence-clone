@@ -26,6 +26,33 @@ const ServiceAreaTemplate = ({
   localSolutions = [],
   climateDescription = ""
 }: ServiceAreaTemplateProps) => {
+  const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+  
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://myfence.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": city,
+        "item": `https://myfence.com/service-areas/${citySlug}`
+      }
+    ]
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -142,7 +169,7 @@ const ServiceAreaTemplate = ({
       <Seo 
         title={`Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
         description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
-        structuredData={structuredData}
+        structuredData={[breadcrumbData, structuredData]}
       />
       
       <div className="min-h-screen">

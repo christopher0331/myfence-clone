@@ -8,6 +8,13 @@ interface SeoProps {
 }
 
 const Seo = ({ title, description, canonical, structuredData }: SeoProps) => {
+  // Handle both single structured data object and arrays
+  const structuredDataArray = structuredData 
+    ? Array.isArray(structuredData) 
+      ? structuredData 
+      : [structuredData]
+    : [];
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -15,11 +22,11 @@ const Seo = ({ title, description, canonical, structuredData }: SeoProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {canonical && <link rel="canonical" href={canonical} />}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+      {structuredDataArray.map((data, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(data)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };

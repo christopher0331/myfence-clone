@@ -59,6 +59,25 @@ const Contact = () => {
     }
   };
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://myfence.com/contact"
+      }
+    ]
+  };
+
   const orgLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -81,7 +100,7 @@ const Contact = () => {
         title="Contact MyFence.com | Seattle Fence Contractor"
         description="Request a quote or ask a question. Call (253) 455-1885 or message MyFence.com — Seattle's father & son fence pros."
         canonical="https://myfence.com/contact"
-        structuredData={orgLd}
+        structuredData={[breadcrumbData, orgLd]}
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Us</h1>

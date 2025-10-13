@@ -3,13 +3,32 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
 const QuoteTool = () => {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Get a Quote",
+        "item": "https://myfence.com/quote"
+      }
+    ]
+  };
+
   return (
     <main>
       <Seo
         title="Free Seattle Fence Quote Tool | Instant Online Estimates 2024"
         description="Get instant fence quotes for Seattle properties. Real-time pricing for cedar, horizontal, hogwire fences. Powered by Fence Genius. Call (253) 455-1885."
         canonical="https://myfence.com/quote"
-        structuredData={{
+        structuredData={[breadcrumbData, {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           "name": "Seattle Fence Quote Tool",
@@ -26,7 +45,7 @@ const QuoteTool = () => {
             },
             "telephone": "+1-253-455-1885"
           }
-        }}
+        }]}
       />
       <section className="relative py-10">
         <div

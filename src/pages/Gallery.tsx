@@ -16,13 +16,32 @@ const images = [
 ];
 
 const Gallery = () => {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myfence.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gallery",
+        "item": "https://myfence.com/gallery"
+      }
+    ]
+  };
+
   return (
     <main>
       <Seo
         title="Seattle Fence Installation Gallery | MyFence.com Project Photos"
         description="View stunning fence installations across Seattle neighborhoods. Cedar, horizontal, hogwire, and custom designs. 30+ years craftsmanship. Call (253) 455-1885."
         canonical="https://myfence.com/gallery"
-        structuredData={{
+        structuredData={[breadcrumbData, {
           "@context": "https://schema.org",
           "@type": "ImageGallery",
           "name": "Seattle Fence Installation Gallery",
@@ -37,7 +56,7 @@ const Gallery = () => {
             },
             "telephone": "+1-253-455-1885"
           }
-        }}
+        }]}
       />
       <section className="container py-10">
         <h1 className="text-4xl font-bold tracking-tight mb-3">Project Gallery</h1>
