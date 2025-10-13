@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Phone, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 
@@ -9,9 +9,23 @@ interface ServiceAreaTemplateProps {
   city: string;
   state: string;
   zipCodes?: string[];
+  neighborhoods?: string[];
+  landmarks?: string[];
+  localChallenges?: string[];
+  localSolutions?: string[];
+  climateDescription?: string;
 }
 
-const ServiceAreaTemplate = ({ city, state, zipCodes = [] }: ServiceAreaTemplateProps) => {
+const ServiceAreaTemplate = ({ 
+  city, 
+  state, 
+  zipCodes = [], 
+  neighborhoods = [],
+  landmarks = [],
+  localChallenges = [],
+  localSolutions = [],
+  climateDescription = ""
+}: ServiceAreaTemplateProps) => {
   return (
     <>
       <Seo 
@@ -143,28 +157,119 @@ const ServiceAreaTemplate = ({ city, state, zipCodes = [] }: ServiceAreaTemplate
           </div>
         </section>
 
-        {/* Coverage Area */}
-        {zipCodes.length > 0 && (
-          <section className="py-16">
+        {/* Local Expertise Section */}
+        {climateDescription && (
+          <section className="py-16 bg-muted/30">
             <div className="container">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Areas We Serve in {city}
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  We proudly serve the following zip codes in {city}, {state}:
-                </p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {zipCodes.map((zip) => (
-                    <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
-                      {zip}
-                    </span>
-                  ))}
-                </div>
+              <div className="max-w-4xl mx-auto">
+                <Card className="p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Sun className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold mb-2">Local Climate Expertise</h2>
+                      <p className="text-muted-foreground">Understanding {city}'s unique conditions</p>
+                    </div>
+                  </div>
+                  <p className="text-lg mb-6">{climateDescription}</p>
+                  
+                  {localChallenges.length > 0 && (
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                        <AlertCircle className="h-5 w-5 text-primary" />
+                        Local Fencing Challenges:
+                      </h3>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {localChallenges.map((challenge, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                            <span className="text-muted-foreground">{challenge}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {localSolutions.length > 0 && (
+                    <div className="mt-8 pt-6 border-t">
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="p-3 bg-primary/10 rounded-lg">
+                          <CheckCircle className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold mb-2">Our Local Solutions</h3>
+                          <p className="text-muted-foreground">Tailored for {city} properties</p>
+                        </div>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {localSolutions.map((solution, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">{solution}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </Card>
               </div>
             </div>
           </section>
         )}
+
+        {/* Coverage Area with Neighborhoods */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+                Neighborhoods & Areas We Serve in {city}
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We're proud to provide expert fence installation and repair services throughout {city}, {state}
+              </p>
+              
+              {neighborhoods.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4 text-center">Popular Neighborhoods</h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {neighborhoods.map((neighborhood) => (
+                      <span key={neighborhood} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium">
+                        {neighborhood}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {landmarks.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {landmarks.map((landmark) => (
+                      <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
+                        {landmark}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {zipCodes.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {zipCodes.map((zip) => (
+                      <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
+                        {zip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
 
         {/* Quote Form */}
         <section className="py-16 bg-muted/30">
