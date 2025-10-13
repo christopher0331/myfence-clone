@@ -51,6 +51,16 @@ const GalvanizedHogwireFence = React.lazy(() => import("./pages/fence-styles/Gal
 const ThreeFtBlackHogwireFence = React.lazy(() => import("./pages/fence-styles/ThreeFtBlackHogwireFence"));
 const PicketFence = React.lazy(() => import("./pages/fence-styles/PicketFence"));
 
+// Lazy load service area pages
+const FederalWay = React.lazy(() => import("./pages/service-areas/FederalWay"));
+const Redmond = React.lazy(() => import("./pages/service-areas/Redmond"));
+const Sammamish = React.lazy(() => import("./pages/service-areas/Sammamish"));
+const Seattle = React.lazy(() => import("./pages/service-areas/Seattle"));
+const Kirkland = React.lazy(() => import("./pages/service-areas/Kirkland"));
+const Renton = React.lazy(() => import("./pages/service-areas/Renton"));
+const MountlakeTerrace = React.lazy(() => import("./pages/service-areas/MountlakeTerrace"));
+const MapleValley = React.lazy(() => import("./pages/service-areas/MapleValley"));
+
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -103,6 +113,14 @@ const AppContent = () => {
           <Route path="/fence-upgrades/exterior-screws" element={<ExteriorScrews />} />
           <Route path="/fence-upgrades/clear-cedar" element={<ClearCedar />} />
           <Route path="/fence-upgrades/board-on-board" element={<BoardOnBoard />} />
+          <Route path="/service-areas/federal-way" element={<FederalWay />} />
+          <Route path="/service-areas/redmond" element={<Redmond />} />
+          <Route path="/service-areas/sammamish" element={<Sammamish />} />
+          <Route path="/service-areas/seattle" element={<Seattle />} />
+          <Route path="/service-areas/kirkland" element={<Kirkland />} />
+          <Route path="/service-areas/renton" element={<Renton />} />
+          <Route path="/service-areas/mountlake-terrace" element={<MountlakeTerrace />} />
+          <Route path="/service-areas/maple-valley" element={<MapleValley />} />
           <Route path="/blog" element={<Blog />} />
               <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
               <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />

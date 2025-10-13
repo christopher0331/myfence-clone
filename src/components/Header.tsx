@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 const navItems = [
   { to: "/fence-styles", label: "Fence Styles" },
   { to: "/gallery", label: "Gallery" },
@@ -11,6 +18,17 @@ const navItems = [
   { to: "/financing", label: "Financing" },
   { to: "/blog", label: "FAQ" },
   { to: "/contact", label: "Contact us" },
+];
+
+const serviceAreas = [
+  { to: "/service-areas/federal-way", label: "Federal Way, WA" },
+  { to: "/service-areas/redmond", label: "Redmond, WA" },
+  { to: "/service-areas/sammamish", label: "Sammamish, WA" },
+  { to: "/service-areas/seattle", label: "Seattle, WA" },
+  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
+  { to: "/service-areas/renton", label: "Renton, WA" },
+  { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
+  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
 ];
 
 const Header = () => {
@@ -44,6 +62,21 @@ const Header = () => {
               {item.label}
             </NavLink>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
+              Service Areas
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background border z-50">
+              {serviceAreas.map((area) => (
+                <DropdownMenuItem key={area.to} asChild>
+                  <Link to={area.to} className="cursor-pointer">
+                    {area.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           <a href="tel:12534551885" aria-label="Call MyFence.com">
             <Button variant="hero" size="lg">(253) 455-1885</Button>
           </a>
@@ -77,6 +110,17 @@ const Header = () => {
               >
                 {item.label}
               </NavLink>
+            ))}
+            <div className="text-base font-medium text-foreground pt-2 border-t">Service Areas</div>
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.to}
+                to={area.to}
+                onClick={() => setOpen(false)}
+                className="text-base text-muted-foreground hover:text-primary transition-colors pl-4"
+              >
+                {area.label}
+              </Link>
             ))}
           </div>
         </div>
