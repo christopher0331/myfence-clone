@@ -21,14 +21,20 @@ const navItems = [
 ];
 
 const serviceAreas = [
-  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
-  { to: "/service-areas/seattle", label: "Seattle, WA" },
-  { to: "/service-areas/redmond", label: "Redmond, WA" },
-  { to: "/service-areas/sammamish", label: "Sammamish, WA" },
-  { to: "/service-areas/renton", label: "Renton, WA" },
-  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
-  { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
+  { to: "/service-areas/bellevue", label: "Bellevue, WA" },
+  { to: "/service-areas/covington", label: "Covington, WA" },
+  { to: "/service-areas/enumclaw", label: "Enumclaw, WA" },
   { to: "/service-areas/federal-way", label: "Federal Way, WA" },
+  { to: "/service-areas/gig-harbor", label: "Gig Harbor, WA" },
+  { to: "/service-areas/issaquah", label: "Issaquah, WA" },
+  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
+  { to: "/service-areas/lake-tapps", label: "Lake Tapps, WA" },
+  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
+  { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
+  { to: "/service-areas/redmond", label: "Redmond, WA" },
+  { to: "/service-areas/renton", label: "Renton, WA" },
+  { to: "/service-areas/sammamish", label: "Sammamish, WA" },
+  { to: "/service-areas/seattle", label: "Seattle, WA" },
 ];
 
 const Header = () => {
