@@ -61,6 +61,10 @@ const Renton = React.lazy(() => import("./pages/service-areas/Renton"));
 const MountlakeTerrace = React.lazy(() => import("./pages/service-areas/MountlakeTerrace"));
 const MapleValley = React.lazy(() => import("./pages/service-areas/MapleValley"));
 const Bellevue = React.lazy(() => import("./pages/service-areas/Bellevue"));
+const Covington = React.lazy(() => import("./pages/service-areas/Covington"));
+const Issaquah = React.lazy(() => import("./pages/service-areas/Issaquah"));
+const LakeTapps = React.lazy(() => import("./pages/service-areas/LakeTapps"));
+const GigHarbor = React.lazy(() => import("./pages/service-areas/GigHarbor"));
 
 // Loading component
 const PageLoader = () => (
@@ -123,6 +127,10 @@ const AppContent = () => {
           <Route path="/service-areas/mountlake-terrace" element={<MountlakeTerrace />} />
           <Route path="/service-areas/maple-valley" element={<MapleValley />} />
           <Route path="/service-areas/bellevue" element={<Bellevue />} />
+          <Route path="/service-areas/covington" element={<Covington />} />
+          <Route path="/service-areas/issaquah" element={<Issaquah />} />
+          <Route path="/service-areas/lake-tapps" element={<LakeTapps />} />
+          <Route path="/service-areas/gig-harbor" element={<GigHarbor />} />
           <Route path="/blog" element={<Blog />} />
               <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
               <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />

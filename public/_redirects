@@ -13,12 +13,12 @@
 /wood-fence-wa* /fence-styles 301
 /wood-fence-installation* /fence-styles 301
 /myfence-review* /contact 301
-/covington-fence-contractor-98042* / 301
-/fence-covington-wa-98042* / 301
-/issaquah-fence-contractor-98027* / 301
-/lake-tapps-fence-contractor-98391* / 301
-/gig-harbor-best-fence-company* / 301
-/custom-software* / 301
+/covington-fence-contractor-98042* /service-areas/covington 301
+/fence-covington-wa-98042* /service-areas/covington 301
+/issaquah-fence-contractor-98027* /service-areas/issaquah 301
+/lake-tapps-fence-contractor-98391* /service-areas/lake-tapps 301
+/gig-harbor-best-fence-company* /service-areas/gig-harbor 301
+/custom-software* /quote 301
 /fencestructure* / 301
 
 # City-specific redirects - Seattle
@@ -91,6 +91,37 @@
 /mountlake-terrace-fence* /service-areas/mountlake-terrace 301
 /*mountlake-terrace-fence* /service-areas/mountlake-terrace 301
 /*mountlake-terrace* /service-areas/mountlake-terrace 301
+
+# City-specific redirects - Covington
+/fence-installation-covington* /service-areas/covington 301
+/fence-repair-covington* /service-areas/covington 301
+/fence-company-covington* /service-areas/covington 301
+/covington-fence* /service-areas/covington 301
+/*covington-fence* /service-areas/covington 301
+/*covington* /service-areas/covington 301
+
+# City-specific redirects - Issaquah
+/fence-installation-issaquah* /service-areas/issaquah 301
+/fence-repair-issaquah* /service-areas/issaquah 301
+/fence-company-issaquah* /service-areas/issaquah 301
+/issaquah-fence* /service-areas/issaquah 301
+/*issaquah-fence* /service-areas/issaquah 301
+/*issaquah* /service-areas/issaquah 301
+
+# City-specific redirects - Lake Tapps
+/fence-installation-lake-tapps* /service-areas/lake-tapps 301
+/fence-repair-lake-tapps* /service-areas/lake-tapps 301
+/fence-company-lake-tapps* /service-areas/lake-tapps 301
+/lake-tapps-fence* /service-areas/lake-tapps 301
+/*lake-tapps-fence* /service-areas/lake-tapps 301
+
+# City-specific redirects - Gig Harbor
+/fence-installation-gig-harbor* /service-areas/gig-harbor 301
+/fence-repair-gig-harbor* /service-areas/gig-harbor 301
+/fence-company-gig-harbor* /service-areas/gig-harbor 301
+/gig-harbor-fence* /service-areas/gig-harbor 301
+/*gig-harbor-fence* /service-areas/gig-harbor 301
+/*gig-harbor* /service-areas/gig-harbor 301
 
 # General page redirects
 /about-us* /contact 301
