@@ -1,23 +1,32 @@
 # Specific high-traffic URL redirects
 /maple-valley-fence-contractor-98038* /service-areas/maple-valley 301
 /maple-valley-home-fencing* /service-areas/maple-valley 301
+/maple-valley-best-fence-company* /service-areas/maple-valley 301
 /federal-way-fence-contractor-98023* /service-areas/federal-way 301
 /seattle-fence-contractor-98115* /service-areas/seattle 301
+/seattle-wood-fence-installation* /service-areas/seattle 301
 /fence-projects-seattle-wa* /gallery 301
+/pastfenceprojects-services-seattle-wa* /gallery 301
 /seattle-local-fence-companies* /service-areas/seattle 301
 /about-seattle-fence* /service-areas/seattle 301
 /fence-gates-seattle-wa* /fence-styles 301
 /bellevue-fence-company-near-me* /service-areas/bellevue 301
+/bellevue-wood-fence-contractors* /service-areas/bellevue 301
 /horizontal-fences-myfence* /fence-styles/horizontal-fence 301
 /wood-fence-and-gate-styles-wa* /fence-styles 301
 /wood-fence-wa* /fence-styles 301
 /wood-fence-installation* /fence-styles 301
 /myfence-review* /contact 301
+/redmond-wood-fence-contractors* /service-areas/redmond 301
+/kirkland-wood-fence-company-near-me* /service-areas/kirkland 301
+/sammamish-fence-contractor /service-areas/sammamish 301
+/enumclaw-wood-fence-contractors* /service-areas/enumclaw 301
 /covington-fence-contractor-98042* /service-areas/covington 301
 /fence-covington-wa-98042* /service-areas/covington 301
 /issaquah-fence-contractor-98027* /service-areas/issaquah 301
 /lake-tapps-fence-contractor-98391* /service-areas/lake-tapps 301
 /gig-harbor-best-fence-company* /service-areas/gig-harbor 301
+/fencebuildprocess* /quote 301
 /custom-software* /quote 301
 /fencestructure* / 301
 
@@ -122,6 +131,14 @@
 /gig-harbor-fence* /service-areas/gig-harbor 301
 /*gig-harbor-fence* /service-areas/gig-harbor 301
 /*gig-harbor* /service-areas/gig-harbor 301
+
+# City-specific redirects - Enumclaw
+/fence-installation-enumclaw* /service-areas/enumclaw 301
+/fence-repair-enumclaw* /service-areas/enumclaw 301
+/fence-company-enumclaw* /service-areas/enumclaw 301
+/enumclaw-fence* /service-areas/enumclaw 301
+/*enumclaw-fence* /service-areas/enumclaw 301
+/*enumclaw* /service-areas/enumclaw 301
 
 # General page redirects
 /about-us* /contact 301
