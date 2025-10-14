@@ -1,3 +1,26 @@
+# Specific high-traffic URL redirects
+/maple-valley-fence-contractor-98038* /service-areas/maple-valley 301
+/maple-valley-home-fencing* /service-areas/maple-valley 301
+/federal-way-fence-contractor-98023* /service-areas/federal-way 301
+/seattle-fence-contractor-98115* /service-areas/seattle 301
+/fence-projects-seattle-wa* /gallery 301
+/seattle-local-fence-companies* /service-areas/seattle 301
+/about-seattle-fence* /service-areas/seattle 301
+/fence-gates-seattle-wa* /fence-styles 301
+/bellevue-fence-company-near-me* /service-areas/bellevue 301
+/horizontal-fences-myfence* /fence-styles/horizontal-fence 301
+/wood-fence-and-gate-styles-wa* /fence-styles 301
+/wood-fence-wa* /fence-styles 301
+/wood-fence-installation* /fence-styles 301
+/myfence-review* /contact 301
+/covington-fence-contractor-98042* / 301
+/fence-covington-wa-98042* / 301
+/issaquah-fence-contractor-98027* / 301
+/lake-tapps-fence-contractor-98391* / 301
+/gig-harbor-best-fence-company* / 301
+/custom-software* / 301
+/fencestructure* / 301
+
 # City-specific redirects - Seattle
 /fence-installation-seattle* /service-areas/seattle 301
 /fence-repair-seattle* /service-areas/seattle 301
