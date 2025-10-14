@@ -1,5 +1,74 @@
-/fence-installation-maple-valley-wa/ /service-areas/maple-valley 301
-/fence-installation-seattle-wa/ /service-areas/seattle 301
-/bellevue-fence-company-near-me/ /service-areas/bellevue 301
-/about-us/ /contact 301
-/book-online-fence-seattle/ /quote 301
+# City-specific redirects - Seattle
+/fence-installation-seattle* /service-areas/seattle 301
+/fence-repair-seattle* /service-areas/seattle 301
+/fence-company-seattle* /service-areas/seattle 301
+/seattle-fence* /service-areas/seattle 301
+/*seattle-fence* /service-areas/seattle 301
+/*seattle* /service-areas/seattle 301
+
+# City-specific redirects - Bellevue
+/fence-installation-bellevue* /service-areas/bellevue 301
+/fence-repair-bellevue* /service-areas/bellevue 301
+/fence-company-bellevue* /service-areas/bellevue 301
+/bellevue-fence* /service-areas/bellevue 301
+/*bellevue-fence* /service-areas/bellevue 301
+/*bellevue* /service-areas/bellevue 301
+
+# City-specific redirects - Kirkland
+/fence-installation-kirkland* /service-areas/kirkland 301
+/fence-repair-kirkland* /service-areas/kirkland 301
+/fence-company-kirkland* /service-areas/kirkland 301
+/kirkland-fence* /service-areas/kirkland 301
+/*kirkland-fence* /service-areas/kirkland 301
+/*kirkland* /service-areas/kirkland 301
+
+# City-specific redirects - Redmond
+/fence-installation-redmond* /service-areas/redmond 301
+/fence-repair-redmond* /service-areas/redmond 301
+/fence-company-redmond* /service-areas/redmond 301
+/redmond-fence* /service-areas/redmond 301
+/*redmond-fence* /service-areas/redmond 301
+/*redmond* /service-areas/redmond 301
+
+# City-specific redirects - Renton
+/fence-installation-renton* /service-areas/renton 301
+/fence-repair-renton* /service-areas/renton 301
+/fence-company-renton* /service-areas/renton 301
+/renton-fence* /service-areas/renton 301
+/*renton-fence* /service-areas/renton 301
+/*renton* /service-areas/renton 301
+
+# City-specific redirects - Sammamish
+/fence-installation-sammamish* /service-areas/sammamish 301
+/fence-repair-sammamish* /service-areas/sammamish 301
+/fence-company-sammamish* /service-areas/sammamish 301
+/sammamish-fence* /service-areas/sammamish 301
+/*sammamish-fence* /service-areas/sammamish 301
+/*sammamish* /service-areas/sammamish 301
+
+# City-specific redirects - Maple Valley
+/fence-installation-maple-valley* /service-areas/maple-valley 301
+/fence-repair-maple-valley* /service-areas/maple-valley 301
+/fence-company-maple-valley* /service-areas/maple-valley 301
+/maple-valley-fence* /service-areas/maple-valley 301
+/*maple-valley-fence* /service-areas/maple-valley 301
+
+# City-specific redirects - Federal Way
+/fence-installation-federal-way* /service-areas/federal-way 301
+/fence-repair-federal-way* /service-areas/federal-way 301
+/fence-company-federal-way* /service-areas/federal-way 301
+/federal-way-fence* /service-areas/federal-way 301
+/*federal-way-fence* /service-areas/federal-way 301
+/*federal-way* /service-areas/federal-way 301
+
+# City-specific redirects - Mountlake Terrace
+/fence-installation-mountlake-terrace* /service-areas/mountlake-terrace 301
+/fence-repair-mountlake-terrace* /service-areas/mountlake-terrace 301
+/fence-company-mountlake-terrace* /service-areas/mountlake-terrace 301
+/mountlake-terrace-fence* /service-areas/mountlake-terrace 301
+/*mountlake-terrace-fence* /service-areas/mountlake-terrace 301
+/*mountlake-terrace* /service-areas/mountlake-terrace 301
+
+# General page redirects
+/about-us* /contact 301
+/book-online* /quote 301
