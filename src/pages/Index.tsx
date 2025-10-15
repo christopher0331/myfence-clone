@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
+import BlogSection from "@/components/BlogSection";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -494,6 +495,8 @@ const Index = () => {
           </CardContent>
         </Card>
       </section>
+
+      <BlogSection />
 
       <FaqSection />
 
