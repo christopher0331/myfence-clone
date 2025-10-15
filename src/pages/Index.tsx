@@ -166,13 +166,140 @@ const Index = () => {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does fence installation cost in Seattle?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Fence installation costs vary based on materials, height, and length. Cedar wood fences typically range from $30-45 per linear foot installed. We offer free quotes with transparent pricing and financing options through Wisetack."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What types of fences do you install?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We install cedar wood fences (solid board, board-on-board, horizontal), vinyl fences, aluminum fences, chain link fences, hogwire fences, and picket fences. Each style comes with various customization options."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does fence installation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most residential fence installations take 2-5 days depending on the length and complexity. We'll provide a specific timeline during your free consultation based on your project details."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do I need a permit for fence installation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Permit requirements vary by city and county in the Seattle area. We handle all permit applications and ensure your fence meets local building codes and HOA requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What is your warranty policy?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer a 5-year craftsmanship warranty on all installations. This covers any defects in workmanship, structural issues, and improper installation. Material warranties vary by manufacturer."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can you match my existing fence?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We can match existing fence styles, heights, and materials. We'll assess your current fence and recommend the best approach for a seamless addition or replacement."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer fence repair services?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we provide comprehensive fence repair services including post replacement, panel repairs, gate repairs, and staining/sealing services to extend your fence's lifespan."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What areas do you serve?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We serve Seattle, Bellevue, Redmond, Kirkland, Issaquah, Sammamish, Renton, Federal Way, Maple Valley, Covington, Enumclaw, Lake Tapps, Gig Harbor, and Mountlake Terrace."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What makes cedar the best fence material?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Cedar is naturally rot-resistant, insect-resistant, and durable in Pacific Northwest weather. It requires minimal maintenance, ages beautifully, and is environmentally sustainable."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How should I maintain my cedar fence?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Clean your cedar fence annually with mild soap and water. Apply stain or sealant every 2-3 years to protect against moisture. We offer professional cleaning and staining services."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer financing options?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We partner with Wisetack to offer flexible financing with instant approval, competitive rates, and no prepayment penalties. Apply online in minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What payment methods do you accept?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We accept cash, checks, credit cards, and offer financing through Wisetack. Payment terms are typically 50% deposit and 50% upon completion."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you have any current discounts?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer various discounts including military, senior, and multi-service discounts. Check our Discounts page or ask during your consultation for current promotions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Are you licensed and insured?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, MyFence is fully licensed, bonded, and insured in Washington State. We carry general liability and workers' compensation insurance for your protection."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can I get a quote without a site visit?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Use our Virtual Quote Tool to get an instant estimate based on satellite imagery of your property. For final pricing, we recommend a free in-person consultation."
+        }
+      }
+    ]
+  };
+
   return (
     <main>
       <Seo
         title="Seattle Fence Contractor | MyFence.com"
         description="Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885."
         canonical="https://myfence.com/"
-        structuredData={orgLd}
+        structuredData={[orgLd, faqSchema]}
       />
 
       <section
