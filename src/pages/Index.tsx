@@ -112,10 +112,30 @@ const Index = () => {
     telephone: "+1-253-455-1885",
     priceRange: "$$",
     address: { 
-      "@type": "PostalAddress", 
-      addressLocality: "Seattle", 
-      addressRegion: "WA", 
+      "@type": "PostalAddress",
+      streetAddress: "22927 257th Ave SE",
+      addressLocality: "Maple Valley", 
+      addressRegion: "WA",
+      postalCode: "98038",
       addressCountry: "US" 
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 47.3893811,
+      longitude: -122.0461921
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59"
+      }
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "150"
     },
     areaServed: [
       { "@type": "City", "name": "Seattle, WA" },
