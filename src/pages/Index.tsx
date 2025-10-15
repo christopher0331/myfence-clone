@@ -107,9 +107,41 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "MyFence.com",
+    image: "https://myfence.com/lovable-uploads/850adb64-a0e3-437e-a783-9c2df4f87989.png",
     url: "https://myfence.com",
     telephone: "+1-253-455-1885",
-    address: { "@type": "PostalAddress", addressLocality: "Seattle", addressRegion: "WA", addressCountry: "US" },
+    priceRange: "$$",
+    address: { 
+      "@type": "PostalAddress", 
+      addressLocality: "Seattle", 
+      addressRegion: "WA", 
+      addressCountry: "US" 
+    },
+    areaServed: [
+      { "@type": "City", "name": "Seattle, WA" },
+      { "@type": "City", "name": "Bellevue, WA" },
+      { "@type": "City", "name": "Covington, WA" },
+      { "@type": "City", "name": "Enumclaw, WA" },
+      { "@type": "City", "name": "Federal Way, WA" },
+      { "@type": "City", "name": "Gig Harbor, WA" },
+      { "@type": "City", "name": "Issaquah, WA" },
+      { "@type": "City", "name": "Kirkland, WA" },
+      { "@type": "City", "name": "Lake Tapps, WA" },
+      { "@type": "City", "name": "Maple Valley, WA" },
+      { "@type": "City", "name": "Mountlake Terrace, WA" },
+      { "@type": "City", "name": "Redmond, WA" },
+      { "@type": "City", "name": "Renton, WA" },
+      { "@type": "City", "name": "Sammamish, WA" }
+    ],
+    sameAs: [
+      "https://www.facebook.com/myfence.com.official",
+      "https://www.instagram.com/myfence.com.official/",
+      "https://twitter.com/MyFenceDotCom",
+      "https://www.youtube.com/@fencegenius",
+      "https://www.linkedin.com/company/myfence-com/",
+      "https://www.pinterest.com/MyFenceDotCom/",
+      "https://www.tiktok.com/@myfence.com"
+    ]
   };
 
   return (
