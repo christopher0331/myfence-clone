@@ -1,0 +1,213 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { HelpCircle, Hammer, DollarSign, Paintbrush, Shield, Wrench } from "lucide-react";
+
+const faqCategories = [
+  {
+    id: "installation",
+    title: "Installation Process",
+    icon: Hammer,
+    faqs: [
+      {
+        question: "How long does a typical fence installation take?",
+        answer: "Most residential fence projects take 1-3 days depending on size and complexity. Our Fence Genius technology allows us to manufacture panels off-site, reducing installation time by 30-50% compared to traditional methods. We'll provide an exact timeline during your on-site consultation."
+      },
+      {
+        question: "Do I need to be home during installation?",
+        answer: "While it's not required, we recommend being available for the initial walkthrough and final inspection. Our team will communicate daily progress and can work independently once the project scope is confirmed. We'll always notify you before accessing your property."
+      },
+      {
+        question: "What preparations should I make before installation?",
+        answer: "Clear the fence line of any obstacles, toys, or outdoor furniture. Mark any underground utilities (we can arrange for locates). Ensure our team has access to the work area and a power outlet within 100 feet. We'll handle the rest, including post-installation cleanup."
+      },
+      {
+        question: "Do you install fences year-round?",
+        answer: "Yes! We install fences throughout the year in the Seattle area. Our Fence Genius manufacturing process allows us to build panels indoors regardless of weather. While we prefer dry conditions for installation, we can work in light rain and adjust schedules for severe weather."
+      },
+      {
+        question: "How do you handle slopes and uneven terrain?",
+        answer: "This is where Fence Genius technology shines. Our software calculates exact measurements for slope-following panels, and our manufacturing system cuts each piece to match your property's contours perfectly. This ensures no gaps at the bottom and a professional appearance on any terrain."
+      }
+    ]
+  },
+  {
+    id: "pricing",
+    title: "Pricing & Quotes",
+    icon: DollarSign,
+    faqs: [
+      {
+        question: "How much does a wood fence cost in Seattle?",
+        answer: "Wood fence pricing typically ranges from $35-65 per linear foot depending on style, height, and materials. A standard 6-foot cedar fence averages $45-55 per foot installed. Use our Virtual Quote Tool for an instant estimate, then we'll provide a final quote using Fence Genius measurements."
+      },
+      {
+        question: "Is the Virtual Quote Tool estimate accurate?",
+        answer: "Our Virtual Quote Tool provides estimates within 10-15% of the final price for most projects. The final quote uses Fence Genius technology to account for exact measurements, slope variations, and site-specific factors. There are no surprise charges—you'll know the final price before we start."
+      },
+      {
+        question: "Do you offer financing options?",
+        answer: "Yes! We partner with Wisetack to offer flexible financing with rates as low as 0% APR for qualified customers. Apply online in minutes with no impact to your credit score until you're approved. We also offer seasonal discounts—check our Discounts page for current promotions."
+      },
+      {
+        question: "What's included in your pricing?",
+        answer: "Our quotes include all materials, labor, permits, waste removal, and our 5-year craftsmanship warranty. We use pressure-treated 4x4 posts set in concrete, galvanized hardware, and premium cedar or wood materials. Optional upgrades like clear cedar, board-on-board, or exterior screws are priced separately."
+      },
+      {
+        question: "Do you charge for estimates?",
+        answer: "No, all quotes are completely free with no obligation. Use our Virtual Quote Tool for an instant online estimate, or schedule an on-site consultation where we'll use Fence Genius technology to provide an exact quote. We never charge for estimates or consultations."
+      }
+    ]
+  },
+  {
+    id: "materials",
+    title: "Materials & Styles",
+    icon: Paintbrush,
+    faqs: [
+      {
+        question: "What fence styles do you offer?",
+        answer: "We specialize in cedar wood fences including Picture Frame, 3-Rail Picture Frame, Horizontal Lattice, Solid Board, Craftsman Style, Horizontal, and Picket fences. We also offer hogwire panels with black or galvanized frames. Each style can be customized with various heights and upgrade options."
+      },
+      {
+        question: "What's the difference between standard and clear cedar?",
+        answer: "Standard cedar has natural knots and color variations—it's durable and cost-effective. Clear cedar is premium grade with minimal knots, uniform color, and smoother grain. Clear cedar costs about 20-30% more but offers a refined appearance. Both are rot-resistant and perfect for the Pacific Northwest."
+      },
+      {
+        question: "Should I choose board-on-board or solid board?",
+        answer: "Board-on-board provides complete privacy with overlapping pickets, allowing slight airflow and natural wood movement—ideal for windy areas. Solid board (tongue-and-groove style) creates a more uniform appearance with tighter privacy. Both are excellent choices; we recommend board-on-board for Seattle's climate."
+      },
+      {
+        question: "Can I mix fence styles on my property?",
+        answer: "Absolutely! Many customers combine styles—for example, solid board for privacy in the backyard and picket or horizontal lattice in the front for curb appeal. We can design a cohesive look using consistent colors, post styles, and heights while varying the panel designs."
+      },
+      {
+        question: "Do you install metal or vinyl fences?",
+        answer: "We specialize in wood fencing and offer metal hogwire accents, but we don't install all-metal or vinyl fencing. Our expertise is in premium wood construction using Fence Genius technology. If you're interested in metal or vinyl, we can refer you to trusted partners in the Seattle area."
+      }
+    ]
+  },
+  {
+    id: "maintenance",
+    title: "Maintenance & Care",
+    icon: Wrench,
+    faqs: [
+      {
+        question: "How often should I stain or seal my fence?",
+        answer: "In the Seattle area's wet climate, we recommend staining or sealing your fence every 2-3 years. New cedar should be allowed to weather for 6-12 months before the first application. We offer professional staining services and can recommend products specifically formulated for the Pacific Northwest."
+      },
+      {
+        question: "What maintenance does a cedar fence require?",
+        answer: "Cedar is naturally rot-resistant and low-maintenance. Annual tasks include removing debris from the base, checking for loose boards or hardware, and hosing down to remove dirt or mildew. Every 2-3 years, clean, sand lightly if needed, and apply stain or sealant to maintain appearance and longevity."
+      },
+      {
+        question: "Will my fence turn gray over time?",
+        answer: "Yes, untreated cedar naturally weathers to a silver-gray color due to UV exposure—this doesn't harm the wood. Many homeowners embrace this natural look. To maintain the original warm tones, apply a UV-blocking stain or sealant every 2-3 years. We offer pre-staining services during installation."
+      },
+      {
+        question: "How do I prevent moss and mildew?",
+        answer: "Regular cleaning and proper staining help prevent moss and mildew. In shaded areas, trim back vegetation for airflow and sunlight. Use a fence cleaner with mildewcide before staining. Our Fence Genius panels are built with proper spacing for drainage, reducing moisture buildup."
+      },
+      {
+        question: "What should I do if a board gets damaged?",
+        answer: "Individual boards can be replaced without rebuilding the entire fence. Contact us for board replacement—our Fence Genius system maintains exact specifications, so replacement pieces match perfectly. For warranty-covered issues within 5 years, we'll repair or replace at no charge."
+      }
+    ]
+  },
+  {
+    id: "warranty",
+    title: "Warranties & Guarantees",
+    icon: Shield,
+    faqs: [
+      {
+        question: "What does your 5-year warranty cover?",
+        answer: "Our industry-leading 5-year craftsmanship warranty covers workmanship defects, structural issues, hardware failures, and post stability. This includes sagging panels, loose boards, failing connections, or posts shifting. Normal wear from weather and lack of maintenance are not covered. Full warranty details are provided with every contract."
+      },
+      {
+        question: "Are materials covered under warranty?",
+        answer: "Yes, material defects are covered under our warranty. This includes warped lumber, defective hardware, or manufacturing issues with panels. Cedar's natural characteristics like knots, grain patterns, or color variations are not defects. We use premium materials to minimize warranty claims."
+      },
+      {
+        question: "What happens if I have an issue after installation?",
+        answer: "Contact us immediately! We respond to warranty claims within 48 hours. If covered, we'll repair or replace at no charge. Even outside warranty, we offer discounted repair services for our customers. Our Fence Genius system allows precise replacements that match your original installation perfectly."
+      },
+      {
+        question: "Does the warranty transfer to new homeowners?",
+        answer: "Yes! Our 5-year warranty is transferable to new property owners if you sell your home. This adds value to your property and gives buyers confidence. Notify us of the ownership change, and we'll update our records. All original warranty terms remain in effect for the full 5-year period."
+      },
+      {
+        question: "How is your warranty different from competitors?",
+        answer: "Most fence contractors offer only 1-2 year warranties. Our 5-year warranty reflects confidence in Fence Genius technology—precision manufacturing reduces errors that cause premature failures. We're the only contractor in Seattle using this patented system, which is why we can stand behind our work longer."
+      }
+    ]
+  }
+];
+
+export const FaqSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState("installation");
+  
+  const activeCategory = faqCategories.find(cat => cat.id === selectedCategory) || faqCategories[0];
+
+  return (
+    <section className="container py-12 md:py-16">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold">Frequently Asked Questions</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+          Get answers to common questions about fence installation, pricing, and maintenance in Seattle.
+        </p>
+      </div>
+
+      <div className="grid lg:grid-cols-[240px_1fr] gap-6">
+        {/* Sidebar Navigation */}
+        <Card className="h-fit">
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 mb-4 pb-3 border-b">
+              <HelpCircle className="h-5 w-5 text-primary" />
+              <span className="font-semibold">Categories</span>
+            </div>
+            <nav className="space-y-1">
+              {faqCategories.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-left transition-colors ${
+                      selectedCategory === category.id
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-muted text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-4 w-4 flex-shrink-0" />
+                    <span className="text-sm font-medium">{category.title}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </CardContent>
+        </Card>
+
+        {/* FAQ Content */}
+        <Card>
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <activeCategory.icon className="h-6 w-6 text-primary" />
+              <h3 className="text-xl font-semibold">{activeCategory.title}</h3>
+            </div>
+            
+            <Accordion type="single" collapsible className="w-full">
+              {activeCategory.faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+};
