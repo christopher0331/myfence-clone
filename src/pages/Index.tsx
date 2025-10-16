@@ -15,6 +15,7 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
 import BlogSection from "@/components/BlogSection";
+import reviewsData from "@/data/reviews.json";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -139,78 +140,20 @@ const Index = () => {
       ratingValue: "5.0",
       reviewCount: "150"
     },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Sarah Johnson"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        datePublished: "2024-12-15",
-        reviewBody: "Outstanding work! The team was professional, on time, and the fence looks incredible. They used Fence Genius technology and you can really see the difference in quality. Highly recommend!"
+    review: reviewsData.map(review => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.author
       },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Michael Chen"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        datePublished: "2024-11-28",
-        reviewBody: "Best fence company in Seattle! Eric and Andrew were great to work with. Transparent pricing, quality materials, and excellent craftsmanship. The cedar fence has transformed our backyard."
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.rating.toString(),
+        bestRating: "5"
       },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Jennifer Martinez"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        datePublished: "2024-11-10",
-        reviewBody: "We got a horizontal cedar fence and it's stunning. The installation was quick and clean. Love that they're a local family business with modern technology. Worth every penny!"
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "David Thompson"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        datePublished: "2024-10-22",
-        reviewBody: "MyFence exceeded our expectations. From quote to completion, everything was smooth. The virtual quote tool was surprisingly accurate and the final fence is beautiful. 5-year warranty gives us peace of mind."
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Lisa Anderson"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        datePublished: "2024-10-05",
-        reviewBody: "Fantastic experience from start to finish. The crew was respectful of our property, completed the job ahead of schedule, and the craftsmanship is top-notch. The board-on-board fence is exactly what we wanted."
-      }
-    ],
+      datePublished: review.datePublished,
+      reviewBody: review.reviewBody
+    })),
     areaServed: [
       { "@type": "City", "name": "Seattle, WA" },
       { "@type": "City", "name": "Bellevue, WA" },
