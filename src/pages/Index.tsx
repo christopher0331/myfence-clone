@@ -63,17 +63,25 @@ const Index = () => {
     
     // After widget loads, scrape and sync reviews
     s.onload = () => {
+      console.log('Trustindex script loaded, waiting for widget to render...');
       setTimeout(async () => {
         try {
+          console.log('Attempting to scrape reviews from widget...');
+          console.log('Widget container HTML:', reviewsRef.current?.innerHTML.substring(0, 500));
+          
           const scrapedReviews = scrapeReviewsFromWidget();
+          console.log(`Scraping result: found ${scrapedReviews.length} reviews`);
+          
           if (scrapedReviews.length > 0) {
-            console.log(`Scraped ${scrapedReviews.length} reviews from Trustindex`);
+            console.log('Sample review:', scrapedReviews[0]);
             await syncReviewsToDatabase(scrapedReviews);
+          } else {
+            console.warn('No reviews found in widget - check DOM structure');
           }
         } catch (error) {
           console.error('Error scraping reviews:', error);
         }
-      }, 2000); // Wait for widget to fully render
+      }, 3000); // Increased wait time
     };
     
     reviewsRef.current.appendChild(s);
@@ -88,21 +96,46 @@ const Index = () => {
     const scrapedReviews: any[] = [];
     
     try {
-      // This is a placeholder - actual selectors depend on Trustindex HTML structure
-      const reviewElements = document.querySelectorAll('[data-trustindex-review]');
+      // Log all potential review containers to debug
+      const allDivs = document.querySelectorAll('div[class*="review"], div[class*="item"]');
+      console.log(`Found ${allDivs.length} potential review elements`);
       
-      reviewElements.forEach((element) => {
-        const authorElement = element.querySelector('.ti-name, [class*="author"], [class*="name"]');
-        const ratingElement = element.querySelector('[class*="rating"], [class*="star"]');
-        const textElement = element.querySelector('.ti-review-text, [class*="review-text"], [class*="comment"]');
-        const dateElement = element.querySelector('.ti-date, [class*="date"]');
+      // Try multiple selector strategies
+      let reviewElements = document.querySelectorAll('[data-trustindex-review]');
+      if (reviewElements.length === 0) {
+        reviewElements = document.querySelectorAll('.ti-review-item, .trustindex-review, [class*="review-item"]');
+      }
+      if (reviewElements.length === 0) {
+        reviewElements = document.querySelectorAll('div[itemprop="review"]');
+      }
+      
+      console.log(`Found ${reviewElements.length} review elements with selectors`);
+      
+      reviewElements.forEach((element, index) => {
+        console.log(`Processing review ${index + 1}:`, element.className);
         
-        if (authorElement && ratingElement && textElement) {
+        const authorElement = element.querySelector('.ti-name, [class*="author"], [class*="name"], [itemprop="author"]');
+        const ratingElement = element.querySelector('[class*="rating"], [class*="star"], [itemprop="ratingValue"]');
+        const textElement = element.querySelector('.ti-review-text, [class*="review-text"], [class*="comment"], [itemprop="reviewBody"]');
+        const dateElement = element.querySelector('.ti-date, [class*="date"], [itemprop="datePublished"]');
+        
+        console.log('Elements found:', {
+          author: !!authorElement,
+          rating: !!ratingElement,
+          text: !!textElement,
+          date: !!dateElement
+        });
+        
+        if (authorElement && textElement) {
           const author = authorElement.textContent?.trim() || '';
-          const ratingText = ratingElement.getAttribute('data-rating') || ratingElement.textContent || '';
+          const ratingText = ratingElement?.getAttribute('data-rating') || 
+                            ratingElement?.getAttribute('content') ||
+                            ratingElement?.textContent || '';
           const rating = parseInt(ratingText.replace(/[^0-9]/g, '')) || 5;
           const text = textElement.textContent?.trim() || '';
-          const dateText = dateElement?.textContent?.trim() || new Date().toISOString().split('T')[0];
+          const dateText = dateElement?.getAttribute('content') || 
+                          dateElement?.textContent?.trim() || 
+                          new Date().toISOString().split('T')[0];
           
           if (author && text) {
             scrapedReviews.push({
@@ -119,6 +152,7 @@ const Index = () => {
       console.error('Error scraping reviews:', error);
     }
     
+    console.log(`Total scraped reviews: ${scrapedReviews.length}`);
     return scrapedReviews;
   };
 
