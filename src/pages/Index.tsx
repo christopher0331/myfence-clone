@@ -96,35 +96,45 @@ const Index = () => {
     const scrapedReviews: any[] = [];
     
     try {
-      // Log all potential review containers to debug
-      const allDivs = document.querySelectorAll('div[class*="review"], div[class*="item"]');
-      console.log(`Found ${allDivs.length} potential review elements`);
+      // Search entire document since Trustindex may render outside our container
+      console.log('Searching entire document for Trustindex reviews...');
       
-      // Try multiple selector strategies
-      let reviewElements = document.querySelectorAll('[data-trustindex-review]');
+      // Log sample of page HTML to debug
+      const trustindexContainers = document.querySelectorAll('[class*="trustindex"], [id*="trustindex"]');
+      console.log(`Found ${trustindexContainers.length} trustindex containers`);
+      trustindexContainers.forEach((container, i) => {
+        console.log(`Container ${i}:`, container.className || container.id, container.innerHTML.substring(0, 200));
+      });
+      
+      // Try to find review elements anywhere on the page
+      let reviewElements = document.querySelectorAll('[data-trustindex-review], .ti-review-item, .trustindex-review-item');
+      
       if (reviewElements.length === 0) {
-        reviewElements = document.querySelectorAll('.ti-review-item, .trustindex-review, [class*="review-item"]');
-      }
-      if (reviewElements.length === 0) {
-        reviewElements = document.querySelectorAll('div[itemprop="review"]');
+        // Try broader selectors
+        reviewElements = document.querySelectorAll('div[itemtype*="Review"], [itemprop="review"]');
       }
       
-      console.log(`Found ${reviewElements.length} review elements with selectors`);
+      if (reviewElements.length === 0) {
+        // Try finding by Trustindex widget structure
+        const widget = document.querySelector('[data-widget-id], .ti-widget, #ti-widget-content');
+        if (widget) {
+          console.log('Found widget:', widget.className || widget.id);
+          reviewElements = widget.querySelectorAll('div[class*="review"], .ti-review, [class*="item"]');
+        }
+      }
+      
+      console.log(`Found ${reviewElements.length} review elements to process`);
       
       reviewElements.forEach((element, index) => {
-        console.log(`Processing review ${index + 1}:`, element.className);
+        // Log first few elements to see structure
+        if (index < 3) {
+          console.log(`Review ${index} HTML:`, element.outerHTML.substring(0, 300));
+        }
         
-        const authorElement = element.querySelector('.ti-name, [class*="author"], [class*="name"], [itemprop="author"]');
-        const ratingElement = element.querySelector('[class*="rating"], [class*="star"], [itemprop="ratingValue"]');
-        const textElement = element.querySelector('.ti-review-text, [class*="review-text"], [class*="comment"], [itemprop="reviewBody"]');
-        const dateElement = element.querySelector('.ti-date, [class*="date"], [itemprop="datePublished"]');
-        
-        console.log('Elements found:', {
-          author: !!authorElement,
-          rating: !!ratingElement,
-          text: !!textElement,
-          date: !!dateElement
-        });
+        const authorElement = element.querySelector('[itemprop="author"], .ti-name, [class*="author"], [class*="name"]');
+        const ratingElement = element.querySelector('[itemprop="ratingValue"], [class*="rating"], [class*="star"]');
+        const textElement = element.querySelector('[itemprop="reviewBody"], .ti-review-text, [class*="review-text"], [class*="comment"]');
+        const dateElement = element.querySelector('[itemprop="datePublished"], .ti-date, [class*="date"]');
         
         if (authorElement && textElement) {
           const author = authorElement.textContent?.trim() || '';
@@ -137,7 +147,7 @@ const Index = () => {
                           dateElement?.textContent?.trim() || 
                           new Date().toISOString().split('T')[0];
           
-          if (author && text) {
+          if (author && text && text.length > 10) {
             scrapedReviews.push({
               author_name: author,
               rating: Math.min(5, Math.max(1, rating)),
@@ -145,6 +155,7 @@ const Index = () => {
               review_date: dateText,
               source: 'trustindex'
             });
+            console.log(`Added review ${scrapedReviews.length} from ${author}`);
           }
         }
       });
