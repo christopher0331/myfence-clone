@@ -56,6 +56,12 @@ const Index = () => {
   useEffect(() => {
     if (!reviewsRef.current) return;
     
+    // Create the widget container div with proper Trustindex attributes
+    const widgetDiv = document.createElement("div");
+    widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");
+    widgetDiv.className = "trustindex-widget";
+    reviewsRef.current.appendChild(widgetDiv);
+    
     const s = document.createElement("script");
     s.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
     s.async = true;
@@ -67,7 +73,6 @@ const Index = () => {
       setTimeout(async () => {
         try {
           console.log('Attempting to scrape reviews from widget...');
-          console.log('Widget container HTML:', reviewsRef.current?.innerHTML.substring(0, 500));
           
           const scrapedReviews = scrapeReviewsFromWidget();
           console.log(`Scraping result: found ${scrapedReviews.length} reviews`);
@@ -81,13 +86,14 @@ const Index = () => {
         } catch (error) {
           console.error('Error scraping reviews:', error);
         }
-      }, 3000); // Increased wait time
+      }, 4000); // Give widget more time to render
     };
     
     reviewsRef.current.appendChild(s);
     
     return () => {
       s.remove();
+      widgetDiv.remove();
       if (reviewsRef.current) reviewsRef.current.innerHTML = "";
     };
   }, []);
