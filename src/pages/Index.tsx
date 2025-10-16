@@ -15,7 +15,6 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
 import BlogSection from "@/components/BlogSection";
-import reviewsData from "@/data/reviews.json";
 
 const Index = () => {
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -29,23 +28,123 @@ const Index = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [reviews, setReviews] = useState<any[]>([]);
   const { toast } = useToast();
 
   const reviewsRef = useRef<HTMLDivElement | null>(null);
+
+  // Load reviews from Supabase
+  useEffect(() => {
+    const loadReviews = async () => {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .order('review_date', { ascending: false });
+      
+      if (error) {
+        console.error('Error loading reviews:', error);
+      } else if (data) {
+        console.log(`Loaded ${data.length} reviews from database`);
+        setReviews(data);
+      }
+    };
+
+    loadReviews();
+  }, []);
   
-  // Load Trustindex reviews widget into the section container
+  // Load Trustindex reviews widget and sync to database
   useEffect(() => {
     if (!reviewsRef.current) return;
+    
     const s = document.createElement("script");
     s.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
     s.async = true;
     s.defer = true;
+    
+    // After widget loads, scrape and sync reviews
+    s.onload = () => {
+      setTimeout(async () => {
+        try {
+          const scrapedReviews = scrapeReviewsFromWidget();
+          if (scrapedReviews.length > 0) {
+            console.log(`Scraped ${scrapedReviews.length} reviews from Trustindex`);
+            await syncReviewsToDatabase(scrapedReviews);
+          }
+        } catch (error) {
+          console.error('Error scraping reviews:', error);
+        }
+      }, 2000); // Wait for widget to fully render
+    };
+    
     reviewsRef.current.appendChild(s);
+    
     return () => {
       s.remove();
       if (reviewsRef.current) reviewsRef.current.innerHTML = "";
     };
   }, []);
+
+  const scrapeReviewsFromWidget = () => {
+    const scrapedReviews: any[] = [];
+    
+    try {
+      // This is a placeholder - actual selectors depend on Trustindex HTML structure
+      const reviewElements = document.querySelectorAll('[data-trustindex-review]');
+      
+      reviewElements.forEach((element) => {
+        const authorElement = element.querySelector('.ti-name, [class*="author"], [class*="name"]');
+        const ratingElement = element.querySelector('[class*="rating"], [class*="star"]');
+        const textElement = element.querySelector('.ti-review-text, [class*="review-text"], [class*="comment"]');
+        const dateElement = element.querySelector('.ti-date, [class*="date"]');
+        
+        if (authorElement && ratingElement && textElement) {
+          const author = authorElement.textContent?.trim() || '';
+          const ratingText = ratingElement.getAttribute('data-rating') || ratingElement.textContent || '';
+          const rating = parseInt(ratingText.replace(/[^0-9]/g, '')) || 5;
+          const text = textElement.textContent?.trim() || '';
+          const dateText = dateElement?.textContent?.trim() || new Date().toISOString().split('T')[0];
+          
+          if (author && text) {
+            scrapedReviews.push({
+              author_name: author,
+              rating: Math.min(5, Math.max(1, rating)),
+              review_text: text,
+              review_date: dateText,
+              source: 'trustindex'
+            });
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error scraping reviews:', error);
+    }
+    
+    return scrapedReviews;
+  };
+
+  const syncReviewsToDatabase = async (scrapedReviews: any[]) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('sync-reviews', {
+        body: { reviews: scrapedReviews }
+      });
+      
+      if (error) throw error;
+      
+      console.log('Reviews synced:', data);
+      
+      // Reload reviews from database
+      const { data: updatedReviews } = await supabase
+        .from('reviews')
+        .select('*')
+        .order('review_date', { ascending: false });
+      
+      if (updatedReviews) {
+        setReviews(updatedReviews);
+      }
+    } catch (error) {
+      console.error('Error syncing reviews:', error);
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -140,19 +239,19 @@ const Index = () => {
       ratingValue: "5.0",
       reviewCount: "150"
     },
-    review: reviewsData.map(review => ({
+    review: reviews.map(review => ({
       "@type": "Review",
       author: {
         "@type": "Person",
-        name: review.author
+        name: review.author_name
       },
       reviewRating: {
         "@type": "Rating",
         ratingValue: review.rating.toString(),
         bestRating: "5"
       },
-      datePublished: review.datePublished,
-      reviewBody: review.reviewBody
+      datePublished: review.review_date,
+      reviewBody: review.review_text
     })),
     areaServed: [
       { "@type": "City", "name": "Seattle, WA" },
