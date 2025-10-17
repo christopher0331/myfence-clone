@@ -127,7 +127,7 @@ const faqCategories = [
       },
       {
         question: "What happens if I have an issue after installation?",
-        answer: "Contact us immediately! We respond to warranty claims within 48 hours. If covered, we'll repair or replace at no charge. Even outside warranty, we offer discounted repair services for our customers. Our Fence Genius system allows precise replacements that match your original installation perfectly."
+        answer: "Contact us immediately! We respond to warranty claims within 48 hours. If covered, we'll repair or replace at no charge. Even outside warranty, we offer discounted repair services for our customers. All of our panels are built through Fence Genius software, giving you a lifelong technology asset—if a tree breaks panels or a car crashes through, we can easily rebuild them the exact same way offsite and bring the panels back to be swapped out."
       },
       {
         question: "Does the warranty transfer to new homeowners?",
