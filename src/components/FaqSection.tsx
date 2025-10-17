@@ -73,7 +73,7 @@ const faqCategories = [
       },
       {
         question: "Should I choose board-on-board or solid board?",
-        answer: "Board-on-board provides complete privacy with overlapping pickets, allowing slight airflow and natural wood movement—ideal for windy areas. Solid board (tongue-and-groove style) creates a more uniform appearance with tighter privacy. Both are excellent choices; we recommend board-on-board for Seattle's climate."
+        answer: "Board-on-Board provides not only added structure, but unmatched privacy with overlapping pickets. Say goodbye to the days of seeing through the vertical gaps between fence boards. This is ideal if you want added privacy for your backyard and is a common upgrade. Solid board on the other hand is more of a uniform appearance, tight fitting boards but may still yield vertical gaps between fence boards. This is a budget friendly option. Both are excellent choices; we recommend board-on-board for neighborly privacy."
       },
       {
         question: "Can I mix fence styles on my property?",
