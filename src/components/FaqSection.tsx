@@ -50,7 +50,7 @@ const faqCategories = [
       },
       {
         question: "What's included in your pricing?",
-        answer: "Our quotes include all materials, labor, permits, waste removal, and our 5-year craftsmanship warranty. We use pressure-treated 4x4 posts set in concrete, galvanized hardware, and premium cedar or wood materials. Optional upgrades like clear cedar, board-on-board, or exterior screws are priced separately."
+        answer: "Our quotes vary based on your specifications, but as a base, our quote covers all material, labor, and removal when necessary. If you are wanting soil removed or other options to be quoted then that can be arranged. We use grade #1 cedar, stainless steel fasteners, exterior screws, and jumbo pressure treated 4x4 fence posts. Optional upgrades like clear cedar, board-on-board, or pre staining are priced seperately"
       },
       {
         question: "Do you charge for estimates?",
