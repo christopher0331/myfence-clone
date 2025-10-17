@@ -50,7 +50,7 @@ const faqCategories = [
       },
       {
         question: "What's included in your pricing?",
-        answer: "Our quotes vary based on your specifications, but as a base, our quote covers all material, labor, and removal when necessary. If you are wanting soil removed or other options to be quoted then that can be arranged. We use grade #1 cedar, stainless steel fasteners, exterior screws, and jumbo pressure treated 4x4 fence posts. Optional upgrades like clear cedar, board-on-board, or pre staining are priced seperately"
+        answer: "Our quotes vary based on your specifications, but as a base, our quote covers all material, labor, and removal when necessary. If you are wanting soil removed or other options to be quoted then that can be arranged. We use grade #1 cedar, stainless steel fasteners, exterior screws, and jumbo pressure treated 4x4 fence posts. Optional upgrades like clear cedar, board-on-board, or pre staining are priced seperately. Our 3-year craftsmanship warranty covers hardware and fastener failures."
       },
       {
         question: "Do you charge for estimates?",
@@ -108,7 +108,7 @@ const faqCategories = [
       },
       {
         question: "What should I do if a board gets damaged?",
-        answer: "Individual boards can be replaced without rebuilding the entire fence. Contact us for board replacement—our Fence Genius system maintains exact specifications, so replacement pieces match perfectly. For warranty-covered issues within 5 years, we'll repair or replace at no charge."
+        answer: "Individual boards can be replaced without rebuilding the entire fence. Contact us for board replacement—our Fence Genius system maintains exact specifications, so replacement pieces match perfectly. Board replacements are not covered under our craftsmanship warranty as it does not cover wood products."
       }
     ]
   },
@@ -118,12 +118,12 @@ const faqCategories = [
     icon: Shield,
     faqs: [
       {
-        question: "What does your 5-year warranty cover?",
-        answer: "Our industry-leading 5-year craftsmanship warranty covers workmanship defects, structural issues, hardware failures, and post stability. This includes sagging panels, loose boards, failing connections, or posts shifting. Normal wear from weather and lack of maintenance are not covered. Full warranty details are provided with every contract."
+        question: "What does your 3-year warranty cover?",
+        answer: "Our 3-year craftsmanship warranty covers workmanship defects, hardware failures, and fastener issues. This includes failing connections, hardware defects, or fastener problems. The warranty does not cover wood products, normal wear from weather, or lack of maintenance. Full warranty details are provided with every contract."
       },
       {
         question: "Are materials covered under warranty?",
-        answer: "Yes, material defects are covered under our warranty. This includes warped lumber, defective hardware, or manufacturing issues with panels. Cedar's natural characteristics like knots, grain patterns, or color variations are not defects. We use premium materials to minimize warranty claims."
+        answer: "Hardware and fasteners are covered under our 3-year craftsmanship warranty. This includes defective hardware or fastener failures. Wood products are not covered under warranty. Cedar's natural characteristics like knots, grain patterns, color variations, warping, or weathering are not defects and are not covered."
       },
       {
         question: "What happens if I have an issue after installation?",
@@ -131,11 +131,11 @@ const faqCategories = [
       },
       {
         question: "Does the warranty transfer to new homeowners?",
-        answer: "Yes! Our 5-year warranty is transferable to new property owners if you sell your home. This adds value to your property and gives buyers confidence. Notify us of the ownership change, and we'll update our records. All original warranty terms remain in effect for the full 5-year period."
+        answer: "Yes! Our 3-year craftsmanship warranty is transferable to new property owners if you sell your home. This adds value to your property and gives buyers confidence. Notify us of the ownership change, and we'll update our records. All original warranty terms remain in effect for the full 3-year period."
       },
       {
         question: "How is your warranty different from competitors?",
-        answer: "Most fence contractors offer only 1-2 year warranties. Our 5-year warranty reflects confidence in Fence Genius technology—precision manufacturing reduces errors that cause premature failures. We're the only contractor in Seattle using this patented system, which is why we can stand behind our work longer."
+        answer: "We offer a comprehensive 3-year craftsmanship warranty that covers hardware and fastener failures. Our warranty reflects confidence in our quality workmanship and attention to detail. We stand behind the installation work and use premium hardware to ensure long-lasting performance. We respond to warranty claims within 48 hours."
       }
     ]
   }
