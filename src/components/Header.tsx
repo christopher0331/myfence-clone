@@ -9,6 +9,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 const navItems = [
   { to: "/fence-styles", label: "Fence Styles" },
@@ -39,6 +44,7 @@ const serviceAreas = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
       <div className="container flex h-20 md:h-24 items-center justify-between">
@@ -117,17 +123,28 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
-            <div className="text-base font-medium text-foreground pt-2 border-t">Service Areas</div>
-            {serviceAreas.map((area) => (
-              <Link
-                key={area.to}
-                to={area.to}
-                onClick={() => setOpen(false)}
-                className="text-base text-muted-foreground hover:text-primary transition-colors pl-4"
-              >
-                {area.label}
-              </Link>
-            ))}
+            <Collapsible
+              open={serviceAreasOpen}
+              onOpenChange={setServiceAreasOpen}
+              className="pt-2 border-t"
+            >
+              <CollapsibleTrigger className="flex items-center justify-between w-full text-base font-medium text-foreground hover:text-primary transition-colors">
+                Service Areas
+                <ChevronDown className={`h-4 w-4 transition-transform ${serviceAreasOpen ? 'rotate-180' : ''}`} />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pt-3 flex flex-col gap-3">
+                {serviceAreas.map((area) => (
+                  <Link
+                    key={area.to}
+                    to={area.to}
+                    onClick={() => setOpen(false)}
+                    className="text-base text-muted-foreground hover:text-primary transition-colors pl-4"
+                  >
+                    {area.label}
+                  </Link>
+                ))}
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </div>
       )}
