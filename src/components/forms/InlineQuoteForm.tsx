@@ -14,8 +14,6 @@ interface InlineQuoteFormProps {
 }
 
 const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
-  console.log('[InlineQuoteForm] Rendering with context:', context);
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",

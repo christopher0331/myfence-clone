@@ -27,8 +27,6 @@ const ServiceAreaTemplate = ({
   localSolutions = [],
   climateDescription = ""
 }: ServiceAreaTemplateProps) => {
-  console.log(`[ServiceAreaTemplate] Rendering for ${city}`);
-  
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   
   const breadcrumbData = useMemo(() => ({

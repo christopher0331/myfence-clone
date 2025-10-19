@@ -1,8 +1,6 @@
 import ServiceAreaTemplate from "./ServiceAreaTemplate";
 
 const FederalWay = () => {
-  console.log('[FederalWay] Component rendering');
-  
   return (
     <ServiceAreaTemplate 
       city="Federal Way" 
