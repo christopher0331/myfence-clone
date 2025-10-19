@@ -138,21 +138,21 @@ const NeighborFenceCostSplit = () => {
               </div>
               <div className="bg-card p-6 rounded-lg border">
                 <h4 className="font-semibold text-lg mb-3">Legal Notice Process:</h4>
-                <ol className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center mt-0.5 flex-shrink-0">1</span>
+                <ol className="space-y-2 text-muted-foreground list-none pl-0">
+                  <li className="flex items-center gap-2">
+                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center flex-shrink-0">1</span>
                     Provide written notice to neighbor
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center mt-0.5 flex-shrink-0">2</span>
+                  <li className="flex items-center gap-2">
+                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center flex-shrink-0">2</span>
                     Allow reasonable response time (30 days)
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center mt-0.5 flex-shrink-0">3</span>
+                  <li className="flex items-center gap-2">
+                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center flex-shrink-0">3</span>
                     Share costs 50/50 if agreed
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center mt-0.5 flex-shrink-0">4</span>
+                  <li className="flex items-center gap-2">
+                    <span className="bg-primary text-primary-foreground w-5 h-5 rounded-full text-xs flex items-center justify-center flex-shrink-0">4</span>
                     Can recover costs legally if refused
                   </li>
                 </ol>
