@@ -12,11 +12,13 @@ const VirtualQuoteToolMDX = () => {
     "image": "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
     "author": {
       "@type": "Organization",
-      "name": "Seattle Fence Pros"
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Seattle Fence Pros"
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
     },
     "datePublished": "2025-01-06",
     "dateModified": "2025-01-06"
@@ -25,7 +27,7 @@ const VirtualQuoteToolMDX = () => {
   return (
     <>
       <Seo
-        title="Get Your Instant Fence Quote with Our Advanced Virtual Tool | Seattle Fence Pros"
+        title="Get Your Instant Fence Quote with Our Advanced Virtual Tool | MyFence.com"
         description="Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing."
         structuredData={structuredData}
       />

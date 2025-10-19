@@ -12,17 +12,19 @@ const SixFtFenceCostMDX = () => {
     "image": "/lovable-uploads/840c5f7f-0578-45fa-9b5c-195760503695.png",
     "author": {
       "@type": "Organization",
-      "name": "Seattle Fence Pros"
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Seattle Fence Pros"
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
     },
     "datePublished": "2024-12-01",
     "dateModified": "2024-12-01",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://seattlefence.com/blog/fence-cost-seattle"
+      "@id": "https://myfence.com/blog/fence-cost-seattle"
     }
   };
 
@@ -30,8 +32,8 @@ const SixFtFenceCostMDX = () => {
     <>
       <Seo
         title="6ft Fence Cost Seattle 2025: Complete Installation Pricing Guide"
-        description="Complete Seattle 6-foot fence cost breakdown for 2025. Cedar privacy fencing $42-60/LF. Materials, labor, permits included. Call (253) 455-1885 for quotes."
-        canonical="https://seattlefence.com/blog/fence-cost-seattle"
+        description="Complete Seattle 6-foot fence cost breakdown for 2025. Cedar privacy fencing $42-60/LF. Materials, labor, permits included. Call (253) 478-8589 for quotes."
+        canonical="https://myfence.com/blog/fence-cost-seattle"
         structuredData={structuredData}
       />
       <ErrorBoundary>

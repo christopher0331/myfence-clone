@@ -9,8 +9,16 @@ const FenceCleaningStainingMDX = () => {
     "@type": "Article",
     "headline": "How Should I Clean My Fence for Staining?",
     "description": "Learn proper fence cleaning techniques before staining.",
-    "author": { "@type": "Organization", "name": "Seattle Fence Company" },
-    "publisher": { "@type": "Organization", "name": "Seattle Fence Company" },
+    "author": { 
+      "@type": "Organization", 
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
+    },
+    "publisher": { 
+      "@type": "Organization", 
+      "name": "MyFence.com",
+      "url": "https://myfence.com"
+    },
     "datePublished": "2025-01-01",
     "dateModified": "2025-01-01"
   };
@@ -20,7 +28,7 @@ const FenceCleaningStainingMDX = () => {
       <Seo
         title="Fence Cleaning Before Staining: Seattle Professional Cleaning Guide"
         description="Expert fence cleaning techniques for Seattle properties. Softwashing vs pressure washing."
-        canonical="https://seattlefence.com/blog/fence-cleaning-staining"
+        canonical="https://myfence.com/blog/fence-cleaning-staining"
         structuredData={structuredData}
       />
       <ErrorBoundary>
