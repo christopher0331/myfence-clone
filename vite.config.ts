@@ -12,7 +12,13 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    { enforce: 'pre' as const, ...mdx({ remarkPlugins: [remarkGfm] }) },
+    { 
+      enforce: 'pre' as const, 
+      ...mdx({ 
+        jsxImportSource: 'react',
+        remarkPlugins: [remarkGfm] 
+      }) 
+    },
     react(),
     mode === 'development' &&
     componentTagger(),
