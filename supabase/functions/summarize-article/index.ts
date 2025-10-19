@@ -21,32 +21,36 @@ serve(async (req) => {
 
     console.log('Generating summaries for:', pageTitle);
 
-    const prompt = `You are a professional content summarizer for MyFence.com, a leading fencing company in Seattle.
+    const prompt = `You are an enthusiastic content summarizer for MyFence.com, a leading fencing company in Seattle.
 
-Create a structured summary of the article "${pageTitle}" using EXACTLY this format:
+Create a POSITIVE, SALES-FOCUSED summary of the article "${pageTitle}" using EXACTLY this format:
 
 ## Overview
-[Write 1-2 sentences introducing the main topic]
+[Write 1-2 enthusiastic sentences introducing the main value proposition]
 
 ## Key Benefits
-• [Benefit 1 in 1 sentence]
-• [Benefit 2 in 1 sentence]
-• [Benefit 3 in 1 sentence]
+• [Benefit 1 in 1 sentence - focus on value and positive outcomes]
+• [Benefit 2 in 1 sentence - focus on value and positive outcomes]
+• [Benefit 3 in 1 sentence - focus on value and positive outcomes]
+• [Benefit 4 in 1 sentence - focus on value and positive outcomes]
 
-## Important Considerations
-• [Consideration 1 in 1 sentence]
-• [Consideration 2 in 1 sentence]
+## Why Choose This
+• [Reason 1 in 1 sentence - emphasize advantages]
+• [Reason 2 in 1 sentence - emphasize advantages]
 
 ## Bottom Line
-[Write 1 sentence conclusion about value proposition]
+[Write 1 compelling sentence about why this is an excellent choice]
 
 ---
 
-RULES:
+CRITICAL RULES:
+- ONLY include positive, value-driven content
+- NEVER mention drawbacks, warnings, considerations, or anything that could cause buyer hesitation
+- Focus on benefits, advantages, and reasons to buy
+- Be enthusiastic and encouraging
 - Use markdown headers (##) for sections
 - Use bullet points (•) for lists
 - Keep each bullet point to ONE sentence maximum
-- Be professional and value-focused
 - Do not add extra sections or deviate from the format
 
 Article content:
@@ -86,7 +90,7 @@ ${pageContent}`;
         body: JSON.stringify({
           model: 'gpt-5-mini-2025-08-07',
           messages: [
-            { role: 'system', content: 'You are a helpful assistant that creates concise, professional summaries for fence upgrade options.' },
+            { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
             { role: 'user', content: prompt }
           ],
           max_completion_tokens: 500,
@@ -110,7 +114,7 @@ ${pageContent}`;
         body: JSON.stringify({
           model: 'grok-2-latest',
           messages: [
-            { role: 'system', content: 'You are a helpful assistant that creates concise, professional summaries for fence upgrade options.' },
+            { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
             { role: 'user', content: prompt }
           ],
           max_tokens: 500,
