@@ -5,6 +5,13 @@ import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-reac
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import { useMemo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ServiceAreaTemplateProps {
   city: string;
@@ -28,6 +35,7 @@ const ServiceAreaTemplate = ({
   climateDescription = ""
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+  const isMobile = useIsMobile();
   
   const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
@@ -208,43 +216,91 @@ const ServiceAreaTemplate = ({
         {/* Services Section */}
         <section className="py-16">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Our Services in {city}
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {useMemo(() => [
-                {
-                  title: "Fence Installation",
-                  description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
-                },
-                {
-                  title: "Fence Repair",
-                  description: `Quick and reliable fence repair services to restore your fence's functionality and appearance.`
-                },
-                {
-                  title: "Fence Staining",
-                  description: `Professional staining and finishing to protect and enhance your wood fence.`
-                },
-                {
-                  title: "Fence Replacement",
-                  description: `Complete fence replacement services with minimal disruption to your property.`
-                },
-                {
-                  title: "Custom Designs",
-                  description: `Custom fence designs tailored to your property's unique style and requirements.`
-                },
-                {
-                  title: "Commercial Fencing",
-                  description: `Durable commercial fencing solutions for businesses in ${city}.`
-                }
-              ], [city]).map((service, index) => (
-                <Card key={index} className="p-6">
-                  <CheckCircle className="h-8 w-8 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </Card>
-              ))}
-            </div>
+            {isMobile ? (
+              <Accordion type="single" collapsible className="max-w-4xl mx-auto">
+                <AccordionItem value="services">
+                  <AccordionTrigger className="text-2xl font-bold">
+                    Our Services in {city}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid gap-6 pt-4">
+                      {useMemo(() => [
+                        {
+                          title: "Fence Installation",
+                          description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
+                        },
+                        {
+                          title: "Fence Repair",
+                          description: `Quick and reliable fence repair services to restore your fence's functionality and appearance.`
+                        },
+                        {
+                          title: "Fence Staining",
+                          description: `Professional staining and finishing to protect and enhance your wood fence.`
+                        },
+                        {
+                          title: "Fence Replacement",
+                          description: `Complete fence replacement services with minimal disruption to your property.`
+                        },
+                        {
+                          title: "Custom Designs",
+                          description: `Custom fence designs tailored to your property's unique style and requirements.`
+                        },
+                        {
+                          title: "Commercial Fencing",
+                          description: `Durable commercial fencing solutions for businesses in ${city}.`
+                        }
+                      ], [city]).map((service, index) => (
+                        <Card key={index} className="p-6">
+                          <CheckCircle className="h-8 w-8 text-primary mb-4" />
+                          <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                          <p className="text-muted-foreground">{service.description}</p>
+                        </Card>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            ) : (
+              <>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                  Our Services in {city}
+                </h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                  {useMemo(() => [
+                    {
+                      title: "Fence Installation",
+                      description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
+                    },
+                    {
+                      title: "Fence Repair",
+                      description: `Quick and reliable fence repair services to restore your fence's functionality and appearance.`
+                    },
+                    {
+                      title: "Fence Staining",
+                      description: `Professional staining and finishing to protect and enhance your wood fence.`
+                    },
+                    {
+                      title: "Fence Replacement",
+                      description: `Complete fence replacement services with minimal disruption to your property.`
+                    },
+                    {
+                      title: "Custom Designs",
+                      description: `Custom fence designs tailored to your property's unique style and requirements.`
+                    },
+                    {
+                      title: "Commercial Fencing",
+                      description: `Durable commercial fencing solutions for businesses in ${city}.`
+                    }
+                  ], [city]).map((service, index) => (
+                    <Card key={index} className="p-6">
+                      <CheckCircle className="h-8 w-8 text-primary mb-4" />
+                      <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </Card>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </section>
 
@@ -252,47 +308,99 @@ const ServiceAreaTemplate = ({
         <section className="py-16 bg-muted/30">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Why Choose MyFence.com in {city}?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="flex gap-4">
-                  <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Fast & Reliable</h3>
-                    <p className="text-muted-foreground">
-                      We respect your time and complete projects efficiently without compromising quality.
-                    </p>
+              {isMobile ? (
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="why-choose">
+                    <AccordionTrigger className="text-2xl font-bold">
+                      Why Choose MyFence.com in {city}?
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="grid gap-8 pt-4">
+                        <div className="flex gap-4">
+                          <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                          <div>
+                            <h3 className="text-xl font-semibold mb-2">Fast & Reliable</h3>
+                            <p className="text-muted-foreground">
+                              We respect your time and complete projects efficiently without compromising quality.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex gap-4">
+                          <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                          <div>
+                            <h3 className="text-xl font-semibold mb-2">Licensed & Insured</h3>
+                            <p className="text-muted-foreground">
+                              Fully licensed contractors with comprehensive insurance for your peace of mind.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex gap-4">
+                          <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                          <div>
+                            <h3 className="text-xl font-semibold mb-2">Quality Materials</h3>
+                            <p className="text-muted-foreground">
+                              We use only premium materials to ensure your fence stands the test of time.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex gap-4">
+                          <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                          <div>
+                            <h3 className="text-xl font-semibold mb-2">Local Experts</h3>
+                            <p className="text-muted-foreground">
+                              Deep knowledge of {city} regulations, permits, and local building codes.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              ) : (
+                <>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                    Why Choose MyFence.com in {city}?
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="flex gap-4">
+                      <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">Fast & Reliable</h3>
+                        <p className="text-muted-foreground">
+                          We respect your time and complete projects efficiently without compromising quality.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">Licensed & Insured</h3>
+                        <p className="text-muted-foreground">
+                          Fully licensed contractors with comprehensive insurance for your peace of mind.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">Quality Materials</h3>
+                        <p className="text-muted-foreground">
+                          We use only premium materials to ensure your fence stands the test of time.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">Local Experts</h3>
+                        <p className="text-muted-foreground">
+                          Deep knowledge of {city} regulations, permits, and local building codes.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-4">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Licensed & Insured</h3>
-                    <p className="text-muted-foreground">
-                      Fully licensed contractors with comprehensive insurance for your peace of mind.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Quality Materials</h3>
-                    <p className="text-muted-foreground">
-                      We use only premium materials to ensure your fence stands the test of time.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Local Experts</h3>
-                    <p className="text-muted-foreground">
-                      Deep knowledge of {city} regulations, permits, and local building codes.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </>
+              )}
             </div>
           </div>
         </section>
@@ -362,50 +470,106 @@ const ServiceAreaTemplate = ({
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-                Neighborhoods & Areas We Serve in {city}
-              </h2>
-              <p className="text-muted-foreground text-center mb-8">
-                We're proud to provide expert fence installation and repair services throughout {city}, {state}
-              </p>
-              
-              {neighborhoods.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 text-center">Popular Neighborhoods</h3>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {neighborhoods.map((neighborhood) => (
-                      <span key={neighborhood} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium">
-                        {neighborhood}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+              {isMobile ? (
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="coverage">
+                    <AccordionTrigger className="text-2xl font-bold">
+                      Neighborhoods & Areas We Serve
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <p className="text-muted-foreground text-center mb-8">
+                        We're proud to provide expert fence installation and repair services throughout {city}, {state}
+                      </p>
+                      
+                      {neighborhoods.length > 0 && (
+                        <div className="mb-8">
+                          <h3 className="text-xl font-semibold mb-4 text-center">Popular Neighborhoods</h3>
+                          <div className="flex flex-wrap justify-center gap-3">
+                            {neighborhoods.map((neighborhood) => (
+                              <span key={neighborhood} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium">
+                                {neighborhood}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
-              {landmarks.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {landmarks.map((landmark) => (
-                      <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
-                        {landmark}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+                      {landmarks.length > 0 && (
+                        <div className="mb-8">
+                          <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
+                          <div className="flex flex-wrap justify-center gap-3">
+                            {landmarks.map((landmark) => (
+                              <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
+                                {landmark}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
-              {zipCodes.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {zipCodes.map((zip) => (
-                      <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
-                        {zip}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                      {zipCodes.length > 0 && (
+                        <div>
+                          <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
+                          <div className="flex flex-wrap justify-center gap-3">
+                            {zipCodes.map((zip) => (
+                              <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
+                                {zip}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              ) : (
+                <>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+                    Neighborhoods & Areas We Serve in {city}
+                  </h2>
+                  <p className="text-muted-foreground text-center mb-8">
+                    We're proud to provide expert fence installation and repair services throughout {city}, {state}
+                  </p>
+                  
+                  {neighborhoods.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold mb-4 text-center">Popular Neighborhoods</h3>
+                      <div className="flex flex-wrap justify-center gap-3">
+                        {neighborhoods.map((neighborhood) => (
+                          <span key={neighborhood} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium">
+                            {neighborhood}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {landmarks.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
+                      <div className="flex flex-wrap justify-center gap-3">
+                        {landmarks.map((landmark) => (
+                          <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
+                            {landmark}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {zipCodes.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
+                      <div className="flex flex-wrap justify-center gap-3">
+                        {zipCodes.map((zip) => (
+                          <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
+                            {zip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </div>
