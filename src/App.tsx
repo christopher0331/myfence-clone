@@ -31,14 +31,13 @@ const ClearCedar = React.lazy(() => import("./pages/fence-upgrades/ClearCedar"))
 const BoardOnBoard = React.lazy(() => import("./pages/fence-upgrades/BoardOnBoard"));
 const Blog = React.lazy(() => import("./pages/Blog"));
 
-// Lazy load blog post pages
-const FenceCleaningStaining = React.lazy(() => import("./pages/blog/FenceCleaningStaining"));
-const HowToStainFence = React.lazy(() => import("./pages/blog/HowToStainFence"));
+// Lazy load blog post pages (MDX versions)
+const FenceCleaningStainingMDX = React.lazy(() => import("./pages/blog/FenceCleaningStainingMDX"));
 const HowToStainFenceMDX = React.lazy(() => import("./pages/blog/HowToStainFenceMDX"));
-const NeighborFenceCostSplit = React.lazy(() => import("./pages/blog/NeighborFenceCostSplit"));
-const VirtualQuoteToolBlog = React.lazy(() => import("./pages/blog/VirtualQuoteTool"));
-const SixFtFenceCostBlog = React.lazy(() => import("./pages/blog/SixFtFenceCost"));
-const WoodenFenceCost2025Blog = React.lazy(() => import("./pages/blog/WoodenFenceCost2025"));
+const NeighborFenceCostSplitMDX = React.lazy(() => import("./pages/blog/NeighborFenceCostSplitMDX"));
+const VirtualQuoteToolMDX = React.lazy(() => import("./pages/blog/VirtualQuoteToolMDX"));
+const SixFtFenceCostMDX = React.lazy(() => import("./pages/blog/SixFtFenceCostMDX"));
+const WoodenFenceCost2025MDX = React.lazy(() => import("./pages/blog/WoodenFenceCost2025MDX"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -135,13 +134,12 @@ const AppContent = () => {
           <Route path="/service-areas/gig-harbor" element={<GigHarbor />} />
           <Route path="/service-areas/enumclaw" element={<Enumclaw />} />
           <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
-              <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
-              <Route path="/blog/how-to-stain-fence-mdx" element={<HowToStainFenceMDX />} />
-              <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplit />} />
-            <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolBlog />} />
-            <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostBlog />} />
-            <Route path="/blog/seattle-fence-cost-2025" element={<WoodenFenceCost2025Blog />} />
+          <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
+          <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
+          <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplitMDX />} />
+          <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolMDX />} />
+          <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostMDX />} />
+          <Route path="/blog/seattle-fence-cost-2025" element={<WoodenFenceCost2025MDX />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
