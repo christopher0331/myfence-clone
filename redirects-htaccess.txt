@@ -1,0 +1,90 @@
+# MyFence.com Apache .htaccess Redirect Configuration
+# Copy these redirects to your .htaccess file
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Core Business Pages
+Redirect 301 /about-us/ /contact
+Redirect 301 /contact/ /contact
+Redirect 301 /financing/ /financing
+Redirect 301 /blog/ /blog
+Redirect 301 /privacy-policy/ /privacy-policy
+Redirect 301 /terms-and-conditions/ /terms-conditions
+
+# Service Pages
+Redirect 301 /wood-fence-installation/ /fence-styles
+Redirect 301 /wood-fence-wa/ /fence-styles
+Redirect 301 /fence-gates-seattle-wa/ /fence-styles
+Redirect 301 /gates-faq/ /fence-styles
+Redirect 301 /horiztonal-fences-myfence/ /fence-styles/horizontal-fence
+Redirect 301 /fencebuildprocess/ /contact
+
+# Quote/Tools Pages
+Redirect 301 /myfence-com-diy-estimate-tool/ /quote
+Redirect 301 /book-online-fence-seattle/ /quote
+
+# Gallery/Projects
+Redirect 301 /fence-projects-seattle-wa/ /gallery
+Redirect 301 /past-projects/ /gallery
+
+# Utility Pages
+Redirect 301 /permitting-hoa-submittal/ /contact
+Redirect 301 /custom-software/ /contact
+Redirect 301 /myfence-review/ /contact
+Redirect 301 /sitemap/ /sitemap.xml
+Redirect 301 /map/ /contact
+
+# PDF Downloads
+Redirect 301 /wp-content/uploads/2024/02/Fence-Genius.pdf /fence-genius
+Redirect 301 /wp-content/uploads/2024/02/Download-Convex-Sheet.pdf /fence-styles
+Redirect 301 /wp-content/uploads/2024/02/Download-Convave-Sheet.pdf /fence-styles
+Redirect 301 /wp-content/uploads/2024/02/Download-Flat-Gate-Sheet.pdf /fence-styles
+
+# Location-Specific Pages (Consolidate to main fence-styles page)
+# Seattle area
+Redirect 301 /seattle-local-fence-companies/ /fence-styles
+Redirect 301 /seattle-fence-contractor-98115/ /fence-styles
+Redirect 301 /seattle-wood-fence-installation/ /fence-styles
+
+# Maple Valley area
+Redirect 301 /maple-valley-fence-contractor-98038/ /fence-styles
+Redirect 301 /maple-valley-fence-installation/ /fence-styles
+Redirect 301 /maple-valley-best-fence-company/ /fence-styles
+Redirect 301 /maple-valley-home-fencing/ /fence-styles
+
+# Federal Way area
+Redirect 301 /federal-way-fence-contractor-98023/ /fence-styles
+
+# Auburn area
+Redirect 301 /auburn-wood-fence-contractors/ /fence-styles
+
+# University Place area
+Redirect 301 /university-place-fence-company-near-me/ /fence-styles
+
+# Issaquah area
+Redirect 301 /issaquah-local-fence-companies/ /fence-styles
+Redirect 301 /issaquah-wood-fence-contractors/ /fence-styles
+Redirect 301 /fence-contractor-issaquah-wa-98027/ /fence-styles
+
+# Kirkland area
+Redirect 301 /kirkland-wood-fence-company-near-me/ /fence-styles
+
+# Ravensdale area
+Redirect 301 /ravensdale-fence-contractors/ /fence-styles
+
+# Bellevue area
+Redirect 301 /bellevue-fence-company-near-me/ /fence-styles
+
+# Lake Tapps area
+Redirect 301 /lake-tapps-fence-contractor-98391/ /fence-styles
+
+# Covington area
+Redirect 301 /covington-fence-contractor-98042/ /fence-styles
+
+# Regex redirects for any missed location patterns
+# Note: These require mod_rewrite and may need to be adjusted based on server config
+RewriteRule ^.*-fence-(contractor|company|installation).*/$ /fence-styles [R=301,L]
+RewriteRule ^.*-wood-fence-.*/$ /fence-styles [R=301,L]
+RewriteRule ^.*-local-fence-companies/$ /fence-styles [R=301,L]
+

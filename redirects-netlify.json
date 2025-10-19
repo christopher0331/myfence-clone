@@ -1,0 +1,220 @@
+{
+  "redirects": [
+    {
+      "from": "/about-us/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/contact/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/financing/",
+      "to": "/financing",
+      "status": 301
+    },
+    {
+      "from": "/blog/",
+      "to": "/blog",
+      "status": 301
+    },
+    {
+      "from": "/privacy-policy/",
+      "to": "/privacy-policy",
+      "status": 301
+    },
+    {
+      "from": "/terms-and-conditions/",
+      "to": "/terms-conditions",
+      "status": 301
+    },
+    {
+      "from": "/wood-fence-installation/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/wood-fence-wa/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/fence-gates-seattle-wa/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/gates-faq/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/horiztonal-fences-myfence/",
+      "to": "/fence-styles/horizontal-fence",
+      "status": 301
+    },
+    {
+      "from": "/fencebuildprocess/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/myfence-com-diy-estimate-tool/",
+      "to": "/quote",
+      "status": 301
+    },
+    {
+      "from": "/book-online-fence-seattle/",
+      "to": "/quote",
+      "status": 301
+    },
+    {
+      "from": "/fence-projects-seattle-wa/",
+      "to": "/gallery",
+      "status": 301
+    },
+    {
+      "from": "/past-projects/",
+      "to": "/gallery",
+      "status": 301
+    },
+    {
+      "from": "/permitting-hoa-submittal/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/custom-software/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/myfence-review/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/sitemap/",
+      "to": "/sitemap.xml",
+      "status": 301
+    },
+    {
+      "from": "/map/",
+      "to": "/contact",
+      "status": 301
+    },
+    {
+      "from": "/wp-content/uploads/2024/02/Fence-Genius.pdf",
+      "to": "/fence-genius",
+      "status": 301
+    },
+    {
+      "from": "/wp-content/uploads/2024/02/Download-Convex-Sheet.pdf",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/wp-content/uploads/2024/02/Download-Convave-Sheet.pdf",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/wp-content/uploads/2024/02/Download-Flat-Gate-Sheet.pdf",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/seattle-local-fence-companies/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/seattle-fence-contractor-98115/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/seattle-wood-fence-installation/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/maple-valley-fence-contractor-98038/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/maple-valley-fence-installation/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/maple-valley-best-fence-company/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/maple-valley-home-fencing/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/federal-way-fence-contractor-98023/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/auburn-wood-fence-contractors/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/university-place-fence-company-near-me/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/issaquah-local-fence-companies/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/issaquah-wood-fence-contractors/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/fence-contractor-issaquah-wa-98027/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/kirkland-wood-fence-company-near-me/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/ravensdale-fence-contractors/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/bellevue-fence-company-near-me/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/lake-tapps-fence-contractor-98391/",
+      "to": "/fence-styles",
+      "status": 301
+    },
+    {
+      "from": "/covington-fence-contractor-98042/",
+      "to": "/fence-styles",
+      "status": 301
+    }
+  ]
+}
+
