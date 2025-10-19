@@ -16,7 +16,8 @@ export default defineConfig(({ mode }) => ({
       enforce: 'pre' as const, 
       ...mdx({ 
         jsxImportSource: 'react',
-        remarkPlugins: [remarkGfm] 
+        remarkPlugins: [remarkGfm],
+        development: mode !== 'production'
       }) 
     },
     react(),

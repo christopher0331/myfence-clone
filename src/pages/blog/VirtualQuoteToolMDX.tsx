@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from "@/components/Seo";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import VirtualQuoteToolContent from './VirtualQuoteTool.mdx';
 
 const VirtualQuoteToolMDX = () => {
@@ -28,7 +29,9 @@ const VirtualQuoteToolMDX = () => {
         description="Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing."
         structuredData={structuredData}
       />
-      <VirtualQuoteToolContent />
+      <ErrorBoundary>
+        <VirtualQuoteToolContent />
+      </ErrorBoundary>
     </>
   );
 };

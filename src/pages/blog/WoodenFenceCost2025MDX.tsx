@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from "@/components/Seo";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import WoodenFenceCost2025Content from './WoodenFenceCost2025.mdx';
 
 const WoodenFenceCost2025MDX = () => {
@@ -31,7 +32,9 @@ const WoodenFenceCost2025MDX = () => {
         description="Updated 2025 wooden fence costs in Seattle, WA. Cedar prices $35-60/LF. Market trends, labor costs, permits. Free estimates. Call (253) 455-1885."
         structuredData={[breadcrumbData, structuredData]}
       />
-      <WoodenFenceCost2025Content />
+      <ErrorBoundary>
+        <WoodenFenceCost2025Content />
+      </ErrorBoundary>
     </>
   );
 };

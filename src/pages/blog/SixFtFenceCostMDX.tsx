@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from "@/components/Seo";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import SixFtFenceCostContent from './SixFtFenceCost.mdx';
 
 const SixFtFenceCostMDX = () => {
@@ -33,7 +34,9 @@ const SixFtFenceCostMDX = () => {
         canonical="https://seattlefence.com/blog/fence-cost-seattle"
         structuredData={structuredData}
       />
-      <SixFtFenceCostContent />
+      <ErrorBoundary>
+        <SixFtFenceCostContent />
+      </ErrorBoundary>
     </>
   );
 };

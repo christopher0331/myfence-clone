@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from "@/components/Seo";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import FenceCleaningStainingContent from './FenceCleaningStaining.mdx';
 
 const FenceCleaningStainingMDX = () => {
@@ -22,7 +23,9 @@ const FenceCleaningStainingMDX = () => {
         canonical="https://seattlefence.com/blog/fence-cleaning-staining"
         structuredData={structuredData}
       />
-      <FenceCleaningStainingContent />
+      <ErrorBoundary>
+        <FenceCleaningStainingContent />
+      </ErrorBoundary>
     </>
   );
 };

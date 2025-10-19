@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from "@/components/Seo";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import NeighborFenceCostSplitContent from './NeighborFenceCostSplit.mdx';
 
 const NeighborFenceCostSplitMDX = () => {
@@ -32,7 +33,9 @@ const NeighborFenceCostSplitMDX = () => {
         canonical="https://qualityfenceusa.com/blog/neighbor-split"
         structuredData={structuredData}
       />
-      <NeighborFenceCostSplitContent />
+      <ErrorBoundary>
+        <NeighborFenceCostSplitContent />
+      </ErrorBoundary>
     </>
   );
 };
