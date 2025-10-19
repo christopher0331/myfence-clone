@@ -331,6 +331,9 @@ const Index = () => {
     ]
   };
 
+  // Console log the review JSON-LD for Google
+  console.log('Review JSON-LD Schema:', JSON.stringify(orgLd, null, 2));
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
