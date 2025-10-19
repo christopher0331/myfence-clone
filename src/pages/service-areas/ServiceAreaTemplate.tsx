@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import { useMemo } from "react";
 
 interface ServiceAreaTemplateProps {
   city: string;
@@ -26,9 +27,11 @@ const ServiceAreaTemplate = ({
   localSolutions = [],
   climateDescription = ""
 }: ServiceAreaTemplateProps) => {
+  console.log(`[ServiceAreaTemplate] Rendering for ${city}`);
+  
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   
-  const breadcrumbData = {
+  const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -51,9 +54,9 @@ const ServiceAreaTemplate = ({
         "item": `https://myfence.com/service-areas/${citySlug}`
       }
     ]
-  };
+  }), [city, citySlug]);
 
-  const structuredData = {
+  const structuredData = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `https://myfence.com/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`,
@@ -162,7 +165,7 @@ const ServiceAreaTemplate = ({
       "https://www.facebook.com/myfence",
       "https://www.instagram.com/myfence"
     ]
-  };
+  }), [city, citySlug, state]);
 
   return (
     <>
@@ -211,7 +214,7 @@ const ServiceAreaTemplate = ({
               Our Services in {city}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
+              {useMemo(() => [
                 {
                   title: "Fence Installation",
                   description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
@@ -236,7 +239,7 @@ const ServiceAreaTemplate = ({
                   title: "Commercial Fencing",
                   description: `Durable commercial fencing solutions for businesses in ${city}.`
                 }
-              ].map((service, index) => (
+              ], [city]).map((service, index) => (
                 <Card key={index} className="p-6">
                   <CheckCircle className="h-8 w-8 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
