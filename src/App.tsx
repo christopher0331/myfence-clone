@@ -34,6 +34,7 @@ const Blog = React.lazy(() => import("./pages/Blog"));
 // Lazy load blog post pages
 const FenceCleaningStaining = React.lazy(() => import("./pages/blog/FenceCleaningStaining"));
 const HowToStainFence = React.lazy(() => import("./pages/blog/HowToStainFence"));
+const HowToStainFenceMDX = React.lazy(() => import("./pages/blog/HowToStainFenceMDX"));
 const NeighborFenceCostSplit = React.lazy(() => import("./pages/blog/NeighborFenceCostSplit"));
 const VirtualQuoteToolBlog = React.lazy(() => import("./pages/blog/VirtualQuoteTool"));
 const SixFtFenceCostBlog = React.lazy(() => import("./pages/blog/SixFtFenceCost"));
@@ -136,6 +137,7 @@ const AppContent = () => {
           <Route path="/blog" element={<Blog />} />
               <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStaining />} />
               <Route path="/blog/how-to-stain-fence" element={<HowToStainFence />} />
+              <Route path="/blog/how-to-stain-fence-mdx" element={<HowToStainFenceMDX />} />
               <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplit />} />
             <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolBlog />} />
             <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostBlog />} />
