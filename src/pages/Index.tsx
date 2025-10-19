@@ -17,6 +17,8 @@ import { FaqSection } from "@/components/FaqSection";
 import BlogSection from "@/components/BlogSection";
 
 const Index = () => {
+  console.log('[Index] Component rendering');
+  
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -34,6 +36,7 @@ const Index = () => {
 
   // Load reviews from Supabase
   useEffect(() => {
+    console.log('[Index] useEffect - loadReviews running');
     const loadReviews = async () => {
       const { data, error } = await supabase
         .from('reviews')
@@ -53,6 +56,7 @@ const Index = () => {
   
   // Load Trustindex reviews widget and sync to database
   useEffect(() => {
+    console.log('[Index] useEffect - Trustindex widget setup running');
     if (!reviewsRef.current) return;
     
     // Create the widget container div with proper Trustindex attributes
