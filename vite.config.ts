@@ -16,14 +16,11 @@ export default defineConfig(({ mode }) => ({
       enforce: 'pre' as const, 
       ...mdx({ 
         jsxImportSource: 'react',
-        jsxRuntime: 'automatic',
         remarkPlugins: [remarkGfm],
         development: mode !== 'production'
       }) 
     },
-    react({
-      jsxRuntime: 'automatic'
-    }),
+    react(),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
