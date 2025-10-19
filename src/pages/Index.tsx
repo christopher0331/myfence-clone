@@ -17,9 +17,6 @@ import { FaqSection } from "@/components/FaqSection";
 import BlogSection from "@/components/BlogSection";
 
 const Index = () => {
-  console.log('[Index] Component rendering');
-  
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -37,7 +34,6 @@ const Index = () => {
 
   // Load reviews from Supabase
   useEffect(() => {
-    console.log('[Index] useEffect - loadReviews running');
     const loadReviews = async () => {
       const { data, error } = await supabase
         .from('reviews')
@@ -57,7 +53,6 @@ const Index = () => {
   
   // Load Trustindex reviews widget and sync to database
   useEffect(() => {
-    console.log('[Index] useEffect - Trustindex widget setup running');
     if (!reviewsRef.current) return;
     
     // Create the widget container div with proper Trustindex attributes
@@ -335,8 +330,6 @@ const Index = () => {
     ]
   };
 
-  // Console log the review JSON-LD for Google
-  console.log('Review JSON-LD Schema:', JSON.stringify(orgLd, null, 2));
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -474,19 +467,7 @@ const Index = () => {
         structuredData={[orgLd, faqSchema]}
       />
 
-      <section
-        className="relative h-64 sm:h-72 md:h-screen w-full border-b"
-        onMouseMove={(e) => {
-          const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-          setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-        }}
-        style={{
-          // signature interaction: responsive gradient following cursor
-          // safely setting CSS variables used by the design system
-          ['--pointer-x' as any]: `${pointer.x}px`,
-          ['--pointer-y' as any]: `${pointer.y}px`,
-        }}
-      >
+      <section className="relative h-64 sm:h-72 md:h-screen w-full border-b">
         <div className="relative h-full w-full">
           <div className="video-hero" aria-hidden="true">
             <iframe
