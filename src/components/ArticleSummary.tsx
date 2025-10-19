@@ -102,8 +102,19 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
             <div className="space-y-4 mt-6">
               {/* Visible Gemini summary */}
               {summaries.gemini && (
-                <div className="prose prose-sm md:prose-base max-w-none text-foreground whitespace-pre-line text-left bg-muted/30 rounded-lg p-6">
-                  {summaries.gemini}
+                <div className="prose prose-sm md:prose-base max-w-none text-left bg-muted/30 rounded-lg p-6 [&_h2]:text-foreground [&_h2]:font-bold [&_h2]:text-lg [&_h2]:mb-3 [&_h2]:mt-4 [&_h2:first-child]:mt-0 [&_ul]:list-none [&_ul]:space-y-2 [&_li]:text-foreground [&_p]:text-foreground [&_hr]:my-4 [&_hr]:border-border">
+                  {summaries.gemini.split('\n').map((line, i) => {
+                    if (line.startsWith('## ')) {
+                      return <h2 key={i}>{line.replace('## ', '')}</h2>;
+                    } else if (line.startsWith('• ')) {
+                      return <li key={i} className="flex gap-2"><span>•</span><span>{line.replace('• ', '')}</span></li>;
+                    } else if (line.trim() === '---') {
+                      return <hr key={i} />;
+                    } else if (line.trim()) {
+                      return <p key={i}>{line}</p>;
+                    }
+                    return null;
+                  })}
                 </div>
               )}
               

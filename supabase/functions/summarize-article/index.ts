@@ -21,16 +21,36 @@ serve(async (req) => {
 
     console.log('Generating summaries for:', pageTitle);
 
-    const prompt = `You are a helpful assistant for MyFence.com, a professional fencing company in Seattle. 
-Summarize the following article about "${pageTitle}" in 4-5 concise bullet points. 
-Focus on the main benefits, key features, and why customers should consider this option.
-Be professional and highlight value propositions clearly.
-Keep each bullet point to 1-2 sentences maximum.
+    const prompt = `You are a professional content summarizer for MyFence.com, a leading fencing company in Seattle.
+
+Create a structured summary of the article "${pageTitle}" using EXACTLY this format:
+
+## Overview
+[Write 1-2 sentences introducing the main topic]
+
+## Key Benefits
+• [Benefit 1 in 1 sentence]
+• [Benefit 2 in 1 sentence]
+• [Benefit 3 in 1 sentence]
+
+## Important Considerations
+• [Consideration 1 in 1 sentence]
+• [Consideration 2 in 1 sentence]
+
+## Bottom Line
+[Write 1 sentence conclusion about value proposition]
+
+---
+
+RULES:
+- Use markdown headers (##) for sections
+- Use bullet points (•) for lists
+- Keep each bullet point to ONE sentence maximum
+- Be professional and value-focused
+- Do not add extra sections or deviate from the format
 
 Article content:
-${pageContent}
-
-Format your response as bullet points starting with •`;
+${pageContent}`;
 
     // Call all three AI providers in parallel
     const [geminiResult, chatgptResult, grokResult] = await Promise.allSettled([
