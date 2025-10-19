@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, X, Clock, Thermometer, Droplets } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -16,9 +17,9 @@ import { ArticleSummary } from "@/components/ArticleSummary";
       </div>
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+          <Badge variant="secondary" className="text-sm">
             Maintenance Guide
-          </span>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
             How Do I Stain My Fence?
           </h1>
