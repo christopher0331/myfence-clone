@@ -40,7 +40,7 @@ const serviceAreas = [
   { to: "/service-areas/renton", label: "Renton, WA" },
   { to: "/service-areas/sammamish", label: "Sammamish, WA" },
   { to: "/service-areas/seattle", label: "Seattle, WA" },
-];
+].sort((a, b) => a.label.localeCompare(b.label));
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -57,12 +57,12 @@ const Header = () => {
           }}>
             <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
           </Link>
-          <Badge variant="secondary" className="hidden md:inline-flex">
+          <Badge variant="secondary" className="hidden lg:inline-flex">
             <Link to="/fence-genius" className="hover:underline">Fence Genius Certified</Link>
           </Badge>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -94,7 +94,7 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="md:hidden flex items-center gap-2">
+        <div className="lg:hidden flex items-center gap-2">
           <a href="tel:12534551885" aria-label="Call MyFence.com">
             <Button variant="default" size="sm">Call</Button>
           </a>
@@ -109,7 +109,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t">
+        <div className="lg:hidden border-t">
           <div className="container py-3 flex flex-col gap-3">
             {navItems.map((item) => (
               <NavLink
