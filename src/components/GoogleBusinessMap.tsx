@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, MapPin, Phone, Star } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 declare global {
@@ -10,112 +10,28 @@ declare global {
 }
 
 interface GoogleBusinessMapProps {
-  placeId?: string;
-  city?: string;
-  state?: string;
+  center: { lat: number; lng: number };
   radiusMiles: number;
+  label: string;
   className?: string;
-  showBusinessInfo?: boolean;
 }
 
-interface BusinessData {
-  displayName?: { text: string };
-  formattedAddress?: string;
-  location?: { latitude: number; longitude: number };
-  rating?: number;
-  userRatingCount?: number;
-  nationalPhoneNumber?: string;
-  websiteUri?: string;
-}
-
-const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", showBusinessInfo = true }: GoogleBusinessMapProps) => {
+const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: GoogleBusinessMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [businessData, setBusinessData] = useState<BusinessData | null>(null);
-  const [cityLocation, setCityLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchBusinessData = async () => {
-      if (!placeId) {
-        setLoading(false);
-        return;
-      }
-      
-      try {
-        setLoading(true);
-        const { data, error } = await supabase.functions.invoke('fetch-google-business', {
-          body: { placeId }
-        });
-
-        if (error) throw error;
-        setBusinessData(data);
-      } catch (err) {
-        console.error('Error fetching business data:', err);
-        setError('Failed to load business information');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBusinessData();
-  }, [placeId]);
 
   useEffect(() => {
-    if (!mapRef.current) return;
-    if (!businessData?.location && !cityLocation && !city) return;
+    if (!mapRef.current || !center) return;
 
     const initMap = async () => {
       try {
-        console.log('Initializing map...');
+        console.log('Initializing map with center:', center);
         
         // Wait for Google Maps API to be fully loaded
         if (!(window.google && window.google.maps)) {
           console.error('Google Maps API not loaded');
-          return;
-        }
-
-        // Determine center coordinates - prioritize city/state over businessData
-        let center: { lat: number; lng: number };
-        let locationLabel: string;
-        
-        // Priority 1: If city/state provided, use that (service area pages)
-        if (city && state) {
-          if (!cityLocation) {
-            console.log(`Geocoding ${city}, ${state}...`);
-            const geocoder = new window.google.maps.Geocoder();
-            try {
-              const result = await geocoder.geocode({ address: `${city}, ${state}` });
-              if (result.results && result.results[0]) {
-                const location = result.results[0].geometry.location;
-                center = { lat: location.lat(), lng: location.lng() };
-                console.log('Geocoding successful:', center);
-                setCityLocation(center);
-              } else {
-                throw new Error('City not found');
-              }
-            } catch (err) {
-              console.error('Geocoding error:', err);
-              setError('Failed to locate city');
-              setLoading(false);
-              return;
-            }
-          } else {
-            center = cityLocation;
-            console.log('Using cached city location:', center);
-          }
-          locationLabel = `${city}, ${state}`;
-        } 
-        // Priority 2: Fall back to businessData if no city/state
-        else if (businessData?.location) {
-          const { latitude, longitude } = businessData.location;
-          center = { lat: latitude, lng: longitude };
-          locationLabel = businessData.displayName?.text || "MyFence.com";
-          console.log('Using business location:', center);
-        } 
-        // No location data available
-        else {
-          console.log('No location data available');
           return;
         }
 
@@ -143,7 +59,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
         new window.google.maps.Marker({
           position: center,
           map,
-          title: locationLabel,
+          title: label,
           icon: {
             path: window.google.maps.SymbolPath.CIRCLE,
             scale: 10,
@@ -221,7 +137,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     };
 
     loadGoogleMaps();
-  }, [businessData, cityLocation, city, state, radiusMiles]);
+  }, [center, radiusMiles, label]);
 
   if (loading) {
     return (
@@ -233,11 +149,11 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     );
   }
 
-  if (error || (placeId && !businessData)) {
+  if (error) {
     return (
       <Card className={className}>
         <CardContent className="p-8 text-center text-muted-foreground">
-          {error || "Unable to load map"}
+          {error}
         </CardContent>
       </Card>
     );
@@ -247,76 +163,12 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     <div className={className}>
       <Card>
         <CardContent className="p-0 relative">
-          {/* Business Info Overlay - only show if we have business data and showBusinessInfo is true */}
-          {showBusinessInfo && businessData && (
-            <div className="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-lg max-w-[280px]">
-              <div className="p-3 relative">
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="font-semibold text-sm leading-tight truncate flex-1">
-                    {businessData.displayName?.text || "MyFence.com"}
-                  </h3>
-                  {businessData.location && (
-                    <a
-                      href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-blue-600 hover:underline whitespace-nowrap flex-shrink-0"
-                    >
-                      Directions
-                    </a>
-                  )}
-                </div>
-                {businessData.formattedAddress && (
-                  <p className="text-xs text-gray-600 mb-2 line-clamp-2">
-                    {businessData.formattedAddress}
-                  </p>
-                )}
-                {businessData.rating && (
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <span className="font-semibold text-sm">{businessData.rating.toFixed(1)}</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="h-3 w-3 fill-orange-500 text-orange-500" 
-                        />
-                      ))}
-                    </div>
-                    {businessData.userRatingCount && (
-                      <a 
-                        href={businessData.websiteUri || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-blue-600 hover:underline"
-                      >
-                        {businessData.userRatingCount} reviews
-                      </a>
-                    )}
-                  </div>
-                )}
-                {businessData.location && (
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${businessData.location.latitude},${businessData.location.longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-blue-600 hover:underline"
-                  >
-                    View larger map
-                  </a>
-                )}
-              </div>
-            </div>
-          )}
-          
           {/* Map */}
           <div ref={mapRef} className="w-full h-[500px] rounded-lg" />
           
           {/* Service Area Info */}
           <div className="p-4 bg-muted/30 text-center text-sm text-muted-foreground">
-            {city 
-              ? `Serving a ${radiusMiles}-mile radius in ${city}, ${state}`
-              : `Serving a ${radiusMiles}-mile radius from our location`
-            }
+            Serving a {radiusMiles}-mile radius from {label}
           </div>
         </CardContent>
       </Card>
