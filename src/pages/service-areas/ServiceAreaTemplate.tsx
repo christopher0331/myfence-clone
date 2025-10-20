@@ -186,29 +186,43 @@ const ServiceAreaTemplate = ({
         {/* Hero Section */}
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <MapPin className="h-6 w-6 text-primary" />
-                <span className="text-lg text-muted-foreground">Serving {city}, {state}</span>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+              {/* Hero Content */}
+              <div className="text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+                  <MapPin className="h-6 w-6 text-primary" />
+                  <span className="text-lg text-muted-foreground">Serving {city}, {state}</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                  Professional Fence Services in {city}
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Expert fence installation, repair, and staining services for residential and commercial properties in {city}, {state}.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <a href="tel:12534551885">
+                    <Button size="lg" variant="hero" className="w-full sm:w-auto">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Call (253) 455-1885
+                    </Button>
+                  </a>
+                  <Link to="/quote">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                      Get Free Quote
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Professional Fence Services in {city}
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Expert fence installation, repair, and staining services for residential and commercial properties in {city}, {state}.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:12534551885">
-                  <Button size="lg" variant="hero" className="w-full sm:w-auto">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call (253) 455-1885
-                  </Button>
-                </a>
-                <Link to="/quote">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Get Free Quote
-                  </Button>
-                </Link>
+
+              {/* Service Area Map */}
+              <div className="w-full">
+                <GoogleBusinessMap 
+                  city={city}
+                  state={state}
+                  radiusMiles={5}
+                  showBusinessInfo={false}
+                  className="w-full"
+                />
               </div>
             </div>
           </div>
@@ -467,25 +481,6 @@ const ServiceAreaTemplate = ({
           </section>
         )}
 
-        {/* Service Area Map */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-                Our {city} Service Area
-              </h2>
-              <p className="text-muted-foreground text-center mb-8">
-                We provide fence services within a 5-mile radius of {city}, {state}
-              </p>
-              <GoogleBusinessMap 
-                city={city}
-                state={state}
-                radiusMiles={5}
-                showBusinessInfo={false}
-              />
-            </div>
-          </div>
-        </section>
 
         {/* Coverage Area with Neighborhoods */}
         <section className="py-16">
