@@ -38,6 +38,8 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
   useEffect(() => {
     const fetchBusinessData = async () => {
       if (!placeId) {
+        // If no placeId, we'll just use city geocoding
+        setBusinessData(null);
         setLoading(false);
         return;
       }
@@ -64,6 +66,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
   useEffect(() => {
     if (!mapRef.current) return;
     if (!businessData?.location && !cityLocation && !city) return;
+    if (loading) return; // Don't init map while still loading
 
     const initMap = async () => {
       // Determine center coordinates
@@ -173,7 +176,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     };
 
     loadGoogleMaps();
-  }, [businessData, cityLocation, city, state, radiusMiles]);
+  }, [businessData, cityLocation, city, state, radiusMiles, loading]);
 
   if (loading) {
     return (
