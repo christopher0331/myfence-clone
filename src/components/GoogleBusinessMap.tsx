@@ -201,49 +201,59 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
         <CardContent className="p-0 relative">
           {/* Business Info Overlay - only show if we have business data and showBusinessInfo is true */}
           {showBusinessInfo && businessData && (
-            <div className="absolute top-4 left-4 z-10 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg max-w-[320px]">
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-1 line-clamp-2">
-                  {businessData.displayName?.text || "MyFence.com"}
-                </h3>
+            <div className="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-lg max-w-[280px]">
+              <div className="p-3 relative">
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <h3 className="font-semibold text-sm leading-tight truncate flex-1">
+                    {businessData.displayName?.text || "MyFence.com"}
+                  </h3>
+                  {businessData.location && (
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-blue-600 hover:underline whitespace-nowrap flex-shrink-0"
+                    >
+                      Directions
+                    </a>
+                  )}
+                </div>
                 {businessData.formattedAddress && (
-                  <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
+                  <p className="text-xs text-gray-600 mb-2 line-clamp-2">
                     {businessData.formattedAddress}
                   </p>
                 )}
-                <div className="flex items-center gap-3 mb-3">
-                  {businessData.rating && (
-                    <div className="flex items-center gap-1">
-                      <span className="font-bold text-base">{businessData.rating}</span>
-                      <Star className="h-4 w-4 fill-primary text-primary" />
-                      {businessData.userRatingCount && (
-                        <span className="text-xs text-muted-foreground">
-                          ({businessData.userRatingCount})
-                        </span>
-                      )}
+                {businessData.rating && (
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <span className="font-semibold text-sm">{businessData.rating}</span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className="h-3 w-3 fill-orange-500 text-orange-500" 
+                        />
+                      ))}
                     </div>
-                  )}
-                </div>
-                {businessData.nationalPhoneNumber && (
-                  <div className="flex items-center gap-2 mb-2">
-                    <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                    <a 
-                      href={`tel:${businessData.nationalPhoneNumber}`} 
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {businessData.nationalPhoneNumber}
-                    </a>
+                    {businessData.userRatingCount && (
+                      <a 
+                        href={businessData.websiteUri || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-blue-600 hover:underline"
+                      >
+                        {businessData.userRatingCount} reviews
+                      </a>
+                    )}
                   </div>
                 )}
                 {businessData.location && (
                   <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${businessData.location.latitude},${businessData.location.longitude}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                    className="text-xs text-blue-600 hover:underline"
                   >
-                    <MapPin className="h-4 w-4" />
-                    Directions
+                    View larger map
                   </a>
                 )}
               </div>
