@@ -10,9 +10,12 @@ declare global {
 }
 
 interface GoogleBusinessMapProps {
-  placeId: string;
+  placeId?: string;
+  city?: string;
+  state?: string;
   radiusMiles: number;
   className?: string;
+  showBusinessInfo?: boolean;
 }
 
 interface BusinessData {
@@ -25,14 +28,20 @@ interface BusinessData {
   websiteUri?: string;
 }
 
-const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusinessMapProps) => {
+const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", showBusinessInfo = true }: GoogleBusinessMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
+  const [cityLocation, setCityLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBusinessData = async () => {
+      if (!placeId) {
+        setLoading(false);
+        return;
+      }
+      
       try {
         setLoading(true);
         const { data, error } = await supabase.functions.invoke('fetch-google-business', {
@@ -53,11 +62,38 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
   }, [placeId]);
 
   useEffect(() => {
-    if (!businessData?.location || !mapRef.current) return;
+    if (!mapRef.current) return;
+    if (!businessData?.location && !cityLocation && !city) return;
 
     const initMap = async () => {
-      const { latitude, longitude } = businessData.location!;
-      const center = { lat: latitude, lng: longitude };
+      // Determine center coordinates
+      let center: { lat: number; lng: number };
+      
+      if (city && state && !cityLocation) {
+        // Geocode the city to get coordinates
+        const geocoder = new window.google.maps.Geocoder();
+        try {
+          const result = await geocoder.geocode({ address: `${city}, ${state}` });
+          if (result.results && result.results[0]) {
+            const location = result.results[0].geometry.location;
+            center = { lat: location.lat(), lng: location.lng() };
+            setCityLocation(center);
+          } else {
+            throw new Error('City not found');
+          }
+        } catch (err) {
+          console.error('Geocoding error:', err);
+          setError('Failed to locate city');
+          return;
+        }
+      } else if (cityLocation) {
+        center = cityLocation;
+      } else if (businessData?.location) {
+        const { latitude, longitude } = businessData.location;
+        center = { lat: latitude, lng: longitude };
+      } else {
+        return;
+      }
 
       // Initialize map with appropriate zoom based on radius
       const getZoomLevel = (miles: number) => {
@@ -78,11 +114,11 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
         ]
       });
 
-      // Add marker for business location
+      // Add marker for location
       new window.google.maps.Marker({
         position: center,
         map,
-        title: businessData.displayName?.text || "MyFence.com",
+        title: city ? `${city}, ${state}` : (businessData?.displayName?.text || "MyFence.com"),
         icon: {
           path: window.google.maps.SymbolPath.CIRCLE,
           scale: 10,
@@ -133,7 +169,7 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
     };
 
     loadGoogleMaps();
-  }, [businessData, radiusMiles]);
+  }, [businessData, cityLocation, city, state, radiusMiles]);
 
   if (loading) {
     return (
@@ -159,61 +195,66 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
     <div className={className}>
       <Card>
         <CardContent className="p-0 relative">
-          {/* Business Info Overlay */}
-          <div className="absolute top-4 left-4 z-10 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg max-w-[320px]">
-            <div className="p-4">
-              <h3 className="font-bold text-lg mb-1 line-clamp-2">
-                {businessData.displayName?.text || "MyFence.com"}
-              </h3>
-              {businessData.formattedAddress && (
-                <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
-                  {businessData.formattedAddress}
-                </p>
-              )}
-              <div className="flex items-center gap-3 mb-3">
-                {businessData.rating && (
-                  <div className="flex items-center gap-1">
-                    <span className="font-bold text-base">{businessData.rating}</span>
-                    <Star className="h-4 w-4 fill-primary text-primary" />
-                    {businessData.userRatingCount && (
-                      <span className="text-xs text-muted-foreground">
-                        ({businessData.userRatingCount})
-                      </span>
-                    )}
+          {/* Business Info Overlay - only show if we have business data and showBusinessInfo is true */}
+          {showBusinessInfo && businessData && (
+            <div className="absolute top-4 left-4 z-10 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg max-w-[320px]">
+              <div className="p-4">
+                <h3 className="font-bold text-lg mb-1 line-clamp-2">
+                  {businessData.displayName?.text || "MyFence.com"}
+                </h3>
+                {businessData.formattedAddress && (
+                  <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
+                    {businessData.formattedAddress}
+                  </p>
+                )}
+                <div className="flex items-center gap-3 mb-3">
+                  {businessData.rating && (
+                    <div className="flex items-center gap-1">
+                      <span className="font-bold text-base">{businessData.rating}</span>
+                      <Star className="h-4 w-4 fill-primary text-primary" />
+                      {businessData.userRatingCount && (
+                        <span className="text-xs text-muted-foreground">
+                          ({businessData.userRatingCount})
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+                {businessData.nationalPhoneNumber && (
+                  <div className="flex items-center gap-2 mb-2">
+                    <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                    <a 
+                      href={`tel:${businessData.nationalPhoneNumber}`} 
+                      className="text-sm text-primary hover:underline"
+                    >
+                      {businessData.nationalPhoneNumber}
+                    </a>
                   </div>
                 )}
-              </div>
-              {businessData.nationalPhoneNumber && (
-                <div className="flex items-center gap-2 mb-2">
-                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                  <a 
-                    href={`tel:${businessData.nationalPhoneNumber}`} 
-                    className="text-sm text-primary hover:underline"
+                {businessData.location && (
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
                   >
-                    {businessData.nationalPhoneNumber}
+                    <MapPin className="h-4 w-4" />
+                    Directions
                   </a>
-                </div>
-              )}
-              {businessData.location && (
-                <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  <MapPin className="h-4 w-4" />
-                  Directions
-                </a>
-              )}
+                )}
+              </div>
             </div>
-          </div>
+          )}
           
           {/* Map */}
           <div ref={mapRef} className="w-full h-[500px] rounded-lg" />
           
           {/* Service Area Info */}
           <div className="p-4 bg-muted/30 text-center text-sm text-muted-foreground">
-            Serving a {radiusMiles}-mile radius from our location
+            {city 
+              ? `Serving a ${radiusMiles}-mile radius in ${city}, ${state}`
+              : `Serving a ${radiusMiles}-mile radius from our location`
+            }
           </div>
         </CardContent>
       </Card>
