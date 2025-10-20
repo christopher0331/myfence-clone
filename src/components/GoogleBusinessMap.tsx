@@ -28,8 +28,8 @@ export default function GoogleBusinessMap({
   placeTypes = ["restaurant"],
 }: GoogleBusinessMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapObj = useRef<google.maps.Map>();
-  const markers = useRef<google.maps.Marker[]>([]);
+  const mapObj = useRef<any>();
+  const markers = useRef<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -67,7 +67,7 @@ export default function GoogleBusinessMap({
         await loadMapsJs(apiKey);
 
         // Import libraries (new style)
-        const { Map, Circle } = (await window.google.maps.importLibrary("maps")) as google.maps.MapsLibrary;
+        const { Map, Circle } = (await window.google.maps.importLibrary("maps")) as any;
         await window.google.maps.importLibrary("places"); // gives access to Place class, etc.
 
         // Map
