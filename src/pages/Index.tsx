@@ -677,7 +677,7 @@ const Index = () => {
           Serving the greater Seattle area within a 20-mile radius of our Maple Valley location.
         </p>
         <GoogleBusinessMap 
-          placeId="ChIJN1t_tDeuEmsRUsoyG83frY4"
+          placeId="ChIJc1uN-RlhkFQRxWi5nVgM6Iw"
           radiusMiles={20}
         />
       </section>

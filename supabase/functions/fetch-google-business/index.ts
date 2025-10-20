@@ -14,7 +14,8 @@ Deno.serve(async (req) => {
     const { placeId } = await req.json()
     
     // Use Google Places API (new) to fetch business details
-    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=displayName,formattedAddress,location,rating,userRatingCount,currentOpeningHours,phoneNumber,websiteUri,reviews&key=${apiKey}`
+    // Field names: https://developers.google.com/maps/documentation/places/web-service/place-details
+    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=displayName,formattedAddress,location,rating,userRatingCount,regularOpeningHours,nationalPhoneNumber,websiteUri&key=${apiKey}`
     
     const response = await fetch(url, {
       method: 'GET',

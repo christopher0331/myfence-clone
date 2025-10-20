@@ -478,7 +478,7 @@ const ServiceAreaTemplate = ({
                 We provide fence services within a 5-mile radius of {city}, {state}
               </p>
               <GoogleBusinessMap 
-                placeId="ChIJN1t_tDeuEmsRUsoyG83frY4"
+                placeId="ChIJc1uN-RlhkFQRxWi5nVgM6Iw"
                 radiusMiles={5}
               />
             </div>

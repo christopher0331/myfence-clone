@@ -21,7 +21,7 @@ interface BusinessData {
   location?: { latitude: number; longitude: number };
   rating?: number;
   userRatingCount?: number;
-  phoneNumber?: string;
+  nationalPhoneNumber?: string;
   websiteUri?: string;
 }
 
@@ -55,7 +55,7 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
   useEffect(() => {
     if (!businessData?.location || !mapRef.current) return;
 
-    const initMap = () => {
+    const initMap = async () => {
       const { latitude, longitude } = businessData.location!;
       const center = { lat: latitude, lng: longitude };
 
@@ -101,16 +101,32 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
     };
 
     // Load Google Maps script if not already loaded
-    if (!window.google) {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBqG9vYZ1J3X5Z3Z5Z5Z5Z5Z5Z5Z5Z5Z5Z`;
-      script.async = true;
-      script.defer = true;
-      script.onload = initMap;
-      document.head.appendChild(script);
-    } else {
-      initMap();
-    }
+    const loadGoogleMaps = async () => {
+      if (!window.google) {
+        try {
+          const { data } = await supabase.functions.invoke('get-maps-key');
+          const apiKey = data?.key;
+          
+          if (!apiKey) {
+            throw new Error('Failed to get Maps API key');
+          }
+
+          const script = document.createElement('script');
+          script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+          script.async = true;
+          script.defer = true;
+          script.onload = () => initMap();
+          document.head.appendChild(script);
+        } catch (err) {
+          console.error('Error loading Google Maps:', err);
+          setError('Failed to load map');
+        }
+      } else {
+        initMap();
+      }
+    };
+
+    loadGoogleMaps();
   }, [businessData, radiusMiles]);
 
   if (loading) {
@@ -149,11 +165,11 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
                   <span>{businessData.formattedAddress}</span>
                 </div>
               )}
-              {businessData.phoneNumber && (
+              {businessData.nationalPhoneNumber && (
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Phone className="h-4 w-4 flex-shrink-0" />
-                  <a href={`tel:${businessData.phoneNumber}`} className="hover:text-primary">
-                    {businessData.phoneNumber}
+                  <a href={`tel:${businessData.nationalPhoneNumber}`} className="hover:text-primary">
+                    {businessData.nationalPhoneNumber}
                   </a>
                 </div>
               )}
