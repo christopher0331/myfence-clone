@@ -181,7 +181,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     );
   }
 
-  if (error || !businessData) {
+  if (error || (placeId && !businessData)) {
     return (
       <Card className={className}>
         <CardContent className="p-8 text-center text-muted-foreground">
