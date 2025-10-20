@@ -142,4 +142,5 @@
 
 # General page redirects
 /about-us* /contact 301
+/book-online-fence-seattle* /contact 301
 /book-online* /quote 301
