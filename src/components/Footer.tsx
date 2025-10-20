@@ -5,27 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <>
-      {/* Google Maps Section */}
-      <section className="bg-muted py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.8!2d-122.0461921!3d47.3893811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906119f98d5b73%3A0x8ce80c589db968c5!2sMyFence.com%20-%20Wood%20Fence%20Contractor!5e0!3m2!1sen!2sus!4v1691234567890!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="MyFence.com - Wood Fence Contractor Location"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-background border-t">
+    <footer className="bg-background border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -180,7 +160,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </>
   );
 };
 
