@@ -160,7 +160,7 @@ export default function GoogleBusinessMap({
       markers.current.forEach((m) => m.setMap(null));
       markers.current = [];
     };
-  }, [center.lat, center.lng, radiusMiles, label, JSON.stringify(placeTypes)]);
+  }, [center, radiusMiles, label, JSON.stringify(placeTypes)]);
 
   if (loading) {
     return (
