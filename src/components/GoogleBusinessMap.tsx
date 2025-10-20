@@ -225,7 +225,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
                 )}
                 {businessData.rating && (
                   <div className="flex items-center gap-1.5 mb-2">
-                    <span className="font-semibold text-sm">{businessData.rating}</span>
+                    <span className="font-semibold text-sm">{businessData.rating.toFixed(1)}</span>
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <Star 
