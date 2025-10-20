@@ -11,9 +11,8 @@ const Footer = () => {
       <section className="bg-muted py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <GoogleBusinessMap 
-            center={{ lat: 47.3394, lng: -122.0461 }}
+            placeId="ChIJc1uN-RlhkFQRxWi5nVgM6Iw"
             radiusMiles={50}
-            label="Maple Valley, WA"
           />
         </div>
       </section>

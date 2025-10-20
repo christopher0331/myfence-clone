@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -37,36 +37,7 @@ const ServiceAreaTemplate = ({
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const isMobile = useIsMobile();
-  const [cityCoords, setCityCoords] = useState<{ lat: number; lng: number } | null>(null);
   
-  // Geocode city on mount
-  useEffect(() => {
-    const geocodeCity = async () => {
-      if (typeof window === 'undefined' || !window.google?.maps) {
-        // Wait for Google Maps to load
-        return;
-      }
-      
-      try {
-        const geocoder = new window.google.maps.Geocoder();
-        const result = await geocoder.geocode({ address: `${city}, ${state}` });
-        if (result.results && result.results[0]) {
-          const location = result.results[0].geometry.location;
-          setCityCoords({ lat: location.lat(), lng: location.lng() });
-        }
-      } catch (err) {
-        console.error('Geocoding error:', err);
-      }
-    };
-
-    // Try immediately
-    geocodeCity();
-    
-    // Also try after a delay in case Maps API is still loading
-    const timeout = setTimeout(geocodeCity, 1000);
-    return () => clearTimeout(timeout);
-  }, [city, state]);
-
   const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -245,20 +216,13 @@ const ServiceAreaTemplate = ({
 
               {/* Service Area Map */}
               <div className="w-full">
-                {cityCoords ? (
-                  <GoogleBusinessMap 
-                    center={cityCoords}
-                    radiusMiles={5}
-                    label={`${city}, ${state}`}
-                    className="w-full"
-                  />
-                ) : (
-                  <Card className="w-full h-[500px] flex items-center justify-center">
-                    <CardContent>
-                      <p className="text-muted-foreground">Loading map...</p>
-                    </CardContent>
-                  </Card>
-                )}
+                <GoogleBusinessMap 
+                  city={city}
+                  state={state}
+                  radiusMiles={5}
+                  showBusinessInfo={false}
+                  className="w-full"
+                />
               </div>
             </div>
           </div>
