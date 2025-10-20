@@ -59,10 +59,16 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
       const { latitude, longitude } = businessData.location!;
       const center = { lat: latitude, lng: longitude };
 
-      // Initialize map
+      // Initialize map with appropriate zoom based on radius
+      const getZoomLevel = (miles: number) => {
+        if (miles >= 50) return 8;
+        if (miles >= 20) return 9;
+        return 11;
+      };
+
       const map = new window.google.maps.Map(mapRef.current!, {
         center,
-        zoom: radiusMiles === 20 ? 9 : 11,
+        zoom: getZoomLevel(radiusMiles),
         styles: [
           {
             featureType: "poi",
@@ -151,48 +157,61 @@ const GoogleBusinessMap = ({ placeId, radiusMiles, className = "" }: GoogleBusin
 
   return (
     <div className={className}>
-      {/* Business Info Card */}
-      <Card className="mb-6">
-        <CardContent className="p-6">
-          <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div className="flex-1 min-w-[200px]">
-              <h3 className="text-2xl font-bold mb-2">
+      <Card>
+        <CardContent className="p-0 relative">
+          {/* Business Info Overlay */}
+          <div className="absolute top-4 left-4 z-10 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg max-w-[320px]">
+            <div className="p-4">
+              <h3 className="font-bold text-lg mb-1 line-clamp-2">
                 {businessData.displayName?.text || "MyFence.com"}
               </h3>
               {businessData.formattedAddress && (
-                <div className="flex items-start gap-2 text-muted-foreground mb-2">
-                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                  <span>{businessData.formattedAddress}</span>
-                </div>
+                <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
+                  {businessData.formattedAddress}
+                </p>
               )}
+              <div className="flex items-center gap-3 mb-3">
+                {businessData.rating && (
+                  <div className="flex items-center gap-1">
+                    <span className="font-bold text-base">{businessData.rating}</span>
+                    <Star className="h-4 w-4 fill-primary text-primary" />
+                    {businessData.userRatingCount && (
+                      <span className="text-xs text-muted-foreground">
+                        ({businessData.userRatingCount})
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
               {businessData.nationalPhoneNumber && (
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Phone className="h-4 w-4 flex-shrink-0" />
-                  <a href={`tel:${businessData.nationalPhoneNumber}`} className="hover:text-primary">
+                <div className="flex items-center gap-2 mb-2">
+                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                  <a 
+                    href={`tel:${businessData.nationalPhoneNumber}`} 
+                    className="text-sm text-primary hover:underline"
+                  >
                     {businessData.nationalPhoneNumber}
                   </a>
                 </div>
               )}
+              {businessData.location && (
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${businessData.location.latitude},${businessData.location.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Directions
+                </a>
+              )}
             </div>
-            {businessData.rating && (
-              <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg">
-                <Star className="h-5 w-5 fill-primary text-primary" />
-                <span className="font-bold text-lg">{businessData.rating}</span>
-                {businessData.userRatingCount && (
-                  <span className="text-sm text-muted-foreground">
-                    ({businessData.userRatingCount} reviews)
-                  </span>
-                )}
-              </div>
-            )}
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Map Card */}
-      <Card>
-        <CardContent className="p-0">
+          
+          {/* Map */}
           <div ref={mapRef} className="w-full h-[500px] rounded-lg" />
+          
+          {/* Service Area Info */}
           <div className="p-4 bg-muted/30 text-center text-sm text-muted-foreground">
             Serving a {radiusMiles}-mile radius from our location
           </div>

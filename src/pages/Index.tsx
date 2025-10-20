@@ -674,11 +674,11 @@ const Index = () => {
       <section className="container py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-bold">Our Service Area</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl mb-6">
-          Serving the greater Seattle area within a 20-mile radius of our Maple Valley location.
+          Serving the greater Seattle area within a 50-mile radius of our Maple Valley location.
         </p>
         <GoogleBusinessMap 
           placeId="ChIJc1uN-RlhkFQRxWi5nVgM6Iw"
-          radiusMiles={20}
+          radiusMiles={50}
         />
       </section>
 
