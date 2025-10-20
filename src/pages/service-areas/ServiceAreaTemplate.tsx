@@ -219,7 +219,7 @@ const ServiceAreaTemplate = ({
                 <GoogleBusinessMap 
                   city={city}
                   state={state}
-                  radiusMiles={15}
+                  radiusMiles={4}
                   showBusinessInfo={true}
                   className="w-full"
                 />
