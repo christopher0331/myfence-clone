@@ -1,11 +1,24 @@
 import { Facebook, Instagram, Linkedin, Phone, Youtube, Music2, Pin } from "lucide-react";
 import { Link } from "react-router-dom";
+import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t">
+    <>
+      {/* Google Maps Section */}
+      <section className="bg-muted py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <GoogleBusinessMap 
+            placeId="ChIJc1uN-RlhkFQRxWi5nVgM6Iw"
+            radiusMiles={50}
+          />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-background border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -160,6 +173,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+    </>
   );
 };
 
