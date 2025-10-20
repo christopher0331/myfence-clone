@@ -75,37 +75,46 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
           return;
         }
 
-        // Determine center coordinates
+        // Determine center coordinates - prioritize city/state over businessData
         let center: { lat: number; lng: number };
+        let locationLabel: string;
         
-        if (city && state && !cityLocation) {
-          console.log(`Geocoding ${city}, ${state}...`);
-          // Geocode the city to get coordinates
-          const geocoder = new window.google.maps.Geocoder();
-          try {
-            const result = await geocoder.geocode({ address: `${city}, ${state}` });
-            if (result.results && result.results[0]) {
-              const location = result.results[0].geometry.location;
-              center = { lat: location.lat(), lng: location.lng() };
-              console.log('Geocoding successful:', center);
-              setCityLocation(center);
-            } else {
-              throw new Error('City not found');
+        // Priority 1: If city/state provided, use that (service area pages)
+        if (city && state) {
+          if (!cityLocation) {
+            console.log(`Geocoding ${city}, ${state}...`);
+            const geocoder = new window.google.maps.Geocoder();
+            try {
+              const result = await geocoder.geocode({ address: `${city}, ${state}` });
+              if (result.results && result.results[0]) {
+                const location = result.results[0].geometry.location;
+                center = { lat: location.lat(), lng: location.lng() };
+                console.log('Geocoding successful:', center);
+                setCityLocation(center);
+              } else {
+                throw new Error('City not found');
+              }
+            } catch (err) {
+              console.error('Geocoding error:', err);
+              setError('Failed to locate city');
+              setLoading(false);
+              return;
             }
-          } catch (err) {
-            console.error('Geocoding error:', err);
-            setError('Failed to locate city');
-            setLoading(false);
-            return;
+          } else {
+            center = cityLocation;
+            console.log('Using cached city location:', center);
           }
-        } else if (cityLocation) {
-          center = cityLocation;
-          console.log('Using cached city location:', center);
-        } else if (businessData?.location) {
+          locationLabel = `${city}, ${state}`;
+        } 
+        // Priority 2: Fall back to businessData if no city/state
+        else if (businessData?.location) {
           const { latitude, longitude } = businessData.location;
           center = { lat: latitude, lng: longitude };
+          locationLabel = businessData.displayName?.text || "MyFence.com";
           console.log('Using business location:', center);
-        } else {
+        } 
+        // No location data available
+        else {
           console.log('No location data available');
           return;
         }
@@ -134,7 +143,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
         new window.google.maps.Marker({
           position: center,
           map,
-          title: city ? `${city}, ${state}` : (businessData?.displayName?.text || "MyFence.com"),
+          title: locationLabel,
           icon: {
             path: window.google.maps.SymbolPath.CIRCLE,
             scale: 10,
