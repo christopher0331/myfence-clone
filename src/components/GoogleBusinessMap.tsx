@@ -3,62 +3,85 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-declare global {
-  interface Window {
-    google: any;
-  }
-}
+type LatLng = { lat: number; lng: number };
 
 interface GoogleBusinessMapProps {
-  center: { lat: number; lng: number };
+  center: LatLng;
   radiusMiles: number;
   label: string;
   className?: string;
+  placeTypes?: string[]; // e.g. ["restaurant"] (max 5)
 }
 
-const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: GoogleBusinessMapProps) => {
+declare global {
+  interface Window {
+    google?: any;
+    _mapsJsLoading?: Promise<void>;
+  }
+}
+
+export default function GoogleBusinessMap({
+  center,
+  radiusMiles,
+  label,
+  className = "",
+  placeTypes = ["restaurant"],
+}: GoogleBusinessMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
+  const mapObj = useRef<google.maps.Map>();
+  const markers = useRef<google.maps.Marker[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-
   useEffect(() => {
-    if (!mapRef.current || !center) return;
+    let cancelled = false;
 
-    const initMap = async () => {
+    const loadMapsJs = async (apiKey: string) => {
+      if (window.google?.maps) return;
+      if (!window._mapsJsLoading) {
+        window._mapsJsLoading = new Promise<void>((resolve, reject) => {
+          const s = document.createElement("script");
+          // load async + modern importLibrary path
+          s.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&libraries=maps,marker,places`;
+          s.async = true;
+          s.defer = true;
+          s.onload = () => resolve();
+          s.onerror = () => reject(new Error("Maps JS failed to load"));
+          document.head.appendChild(s);
+        });
+      }
+      await window._mapsJsLoading;
+    };
+
+    const getZoom = (miles: number) => (miles >= 50 ? 8 : miles >= 20 ? 9 : 11);
+
+    const init = async () => {
       try {
-        console.log('Initializing map with center:', center);
-        
-        // Wait for Google Maps API to be fully loaded
-        if (!(window.google && window.google.maps)) {
-          console.error('Google Maps API not loaded');
-          return;
-        }
+        if (!mapRef.current) return;
 
-        // Initialize map with appropriate zoom based on radius
-        const getZoomLevel = (miles: number) => {
-          if (miles >= 50) return 8;
-          if (miles >= 20) return 9;
-          return 11;
-        };
+        const { data, error: fnErr } = await supabase.functions.invoke("get-maps-key");
+        if (fnErr) throw fnErr;
+        const apiKey = data?.key as string;
+        if (!apiKey) throw new Error("No Maps API key");
 
-        console.log('Creating map...');
-        const map = new window.google.maps.Map(mapRef.current!, {
+        await loadMapsJs(apiKey);
+
+        // Import libraries (new style)
+        const { Map, Circle } = (await window.google.maps.importLibrary("maps")) as google.maps.MapsLibrary;
+        await window.google.maps.importLibrary("places"); // gives access to Place class, etc.
+
+        // Map
+        mapObj.current = new Map(mapRef.current, {
           center,
-          zoom: getZoomLevel(radiusMiles),
-          styles: [
-            {
-              featureType: "poi",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }]
-            }
-          ]
+          zoom: getZoom(radiusMiles),
+          styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] }],
+          mapId: undefined, // set your vector mapId here if you have one
         });
 
-        // Add marker for location
+        // Marker at center
         new window.google.maps.Marker({
           position: center,
-          map,
+          map: mapObj.current!,
           title: label,
           icon: {
             path: window.google.maps.SymbolPath.CIRCLE,
@@ -67,77 +90,77 @@ const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: Googl
             fillOpacity: 1,
             strokeColor: "#fff",
             strokeWeight: 2,
-          }
+          },
         });
 
-        // Add service area circle
-        new window.google.maps.Circle({
+        // Service radius
+        new Circle({
+          map: mapObj.current!,
+          center,
+          radius: radiusMiles * 1609.34,
           strokeColor: "#FF6B35",
           strokeOpacity: 0.8,
           strokeWeight: 2,
           fillColor: "#FF6B35",
           fillOpacity: 0.15,
-          map,
-          center,
-          radius: radiusMiles * 1609.34, // Convert miles to meters
         });
 
-        console.log('Map initialized successfully');
-        setLoading(false);
-      } catch (err) {
-        console.error('Error initializing map:', err);
-        setError('Failed to initialize map');
-        setLoading(false);
-      }
-    };
+        // --- Places (New) Nearby Search via REST v1 ---
+        // Note: FieldMask is REQUIRED and controls cost. Ask only for what you need.
+        const meters = Math.round(radiusMiles * 1609.34);
+        const resp = await fetch("https://places.googleapis.com/v1/places:searchNearby", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": apiKey,
+            "X-Goog-FieldMask":
+              // minimal example: id + displayName + location
+              "places.id,places.displayName,places.location",
+          },
+          body: JSON.stringify({
+            includedTypes: placeTypes, // max 5; omit to search all
+            maxResultCount: 20,
+            locationRestriction: {
+              circle: {
+                center: { latitude: center.lat, longitude: center.lng },
+                radius: meters,
+              },
+            },
+          }),
+        });
 
-    // Load Google Maps script if not already loaded
-    const loadGoogleMaps = async () => {
-      console.log('Loading Google Maps API...');
-      
-      if (window.google && window.google.maps) {
-        console.log('Google Maps API already loaded');
-        initMap();
-        return;
-      }
+        if (!resp.ok) throw new Error(`Places search failed: ${resp.status}`);
+        const dataJson = await resp.json();
 
-      try {
-        const { data, error } = await supabase.functions.invoke('get-maps-key');
-        
-        if (error) {
-          throw error;
-        }
-        
-        const apiKey = data?.key;
-        
-        if (!apiKey) {
-          throw new Error('Failed to get Maps API key');
-        }
+        // Drop markers for results
+        markers.current.forEach((m) => m.setMap(null));
+        markers.current = (dataJson.places ?? []).map((p: any) => {
+          const pos = { lat: p.location.latitude, lng: p.location.longitude };
+          return new window.google.maps.Marker({
+            position: pos,
+            map: mapObj.current!,
+            title: p.displayName?.text,
+          });
+        });
 
-        console.log('Loading Google Maps script...');
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
-        script.async = true;
-        script.defer = true;
-        script.onload = () => {
-          console.log('Google Maps script loaded');
-          initMap();
-        };
-        script.onerror = () => {
-          console.error('Google Maps JS failed to load');
-          setError('Failed to load map');
+        if (!cancelled) setLoading(false);
+      } catch (e: any) {
+        if (!cancelled) {
+          console.error(e);
+          setError(e.message || "Failed to initialize map");
           setLoading(false);
-        };
-        document.head.appendChild(script);
-      } catch (err) {
-        console.error('Error loading Google Maps:', err);
-        setError('Failed to load map');
-        setLoading(false);
+        }
       }
     };
 
-    loadGoogleMaps();
-  }, [center, radiusMiles, label]);
+    init();
+
+    return () => {
+      cancelled = true;
+      markers.current.forEach((m) => m.setMap(null));
+      markers.current = [];
+    };
+  }, [center.lat, center.lng, radiusMiles, label, JSON.stringify(placeTypes)]);
 
   if (loading) {
     return (
@@ -152,9 +175,7 @@ const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: Googl
   if (error) {
     return (
       <Card className={className}>
-        <CardContent className="p-8 text-center text-muted-foreground">
-          {error}
-        </CardContent>
+        <CardContent className="p-8 text-center text-muted-foreground">{error}</CardContent>
       </Card>
     );
   }
@@ -163,10 +184,7 @@ const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: Googl
     <div className={className}>
       <Card>
         <CardContent className="p-0 relative">
-          {/* Map */}
           <div ref={mapRef} className="w-full h-[500px] rounded-lg" />
-          
-          {/* Service Area Info */}
           <div className="p-4 bg-muted/30 text-center text-sm text-muted-foreground">
             Serving a {radiusMiles}-mile radius from {label}
           </div>
@@ -174,6 +192,4 @@ const GoogleBusinessMap = ({ center, radiusMiles, label, className = "" }: Googl
       </Card>
     </div>
   );
-};
-
-export default GoogleBusinessMap;
+}
