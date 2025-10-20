@@ -66,109 +66,148 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     if (!businessData?.location && !cityLocation && !city) return;
 
     const initMap = async () => {
-      // Determine center coordinates
-      let center: { lat: number; lng: number };
-      
-      if (city && state && !cityLocation) {
-        // Geocode the city to get coordinates
-        const geocoder = new window.google.maps.Geocoder();
-        try {
-          const result = await geocoder.geocode({ address: `${city}, ${state}` });
-          if (result.results && result.results[0]) {
-            const location = result.results[0].geometry.location;
-            center = { lat: location.lat(), lng: location.lng() };
-            setCityLocation(center);
-          } else {
-            throw new Error('City not found');
-          }
-        } catch (err) {
-          console.error('Geocoding error:', err);
-          setError('Failed to locate city');
+      try {
+        console.log('Initializing map...');
+        
+        // Wait for Google Maps API to be fully loaded
+        if (!(window.google && window.google.maps)) {
+          console.error('Google Maps API not loaded');
           return;
         }
-      } else if (cityLocation) {
-        center = cityLocation;
-      } else if (businessData?.location) {
-        const { latitude, longitude } = businessData.location;
-        center = { lat: latitude, lng: longitude };
-      } else {
-        return;
-      }
 
-      // Initialize map with appropriate zoom based on radius
-      const getZoomLevel = (miles: number) => {
-        if (miles >= 50) return 8;
-        if (miles >= 20) return 9;
-        return 11;
-      };
-
-      const map = new window.google.maps.Map(mapRef.current!, {
-        center,
-        zoom: getZoomLevel(radiusMiles),
-        styles: [
-          {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }]
+        // Determine center coordinates
+        let center: { lat: number; lng: number };
+        
+        if (city && state && !cityLocation) {
+          console.log(`Geocoding ${city}, ${state}...`);
+          // Geocode the city to get coordinates
+          const geocoder = new window.google.maps.Geocoder();
+          try {
+            const result = await geocoder.geocode({ address: `${city}, ${state}` });
+            if (result.results && result.results[0]) {
+              const location = result.results[0].geometry.location;
+              center = { lat: location.lat(), lng: location.lng() };
+              console.log('Geocoding successful:', center);
+              setCityLocation(center);
+            } else {
+              throw new Error('City not found');
+            }
+          } catch (err) {
+            console.error('Geocoding error:', err);
+            setError('Failed to locate city');
+            setLoading(false);
+            return;
           }
-        ]
-      });
-
-      // Add marker for location
-      new window.google.maps.Marker({
-        position: center,
-        map,
-        title: city ? `${city}, ${state}` : (businessData?.displayName?.text || "MyFence.com"),
-        icon: {
-          path: window.google.maps.SymbolPath.CIRCLE,
-          scale: 10,
-          fillColor: "#FF6B35",
-          fillOpacity: 1,
-          strokeColor: "#fff",
-          strokeWeight: 2,
+        } else if (cityLocation) {
+          center = cityLocation;
+          console.log('Using cached city location:', center);
+        } else if (businessData?.location) {
+          const { latitude, longitude } = businessData.location;
+          center = { lat: latitude, lng: longitude };
+          console.log('Using business location:', center);
+        } else {
+          console.log('No location data available');
+          return;
         }
-      });
 
-      // Add service area circle
-      new window.google.maps.Circle({
-        strokeColor: "#FF6B35",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#FF6B35",
-        fillOpacity: 0.15,
-        map,
-        center,
-        radius: radiusMiles * 1609.34, // Convert miles to meters
-      });
+        // Initialize map with appropriate zoom based on radius
+        const getZoomLevel = (miles: number) => {
+          if (miles >= 50) return 8;
+          if (miles >= 20) return 9;
+          return 11;
+        };
+
+        console.log('Creating map...');
+        const map = new window.google.maps.Map(mapRef.current!, {
+          center,
+          zoom: getZoomLevel(radiusMiles),
+          styles: [
+            {
+              featureType: "poi",
+              elementType: "labels",
+              stylers: [{ visibility: "off" }]
+            }
+          ]
+        });
+
+        // Add marker for location
+        new window.google.maps.Marker({
+          position: center,
+          map,
+          title: city ? `${city}, ${state}` : (businessData?.displayName?.text || "MyFence.com"),
+          icon: {
+            path: window.google.maps.SymbolPath.CIRCLE,
+            scale: 10,
+            fillColor: "#FF6B35",
+            fillOpacity: 1,
+            strokeColor: "#fff",
+            strokeWeight: 2,
+          }
+        });
+
+        // Add service area circle
+        new window.google.maps.Circle({
+          strokeColor: "#FF6B35",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: "#FF6B35",
+          fillOpacity: 0.15,
+          map,
+          center,
+          radius: radiusMiles * 1609.34, // Convert miles to meters
+        });
+
+        console.log('Map initialized successfully');
+        setLoading(false);
+      } catch (err) {
+        console.error('Error initializing map:', err);
+        setError('Failed to initialize map');
+        setLoading(false);
+      }
     };
 
     // Load Google Maps script if not already loaded
     const loadGoogleMaps = async () => {
-      if (!(window.google && window.google.maps)) {
-        try {
-          const { data } = await supabase.functions.invoke('get-maps-key');
-          const apiKey = data?.key;
-          
-          if (!apiKey) {
-            throw new Error('Failed to get Maps API key');
-          }
-
-          const script = document.createElement('script');
-          script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
-          script.async = true;
-          script.defer = true;
-          script.onload = () => initMap();
-          script.onerror = () => {
-            console.error('Google Maps JS failed to load');
-            setError('Failed to load map');
-          };
-          document.head.appendChild(script);
-        } catch (err) {
-          console.error('Error loading Google Maps:', err);
-          setError('Failed to load map');
-        }
-      } else {
+      console.log('Loading Google Maps API...');
+      
+      if (window.google && window.google.maps) {
+        console.log('Google Maps API already loaded');
         initMap();
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase.functions.invoke('get-maps-key');
+        
+        if (error) {
+          throw error;
+        }
+        
+        const apiKey = data?.key;
+        
+        if (!apiKey) {
+          throw new Error('Failed to get Maps API key');
+        }
+
+        console.log('Loading Google Maps script...');
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+        script.async = true;
+        script.defer = true;
+        script.onload = () => {
+          console.log('Google Maps script loaded');
+          initMap();
+        };
+        script.onerror = () => {
+          console.error('Google Maps JS failed to load');
+          setError('Failed to load map');
+          setLoading(false);
+        };
+        document.head.appendChild(script);
+      } catch (err) {
+        console.error('Error loading Google Maps:', err);
+        setError('Failed to load map');
+        setLoading(false);
       }
     };
 
