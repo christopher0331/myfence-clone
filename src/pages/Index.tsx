@@ -15,6 +15,7 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
 import BlogSection from "@/components/BlogSection";
+import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 const Index = () => {
   console.log('[Index] Component rendering');
@@ -667,6 +668,18 @@ const Index = () => {
             <img src="/lovable-uploads/881d3263-4c0d-4f6f-b48f-92eda8da6f09.png" alt="Cedar trellis and pergola system by MyFence.com, designed with Fence Genius technology" loading="lazy" className="w-full h-64 sm:h-80 md:h-96 lg:h-[32rem] object-cover" />
           </CardContent>
         </Card>
+      </section>
+
+      {/* Service Area Map */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold">Our Service Area</h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl mb-6">
+          Serving the greater Seattle area within a 20-mile radius of our Maple Valley location.
+        </p>
+        <GoogleBusinessMap 
+          placeId="ChIJN1t_tDeuEmsRUsoyG83frY4"
+          radiusMiles={20}
+        />
       </section>
 
       {/* Contact form */}

@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 interface ServiceAreaTemplateProps {
   city: string;
@@ -465,6 +466,24 @@ const ServiceAreaTemplate = ({
             </div>
           </section>
         )}
+
+        {/* Service Area Map */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+                Our {city} Service Area
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We provide fence services within a 5-mile radius of {city}, {state}
+              </p>
+              <GoogleBusinessMap 
+                placeId="ChIJN1t_tDeuEmsRUsoyG83frY4"
+                radiusMiles={5}
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Coverage Area with Neighborhoods */}
         <section className="py-16">
