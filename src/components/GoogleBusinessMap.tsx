@@ -144,7 +144,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
 
     // Load Google Maps script if not already loaded
     const loadGoogleMaps = async () => {
-      if (!window.google) {
+      if (!(window.google && window.google.maps)) {
         try {
           const { data } = await supabase.functions.invoke('get-maps-key');
           const apiKey = data?.key;
@@ -158,6 +158,10 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
           script.async = true;
           script.defer = true;
           script.onload = () => initMap();
+          script.onerror = () => {
+            console.error('Google Maps JS failed to load');
+            setError('Failed to load map');
+          };
           document.head.appendChild(script);
         } catch (err) {
           console.error('Error loading Google Maps:', err);
