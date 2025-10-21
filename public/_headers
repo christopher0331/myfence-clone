@@ -1,3 +1,27 @@
-# Cache lovable-uploads images for 3 days
+# Lovable uploads - 3 days
 /lovable-uploads/*
   Cache-Control: public, max-age=259200
+
+# Built assets (hashed by Vite) - 1 year immutable
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static images - 30 days
+/*.jpg
+  Cache-Control: public, max-age=2592000
+/*.jpeg
+  Cache-Control: public, max-age=2592000
+/*.png
+  Cache-Control: public, max-age=2592000
+/*.gif
+  Cache-Control: public, max-age=2592000
+/*.webp
+  Cache-Control: public, max-age=2592000
+/*.svg
+  Cache-Control: public, max-age=2592000
+
+# Static files - 7 days
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/robots.txt
+  Cache-Control: public, max-age=604800
