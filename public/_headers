@@ -1,0 +1,3 @@
+# Cache lovable-uploads images for 3 days
+/lovable-uploads/*
+  Cache-Control: public, max-age=259200
