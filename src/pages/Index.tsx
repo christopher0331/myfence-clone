@@ -783,8 +783,6 @@ const Index = () => {
 
       <BlogSection />
 
-      <FaqSection />
-
       {/* Service Area Map */}
       <section className="container py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
@@ -798,6 +796,8 @@ const Index = () => {
           showBusinessInfo={false}
         />
       </section>
+
+      <FaqSection />
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </main>
