@@ -160,6 +160,24 @@ const BlackHogwireFence = () => {
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
               />
+              <img
+                src="/lovable-uploads/8ft-hogwire-1.jpg"
+                alt="Black hogwire fence with cedar frame in wooded Pacific Northwest setting"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <img
+                src="/lovable-uploads/8ft-hogwire-2.jpg"
+                alt="Long run of black hogwire fence through forested backyard"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <img
+                src="/lovable-uploads/8ft-hogwire-3.jpg"
+                alt="Black hogwire fence on sloped terrain with cedar posts and top rail"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
