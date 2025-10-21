@@ -167,7 +167,7 @@ All colors MUST be HSL.
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -55%); /* Shift up to crop YouTube UI at top */
+  transform: translate(-50%, -52%); /* Slight shift up to crop YouTube UI at top */
   /* Scale up to crop black bars and fill width */
   width: 120%;
   height: 120%;
@@ -179,7 +179,7 @@ All colors MUST be HSL.
   .video-hero iframe {
     width: 200%; /* Scale more on narrow viewports */
     height: 120%;
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, -52%);
   }
 }
 
