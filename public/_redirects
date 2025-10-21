@@ -1,4 +1,5 @@
 # Specific high-traffic URL redirects
+/book-online-fence-seattle* /contact 301
 /maple-valley-fence-contractor-98038* /service-areas/maple-valley 301
 /maple-valley-home-fencing* /service-areas/maple-valley 301
 /maple-valley-best-fence-company* /service-areas/maple-valley 301
@@ -142,4 +143,4 @@
 
 # General page redirects
 /about-us* /contact 301
-/book-online* /quote 301
+/book-online* /contact 301
