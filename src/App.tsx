@@ -8,7 +8,6 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import BlogSection from "./components/BlogSection";
 
 // Lazy load pages for better performance
 const Index = React.lazy(() => import("./pages/Index"));
@@ -84,9 +83,6 @@ const queryClient = new QueryClient({
 });
 
 const AppContent = () => {
-  const location = useLocation();
-  const showBlogSection = location.pathname !== "/blog";
-
   return (
     <>
       <ScrollToTop />
@@ -146,7 +142,6 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      {showBlogSection && <BlogSection />}
       <Footer />
     </>
   );
