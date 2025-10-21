@@ -16,6 +16,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    address: "",
     message: "",
   });
 
@@ -169,8 +170,20 @@ const Contact = () => {
                       type="tel" 
                       value={formData.phone}
                       onChange={handleInputChange}
+                      required
                       autoComplete="tel" 
                       inputMode="tel" 
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="address">Address</Label>
+                    <Input 
+                      id="address" 
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      required
+                      autoComplete="street-address" 
                     />
                   </div>
                 </div>

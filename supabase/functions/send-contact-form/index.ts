@@ -27,10 +27,10 @@ serve(async (req) => {
     const customerMessage = message || description || ''
     
     // Validate required fields
-    if (!customerName || !email || !customerMessage) {
-      console.log('Validation failed - missing fields')
+    if (!customerName || !email || !phone || !address || !customerMessage) {
+      console.log('Validation failed - missing required fields')
       return new Response(
-        JSON.stringify({ error: 'All fields are required' }),
+        JSON.stringify({ error: 'All fields (name, email, phone, address, message) are required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
@@ -53,7 +53,8 @@ New Contact Form Submission from MyFence.com
 Customer Information:
 Name: ${customerName}
 Email: ${email}
-Phone: ${phone || 'Not provided'}${address ? `\nAddress: ${address}` : ''}
+Phone: ${phone}
+Address: ${address}
 
 Message:
 ${customerMessage}
@@ -75,8 +76,8 @@ This message was submitted through the MyFence.com contact form.
         <ul>
           <li><strong>Name:</strong> ${customerName}</li>
           <li><strong>Email:</strong> ${email}</li>
-          <li><strong>Phone:</strong> ${phone || 'Not provided'}</li>
-          ${address ? `<li><strong>Address:</strong> ${address}</li>` : ''}
+          <li><strong>Phone:</strong> ${phone}</li>
+          <li><strong>Address:</strong> ${address}</li>
         </ul>
         
         <h3>Message:</h3>
