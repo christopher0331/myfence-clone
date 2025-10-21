@@ -505,7 +505,8 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
                   alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </AspectRatio>
