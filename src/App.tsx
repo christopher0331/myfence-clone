@@ -8,6 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import BlogSection from "./components/BlogSection";
+import GoogleBusinessMap from "./components/GoogleBusinessMap";
 
 // Lazy load pages for better performance
 const Index = React.lazy(() => import("./pages/Index"));
@@ -83,6 +85,9 @@ const queryClient = new QueryClient({
 });
 
 const AppContent = () => {
+  const location = useLocation();
+  const showBlogSection = location.pathname !== "/blog";
+
   return (
     <>
       <ScrollToTop />
@@ -142,6 +147,21 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      {showBlogSection && <BlogSection />}
+      {showBlogSection && (
+        <section className="container py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            Proudly serving the greater Seattle area within a 50-mile radius
+          </p>
+          <GoogleBusinessMap 
+            city="Maple Valley"
+            state="WA"
+            radiusMiles={50}
+            showBusinessInfo={false}
+          />
+        </section>
+      )}
       <Footer />
     </>
   );

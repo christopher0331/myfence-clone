@@ -14,8 +14,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
-import BlogSection from "@/components/BlogSection";
-import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 const Index = () => {
   console.log('[Index] Component rendering');
@@ -781,23 +779,7 @@ const Index = () => {
         </Card>
       </section>
 
-      <BlogSection />
-
       <FaqSection />
-
-      {/* Service Area Map */}
-      <section className="container py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
-        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-          Proudly serving the greater Seattle area within a 50-mile radius
-        </p>
-        <GoogleBusinessMap 
-          city="Maple Valley"
-          state="WA"
-          radiusMiles={50}
-          showBusinessInfo={false}
-        />
-      </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </main>
