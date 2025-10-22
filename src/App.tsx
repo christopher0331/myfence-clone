@@ -152,12 +152,12 @@ const AppContent = () => {
         <section className="container py-12 md:py-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
           <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-            Proudly serving the greater Seattle area within a 50-mile radius
+            Proudly serving the greater Seattle area within a 35-mile radius
           </p>
           <GoogleBusinessMap 
             city="Maple Valley"
             state="WA"
-            radiusMiles={50}
+            radiusMiles={35}
             showBusinessInfo={false}
           />
         </section>
