@@ -1,5 +1,4 @@
 import Seo from "@/components/Seo";
-import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { Link } from "react-router-dom";
 
 const images = [
@@ -74,20 +73,6 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Service Area Map */}
-      <section className="container py-10">
-        <h2 className="text-2xl font-semibold tracking-tight mb-6 text-center">Our Service Area</h2>
-        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-          Proudly serving the greater Seattle area within a 50-mile radius
-        </p>
-        <GoogleBusinessMap 
-          city="Maple Valley"
-          state="WA"
-          radiusMiles={50}
-          showBusinessInfo={false}
-        />
       </section>
     </main>
   );

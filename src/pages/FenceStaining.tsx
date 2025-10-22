@@ -1,7 +1,6 @@
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { CheckCircle, CloudRain, Shield, Palette, Clock, TreePine, Droplets, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -447,20 +446,6 @@ const FenceStaining = () => {
               Family-owned and Seattle-focused since day one. We know fences, and we definitely know rain!
             </p>
           </div>
-        </section>
-
-        {/* Service Area Map */}
-        <section className="container mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold mb-6 text-center">Our Service Area</h2>
-          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-            Proudly serving the greater Seattle area within a 50-mile radius
-          </p>
-          <GoogleBusinessMap 
-            city="Maple Valley"
-            state="WA"
-            radiusMiles={50}
-            showBusinessInfo={false}
-          />
         </section>
       </main>
     </>
