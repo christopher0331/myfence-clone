@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PaymentCalculator from "@/components/PaymentCalculator";
+import wisetackPhone from "@/assets/wisetack-phone-updated.png";
 
 const Financing = () => {
   const faq = [
@@ -291,7 +292,7 @@ const Financing = () => {
                 </p>
               </div>
               <img 
-                src="/src/assets/wisetack-phone-updated.png" 
+                src={wisetackPhone} 
                 loading="lazy" 
                 width="404" 
                 sizes="(max-width: 479px) 93vw, (max-width: 767px) 53vw, 35vw" 
