@@ -481,7 +481,7 @@ const Index = () => {
               title="MyFence.com installation montage"
             />
           </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-b from-transparent to-background" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 md:h-32 bg-gradient-to-b from-transparent to-background" aria-hidden="true" />
         </div>
       </section>
 
