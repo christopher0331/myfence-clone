@@ -194,15 +194,16 @@ const PreStaining = () => {
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">Individual Component Staining</h3>
+                  <h3 className="text-xl font-semibold mb-3">Complete Staining of Uncut Surfaces</h3>
                   <p className="text-muted-foreground mb-4">
-                    Here's where the magic happens. Every single piece – boards, rails, posts, caps – gets individual attention. 
-                    We stain all six sides of each component, ensuring complete protection including areas that will be hidden after installation.
+                    Here's where the magic happens. Every single piece – boards, rails, posts, caps – gets completely stained in its entirety. 
+                    We stain all six sides of each uncut component, ensuring complete protection including areas that will be hidden after installation. 
+                    If any boards need cutting during production, those cuts represent minimal loss of pre-stained coverage.
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-purple-500" />
-                      <span>All 6 sides covered</span>
+                      <span>Complete coverage of uncut boards</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Eye className="w-4 h-4 text-orange-500" />
@@ -300,9 +301,9 @@ const PreStaining = () => {
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-8 h-8 text-blue-500" />
                     </div>
-                    <h3 className="font-semibold mb-3 text-blue-700">Board Ends & Cuts</h3>
+                    <h3 className="font-semibold mb-3 text-blue-700">Complete Staining of Uncut Surfaces</h3>
                     <p className="text-sm text-muted-foreground">
-                      Fresh cuts expose raw wood that's particularly vulnerable. These end-grain areas soak up moisture like a sponge if left unprotected.
+                      We stain every board completely in its entirety before installation. If boards need cutting during production, those cuts represent minimal loss of pre-stained coverage.
                     </p>
                   </CardContent>
                 </Card>
@@ -422,7 +423,7 @@ const PreStaining = () => {
                       <td className="p-4 text-center">Optimal (12-15%)</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="p-4 font-medium">End Grain Protection</td>
+                      <td className="p-4 font-medium">Uncut Surface Protection</td>
                       <td className="p-4 text-center text-red-600">❌ Limited</td>
                       <td className="p-4 text-center text-green-600">✅ Complete</td>
                     </tr>
