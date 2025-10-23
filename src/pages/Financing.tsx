@@ -281,11 +281,11 @@ const Financing = () => {
                 </div>
                 <div className="margin-bot-24-code-example">
                   <p className="paragraph-code-example-lg">
-                    <a href="#" className="link-blue">Prequalify today</a> with no impact to your credit and contact us to learn about financing your next project!
+                    <a href="https://wisetack.us/#/bu9cfkl/prequalify" target="_blank" rel="noopener noreferrer" className="link-blue">Prequalify today</a> with no impact to your credit and contact us to learn about financing your next project!
                   </p>
                 </div>
                 <div className="margin-bot-24-code-example">
-                  <a href="#" className="btn-code-example w-button">PREQUALIFY NOW</a>
+                  <a href="https://wisetack.us/#/bu9cfkl/prequalify" target="_blank" rel="noopener noreferrer" className="btn-code-example w-button">PREQUALIFY NOW</a>
                 </div>
                 <p className="paragraph-code-example">
                   *All financing is subject to credit approval. Your terms may vary. Payment options through Wisetack are provided by our <a href="https://www.wisetack.com/lenders" target="_blank" className="link-green">lending partners</a>. For example, a $1,200 purchase could cost $104.89 a month for 12 months, based on an 8.9% APR, or $400 a month for 3 months, based on a 0% APR. Offers range from 0-35.9% APR based on creditworthiness. State interest rate caps may apply. No other financing charges or participation fees. See additional terms at <a href="https://www.wisetack.com/faqs" target="_blank" className="link-green">https://www.wisetack.com/faqs</a>.
