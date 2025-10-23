@@ -98,11 +98,12 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
         return;
       }
 
-      // Initialize map with appropriate zoom based on radius
+      // Initialize map with appropriate zoom based on radius and device
       const getZoomLevel = (miles: number) => {
-        if (miles >= 50) return 8;
-        if (miles >= 20) return 9;
-        return 11;
+        const isMobile = window.innerWidth < 768;
+        if (miles >= 50) return isMobile ? 7 : 8;
+        if (miles >= 20) return isMobile ? 8 : 9;
+        return isMobile ? 9 : 11;
       };
 
       const map = new window.google.maps.Map(mapRef.current!, {
@@ -264,7 +265,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
           )}
           
           {/* Map */}
-          <div ref={mapRef} className="w-full h-[500px] rounded-lg" />
+          <div ref={mapRef} className="w-full h-[300px] md:h-[500px] rounded-lg" />
           
           {/* Service Area Info */}
           <div className="p-4 bg-muted/30 text-center text-sm text-muted-foreground">
