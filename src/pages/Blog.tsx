@@ -34,7 +34,6 @@ const heroSlides = [
   }
 ];
 
-
 const Blog = () => {
   const breadcrumbData = {
     "@context": "https://schema.org",
@@ -58,36 +57,32 @@ const Blog = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Seattle Fence Blog - Expert Advice & Insights",
-    "description": "Expert advice on fence installation, maintenance, and costs in Seattle, Washington. Get professional insights from Pacific Northwest fencing specialists.",
-    "url": "https://seattlefence.com/blog",
+    "name": "MyFence.com Blog - Expert Fence Advice",
+    "description": "Expert fence advice for Seattle homeowners.",
+    "url": "https://myfence.com/blog",
     "publisher": {
       "@type": "Organization",
-      "name": "Seattle Fence Company"
-    },
-    "blogPost": blogArticles.map(article => ({
-      "@type": "BlogPosting",
-      "headline": article.title,
-      "description": article.description,
-      "datePublished": article.publishDate,
-      "author": {
-        "@type": "Organization",
-        "name": "Seattle Fence Company"
+      "name": "MyFence.com",
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
       }
-    }))
+    }
   };
 
   return (
     <>
       <Seo
-        title="Seattle Fence Blog - Expert Advice & Installation Tips | Pacific Northwest Fencing"
-        description="Expert fence advice for Seattle homeowners. Learn about costs, maintenance, longevity, and installation tips from Pacific Northwest fencing professionals."
+        title="Seattle Fence Blog - Expert Advice & Installation Tips | MyFence.com"
+        description="Expert fence advice for Seattle homeowners. Learn about costs, maintenance, and installation from Pacific Northwest fencing professionals."
+        canonical="https://myfence.com/blog"
         structuredData={[breadcrumbData, structuredData]}
       />
       
-      <div className="min-h-screen bg-background">
-        {/* Hero Carousel Section */}
-        <section className="relative">
+      <div className="min-h-screen bg-background pt-8">
+        {/* Hero Carousel */}
+        <section className="relative mb-8">
           <Carousel className="w-full">
             <CarouselContent>
               {heroSlides.map((slide) => (
@@ -101,13 +96,9 @@ const Blog = () => {
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center text-white space-y-4 max-w-4xl px-4">
-                        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                          {slide.title}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-white/90">
-                          {slide.subtitle}
-                        </p>
-                        <Button asChild size="lg" className="mt-6">
+                        <h1 className="text-4xl md:text-6xl font-bold">{slide.title}</h1>
+                        <p className="text-xl md:text-2xl">{slide.subtitle}</p>
+                        <Button asChild size="lg">
                           <Link to={slide.link}>Learn More</Link>
                         </Button>
                       </div>
@@ -121,63 +112,44 @@ const Blog = () => {
           </Carousel>
         </section>
 
-        {/* Blog Articles Section */}
+        {/* Blog Articles */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Expert Fence Insights & Advice
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Get professional advice on fence installation, maintenance, and costs from Seattle's trusted fencing experts
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Expert Fence Insights</h2>
+              <p className="text-xl text-muted-foreground">Professional advice from Seattle's fencing experts</p>
             </div>
 
             <Tabs defaultValue="all" className="w-full">
               <TabsList className="grid w-full grid-cols-4 mb-8">
-                <TabsTrigger value="all">All Articles</TabsTrigger>
+                <TabsTrigger value="all">All</TabsTrigger>
                 <TabsTrigger value="maintenance">Maintenance</TabsTrigger>
                 <TabsTrigger value="pricing">Pricing</TabsTrigger>
                 <TabsTrigger value="legal">Legal</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="all" className="space-y-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <TabsContent value="all">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {blogArticles.map((article) => (
                     <Link key={article.id} to={`/blog/${article.id}`}>
-                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
+                      <Card className="h-full hover:shadow-lg transition-shadow">
                         <CardHeader className="p-0">
-                          <AspectRatio ratio={4/3}>
+                          <AspectRatio ratio={16/9}>
                             <OptimizedImage
                               src={article.image}
                               alt={article.title}
-                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
+                              className="w-full h-full object-cover rounded-t-lg"
                             />
                           </AspectRatio>
                         </CardHeader>
                         <CardContent className="p-6">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {article.readTime}
-                            </span>
+                          <div className="flex gap-2 mb-3">
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">{article.category}</span>
+                            <span className="text-xs text-muted-foreground">{article.readTime}</span>
                           </div>
-                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </CardTitle>
-                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                            {article.description}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-muted-foreground">
-                              {article.publishDate}
-                            </span>
-                            <Button variant="outline" size="sm">
-                              Read More
-                            </Button>
-                          </div>
+                          <CardTitle className="text-lg mb-2">{article.title}</CardTitle>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{article.description}</p>
+                          <Button variant="outline" size="sm">Read More</Button>
                         </CardContent>
                       </Card>
                     </Link>
@@ -185,43 +157,19 @@ const Blog = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="maintenance" className="space-y-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {blogArticles.filter(article => article.category === "Maintenance").map((article) => (
+              <TabsContent value="maintenance">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {blogArticles.filter(a => a.category === "Maintenance").map((article) => (
                     <Link key={article.id} to={`/blog/${article.id}`}>
-                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
+                      <Card className="h-full hover:shadow-lg transition-shadow">
                         <CardHeader className="p-0">
-                          <AspectRatio ratio={4/3}>
-                            <OptimizedImage
-                              src={article.image}
-                              alt={article.title}
-                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                            />
+                          <AspectRatio ratio={16/9}>
+                            <OptimizedImage src={article.image} alt={article.title} className="w-full h-full object-cover rounded-t-lg" />
                           </AspectRatio>
                         </CardHeader>
                         <CardContent className="p-6">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {article.readTime}
-                            </span>
-                          </div>
-                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </CardTitle>
-                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                            {article.description}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-muted-foreground">
-                              {article.publishDate}
-                            </span>
-                            <Button variant="outline" size="sm">
-                              Read More
-                            </Button>
-                          </div>
+                          <CardTitle className="text-lg mb-2">{article.title}</CardTitle>
+                          <Button variant="outline" size="sm">Read</Button>
                         </CardContent>
                       </Card>
                     </Link>
@@ -229,130 +177,24 @@ const Blog = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="pricing" className="space-y-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {blogArticles.filter(article => article.category === "Pricing").map((article) => (
+              <TabsContent value="pricing">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {blogArticles.filter(a => a.category === "Pricing").map((article) => (
                     <Link key={article.id} to={`/blog/${article.id}`}>
-                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
-                      <CardHeader className="p-0">
-                        <AspectRatio ratio={4/3}>
-                          <OptimizedImage
-                            src={article.image}
-                            alt={article.title}
-                            className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </AspectRatio>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                            {article.category}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            {article.readTime}
-                          </span>
-                        </div>
-                        <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                          {article.title}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">
-                            {article.publishDate}
-                          </span>
-                          <Button variant="outline" size="sm">
-                            Read More
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
+                      <Card className="h-full"><CardContent className="p-6"><CardTitle>{article.title}</CardTitle></CardContent></Card>
                     </Link>
                   ))}
                 </div>
               </TabsContent>
 
-              <TabsContent value="legal" className="space-y-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {blogArticles.filter(article => article.category === "Legal").map((article) => (
-                    <Link key={article.id} to={`/blog/${article.id}`}>
-                      <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
-                        <CardHeader className="p-0">
-                          <AspectRatio ratio={4/3}>
-                            <OptimizedImage
-                              src={article.image}
-                              alt={article.title}
-                              className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </AspectRatio>
-                        </CardHeader>
-                        <CardContent className="p-6">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {article.readTime}
-                            </span>
-                          </div>
-                          <CardTitle className="text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </CardTitle>
-                          <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                            {article.description}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-muted-foreground">
-                              {article.publishDate}
-                            </span>
-                            <Button variant="outline" size="sm">
-                              Read More
-                            </Button>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
+              <TabsContent value="legal">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {blogArticles.filter(a => a.category === "Legal").map((article) => (
+                    <Link key={article.id} to={`/blog/${article.id}`}><Card className="h-full"><CardContent className="p-6"><CardTitle>{article.title}</CardTitle></CardContent></Card></Link>
                   ))}
                 </div>
               </TabsContent>
             </Tabs>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-muted py-16 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to Start Your Fence Project?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Get a free quote from Seattle's trusted fence installation experts
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link to="/quote">Get Free Quote</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/contact">Contact Us</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Service Area Map */}
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">Our Service Area</h2>
-            <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-              Proudly serving the greater Seattle area within a 35-mile radius
-            </p>
-            <GoogleBusinessMap 
-              city="Maple Valley"
-              state="WA"
-              radiusMiles={35}
-              showBusinessInfo={false}
-            />
           </div>
         </section>
       </div>

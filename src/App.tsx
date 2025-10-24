@@ -29,8 +29,8 @@ const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
 const PreStaining = React.lazy(() => import("./pages/PreStaining"));
 const ExteriorScrews = React.lazy(() => import("./pages/fence-upgrades/ExteriorScrews"));
 const ClearCedar = React.lazy(() => import("./pages/fence-upgrades/ClearCedar"));
-const BoardOnBoard = React.lazy(() => import("./pages/fence-upgrades/BoardOnBoard"));
-const Blog = React.lazy(() => import("./pages/Blog"));
+import BoardOnBoard from "./pages/fence-upgrades/BoardOnBoard";
+import Blog from "./pages/Blog";
 
 // Lazy load blog post pages (MDX versions)
 const FenceCleaningStainingMDX = React.lazy(() => import("./pages/blog/FenceCleaningStainingMDX"));
