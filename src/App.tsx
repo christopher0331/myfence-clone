@@ -96,6 +96,102 @@ const AppContent = () => {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Core page redirects */}
+          <Route path="/about-us" element={<Navigate to="/contact" replace />} />
+          <Route path="/about-us/*" element={<Navigate to="/contact" replace />} />
+          <Route path="/contact/" element={<Navigate to="/contact" replace />} />
+          <Route path="/financing/" element={<Navigate to="/financing" replace />} />
+          <Route path="/blog/" element={<Navigate to="/blog" replace />} />
+          <Route path="/privacy-policy/" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/terms-and-conditions" element={<Navigate to="/terms-conditions" replace />} />
+          <Route path="/terms-and-conditions/*" element={<Navigate to="/terms-conditions" replace />} />
+          
+          {/* Service & style redirects */}
+          <Route path="/wood-fence-installation" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/wood-fence-installation/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/wood-fence-wa" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/wood-fence-wa/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/fence-gates-seattle-wa" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/fence-gates-seattle-wa/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/gates-faq" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/gates-faq/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/horiztonal-fences-myfence" element={<Navigate to="/fence-styles/horizontal-fence" replace />} />
+          <Route path="/horiztonal-fences-myfence/*" element={<Navigate to="/fence-styles/horizontal-fence" replace />} />
+          <Route path="/seattle-local-fence-companies" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/seattle-local-fence-companies/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/seattle-fence-contractor-98115" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/seattle-fence-contractor-98115/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/seattle-wood-fence-installation" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/seattle-wood-fence-installation/*" element={<Navigate to="/fence-styles" replace />} />
+          
+          {/* Quote & tool redirects */}
+          <Route path="/myfence-com-diy-estimate-tool" element={<Navigate to="/quote" replace />} />
+          <Route path="/myfence-com-diy-estimate-tool/*" element={<Navigate to="/quote" replace />} />
+          <Route path="/book-online-fence-seattle" element={<Navigate to="/quote" replace />} />
+          <Route path="/book-online-fence-seattle/*" element={<Navigate to="/quote" replace />} />
+          
+          {/* Gallery & project redirects */}
+          <Route path="/fence-projects-seattle-wa" element={<Navigate to="/gallery" replace />} />
+          <Route path="/fence-projects-seattle-wa/*" element={<Navigate to="/gallery" replace />} />
+          <Route path="/past-projects" element={<Navigate to="/gallery" replace />} />
+          <Route path="/past-projects/*" element={<Navigate to="/gallery" replace />} />
+          
+          {/* Process & misc redirects */}
+          <Route path="/fencebuildprocess" element={<Navigate to="/contact" replace />} />
+          <Route path="/fencebuildprocess/*" element={<Navigate to="/contact" replace />} />
+          <Route path="/permitting-hoa-submittal" element={<Navigate to="/contact" replace />} />
+          <Route path="/permitting-hoa-submittal/*" element={<Navigate to="/contact" replace />} />
+          <Route path="/custom-software" element={<Navigate to="/contact" replace />} />
+          <Route path="/custom-software/*" element={<Navigate to="/contact" replace />} />
+          <Route path="/myfence-review" element={<Navigate to="/contact" replace />} />
+          <Route path="/myfence-review/*" element={<Navigate to="/contact" replace />} />
+          <Route path="/map" element={<Navigate to="/contact" replace />} />
+          <Route path="/map/*" element={<Navigate to="/contact" replace />} />
+          
+          {/* PDF & document redirects */}
+          <Route path="/wp-content/uploads/2024/02/Fence-Genius.pdf" element={<Navigate to="/fence-genius" replace />} />
+          <Route path="/wp-content/uploads/2024/02/Download-Convex-Sheet.pdf" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/wp-content/uploads/2024/02/Download-Convave-Sheet.pdf" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/wp-content/uploads/2024/02/Download-Flat-Gate-Sheet.pdf" element={<Navigate to="/fence-styles" replace />} />
+          
+          {/* Sitemap redirect */}
+          <Route path="/sitemap" element={<Navigate to="/sitemap.xml" replace />} />
+          <Route path="/sitemap/*" element={<Navigate to="/sitemap.xml" replace />} />
+          
+          {/* Location-specific redirects */}
+          <Route path="/maple-valley-fence-contractor-98038" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-fence-contractor-98038/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-fence-installation" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-fence-installation/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-best-fence-company" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-best-fence-company/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-home-fencing" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-home-fencing/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/federal-way-fence-contractor-98023" element={<Navigate to="/service-areas/federal-way" replace />} />
+          <Route path="/federal-way-fence-contractor-98023/*" element={<Navigate to="/service-areas/federal-way" replace />} />
+          <Route path="/auburn-wood-fence-contractors" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/auburn-wood-fence-contractors/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/university-place-fence-company-near-me" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/university-place-fence-company-near-me/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/issaquah-local-fence-companies" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/issaquah-local-fence-companies/*" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/issaquah-wood-fence-contractors" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/issaquah-wood-fence-contractors/*" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/fence-contractor-issaquah-wa-98027" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/fence-contractor-issaquah-wa-98027/*" element={<Navigate to="/service-areas/issaquah" replace />} />
+          <Route path="/kirkland-wood-fence-company-near-me" element={<Navigate to="/service-areas/kirkland" replace />} />
+          <Route path="/kirkland-wood-fence-company-near-me/*" element={<Navigate to="/service-areas/kirkland" replace />} />
+          <Route path="/ravensdale-fence-contractors" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/ravensdale-fence-contractors/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/bellevue-fence-company-near-me" element={<Navigate to="/service-areas/bellevue" replace />} />
+          <Route path="/bellevue-fence-company-near-me/*" element={<Navigate to="/service-areas/bellevue" replace />} />
+          <Route path="/lake-tapps-fence-contractor-98391" element={<Navigate to="/service-areas/lake-tapps" replace />} />
+          <Route path="/lake-tapps-fence-contractor-98391/*" element={<Navigate to="/service-areas/lake-tapps" replace />} />
+          <Route path="/covington-fence-contractor-98042" element={<Navigate to="/service-areas/covington" replace />} />
+          <Route path="/covington-fence-contractor-98042/*" element={<Navigate to="/service-areas/covington" replace />} />
+          
+          {/* Main routes */}
           <Route path="/fence-styles" element={<FenceStyles />} />
           <Route path="/fence-styles/picture-frame-fence" element={<PictureFrameFence />} />
           <Route path="/fence-styles/3-rail-picture-frame-fence" element={<ThreeRailPictureFrameFence />} />
@@ -109,11 +205,9 @@ const AppContent = () => {
           <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<QuoteTool />} />
-          <Route path="/book-online-fence-seattle" element={<Navigate to="/contact" replace />} />
-          <Route path="/book-online-fence-seattle/*" element={<Navigate to="/contact" replace />} />
-            <Route path="/financing" element={<Financing />} />
-            <Route path="/discounts" element={<DiscountsPage />} />
-            <Route path="/contact" element={<Contact />} />
+          <Route path="/financing" element={<Financing />} />
+          <Route path="/discounts" element={<DiscountsPage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/fence-genius" element={<FenceGenius />} />
@@ -143,6 +237,7 @@ const AppContent = () => {
           <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolMDX />} />
           <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostMDX />} />
           <Route path="/blog/seattle-fence-cost-2025" element={<WoodenFenceCost2025MDX />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
