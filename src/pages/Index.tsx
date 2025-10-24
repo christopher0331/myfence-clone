@@ -261,8 +261,13 @@ const Index = () => {
   const orgLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://myfence.com",
     name: "MyFence.com",
-    image: "https://myfence.com/lovable-uploads/850adb64-a0e3-437e-a783-9c2df4f87989.png",
+    image: "https://myfence.com/myfence-logo.png",
+    logo: {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/myfence-logo.png"
+    },
     url: "https://myfence.com",
     telephone: "+1-253-455-1885",
     priceRange: "$$",

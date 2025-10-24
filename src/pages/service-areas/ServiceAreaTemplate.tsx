@@ -68,7 +68,11 @@ const ServiceAreaTemplate = ({
     "@type": "LocalBusiness",
     "@id": `https://myfence.com/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`,
     "name": "MyFence.com",
-    "image": "https://myfence.com/og-image.png",
+    "image": "https://myfence.com/myfence-logo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/myfence-logo.png"
+    },
     "url": "https://myfence.com",
     "telephone": "+12534551885",
     "address": {

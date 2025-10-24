@@ -82,9 +82,14 @@ const Contact = () => {
   const orgLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://myfence.com",
     name: "MyFence.com",
     url: "https://myfence.com",
-    image: "https://myfence.com/lovable-uploads/5f84fd61-a240-4aab-9d39-9728f6a27f36.png",
+    logo: {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/myfence-logo.png"
+    },
+    image: "https://myfence.com/myfence-logo.png",
     telephone: "+1-253-455-1885",
     address: {
       "@type": "PostalAddress",

@@ -22,12 +22,20 @@ const WoodenFenceCost2025MDX = () => {
     "author": { 
       "@type": "Organization", 
       "name": "MyFence.com",
-      "url": "https://myfence.com"
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
+      }
     },
     "publisher": { 
       "@type": "Organization", 
       "name": "MyFence.com",
-      "url": "https://myfence.com"
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
+      }
     },
     "datePublished": "2025-01-01",
     "dateModified": "2025-01-01"

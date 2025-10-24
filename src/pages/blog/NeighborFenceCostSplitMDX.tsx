@@ -12,12 +12,20 @@ const NeighborFenceCostSplitMDX = () => {
     "author": {
       "@type": "Organization",
       "name": "MyFence.com",
-      "url": "https://myfence.com"
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
+      }
     },
     "publisher": {
       "@type": "Organization", 
       "name": "MyFence.com",
-      "url": "https://myfence.com"
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
+      }
     },
     "datePublished": "2024-12-15",
     "dateModified": "2024-12-15",
