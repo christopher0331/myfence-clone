@@ -23,7 +23,7 @@ const DiscountsPage = React.lazy(() => import("./pages/Discounts"));
 // Backward-compat alias to avoid stale references
 const Discounts = DiscountsPage;
 import Contact from "./pages/Contact";
-const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
 const FenceGenius = React.lazy(() => import("./pages/FenceGenius"));
 const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
