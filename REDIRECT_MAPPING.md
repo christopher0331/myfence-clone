@@ -1,5 +1,25 @@
 # MyFence.com Redirect Mapping Strategy
 
+## ⚠️ CRITICAL: React Router Redirect Pattern to AVOID
+
+**DO NOT use trailing slash redirects within React Router routes.** These cause component rendering failures:
+
+```tsx
+// ❌ WRONG - Causes components to not render
+<Route path="/contact/" element={<Navigate to="/contact" replace />} />
+<Route path="/financing/" element={<Navigate to="/financing" replace />} />
+```
+
+**Why this fails:**
+- React Router already handles trailing slashes
+- Adding explicit redirects creates routing conflicts
+- Components fail to mount, showing only header/footer
+
+**Correct approach:**
+- Let React Router handle trailing slashes naturally
+- Use server-level redirects (Nginx, Apache, Netlify) for trailing slash normalization
+- Only use `<Navigate>` for legitimate URL changes (e.g., `/old-page` → `/new-page`)
+
 ## Analysis Summary
 - **Total old URLs analyzed**: 43
 - **New site pages available**: 17 main pages + blog posts + fence styles + fence upgrades
