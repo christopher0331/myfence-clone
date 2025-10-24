@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import boardOnBoardImg from "@/assets/fences/board-on-board-updated.png";
 
 const styles = [
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look." },
@@ -48,7 +49,7 @@ const postOptions = [
 const addOns = [
   { title: 'Upgrade to 4" Screws', img: '/lovable-uploads/81402d1b-e77f-4e51-88db-e0cd71e3a274.png', desc: 'Use 4" exterior screws for 2x4 rails instead of nails for superior hold and longevity.' },
   { title: 'Clear Cedar Fence Boards Upgrade', img: '/lovable-uploads/d27f46a0-cb41-4ed9-917a-44e0969e2f57.png', desc: 'Premium clear cedar boards with minimal knots for a refined appearance.' },
-  { title: 'Board on Board Style', img: '/lovable-uploads/bb4c3899-96f6-4bf3-9454-9cc827adade0.png', desc: 'Overlapping fence boards eliminate gaps for complete privacy.' },
+  { title: 'Board on Board Style', img: boardOnBoardImg, desc: 'Overlapping fence boards eliminate gaps for complete privacy.' },
   { title: '2x4 Rot Board', img: '/lovable-uploads/f24146a2-1913-4499-8e33-5f182b33635e.png', desc: 'Bottom 2x4 sacrificial board for near-zero ground clearance without exposing cedar to soil.' },
   { title: '2 Foot Lattice Topper', img: '/lovable-uploads/23f4897d-5b29-491b-9810-3568c0cb6ebe.png', desc: 'Add a 2-foot lattice extension to achieve near 8-foot total fence height for maximum privacy while maintaining the elegant lattice aesthetic at the top.' },
   { title: 'Pre-Staining', img: '/lovable-uploads/64a3d163-65f2-4ddc-a1bb-cc89381508a1.png', desc: 'Cedar components are stained prior to install for consistent coverage and early protection.' },
