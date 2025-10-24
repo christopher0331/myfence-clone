@@ -19,6 +19,7 @@ const Gallery = React.lazy(() => import("./pages/Gallery"));
 const QuoteTool = React.lazy(() => import("./pages/QuoteTool"));
 const Financing = React.lazy(() => import("./pages/Financing"));
 const DiscountsPage = React.lazy(() => import("./pages/Discounts"));
+
 // Backward-compat alias to avoid stale references
 const Discounts = DiscountsPage;
 import Contact from "./pages/Contact";
@@ -100,7 +101,6 @@ const AppContent = () => {
           {/* Core page redirects */}
           <Route path="/about-us" element={<Navigate to="/contact" replace />} />
           <Route path="/about-us/*" element={<Navigate to="/contact" replace />} />
-          <Route path="/contact/" element={<Navigate to="/contact" replace />} />
           <Route path="/financing/" element={<Navigate to="/financing" replace />} />
           <Route path="/privacy-policy/" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/terms-and-conditions" element={<Navigate to="/terms-conditions" replace />} />
