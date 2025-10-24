@@ -132,8 +132,9 @@ const AppContent = () => {
           <Route path="/book-online-fence-seattle/*" element={<Navigate to="/quote" replace />} />
           
           {/* Gallery & project redirects */}
-          <Route path="/fence-projects-seattle-wa" element={<Navigate to="/gallery" replace />} />
-          <Route path="/fence-projects-seattle-wa/*" element={<Navigate to="/gallery" replace />} />
+          <Route path="/fence-projects-seattle-wa" element={<Navigate to="/service-areas/seattle" replace />} />
+          <Route path="/fence-projects-seattle-wa/" element={<Navigate to="/service-areas/seattle" replace />} />
+          <Route path="/fence-projects-seattle-wa/*" element={<Navigate to="/service-areas/seattle" replace />} />
           <Route path="/past-projects" element={<Navigate to="/gallery" replace />} />
           <Route path="/past-projects/*" element={<Navigate to="/gallery" replace />} />
           
@@ -165,6 +166,7 @@ const AppContent = () => {
           <Route path="/maple-valley-fence-installation" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/maple-valley-fence-installation/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/maple-valley-best-fence-company" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/maple-valley-best-fence-company/" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/maple-valley-best-fence-company/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/maple-valley-home-fencing" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/maple-valley-home-fencing/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
