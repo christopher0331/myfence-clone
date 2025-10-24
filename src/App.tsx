@@ -98,14 +98,6 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Index />} />
 
-          {/* Core page redirects */}
-          <Route path="/about-us" element={<Navigate to="/contact" replace />} />
-          <Route path="/about-us/*" element={<Navigate to="/contact" replace />} />
-          <Route path="/financing/" element={<Navigate to="/financing" replace />} />
-          <Route path="/privacy-policy/" element={<Navigate to="/privacy-policy" replace />} />
-          <Route path="/terms-and-conditions" element={<Navigate to="/terms-conditions" replace />} />
-          <Route path="/terms-and-conditions/*" element={<Navigate to="/terms-conditions" replace />} />
-
           {/* Service & style redirects */}
           <Route path="/wood-fence-installation" element={<Navigate to="/fence-styles" replace />} />
           <Route path="/wood-fence-installation/*" element={<Navigate to="/fence-styles" replace />} />
