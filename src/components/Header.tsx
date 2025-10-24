@@ -88,15 +88,15 @@ const Header = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <a href="tel:12534551885" aria-label="Call MyFence.com">
+          <Link to="/contact">
             <Button variant="hero" size="lg">(253) 455-1885</Button>
-          </a>
+          </Link>
         </nav>
 
         <div className="lg:hidden flex items-center gap-2">
-          <a href="tel:12534551885" aria-label="Call MyFence.com">
+          <Link to="/contact">
             <Button variant="default" size="sm">Call</Button>
-          </a>
+          </Link>
           <Button aria-label="Toggle menu" variant="secondary" size="icon" onClick={() => setOpen((v) => !v)}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 6H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
