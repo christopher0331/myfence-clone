@@ -22,7 +22,7 @@ Redirect 301 /fencebuildprocess/ /contact
 
 # Quote/Tools Pages
 Redirect 301 /myfence-com-diy-estimate-tool/ /quote
-Redirect 301 /book-online-fence-seattle/ /quote
+Redirect 301 /book-online-fence-seattle/ /contact
 
 # Gallery/Projects
 Redirect 301 /fence-projects-seattle-wa/ /gallery

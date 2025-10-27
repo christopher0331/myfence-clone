@@ -122,8 +122,8 @@ const AppContent = () => {
           {/* Quote & tool redirects */}
           <Route path="/myfence-com-diy-estimate-tool" element={<Navigate to="/quote" replace />} />
           <Route path="/myfence-com-diy-estimate-tool/*" element={<Navigate to="/quote" replace />} />
-          <Route path="/book-online-fence-seattle" element={<Navigate to="/quote" replace />} />
-          <Route path="/book-online-fence-seattle/*" element={<Navigate to="/quote" replace />} />
+          <Route path="/book-online-fence-seattle" element={<Navigate to="/contact" replace />} />
+          <Route path="/book-online-fence-seattle/*" element={<Navigate to="/contact" replace />} />
 
           {/* Gallery & project redirects */}
           <Route path="/fence-projects-seattle-wa" element={<Navigate to="/service-areas/seattle" replace />} />
