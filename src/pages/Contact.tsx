@@ -13,7 +13,8 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     address: "",
@@ -144,14 +145,27 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="firstName">First Name</Label>
                     <Input 
-                      id="name" 
-                      name="name"
-                      value={formData.name}
+                      id="firstName" 
+                      name="firstName"
+                      value={formData.firstName}
                       onChange={handleInputChange}
                       required 
-                      autoComplete="name" 
+                      autoComplete="given-name"
+                      maxLength={100}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input 
+                      id="lastName" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required 
+                      autoComplete="family-name"
+                      maxLength={100}
                     />
                   </div>
                   <div>
@@ -164,7 +178,8 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required 
                       autoComplete="email" 
-                      inputMode="email" 
+                      inputMode="email"
+                      maxLength={255}
                     />
                   </div>
                   <div>
@@ -177,7 +192,8 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       autoComplete="tel" 
-                      inputMode="tel" 
+                      inputMode="tel"
+                      maxLength={20}
                     />
                   </div>
                   <div>
@@ -188,7 +204,8 @@ const Contact = () => {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      autoComplete="street-address" 
+                      autoComplete="street-address"
+                      maxLength={200}
                     />
                   </div>
                 </div>
@@ -202,7 +219,8 @@ const Contact = () => {
                       onChange={handleInputChange}
                       rows={7} 
                       required 
-                      autoComplete="off" 
+                      autoComplete="off"
+                      maxLength={1000}
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row gap-3">
