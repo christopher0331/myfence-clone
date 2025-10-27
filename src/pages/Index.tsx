@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Seo from "@/components/Seo";
 import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
@@ -258,7 +258,7 @@ const Index = () => {
     }
   };
 
-  const orgLd = {
+  const orgLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://myfence.com",
@@ -336,10 +336,10 @@ const Index = () => {
       "https://www.pinterest.com/MyFenceDotCom/",
       "https://www.tiktok.com/@myfence.com"
     ]
-  };
+  }), [reviews]);
 
 
-  const faqSchema = {
+  const faqSchema = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
@@ -464,7 +464,7 @@ const Index = () => {
         }
       }
     ]
-  };
+  }), []);
 
   return (
     <main>
