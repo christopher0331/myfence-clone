@@ -30,6 +30,7 @@ const FenceStaining = React.lazy(() => import("./pages/FenceStaining"));
 const PreStaining = React.lazy(() => import("./pages/PreStaining"));
 const ExteriorScrews = React.lazy(() => import("./pages/fence-upgrades/ExteriorScrews"));
 const ClearCedar = React.lazy(() => import("./pages/fence-upgrades/ClearCedar"));
+const RotBoard = React.lazy(() => import("./pages/fence-upgrades/RotBoard"));
 import BoardOnBoard from "./pages/fence-upgrades/BoardOnBoard";
 import Blog from "./pages/Blog";
 
@@ -277,6 +278,7 @@ const AppContent = () => {
           <Route path="/pre-staining-cedar-fence" element={<PreStaining />} />
           <Route path="/fence-upgrades/exterior-screws" element={<ExteriorScrews />} />
           <Route path="/fence-upgrades/clear-cedar" element={<ClearCedar />} />
+          <Route path="/fence-upgrades/rot-board" element={<RotBoard />} />
           <Route path="/fence-upgrades/board-on-board" element={<BoardOnBoard />} />
           <Route path="/service-areas/federal-way" element={<FederalWay />} />
           <Route path="/service-areas/redmond" element={<Redmond />} />
