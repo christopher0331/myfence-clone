@@ -31,6 +31,7 @@ const VirtualQuoteToolBlog = () => {
       <Seo
         title="Get Your Instant Fence Quote with Our Advanced Virtual Tool | Seattle Fence Pros"
         description="Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing."
+        canonical="https://myfence.com/blog/virtual-quote-tool"
         structuredData={structuredData}
       />
       

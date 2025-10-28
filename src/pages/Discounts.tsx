@@ -418,6 +418,7 @@ const Discounts = () => {
       <Seo 
         title="Daily Discounts | MyFence.com"
         description="Solve our daily riddle and spin the wheel for exclusive fence discounts. Get up to 15% off cedar fencing, free processing, and more!"
+        canonical="https://myfence.com/discounts"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5 pt-24 pb-12">
