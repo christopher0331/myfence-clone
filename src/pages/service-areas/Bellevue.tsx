@@ -1,5 +1,6 @@
 import ServiceAreaTemplate from "./ServiceAreaTemplate";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const BellevueArticle = () => (
   <article className="space-y-8">
@@ -45,13 +46,13 @@ const BellevueArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">How long does fence installation take in Bellevue?</h4>
           <p className="text-muted-foreground">
-            Most residential fence projects take 3-5 days once permits are secured. However, permit processing can add 2-4 weeks depending on project complexity and whether HOA approval is required. Projects on steep slopes or those requiring extensive excavation may take longer.
+            Most residential fence projects take 1-3 days depending on size and complexity. Our Fence Genius technology allows us to manufacture panels off-site, reducing installation time by 30-50% compared to traditional methods. Permit processing typically adds 2-4 weeks depending on whether HOA approval is required.
           </p>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">What factors affect fence costs in Bellevue?</h4>
+          <h4 className="font-semibold mb-2">How much does fence installation cost in Bellevue?</h4>
           <p className="text-muted-foreground">
-            Material choice is the primary cost driver—cedar runs $25-40 per linear foot installed, while composite ranges from $45-70. Additional factors include terrain difficulty (slope adds 20-40% to labor costs), permit fees ($100-300), HOA approval processes, and optional upgrades like rot boards or marine-grade hardware for lakefront properties.
+            Get accurate, instant pricing with our <Link to="/quote" className="text-primary hover:underline">Virtual Quote Tool</Link>. Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. A standard 6-foot cedar fence averages $45-55 per foot installed. Use our online tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements—no surprise charges.
           </p>
         </div>
         <div>
