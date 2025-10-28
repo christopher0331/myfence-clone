@@ -251,6 +251,13 @@ const FenceStyles = () => {
                   />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{p.desc}</p>
+                {p.title === "Post on Pipe" && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/fence-upgrades/post-on-pipe">
+                      Learn More About Post on Pipe
+                    </Link>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
