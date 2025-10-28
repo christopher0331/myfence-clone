@@ -619,7 +619,7 @@ const ServiceAreaTemplate = ({
         {articleContent && (
           <section className="py-16">
             <div className="container">
-              <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+              <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:decoration-primary">
                 {articleContent}
               </div>
             </div>
