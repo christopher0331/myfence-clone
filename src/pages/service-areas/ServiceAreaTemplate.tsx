@@ -185,6 +185,7 @@ const ServiceAreaTemplate = ({
       <Seo 
         title={`Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
         description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
+        canonical={`https://myfence.com/service-areas/${citySlug}`}
         structuredData={[breadcrumbData, structuredData]}
       />
       
