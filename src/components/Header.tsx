@@ -62,23 +62,17 @@ const Header = () => {
         </div>
 
         <nav className="hidden lg:flex items-center gap-6">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
-                Menu
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border z-50 w-56">
-              {navItems.map((item) => (
-                <DropdownMenuItem key={item.to} asChild>
-                  <Link to={item.to} className="cursor-pointer">
-                    {item.label}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
           <DropdownMenu>
             <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
               Service Areas
