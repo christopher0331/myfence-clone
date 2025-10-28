@@ -58,7 +58,7 @@ const BellevueArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need to involve my neighbors?</h4>
           <p className="text-muted-foreground">
-            While not legally required in Washington, discussing your fence plans with neighbors is strongly recommended, especially on shared property lines. Some Bellevue neighborhoods have informal agreements about split costs for boundary fences, and maintaining good neighbor relations can prevent future disputes.
+            Washington State law (RCW 16.60.020) establishes clear rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half the cost. We recommend discussing plans early and providing professional documentation. Learn more about <Link to="/blog/neighbor-split" className="text-primary hover:underline">Washington State fence cost sharing laws and best practices</Link>.
           </p>
         </div>
         <div>
