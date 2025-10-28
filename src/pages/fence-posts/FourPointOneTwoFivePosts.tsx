@@ -52,63 +52,128 @@ const FourPointOneTwoFivePosts = () => {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              4.125&quot; x 4.125&quot; x 9&apos; Fence Posts
+              Premium 4.125&quot; x 4.125&quot; x 9&apos; Fence Posts
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              The Best Bang for Your Buck in Fence Posts
+            <p className="text-xl text-muted-foreground mb-4">
+              Seattle&apos;s Best Value Fence Posts - Superior Strength &amp; Longevity
             </p>
-            <Button asChild size="lg" className="font-semibold">
-              <Link to="/quote">Get a Free Quote</Link>
-            </Button>
+            <p className="text-lg text-muted-foreground mb-8">
+              MyFence.com | Serving Seattle, Bellevue, Redmond &amp; Surrounding Areas
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="font-semibold">
+                <Link to="/quote">Get a Free Quote</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/contact">Call (253) 455-1885</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="container py-16">
-        <div className="max-w-4xl mx-auto">
-          <Card>
-            <CardContent className="p-8 space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Why We Recommend 4.125&quot; x 4.125&quot; Fence Posts</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  In our opinion, 4.125&quot; x 4.125&quot; fence posts are the best bang for your buck.
-                  They are much more stout than the traditional &quot;4x4&quot; found in box stores like 
-                  Home Depot and Lowe&apos;s, which is really only 3.5&quot; x 3.5&quot;.
-                </p>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Why MyFence.com Recommends 4.125&quot; x 4.125&quot; Fence Posts</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              After 30+ years of fence installation experience in the Seattle area, we&apos;ve found these posts 
+              offer the perfect balance of strength, durability, and value for Pacific Northwest homes.
+            </p>
+          </div>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Superior Strength & Durability</h3>
-                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  By gaining nearly an additional 5 square inches of cross-sectional surface area, 
-                  our 4.125&quot; x 4.125&quot; posts ensure they can withstand decades of use for your fence.
-                  We make sure to pour the concrete at surface level or close to surface level, 
-                  so there isn&apos;t lots of soil added on the fence post which can cause rot.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  These fence posts are the best in our opinion as they have great strength and 
-                  tend to do less wood warping and twisting compared to other options.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <Card className="hover:shadow-elevated transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Superior to Box Store Posts</h3>
+                    <p className="text-muted-foreground">
+                      Box store &quot;4x4&quot; posts from Home Depot or Lowe&apos;s are actually only 3.5&quot; x 3.5&quot;. 
+                      Our 4.125&quot; x 4.125&quot; posts give you nearly 5 additional square inches of cross-sectional 
+                      surface area for significantly better strength and stability.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Less Checking Than 6x6 Posts</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  An issue that 6x6 fence posts have is they can check (crack) more often. 
-                  Since 6x6 fence posts have a larger diameter, the outside dries quicker than 
-                  the inside, which causes this checking. With 4.125&quot; x 4.125&quot; fence posts, 
-                  you are much less likely to experience that.
-                </p>
-              </div>
+            <Card className="hover:shadow-elevated transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Decades of Durability</h3>
+                    <p className="text-muted-foreground">
+                      With proper installation and our concrete-pouring technique at or near surface level, 
+                      these posts can withstand decades of Seattle weather. Less soil contact means less rot 
+                      and longer fence life.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Price Effective Solution</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Not to mention, they are very price effective. You get superior performance 
-                  without the premium cost of 6x6 posts, making them the perfect balance of 
-                  quality and value for your fence project.
-                </p>
-              </div>
+            <Card className="hover:shadow-elevated transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Less Warping &amp; Twisting</h3>
+                    <p className="text-muted-foreground">
+                      These posts have excellent structural stability with minimal wood warping and twisting over time. 
+                      The optimal size prevents the issues commonly seen in both smaller and larger posts.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-elevated transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Best Value for Your Investment</h3>
+                    <p className="text-muted-foreground">
+                      You get superior performance without the premium cost of 6x6 posts. This is the sweet spot 
+                      for quality and value - the best bang for your buck in Seattle fence construction.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="bg-accent/5 border-primary/20">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-4">Why Not 6x6 Posts?</h3>
+              <p className="text-muted-foreground mb-4">
+                While 6x6 posts are the most durable option, they have a significant drawback: checking (cracking). 
+                The larger diameter causes the outside to dry much faster than the inside, leading to cracks that can 
+                compromise the post&apos;s integrity and appearance.
+              </p>
+              <p className="text-muted-foreground">
+                With 4.125&quot; x 4.125&quot; posts, you&apos;re much less likely to experience checking while still 
+                getting exceptional strength and longevity. It&apos;s the perfect middle ground for Seattle homeowners.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -116,22 +181,69 @@ const FourPointOneTwoFivePosts = () => {
 
       <section className="container py-16 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            See Our 4.125&quot; x 4.125&quot; Posts in Action
+          <h2 className="text-3xl font-bold text-center mb-4">
+            MyFence.com&apos;s Professional Installation Process
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((img, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-elevated transition-shadow">
-                <CardContent className="p-0">
-                  <OptimizedImage
-                    src={img}
-                    alt="Seattle fence installation featuring 4.125 inch x 4.125 inch fence posts by MyFence.com"
-                    className="w-full h-64 object-cover"
-                    loading="lazy"
-                  />
-                </CardContent>
-              </Card>
-            ))}
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Our expert team follows proven techniques to ensure your fence posts last for decades in Seattle&apos;s unique climate.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Precise Post Placement</h3>
+                <p className="text-muted-foreground">
+                  We use our Fence Genius technology to ensure exact spacing and alignment for structural integrity.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Surface-Level Concrete</h3>
+                <p className="text-muted-foreground">
+                  Concrete poured at or near surface level prevents soil contact, dramatically reducing rot risk.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Quality Cedar Posts</h3>
+                <p className="text-muted-foreground">
+                  Premium 4.125&quot; x 4.125&quot; x 9&apos; cedar posts selected for strength and natural rot resistance.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-center mb-8">
+              See Our 4.125&quot; x 4.125&quot; Posts in Action
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((img, index) => (
+                <Card key={index} className="overflow-hidden hover:shadow-elevated transition-shadow">
+                  <CardContent className="p-0">
+                    <OptimizedImage
+                      src={img}
+                      alt="Seattle fence installation featuring 4.125 inch x 4.125 inch fence posts by MyFence.com"
+                      className="w-full h-64 object-cover"
+                      loading="lazy"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -139,18 +251,22 @@ const FourPointOneTwoFivePosts = () => {
       <section className="container py-16">
         <Card className="max-w-4xl mx-auto bg-primary/5 border-primary/20">
           <CardContent className="p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Ready to Build Your Fence?</h2>
+            <h2 className="text-2xl font-bold mb-4">Ready to Build Your Fence in Seattle?</h2>
             <p className="text-muted-foreground mb-6">
-              Get a free quote for your fence project with our recommended 4.125&quot; x 4.125&quot; posts.
+              Get a free quote from MyFence.com for your fence project with our premium 4.125&quot; x 4.125&quot; posts. 
+              Serving Seattle, Bellevue, Redmond, Renton, and surrounding King County areas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
                 <Link to="/quote">Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/fence-styles">View All Fence Styles</Link>
+                <Link to="/contact">Call (253) 455-1885</Link>
               </Button>
             </div>
+            <p className="text-sm text-muted-foreground mt-6">
+              30+ years of experience | Licensed &amp; Insured | Family-owned
+            </p>
           </CardContent>
         </Card>
       </section>
