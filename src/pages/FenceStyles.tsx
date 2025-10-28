@@ -127,15 +127,30 @@ const FenceStyles = () => {
                 <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56 bg-background">
-              <DropdownMenuItem asChild>
-                <a href="#fence-styles" className="cursor-pointer">Fence Styles</a>
+            <DropdownMenuContent align="end" className="z-50 w-56 bg-background">
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault();
+                  document.getElementById('fence-styles')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                Fence Styles
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#post-options" className="cursor-pointer">Fence Post Options</a>
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault();
+                  document.getElementById('post-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                Fence Post Options
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#add-on-options" className="cursor-pointer">Add-On Options</a>
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault();
+                  document.getElementById('add-on-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                Add-On Options
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
