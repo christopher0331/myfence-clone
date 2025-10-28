@@ -1,0 +1,44 @@
+name: Update Sitemap Last Modified Dates
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'public/sitemap.xml'
+      - '.github/workflows/update-sitemap.yml'
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Update sitemap lastmod dates
+        run: |
+          # Get current date in ISO format (YYYY-MM-DD)
+          CURRENT_DATE=$(date -u +"%Y-%m-%d")
+          
+          # Update all lastmod tags in sitemap.xml
+          sed -i "s|<lastmod>[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}</lastmod>|<lastmod>$CURRENT_DATE</lastmod>|g" public/sitemap.xml
+          
+          echo "Updated all lastmod dates to: $CURRENT_DATE"
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code public/sitemap.xml || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/sitemap.xml
+          git commit -m "chore: update sitemap lastmod dates [skip ci]"
+          git push
