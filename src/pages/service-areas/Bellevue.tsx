@@ -58,7 +58,7 @@ const BellevueArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need to involve my neighbors?</h4>
           <p className="text-muted-foreground">
-            Washington State law (RCW 16.60.020) establishes clear rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half the cost. We recommend discussing plans early and providing professional documentation. Learn more about <Link to="/blog/fence-cost-shared-with-neighbor" className="text-primary hover:underline">Washington State fence cost sharing laws and best practices</Link>.
+            <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Washington State law (RCW 16.60.020)</a> establishes clear rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half the cost. We recommend discussing plans early and providing professional documentation. Learn more about <Link to="/blog/fence-cost-shared-with-neighbor" className="text-primary hover:underline">Washington State fence cost sharing laws and best practices</Link>.
           </p>
         </div>
         <div>
