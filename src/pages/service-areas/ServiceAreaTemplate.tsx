@@ -175,8 +175,13 @@ const ServiceAreaTemplate = ({
       ]
     },
     "sameAs": [
-      "https://www.facebook.com/myfence",
-      "https://www.instagram.com/myfence"
+      "https://www.facebook.com/myfence.com.official",
+      "https://www.instagram.com/myfence.com.official/",
+      "https://twitter.com/MyFenceDotCom",
+      "https://www.youtube.com/@fencegenius",
+      "https://www.linkedin.com/company/myfence-com/",
+      "https://www.pinterest.com/MyFenceDotCom/",
+      "https://www.tiktok.com/@myfence.com"
     ]
   }), [city, citySlug, state]);
 
