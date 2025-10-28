@@ -4,6 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import boardOnBoardImg from "@/assets/fences/board-on-board-updated.png";
 
 const styles = [
@@ -110,8 +117,29 @@ const FenceStyles = () => {
           }
         }]}
       />
-      <section className="container py-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">Fence Styles for Every Seattle Home</h1>
+      <section id="fence-styles" className="container py-10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
+          <h1 className="text-4xl font-bold tracking-tight">Fence Styles for Every Seattle Home</h1>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="w-full sm:w-auto">
+                Jump to Section
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56 bg-background">
+              <DropdownMenuItem asChild>
+                <a href="#fence-styles" className="cursor-pointer">Fence Styles</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="#post-options" className="cursor-pointer">Fence Post Options</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="#add-on-options" className="cursor-pointer">Add-On Options</a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <p className="text-muted-foreground max-w-2xl">We design and build fences that fit your property, lifestyle, and budget — backed by our exclusive <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for perfect planning.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {styles.map((s) => (
