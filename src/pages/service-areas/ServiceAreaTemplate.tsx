@@ -23,6 +23,7 @@ interface ServiceAreaTemplateProps {
   localChallenges?: string[];
   localSolutions?: string[];
   climateDescription?: string;
+  articleContent?: React.ReactNode;
 }
 
 const ServiceAreaTemplate = ({ 
@@ -33,7 +34,8 @@ const ServiceAreaTemplate = ({
   landmarks = [],
   localChallenges = [],
   localSolutions = [],
-  climateDescription = ""
+  climateDescription = "",
+  articleContent
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const isMobile = useIsMobile();
@@ -611,6 +613,17 @@ const ServiceAreaTemplate = ({
             </div>
           </div>
         </section>
+
+        {/* Article Content */}
+        {articleContent && (
+          <section className="py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+                {articleContent}
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </>
   );
