@@ -16,12 +16,17 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 const navItems = [
-  { to: "/fence-styles", label: "Fence Styles" },
   { to: "/quote", label: "Virtual Quote Tool" },
   { to: "/discounts", label: "Discounts" },
   { to: "/financing", label: "Financing" },
   { to: "/blog", label: "FAQ" },
   { to: "/contact", label: "Contact us" },
+];
+
+const fenceStylesSections = [
+  { label: "Fence Styles", hash: "#fence-styles" },
+  { label: "Fence Post Options", hash: "#post-options" },
+  { label: "Add-On Options", hash: "#add-on-options" },
 ];
 
 const serviceAreas = [
@@ -62,6 +67,26 @@ const Header = () => {
         </div>
 
         <nav className="hidden lg:flex items-center gap-6">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
+              Fence Styles
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background border z-50">
+              {fenceStylesSections.map((section) => (
+                <DropdownMenuItem
+                  key={section.hash}
+                  onSelect={() => {
+                    setTimeout(() => {
+                      window.location.href = `/fence-styles${section.hash}`;
+                    }, 100);
+                  }}
+                >
+                  {section.label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -110,6 +135,23 @@ const Header = () => {
       {open && (
         <div className="lg:hidden border-t">
           <div className="container py-3 flex flex-col gap-3">
+            <div className="text-base font-medium text-foreground">
+              <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
+                Fence Styles
+              </Link>
+              <div className="flex flex-col gap-2 mt-2 pl-4">
+                {fenceStylesSections.map((section) => (
+                  <a
+                    key={section.hash}
+                    href={`/fence-styles${section.hash}`}
+                    onClick={() => setOpen(false)}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {section.label}
+                  </a>
+                ))}
+              </div>
+            </div>
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
