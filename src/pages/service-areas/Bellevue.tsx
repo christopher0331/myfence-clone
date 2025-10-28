@@ -6,7 +6,7 @@ const BellevueArticle = () => (
   <article className="space-y-8">
     <header>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        What to Know Before Building a Fence in Bellevue — Permits, Materials, and Local Tips
+        What to Know Before Building a Fence in Bellevue: Permits, Materials, and Local Tips
       </h2>
     </header>
 
@@ -33,7 +33,7 @@ const BellevueArticle = () => (
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Comparing Popular Materials for Bellevue's Climate</h3>
       <p className="text-muted-foreground leading-relaxed">
-        Material selection in Bellevue requires balancing aesthetics, durability, and maintenance against the Pacific Northwest's relentless moisture. Western Red Cedar remains the gold standard for wood fencing—its natural oils resist decay and insect damage while developing an attractive silver-gray patina. However, Bellevue's high-end neighborhoods increasingly favor clear-grade cedar for its superior appearance and enhanced longevity, though it commands a premium price.
+        Material selection in Bellevue requires balancing aesthetics, durability, and maintenance against the Pacific Northwest's relentless moisture. Western Red Cedar remains the gold standard for wood fencing. Its natural oils resist decay and insect damage while developing an attractive silver-gray patina. However, Bellevue's high-end neighborhoods increasingly favor clear-grade cedar for its superior appearance and enhanced longevity, though it commands a premium price.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         Composite fencing has gained significant traction in waterfront properties near Lake Washington and Lake Sammamish. Modern composites from manufacturers like Trex and TimberTech offer excellent moisture resistance without the maintenance demands of wood, making them ideal for Bellevue's climate. While initial costs run 50-75% higher than cedar, the elimination of annual staining and longer 25-year lifespan often justify the investment for luxury properties.
