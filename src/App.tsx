@@ -233,8 +233,8 @@ const AppContent = () => {
             path="/kirkland-wood-fence-company-near-me/*"
             element={<Navigate to="/service-areas/kirkland" replace />}
           />
-          <Route path="/ravensdale-fence-contractors" element={<Navigate to="/fence-styles" replace />} />
-          <Route path="/ravensdale-fence-contractors/*" element={<Navigate to="/fence-styles" replace />} />
+          <Route path="/ravensdale-fence-contractors" element={<Navigate to="/service-areas/maple-valley" replace />} />
+          <Route path="/ravensdale-fence-contractors/*" element={<Navigate to="/service-areas/maple-valley" replace />} />
           <Route path="/bellevue-fence-company-near-me" element={<Navigate to="/service-areas/bellevue" replace />} />
           <Route path="/bellevue-fence-company-near-me/*" element={<Navigate to="/service-areas/bellevue" replace />} />
           <Route
