@@ -129,25 +129,28 @@ const FenceStyles = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="z-50 w-56 bg-background">
               <DropdownMenuItem
-                onSelect={(e) => {
-                  e.preventDefault();
-                  document.getElementById('fence-styles')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                onSelect={() => {
+                  setTimeout(() => {
+                    document.getElementById('fence-styles')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
                 }}
               >
                 Fence Styles
               </DropdownMenuItem>
               <DropdownMenuItem
-                onSelect={(e) => {
-                  e.preventDefault();
-                  document.getElementById('post-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                onSelect={() => {
+                  setTimeout(() => {
+                    document.getElementById('post-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
                 }}
               >
                 Fence Post Options
               </DropdownMenuItem>
               <DropdownMenuItem
-                onSelect={(e) => {
-                  e.preventDefault();
-                  document.getElementById('add-on-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                onSelect={() => {
+                  setTimeout(() => {
+                    document.getElementById('add-on-options')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
                 }}
               >
                 Add-On Options
