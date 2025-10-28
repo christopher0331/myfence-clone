@@ -82,6 +82,45 @@ const BellevueArticle = () => (
 );
 
 const Bellevue = () => {
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does fence installation take in Bellevue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most residential fence projects take 1-3 days depending on size and complexity. Our Fence Genius technology allows us to manufacture panels off-site, reducing installation time by 30-50% compared to traditional methods. Permit processing typically adds 2-4 weeks depending on whether HOA approval is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does fence installation cost in Bellevue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. A standard 6-foot cedar fence averages $45-55 per foot installed. Get accurate, instant pricing with our Virtual Quote Tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements - no surprise charges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to involve my neighbors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Washington State law (RCW 16.60.020) establishes clear rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half the cost. We recommend discussing plans early and providing professional documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the best time to install a fence in Bellevue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Late spring through early fall (May-September) offers the most favorable weather conditions. However, reputable contractors work year-round, and winter installation can sometimes offer better availability and pricing. Just ensure proper concrete curing time in wet conditions."
+        }
+      }
+    ]
+  };
+
   return (
     <ServiceAreaTemplate 
       city="Bellevue" 
@@ -123,6 +162,7 @@ const Bellevue = () => {
         "Marine-grade hardware and coatings for lakefront and high-moisture locations"
       ]}
       articleContent={<BellevueArticle />}
+      faqStructuredData={faqStructuredData}
     />
   );
 };

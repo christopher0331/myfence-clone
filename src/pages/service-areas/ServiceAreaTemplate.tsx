@@ -24,6 +24,7 @@ interface ServiceAreaTemplateProps {
   localSolutions?: string[];
   climateDescription?: string;
   articleContent?: React.ReactNode;
+  faqStructuredData?: any;
 }
 
 const ServiceAreaTemplate = ({ 
@@ -35,7 +36,8 @@ const ServiceAreaTemplate = ({
   localChallenges = [],
   localSolutions = [],
   climateDescription = "",
-  articleContent
+  articleContent,
+  faqStructuredData
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const isMobile = useIsMobile();
@@ -191,7 +193,7 @@ const ServiceAreaTemplate = ({
         title={`Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
         description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
         canonical={`https://myfence.com/service-areas/${citySlug}`}
-        structuredData={[breadcrumbData, structuredData]}
+        structuredData={faqStructuredData ? [breadcrumbData, structuredData, faqStructuredData] : [breadcrumbData, structuredData]}
       />
       
       <div className="min-h-screen">
