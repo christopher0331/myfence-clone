@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import { useMemo } from "react";
+import { useMemo, useEffect, useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/accordion";
 import { useIsMobile } from "@/hooks/use-mobile";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
-import TrustPilotReviews from "@/components/TrustPilotReviews";
 
 interface ServiceAreaTemplateProps {
   city: string;
@@ -42,6 +41,32 @@ const ServiceAreaTemplate = ({
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const isMobile = useIsMobile();
+  const reviewsRef = useRef<HTMLDivElement | null>(null);
+  
+  // Load Trustindex reviews widget
+  useEffect(() => {
+    console.log('[ServiceArea] useEffect - Trustindex widget setup running');
+    if (!reviewsRef.current) return;
+    
+    // Create the widget container div with proper Trustindex attributes
+    const widgetDiv = document.createElement("div");
+    widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");
+    widgetDiv.className = "trustindex-widget";
+    reviewsRef.current.appendChild(widgetDiv);
+    
+    const s = document.createElement("script");
+    s.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
+    s.async = true;
+    s.defer = true;
+    
+    reviewsRef.current.appendChild(s);
+    
+    return () => {
+      s.remove();
+      widgetDiv.remove();
+      if (reviewsRef.current) reviewsRef.current.innerHTML = "";
+    };
+  }, []);
   
   const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
@@ -435,16 +460,22 @@ const ServiceAreaTemplate = ({
           </div>
         </section>
 
-        {/* TrustPilot Reviews Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                What Our {city} Customers Say
-              </h2>
-              <TrustPilotReviews />
-            </div>
-          </div>
+        {/* Trustindex Reviews Section */}
+        <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
+          <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">
+            What Our {city} Customers Say
+          </h2>
+          <p className="text-muted-foreground mt-2 max-w-2xl">
+            Choosing a {city} fence contractor is an investment—make it with the father & son team that builds it right the first time.
+          </p>
+          <Card className="mt-6">
+            <CardContent className="p-6">
+              <div ref={reviewsRef} className="w-full" aria-live="polite"></div>
+              <noscript>
+                <p className="text-sm text-muted-foreground">Enable JavaScript to view our Trustindex reviews.</p>
+              </noscript>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Local Expertise Section */}
