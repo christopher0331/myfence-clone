@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import { useIsMobile } from "@/hooks/use-mobile";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import TrustPilotReviews from "@/components/TrustPilotReviews";
 
 interface ServiceAreaTemplateProps {
   city: string;
@@ -430,6 +431,18 @@ const ServiceAreaTemplate = ({
                   </div>
                 </>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* TrustPilot Reviews Section */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+                What Our {city} Customers Say
+              </h2>
+              <TrustPilotReviews />
             </div>
           </div>
         </section>
