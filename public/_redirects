@@ -48,6 +48,7 @@
 /*bellevue* /service-areas/bellevue 301
 
 # City-specific redirects - Kirkland
+/kirkland /service-areas/kirkland 301
 /fence-installation-kirkland* /service-areas/kirkland 301
 /fence-repair-kirkland* /service-areas/kirkland 301
 /fence-company-kirkland* /service-areas/kirkland 301
