@@ -55,7 +55,7 @@ const MapleValleyArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">How long does a fence last in Maple Valley's climate?</h4>
           <p className="text-muted-foreground">
-            A properly installed cedar fence in Maple Valley typically lasts 20-30 years with basic maintenance. Our superior 4.125" x 4.125" posts provide exceptional strength and resist the warping and rot common with smaller posts from box stores. Regular cleaning and staining every 3-5 years can extend lifespan beyond 30 years. <Link to="/services/fence-staining" className="text-primary underline decoration-2 underline-offset-2">Learn more about our professional fence staining services</Link>.
+            A properly installed cedar fence in Maple Valley typically lasts 20-30 years with basic maintenance. Our superior 4.125" x 4.125" posts provide exceptional strength and resist the warping and rot common with smaller posts from box stores. Regular cleaning and staining every 3-5 years can extend lifespan beyond 30 years, helping protect your investment from Maple Valley's wet climate.
           </p>
         </div>
         <div>
