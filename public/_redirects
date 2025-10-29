@@ -57,6 +57,7 @@
 /*kirkland* /service-areas/kirkland 301
 
 # City-specific redirects - Redmond
+/redmond /service-areas/redmond 301
 /fence-installation-redmond* /service-areas/redmond 301
 /fence-repair-redmond* /service-areas/redmond 301
 /fence-company-redmond* /service-areas/redmond 301
