@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import { useMemo, useEffect, useRef } from "react";
+import { useMemo, useEffect, useRef, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Accordion,
   AccordionContent,
@@ -42,6 +43,25 @@ const ServiceAreaTemplate = ({
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const isMobile = useIsMobile();
   const reviewsRef = useRef<HTMLDivElement | null>(null);
+  const [reviews, setReviews] = useState<any[]>([]);
+  
+  // Load reviews from Supabase
+  useEffect(() => {
+    const loadReviews = async () => {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .order('review_date', { ascending: false });
+      
+      if (error) {
+        console.error('Error loading reviews:', error);
+      } else if (data) {
+        setReviews(data);
+      }
+    };
+
+    loadReviews();
+  }, []);
   
   // Load Trustindex reviews widget
   useEffect(() => {
@@ -132,6 +152,25 @@ const ServiceAreaTemplate = ({
       "opens": "00:00",
       "closes": "23:59"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": reviews.length > 0 ? reviews.length.toString() : "150"
+    },
+    "review": reviews.map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author_name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating.toString(),
+        "bestRating": "5"
+      },
+      "datePublished": review.review_date,
+      "reviewBody": review.review_text
+    })),
     "founder": {
       "@type": "Person",
       "name": "Andrew Knudsen"
@@ -211,7 +250,7 @@ const ServiceAreaTemplate = ({
       "https://www.pinterest.com/MyFenceDotCom/",
       "https://www.tiktok.com/@myfence.com"
     ]
-  }), [city, citySlug, state]);
+  }), [city, citySlug, state, reviews]);
 
   return (
     <>
