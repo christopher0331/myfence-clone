@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 const Index = () => {
   console.log('[Index] Component rendering');
@@ -535,9 +536,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
+              <p className="text-muted-foreground">Have questions? We're here to help with your fence project.</p>
+            </div>
+            <Card className="glass-card">
+              <CardContent className="p-6 md:p-8">
+                <ContactForm />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* AI Company Summary */}
       <section className="container py-12 md:py-16">
-        <ArticleSummary 
+        <ArticleSummary
           pageTitle="MyFence.com Company Overview"
           pageContent="Write a professional company summary for MyFence.com, a Seattle-area wood fence contractor that is family-owned and operated by a father-and-son team of engineers. Highlight how MyFence.com leverages exclusive technology developed by its sister company, Fence Genius, to revolutionize the outdated fence construction industry. The Fence Genius system includes software and manufacturing technology that enables off-site prefabrication of custom, slope-following fence panels and gates, ensuring unmatched precision, quality, and efficiency. Emphasize that MyFence.com is the only contractor in the market using this patented system. Despite using advanced technology and delivering higher-quality results, their pricing remains competitive with traditional installers. The company is committed to raising standards in fence building and is rapidly growing in Seattle, WA and the surrounding region."
         />
