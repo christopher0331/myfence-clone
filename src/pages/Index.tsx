@@ -613,7 +613,7 @@ const Index = () => {
         {/* Mobile version - Simple button to external site */}
         <Card className="mt-6 glass-card overflow-hidden md:hidden">
           <CardContent className="p-6 text-center">
-            <div className="text-xs uppercase tracking-wider text-primary/90 mb-2">Powered by <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius</Link></div>
+            <div className="text-xs uppercase tracking-wider text-primary/90 mb-2">Powered by SeattleFenceQuote.com</div>
             <h3 className="text-xl font-semibold mb-4">Get Your Virtual Quote</h3>
             <p className="text-muted-foreground mb-6">Use our interactive tool to design your fence and get instant pricing.</p>
             <Button size="lg" className="w-full" asChild>
@@ -629,7 +629,7 @@ const Index = () => {
           <CardContent className="p-0">
             <div className="grid lg:grid-cols-2">
               <div className="p-6 md:p-10 flex flex-col justify-center">
-                <div className="text-xs uppercase tracking-wider text-primary/90">Powered by <Link to="/fence-genius" className="underline hover:no-underline">Fence Genius</Link></div>
+                <div className="text-xs uppercase tracking-wider text-primary/90">Powered by SeattleFenceQuote.com</div>
                 <h3 className="mt-2 text-2xl font-semibold">Start Building Your Estimate</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Real-time pricing</li>
