@@ -151,13 +151,34 @@ const Redmond = () => {
       metaDescription="Tech-savvy fence installation in Redmond. Modern designs for Microsoft employees & tech families. Education Hill to Overlake. Contemporary solutions for active lifestyles. Call (253) 455-1885."
       zipCodes={["98052", "98053", "98073"]}
       neighborhoods={[
-        "Downtown Redmond",
-        "Education Hill",
-        "Overlake",
-        "Grass Lawn",
-        "Willows/Rose Hill",
-        "Idylwood",
-        "Bridle Trails"
+        {
+          name: "Downtown Redmond",
+          description: "Urban mixed-use district with modern properties demanding contemporary fence styles that complement city living and walkable lifestyle"
+        },
+        {
+          name: "Education Hill",
+          description: "Family-focused area near top-rated schools requiring secure fencing for children and pets with HOA-approved designs"
+        },
+        {
+          name: "Overlake",
+          description: "Tech hub neighborhood near Microsoft campus with professionals seeking modern horizontal designs and low-maintenance solutions"
+        },
+        {
+          name: "Grass Lawn",
+          description: "Established community with mature properties needing installations that preserve existing landscaping and complement traditional architecture"
+        },
+        {
+          name: "Willows/Rose Hill",
+          description: "Diverse residential area with varied housing types requiring flexible fence solutions from starter homes to luxury properties"
+        },
+        {
+          name: "Idylwood",
+          description: "Wooded neighborhood backing onto greenbelt needing wildlife-deterrent fencing and forest-edge installation expertise"
+        },
+        {
+          name: "Bridle Trails",
+          description: "Equestrian community with large lots requiring horse-safe post-and-rail fencing and compliance with horse-property codes"
+        }
       ]}
       landmarks={[
         "Microsoft Campus",

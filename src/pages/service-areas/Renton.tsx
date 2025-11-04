@@ -11,13 +11,34 @@ const Renton = () => {
       metaDescription="Versatile fence installation across Renton's growing communities. Lake Washington waterfront to Highlands hillsides. Diverse terrain & housing style experts. Quality solutions. Call (253) 455-1885."
       zipCodes={["98055", "98056", "98057", "98058", "98059"]}
       neighborhoods={[
-        "Renton Highlands",
-        "Kennydale",
-        "Fairwood",
-        "Cascade",
-        "East Renton Plateau",
-        "Sunset",
-        "Downtown Renton"
+        {
+          name: "Renton Highlands",
+          description: "Elevated hillside community with stunning views demanding slope installations that preserve vistas while providing privacy"
+        },
+        {
+          name: "Kennydale",
+          description: "Lakefront neighborhood on Lake Washington requiring marine-resistant installations and designs that preserve water access"
+        },
+        {
+          name: "Fairwood",
+          description: "Large suburban development with family-oriented properties needing extensive fence runs and secure boundaries for active lifestyles"
+        },
+        {
+          name: "Cascade",
+          description: "Established residential area with mix of property ages requiring flexible solutions from repairs to complete replacements"
+        },
+        {
+          name: "East Renton Plateau",
+          description: "Newer developments with modern homes demanding contemporary fence designs and HOA-compliant installations"
+        },
+        {
+          name: "Sunset",
+          description: "Valley-floor neighborhood with moisture considerations requiring enhanced drainage and rot-resistant materials"
+        },
+        {
+          name: "Downtown Renton",
+          description: "Urban core with mixed housing types needing compact installations and solutions for smaller city lots"
+        }
       ]}
       landmarks={[
         "Gene Coulon Memorial Beach Park",
