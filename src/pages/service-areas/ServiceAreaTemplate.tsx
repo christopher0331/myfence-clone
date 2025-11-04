@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Clock, CheckCircle, Sun, AlertCircle } from "lucide-react";
+import { Phone, MapPin, Clock, CheckCircle, Sun } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import { useMemo, useEffect, useRef, useState } from "react";
@@ -537,46 +537,7 @@ const ServiceAreaTemplate = ({
                       <p className="text-muted-foreground">Understanding {city}'s unique conditions</p>
                     </div>
                   </div>
-                  <p className="text-lg mb-6">{climateDescription}</p>
-                  
-                  {localChallenges.length > 0 && (
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                        <AlertCircle className="h-5 w-5 text-primary" />
-                        Local Fencing Challenges:
-                      </h3>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {localChallenges.map((challenge, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                            <span className="text-muted-foreground">{challenge}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {localSolutions.length > 0 && (
-                    <div className="mt-8 pt-6 border-t">
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="p-3 bg-primary/10 rounded-lg">
-                          <CheckCircle className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">Our Local Solutions</h3>
-                          <p className="text-muted-foreground">Tailored for {city} properties</p>
-                        </div>
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {localSolutions.map((solution, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">{solution}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <p className="text-lg">{climateDescription}</p>
                 </Card>
               </div>
             </div>
