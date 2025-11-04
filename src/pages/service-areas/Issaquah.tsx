@@ -11,13 +11,34 @@ const Issaquah = () => {
       metaDescription="Foothills fence experts for Issaquah Highlands & Tiger Mountain. Wildlife-smart designs & slope installations for forested properties. Custom solutions for mountain living. Call (253) 455-1885."
       zipCodes={["98027", "98029"]}
       neighborhoods={[
-        "Issaquah Highlands",
-        "Olde Town Issaquah",
-        "Talus",
-        "Providence Point",
-        "Grand Ridge",
-        "Newcastle",
-        "Montreux"
+        {
+          name: "Issaquah Highlands",
+          description: "Master-planned community with HOA requirements demanding approved designs and premium materials for upscale properties"
+        },
+        {
+          name: "Olde Town Issaquah",
+          description: "Historic downtown area with traditional homes requiring classic fence styles that preserve small-town character"
+        },
+        {
+          name: "Talus",
+          description: "Luxury hillside development with steep slopes demanding expert terrain-adaptive installations and reinforced anchoring"
+        },
+        {
+          name: "Providence Point",
+          description: "Active adult community with specific design guidelines requiring low-maintenance solutions and committee-approved installations"
+        },
+        {
+          name: "Grand Ridge",
+          description: "Family-focused neighborhood with larger lots needing secure boundary fencing for children, pets, and outdoor living spaces"
+        },
+        {
+          name: "Newcastle",
+          description: "Wooded hillside properties with challenging terrain requiring specialized slope installations and drainage integration"
+        },
+        {
+          name: "Montreux",
+          description: "Exclusive golf course community with premium properties demanding high-end custom designs and luxury materials"
+        }
       ]}
       landmarks={[
         "Cougar Mountain Regional Wildland Park",

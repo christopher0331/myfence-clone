@@ -11,13 +11,34 @@ const GigHarbor = () => {
       metaDescription="Harbor-side fence installation in Gig Harbor. Salt-resistant materials for Puget Sound maritime climate. Waterfront charm protected from Uptown to harbor-view homes. Call (253) 455-1885."
       zipCodes={["98329", "98332", "98335"]}
       neighborhoods={[
-        "Downtown Gig Harbor",
-        "Harbor Hill",
-        "Canterwood",
-        "Artondale",
-        "Crescent Valley",
-        "Minter Creek",
-        "Purdy"
+        {
+          name: "Downtown Gig Harbor",
+          description: "Historic waterfront district with maritime heritage requiring installations that complement coastal architecture and saltwater environment"
+        },
+        {
+          name: "Harbor Hill",
+          description: "Elevated neighborhood with harbor views demanding designs that preserve vistas while providing privacy and wind protection"
+        },
+        {
+          name: "Canterwood",
+          description: "Luxury gated community with strict architectural guidelines requiring premium materials and committee-approved custom designs"
+        },
+        {
+          name: "Artondale",
+          description: "Established family neighborhood with mature landscaping needing careful installations around existing trees and gardens"
+        },
+        {
+          name: "Crescent Valley",
+          description: "Upscale residential area with large properties demanding extensive fencing solutions and high-end finishes"
+        },
+        {
+          name: "Minter Creek",
+          description: "Rural waterfront properties requiring specialized marine installations and wildlife-conscious boundary fencing"
+        },
+        {
+          name: "Purdy",
+          description: "Country estates and rural parcels needing long fence runs, agricultural options, and cost-effective solutions for acreage"
+        }
       ]}
       landmarks={[
         "Gig Harbor Waterfront",

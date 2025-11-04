@@ -11,12 +11,30 @@ const FederalWay = () => {
       metaDescription="Coastal-tough fence installation for Federal Way. Moisture-resistant solutions for marine air & heavy rainfall. Serving Dash Point waterfront to Steel Lake. Expert craftsmanship. Call (253) 455-1885."
       zipCodes={["98003", "98023", "98063", "98093"]}
       neighborhoods={[
-        "Dash Point",
-        "Twin Lakes",
-        "Steel Lake",
-        "Lakehaven",
-        "Camelot",
-        "Adelaide"
+        {
+          name: "Dash Point",
+          description: "Coastal waterfront community with Puget Sound exposure requiring marine-grade materials and corrosion-resistant installations"
+        },
+        {
+          name: "Twin Lakes",
+          description: "Lakeside neighborhood with high moisture levels demanding enhanced weatherproofing and rot-resistant fence materials"
+        },
+        {
+          name: "Steel Lake",
+          description: "Established residential area with mature properties needing fence updates and replacements that match neighborhood character"
+        },
+        {
+          name: "Lakehaven",
+          description: "Family-oriented community with active yards requiring durable privacy fencing for children and pets"
+        },
+        {
+          name: "Camelot",
+          description: "Mid-century neighborhood with varied property conditions needing flexible installation approaches and repair options"
+        },
+        {
+          name: "Adelaide",
+          description: "Diverse residential area with mix of lot sizes requiring scalable fence solutions from compact to expansive properties"
+        }
       ]}
       landmarks={[
         "Wild Waves Theme Park",
