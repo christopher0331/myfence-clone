@@ -11,21 +11,66 @@ const Seattle = () => {
       metaDescription="Urban fence solutions for Seattle's diverse neighborhoods. Capitol Hill to West Seattle. City-smart designs maximizing privacy. Historic district-compliant installations. Call (253) 455-1885."
       zipCodes={["98101", "98102", "98103", "98104", "98105", "98106", "98107", "98108", "98109", "98112", "98115", "98116", "98117", "98118", "98119", "98121", "98122", "98125", "98126", "98133", "98134", "98136", "98144", "98177", "98199"]}
       neighborhoods={[
-        "Capitol Hill",
-        "Ballard",
-        "Fremont",
-        "Queen Anne",
-        "Wallingford",
-        "Green Lake",
-        "Magnolia",
-        "West Seattle",
-        "Georgetown",
-        "Beacon Hill",
-        "Columbia City",
-        "Laurelhurst",
-        "Madison Park",
-        "Ravenna",
-        "University District"
+        {
+          name: "Capitol Hill",
+          description: "Historic urban neighborhood with compact lots requiring creative privacy solutions and designs compliant with landmark district regulations"
+        },
+        {
+          name: "Ballard",
+          description: "Maritime district with Scandinavian heritage demanding salt-resistant installations and styles that complement historic craftsman architecture"
+        },
+        {
+          name: "Fremont",
+          description: "Eclectic arts district with unique properties needing custom designs that match the neighborhood's creative character"
+        },
+        {
+          name: "Queen Anne",
+          description: "Historic hilltop neighborhood with steep slopes requiring terraced installations and preservation-approved designs for landmark homes"
+        },
+        {
+          name: "Wallingford",
+          description: "Family-friendly residential area with bungalows needing traditional fence styles that maintain neighborhood charm and period character"
+        },
+        {
+          name: "Green Lake",
+          description: "Active lakeside community with recreational properties requiring durable fencing that handles high foot traffic and pet activity"
+        },
+        {
+          name: "Magnolia",
+          description: "Waterfront peninsula with Puget Sound exposure demanding marine-grade materials and wind-resistant installations"
+        },
+        {
+          name: "West Seattle",
+          description: "Diverse hillside neighborhoods with beach access requiring slope installations and salt-air resistant materials for waterfront proximity"
+        },
+        {
+          name: "Georgetown",
+          description: "Industrial-adjacent neighborhood with urban properties needing sound-dampening fence designs and secure boundary installations"
+        },
+        {
+          name: "Beacon Hill",
+          description: "Multicultural hillside community with varied housing types requiring flexible solutions from small city lots to larger properties"
+        },
+        {
+          name: "Columbia City",
+          description: "Revitalizing neighborhood with historic homes needing period-appropriate fence designs that complement ongoing restoration efforts"
+        },
+        {
+          name: "Laurelhurst",
+          description: "Waterfront luxury neighborhood on Lake Washington demanding premium materials and designs worthy of multi-million dollar properties"
+        },
+        {
+          name: "Madison Park",
+          description: "Lakefront community with established estates requiring high-end installations and marine-resistant hardware for waterfront exposure"
+        },
+        {
+          name: "Ravenna",
+          description: "Tree-lined residential area near university district needing installations that preserve mature trees while providing student-area security"
+        },
+        {
+          name: "University District",
+          description: "High-density student area with rental properties requiring durable, low-maintenance installations for investment properties"
+        }
       ]}
       landmarks={[
         "Pike Place Market",

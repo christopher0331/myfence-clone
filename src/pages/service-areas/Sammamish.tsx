@@ -11,13 +11,34 @@ const Sammamish = () => {
       metaDescription="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 455-1885."
       zipCodes={["98074", "98075"]}
       neighborhoods={[
-        "Pine Lake",
-        "Beaver Lake",
-        "Sahalee",
-        "Trossachs",
-        "Klahanie",
-        "East Sammamish",
-        "Inglewood"
+        {
+          name: "Pine Lake",
+          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views"
+        },
+        {
+          name: "Beaver Lake",
+          description: "Family-oriented neighborhood with top-rated schools needing secure fencing for children and pets with high-quality materials"
+        },
+        {
+          name: "Sahalee",
+          description: "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards"
+        },
+        {
+          name: "Trossachs",
+          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration"
+        },
+        {
+          name: "Klahanie",
+          description: "Master-planned community with detailed architectural guidelines requiring approved designs and committee review for all installations"
+        },
+        {
+          name: "East Sammamish",
+          description: "Established residential area with mature landscaping needing installations that work around 20+ year old trees and existing gardens"
+        },
+        {
+          name: "Inglewood",
+          description: "Growing family neighborhood with newer construction requiring modern fence designs that complement contemporary architecture"
+        }
       ]}
       landmarks={[
         "Lake Sammamish State Park",
