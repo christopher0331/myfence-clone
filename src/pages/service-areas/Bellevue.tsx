@@ -127,15 +127,42 @@ const Bellevue = () => {
       state="WA"
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
-        "Downtown Bellevue",
-        "Bridle Trails",
-        "Somerset",
-        "Crossroads",
-        "Factoria",
-        "Eastgate",
-        "West Bellevue",
-        "Wilburton",
-        "Newport Hills"
+        {
+          name: "Downtown Bellevue",
+          description: "Urban luxury high-rises and condominiums with strict architectural standards and rooftop/balcony privacy screening requirements"
+        },
+        {
+          name: "Bridle Trails",
+          description: "Equestrian estates on 1+ acre lots requiring specialized post-and-rail designs and compliance with horse-property fencing codes"
+        },
+        {
+          name: "Somerset",
+          description: "Hillside properties with panoramic views demanding slope installations and sound-dampening solutions for I-90 traffic noise"
+        },
+        {
+          name: "Crossroads",
+          description: "Diverse residential area with mid-century homes and new townhome developments requiring varied fence solutions"
+        },
+        {
+          name: "Factoria",
+          description: "Family-oriented neighborhoods with active HOAs requiring committee-approved designs and durable materials for high child/pet activity"
+        },
+        {
+          name: "Eastgate",
+          description: "Mixed residential zones near commercial districts needing privacy screening and decorative fencing to complement varied home styles"
+        },
+        {
+          name: "West Bellevue",
+          description: "Waterfront luxury estates along Lake Washington requiring marine-grade corrosion-resistant installations and architectural elegance"
+        },
+        {
+          name: "Wilburton",
+          description: "Established neighborhoods with mature landscaping requiring careful installation around 50+ year old trees and root systems"
+        },
+        {
+          name: "Newport Hills",
+          description: "Wooded hillside community with steep slopes and tall trees requiring reinforced posts and drainage-integrated designs"
+        }
       ]}
       landmarks={[
         "Bellevue Square",
