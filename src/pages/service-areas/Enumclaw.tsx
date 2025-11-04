@@ -11,12 +11,30 @@ const Enumclaw = () => {
       metaDescription="Mountain-ready fence installation for Enumclaw. Heavy-duty systems engineered for elevation, snow loads & mountain winds. Wildlife management solutions. Rural property experts. Call (253) 455-1885."
       zipCodes={["98022"]}
       neighborhoods={[
-        "Downtown Enumclaw",
-        "Enumclaw Plateau",
-        "Black Diamond",
-        "Green Valley",
-        "Mutual",
-        "Franklin"
+        {
+          name: "Downtown Enumclaw",
+          description: "Historic small-town center with traditional properties requiring classic fence designs that complement Main Street character"
+        },
+        {
+          name: "Enumclaw Plateau",
+          description: "Elevated residential area with mountain exposure demanding heavy-duty installations engineered for wind and snow loads"
+        },
+        {
+          name: "Black Diamond",
+          description: "Rural mining town heritage with larger lots needing extensive fencing solutions and cost-effective approaches for acreage"
+        },
+        {
+          name: "Green Valley",
+          description: "Agricultural and residential mix requiring farm-style fencing, livestock containment, and property line demarcation"
+        },
+        {
+          name: "Mutual",
+          description: "Country living community with forested boundaries needing wildlife-resistant fencing and secure installations for rural properties"
+        },
+        {
+          name: "Franklin",
+          description: "Mountain gateway neighborhood with elevated terrain demanding specialized post anchoring for challenging soil and slope conditions"
+        }
       ]}
       landmarks={[
         "Mount Rainier National Park (nearby)",

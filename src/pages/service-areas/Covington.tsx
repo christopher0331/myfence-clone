@@ -11,12 +11,30 @@ const Covington = () => {
       metaDescription="Hillside fence installation experts in Covington WA. Reinforced systems for challenging slopes & clay soil. Jenkins Creek to Maple Hills. Engineered for terrain & rainfall. Call (253) 455-1885."
       zipCodes={["98042"]}
       neighborhoods={[
-        "Jenkins Creek",
-        "Maple Hills",
-        "Rock Creek",
-        "Lake Sawyer",
-        "Covington Woods",
-        "Shadow Lake"
+        {
+          name: "Jenkins Creek",
+          description: "Newer family-friendly development with modern homes requiring privacy fencing for growing families and active yards"
+        },
+        {
+          name: "Maple Hills",
+          description: "Established hillside neighborhood with varied elevations demanding specialized slope installation techniques and drainage solutions"
+        },
+        {
+          name: "Rock Creek",
+          description: "Wooded community backing onto natural areas needing wildlife-deterrent fencing and forest-edge installation expertise"
+        },
+        {
+          name: "Lake Sawyer",
+          description: "Lakeside properties requiring moisture-resistant materials and installations that preserve water views and access"
+        },
+        {
+          name: "Covington Woods",
+          description: "Mature tree-lined streets where installations must work around established root systems while maintaining property boundaries"
+        },
+        {
+          name: "Shadow Lake",
+          description: "Residential area with mix of property sizes needing flexible fence designs from compact yards to larger lots"
+        }
       ]}
       landmarks={[
         "Jenkins Creek Park",
