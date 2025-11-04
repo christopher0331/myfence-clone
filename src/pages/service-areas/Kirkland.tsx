@@ -151,13 +151,34 @@ const Kirkland = () => {
       metaDescription="Lakefront fence specialists in Kirkland. Marine-resistant installations for waterfront estates & urban villages. Juanita Bay to downtown. Lake Washington expertise. Call (253) 455-1885."
       zipCodes={["98033", "98034", "98083"]}
       neighborhoods={[
-        "Downtown Kirkland",
-        "Juanita",
-        "Finn Hill",
-        "Kingsgate",
-        "Bridle Trails",
-        "Market",
-        "Moss Bay"
+        {
+          name: "Downtown Kirkland",
+          description: "Urban walkable district with mixed-use properties requiring stylish boundary fencing that complements urban lifestyle while meeting city aesthetic standards"
+        },
+        {
+          name: "Juanita",
+          description: "Waterfront neighborhood on Lake Washington demanding marine-grade installations and view-preserving designs for lakeside living"
+        },
+        {
+          name: "Finn Hill",
+          description: "Established residential area with mature properties needing installations that work around 50+ year old trees and landscaping"
+        },
+        {
+          name: "Kingsgate",
+          description: "Diverse family neighborhoods with active outdoor spaces requiring durable privacy fencing for children, pets, and entertaining"
+        },
+        {
+          name: "Bridle Trails",
+          description: "Equestrian estates on 1+ acre lots requiring specialized post-and-rail designs and compliance with horse-property fencing codes"
+        },
+        {
+          name: "Market",
+          description: "Upscale lakefront district with premium properties demanding high-end materials and designs worthy of million-dollar views"
+        },
+        {
+          name: "Moss Bay",
+          description: "Waterfront luxury condos and townhomes needing HOA-compliant installations and saltwater-resistant materials"
+        }
       ]}
       landmarks={[
         "Marina Park",

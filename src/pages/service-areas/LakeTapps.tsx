@@ -11,12 +11,30 @@ const LakeTapps = () => {
       metaDescription="Waterfront fence specialists for Lake Tapps properties. Marine-grade materials & view-friendly designs for lakeside living. Expert installation preserving lake access & views. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
-        "North Tapps",
-        "Snag Island",
-        "Lake Tapps Plateau",
-        "Allan Yorke Park Area",
-        "Driftwood Point",
-        "Victor Falls"
+        {
+          name: "North Tapps",
+          description: "Waterfront properties on lake's northern shore requiring marine-resistant hardware and designs that preserve recreational access"
+        },
+        {
+          name: "Snag Island",
+          description: "Peninsula community with water on three sides demanding maximum corrosion protection and humidity-resistant installations"
+        },
+        {
+          name: "Lake Tapps Plateau",
+          description: "Elevated properties overlooking the reservoir needing view-preserving fence designs while maintaining privacy from neighbors"
+        },
+        {
+          name: "Allan Yorke Park Area",
+          description: "Family neighborhoods near popular park requiring secure boundary fencing for children and pets near recreational areas"
+        },
+        {
+          name: "Driftwood Point",
+          description: "Lakeside homes with boat docks needing installations that accommodate waterfront access and marine equipment storage"
+        },
+        {
+          name: "Victor Falls",
+          description: "Residential community with lake access requiring durable materials for high-humidity environment and recreational lifestyle"
+        }
       ]}
       landmarks={[
         "Lake Tapps",

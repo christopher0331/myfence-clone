@@ -151,12 +151,30 @@ const MapleValley = () => {
       metaDescription="Rural & suburban fence installation in Maple Valley. Wooded acreage & family neighborhood experts. Cedar River to Wilderness Rim. Terrain specialists for forested properties. Call (253) 455-1885."
       zipCodes={["98038"]}
       neighborhoods={[
-        "Cedar River",
-        "Wilderness Rim",
-        "Summit at Maple Valley",
-        "Tahoma",
-        "Rock Creek",
-        "Maple Valley Highlands"
+        {
+          name: "Cedar River",
+          description: "Riverside properties with mature trees and sloped terrain requiring specialized installations that protect river views and handle elevation changes"
+        },
+        {
+          name: "Wilderness Rim",
+          description: "Hillside community backing onto protected forests needing wildlife-resistant fencing and installations adapted to steep slopes"
+        },
+        {
+          name: "Summit at Maple Valley",
+          description: "Newer master-planned community with HOA guidelines requiring approved designs and premium materials for consistent neighborhood aesthetics"
+        },
+        {
+          name: "Tahoma",
+          description: "Established family neighborhoods with school-age children needing secure backyard fencing for play areas and pets"
+        },
+        {
+          name: "Rock Creek",
+          description: "Wooded properties with larger lots requiring extensive fence runs and solutions that work around natural terrain features"
+        },
+        {
+          name: "Maple Valley Highlands",
+          description: "Elevated residential area with views and varied terrain demanding slope-adapted installations and drainage-conscious design"
+        }
       ]}
       landmarks={[
         "Lake Wilderness Park",
