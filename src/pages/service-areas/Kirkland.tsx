@@ -147,6 +147,8 @@ const Kirkland = () => {
       state="WA"
       heroTitle="Lakefront Fence Specialists on Lake Washington's East Shore"
       heroDescription="Serving Kirkland's waterfront estates and urban villages with sophisticated fencing solutions. Marine-resistant installations from Juanita Bay to downtown Kirkland that protect your lakeside investment and complement your views."
+      metaTitle="Kirkland Lakefront Fence Installation | Lake Washington | MyFence.com"
+      metaDescription="Lakefront fence specialists in Kirkland. Marine-resistant installations for waterfront estates & urban villages. Juanita Bay to downtown. Lake Washington expertise. Call (253) 455-1885."
       zipCodes={["98033", "98034", "98083"]}
       neighborhoods={[
         "Downtown Kirkland",

@@ -7,6 +7,8 @@ const Sammamish = () => {
       state="WA"
       heroTitle="Premium Fencing for Sammamish's Family-Focused Communities"
       heroDescription="Serving Sammamish's top-rated school neighborhoods with safe, durable fencing solutions. From Pine Lake to Sahalee, we build backyard boundaries that let kids and pets play while maintaining your property's natural beauty."
+      metaTitle="Sammamish Fence Installation | Safe Family Neighborhoods | MyFence.com"
+      metaDescription="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 455-1885."
       zipCodes={["98074", "98075"]}
       neighborhoods={[
         "Pine Lake",

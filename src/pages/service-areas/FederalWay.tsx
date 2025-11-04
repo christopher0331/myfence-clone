@@ -7,6 +7,8 @@ const FederalWay = () => {
       state="WA"
       heroTitle="Coastal-Tough Fence Installation for Federal Way Homes"
       heroDescription="Specialized fencing built to withstand Federal Way's marine air and heavy rainfall. Serving Dash Point waterfront to Steel Lake neighborhoods with moisture-resistant solutions that last."
+      metaTitle="Federal Way Fence Installation | Marine Air Resistant | MyFence.com"
+      metaDescription="Coastal-tough fence installation for Federal Way. Moisture-resistant solutions for marine air & heavy rainfall. Serving Dash Point waterfront to Steel Lake. Expert craftsmanship. Call (253) 455-1885."
       zipCodes={["98003", "98023", "98063", "98093"]}
       neighborhoods={[
         "Dash Point",

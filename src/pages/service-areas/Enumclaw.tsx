@@ -7,6 +7,8 @@ const Enumclaw = () => {
       state="WA"
       heroTitle="Mountain-Ready Fencing at the Gateway to Mount Rainier"
       heroDescription="Heavy-duty fence installations engineered for Enumclaw's elevation, snow loads, and mountain winds. Protecting rural properties and managing wildlife while preserving your stunning Rainier views."
+      metaTitle="Enumclaw Mountain Fence Installation | Snow Load Rated | MyFence.com"
+      metaDescription="Mountain-ready fence installation for Enumclaw. Heavy-duty systems engineered for elevation, snow loads & mountain winds. Wildlife management solutions. Rural property experts. Call (253) 455-1885."
       zipCodes={["98022"]}
       neighborhoods={[
         "Downtown Enumclaw",

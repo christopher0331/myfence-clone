@@ -7,6 +7,8 @@ const GigHarbor = () => {
       state="WA"
       heroTitle="Harbor-Side Fence Installation in Gig Harbor's Maritime Community"
       heroDescription="Protecting Gig Harbor's waterfront charm with salt-resistant fencing solutions. From Uptown boutiques to harbor-view homes, we deliver installations that complement your maritime lifestyle and Puget Sound environment."
+      metaTitle="Gig Harbor Waterfront Fence Installation | Salt-Resistant | MyFence.com"
+      metaDescription="Harbor-side fence installation in Gig Harbor. Salt-resistant materials for Puget Sound maritime climate. Waterfront charm protected from Uptown to harbor-view homes. Call (253) 455-1885."
       zipCodes={["98329", "98332", "98335"]}
       neighborhoods={[
         "Downtown Gig Harbor",

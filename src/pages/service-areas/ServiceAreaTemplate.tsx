@@ -25,6 +25,8 @@ interface ServiceAreaTemplateProps {
   state: string;
   heroTitle?: string;
   heroDescription?: string;
+  metaTitle?: string;
+  metaDescription?: string;
   zipCodes?: string[];
   neighborhoods?: (string | Neighborhood)[];
   landmarks?: string[];
@@ -40,6 +42,8 @@ const ServiceAreaTemplate = ({
   state,
   heroTitle,
   heroDescription,
+  metaTitle,
+  metaDescription,
   zipCodes = [], 
   neighborhoods = [],
   landmarks = [],
@@ -264,8 +268,8 @@ const ServiceAreaTemplate = ({
   return (
     <>
       <Seo 
-        title={`Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
-        description={`Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
+        title={metaTitle || `Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
+        description={metaDescription || `Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
         canonical={`https://myfence.com/service-areas/${citySlug}`}
         structuredData={faqStructuredData ? [breadcrumbData, structuredData, faqStructuredData] : [breadcrumbData, structuredData]}
       />

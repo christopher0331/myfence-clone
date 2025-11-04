@@ -7,6 +7,8 @@ const LakeTapps = () => {
       state="WA"
       heroTitle="Waterfront Fence Specialists for Lake Tapps Properties"
       heroDescription="Expert lakeside fencing with marine-grade materials designed for Lake Tapps' 2,500-acre waterfront community. View-friendly designs that preserve your lake access while providing privacy and security."
+      metaTitle="Lake Tapps Waterfront Fence Installation | Marine-Grade | MyFence.com"
+      metaDescription="Waterfront fence specialists for Lake Tapps properties. Marine-grade materials & view-friendly designs for lakeside living. Expert installation preserving lake access & views. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
         "North Tapps",

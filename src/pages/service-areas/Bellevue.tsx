@@ -127,6 +127,8 @@ const Bellevue = () => {
       state="WA"
       heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
       heroDescription="Serving tech executives and waterfront estates with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
+      metaTitle="Luxury Fence Installation Bellevue WA | HOA-Compliant Designs | MyFence.com"
+      metaDescription="Premium fence installation for Bellevue's luxury properties. Architectural designs for tech executives, waterfront estates & HOA compliance. Marine-grade materials for dual-lake microclimate. Call (253) 455-1885."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
         {
