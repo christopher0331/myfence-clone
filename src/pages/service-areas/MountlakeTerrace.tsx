@@ -5,6 +5,8 @@ const MountlakeTerrace = () => {
     <ServiceAreaTemplate 
       city="Mountlake Terrace" 
       state="WA"
+      heroTitle="Affordable Quality Fencing for Mountlake Terrace Families"
+      heroDescription="Serving Mountlake Terrace's close-knit community with reliable, budget-friendly fence solutions. From Lake Ballinger to Town Center, we deliver value without compromising on craftsmanship or materials."
       zipCodes={["98043"]}
       neighborhoods={[
         "Lake Ballinger",

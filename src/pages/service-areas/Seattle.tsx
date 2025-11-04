@@ -5,6 +5,8 @@ const Seattle = () => {
     <ServiceAreaTemplate 
       city="Seattle" 
       state="WA"
+      heroTitle="Urban Fence Solutions for Seattle's Diverse Neighborhoods"
+      heroDescription="From Capitol Hill townhomes to West Seattle backyards, we deliver city-smart fencing that maximizes privacy in tight urban spaces. Historic district-compliant designs and modern installations for the Emerald City."
       zipCodes={["98101", "98102", "98103", "98104", "98105", "98106", "98107", "98108", "98109", "98112", "98115", "98116", "98117", "98118", "98119", "98121", "98122", "98125", "98126", "98133", "98134", "98136", "98144", "98177", "98199"]}
       neighborhoods={[
         "Capitol Hill",

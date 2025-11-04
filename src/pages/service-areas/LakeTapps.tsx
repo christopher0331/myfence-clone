@@ -5,6 +5,8 @@ const LakeTapps = () => {
     <ServiceAreaTemplate 
       city="Lake Tapps" 
       state="WA"
+      heroTitle="Waterfront Fence Specialists for Lake Tapps Properties"
+      heroDescription="Expert lakeside fencing with marine-grade materials designed for Lake Tapps' 2,500-acre waterfront community. View-friendly designs that preserve your lake access while providing privacy and security."
       zipCodes={["98391"]}
       neighborhoods={[
         "North Tapps",

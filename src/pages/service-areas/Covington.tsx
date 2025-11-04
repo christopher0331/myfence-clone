@@ -5,6 +5,8 @@ const Covington = () => {
     <ServiceAreaTemplate 
       city="Covington" 
       state="WA"
+      heroTitle="Hillside Fence Installation Experts in Covington"
+      heroDescription="Tackling Covington's challenging slopes and clay-rich soil with reinforced fence systems. From Jenkins Creek to Maple Hills, we engineer installations that handle your terrain and heavy Pacific Northwest rainfall."
       zipCodes={["98042"]}
       neighborhoods={[
         "Jenkins Creek",

@@ -125,6 +125,8 @@ const Bellevue = () => {
     <ServiceAreaTemplate 
       city="Bellevue" 
       state="WA"
+      heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
+      heroDescription="Serving tech executives and waterfront estates with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
         {

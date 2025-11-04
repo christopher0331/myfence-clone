@@ -5,6 +5,8 @@ const FederalWay = () => {
     <ServiceAreaTemplate 
       city="Federal Way" 
       state="WA"
+      heroTitle="Coastal-Tough Fence Installation for Federal Way Homes"
+      heroDescription="Specialized fencing built to withstand Federal Way's marine air and heavy rainfall. Serving Dash Point waterfront to Steel Lake neighborhoods with moisture-resistant solutions that last."
       zipCodes={["98003", "98023", "98063", "98093"]}
       neighborhoods={[
         "Dash Point",

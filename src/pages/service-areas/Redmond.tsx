@@ -145,6 +145,8 @@ const Redmond = () => {
     <ServiceAreaTemplate 
       city="Redmond" 
       state="WA"
+      heroTitle="Tech-Savvy Fence Installation for Redmond's Innovation District"
+      heroDescription="Modern fencing solutions for Microsoft employees and tech families in Redmond. From Education Hill to Overlake, we combine contemporary designs with practical functionality for your active lifestyle and property needs."
       zipCodes={["98052", "98053", "98073"]}
       neighborhoods={[
         "Downtown Redmond",

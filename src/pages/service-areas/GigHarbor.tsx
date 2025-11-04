@@ -5,6 +5,8 @@ const GigHarbor = () => {
     <ServiceAreaTemplate 
       city="Gig Harbor" 
       state="WA"
+      heroTitle="Harbor-Side Fence Installation in Gig Harbor's Maritime Community"
+      heroDescription="Protecting Gig Harbor's waterfront charm with salt-resistant fencing solutions. From Uptown boutiques to harbor-view homes, we deliver installations that complement your maritime lifestyle and Puget Sound environment."
       zipCodes={["98329", "98332", "98335"]}
       neighborhoods={[
         "Downtown Gig Harbor",

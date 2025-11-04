@@ -5,6 +5,8 @@ const Issaquah = () => {
     <ServiceAreaTemplate 
       city="Issaquah" 
       state="WA"
+      heroTitle="Foothills Fence Experts Serving Issaquah's Mountain Communities"
+      heroDescription="Custom fencing for Issaquah Highlands and Tiger Mountain properties. Wildlife-smart designs and slope installations that work with your forested surroundings while keeping your family and pets secure."
       zipCodes={["98027", "98029"]}
       neighborhoods={[
         "Issaquah Highlands",

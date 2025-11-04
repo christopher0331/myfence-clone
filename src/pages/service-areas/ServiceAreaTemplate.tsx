@@ -23,6 +23,8 @@ export interface Neighborhood {
 interface ServiceAreaTemplateProps {
   city: string;
   state: string;
+  heroTitle?: string;
+  heroDescription?: string;
   zipCodes?: string[];
   neighborhoods?: (string | Neighborhood)[];
   landmarks?: string[];
@@ -35,7 +37,9 @@ interface ServiceAreaTemplateProps {
 
 const ServiceAreaTemplate = ({ 
   city, 
-  state, 
+  state,
+  heroTitle,
+  heroDescription,
   zipCodes = [], 
   neighborhoods = [],
   landmarks = [],
@@ -278,10 +282,10 @@ const ServiceAreaTemplate = ({
                   <span className="text-lg text-muted-foreground">Serving {city}, {state}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Professional Fence Services in {city}
+                  {heroTitle || `Professional Fence Services in ${city}`}
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Expert fence installation, repair, and staining services for residential and commercial properties in {city}, {state}.
+                  {heroDescription || `Expert fence installation, repair, and staining services for residential and commercial properties in ${city}, ${state}.`}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">

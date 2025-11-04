@@ -5,6 +5,8 @@ const Enumclaw = () => {
     <ServiceAreaTemplate 
       city="Enumclaw" 
       state="WA"
+      heroTitle="Mountain-Ready Fencing at the Gateway to Mount Rainier"
+      heroDescription="Heavy-duty fence installations engineered for Enumclaw's elevation, snow loads, and mountain winds. Protecting rural properties and managing wildlife while preserving your stunning Rainier views."
       zipCodes={["98022"]}
       neighborhoods={[
         "Downtown Enumclaw",

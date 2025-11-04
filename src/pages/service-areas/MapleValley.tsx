@@ -145,6 +145,8 @@ const MapleValley = () => {
     <ServiceAreaTemplate 
       city="Maple Valley" 
       state="WA"
+      heroTitle="Rural & Suburban Fencing for Maple Valley's Forested Communities"
+      heroDescription="Expert fence installation for Maple Valley's mix of wooded acreage and family neighborhoods. From Cedar River valleys to Wilderness Rim slopes, we build durable solutions for your property's unique terrain and rural character."
       zipCodes={["98038"]}
       neighborhoods={[
         "Cedar River",

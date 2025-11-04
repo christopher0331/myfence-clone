@@ -145,6 +145,8 @@ const Kirkland = () => {
     <ServiceAreaTemplate 
       city="Kirkland" 
       state="WA"
+      heroTitle="Lakefront Fence Specialists on Lake Washington's East Shore"
+      heroDescription="Serving Kirkland's waterfront estates and urban villages with sophisticated fencing solutions. Marine-resistant installations from Juanita Bay to downtown Kirkland that protect your lakeside investment and complement your views."
       zipCodes={["98033", "98034", "98083"]}
       neighborhoods={[
         "Downtown Kirkland",

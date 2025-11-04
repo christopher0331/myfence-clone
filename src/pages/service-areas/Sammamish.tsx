@@ -5,6 +5,8 @@ const Sammamish = () => {
     <ServiceAreaTemplate 
       city="Sammamish" 
       state="WA"
+      heroTitle="Premium Fencing for Sammamish's Family-Focused Communities"
+      heroDescription="Serving Sammamish's top-rated school neighborhoods with safe, durable fencing solutions. From Pine Lake to Sahalee, we build backyard boundaries that let kids and pets play while maintaining your property's natural beauty."
       zipCodes={["98074", "98075"]}
       neighborhoods={[
         "Pine Lake",
