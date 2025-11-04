@@ -14,9 +14,9 @@ const Covington = () => {
         "Jenkins Creek",
         "Maple Hills",
         "Rock Creek",
+        "Lake Sawyer",
         "Covington Woods",
-        "Canyon Park",
-        "Retreat at Covington"
+        "Shadow Lake"
       ]}
       landmarks={[
         "Jenkins Creek Park",

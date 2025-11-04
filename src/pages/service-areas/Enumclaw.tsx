@@ -13,10 +13,10 @@ const Enumclaw = () => {
       neighborhoods={[
         "Downtown Enumclaw",
         "Enumclaw Plateau",
-        "Black Diamond area",
+        "Black Diamond",
         "Green Valley",
-        "Rural Enumclaw",
-        "Canyon Park"
+        "Mutual",
+        "Franklin"
       ]}
       landmarks={[
         "Mount Rainier National Park (nearby)",

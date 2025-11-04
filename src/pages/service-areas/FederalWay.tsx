@@ -12,11 +12,11 @@ const FederalWay = () => {
       zipCodes={["98003", "98023", "98063", "98093"]}
       neighborhoods={[
         "Dash Point",
-        "Lakehaven",
         "Twin Lakes",
         "Steel Lake",
-        "Adelaide",
-        "Poverty Bay"
+        "Lakehaven",
+        "Camelot",
+        "Adelaide"
       ]}
       landmarks={[
         "Wild Waves Theme Park",
