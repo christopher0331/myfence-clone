@@ -211,6 +211,11 @@ const BlackHogwireFence = () => {
                       <li>• Matching frame longevity to steel</li>
                       <li>• Custom fitting available</li>
                     </ul>
+                    <div className="mt-4 p-3 bg-muted/50 rounded-lg">
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Terrain Note:</span> On steep terrain, hogwire panels are trimmed to maintain the most sought-after level appearance. Full 6' height is only achievable on flat grade. Alternatively, panels can be stepped with gaps between sections.
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
