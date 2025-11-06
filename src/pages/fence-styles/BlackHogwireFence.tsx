@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Shield, Eye, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -262,15 +263,17 @@ const BlackHogwireFence = () => {
                 {/* Right side - Video */}
                 <div className="lg:sticky lg:top-8">
                   <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
-                  <div className="relative w-full max-w-[600px] mx-auto lg:mx-0 h-[600px]">
-                    <iframe
-                      className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                      src="https://www.youtube.com/embed/4Ls-aTAtQsw?vq=hd1080"
-                      title="Black Hogwire Fence Installation"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                    />
+                  <div className="w-full max-w-[520px] mx-auto lg:mx-0">
+                    <AspectRatio ratio={9/16}>
+                      <iframe
+                        className="rounded-lg shadow-2xl w-full h-full"
+                        src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?playsinline=1&rel=0&modestbranding=1&controls=0&iv_load_policy=3&vq=hd1080"
+                        title="Black Hogwire Fence Installation"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </AspectRatio>
                   </div>
                 </div>
               </div>
