@@ -262,7 +262,7 @@ const BlackHogwireFence = () => {
                 {/* Right side - Video */}
                 <div className="lg:sticky lg:top-8">
                   <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
-                  <div className="relative w-full max-w-[450px] mx-auto lg:mx-0 h-[600px]">
+                  <div className="relative w-full max-w-[600px] mx-auto lg:mx-0 h-[600px]">
                     <iframe
                       className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
                       src="https://www.youtube.com/embed/4Ls-aTAtQsw?vq=hd1080"
