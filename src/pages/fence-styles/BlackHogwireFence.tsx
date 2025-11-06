@@ -221,7 +221,7 @@ const BlackHogwireFence = () => {
                 <div className="relative w-full max-w-[280px] mx-auto lg:mx-0 h-[500px]">
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                    src="https://www.youtube.com/embed/4Ls-aTAtQsw"
+                    src="https://www.youtube.com/embed/4Ls-aTAtQsw?vq=hd1080"
                     title="Black Hogwire Fence Installation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
