@@ -182,6 +182,25 @@ const BlackHogwireFence = () => {
           </div>
         </section>
 
+        {/* Video Showcase */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">See It In Action</h2>
+            <div className="max-w-2xl mx-auto">
+              <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
+                  src="https://www.youtube.com/embed/4Ls-aTAtQsw"
+                  title="Black Hogwire Fence Installation"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Specifications */}
         <section className="py-16">
           <div className="container mx-auto px-4">
