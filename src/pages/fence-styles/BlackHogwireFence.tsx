@@ -189,58 +189,83 @@ const BlackHogwireFence = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Specifications & Features</h2>
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-3 gap-8">
-                {/* Left Column - Panel Specs */}
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="font-medium text-foreground">Height</p>
-                        <p className="text-sm text-muted-foreground">6 feet (on flat grade)</p>
+                {/* Left 2/3 - Specification Cards */}
+                <div className="lg:col-span-2 space-y-6">
+                  {/* Top Row - Two Cards */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
+                        <div className="space-y-3">
+                          <div>
+                            <p className="font-medium text-foreground">Height</p>
+                            <p className="text-sm text-muted-foreground">6 feet (on flat grade)</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Material</p>
+                            <p className="text-sm text-muted-foreground">Black powder-coated steel with weather-resistant finish</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Opening Size</p>
+                            <p className="text-sm text-muted-foreground">4"x4" square mesh pattern</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Durability</p>
+                            <p className="text-sm text-muted-foreground">Heavy-gauge steel construction designed for Pacific Northwest weather</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-semibold mb-4">Frame Construction</h3>
+                        <div className="space-y-3">
+                          <div>
+                            <p className="font-medium text-foreground">Material</p>
+                            <p className="text-sm text-muted-foreground">Premium cedar posts, rails, and framing</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Finish Options</p>
+                            <p className="text-sm text-muted-foreground">Pre-staining recommended to match panel longevity</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Installation</p>
+                            <p className="text-sm text-muted-foreground">Professional-grade with custom terrain fitting</p>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">Warranty</p>
+                            <p className="text-sm text-muted-foreground">{WARRANTY_CONSTANTS.YEARS}-year warranty on workmanship</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Bottom Row - Full Width Card */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-4">Terrain & Installation Considerations</h3>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-medium text-foreground">Flat Grade Installation</p>
+                          <p className="text-sm text-muted-foreground">Full 6' panel height maintained with level top rails. Ideal for yards with minimal slope, providing the cleanest aesthetic.</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Sloped Terrain Options</p>
+                          <p className="text-sm text-muted-foreground">Panels are custom-trimmed to maintain level appearance on steep grades. This ensures the 4"x4" mesh stays perfectly horizontal, though panel height may be reduced.</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Stepped Installation</p>
+                          <p className="text-sm text-muted-foreground">For extreme slopes, panels can be stepped to preserve full 6' height. This creates small gaps between sections where terrain changes dramatically.</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-medium text-foreground">Material</p>
-                        <p className="text-sm text-muted-foreground">Black powder-coated steel with weather-resistant finish</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Opening Size</p>
-                        <p className="text-sm text-muted-foreground">4"x4" square mesh pattern</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Durability</p>
-                        <p className="text-sm text-muted-foreground">Heavy-gauge steel construction designed for Pacific Northwest weather</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
                 
-                {/* Middle Column - Frame Construction */}
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Frame Construction</h3>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="font-medium text-foreground">Material</p>
-                        <p className="text-sm text-muted-foreground">Premium cedar posts, rails, and framing</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Finish Options</p>
-                        <p className="text-sm text-muted-foreground">Pre-staining recommended to match panel longevity</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Installation</p>
-                        <p className="text-sm text-muted-foreground">Professional-grade with custom terrain fitting</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">Warranty</p>
-                        <p className="text-sm text-muted-foreground">{WARRANTY_CONSTANTS.YEARS}-year warranty on workmanship</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                {/* Right Column - Video */}
-                <div>
+                {/* Right 1/3 - Video */}
+                <div className="lg:col-span-1">
                   <h3 className="text-xl font-semibold mb-4 text-center">See It In Action</h3>
                   <div className="w-full">
                     <AspectRatio ratio={9/16}>
@@ -255,162 +280,6 @@ const BlackHogwireFence = () => {
                     </AspectRatio>
                   </div>
                 </div>
-              </div>
-              
-              {/* Full Width - Terrain Considerations */}
-              <Card className="mt-8">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Terrain & Installation Considerations</h3>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <p className="font-medium text-foreground mb-2">Flat Grade Installation</p>
-                      <p className="text-sm text-muted-foreground">Full 6' panel height maintained with level top rails. Ideal for yards with minimal slope, providing the cleanest aesthetic.</p>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground mb-2">Sloped Terrain Options</p>
-                      <p className="text-sm text-muted-foreground">Panels are custom-trimmed to maintain level appearance on steep grades. This ensures the 4"x4" mesh stays perfectly horizontal, though panel height may be reduced.</p>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground mb-2">Stepped Installation</p>
-                      <p className="text-sm text-muted-foreground">For extreme slopes, panels can be stepped to preserve full 6' height. This creates small gaps between sections where terrain changes dramatically.</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Style Description */}
-        <section className="py-16 bg-secondary/20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">About Black Hogwire Fencing</h2>
-            
-            {/* Style & Construction Details */}
-            <Card className="overflow-hidden mb-8">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative">
-                  <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/d1bc30ce-d724-4e3b-afe1-c8c833f5c32d.png" 
-                      alt="Black hogwire fence with cedar frame showing robust construction and security features" 
-                      className="h-full w-full object-cover min-h-[300px]" 
-                      loading="lazy" 
-                    />
-                  </div>
-                </div>
-                <CardContent className="p-6 md:p-10 flex items-center">
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-4">Style & Construction Details</h3>
-                    <p className="text-muted-foreground mb-4">
-                      The 6' Black Hogwire Fence combines the robust security of powder-coated steel panels with the timeless appeal of cedar framing. This unique fencing style features the same premium cedar frame construction as our popular <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence</Link>, ensuring consistent quality and aesthetic appeal across your property.
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      The black powder-coated steel hogwire panels feature precise 4"x4" square openings that provide excellent visibility while maintaining security boundaries. Unlike traditional solid fencing, this semi-transparent design allows natural light to filter through while preserving your connection to the surrounding landscape.
-                    </p>
-                    <p className="text-muted-foreground">
-                      Each panel is professionally framed with premium cedar rails and posts, using the same construction techniques that have made our <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">Picture Frame Fence style</Link> Seattle's most popular choice for over three decades.
-                    </p>
-                  </div>
-                </CardContent>
-              </div>
-            </Card>
-
-            {/* Perfect for the Pacific Northwest */}
-            <Card className="overflow-hidden mb-8">
-              <div className="grid md:grid-cols-2 gap-0">
-                <CardContent className="order-2 md:order-1 p-6 md:p-10 flex items-center">
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-4">Perfect for the Pacific Northwest</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Seattle homeowners particularly value the Black Hogwire Fence for its ability to work harmoniously with the region's natural beauty. The dark steel finish complements the Pacific Northwest's lush greenery and provides a sophisticated backdrop that doesn't compete with your landscaping.
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      This style is especially popular in neighborhoods like Bellevue, Kirkland, and Redmond where homes often back up to wooded areas or greenbelt spaces. The fence allows you to maintain those coveted forest views while creating a secure boundary that keeps local wildlife out and your family pets safely contained.
-                    </p>
-                    <p className="text-muted-foreground">
-                      The cedar frame construction is naturally suited to Washington's climate, offering excellent resistance to moisture while aging beautifully over time. When pre-stained to match the steel's longevity, this fencing solution provides decades of reliable performance in our wet winters and dry summers.
-                    </p>
-                  </div>
-                </CardContent>
-                <div className="order-1 md:order-2">
-                  <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/51daca50-4efb-4dc1-908e-73ae3e892ed0.png" 
-                      alt="Black hogwire fence in Pacific Northwest setting showing harmony with lush landscaping" 
-                      className="h-full w-full object-cover min-h-[300px]" 
-                      loading="lazy" 
-                    />
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Why Choose Black Hogwire */}
-            <Card className="overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative">
-                  <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/8bf70156-79e4-4814-aa6c-fe6011fa6c27.png" 
-                      alt="Black hogwire fence installation showing visual openness and secure boundaries" 
-                      className="h-full w-full object-cover min-h-[300px]" 
-                      loading="lazy" 
-                    />
-                  </div>
-                </div>
-                <CardContent className="p-6 md:p-10 flex items-center">
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-4">Why Choose Black Hogwire Over Traditional Fencing?</h3>
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="font-semibold mb-3 text-lg">Visual Benefits</h4>
-                        <ul className="text-muted-foreground space-y-2">
-                          <li>• Maintains sight lines to preserve views</li>
-                          <li>• Creates defined boundaries without visual barriers</li>
-                          <li>• Complements both modern and traditional architecture</li>
-                          <li>• Allows natural light penetration for better landscaping</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-3 text-lg">Practical Advantages</h4>
-                        <ul className="text-muted-foreground space-y-2">
-                          <li>• Superior wildlife deterrent for Seattle-area properties</li>
-                          <li>• Excellent pet containment with visibility for monitoring</li>
-                          <li>• Lower wind resistance than solid panel fencing</li>
-                          <li>• Combines security with neighborhood-friendly aesthetics</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </div>
-            </Card>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-8">Perfect For</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">Wooded Properties</h3>
-                    <p className="text-muted-foreground">
-                      Ideal for homes backing up to wooded areas where you want to maintain the natural view while creating a secure boundary.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">Pet & Child Safety</h3>
-                    <p className="text-muted-foreground">
-                      Keep children and pets safely contained in your yard while preventing unwanted animals from entering your property.
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>
