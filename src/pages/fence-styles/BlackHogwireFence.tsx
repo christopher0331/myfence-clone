@@ -187,87 +187,66 @@ const BlackHogwireFence = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Specifications & Features</h2>
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-[1fr,auto] gap-12 items-start">
-                {/* Left side - Specification Cards */}
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
-                      <div className="space-y-3">
-                        <div>
-                          <p className="font-medium text-foreground">Height</p>
-                          <p className="text-sm text-muted-foreground">6 feet (on flat grade)</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Material</p>
-                          <p className="text-sm text-muted-foreground">Black powder-coated steel with weather-resistant finish</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Opening Size</p>
-                          <p className="text-sm text-muted-foreground">4"x4" square mesh pattern</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Durability</p>
-                          <p className="text-sm text-muted-foreground">Heavy-gauge steel construction designed for Pacific Northwest weather</p>
-                        </div>
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* Left Column - Panel Specs */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="font-medium text-foreground">Height</p>
+                        <p className="text-sm text-muted-foreground">6 feet (on flat grade)</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-4">Frame Construction</h3>
-                      <div className="space-y-3">
-                        <div>
-                          <p className="font-medium text-foreground">Material</p>
-                          <p className="text-sm text-muted-foreground">Premium cedar posts, rails, and framing</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Finish Options</p>
-                          <p className="text-sm text-muted-foreground">Pre-staining recommended to match panel longevity</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Installation</p>
-                          <p className="text-sm text-muted-foreground">Professional-grade with custom terrain fitting</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Warranty</p>
-                          <p className="text-sm text-muted-foreground">{WARRANTY_CONSTANTS.YEARS}-year warranty on workmanship</p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-foreground">Material</p>
+                        <p className="text-sm text-muted-foreground">Black powder-coated steel with weather-resistant finish</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="sm:col-span-2">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-4">Terrain & Installation Considerations</h3>
-                      <div className="space-y-3">
-                        <div>
-                          <p className="font-medium text-foreground">Flat Grade Installation</p>
-                          <p className="text-sm text-muted-foreground">Full 6' panel height maintained with level top rails. Ideal for yards with minimal slope, providing the cleanest aesthetic.</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Sloped Terrain Options</p>
-                          <p className="text-sm text-muted-foreground">Panels are custom-trimmed to maintain level appearance on steep grades. This ensures the 4"x4" mesh stays perfectly horizontal, though panel height may be reduced.</p>
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground">Stepped Installation</p>
-                          <p className="text-sm text-muted-foreground">For extreme slopes, panels can be stepped to preserve full 6' height. This creates small gaps between sections where terrain changes dramatically.</p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-foreground">Opening Size</p>
+                        <p className="text-sm text-muted-foreground">4"x4" square mesh pattern</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                      <div>
+                        <p className="font-medium text-foreground">Durability</p>
+                        <p className="text-sm text-muted-foreground">Heavy-gauge steel construction designed for Pacific Northwest weather</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
                 
-                {/* Right side - Video */}
-                <div className="lg:sticky lg:top-8">
-                  <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
-                  <div className="w-full max-w-[520px] mx-auto lg:mx-0">
+                {/* Middle Column - Frame Construction */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Frame Construction</h3>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="font-medium text-foreground">Material</p>
+                        <p className="text-sm text-muted-foreground">Premium cedar posts, rails, and framing</p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Finish Options</p>
+                        <p className="text-sm text-muted-foreground">Pre-staining recommended to match panel longevity</p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Installation</p>
+                        <p className="text-sm text-muted-foreground">Professional-grade with custom terrain fitting</p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Warranty</p>
+                        <p className="text-sm text-muted-foreground">{WARRANTY_CONSTANTS.YEARS}-year warranty on workmanship</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Right Column - Video */}
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-center">See It In Action</h3>
+                  <div className="w-full">
                     <AspectRatio ratio={9/16}>
                       <iframe
                         className="rounded-lg shadow-2xl w-full h-full"
-                        src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?playsinline=1&rel=0&modestbranding=1&controls=0&iv_load_policy=3&vq=hd1080"
+                        src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
                         title="Black Hogwire Fence Installation"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
@@ -277,6 +256,27 @@ const BlackHogwireFence = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* Full Width - Terrain Considerations */}
+              <Card className="mt-8">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Terrain & Installation Considerations</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <p className="font-medium text-foreground mb-2">Flat Grade Installation</p>
+                      <p className="text-sm text-muted-foreground">Full 6' panel height maintained with level top rails. Ideal for yards with minimal slope, providing the cleanest aesthetic.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground mb-2">Sloped Terrain Options</p>
+                      <p className="text-sm text-muted-foreground">Panels are custom-trimmed to maintain level appearance on steep grades. This ensures the 4"x4" mesh stays perfectly horizontal, though panel height may be reduced.</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground mb-2">Stepped Installation</p>
+                      <p className="text-sm text-muted-foreground">For extreme slopes, panels can be stepped to preserve full 6' height. This creates small gaps between sections where terrain changes dramatically.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
