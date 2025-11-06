@@ -182,31 +182,13 @@ const BlackHogwireFence = () => {
           </div>
         </section>
 
-        {/* Video Showcase */}
+        {/* Specifications & Video */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">See It In Action</h2>
-            <div className="max-w-2xl mx-auto">
-              <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                  src="https://www.youtube.com/embed/4Ls-aTAtQsw"
-                  title="Black Hogwire Fence Installation"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Specifications */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Specifications & Features</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Specifications & Features</h2>
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Left side - Specification Cards */}
+              <div className="space-y-8">
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
@@ -231,6 +213,21 @@ const BlackHogwireFence = () => {
                     </ul>
                   </CardContent>
                 </Card>
+              </div>
+              
+              {/* Right side - Video */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
+                <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
+                    src="https://www.youtube.com/embed/4Ls-aTAtQsw"
+                    title="Black Hogwire Fence Installation"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
           </div>
