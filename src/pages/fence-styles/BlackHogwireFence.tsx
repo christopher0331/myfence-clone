@@ -186,52 +186,92 @@ const BlackHogwireFence = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Specifications & Features</h2>
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              {/* Left side - Specification Cards */}
-              <div className="space-y-8">
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Height: 6 feet</li>
-                      <li>• Material: Black powder-coated steel</li>
-                      <li>• Opening size: 4"x4" squares</li>
-                      <li>• Robust durability construction</li>
-                      <li>• Weather-resistant coating</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Frame & Installation</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Cedar frame construction</li>
-                      <li>• Pre-staining recommended</li>
-                      <li>• Professional installation</li>
-                      <li>• Matching frame longevity to steel</li>
-                      <li>• Custom fitting available</li>
-                    </ul>
-                    <div className="mt-4 p-3 bg-muted/50 rounded-lg">
-                      <p className="text-sm text-muted-foreground">
-                        <span className="font-semibold text-foreground">Terrain Note:</span> On steep terrain, hogwire panels are trimmed to maintain the most sought-after level appearance. Full 6' height is only achievable on flat grade. Alternatively, panels can be stepped with gaps between sections.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-              
-              {/* Right side - Video */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
-                <div className="relative w-full max-w-[280px] mx-auto lg:mx-0 h-[500px]">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-                    src="https://www.youtube.com/embed/4Ls-aTAtQsw?vq=hd1080"
-                    title="Black Hogwire Fence Installation"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-[1fr,auto] gap-12 items-start">
+                {/* Left side - Specification Cards */}
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-4">Panel Specifications</h3>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-medium text-foreground">Height</p>
+                          <p className="text-sm text-muted-foreground">6 feet (on flat grade)</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Material</p>
+                          <p className="text-sm text-muted-foreground">Black powder-coated steel with weather-resistant finish</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Opening Size</p>
+                          <p className="text-sm text-muted-foreground">4"x4" square mesh pattern</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Durability</p>
+                          <p className="text-sm text-muted-foreground">Heavy-gauge steel construction designed for Pacific Northwest weather</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-4">Frame Construction</h3>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-medium text-foreground">Material</p>
+                          <p className="text-sm text-muted-foreground">Premium cedar posts, rails, and framing</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Finish Options</p>
+                          <p className="text-sm text-muted-foreground">Pre-staining recommended to match panel longevity</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Installation</p>
+                          <p className="text-sm text-muted-foreground">Professional-grade with custom terrain fitting</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Warranty</p>
+                          <p className="text-sm text-muted-foreground">{WARRANTY_CONSTANTS.YEARS}-year warranty on workmanship</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className="sm:col-span-2">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-4">Terrain & Installation Considerations</h3>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-medium text-foreground">Flat Grade Installation</p>
+                          <p className="text-sm text-muted-foreground">Full 6' panel height maintained with level top rails. Ideal for yards with minimal slope, providing the cleanest aesthetic.</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Sloped Terrain Options</p>
+                          <p className="text-sm text-muted-foreground">Panels are custom-trimmed to maintain level appearance on steep grades. This ensures the 4"x4" mesh stays perfectly horizontal, though panel height may be reduced.</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Stepped Installation</p>
+                          <p className="text-sm text-muted-foreground">For extreme slopes, panels can be stepped to preserve full 6' height. This creates small gaps between sections where terrain changes dramatically.</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                {/* Right side - Video */}
+                <div className="lg:sticky lg:top-8">
+                  <h3 className="text-2xl font-semibold mb-6 text-center lg:text-left">See It In Action</h3>
+                  <div className="relative w-full max-w-[280px] mx-auto lg:mx-0 h-[500px]">
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
+                      src="https://www.youtube.com/embed/4Ls-aTAtQsw?vq=hd1080"
+                      title="Black Hogwire Fence Installation"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
