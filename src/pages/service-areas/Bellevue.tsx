@@ -1,9 +1,359 @@
 import ServiceAreaTemplate from "./ServiceAreaTemplate";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const BellevueArticle = () => (
-  <article className="space-y-8">
+  <article className="space-y-12">
+    {/* Company Introduction */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Bellevue Fence Company - MyFence.com
+      </h2>
+      <div className="grid md:grid-cols-4 gap-6">
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">30+</div>
+          <div className="text-sm text-muted-foreground">Years Experience</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">98%+</div>
+          <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
+          <div className="text-sm text-muted-foreground">Average Star Rating</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">150+</div>
+          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
+        </Card>
+      </div>
+      <p className="text-muted-foreground leading-relaxed text-lg">
+        Looking for a trusted Bellevue fencing company? For 30+ years, MyFence.com has built quality fences through expert installations. As a father-son team, we bring unmatched craftsmanship and personalized service to every Bellevue fence installation project. Our Fence Genius technology ensures precision measurements and faster installations while maintaining the highest quality standards.
+      </p>
+    </section>
+
+    {/* Bellevue Fence Installation */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Bellevue Fence Installation
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        MyFence.com takes Bellevue fence installation seriously. When we install your fence, we arrive fully prepared with all materials and professional-grade tools. Our 98%+ on-time installation rate is industry-leading because your time is valuable. We maintain a comprehensive stock of premium fence materials, ensuring we complete your Bellevue fence installation on schedule without delays. On installation day, our experienced team works efficiently while maintaining meticulous attention to detail. Once complete, we perform a thorough quality review with you to ensure complete satisfaction.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Our Fence Genius technology revolutionizes the installation process. By manufacturing precision-cut panels off-site, we reduce installation time by 30-50% compared to traditional methods while ensuring perfect measurements every time. This means less disruption to your Bellevue property and faster project completion without compromising quality. Whether you're installing a fence in Downtown Bellevue's luxury properties or Somerset's hillside estates, our team has the expertise to handle any terrain or architectural requirement.
+      </p>
+    </section>
+
+    {/* Why Choose MyFence.com */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Why Choose MyFence.com for Your Bellevue Fence?
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Father-Son Excellence</h3>
+              <p className="text-muted-foreground">
+                Over 30 years of combined experience and a family commitment to craftsmanship you won't find with corporate fence companies.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
+              <p className="text-muted-foreground">
+                Proprietary measurement and manufacturing system that ensures precision accuracy and 30-50% faster installation times.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+            <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
+            <p className="text-muted-foreground">
+              {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty and up to 20-year materials warranty - far exceeding industry standards.
+            </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">HOA & Permit Expertise</h3>
+              <p className="text-muted-foreground">
+                Deep knowledge of Bellevue's strict HOA requirements and municipal codes, with architectural design packages for board approvals.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    {/* Fence Types Section */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Bellevue Fence Types & Materials
+      </h2>
+      
+      {/* Cedar Fencing */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Bellevue Cedar Fence Installation</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          At MyFence.com, we provide Bellevue cedar fence products that are engineered to last in the Pacific Northwest's challenging climate. We use premium Western Red Cedar, nature's most naturally rot-resistant wood species with oils that repel insects and resist decay. For Bellevue's luxury properties in neighborhoods like Medina and Clyde Hill, we offer clear-grade cedar (zero knots) that provides superior appearance and 15+ years of longevity with proper maintenance. Our cedar fences are built using heavy-duty lumber that exceeds industry standards, ensuring structural integrity even during windstorms.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Every cedar fence installation includes marine-grade stainless steel fasteners specifically chosen for Bellevue's high-humidity microclimate created by the dual-lake effect. We use triple-sealed joinery systems and premium pressure-treated posts that resist the moisture exposure 15-20% higher than Seattle experiences. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> adds decades to your fence life by eliminating ground contact and wood rot at the post base.
+        </p>
+      </div>
+
+      {/* Composite Fencing */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Bellevue Composite Fence Systems</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Composite fencing has become increasingly popular in Bellevue's waterfront estates along Lake Washington and Lake Sammamish. Modern composite materials from leading manufacturers offer exceptional moisture resistance without the annual maintenance demands of wood, making them ideal for busy tech executives and luxury properties. While initial investment runs 50-75% higher than cedar, the 25-year lifespan and zero staining requirements often justify the cost for high-end properties where time is valuable.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Our composite fence installations resist warping, splitting, and fading while maintaining their appearance year after year. They're particularly well-suited for properties with challenging slopes in Somerset and Newport Hills where moisture accumulation can accelerate wood decay. We offer various colors and textures that complement both modern Northwest Contemporary architecture and traditional Craftsman homes throughout Bellevue.
+        </p>
+      </div>
+
+      {/* Vinyl Fencing */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Bellevue Vinyl Fence Installation</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          We provide Bellevue vinyl fence products engineered for long-term performance in the Pacific Northwest climate. Our premium vinyl fencing uses thick-walled construction that resists both winter cold snaps and summer heat without becoming brittle or warping. This is particularly important in family-oriented neighborhoods like Factoria and Eastgate where durability matters for active yards with children and pets.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          All our vinyl fences feature UV-resistant formulations that prevent the yellowing and chalking common in cheaper vinyl products. They require virtually no maintenance - just occasional washing with a garden hose - making them ideal for busy Bellevue professionals. We offer various styles from privacy panels to picket designs, with options in white, tan, and gray to match your property's aesthetic. Each installation includes reinforced gate systems and stainless steel hardware for smooth, reliable operation.
+        </p>
+      </div>
+
+      {/* Aluminum & Steel */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Bellevue Aluminum & Steel Fencing</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          For properties seeking modern aesthetics or open views while maintaining security, our aluminum and steel fence options deliver exceptional durability with minimal maintenance. Aluminum fencing is perfect for Bellevue properties that want to showcase landscaping while defining boundaries - popular in Bridle Trails equestrian estates and waterfront properties wanting unobstructed lake views. Our aluminum products feature powder-coated finishes backed by rigorous salt spray testing to ensure corrosion resistance in Bellevue's humid microclimate.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          For enhanced security needs in commercial properties or gated estates, our steel fencing provides unmatched strength. Contemporary horizontal slat systems and cable rail designs particularly appeal to tech executives and modern architectural projects in Downtown Bellevue and West Bellevue. All metal fencing installations include lifetime transferable warranties on materials, with powder coating guarantees that exceed industry standards.
+        </p>
+      </div>
+    </section>
+
+    {/* Financing Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Bellevue Fence Financing Options
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="space-y-4">
+          <p className="text-muted-foreground leading-relaxed">
+            We understand that a quality fence is an investment in your Bellevue property. That's why we partner with Wisetack to offer flexible fence financing options that make premium fencing accessible. Our financing plans feature:
+          </p>
+          <ul className="space-y-2 text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Loan amounts from $1,000 to $25,000 per project</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Flexible terms with competitive rates</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Quick pre-approval with soft credit check (no impact to credit score)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Same-day approvals available for qualified applicants</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Transparent terms with no hidden fees</span>
+            </li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            Apply in minutes and get a decision quickly. Our financing options let you install your dream fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+          </p>
+        </div>
+        <Card className="p-6 bg-primary/5">
+          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <p className="text-muted-foreground mb-4">
+            Check your financing options with no impact to your credit score. Get approved and start your Bellevue fence project immediately.
+          </p>
+          <Link to="/financing">
+            <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
+              Check Financing Options
+            </button>
+          </Link>
+        </Card>
+      </div>
+    </section>
+
+    {/* Warranty Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Industry-Leading Warranty Coverage
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        Your Bellevue fence installation comes with comprehensive warranty protection that exceeds industry standards. We stand behind our work with confidence because we use premium materials and expert installation techniques perfected over 30+ years.
+      </p>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                We stand behind our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Structural integrity of posts and framework</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Gate alignment and functionality</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware installation and security</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Panel attachment and stability</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Up to 20-Year Materials Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Premium materials come with manufacturer warranties up to 20 years, protecting against defects in wood, vinyl, composite, and metal components.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Cedar and composite lumber defects</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Vinyl and metal corrosion or deterioration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware and fastener failure</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Coating and finish degradation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <p className="text-sm text-muted-foreground">
+        Our warranties are fully transferable if you sell your Bellevue property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence we install for the long term.
+      </p>
+    </section>
+
+    {/* Bellevue Fence Contractor */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Trusted Bellevue Fence Contractor
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        MyFence.com is a Bellevue fence contractor with a proven reputation built over 30+ years of exceptional service. As a father-son team, we bring personal accountability and craftsmanship that corporate fence companies simply cannot match. We manufacture and install fencing precisely to your specifications, using tried-and-true processes refined through thousands of successful installations. Our team uses advanced Fence Genius technology combined with traditional craftsmanship, giving you the best of both worlds: precision accuracy and expert hand-finishing.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        When your fence is complete, we perform a comprehensive quality inspection and walk through the entire installation with you. We don't consider the job done until you're completely satisfied. Our commitment to excellence has earned us a 5.0-star rating and over 150 five-star reviews from satisfied Bellevue customers. We're licensed, bonded, and fully insured, giving you complete peace of mind throughout the entire project.
+      </p>
+    </section>
+
+    {/* Local Challenges & Solutions */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Bellevue-Specific Installation Expertise
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        Bellevue's unique geography, climate, and regulations require specialized knowledge and solutions that general contractors often lack. Here's how we address the specific challenges your Bellevue property faces:
+      </p>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <span className="text-primary">⚠</span> Local Challenges
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Architectural review boards in Medina and Clyde Hill requiring detailed design submissions and approval processes</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Tech executive properties demanding contemporary horizontal slat and cable rail systems</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Heritage tree preservation zones requiring hand-digging and specialized installation techniques</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Dual-lake effect creating 15-20% more moisture exposure, accelerating untreated wood failure within 3-5 years</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Property values averaging $1.2M+ requiring installations that enhance rather than diminish home valuations</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <span className="text-primary">✓</span> Our Solutions
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Architectural design packages with 3D renderings for HOA and review board submissions, ensuring first-time approval</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Contemporary aluminum and composite systems with powder-coated finishes matching luxury home palettes</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Root-zone protection protocols using air excavation techniques near heritage trees per arborist specifications</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Marine-grade stainless steel fasteners and triple-sealed joinery systems engineered for high-humidity microclimates</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Premium Western Red Cedar clear-grade matching Bellevue's luxury market expectations and lasting 15+ years with proper maintenance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* Permits Section */}
     <header>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         What to Know Before Building a Fence in Bellevue: Permits, Materials, and Local Tips
@@ -117,7 +467,210 @@ const Bellevue = () => {
           "@type": "Answer",
           "text": "Late spring through early fall (May-September) offers the most favorable weather conditions. However, reputable contractors work year-round, and winter installation can sometimes offer better availability and pricing. Just ensure proper concrete curing time in wet conditions."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of fences work best in Bellevue's climate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural rot resistance. For low maintenance, composite and vinyl fencing excel in Bellevue's high-humidity microclimate. Aluminum and steel offer durability with minimal upkeep for modern architectural styles. All materials should use marine-grade fasteners due to the dual-lake effect moisture."
+        }
       }
+    ]
+  };
+
+  // Enhanced LocalBusiness structured data with comprehensive service offerings
+  const enhancedBusinessData = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": "https://myfence.com/service-areas/bellevue",
+    "name": "MyFence.com - Bellevue Fence Installation",
+    "alternateName": ["MyFence Bellevue", "Bellevue Fence Company"],
+    "description": "Premium fence installation and repair services in Bellevue, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for luxury properties and HOA-compliant designs. 30+ years experience, 5.0-star rating.",
+    "image": "https://myfence.com/myfence-logo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/myfence-logo.png",
+      "width": 600,
+      "height": 600
+    },
+    "url": "https://myfence.com",
+    "telephone": "+12534551885",
+    "email": "info@myfence.com",
+    "priceRange": "$$-$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22927 257th Ave SE",
+      "addressLocality": "Maple Valley",
+      "addressRegion": "WA",
+      "postalCode": "98038",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.3394,
+      "longitude": -122.0461
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bellevue",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Washington"
+        }
+      },
+      {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 47.6101,
+          "longitude": -122.2015
+        },
+        "geoRadius": "25000"
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "150",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "MyFence.com"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fence Products and Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Cedar Fence Installation",
+            "name": "Bellevue Cedar Fence Installation",
+            "description": "Premium Western Red Cedar fence installation with marine-grade fasteners for Bellevue's high-humidity climate. Clear-grade options available.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Composite Fence Installation",
+            "name": "Bellevue Composite Fence Installation",
+            "description": "Low-maintenance composite fencing ideal for waterfront properties and luxury estates. 25-year lifespan with zero staining required.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Vinyl Fence Installation",
+            "name": "Bellevue Vinyl Fence Installation",
+            "description": "Durable vinyl fencing with UV-resistant formulations. Perfect for family properties in Factoria and Eastgate neighborhoods.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Aluminum Fence Installation",
+            "name": "Bellevue Aluminum Fence Installation",
+            "description": "Powder-coated aluminum fencing for modern aesthetics and open views. Ideal for Bridle Trails equestrian properties and waterfront estates.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Fence Repair and Replacement",
+            "name": "Bellevue Fence Repair Services",
+            "description": "Expert fence repair and complete replacement services for all fence types throughout Bellevue neighborhoods.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Fence Staining and Finishing",
+            "name": "Bellevue Fence Staining Services",
+            "description": "Professional fence staining with UV and moisture protection formulated for Pacific Northwest climate conditions.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "MyFence.com"
+            },
+            "areaServed": "Bellevue, WA"
+          }
+        }
+      ]
+    },
+    "knowsAbout": [
+      "Cedar Fence Installation",
+      "Composite Fencing",
+      "Vinyl Fence Installation",
+      "Aluminum Fencing",
+      "HOA Compliance",
+      "Bellevue Building Codes",
+      "Marine-Grade Materials",
+      "Waterfront Property Fencing",
+      "Luxury Property Fencing"
+    ],
+    "slogan": "Father-Son Excellence in Fence Installation",
+    "founder": {
+      "@type": "Person",
+      "name": "Andrew Knudsen"
+    },
+    "paymentAccepted": ["Cash", "Check", "Credit Card", "Financing"],
+    "currenciesAccepted": "USD",
+    "sameAs": [
+      "https://www.facebook.com/myfence.com.official",
+      "https://www.instagram.com/myfence.com.official/",
+      "https://twitter.com/MyFenceDotCom",
+      "https://www.youtube.com/@fencegenius",
+      "https://www.linkedin.com/company/myfence-com/",
+      "https://www.pinterest.com/MyFenceDotCom/",
+      "https://www.tiktok.com/@myfence.com"
     ]
   };
 
@@ -127,8 +680,8 @@ const Bellevue = () => {
       state="WA"
       heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
       heroDescription="Serving tech executives and waterfront estates with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
-      metaTitle="Luxury Fence Installation Bellevue WA | HOA-Compliant Designs | MyFence.com"
-      metaDescription="Premium fence installation for Bellevue's luxury properties. Architectural designs for tech executives, waterfront estates & HOA compliance. Marine-grade materials for dual-lake microclimate. Call (253) 455-1885."
+      metaTitle="Bellevue Fence Installation & Repair | Luxury Fencing | HOA-Compliant | MyFence.com"
+      metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, composite, vinyl & aluminum. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. 5.0-star rated. Call (253) 455-1885 for free quote."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
         {
@@ -195,7 +748,7 @@ const Bellevue = () => {
         "Premium Western Red Cedar clear-grade (zero knots) matching Bellevue's luxury market expectations and lasting 15+ years with proper maintenance"
       ]}
       articleContent={<BellevueArticle />}
-      faqStructuredData={faqStructuredData}
+      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
     />
   );
 };
