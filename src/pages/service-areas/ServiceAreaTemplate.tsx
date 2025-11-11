@@ -59,6 +59,7 @@ const ServiceAreaTemplate = ({
   const isMobile = useIsMobile();
   const reviewsRef = useRef<HTMLDivElement | null>(null);
   const [reviews, setReviews] = useState<any[]>([]);
+  const [showFullClimate, setShowFullClimate] = useState(false);
   
   // Load reviews from Supabase
   useEffect(() => {
@@ -483,7 +484,14 @@ const ServiceAreaTemplate = ({
                       <p className="text-muted-foreground">Understanding {city}'s unique conditions</p>
                     </div>
                   </div>
-                  <p className="text-lg">{climateDescription}</p>
+                  <div className="text-lg">
+                    {showFullClimate ? climateDescription : (climateDescription.length > 280 ? `${climateDescription.slice(0, 280).trimEnd()}…` : climateDescription)}
+                    {climateDescription.length > 280 && (
+                      <Button variant="link" size="sm" className="px-2 align-baseline" onClick={() => setShowFullClimate((v) => !v)}>
+                        {showFullClimate ? 'Read less' : 'Read more'}
+                      </Button>
+                    )}
+                  </div>
                 </Card>
               </div>
             </div>
