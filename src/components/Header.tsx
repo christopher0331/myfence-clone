@@ -134,7 +134,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t">
+        <div className="lg:hidden border-t max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="container py-3 flex flex-col gap-3">
             <div className="text-base font-medium text-foreground">
               <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
