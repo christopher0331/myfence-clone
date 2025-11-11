@@ -333,27 +333,27 @@ const ServiceAreaTemplate = ({
                     <div className="grid gap-6 pt-4">
                       {useMemo(() => [
                         {
-                          title: "Fence Installation",
+                          title: `Fence Installation in ${city}`,
                           description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
                         },
                         {
-                          title: "Fence Repair",
+                          title: `Fence Repair in ${city}`,
                           description: `Quick and reliable fence repair services to restore your fence's functionality and appearance.`
                         },
                         {
-                          title: "Fence Staining",
+                          title: `Fence Staining in ${city}`,
                           description: `Professional staining and finishing to protect and enhance your wood fence.`
                         },
                         {
-                          title: "Fence Replacement",
+                          title: `Fence Replacement in ${city}`,
                           description: `Complete fence replacement services with minimal disruption to your property.`
                         },
                         {
-                          title: "Custom Designs",
+                          title: `Custom Designs in ${city}`,
                           description: `Custom fence designs tailored to your property's unique style and requirements.`
                         },
                         {
-                          title: "Commercial Fencing",
+                          title: `Commercial Fencing in ${city}`,
                           description: `Durable commercial fencing solutions for businesses in ${city}.`
                         }
                       ], [city]).map((service, index) => (
@@ -375,27 +375,27 @@ const ServiceAreaTemplate = ({
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                   {useMemo(() => [
                     {
-                      title: "Fence Installation",
+                      title: `Fence Installation in ${city}`,
                       description: `New fence installation with premium materials and expert craftsmanship throughout ${city}.`
                     },
                     {
-                      title: "Fence Repair",
+                      title: `Fence Repair in ${city}`,
                       description: `Quick and reliable fence repair services to restore your fence's functionality and appearance.`
                     },
                     {
-                      title: "Fence Staining",
+                      title: `Fence Staining in ${city}`,
                       description: `Professional staining and finishing to protect and enhance your wood fence.`
                     },
                     {
-                      title: "Fence Replacement",
+                      title: `Fence Replacement in ${city}`,
                       description: `Complete fence replacement services with minimal disruption to your property.`
                     },
                     {
-                      title: "Custom Designs",
+                      title: `Custom Designs in ${city}`,
                       description: `Custom fence designs tailored to your property's unique style and requirements.`
                     },
                     {
-                      title: "Commercial Fencing",
+                      title: `Commercial Fencing in ${city}`,
                       description: `Durable commercial fencing solutions for businesses in ${city}.`
                     }
                   ], [city]).map((service, index) => (
