@@ -679,7 +679,7 @@ const Bellevue = () => {
       city="Bellevue" 
       state="WA"
       heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
-      heroDescription="Serving tech executives and waterfront estates with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
+      heroDescription="Serving waterfront estates and luxury properties with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
       metaTitle="Bellevue Fence Installation & Repair | Luxury Fencing | HOA-Compliant | MyFence.com"
       metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, composite, vinyl & aluminum. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. 5.0-star rated. Call (253) 455-1885 for free quote."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
@@ -733,7 +733,7 @@ const Bellevue = () => {
       climateDescription="Bellevue's position between two major lakes creates a unique microclimate with consistently elevated humidity (averaging 75-80%) and morning fog patterns that accelerate wood decay. The city's tech-sector wealth has driven demand for architecturally distinctive homes requiring fence solutions that complement modern, Northwest Contemporary, and traditional Craftsman designs while withstanding moisture-rich conditions."
       localChallenges={[
         "Architectural review boards in neighborhoods like Medina and Clyde Hill requiring detailed design submissions and approval processes",
-        "Microsoft and tech executive properties demanding contemporary horizontal slat and cable rail systems",
+        "High-end properties demanding contemporary horizontal slat and cable rail systems",
         "Heritage tree preservation zones requiring hand-digging and specialized installation near 100+ year old specimens",
         "Downtown proximity driving demand for sound-dampening fence solutions for traffic noise reduction",
         "Dual-lake effect creating 15-20% more moisture exposure than Seattle, accelerating untreated wood failure within 3-5 years",
