@@ -51,7 +51,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b">
       <div className="container flex h-20 md:h-24 items-center justify-between">
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2" onClick={(e) => {
@@ -135,8 +135,15 @@ const Header = () => {
         </div>
       </div>
 
-      <div className={`lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch' }}>
-        <div className="container py-3 flex flex-col gap-3">
+      {/* Backdrop overlay */}
+      <div 
+        className={`lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setOpen(false)}
+        style={{ top: '5rem' }}
+      />
+      
+      <div className={`lg:hidden fixed right-0 border-t border-l h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 ${open ? 'translate-x-0' : 'translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch', top: '5rem' }}>
+        <div className="py-3 px-4 flex flex-col gap-3">
             <div className="text-base font-medium text-foreground">
               <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
                 Fence Styles
