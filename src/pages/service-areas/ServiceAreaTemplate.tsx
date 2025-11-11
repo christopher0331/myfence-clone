@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { useIsMobile } from "@/hooks/use-mobile";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export interface Neighborhood {
   name: string;
@@ -529,6 +530,38 @@ const ServiceAreaTemplate = ({
             </CardContent>
           </Card>
         </section>
+
+        {/* North Bend Fencing Video Section */}
+        {city === "North Bend" && (
+          <section className="container py-12 md:py-16">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                North Bend Fencing
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    See our mountain fencing expertise in action. From steep terrain installations to wildlife-resistant designs, we've spent decades perfecting the techniques needed for North Bend's challenging conditions.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Every fence we build in North Bend is engineered for the unique demands of mountain living - snow loads, rocky soil, and wildlife pressure that lowland contractors never encounter.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/5TJUg_Umx4s?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="North Bend Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Local Expertise Section */}
         {climateDescription && (
