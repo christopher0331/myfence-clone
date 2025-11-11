@@ -121,7 +121,7 @@ const BellevueArticle = () => (
       <div className="space-y-3">
         <h3 className="text-2xl font-semibold">Bellevue Composite Fence Systems</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Composite fencing has become increasingly popular in Bellevue's waterfront estates along Lake Washington and Lake Sammamish. Modern composite materials from leading manufacturers offer exceptional moisture resistance without the annual maintenance demands of wood, making them ideal for busy tech executives and luxury properties. While initial investment runs 50-75% higher than cedar, the 25-year lifespan and zero staining requirements often justify the cost for high-end properties where time is valuable.
+          Composite fencing has become increasingly popular in Bellevue's waterfront estates along Lake Washington and Lake Sammamish. Modern composite materials from leading manufacturers offer exceptional moisture resistance without the annual maintenance demands of wood, making them ideal for busy professionals and luxury properties. While initial investment runs 50-75% higher than cedar, the 25-year lifespan and zero staining requirements often justify the cost for high-end properties where time is valuable.
         </p>
         <p className="text-muted-foreground leading-relaxed">
           Our composite fence installations resist warping, splitting, and fading while maintaining their appearance year after year. They're particularly well-suited for properties with challenging slopes in Somerset and Newport Hills where moisture accumulation can accelerate wood decay. We offer various colors and textures that complement both modern Northwest Contemporary architecture and traditional Craftsman homes throughout Bellevue.
@@ -146,7 +146,7 @@ const BellevueArticle = () => (
           For properties seeking modern aesthetics or open views while maintaining security, our aluminum and steel fence options deliver exceptional durability with minimal maintenance. Aluminum fencing is perfect for Bellevue properties that want to showcase landscaping while defining boundaries - popular in Bridle Trails equestrian estates and waterfront properties wanting unobstructed lake views. Our aluminum products feature powder-coated finishes backed by rigorous salt spray testing to ensure corrosion resistance in Bellevue's humid microclimate.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          For enhanced security needs in commercial properties or gated estates, our steel fencing provides unmatched strength. Contemporary horizontal slat systems and cable rail designs particularly appeal to tech executives and modern architectural projects in Downtown Bellevue and West Bellevue. All metal fencing installations include lifetime transferable warranties on materials, with powder coating guarantees that exceed industry standards.
+          For enhanced security needs in commercial properties or gated estates, our steel fencing provides unmatched strength. Contemporary horizontal slat systems and cable rail designs particularly appeal to modern architectural projects and luxury properties in Downtown Bellevue and West Bellevue. All metal fencing installations include lifetime transferable warranties on materials, with powder coating guarantees that exceed industry standards.
         </p>
       </div>
     </section>
@@ -307,7 +307,7 @@ const BellevueArticle = () => (
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary mt-1">•</span>
-              <span className="text-muted-foreground">Tech executive properties demanding contemporary horizontal slat and cable rail systems</span>
+              <span className="text-muted-foreground">High-end properties demanding contemporary horizontal slat and cable rail systems</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary mt-1">•</span>
