@@ -15,6 +15,7 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 export interface Neighborhood {
   name: string;
@@ -648,6 +649,16 @@ const ServiceAreaTemplate = ({
             </div>
           </section>
         )}
+
+        {/* AI Summary Section */}
+        <section className="py-16 bg-muted/50">
+          <div className="container">
+            <ArticleSummary
+              pageTitle={`${city} Fence Services - MyFence.com`}
+              pageContent={`Write a professional service area summary for MyFence.com in ${city}, ${state}. Highlight how MyFence.com serves ${city} with professional fence installation, repair, and staining services. Emphasize the use of exclusive Fence Genius technology that enables off-site prefabrication of custom, slope-following fence panels and gates. Note that this patented system ensures precision, quality, and efficiency while maintaining competitive pricing with traditional installers. Mention the father-son engineering team and their commitment to raising standards in fence building throughout the ${city} area.`}
+            />
+          </div>
+        </section>
       </div>
     </>
   );
