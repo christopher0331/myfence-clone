@@ -73,6 +73,7 @@ const Issaquah = React.lazy(() => import("./pages/service-areas/Issaquah"));
 const LakeTapps = React.lazy(() => import("./pages/service-areas/LakeTapps"));
 const GigHarbor = React.lazy(() => import("./pages/service-areas/GigHarbor"));
 const Enumclaw = React.lazy(() => import("./pages/service-areas/Enumclaw"));
+const NorthBend = React.lazy(() => import("./pages/service-areas/NorthBend"));
 
 // Loading component
 const PageLoader = () => (
