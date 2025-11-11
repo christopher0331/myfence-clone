@@ -134,7 +134,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t max-h-[calc(100vh-5rem)] overflow-y-auto">
+        <div className="lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)]" style={{ WebkitOverflowScrolling: 'touch' }}>
           <div className="container py-3 flex flex-col gap-3">
             <div className="text-base font-medium text-foreground">
               <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
