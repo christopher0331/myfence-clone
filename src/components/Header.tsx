@@ -174,13 +174,17 @@ const Header = () => {
                 Service Areas
                 <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${serviceAreasOpen ? 'rotate-180' : ''}`} />
               </CollapsibleTrigger>
-              <CollapsibleContent className="pt-3 flex flex-col gap-3 data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                {serviceAreas.map((area) => (
+              <CollapsibleContent className="pt-3 flex flex-col gap-3 overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                {serviceAreas.map((area, i) => (
                   <Link
                     key={area.to}
                     to={area.to}
                     onClick={() => setOpen(false)}
-                    className="text-base text-muted-foreground hover:text-primary transition-colors pl-4"
+                    className="text-base text-muted-foreground hover:text-primary transition-colors pl-4 opacity-0 animate-slide-fade-in"
+                    style={{ 
+                      animationDelay: `${i * 300}ms`,
+                      animationFillMode: 'forwards'
+                    }}
                   >
                     {area.label}
                   </Link>
