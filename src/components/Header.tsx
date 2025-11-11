@@ -123,19 +123,20 @@ const Header = () => {
           <Link to="/contact">
             <Button variant="default" size="sm">Call</Button>
           </Link>
-          <Button aria-label="Toggle menu" variant="secondary" size="icon" onClick={() => setOpen((v) => !v)}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </Button>
+          <button 
+            aria-label="Toggle menu" 
+            className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 relative"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          </button>
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] animate-slide-in-left" style={{ WebkitOverflowScrolling: 'touch' }}>
-          <div className="container py-3 flex flex-col gap-3">
+      <div className={`lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="container py-3 flex flex-col gap-3">
             <div className="text-base font-medium text-foreground">
               <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
                 Fence Styles
@@ -193,7 +194,6 @@ const Header = () => {
             </Collapsible>
           </div>
         </div>
-      )}
     </header>
   );
 };
