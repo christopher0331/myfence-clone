@@ -497,7 +497,6 @@ const Bellevue = () => {
     "url": "https://myfence.com",
     "telephone": "+12534551885",
     "email": "info@myfence.com",
-    "priceRange": "$$-$$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "22927 257th Ave SE",
