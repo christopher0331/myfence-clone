@@ -6,13 +6,6 @@ import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import { useMemo, useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { useIsMobile } from "@/hooks/use-mobile";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
@@ -56,7 +49,6 @@ const ServiceAreaTemplate = ({
   faqStructuredData
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-  const isMobile = useIsMobile();
   const reviewsRef = useRef<HTMLDivElement | null>(null);
   const [reviews, setReviews] = useState<any[]>([]);
   const [showFullClimate, setShowFullClimate] = useState(false);
@@ -435,6 +427,16 @@ const ServiceAreaTemplate = ({
           </div>
         </section>
 
+        {/* AI Summary Section */}
+        <section className="py-16">
+          <div className="container">
+            <ArticleSummary
+              pageTitle={`${city} Fence Services - MyFence.com`}
+              pageContent={`Write a professional service area summary for MyFence.com in ${city}, ${state}. Highlight how MyFence.com serves ${city} with professional fence installation, repair, and staining services. Emphasize the use of exclusive Fence Genius technology that enables off-site prefabrication of custom, slope-following fence panels and gates. Note that this patented system ensures precision, quality, and efficiency while maintaining competitive pricing with traditional installers. Mention the father-son engineering team and their commitment to raising standards in fence building throughout the ${city} area.`}
+            />
+          </div>
+        </section>
+
         {/* North Bend Fencing Video Section */}
         {city === "North Bend" && (
           <section className="py-12 md:py-16">
@@ -503,128 +505,61 @@ const ServiceAreaTemplate = ({
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              {isMobile ? (
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="coverage">
-                    <AccordionTrigger className="text-2xl font-bold">
-                      Neighborhoods & Areas We Serve
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <p className="text-muted-foreground text-center mb-8">
-                        We're proud to provide expert fence installation and repair services throughout {city}, {state}
-                      </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+                Neighborhoods & Areas We Serve in {city}
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We're proud to provide expert fence installation and repair services throughout {city}, {state}
+              </p>
+              
+              {neighborhoods.length > 0 && (
+                <div className="mb-10">
+                  <h3 className="text-2xl font-semibold mb-6 text-center">Popular Neighborhoods</h3>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {neighborhoods.map((neighborhood) => {
+                      const isObject = typeof neighborhood === 'object';
+                      const name = isObject ? neighborhood.name : neighborhood;
+                      const description = isObject ? neighborhood.description : '';
                       
-                      {neighborhoods.length > 0 && (
-                        <div className="mb-8">
-                          <h3 className="text-xl font-semibold mb-6 text-center">Popular Neighborhoods</h3>
-                          <div className="grid gap-4">
-                            {neighborhoods.map((neighborhood) => {
-                              const isObject = typeof neighborhood === 'object';
-                              const name = isObject ? neighborhood.name : neighborhood;
-                              const description = isObject ? neighborhood.description : '';
-                              
-                              return description ? (
-                                <Card key={name} className="p-4">
-                                  <h4 className="font-semibold text-primary mb-1">{name}</h4>
-                                  <p className="text-sm text-muted-foreground">{description}</p>
-                                </Card>
-                              ) : (
-                                <span key={name} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium inline-block">
-                                  {name}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
+                      return description ? (
+                        <Card key={name} className="p-5 hover:shadow-lg transition-shadow">
+                          <h4 className="font-semibold text-primary text-lg mb-2">{name}</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+                        </Card>
+                      ) : (
+                        <span key={name} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium inline-block">
+                          {name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
-                      {landmarks.length > 0 && (
-                        <div className="mb-8">
-                          <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
-                          <div className="flex flex-wrap justify-center gap-3">
-                            {landmarks.map((landmark) => (
-                              <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
-                                {landmark}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+              {landmarks.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {landmarks.map((landmark) => (
+                      <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
+                        {landmark}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-                      {zipCodes.length > 0 && (
-                        <div>
-                          <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
-                          <div className="flex flex-wrap justify-center gap-3">
-                            {zipCodes.map((zip) => (
-                              <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
-                                {zip}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              ) : (
-                <>
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-                    Neighborhoods & Areas We Serve in {city}
-                  </h2>
-                  <p className="text-muted-foreground text-center mb-8">
-                    We're proud to provide expert fence installation and repair services throughout {city}, {state}
-                  </p>
-                  
-                  {neighborhoods.length > 0 && (
-                    <div className="mb-10">
-                      <h3 className="text-2xl font-semibold mb-6 text-center">Popular Neighborhoods</h3>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {neighborhoods.map((neighborhood) => {
-                          const isObject = typeof neighborhood === 'object';
-                          const name = isObject ? neighborhood.name : neighborhood;
-                          const description = isObject ? neighborhood.description : '';
-                          
-                          return description ? (
-                            <Card key={name} className="p-5 hover:shadow-lg transition-shadow">
-                              <h4 className="font-semibold text-primary text-lg mb-2">{name}</h4>
-                              <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
-                            </Card>
-                          ) : (
-                            <span key={name} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium inline-block">
-                              {name}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {landmarks.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4 text-center">Serving Properties Near</h3>
-                      <div className="flex flex-wrap justify-center gap-3">
-                        {landmarks.map((landmark) => (
-                          <span key={landmark} className="px-4 py-2 bg-muted rounded-lg text-sm">
-                            {landmark}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {zipCodes.length > 0 && (
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
-                      <div className="flex flex-wrap justify-center gap-3">
-                        {zipCodes.map((zip) => (
-                          <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
-                            {zip}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </>
+              {zipCodes.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-center">Zip Codes</h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {zipCodes.map((zip) => (
+                      <span key={zip} className="px-4 py-2 bg-muted rounded-lg text-sm font-medium">
+                        {zip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
           </div>
@@ -649,7 +584,7 @@ const ServiceAreaTemplate = ({
 
         {/* Article Content */}
         {articleContent && (
-          <section className="py-16">
+          <section className="py-16 bg-muted/50">
             <div className="container">
               <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:decoration-primary">
                 {articleContent}
@@ -657,16 +592,6 @@ const ServiceAreaTemplate = ({
             </div>
           </section>
         )}
-
-        {/* AI Summary Section */}
-        <section className="py-16 bg-muted/50">
-          <div className="container">
-            <ArticleSummary
-              pageTitle={`${city} Fence Services - MyFence.com`}
-              pageContent={`Write a professional service area summary for MyFence.com in ${city}, ${state}. Highlight how MyFence.com serves ${city} with professional fence installation, repair, and staining services. Emphasize the use of exclusive Fence Genius technology that enables off-site prefabrication of custom, slope-following fence panels and gates. Note that this patented system ensures precision, quality, and efficiency while maintaining competitive pricing with traditional installers. Mention the father-son engineering team and their commitment to raising standards in fence building throughout the ${city} area.`}
-            />
-          </div>
-        </section>
       </div>
     </>
   );

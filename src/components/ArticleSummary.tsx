@@ -100,10 +100,10 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
 
           {summaries && isExpanded && (
             <div className="space-y-4 mt-6">
-              {/* Visible Gemini summary */}
-              {summaries.gemini && (
+              {/* Display first available summary - prefer gemini, fallback to grok or chatgpt */}
+              {(summaries.gemini || summaries.grok || summaries.chatgpt) && (
                 <div className="prose prose-sm md:prose-base max-w-none text-left bg-muted/30 rounded-lg p-6 [&_h2]:text-foreground [&_h2]:font-bold [&_h2]:text-lg [&_h2]:mb-3 [&_h2]:mt-4 [&_h2:first-child]:mt-0 [&_ul]:list-none [&_ul]:space-y-2 [&_li]:text-foreground [&_p]:text-foreground [&_hr]:my-4 [&_hr]:border-border">
-                  {summaries.gemini.split('\n').map((line, i) => {
+                  {(summaries.gemini || summaries.grok || summaries.chatgpt || '').split('\n').map((line, i) => {
                     if (line.startsWith('## ')) {
                       return <h2 key={i}>{line.replace('## ', '')}</h2>;
                     } else if (line.startsWith('• ')) {
@@ -118,16 +118,15 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
                 </div>
               )}
               
-              {/* Hidden ChatGPT summary for SEO */}
-              {summaries.chatgpt && (
+              {/* Hidden additional summaries for SEO */}
+              {summaries.chatgpt && summaries.gemini && (
                 <div className="sr-only" aria-hidden="true">
                   <h4>ChatGPT Summary:</h4>
                   {summaries.chatgpt}
                 </div>
               )}
               
-              {/* Hidden Grok summary for SEO */}
-              {summaries.grok && (
+              {summaries.grok && summaries.gemini && (
                 <div className="sr-only" aria-hidden="true">
                   <h4>Grok Summary:</h4>
                   {summaries.grok}
