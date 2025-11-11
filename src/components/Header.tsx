@@ -190,7 +190,7 @@ const Header = () => {
                     onClick={() => setOpen(false)}
                     className="text-base text-muted-foreground hover:text-primary transition-colors pl-4 opacity-0 animate-slide-fade-in"
                     style={{ 
-                      animationDelay: `${i * 200}ms`,
+                      animationDelay: `${i * 100}ms`,
                       animationFillMode: 'forwards'
                     }}
                   >
