@@ -134,7 +134,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)]" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="lg:hidden border-t h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] animate-slide-in-left" style={{ WebkitOverflowScrolling: 'touch' }}>
           <div className="container py-3 flex flex-col gap-3">
             <div className="text-base font-medium text-foreground">
               <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
@@ -172,9 +172,9 @@ const Header = () => {
             >
               <CollapsibleTrigger className="flex items-center justify-between w-full text-base font-medium text-foreground hover:text-primary transition-colors">
                 Service Areas
-                <ChevronDown className={`h-4 w-4 transition-transform ${serviceAreasOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${serviceAreasOpen ? 'rotate-180' : ''}`} />
               </CollapsibleTrigger>
-              <CollapsibleContent className="pt-3 flex flex-col gap-3">
+              <CollapsibleContent className="pt-3 flex flex-col gap-3 data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
                 {serviceAreas.map((area) => (
                   <Link
                     key={area.to}
