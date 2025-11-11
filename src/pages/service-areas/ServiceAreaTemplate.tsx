@@ -322,7 +322,7 @@ const ServiceAreaTemplate = ({
         </section>
 
         {/* Services Section */}
-        <section className="py-16">
+        <section className="py-16 bg-muted/50">
           <div className="container">
             {isMobile ? (
               <Accordion type="single" collapsible className="max-w-4xl mx-auto">
@@ -413,7 +413,7 @@ const ServiceAreaTemplate = ({
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               {isMobile ? (
@@ -514,32 +514,35 @@ const ServiceAreaTemplate = ({
         </section>
 
         {/* Trustindex Reviews Section */}
-        <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
-          <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">
-            What Our {city} Customers Say
-          </h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl">
-            Choosing a {city} fence contractor is an investment—make it with the father & son team that builds it right the first time.
-          </p>
-          <Card className="mt-6">
-            <CardContent className="p-6">
-              <div ref={reviewsRef} className="w-full" aria-live="polite"></div>
-              <noscript>
-                <p className="text-sm text-muted-foreground">Enable JavaScript to view our Trustindex reviews.</p>
-              </noscript>
-            </CardContent>
-          </Card>
+        <section className="py-12 md:py-16 bg-muted/50" aria-labelledby="reviews-heading">
+          <div className="container">
+            <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">
+              What Our {city} Customers Say
+            </h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl">
+              Choosing a {city} fence contractor is an investment—make it with the father & son team that builds it right the first time.
+            </p>
+            <Card className="mt-6">
+              <CardContent className="p-6">
+                <div ref={reviewsRef} className="w-full" aria-live="polite"></div>
+                <noscript>
+                  <p className="text-sm text-muted-foreground">Enable JavaScript to view our Trustindex reviews.</p>
+                </noscript>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* North Bend Fencing Video Section */}
         {city === "North Bend" && (
-          <section className="container py-12 md:py-16">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                North Bend Fencing
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8 items-start">
-                <div className="md:col-span-2 space-y-4">
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  North Bend Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
                     See our mountain fencing expertise in action. From steep terrain installations to wildlife-resistant designs, we've spent decades perfecting the techniques needed for North Bend's challenging conditions.
                   </p>
@@ -560,12 +563,13 @@ const ServiceAreaTemplate = ({
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Local Expertise Section */}
         {climateDescription && (
-          <section className="py-16 bg-muted/30">
+          <section className="py-16 bg-muted/50">
             <div className="container">
               <div className="max-w-4xl mx-auto">
                 <Card className="p-8">
@@ -718,7 +722,7 @@ const ServiceAreaTemplate = ({
         </section>
 
         {/* Quote Form */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
