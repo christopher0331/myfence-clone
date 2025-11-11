@@ -40,6 +40,7 @@ const serviceAreas = [
   { to: "/service-areas/lake-tapps", label: "Lake Tapps, WA" },
   { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
   { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
+  { to: "/service-areas/north-bend", label: "North Bend, WA" },
   { to: "/service-areas/redmond", label: "Redmond, WA" },
   { to: "/service-areas/renton", label: "Renton, WA" },
   { to: "/service-areas/sammamish", label: "Sammamish, WA" },

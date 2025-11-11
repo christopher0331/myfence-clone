@@ -301,6 +301,7 @@ const AppContent = () => {
           <Route path="/service-areas/lake-tapps" element={<LakeTapps />} />
           <Route path="/service-areas/gig-harbor" element={<GigHarbor />} />
           <Route path="/service-areas/enumclaw" element={<Enumclaw />} />
+          <Route path="/service-areas/north-bend" element={<NorthBend />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
           <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
