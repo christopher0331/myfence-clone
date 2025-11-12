@@ -267,7 +267,7 @@ const ServiceAreaTemplate = ({
         title={metaTitle || `Fence Installation & Repair in ${city}, ${state} | MyFence.com`}
         description={metaDescription || `Professional fence installation and repair services in ${city}, ${state}. Expert craftsmanship, competitive pricing, and quality materials. Call (253) 455-1885 for a free quote.`}
         canonical={`https://myfence.com/service-areas/${citySlug}`}
-        structuredData={faqStructuredData ? [breadcrumbData, structuredData, faqStructuredData] : [breadcrumbData, structuredData]}
+        structuredData={faqStructuredData ? [breadcrumbData, ...(Array.isArray(faqStructuredData) ? faqStructuredData : [faqStructuredData])] : [breadcrumbData, structuredData]}
       />
       
       <div className="min-h-screen">
