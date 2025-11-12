@@ -274,18 +274,6 @@ const BellevueArticle = () => (
       </p>
     </section>
 
-    {/* Bellevue Fence Contractor */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Trusted Bellevue Fence Contractor
-      </h2>
-      <p className="text-muted-foreground leading-relaxed">
-        MyFence.com is a Bellevue fence contractor with a proven reputation built over 30+ years of exceptional service. As a father-son team, we bring personal accountability and craftsmanship that corporate fence companies simply cannot match. We manufacture and install fencing precisely to your specifications, using tried-and-true processes refined through thousands of successful installations. Our team uses advanced Fence Genius technology combined with traditional craftsmanship, giving you the best of both worlds: precision accuracy and expert hand-finishing.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        When your fence is complete, we perform a comprehensive quality inspection and walk through the entire installation with you. We don't consider the job done until you're completely satisfied. Our commitment to excellence has earned us a 5.0-star rating and over 150 five-star reviews from satisfied Bellevue customers. We're licensed, bonded, and fully insured, giving you complete peace of mind throughout the entire project.
-      </p>
-    </section>
 
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
@@ -342,11 +330,11 @@ const BellevueArticle = () => (
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span className="text-muted-foreground">Marine-grade stainless steel fasteners and triple-sealed joinery systems engineered for high-humidity microclimates</span>
+              <span className="text-muted-foreground">Specialized engineering for steep terrain installations in Somerset and Factoria neighborhoods</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span className="text-muted-foreground">Premium Western Red Cedar clear-grade matching Bellevue's luxury market expectations and lasting 15+ years with proper maintenance</span>
+              <span className="text-muted-foreground">Premium installations that enhance property valuations in Bellevue's luxury market</span>
             </li>
           </ul>
         </div>
@@ -380,18 +368,6 @@ const BellevueArticle = () => (
       </p>
     </section>
 
-    <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Comparing Popular Materials for Bellevue's Climate</h3>
-      <p className="text-muted-foreground leading-relaxed">
-        Material selection in Bellevue requires balancing aesthetics, durability, and maintenance against the Pacific Northwest's relentless moisture. Western Red Cedar remains the gold standard for wood fencing. Its natural oils resist decay and insect damage while developing an attractive silver-gray patina. However, Bellevue's high-end neighborhoods increasingly favor clear-grade cedar for its superior appearance and enhanced longevity, though it commands a premium price.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        Composite fencing has gained significant traction in waterfront properties near Lake Washington and Lake Sammamish. Modern composites from manufacturers like Trex and TimberTech offer excellent moisture resistance without the maintenance demands of wood, making them ideal for Bellevue's climate. While initial costs run 50-75% higher than cedar, the elimination of annual staining and longer 25-year lifespan often justify the investment for luxury properties.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        Vinyl fencing provides another low-maintenance alternative, particularly popular in family-oriented neighborhoods like Factoria and Eastgate. However, quality matters significantly - cheap vinyl can become brittle in cold winters and warp in summer heat. For properties with challenging slopes or those seeking modern aesthetics, aluminum and steel offer durability with minimal maintenance, though they lack the warm, natural appearance many Bellevue HOAs prefer.
-      </p>
-    </section>
 
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
