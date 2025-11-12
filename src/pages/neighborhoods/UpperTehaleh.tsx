@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 const UpperTehaleh = () => {
   return (
@@ -25,13 +26,23 @@ const UpperTehaleh = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to Bonney Lake
             </Link>
-            <div className="max-w-4xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Upper Tehaleh Fence Installation
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Premium fencing solutions for Bonney Lake's most prestigious master-planned community
-              </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                  Upper Tehaleh Fence Installation
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Premium fencing solutions for luxury homes with expansive lots and mountain views
+                </p>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <GoogleBusinessMap
+                  city="Upper Tehaleh"
+                  state="Washington"
+                  radiusMiles={10}
+                  showBusinessInfo={false}
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -41,13 +52,13 @@ const UpperTehaleh = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Expert Fencing for Upper Tehaleh Homes
+                Expert Fencing for Upper Tehaleh's Luxury Homes
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Upper Tehaleh represents the pinnacle of master-planned community living in Bonney Lake, featuring larger homesites with expansive views of Mount Rainier and the Cascade foothills. As Upper Tehaleh homeowners, you've invested in premium properties that demand equally premium fencing solutions. MyFence.com specializes in creating custom fence installations that complement Upper Tehaleh's architectural standards while meeting the community's strict HOA guidelines.
+                Upper Tehaleh represents Bonney Lake's most exclusive residential area, featuring larger homes (typically 3,000+ sq ft) on spacious lots with commanding views of Mount Rainier and the Cascade foothills. These premium properties attract growing families with 4-6+ members who need expansive yards for children's activities, entertaining, and outdoor living. Your investment in an Upper Tehaleh home demands fencing solutions that match your property's sophistication while creating safe, private spaces for your active family lifestyle.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The elevated terrain and larger lots in Upper Tehaleh present unique opportunities and challenges for fence installation. Our team has extensive experience working with the sloped topography, mature landscaping, and high-end finishes that characterize this exclusive neighborhood. We understand that your fence must enhance your property's curb appeal while providing the privacy, security, and functionality your family needs.
+                The elevated terrain and substantial lot sizes in Upper Tehaleh require specialized fence installations that maximize your property's natural advantages. Our team excels at designing fences that preserve mountain views while creating distinct zones for kids' play areas, pet containment, and adult entertainment spaces. We understand that busy families with multiple children need durable, maintenance-free options that look beautiful for years while standing up to daily use from active kids, pets, and Pacific Northwest weather.
               </p>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 
 const LowerTehaleh = () => {
   return (
@@ -25,13 +26,23 @@ const LowerTehaleh = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to Bonney Lake
             </Link>
-            <div className="max-w-4xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Lower Tehaleh Fence Installation
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Family-focused fencing solutions for Bonney Lake's vibrant master-planned community
-              </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                  Lower Tehaleh Fence Installation
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Smart fencing solutions for young families, professionals, and active retirees
+                </p>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <GoogleBusinessMap
+                  city="Lower Tehaleh"
+                  state="Washington"
+                  radiusMiles={10}
+                  showBusinessInfo={false}
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -41,13 +52,13 @@ const LowerTehaleh = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Expert Fencing for Lower Tehaleh Families
+                Perfect Fencing for Lower Tehaleh Lifestyles
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Lower Tehaleh embodies the heart of Bonney Lake's premier master-planned community, with family-friendly neighborhoods, abundant amenities, and a strong sense of community. As Lower Tehaleh homeowners, you've chosen a neighborhood that values both active outdoor living and neighborhood connectivity. MyFence.com understands the unique balance Lower Tehaleh families need: fences that provide privacy and security for children and pets while maintaining the open, welcoming character that makes this community special.
+                Lower Tehaleh attracts diverse homeowners—young couples starting families, busy professionals working remotely, empty nesters downsizing, and active retirees enjoying walkable community living. The homes here (typically 1,800-2,500 sq ft) on manageable lots are perfect for 1-4 person households who value low maintenance, walkability to parks and trails, and community connections. Your fence needs to balance privacy without isolation, security without fortress mentality, and aesthetics without demanding your weekends for maintenance.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Lower Tehaleh's more moderate terrain and closer proximity to trails, parks, and community amenities means your fence serves multiple purposes - creating safe play areas for kids, defining property boundaries with neighbors, and enhancing curb appeal throughout this thriving neighborhood. We've installed hundreds of fences in Lower Tehaleh and understand both the HOA requirements and the practical needs of active families living here.
+                Lower Tehaleh's exceptional trail access, community centers, and neighborhood gathering spaces mean your outdoor space extends beyond your fence line. We design installations that complement this lifestyle—creating private backyards for morning coffee or evening relaxation while maintaining the neighborhood's welcoming character. Whether you're securing a yard for young children learning to ride bikes, creating a peaceful retreat from remote work, or establishing low-maintenance boundaries for retirement living, we have solutions that match your stage of life and daily routine.
               </p>
             </div>
           </div>

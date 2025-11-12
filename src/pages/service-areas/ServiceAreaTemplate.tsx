@@ -535,8 +535,11 @@ const ServiceAreaTemplate = ({
                       if (link) {
                         return (
                           <Link key={name} to={link}>
-                            <Card className="p-5 hover:shadow-lg hover:border-primary/50 transition-all cursor-pointer h-full">
+                            <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-105 transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
                               {cardContent}
+                              <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                                Learn More <span className="text-lg">→</span>
+                              </div>
                             </Card>
                           </Link>
                         );

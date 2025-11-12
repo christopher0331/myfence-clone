@@ -617,12 +617,12 @@ const BonneyLake = () => {
       neighborhoods={[
         {
           name: "Upper Tehaleh",
-          description: "Premium master-planned community with elevated homesites, expansive views, and strict HOA requirements for architectural excellence.",
+          description: "Luxury homes for growing families (4-6+ members) with spacious lots, mountain views, and premium outdoor living spaces. Click to learn more →",
           link: "/neighborhoods/upper-tehaleh"
         },
         {
           name: "Lower Tehaleh",
-          description: "Family-focused master-planned community with abundant amenities, trail access, and strong neighborhood connections.",
+          description: "Perfect for young families, professionals, and active retirees seeking walkable community living with low-maintenance homes. Click to learn more →",
           link: "/neighborhoods/lower-tehaleh"
         },
         {
