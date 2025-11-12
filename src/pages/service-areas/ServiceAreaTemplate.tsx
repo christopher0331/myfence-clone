@@ -13,6 +13,7 @@ import { ArticleSummary } from "@/components/ArticleSummary";
 export interface Neighborhood {
   name: string;
   description: string;
+  link?: string;
 }
 
 interface ServiceAreaTemplateProps {
@@ -520,11 +521,30 @@ const ServiceAreaTemplate = ({
                       const isObject = typeof neighborhood === 'object';
                       const name = isObject ? neighborhood.name : neighborhood;
                       const description = isObject ? neighborhood.description : '';
+                      const link = isObject ? neighborhood.link : undefined;
                       
-                      return description ? (
-                        <Card key={name} className="p-5 hover:shadow-lg transition-shadow">
+                      const cardContent = description ? (
+                        <>
                           <h4 className="font-semibold text-primary text-lg mb-2">{name}</h4>
                           <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+                        </>
+                      ) : (
+                        <span className="font-medium">{name}</span>
+                      );
+
+                      if (link) {
+                        return (
+                          <Link key={name} to={link}>
+                            <Card className="p-5 hover:shadow-lg hover:border-primary/50 transition-all cursor-pointer h-full">
+                              {cardContent}
+                            </Card>
+                          </Link>
+                        );
+                      }
+
+                      return description ? (
+                        <Card key={name} className="p-5 hover:shadow-lg transition-shadow">
+                          {cardContent}
                         </Card>
                       ) : (
                         <span key={name} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium inline-block">

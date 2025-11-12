@@ -76,6 +76,10 @@ const Enumclaw = React.lazy(() => import("./pages/service-areas/Enumclaw"));
 const NorthBend = React.lazy(() => import("./pages/service-areas/NorthBend"));
 const BonneyLake = React.lazy(() => import("./pages/service-areas/BonneyLake"));
 
+// Lazy load neighborhood pages
+const UpperTehaleh = React.lazy(() => import("./pages/neighborhoods/UpperTehaleh"));
+const LowerTehaleh = React.lazy(() => import("./pages/neighborhoods/LowerTehaleh"));
+
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -304,6 +308,8 @@ const AppContent = () => {
           <Route path="/service-areas/enumclaw" element={<Enumclaw />} />
           <Route path="/service-areas/north-bend" element={<NorthBend />} />
           <Route path="/service-areas/bonney-lake" element={<BonneyLake />} />
+          <Route path="/neighborhoods/upper-tehaleh" element={<UpperTehaleh />} />
+          <Route path="/neighborhoods/lower-tehaleh" element={<LowerTehaleh />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
           <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
