@@ -112,7 +112,7 @@ const UpperTehaleh = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Premium Materials</h3>
                       <p className="text-muted-foreground">
-                        Clear-grade cedar, composite, and aluminum options matching Upper Tehaleh's luxury standards with marine-grade fasteners.
+                        Clear-grade cedar, premium composite, and hybrid aluminum systems matching Upper Tehaleh's luxury standards with marine-grade fasteners.
                       </p>
                     </div>
                   </div>
@@ -148,14 +148,14 @@ const UpperTehaleh = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">View Preservation</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Many Upper Tehaleh properties feature premium mountain and valley views that shouldn't be compromised by fence installation. We offer semi-privacy designs, horizontal slat systems with strategic spacing, and aluminum options that provide security and definition without blocking sight lines. Our design consultations consider view corridors, neighboring properties, and optimal fence placement to maximize both privacy and views.
+                    Many Upper Tehaleh properties feature premium mountain and valley views that shouldn't be compromised by fence installation. We offer semi-privacy designs, horizontal slat systems with strategic spacing, and our hybrid aluminum system that provide security and definition without blocking sight lines. Our design consultations consider view corridors, neighboring properties, and optimal fence placement to maximize both privacy and views.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Premium Material Selections</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Upper Tehaleh homes deserve fencing materials that match their quality and architectural sophistication. We offer clear-grade Western Red Cedar with minimal knots for superior appearance and longevity, premium composite systems in designer colorways, and powder-coated aluminum with custom finishes. All installations use marine-grade stainless steel fasteners and reinforced framework appropriate for Bonney Lake's climate and your property's value.
+                    Upper Tehaleh homes deserve fencing materials that match their quality and architectural sophistication. We offer clear-grade Western Red Cedar with minimal knots for superior appearance and longevity, premium composite systems in designer colorways, and our hybrid aluminum system with black panels and cedar framing for contemporary aesthetics. All installations use marine-grade stainless steel fasteners and reinforced framework appropriate for Bonney Lake's climate and your property's value.
                   </p>
                 </div>
               </div>

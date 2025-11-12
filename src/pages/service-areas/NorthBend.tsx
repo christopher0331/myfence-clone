@@ -128,14 +128,14 @@ const NorthBendArticle = () => (
         </p>
       </div>
 
-      {/* Vinyl Fencing */}
+      {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">North Bend Vinyl Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">North Bend Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Quality vinyl fencing performs well in North Bend when properly specified for mountain conditions. We exclusively use thick-walled vinyl profiles (0.165" minimum) engineered to remain flexible during cold snaps while resisting warping during summer heat. Standard residential vinyl fails in mountain environments - the temperature extremes cause brittleness and cracking within 5-7 years. Our commercial-grade materials include titanium dioxide stabilizers at concentrations three times higher than economy products, preventing UV degradation even at North Bend's higher elevation where UV exposure increases 8-10% compared to sea level.
+          Our hybrid aluminum fence system offers North Bend residents a low-maintenance solution engineered for mountain conditions. This system combines black aluminum panels with a cedar frame and pressure-treated posts, delivering contemporary aesthetics without premium pricing. The aluminum panels never require staining or sealing - valuable when you'd rather spend weekends on Mount Si trails than maintaining your property. Unlike traditional wood fencing that demands annual maintenance in North Bend's climate, the hybrid system provides decades of reliable service with minimal upkeep.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vinyl's maintenance-free nature appeals to North Bend residents who prioritize time outdoors over fence upkeep. Unlike wood requiring annual staining, vinyl needs only occasional washing - valuable when you'd rather spend weekends on Mount Si trails than maintaining your property. We reinforce all vinyl installations with galvanized steel inserts in posts and rails, providing the structural integrity needed to handle North Bend's snow loads while maintaining vinyl's clean appearance. Color selection matters here - we recommend neutral tones that complement mountain settings while avoiding dark colors that warp from solar heat gain.
+          The powder-coated aluminum panels resist UV degradation even at North Bend's higher elevation where UV exposure increases 8-10% compared to sea level. The cedar framework provides structural warmth and support while pressure-treated posts handle snow loads and ground contact. This combination keeps costs competitive with standard cedar fencing while dramatically reducing long-term maintenance. Perfect for properties wanting modern aesthetics without the expense of all-composite systems, the hybrid system delivers durability appropriate for North Bend's challenging conditions.
         </p>
       </div>
 
@@ -577,9 +577,9 @@ const NorthBend = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "serviceType": "Steel & Aluminum Fence Installation",
-            "name": "North Bend Metal Fence Installation",
-            "description": "Heavy-duty steel and aluminum fencing for wildlife resistance and fire safety. Powder-coated finishes withstand mountain weather while providing maximum durability and security.",
+            "serviceType": "Hybrid Aluminum Fence Installation",
+            "name": "North Bend Hybrid Aluminum Fence System",
+            "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts. Engineered for mountain conditions with competitive pricing.",
             "provider": {
               "@type": "LocalBusiness",
               "name": "MyFence.com"

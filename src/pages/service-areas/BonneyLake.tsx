@@ -128,25 +128,14 @@ const BonneyLakeArticle = () => (
         </p>
       </div>
 
-      {/* Vinyl Fencing */}
+      {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bonney Lake Vinyl Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Bonney Lake Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Vinyl fencing delivers outstanding value for Bonney Lake property owners seeking minimal maintenance combined with lasting durability. Not all vinyl products perform equally - we install only premium-grade vinyl fencing featuring thick-walled construction engineered to withstand Pacific Northwest weather extremes. Our vinyl panels resist UV degradation, eliminating the yellowing and chalking issues common with inferior products. This makes vinyl an excellent choice for busy families in neighborhoods like Falling Water where time spent maintaining a fence detracts from enjoying your outdoor space.
+          Our hybrid aluminum fence system delivers outstanding value for Bonney Lake property owners seeking minimal maintenance without premium pricing. This innovative system combines black aluminum panels with a cedar frame and pressure-treated fence posts, creating a modern aesthetic that requires virtually no upkeep. The aluminum panels never need staining or sealing, making it an excellent choice for busy families in neighborhoods like Falling Water and Upper Tehaleh where time spent maintaining a fence detracts from enjoying your outdoor space.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          All MyFence.com vinyl installations include reinforced aluminum inserts in gates and high-stress areas, ensuring smooth operation and structural integrity for years. We offer multiple design options including privacy panels, semi-privacy styles, and decorative picket fences in white, tan, and gray colorways. Every vinyl fence comes with stainless steel mounting hardware designed for long-term performance. Simply rinse your fence occasionally with water to maintain its like-new appearance - no sanding, staining, or painting required.
-        </p>
-      </div>
-
-      {/* Aluminum & Steel */}
-      <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bonney Lake Aluminum & Steel Fencing</h3>
-        <p className="text-muted-foreground leading-relaxed">
-          Metal fencing provides exceptional longevity and security for Bonney Lake properties while maintaining clean sight lines. Aluminum fencing works beautifully when you want to define boundaries without blocking views - perfect for properties with scenic backdrops or carefully landscaped yards. Our aluminum products feature powder-coated finishes rigorously tested for corrosion resistance in Pacific Northwest humidity. These systems require virtually zero maintenance while providing decades of reliable service, making them ideal for perimeter fencing around larger Bonney Lake properties.
-        </p>
-        <p className="text-muted-foreground leading-relaxed">
-          For maximum security applications or contemporary architectural projects, steel fencing delivers unmatched strength and modern aesthetics. Horizontal slat designs and cable rail systems have gained popularity in new Bonney Lake developments, offering sleek profiles that complement modern home designs. All metal fencing installations include lifetime material warranties with extensive coverage on powder coating durability. Whether you need decorative aluminum for pool enclosures or heavy-duty steel for commercial properties, we have solutions engineered for Bonney Lake conditions.
+          The hybrid system provides exceptional longevity and clean contemporary lines that complement new construction in Bonney Lake developments. Unlike traditional all-wood fencing, the aluminum panels resist weathering, warping, and fading while the cedar framework provides structural warmth and the pressure-treated posts ensure long-term stability in Pacific Northwest conditions. This combination keeps costs competitive with standard cedar fencing while dramatically reducing maintenance requirements. Perfect for properties wanting a sleek, modern look without the expense of all-composite systems.
         </p>
       </div>
     </section>
@@ -389,7 +378,7 @@ const BonneyLakeArticle = () => (
         Composite fencing has gained substantial popularity in Bonney Lake, especially in new construction areas. These engineered materials combine wood fibers with polymers, creating products that resist moisture and weathering while eliminating maintenance demands. Leading brands offer 25+ year warranties and never require staining or painting. While initial costs exceed cedar by 50-75%, the long-term value proposition appeals to busy homeowners who prefer minimal upkeep.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Vinyl fencing delivers exceptional value for Bonney Lake families seeking durability without maintenance. Quality matters significantly - premium vinyl products resist winter brittleness and summer warping that plague cheaper alternatives. For properties requiring security combined with visibility, aluminum fencing offers rust resistance and lifetime durability with virtually zero maintenance requirements. Each material has optimal applications depending on your property's specific needs and aesthetic preferences.
+        Our hybrid aluminum system delivers exceptional value for Bonney Lake families seeking durability without maintenance demands. This system combines black aluminum panels with cedar framing and pressure-treated posts, offering contemporary aesthetics at traditional wood pricing. The aluminum panels never require staining or painting while maintaining competitive costs. Each material has optimal applications depending on your property's specific needs and aesthetic preferences.
       </p>
     </section>
 
@@ -562,16 +551,8 @@ const BonneyLake = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Vinyl Fence Installation in Bonney Lake",
-            "description": "Durable vinyl fencing with UV-resistant formulations and reinforced construction"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Aluminum Fence Installation in Bonney Lake",
-            "description": "Powder-coated aluminum fencing with lifetime warranties and corrosion resistance"
+            "name": "Hybrid Aluminum Fence System in Bonney Lake",
+            "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts at competitive pricing"
           }
         },
         {
@@ -592,7 +573,7 @@ const BonneyLake = () => {
         }
       ]
     },
-    "keywords": "bonney lake fence installation, bonney lake fence company, bonney lake fence contractor, cedar fence bonney lake, composite fence bonney lake, vinyl fence bonney lake, aluminum fence bonney lake, fence repair bonney lake, fence staining bonney lake",
+    "keywords": "bonney lake fence installation, bonney lake fence company, bonney lake fence contractor, cedar fence bonney lake, composite fence bonney lake, hybrid aluminum fence bonney lake, fence repair bonney lake, fence staining bonney lake",
     "slogan": "Father-Son Excellence in Fence Installation Since 1990",
     "founder": {
       "@type": "Person",

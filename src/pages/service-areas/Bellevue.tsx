@@ -128,25 +128,14 @@ const BellevueArticle = () => (
         </p>
       </div>
 
-      {/* Vinyl Fencing */}
+      {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bellevue Vinyl Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Bellevue Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
-          We provide Bellevue vinyl fence products engineered for long-term performance in the Pacific Northwest climate. Our premium vinyl fencing uses thick-walled construction that resists both winter cold snaps and summer heat without becoming brittle or warping. This is particularly important in family-oriented neighborhoods like Factoria and Eastgate where durability matters for active yards with children and pets.
+          For Bellevue properties seeking the perfect balance of low maintenance and affordability, our hybrid aluminum fence system combines the best of both worlds. Instead of traditional all-wood construction, we use black aluminum panels with a cedar frame and pressure-treated fence posts. This innovative system delivers a modern, sleek appearance while dramatically reducing maintenance requirements compared to traditional wood fencing.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          All our vinyl fences feature UV-resistant formulations that prevent the yellowing and chalking common in cheaper vinyl products. They require virtually no maintenance - just occasional washing with a garden hose - making them ideal for busy Bellevue professionals. We offer various styles from privacy panels to picket designs, with options in white, tan, and gray to match your property's aesthetic. Each installation includes reinforced gate systems and stainless steel hardware for smooth, reliable operation.
-        </p>
-      </div>
-
-      {/* Aluminum & Steel */}
-      <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bellevue Aluminum & Steel Fencing</h3>
-        <p className="text-muted-foreground leading-relaxed">
-          For properties seeking modern aesthetics or open views while maintaining security, our aluminum and steel fence options deliver exceptional durability with minimal maintenance. Aluminum fencing is perfect for Bellevue properties that want to showcase landscaping while defining boundaries - popular in Bridle Trails equestrian estates and waterfront properties wanting unobstructed lake views. Our aluminum products feature powder-coated finishes backed by rigorous salt spray testing to ensure corrosion resistance in Bellevue's humid microclimate.
-        </p>
-        <p className="text-muted-foreground leading-relaxed">
-          For enhanced security needs in commercial properties or gated estates, our steel fencing provides unmatched strength. Contemporary horizontal slat systems and cable rail designs particularly appeal to modern architectural projects and luxury properties in Downtown Bellevue and West Bellevue. All metal fencing installations include lifetime transferable warranties on materials, with powder coating guarantees that exceed industry standards.
+          The aluminum panels never require staining, painting, or sealing - perfect for busy Bellevue professionals in neighborhoods like Factoria and Eastgate. The cedar framework provides natural warmth and structural support while the pressure-treated posts ensure long-term stability in Bellevue's humid microclimate. This hybrid approach keeps pricing competitive with traditional wood fencing while offering superior longevity and minimal upkeep. Ideal for properties wanting a contemporary look without the premium cost of all-composite systems.
         </p>
       </div>
     </section>
@@ -449,7 +438,7 @@ const Bellevue = () => {
         "name": "What types of fences work best in Bellevue's climate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural rot resistance. For low maintenance, composite and vinyl fencing excel in Bellevue's high-humidity microclimate. Aluminum and steel offer durability with minimal upkeep for modern architectural styles. All materials should use marine-grade fasteners due to the dual-lake effect moisture."
+          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural rot resistance. For low maintenance, composite fencing excels in Bellevue's high-humidity microclimate. Our hybrid aluminum system (aluminum panels with cedar frame) offers durability with minimal upkeep at competitive pricing for modern properties. All materials should use marine-grade fasteners due to the dual-lake effect moisture."
         }
       }
     ]
@@ -566,23 +555,9 @@ const Bellevue = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "serviceType": "Vinyl Fence Installation",
-            "name": "Bellevue Vinyl Fence Installation",
-            "description": "Durable vinyl fencing with UV-resistant formulations. Perfect for family properties in Factoria and Eastgate neighborhoods.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "MyFence.com"
-            },
-            "areaServed": "Bellevue, WA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "serviceType": "Aluminum Fence Installation",
-            "name": "Bellevue Aluminum Fence Installation",
-            "description": "Powder-coated aluminum fencing for modern aesthetics and open views. Ideal for Bridle Trails equestrian properties and waterfront estates.",
+            "serviceType": "Hybrid Aluminum Fence Installation",
+            "name": "Bellevue Hybrid Aluminum Fence System",
+            "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts. Affordable and durable for modern properties.",
             "provider": {
               "@type": "LocalBusiness",
               "name": "MyFence.com"
@@ -623,8 +598,7 @@ const Bellevue = () => {
     "knowsAbout": [
       "Cedar Fence Installation",
       "Composite Fencing",
-      "Vinyl Fence Installation",
-      "Aluminum Fencing",
+      "Hybrid Aluminum Fence System",
       "HOA Compliance",
       "Bellevue Building Codes",
       "Marine-Grade Materials",
