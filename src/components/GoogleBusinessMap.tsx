@@ -16,6 +16,7 @@ interface GoogleBusinessMapProps {
   radiusMiles: number;
   className?: string;
   showBusinessInfo?: boolean;
+  zoom?: number;
 }
 
 interface BusinessData {
@@ -28,7 +29,7 @@ interface BusinessData {
   websiteUri?: string;
 }
 
-const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", showBusinessInfo = true }: GoogleBusinessMapProps) => {
+const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", showBusinessInfo = true, zoom: customZoom }: GoogleBusinessMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
   const [cityLocation, setCityLocation] = useState<{ lat: number; lng: number } | null>(null);
@@ -108,7 +109,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
 
       const map = new window.google.maps.Map(mapRef.current!, {
         center,
-        zoom: getZoomLevel(radiusMiles),
+        zoom: customZoom || getZoomLevel(radiusMiles),
         styles: [
           {
             featureType: "poi",

@@ -40,6 +40,7 @@ const UpperTehaleh = () => {
                   city="Upper Tehaleh"
                   state="Washington"
                   radiusMiles={1}
+                  zoom={14}
                   showBusinessInfo={false}
                 />
               </div>
