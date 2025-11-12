@@ -117,14 +117,25 @@ const BonneyLakeArticle = () => (
         </p>
       </div>
 
-      {/* Composite Fencing */}
+      {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bonney Lake Composite Fence Systems</h3>
+        <h3 className="text-2xl font-semibold">What We Install in Bonney Lake</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Composite fencing represents the cutting edge of low-maintenance outdoor living for Bonney Lake residents who prioritize convenience. These advanced materials combine recycled wood fibers with high-performance polymers, creating a product that resists moisture, fading, and warping while maintaining consistent appearance for decades. Leading manufacturers back their products with comprehensive warranties, giving you peace of mind. While composite fencing requires a larger upfront investment - typically 50-75% more than cedar - the elimination of annual maintenance and extended 25-year service life make it an economically sound choice for many Bonney Lake homeowners.
+          MyFence.com specializes in three proven fencing systems for Bonney Lake properties: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. By focusing our expertise on these options, we deliver superior craftsmanship backed by our industry-leading warranty. This specialized approach ensures every installation meets our exacting quality standards.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Composite materials excel in Bonney Lake's variable weather conditions, from summer heat to winter freezes. They won't crack, splinter, or rot like wood, making them especially suitable for families with children and pets. We offer extensive color selections and texture profiles to complement any architectural style, from modern craftsman homes in Tehaleh to traditional ranch properties throughout Bonney Lake. The material's consistent quality ensures your fence maintains its original beauty with nothing more than occasional cleaning with a garden hose.
+          <strong>Cedar fencing</strong> offers natural beauty and exceptional durability in Pacific Northwest conditions. <strong>Hogwire fencing</strong> provides rustic charm with unobstructed views, ideal for properties with scenic backdrops. Our <strong>Hybrid Aluminum/Cedar system</strong> combines low-maintenance aluminum panels with cedar framing for contemporary aesthetics at traditional pricing. Each system uses corrosion-resistant fasteners engineered for Bonney Lake's climate.
+        </p>
+      </div>
+
+      {/* Other Materials - Information Only */}
+      <div className="space-y-3 border-l-4 border-muted pl-4">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Composite fencing</strong> combines wood fibers with polymers for 25+ year lifespans without maintenance. <strong>Vinyl fencing</strong> requires no staining but can struggle with temperature extremes. <strong>Ornamental aluminum and steel</strong> offer maximum security and sight lines. While these materials have applications, we've chosen to specialize in cedar, hogwire, and hybrid systems where we can guarantee exceptional results.
         </p>
       </div>
 
@@ -378,7 +389,7 @@ const BonneyLakeArticle = () => (
         Composite fencing has gained substantial popularity in Bonney Lake, especially in new construction areas. These engineered materials combine wood fibers with polymers, creating products that resist moisture and weathering while eliminating maintenance demands. Leading brands offer 25+ year warranties and never require staining or painting. While initial costs exceed cedar by 50-75%, the long-term value proposition appeals to busy homeowners who prefer minimal upkeep.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Our hybrid aluminum system delivers exceptional value for Bonney Lake families seeking durability without maintenance demands. This system combines black aluminum panels with cedar framing and pressure-treated posts, offering contemporary aesthetics at traditional wood pricing. The aluminum panels never require staining or painting while maintaining competitive costs. Each material has optimal applications depending on your property's specific needs and aesthetic preferences.
+        MyFence.com installs cedar, hogwire, and hybrid aluminum/cedar systems - each engineered for Bonney Lake's climate. Cedar provides natural warmth and proven longevity. Hogwire offers rustic charm with open views. Our hybrid system delivers low-maintenance performance at competitive pricing. While composite and vinyl have advantages, we've specialized in these three systems to ensure superior installation quality and warranty coverage.
       </p>
     </section>
 
@@ -543,14 +554,6 @@ const BonneyLake = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Composite Fence Installation in Bonney Lake",
-            "description": "Low-maintenance composite fencing with 25-year warranties and superior moisture resistance"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "name": "Hybrid Aluminum Fence System in Bonney Lake",
             "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts at competitive pricing"
           }
@@ -573,7 +576,7 @@ const BonneyLake = () => {
         }
       ]
     },
-    "keywords": "bonney lake fence installation, bonney lake fence company, bonney lake fence contractor, cedar fence bonney lake, composite fence bonney lake, hybrid aluminum fence bonney lake, fence repair bonney lake, fence staining bonney lake",
+    "keywords": "bonney lake fence installation, bonney lake fence company, bonney lake fence contractor, cedar fence bonney lake, hogwire fence bonney lake, hybrid aluminum fence bonney lake, fence repair bonney lake, fence staining bonney lake",
     "slogan": "Father-Son Excellence in Fence Installation Since 1990",
     "founder": {
       "@type": "Person",

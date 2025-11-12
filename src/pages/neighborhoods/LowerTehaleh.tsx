@@ -155,7 +155,7 @@ const LowerTehaleh = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Durable, Low-Maintenance Options</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lower Tehaleh families stay busy with community activities, work, and family life - fence maintenance shouldn't consume precious weekend time. We offer low-maintenance composite fencing and our hybrid aluminum system (black aluminum panels with cedar frame) that never require staining or painting, perfect for busy families. For those preferring natural cedar, our premium pressure-treated posts and marine-grade fasteners maximize longevity while our optional Post-on-Pipe upgrade virtually eliminates the most common failure point: rotting posts.
+                    Lower Tehaleh families stay busy with community activities, work, and family life - fence maintenance shouldn't consume precious weekend time. Our hybrid aluminum system (black aluminum panels with cedar frame) never requires staining or painting, perfect for busy families. For those preferring natural cedar, our premium pressure-treated posts and marine-grade fasteners maximize longevity while our optional Post-on-Pipe upgrade virtually eliminates the most common failure point: rotting posts. We also offer hogwire fencing for properties wanting rustic charm with open views.
                   </p>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const LowerTehaleh = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">2. Design Selection & HOA Approval</h3>
                   <p className="text-muted-foreground">
-                    Choose from cedar, composite, or hybrid aluminum options with colors and styles approved for Tehaleh. We prepare and submit all required documentation to the architectural review committee.
+                    Choose from cedar, hogwire, or hybrid aluminum options with colors and styles approved for Tehaleh. We prepare and submit all required documentation to the architectural review committee.
                   </p>
                 </Card>
                 <Card className="p-6">

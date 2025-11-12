@@ -117,14 +117,25 @@ const BellevueArticle = () => (
         </p>
       </div>
 
-      {/* Composite Fencing */}
+      {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bellevue Composite Fence Systems</h3>
+        <h3 className="text-2xl font-semibold">What We Install in Bellevue</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Composite fencing has become increasingly popular in Bellevue's waterfront estates along Lake Washington and Lake Sammamish. Modern composite materials from leading manufacturers offer exceptional moisture resistance without the annual maintenance demands of wood, making them ideal for busy professionals and luxury properties. While initial investment runs 50-75% higher than cedar, the 25-year lifespan and zero staining requirements often justify the cost for high-end properties where time is valuable.
+          MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. We've focused our expertise on these options to deliver superior installation quality and industry-leading warranties. While many contractors offer numerous fence types, our specialized approach ensures every fence we install meets our exacting standards.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Our composite fence installations resist warping, splitting, and fading while maintaining their appearance year after year. They're particularly well-suited for properties with challenging slopes in Somerset and Newport Hills where moisture accumulation can accelerate wood decay. We offer various colors and textures that complement both modern Northwest Contemporary architecture and traditional Craftsman homes throughout Bellevue.
+          <strong>Cedar fencing</strong> remains the gold standard for natural beauty and durability. <strong>Hogwire fencing</strong> combines rustic charm with modern functionality, perfect for properties wanting open views. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance at competitive pricing. Each system uses marine-grade fasteners and premium materials engineered for Bellevue's unique microclimate.
+        </p>
+      </div>
+
+      {/* Other Materials - Information Only */}
+      <div className="space-y-3 border-l-4 border-muted pl-4">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Composite fencing</strong> has become popular in Bellevue's waterfront estates for its low maintenance and 25-year lifespan. <strong>Vinyl fencing</strong> offers maintenance-free performance but can become brittle in temperature extremes. <strong>Ornamental aluminum and steel</strong> provide open sight lines for estates and equestrian properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we can deliver superior results.
         </p>
       </div>
 
@@ -438,7 +449,7 @@ const Bellevue = () => {
         "name": "What types of fences work best in Bellevue's climate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural rot resistance. For low maintenance, composite fencing excels in Bellevue's high-humidity microclimate. Our hybrid aluminum system (aluminum panels with cedar frame) offers durability with minimal upkeep at competitive pricing for modern properties. All materials should use marine-grade fasteners due to the dual-lake effect moisture."
+          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural rot resistance and beauty. Hogwire fencing provides rustic appeal with open views, perfect for modern properties and estate landscaping. Our hybrid aluminum system (black aluminum panels with cedar frame) offers durability with minimal upkeep at competitive pricing. MyFence.com specializes in these three systems to ensure superior installation quality with marine-grade fasteners engineered for Bellevue's dual-lake effect moisture."
         }
       }
     ]
@@ -541,20 +552,6 @@ const Bellevue = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "serviceType": "Composite Fence Installation",
-            "name": "Bellevue Composite Fence Installation",
-            "description": "Low-maintenance composite fencing ideal for waterfront properties and luxury estates. 25-year lifespan with zero staining required.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "MyFence.com"
-            },
-            "areaServed": "Bellevue, WA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "serviceType": "Hybrid Aluminum Fence Installation",
             "name": "Bellevue Hybrid Aluminum Fence System",
             "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts. Affordable and durable for modern properties.",
@@ -597,7 +594,7 @@ const Bellevue = () => {
     },
     "knowsAbout": [
       "Cedar Fence Installation",
-      "Composite Fencing",
+      "Hogwire Fence Installation",
       "Hybrid Aluminum Fence System",
       "HOA Compliance",
       "Bellevue Building Codes",

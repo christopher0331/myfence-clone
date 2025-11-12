@@ -112,7 +112,7 @@ const UpperTehaleh = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Premium Materials</h3>
                       <p className="text-muted-foreground">
-                        Clear-grade cedar, premium composite, and hybrid aluminum systems matching Upper Tehaleh's luxury standards with marine-grade fasteners.
+                        Clear-grade cedar, hogwire, and hybrid aluminum systems matching Upper Tehaleh's luxury standards with marine-grade fasteners.
                       </p>
                     </div>
                   </div>
@@ -155,7 +155,7 @@ const UpperTehaleh = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Premium Material Selections</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Upper Tehaleh homes deserve fencing materials that match their quality and architectural sophistication. We offer clear-grade Western Red Cedar with minimal knots for superior appearance and longevity, premium composite systems in designer colorways, and our hybrid aluminum system with black panels and cedar framing for contemporary aesthetics. All installations use marine-grade stainless steel fasteners and reinforced framework appropriate for Bonney Lake's climate and your property's value.
+                    Upper Tehaleh homes deserve fencing materials that match their quality and architectural sophistication. We offer clear-grade Western Red Cedar with minimal knots for superior appearance and longevity, hogwire fencing for properties wanting rustic elegance with open views, and our hybrid aluminum system with black panels and cedar framing for contemporary aesthetics. All installations use marine-grade stainless steel fasteners and reinforced framework appropriate for Bonney Lake's climate and your property's value.
                   </p>
                 </div>
               </div>

@@ -139,14 +139,25 @@ const NorthBendArticle = () => (
         </p>
       </div>
 
-      {/* Composite */}
+      {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">North Bend Composite Fence Systems</h3>
+        <h3 className="text-2xl font-semibold">What We Install in North Bend</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Composite materials represent the premium choice for North Bend properties prioritizing longevity and minimal maintenance. Modern composites from Trex and TimberTech combine wood fiber aesthetics with polymer durability, creating fencing that handles moisture cycling without the rot issues plaguing conventional lumber. In North Bend's climate where wooden fences face constant moisture stress, composites deliver 20-25 year lifespans without staining, sealing, or rot board replacement. Initial costs run 60-80% higher than cedar, but the elimination of ongoing maintenance makes them cost-competitive over a 15-year horizon.
+          MyFence.com specializes in three fencing systems engineered for North Bend's mountain conditions: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. Mountain environments demand specialized expertise - by focusing on these three systems, we deliver installations that handle North Bend's unique challenges including elevation, wildlife, and extreme weather.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          These systems excel on properties backing to forest land where constant shade and falling needles create persistently damp conditions. Composite won't rot even with 24/7 moisture contact - ideal for fence lines under dense Douglas fir canopies common throughout North Bend neighborhoods. The material resists termite and carpenter ant damage, addressing a significant concern in forested areas where wood-boring insects actively seek moisture-softened lumber. We install composites with aluminum reinforcement in high-stress applications, creating fences capable of handling both wildlife impacts and the lateral loads from deep snowpack accumulation.
+          <strong>Cedar fencing</strong> provides natural durability and beauty for traditional mountain homes. <strong>Hogwire fencing</strong> offers wildlife resistance with open views perfect for forested properties. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance engineered for mountain UV exposure and snow loads. Each system includes reinforced construction and premium fasteners appropriate for North Bend's demanding climate.
+        </p>
+      </div>
+
+      {/* Other Materials - Information Only */}
+      <div className="space-y-3 border-l-4 border-muted pl-4">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Composite fencing</strong> from manufacturers like Trex offers 20-25 year lifespans without maintenance, ideal for forested properties with constant moisture. <strong>Vinyl fencing</strong> requires minimal upkeep but struggles with temperature extremes at elevation. <strong>Steel fencing</strong> provides maximum wildlife resistance and fire safety. While these materials have merit for mountain applications, we've specialized in cedar, hogwire, and hybrid systems where we can ensure proper installation for North Bend's unique conditions.
         </p>
       </div>
     </section>
@@ -580,20 +591,6 @@ const NorthBend = () => {
             "serviceType": "Hybrid Aluminum Fence Installation",
             "name": "North Bend Hybrid Aluminum Fence System",
             "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts. Engineered for mountain conditions with competitive pricing.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "MyFence.com"
-            },
-            "areaServed": "North Bend, WA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "serviceType": "Composite Fence Installation",
-            "name": "North Bend Composite Fence Installation",
-            "description": "Maintenance-free composite fencing ideal for forested properties with constant moisture exposure. 20-25 year lifespan without staining or rot - engineered for mountain climates.",
             "provider": {
               "@type": "LocalBusiness",
               "name": "MyFence.com"
