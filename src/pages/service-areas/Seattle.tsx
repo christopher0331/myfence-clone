@@ -97,7 +97,7 @@ const Seattle = () => {
         "Historic-appropriate fence designs meeting preservation guidelines",
         "Engineered terracing for hillside properties",
         "Sound-dampening fence configurations for urban settings",
-        "Premium cedar and composite materials for moisture resistance"
+        "Premium cedar, hogwire, and hybrid aluminum systems for moisture resistance"
       ]}
     />
   );

@@ -602,20 +602,6 @@ const NorthBend = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "serviceType": "Vinyl Fence Installation",
-            "name": "North Bend Vinyl Fence Installation",
-            "description": "Commercial-grade vinyl fencing engineered for temperature extremes from mountain winters to summer heat. Thick-walled construction resists brittleness and warping.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "MyFence.com"
-            },
-            "areaServed": "North Bend, WA"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "serviceType": "Mountain Terrain Fence Installation",
             "name": "North Bend Steep Slope Fence Installation",
             "description": "Specialized steep terrain fence installation with stepped panels and reinforced posts. Engineered for slopes up to 20% with proper drainage and soil retention.",

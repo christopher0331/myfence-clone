@@ -34,18 +34,28 @@ const KirklandArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Best Materials for Kirkland Properties</h3>
+      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Kirkland</h3>
       <p className="text-muted-foreground leading-relaxed">
-        For Kirkland's upscale market, Western Red Cedar remains the premium choice, offering natural beauty that complements high-end architecture while providing excellent weather resistance. Clear-grade cedar is particularly popular in neighborhoods like Bridle Trails and waterfront areas, where the investment in premium materials aligns with overall property values. The natural oils in cedar provide inherent rot resistance crucial for Kirkland's moist environment, while its dimensional stability helps it withstand the area's moderate temperature swings.
+        For Kirkland's upscale market, MyFence.com specializes in three premium fencing systems: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver superior installation quality backed by industry-leading warranties. Clear-grade cedar is particularly popular in neighborhoods like Bridle Trails and waterfront areas, where the investment in premium materials aligns with overall property values.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        For lakefront installations, MyFence.com uses marine-grade stainless steel hardware that resists corrosion from moisture and occasional salt exposure. Standard galvanized hardware can corrode within 5-10 years in waterfront conditions, while our stainless steel fasteners maintain their integrity for decades. This attention to detail prevents the unsightly streaking and hardware failure common in lakefront fences installed with inferior materials.
+        Our <strong>cedar fencing</strong> offers natural beauty with inherent rot resistance crucial for Kirkland's moist environment. <strong>Hogwire fencing</strong> provides rustic charm with open views, perfect for equestrian properties and estates wanting to showcase landscaping. Our <strong>Hybrid Aluminum/Cedar system</strong> combines black aluminum panels with cedar framing for contemporary aesthetics with minimal maintenance - ideal for busy lakefront professionals.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Horizontal cedar designs have become increasingly popular in Kirkland, offering contemporary aesthetics that appeal to the city's affluent homeowners while providing the option for spacing that preserves lake views. These modern fence styles complement Kirkland's mix of mid-century modern and contemporary architecture better than traditional vertical boards. For homeowners seeking minimal maintenance, composite materials provide a wood-like appearance without the need for regular staining, though at a 60-80% price premium over cedar.
+        For lakefront installations, we use marine-grade stainless steel hardware that resists corrosion from moisture and salt exposure. Standard galvanized hardware can corrode within 5-10 years in waterfront conditions, while our stainless steel fasteners maintain their integrity for decades. Horizontal cedar designs have become increasingly popular in Kirkland, offering contemporary aesthetics that preserve lake views while providing privacy.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Whatever material you choose, MyFence.com's 4.125" x 4.125" posts provide superior strength compared to the 3.5" x 3.5" posts commonly found at box stores - nearly 5 additional square inches of cross-sectional area that resists warping and ensures your fence remains straight and sturdy for decades. We install posts with concrete poured to surface level, preventing the soil contact that leads to premature rot in Kirkland's moist climate.
+        All installations use MyFence.com's superior 4.125" x 4.125" posts - nearly 5 additional square inches of cross-sectional area compared to box store posts. We install posts with concrete poured to surface level, preventing the soil contact that leads to premature rot in Kirkland's moist climate.
+      </p>
+    </section>
+    
+    <section className="space-y-4 border-l-4 border-muted pl-4">
+      <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+      <p className="text-muted-foreground leading-relaxed text-sm">
+        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        <strong>Composite materials</strong> provide wood-like appearance without regular staining, though at a 60-80% price premium over cedar. <strong>Vinyl fencing</strong> offers maintenance-free performance but lacks natural warmth. <strong>Ornamental aluminum and steel</strong> provide security with open sight lines. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee exceptional results for Kirkland's demanding waterfront environment.
       </p>
     </section>
 

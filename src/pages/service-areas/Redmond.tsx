@@ -34,18 +34,25 @@ const RedmondArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Optimal Materials for Redmond's Climate and Lifestyle</h3>
+      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Redmond</h3>
       <p className="text-muted-foreground leading-relaxed">
-        Western Red Cedar remains the gold standard for Redmond fence installations, combining natural beauty with excellent weather resistance for the Pacific Northwest climate. The material's inherent rot resistance and dimensional stability make it ideal for Redmond's wet winters and dry summers. For properties in premium neighborhoods like Overlake and Education Hill, clear-grade cedar provides the refined appearance that matches the area's high property values while eliminating the knots and imperfections common in construction-grade lumber.
+        MyFence.com specializes in three fencing systems for Redmond's tech-savvy homeowners: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver the contemporary aesthetics and superior craftsmanship Redmond properties demand. For premium neighborhoods like Overlake and Education Hill, clear-grade cedar provides the refined appearance that matches the area's high property values.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Horizontal cedar designs have become extremely popular in Redmond, reflecting the contemporary aesthetic preferred by tech professionals. These modern fence styles complement the clean lines of newer homes while providing excellent privacy. MyFence.com specializes in horizontal installations that maintain consistent board spacing and clean sight lines - details that matter to Redmond's design-conscious homeowners. Our precision manufacturing and Fence Genius measurement technology ensure every board aligns perfectly, creating the polished appearance Redmond properties demand.
+        Horizontal <strong>cedar designs</strong> have become extremely popular in Redmond, reflecting the contemporary aesthetic preferred by tech professionals. Our precision manufacturing and Fence Genius technology ensure every board aligns perfectly. <strong>Hogwire fencing</strong> offers modern rustic appeal for properties wanting open views of greenbelts. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance perfect for busy professionals - black aluminum panels with cedar framing that never requires staining.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        For homeowners prioritizing low maintenance, composite materials offer wood-like aesthetics without the need for regular staining. While composites cost 60-80% more than cedar initially, the time savings appeal to busy professionals who'd rather spend weekends at Marymoor Park than maintaining their fence. However, composites lack the natural warmth and character many homeowners prefer, making cedar with a quality stain and sealer the most popular choice in established Redmond neighborhoods.
+        For properties backing to forests or greenbelt, 8-foot fence heights effectively deter deer while providing maximum privacy. All installations use MyFence.com's superior 4.125" x 4.125" posts with nearly 5 square inches more cross-sectional area than box store posts. We install posts with concrete poured to surface level, preventing soil contact and rot. This attention to detail ensures decades of protection for your property.
+      </p>
+    </section>
+    
+    <section className="space-y-4 border-l-4 border-muted pl-4">
+      <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+      <p className="text-muted-foreground leading-relaxed text-sm">
+        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        For properties backing to forests or greenbelt, 8-foot fence heights effectively deter deer while providing maximum privacy. MyFence.com's 4.125" x 4.125" posts provide the superior strength needed for taller installations, with nearly 5 square inches more cross-sectional area than the 3.5" x 3.5" posts sold at box stores. We install posts with concrete poured to surface level, preventing soil contact and rot that compromises fence longevity. This attention to detail ensures your investment protects your property for decades to come.
+        <strong>Composite materials</strong> offer wood-like aesthetics without regular staining, though at 60-80% higher cost. The time savings appeal to busy professionals, but composites lack the natural warmth many prefer. <strong>Vinyl fencing</strong> requires minimal maintenance but lacks character. <strong>Ornamental aluminum and steel</strong> provide security with sight lines. While these materials have merit, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee the contemporary aesthetics and precision installation Redmond's tech-savvy homeowners expect.
       </p>
     </section>
 
@@ -197,9 +204,9 @@ const Redmond = () => {
         "Property values demanding premium materials and craftsmanship"
       ]}
       localSolutions={[
-        "Contemporary horizontal fence designs popular with tech professionals",
+        "Contemporary horizontal cedar and hogwire designs popular with tech professionals",
         "HOA-compliant custom designs with architectural appeal",
-        "Low-maintenance composite and vinyl options",
+        "Low-maintenance hybrid aluminum/cedar system for busy professionals",
         "Wildlife-deterrent height options without sacrificing aesthetics"
       ]}
       articleContent={<RedmondArticle />}
