@@ -98,7 +98,7 @@ const queryClient = new QueryClient({
 
 const AppContent = () => {
   const location = useLocation();
-  const showBlogSection = location.pathname !== "/blog" && !location.pathname.startsWith("/service-areas/");
+  const showBlogSection = location.pathname !== "/blog" && !location.pathname.startsWith("/service-areas/") && !location.pathname.startsWith("/neighborhoods/");
 
   return (
     <>
