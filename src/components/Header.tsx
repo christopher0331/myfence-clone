@@ -31,6 +31,7 @@ const fenceStylesSections = [
 
 const serviceAreas = [
   { to: "/service-areas/bellevue", label: "Bellevue, WA" },
+  { to: "/service-areas/bonney-lake", label: "Bonney Lake, WA" },
   { to: "/service-areas/covington", label: "Covington, WA" },
   { to: "/service-areas/enumclaw", label: "Enumclaw, WA" },
   { to: "/service-areas/federal-way", label: "Federal Way, WA" },
