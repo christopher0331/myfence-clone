@@ -18,6 +18,7 @@ const GalvanizedHogwireFence = () => {
         title="5' Galvanized Hogwire Fence Seattle | Durable & Cost-Effective"
         description="Affordable 5' galvanized hogwire fence for Seattle homes. Strong wire panels with cedar frame - perfect for moderate height privacy. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/galvanized-hogwire-fence"
+        image="/lovable-uploads/dbb0832a-18d2-43bd-90c3-6883046cafd1.png"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Product",

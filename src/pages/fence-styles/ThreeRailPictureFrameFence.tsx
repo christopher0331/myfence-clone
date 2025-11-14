@@ -108,6 +108,7 @@ const ThreeRailPictureFrameFence = () => {
         title="3 Rail Picture Frame Fence | Seattle | MyFence.com"
         description="Cedar 3 rail picture frame fences in Seattle. Extra rail and trim for added structure and a refined craftsman look. Get a fast quote today."
         canonical={canonical}
+        image={heroImg}
         structuredData={structuredData}
       />
 

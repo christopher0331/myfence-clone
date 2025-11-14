@@ -14,6 +14,7 @@ const ClearCedar = () => {
         title="Clear Cedar Fence Boards Upgrade | Premium Seattle Fencing"
         description="Upgrade to clear cedar fence boards in Seattle. Knot-free, uniform appearance that lasts longer. No knots falling out. Premium Western Red Cedar fencing."
         canonical="https://myfence.com/fence-upgrades/clear-cedar"
+        image={clearCedarUpgrade}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

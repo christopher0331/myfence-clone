@@ -13,6 +13,7 @@ const BoardOnBoard = () => {
         title="Board on Board Fence | Maximum Privacy Seattle WA"
         description="Board on board fencing in Seattle eliminates gaps for complete privacy. Perfect for dogs, no seasonal gaps, stunning 3D visual depth. Expert installation by MyFence.com"
         canonical="https://myfence.com/fence-upgrades/board-on-board"
+        image={boardOnBoardCraftsman}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",

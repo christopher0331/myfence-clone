@@ -66,6 +66,7 @@ const PostOnPipe = () => {
         title="Post on Pipe Fence Posts | Rot-Free Foundation | Seattle"
         description="Eliminate fence post rot with our Post on Pipe system. Galvanized steel pipe foundation prevents soil contact damage. Perfect for Pacific Northwest fences."
         canonical="https://myfence.com/fence-upgrades/post-on-pipe"
+        image={postOnPipeView}
         structuredData={[breadcrumbData, serviceStructuredData]}
       />
 

@@ -19,6 +19,7 @@ const BlackHogwireFence = () => {
         title="6' Black Hogwire Fence Seattle | Security & Style Combined"
         description="Secure 6' black hogwire fence for Seattle properties. Perfect for wooded backyards - keeps animals out while maintaining openness. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/black-hogwire-fence"
+        image="/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Product",
