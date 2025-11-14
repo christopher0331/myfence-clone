@@ -45,6 +45,7 @@ const FourPointOneTwoFivePosts = () => {
         title="4.125&quot; x 4.125&quot; Fence Posts - Best Value &amp; Strength | MyFence.com"
         description="Discover why 4.125&quot; x 4.125&quot; fence posts are the best choice for Seattle fences. Superior strength, less warping, and excellent value. 30+ years experience."
         canonical="https://myfence.com/fence-posts/4-125-posts"
+        image={galleryImages[0]}
         structuredData={breadcrumbData}
       />
       

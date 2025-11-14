@@ -72,6 +72,7 @@ const PictureFrameFence = () => {
         title="Picture Frame Cedar Fence Seattle | Premium Privacy Fencing"
         description="Seattle's most popular picture frame cedar fence. Clean trim details, strong construction, 30+ years experience. Free estimates. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/picture-frame-fence"
+        image={heroImg}
         structuredData={[breadcrumbData, structuredData]}
       />
       

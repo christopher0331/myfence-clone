@@ -35,6 +35,7 @@ const PicketFence = () => {
         title="Classic Picket Fence Seattle | Traditional Front Yard Cedar Fencing"
         description="Traditional cedar picket fence with dog ear boards. Perfect for Seattle front yards, up to 4' height. Classic American charm. Call (253) 455-1885 for quotes."
         canonical="https://myfence.com/fence-styles/picket-fence"
+        image="/lovable-uploads/2a60013b-3add-48a8-9881-e5c6c8baf7fd.png"
         structuredData={structuredData}
       />
       
