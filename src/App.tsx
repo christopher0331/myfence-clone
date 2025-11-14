@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate, useNavigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -87,6 +87,21 @@ const PageLoader = () => (
   </div>
 );
 
+// Redirect hash-based social shim URLs (/#/path) back into the SPA router
+const HashNavigation: React.FC = () => {
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#/')) {
+      const target = hash.slice(1);
+      // Clean the URL and navigate inside SPA
+      window.history.replaceState(null, '', target);
+      navigate(target, { replace: true });
+    }
+  }, [navigate]);
+  return null;
+};
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -102,6 +117,7 @@ const AppContent = () => {
 
   return (
     <>
+      <HashNavigation />
       <ScrollToTop />
       <Header />
       <div className="h-20 md:h-24" aria-hidden="true" />
