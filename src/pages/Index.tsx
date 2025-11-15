@@ -612,6 +612,13 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
+        <div className="text-center mt-8">
+          <Link to="/fence-styles">
+            <Button size="lg" variant="default" className="hover-scale">
+              Browse All Our Fence Styles
+            </Button>
+          </Link>
+        </div>
       </section>
 
       <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
