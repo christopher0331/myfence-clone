@@ -499,8 +499,9 @@ const Index = () => {
             <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
               MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! As the original company using Fence Genius technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to deliver exceptional, transparent results.
             </p>
-            <div className="mt-5">
+            <div className="mt-5 relative">
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale w-full sm:w-auto">Free Quotes</Button>
+              <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-3xl animate-pulse hidden sm:inline-block" aria-hidden="true">👆</span>
             </div>
           </div>
           <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">

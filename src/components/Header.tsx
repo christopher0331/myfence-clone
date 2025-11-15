@@ -121,9 +121,9 @@ const Header = () => {
         </nav>
 
         <div className="lg:hidden flex items-center gap-2">
-          <Link to="/contact">
+          <a href="tel:+12534551885">
             <Button variant="default" size="sm">Call</Button>
-          </Link>
+          </a>
           <button 
             aria-label="Toggle menu" 
             className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 relative"
