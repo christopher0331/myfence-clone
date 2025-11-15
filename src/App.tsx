@@ -57,6 +57,7 @@ const PicketFence = React.lazy(() => import("./pages/fence-styles/PicketFence"))
 
 // Lazy load fence post pages
 const FourPointOneTwoFivePosts = React.lazy(() => import("./pages/fence-posts/FourPointOneTwoFivePosts"));
+const SixBySixPosts = React.lazy(() => import("./pages/fence-posts/SixBySixPosts"));
 
 // Lazy load service area pages
 const FederalWay = React.lazy(() => import("./pages/service-areas/FederalWay"));
@@ -293,6 +294,7 @@ const AppContent = () => {
           <Route path="/fence-styles/three-ft-black-hogwire-fence" element={<ThreeFtBlackHogwireFence />} />
           <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
           <Route path="/fence-posts/4-125-posts" element={<FourPointOneTwoFivePosts />} />
+          <Route path="/fence-posts/6x6" element={<SixBySixPosts />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<QuoteTool />} />
           <Route path="/financing" element={<Financing />} />
