@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
+import { Phone } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -122,7 +123,10 @@ const Header = () => {
 
         <div className="lg:hidden flex items-center gap-2">
           <a href="tel:+12534551885">
-            <Button variant="default" size="sm">Call</Button>
+            <Button variant="default" size="sm" className="flex items-center gap-1.5">
+              <Phone size={16} />
+              Call
+            </Button>
           </a>
           <button 
             aria-label="Toggle menu" 
