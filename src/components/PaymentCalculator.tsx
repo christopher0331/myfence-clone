@@ -120,26 +120,37 @@ export default function PaymentCalculator() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead className="whitespace-nowrap">Term length</TableHead>
-                    <TableHead>APR</TableHead>
-                    <TableHead className="text-right">Monthly payment</TableHead>
-                    <TableHead className="text-right">Total interest</TableHead>
+                    <TableHead className="whitespace-nowrap text-xs sm:text-sm">
+                      <span className="sm:hidden">Term</span>
+                      <span className="hidden sm:inline">Term length</span>
+                    </TableHead>
+                    <TableHead className="text-xs sm:text-sm">APR</TableHead>
+                    <TableHead className="text-right text-xs sm:text-sm">
+                      <span className="sm:hidden">Monthly</span>
+                      <span className="hidden sm:inline">Monthly payment</span>
+                    </TableHead>
+                    <TableHead className="text-right text-xs sm:text-sm">
+                      <span className="sm:hidden">Interest</span>
+                      <span className="hidden sm:inline">Total interest</span>
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {rows.length === 0 ? (
                     <TableRow>
-                      <TableCell colSpan={4} className="text-center text-muted-foreground">
+                      <TableCell colSpan={4} className="text-center text-muted-foreground text-xs sm:text-sm">
                         No estimates to show
                       </TableCell>
                     </TableRow>
                   ) : (
                     rows.map((r) => (
                       <TableRow key={r.months}>
-                        <TableCell className="font-medium">{r.months} months</TableCell>
-                        <TableCell>{r.apr.toFixed(1)}%</TableCell>
-                        <TableCell className="text-right">{currency.format(r.monthly)}</TableCell>
-                        <TableCell className="text-right">{currency.format(r.interest)}</TableCell>
+                        <TableCell className="font-medium text-xs sm:text-sm">
+                          {r.months} <span className="sm:hidden">mo</span><span className="hidden sm:inline">months</span>
+                        </TableCell>
+                        <TableCell className="text-xs sm:text-sm">{r.apr.toFixed(1)}%</TableCell>
+                        <TableCell className="text-right text-xs sm:text-sm">{currency.format(r.monthly)}</TableCell>
+                        <TableCell className="text-right text-xs sm:text-sm">{currency.format(r.interest)}</TableCell>
                       </TableRow>
                     ))
                   )}
