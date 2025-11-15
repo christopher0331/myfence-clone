@@ -30,24 +30,43 @@ const fenceStylesSections = [
   { label: "Add-On Options", hash: "#add-on-options" },
 ];
 
-const serviceAreas = [
-  { to: "/service-areas/bellevue", label: "Bellevue, WA" },
-  { to: "/service-areas/bonney-lake", label: "Bonney Lake, WA" },
-  { to: "/service-areas/covington", label: "Covington, WA" },
-  { to: "/service-areas/enumclaw", label: "Enumclaw, WA" },
-  { to: "/service-areas/federal-way", label: "Federal Way, WA" },
-  { to: "/service-areas/gig-harbor", label: "Gig Harbor, WA" },
-  { to: "/service-areas/issaquah", label: "Issaquah, WA" },
-  { to: "/service-areas/kirkland", label: "Kirkland, WA" },
-  { to: "/service-areas/lake-tapps", label: "Lake Tapps, WA" },
-  { to: "/service-areas/maple-valley", label: "Maple Valley, WA" },
-  { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace, WA" },
-  { to: "/service-areas/north-bend", label: "North Bend, WA" },
-  { to: "/service-areas/redmond", label: "Redmond, WA" },
-  { to: "/service-areas/renton", label: "Renton, WA" },
-  { to: "/service-areas/sammamish", label: "Sammamish, WA" },
-  { to: "/service-areas/seattle", label: "Seattle, WA" },
-].sort((a, b) => a.label.localeCompare(b.label));
+const serviceAreasByRegion = [
+  {
+    region: "King County",
+    areas: [
+      { to: "/service-areas/bellevue", label: "Bellevue" },
+      { to: "/service-areas/issaquah", label: "Issaquah" },
+      { to: "/service-areas/kirkland", label: "Kirkland" },
+      { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace" },
+      { to: "/service-areas/redmond", label: "Redmond" },
+      { to: "/service-areas/renton", label: "Renton" },
+      { to: "/service-areas/sammamish", label: "Sammamish" },
+      { to: "/service-areas/seattle", label: "Seattle" },
+    ],
+  },
+  {
+    region: "Pierce County",
+    areas: [
+      { to: "/service-areas/bonney-lake", label: "Bonney Lake" },
+      { to: "/service-areas/federal-way", label: "Federal Way" },
+      { to: "/service-areas/gig-harbor", label: "Gig Harbor" },
+      { to: "/service-areas/lake-tapps", label: "Lake Tapps" },
+    ],
+  },
+  {
+    region: "East King County",
+    areas: [
+      { to: "/service-areas/covington", label: "Covington" },
+      { to: "/service-areas/enumclaw", label: "Enumclaw" },
+      { to: "/service-areas/maple-valley", label: "Maple Valley" },
+      { to: "/service-areas/north-bend", label: "North Bend" },
+    ],
+  },
+];
+
+const serviceAreas = serviceAreasByRegion.flatMap(region => 
+  region.areas.map(area => ({ ...area, label: `${area.label}, WA` }))
+).sort((a, b) => a.label.localeCompare(b.label));
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -106,14 +125,25 @@ const Header = () => {
               Service Areas
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border z-50">
-              {serviceAreas.map((area) => (
-                <DropdownMenuItem key={area.to} asChild>
-                  <Link to={area.to} className="cursor-pointer">
-                    {area.label}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
+            <DropdownMenuContent className="bg-background border z-50 w-[600px] p-4">
+              <div className="grid grid-cols-3 gap-6">
+                {serviceAreasByRegion.map((region) => (
+                  <div key={region.region} className="space-y-2">
+                    <h3 className="font-semibold text-sm text-foreground mb-3">{region.region}</h3>
+                    <div className="flex flex-col gap-1">
+                      {region.areas.map((area) => (
+                        <Link
+                          key={area.to}
+                          to={area.to}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                        >
+                          {area.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/contact">
