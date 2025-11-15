@@ -612,12 +612,13 @@ const Index = () => {
             </CardContent>
           </Card>
         </div>
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 relative">
           <Link to="/fence-styles">
             <Button size="lg" variant="default" className="hover-scale">
               Browse All Our Fence Styles
             </Button>
           </Link>
+          <span className="absolute top-1/2 -translate-y-1/2 right-[calc(50%-120px)] sm:right-[calc(50%-140px)] text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
         </div>
       </section>
 
