@@ -503,7 +503,7 @@ const Index = () => {
               <Button size="lg" variant="secondary" onClick={() => setIsQuoteModalOpen(true)} className="hover-scale px-8 sm:px-12 text-base sm:text-lg relative">
                 Free Quotes
               </Button>
-              <span className="absolute top-1/2 -translate-y-1/2 right-16 sm:right-20 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
+              <span className="absolute top-1/2 -translate-y-1/2 right-16 sm:right-32 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
             </div>
           </div>
           <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
