@@ -125,7 +125,7 @@ const Header = () => {
               Service Areas
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border z-50 w-[600px] p-4">
+            <DropdownMenuContent align="end" className="bg-background border z-50 w-[600px] p-4">
               <div className="grid grid-cols-3 gap-6">
                 {serviceAreasByRegion.map((region) => (
                   <div key={region.region} className="space-y-2">
