@@ -304,6 +304,13 @@ const FenceStyles = () => {
                     </Link>
                   </Button>
                 )}
+                {p.title === '5.5" x 5.5" x 10\' (6x6)' && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/fence-posts/6x6">
+                      Learn More About 6x6 Posts
+                    </Link>
+                  </Button>
+                )}
                 {p.title === "Post on Pipe" && (
                   <Button asChild className="mt-4 w-full">
                     <Link to="/fence-upgrades/post-on-pipe">
