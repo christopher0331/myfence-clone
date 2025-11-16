@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
-import { Phone } from "lucide-react";
+import { Phone, Home } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -74,7 +74,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b">
       <div className="container flex h-20 md:h-24 items-center justify-between">
-        <div className="flex items-center gap-3">
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2" onClick={(e) => {
             const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
             const x = e.clientX || rect.left + rect.width / 2;
@@ -86,6 +87,39 @@ const Header = () => {
           <Badge variant="secondary" className="hidden lg:inline-flex">
             <Link to="/fence-genius" className="hover:underline">Fence Genius Certified</Link>
           </Badge>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="lg:hidden flex items-center justify-between w-full">
+          {/* Left: Call Button */}
+          <a href="tel:+12534551885">
+            <Button variant="default" size="sm" className="flex items-center gap-1.5">
+              <Phone size={16} />
+              Call
+            </Button>
+          </a>
+
+          {/* Center: Logo with Home Icon */}
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5" onClick={(e) => {
+            const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+            const x = e.clientX || rect.left + rect.width / 2;
+            const y = e.clientY || rect.top + rect.height / 2;
+            burstFirework(x, y);
+          }}>
+            <Home size={20} className="text-primary" />
+            <span className="text-lg font-semibold tracking-tight">MyFence.com</span>
+          </Link>
+
+          {/* Right: Menu Button */}
+          <button 
+            aria-label="Toggle menu" 
+            className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 relative"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          </button>
         </div>
 
         <nav className="hidden lg:flex items-center gap-6">
@@ -151,23 +185,6 @@ const Header = () => {
           </Link>
         </nav>
 
-        <div className="lg:hidden flex items-center gap-2">
-          <a href="tel:+12534551885">
-            <Button variant="default" size="sm" className="flex items-center gap-1.5">
-              <Phone size={16} />
-              Call
-            </Button>
-          </a>
-          <button 
-            aria-label="Toggle menu" 
-            className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 relative"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
-        </div>
       </div>
 
       {/* Backdrop overlay */}
