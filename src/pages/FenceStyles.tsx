@@ -280,14 +280,14 @@ const FenceStyles = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Choose the right post for your fence. We typically recommend 4.125&quot; x 4.125&quot; x 9' posts for most projects; upgrade options increase strength and longevity.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {postOptions.map((p) => (
-            <Card key={p.title} className="hover:shadow-elevated transition-shadow">
+            <Card key={p.title} className="hover:shadow-elevated transition-shadow flex flex-col">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>{p.title}</span>
                   <Badge variant="secondary">{p.badge}</Badge>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <AspectRatio ratio={1}>
                   <img
                     src={p.img}
@@ -296,30 +296,30 @@ const FenceStyles = () => {
                     className="w-full h-full object-cover rounded-md"
                   />
                 </AspectRatio>
-                <p className="text-sm text-muted-foreground mt-4">{p.desc}</p>
+                <p className="text-sm text-muted-foreground mt-4 mb-4">{p.desc}</p>
                 {p.title === '3.5" x 3.5" Fence Posts' && (
-                  <Button asChild className="mt-4 w-full" variant="destructive">
+                  <Button asChild className="mt-auto w-full" variant="destructive">
                     <Link to="/fence-posts/3-5-posts">
                       Learn Why We Don't Use These
                     </Link>
                   </Button>
                 )}
                 {p.title === '4.125" x 4.125" x 9\' Posts' && (
-                  <Button asChild className="mt-4 w-full">
+                  <Button asChild className="mt-auto w-full">
                     <Link to="/fence-posts/4-125-posts">
                       Learn More
                     </Link>
                   </Button>
                 )}
                 {p.title === '5.5" x 5.5" x 10\' (6x6)' && (
-                  <Button asChild className="mt-4 w-full">
+                  <Button asChild className="mt-auto w-full">
                     <Link to="/fence-posts/6x6">
                       Learn More About 6x6 Posts
                     </Link>
                   </Button>
                 )}
                 {p.title === "Post on Pipe" && (
-                  <Button asChild className="mt-4 w-full">
+                  <Button asChild className="mt-auto w-full">
                     <Link to="/fence-upgrades/post-on-pipe">
                       Learn More About Post on Pipe
                     </Link>
