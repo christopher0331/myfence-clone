@@ -3,6 +3,7 @@ import { Shield, Ruler, Hammer, Wind, CheckCircle2 } from "lucide-react";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import sixBySixTrellis from "@/assets/6x6-trellis-gate.jpg";
 
 const SixBySixPosts = () => {
   const breadcrumbData = {
@@ -31,9 +32,9 @@ const SixBySixPosts = () => {
   };
 
   const galleryImages = [
+    sixBySixTrellis,
     "/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png",
     "/lovable-uploads/7586a395-5060-4524-a596-fd70bb61c275.png",
-    "/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png",
   ];
 
   return (
