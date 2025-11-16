@@ -85,7 +85,7 @@ const Header = () => {
             <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
           </Link>
           <Badge variant="secondary" className="hidden lg:inline-flex">
-            <Link to="/fence-genius" className="hover:underline">Fence Genius Certified</Link>
+            <Link to="/fence-genius" className="hover:underline flex items-center justify-center">Fence Genius Certified</Link>
           </Badge>
         </div>
 
