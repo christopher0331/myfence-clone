@@ -496,7 +496,7 @@ const Index = () => {
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Your Local Seattle Fence Contractor</h2>
-            <p className="mt-2 text-sm opacity-80 text-center md:text-left">father & son owned</p>
+            <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
             <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
               MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! As the original company using Fence Genius technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to deliver exceptional, transparent results.
             </p>
