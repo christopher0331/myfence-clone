@@ -297,6 +297,13 @@ const FenceStyles = () => {
                   />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{p.desc}</p>
+                {p.title === '3.5" x 3.5" Fence Posts' && (
+                  <Button asChild className="mt-4 w-full" variant="destructive">
+                    <Link to="/fence-posts/3-5-posts">
+                      Learn Why We Don't Use These
+                    </Link>
+                  </Button>
+                )}
                 {p.title === '4.125" x 4.125" x 9\' Posts' && (
                   <Button asChild className="mt-4 w-full">
                     <Link to="/fence-posts/4-125-posts">
