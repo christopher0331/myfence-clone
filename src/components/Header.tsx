@@ -106,7 +106,7 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-lg font-semibold tracking-tight">MyFence.com</span>
+            <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
           </Link>
 
           {/* Right: Menu Button */}
