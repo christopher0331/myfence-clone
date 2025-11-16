@@ -113,7 +113,7 @@ const Header = () => {
           {/* Right: Menu Button */}
           <button 
             aria-label="Toggle menu" 
-            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative bg-primary hover:bg-primary/90 rounded-md transition-colors"
+            className="px-4 h-9 flex flex-col items-center justify-center gap-1.5 relative bg-primary hover:bg-primary/90 rounded-md transition-colors"
             onClick={() => setOpen((v) => !v)}
           >
             <span className={`w-6 h-0.5 bg-primary-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
