@@ -116,9 +116,9 @@ const Header = () => {
             className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 relative"
             onClick={() => setOpen((v) => !v)}
           >
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`w-8 h-0.5 bg-foreground transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span className={`w-8 h-0.5 bg-primary transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`w-8 h-0.5 bg-primary transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`w-8 h-0.5 bg-primary transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
         </div>
 
