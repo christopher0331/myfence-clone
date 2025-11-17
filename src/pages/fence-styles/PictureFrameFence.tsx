@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { CheckCircle, Users, Zap, Award, ArrowLeft, Phone, Mail } from "lucide-react";
+import { CheckCircle, Users, Zap, Award, ArrowLeft, Phone, Mail, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import QuoteModal from "@/components/QuoteModal";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
@@ -45,7 +46,7 @@ const PictureFrameFence = () => {
     ]
   };
 
-  const structuredData = {
+  const productData = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Picture Frame Fence",
@@ -66,6 +67,53 @@ const PictureFrameFence = () => {
     }
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a picture frame fence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A picture frame fence features a trim board that frames each fence panel, creating a clean, finished look on both sides. This design adds structural strength and visual appeal, making it Seattle's most popular cedar fence style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a picture frame fence cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Picture frame fences typically range from $45-60 per linear foot installed, depending on height and materials. Use our Virtual Quote Tool for an instant estimate based on your specific project requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the benefits of picture frame fencing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Picture frame fences offer superior structural strength, a finished appearance on both sides, enhanced curb appeal, and protection against warping. The trim boards also help prevent moisture penetration, extending the fence's lifespan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a picture frame fence last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With proper maintenance, a picture frame cedar fence can last 15-25 years. Using clear cedar, exterior screws, and regular staining can extend the lifespan even further. We offer a 3-year craftsmanship warranty on all installations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can picture frame fences be installed on slopes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Our Fence Genius technology precisely calculates measurements for sloped terrain, ensuring panels follow the ground contour perfectly. This eliminates gaps at the bottom while maintaining the clean picture frame appearance."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Seo
@@ -73,7 +121,7 @@ const PictureFrameFence = () => {
         description="Seattle's most popular picture frame cedar fence. Clean trim details, strong construction, 30+ years experience. Free estimates. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/picture-frame-fence"
         image={heroImg}
-        structuredData={[breadcrumbData, structuredData]}
+        structuredData={[breadcrumbData, productData, faqData]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
@@ -332,6 +380,63 @@ const PictureFrameFence = () => {
                   />
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card className="mb-12">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <HelpCircle className="w-8 h-8 text-primary" />
+                <CardTitle className="text-3xl">Frequently Asked Questions</CardTitle>
+              </div>
+              <CardDescription>
+                Common questions about picture frame fences
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left">
+                    What is a picture frame fence?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    A picture frame fence features a trim board that frames each fence panel, creating a clean, finished look on both sides. This design adds structural strength and visual appeal, making it Seattle's most popular cedar fence style.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left">
+                    How much does a picture frame fence cost?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Picture frame fences typically range from $45-60 per linear foot installed, depending on height and materials. Use our Virtual Quote Tool for an instant estimate based on your specific project requirements.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left">
+                    What are the benefits of picture frame fencing?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Picture frame fences offer superior structural strength, a finished appearance on both sides, enhanced curb appeal, and protection against warping. The trim boards also help prevent moisture penetration, extending the fence's lifespan.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger className="text-left">
+                    How long does a picture frame fence last?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    With proper maintenance, a picture frame cedar fence can last 15-25 years. Using clear cedar, exterior screws, and regular staining can extend the lifespan even further. We offer a 3-year craftsmanship warranty on all installations.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger className="text-left">
+                    Can picture frame fences be installed on slopes?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes! Our Fence Genius technology precisely calculates measurements for sloped terrain, ensuring panels follow the ground contour perfectly. This eliminates gaps at the bottom while maintaining the clean picture frame appearance.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
