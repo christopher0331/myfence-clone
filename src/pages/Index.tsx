@@ -495,7 +495,7 @@ const Index = () => {
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
-            <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Your Local Seattle Fence Contractor</h1>
+            <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Contractor | Fence Installation & Repair in Seattle</h1>
             <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
             <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
               MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! As the original company using Fence Genius technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to deliver exceptional, transparent results.
@@ -526,15 +526,15 @@ const Index = () => {
       <section className="container pt-20 md:pt-28 lg:pt-36 pb-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div className="text-center sm:text-left">
-            <h3 className="text-xl font-semibold">Cedar & Modern Styles</h3>
+            <h2 className="text-xl font-semibold">Top-Rated Fence Company in Seattle</h2>
             <p className="text-muted-foreground mt-2">From classic cedar privacy to sleek horizontal and metal accents, we bring your vision to life.</p>
           </div>
           <div className="text-center sm:text-left">
-            <h3 className="text-xl font-semibold">Transparent Pricing</h3>
+            <h2 className="text-xl font-semibold">Transparent Fence Pricing in Seattle</h2>
             <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
           <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-            <h3 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h3>
+            <h2 className="text-xl font-semibold">10-Year Workmanship Warranty</h2>
             <p className="text-muted-foreground mt-2">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
         </div>
@@ -545,7 +545,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
+              <h2 className="text-3xl font-bold mb-2">Contact Us</h2>
               <p className="text-muted-foreground">Have questions? We're here to help with your fence project.</p>
             </div>
             <Card className="glass-card">
@@ -567,7 +567,7 @@ const Index = () => {
 
       {/* Popular styles */}
       <section className="container py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles</h2>
+        <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles in Seattle</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Our most requested builds in Seattle.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
           <Card className="glass-card">
@@ -578,7 +578,7 @@ const Index = () => {
                 </AspectRatio>
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-semibold">Picture Frame Fence</h3>
+                <h3 className="font-semibold">Picture Frame Fences</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
                 <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
@@ -592,7 +592,7 @@ const Index = () => {
                 </AspectRatio>
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
+                <h3 className="font-semibold">3-Rail Ranch Style Fences</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
                 <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
@@ -606,7 +606,7 @@ const Index = () => {
                 </AspectRatio>
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-semibold">Horizontal Lattice Fence</h3>
+                <h3 className="font-semibold">Horizontal Lattice & Trellis Systems</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
                 <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
               </div>
@@ -624,7 +624,7 @@ const Index = () => {
       </section>
 
       <section className="container py-12 md:py-16" aria-labelledby="reviews-heading">
-        <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">Our reviews are in, and we love them!</h2>
+        <h2 id="reviews-heading" className="text-2xl md:text-3xl font-bold">What Seattle Homeowners Say About Us</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Choosing a Seattle fence contractor is an investment—make it with the father & son team that builds it right the first time. If you're searching for a fence company near me, our customers agree you're in the right place.</p>
         <Card className="mt-6">
           <CardContent className="p-6">
@@ -637,14 +637,14 @@ const Index = () => {
       </section>
 
       <section className="container py-12 md:py-16" aria-labelledby="instant-quote-heading">
-        <h2 id="instant-quote-heading" className="text-2xl md:text-3xl font-bold">Instant Online Quote</h2>
+        <h2 id="instant-quote-heading" className="text-2xl md:text-3xl font-bold">Get Your Free Fence Quote Today</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Build your fence estimate in minutes with real-time pricing.</p>
         
         {/* Mobile version - Simple button to external site */}
         <Card className="mt-6 glass-card overflow-hidden md:hidden">
           <CardContent className="p-6 text-center">
             <div className="text-xs uppercase tracking-wider text-primary/90 mb-2">Powered by SeattleFenceQuote.com</div>
-            <h3 className="text-xl font-semibold mb-4">Get Your Virtual Quote</h3>
+            <h3 className="text-xl font-semibold mb-4">Instant Online Estimate in 60 Seconds</h3>
             <p className="text-muted-foreground mb-6">Use our interactive tool to design your fence and get instant pricing.</p>
             <Button size="lg" className="w-full" asChild>
               <a href="https://SeattleFenceQuote.com" target="_blank" rel="noopener noreferrer" aria-label="Get Virtual Quote on SeattleFenceQuote.com">
@@ -660,7 +660,7 @@ const Index = () => {
             <div className="grid lg:grid-cols-2">
               <div className="p-6 md:p-10 flex flex-col justify-center">
                 <div className="text-xs uppercase tracking-wider text-primary/90">Powered by SeattleFenceQuote.com</div>
-                <h3 className="mt-2 text-2xl font-semibold">Start Building Your Estimate</h3>
+                <h3 className="mt-2 text-2xl font-semibold">Or Call Our Seattle Team</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Real-time pricing</li>
                   <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 text-primary mt-0.5" aria-hidden="true" /> Interactive map layout</li>
