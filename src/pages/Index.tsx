@@ -495,7 +495,7 @@ const Index = () => {
         <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
           <div className="bg-foreground text-background p-6 md:p-10">
             <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
-            <h2 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Your Local Seattle Fence Contractor</h2>
+            <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Your Local Seattle Fence Contractor</h1>
             <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
             <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
               MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! As the original company using Fence Genius technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to deliver exceptional, transparent results.
@@ -526,15 +526,15 @@ const Index = () => {
       <section className="container pt-20 md:pt-28 lg:pt-36 pb-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div className="text-center sm:text-left">
-            <h2 className="text-xl font-semibold">Cedar & Modern Styles</h2>
+            <h3 className="text-xl font-semibold">Cedar & Modern Styles</h3>
             <p className="text-muted-foreground mt-2">From classic cedar privacy to sleek horizontal and metal accents, we bring your vision to life.</p>
           </div>
           <div className="text-center sm:text-left">
-            <h2 className="text-xl font-semibold">Transparent Pricing</h2>
+            <h3 className="text-xl font-semibold">Transparent Pricing</h3>
             <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
           <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-            <h2 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h2>
+            <h3 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h3>
             <p className="text-muted-foreground mt-2">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
         </div>
