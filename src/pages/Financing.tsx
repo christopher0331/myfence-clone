@@ -45,7 +45,7 @@ const Financing = () => {
   return (
     <main>
       <Seo
-        title="Fence Financing | MyFence.com Seattle"
+        title="Fence Financing Seattle | MyFence.com"
         description="Flexible fence financing options for Seattle homeowners. Quick approvals and competitive rates."
         canonical="https://myfence.com/financing"
         structuredData={[breadcrumbData, faqLd]}

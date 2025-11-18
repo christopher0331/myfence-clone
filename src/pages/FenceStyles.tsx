@@ -89,7 +89,7 @@ const FenceStyles = () => {
   return (
     <main>
       <Seo
-        title="Seattle Fence Styles: Cedar, Horizontal, Hogwire | MyFence.com"
+        title="Seattle Cedar Fence Styles: Picture Frame, Horizontal"
         description="Expert fence styles in Seattle, WA: picture frame cedar, horizontal, hogwire, craftsman designs. 30+ years experience. Call (253) 455-1885 for free estimates."
         canonical="https://myfence.com/fence-styles"
         structuredData={[breadcrumbData, {

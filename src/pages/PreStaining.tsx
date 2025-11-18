@@ -42,7 +42,7 @@ const PreStaining = () => {
   return (
     <>
       <Seo
-        title="Pre-Staining Cedar Fences: Superior Protection | MyFence.com"
+        title="Pre-Stained Cedar Fences Seattle | Superior Protection"
         description="Discover our professional pre-staining process for cedar fences. Complete protection including hidden areas that can't be reached after installation. Superior to traditional on-site staining."
         canonical="https://myfence.com/pre-staining-cedar-fence"
         structuredData={structuredData}

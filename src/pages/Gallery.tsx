@@ -38,7 +38,7 @@ const Gallery = () => {
   return (
     <main>
       <Seo
-        title="Seattle Fence Installation Gallery | MyFence.com Project Photos"
+        title="Seattle Fence Gallery | Before & After Photos | MyFence"
         description="View stunning fence installations across Seattle neighborhoods. Cedar, horizontal, hogwire, and custom designs. 30+ years craftsmanship. Call (253) 455-1885."
         canonical="https://myfence.com/gallery"
         structuredData={[breadcrumbData, {
