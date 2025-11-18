@@ -23,7 +23,7 @@ const FenceGenius = () => {
   return (
     <main>
       <Seo
-        title="Fence Genius Technology: Precision Seattle Fence Installation"
+        title="Fence Genius: Precision Cedar Fences Seattle"
         description="Revolutionary Fence Genius technology for perfect fence installation in Seattle, WA. Eliminate guesswork with algorithmic precision. Call (253) 455-1885 for consultation."
         canonical="https://myfence.com/fence-genius"
         structuredData={structuredData}

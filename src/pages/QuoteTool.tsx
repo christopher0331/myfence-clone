@@ -31,7 +31,7 @@ const QuoteTool = () => {
   return (
     <main>
       <Seo
-        title="Free Seattle Fence Quote Tool | Instant Online Estimates 2024"
+        title="Free Seattle Fence Quote | Instant Online Estimate"
         description="Get instant fence quotes for Seattle properties. Real-time pricing for cedar, horizontal, hogwire fences. Powered by Fence Genius. Call (253) 455-1885."
         canonical="https://myfence.com/quote"
         structuredData={[breadcrumbData, {

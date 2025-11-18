@@ -104,7 +104,7 @@ const Contact = () => {
   return (
     <main>
       <Seo
-        title="Contact MyFence.com | Seattle Fence Contractor"
+        title="Contact MyFence | Seattle Fence Contractor"
         description="Request a quote or ask a question. Call (253) 455-1885 or message MyFence.com — Seattle's father & son fence pros."
         canonical="https://myfence.com/contact"
         structuredData={[breadcrumbData, orgLd]}

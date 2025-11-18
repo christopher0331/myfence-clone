@@ -74,7 +74,7 @@ const Blog = () => {
   return (
     <>
       <Seo
-        title="Seattle Fence Blog - Expert Advice & Installation Tips | MyFence.com"
+        title="Seattle Fence Blog | Expert Tips & Advice"
         description="Expert fence advice for Seattle homeowners. Learn about costs, maintenance, and installation from Pacific Northwest fencing professionals."
         canonical="https://myfence.com/blog"
         structuredData={[breadcrumbData, structuredData]}

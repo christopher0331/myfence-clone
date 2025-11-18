@@ -416,7 +416,7 @@ const Discounts = () => {
   return (
     <>
       <Seo 
-        title="Daily Discounts | MyFence.com"
+        title="Mystery Fence Discount | MyFence.com Seattle"
         description="Solve our daily riddle and spin the wheel for exclusive fence discounts. Get up to 15% off cedar fencing, free processing, and more!"
         canonical="https://myfence.com/discounts"
       />
