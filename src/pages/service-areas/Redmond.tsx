@@ -154,7 +154,7 @@ const Redmond = () => {
       state="WA"
       heroTitle="Tech-Savvy Fence Installation for Redmond's Innovation District"
       heroDescription="Modern fencing solutions for Microsoft employees and tech families in Redmond. From Education Hill to Overlake, we combine contemporary designs with practical functionality for your active lifestyle and property needs."
-      metaTitle="Redmond Fence Installation | Modern Designs for Tech Families | MyFence.com"
+      metaTitle="Redmond Fence Installation | Modern Tech-Family Designs"
       metaDescription="Tech-savvy fence installation in Redmond. Modern designs for Microsoft employees & tech families. Education Hill to Overlake. Contemporary solutions for active lifestyles. Call (253) 455-1885."
       zipCodes={["98052", "98053", "98073"]}
       neighborhoods={[

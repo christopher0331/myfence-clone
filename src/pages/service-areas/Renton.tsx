@@ -7,7 +7,7 @@ const Renton = () => {
       state="WA"
       heroTitle="Versatile Fence Installation Across Renton's Growing Communities"
       heroDescription="From Lake Washington waterfront to Highlands hillside properties, we handle Renton's diverse terrain and housing styles. Quality fencing solutions for established neighborhoods and new developments alike."
-      metaTitle="Renton Fence Installation | Waterfront to Hillside Experts | MyFence.com"
+      metaTitle="Renton Fence Installation | Waterfront & Hillside"
       metaDescription="Versatile fence installation across Renton's growing communities. Lake Washington waterfront to Highlands hillsides. Diverse terrain & housing style experts. Quality solutions. Call (253) 455-1885."
       zipCodes={["98055", "98056", "98057", "98058", "98059"]}
       neighborhoods={[
