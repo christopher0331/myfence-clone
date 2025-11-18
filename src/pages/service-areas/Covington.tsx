@@ -7,7 +7,7 @@ const Covington = () => {
       state="WA"
       heroTitle="Hillside Fence Installation Experts in Covington"
       heroDescription="Tackling Covington's challenging slopes and clay-rich soil with reinforced fence systems. From Jenkins Creek to Maple Hills, we engineer installations that handle your terrain and heavy Pacific Northwest rainfall."
-      metaTitle="Covington Hillside Fence Installation | Slope Experts | MyFence.com"
+      metaTitle="Covington Hillside Fences | Slope Experts | MyFence"
       metaDescription="Hillside fence installation experts in Covington WA. Reinforced systems for challenging slopes & clay soil. Jenkins Creek to Maple Hills. Engineered for terrain & rainfall. Call (253) 455-1885."
       zipCodes={["98042"]}
       neighborhoods={[

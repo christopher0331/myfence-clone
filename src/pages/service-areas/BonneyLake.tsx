@@ -595,7 +595,7 @@ const BonneyLake = () => {
       city="Bonney Lake"
       state="Washington"
       heroTitle="Professional Fence Installation in Bonney Lake, WA"
-      metaTitle="Bonney Lake Fence Installation | MyFence.com | 30+ Years Experience"
+      metaTitle="Bonney Lake Fence Installation | MyFence.com"
       metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. 5.0-star rating. Free quotes. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[

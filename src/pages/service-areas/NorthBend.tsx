@@ -663,7 +663,7 @@ const NorthBend = () => {
       state="Washington"
       heroTitle="Mountain Fence Installation for North Bend's Cascades Gateway"
       heroDescription="Expert fence construction engineered for mountain terrain, heavy snowfall, and wildlife challenges. From valley floors to steep hillsides - built to withstand the Upper Snoqualmie Valley's demanding conditions."
-      metaTitle="North Bend Fence Installation | Mountain Fencing | Snow-Load Rated | MyFence.com"
+      metaTitle="North Bend Mountain Fences | Snow Load Rated"
       metaDescription="North Bend mountain fence installation by specialists. Cedar, composite, steel & aluminum. Snow-load rated construction. Wildlife-resistant designs. 30+ years mountain building experience. Steep terrain experts. Call (253) 455-1885."
       zipCodes={["98045"]}
       neighborhoods={[

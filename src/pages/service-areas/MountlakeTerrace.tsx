@@ -7,7 +7,7 @@ const MountlakeTerrace = () => {
       state="WA"
       heroTitle="Affordable Quality Fencing for Mountlake Terrace Families"
       heroDescription="Serving Mountlake Terrace's close-knit community with reliable, budget-friendly fence solutions. From Lake Ballinger to Town Center, we deliver value without compromising on craftsmanship or materials."
-      metaTitle="Mountlake Terrace Fence Installation | Affordable Quality | MyFence.com"
+      metaTitle="Mountlake Terrace Fences | Affordable Quality"
       metaDescription="Affordable quality fence installation in Mountlake Terrace. Budget-friendly solutions without compromising craftsmanship. Lake Ballinger to Town Center. Family-focused service. Call (253) 455-1885."
       zipCodes={["98043"]}
       neighborhoods={[
