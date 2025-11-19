@@ -1,9 +1,10 @@
 import Seo from "@/components/Seo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Check, Shield, Ruler, Wind, Trees } from "lucide-react";
+import { Check, Shield, Ruler, Wind, Trees, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import horizontalLattice1 from "@/assets/lattice/horizontal-lattice-1.jpg";
 import horizontalLattice2 from "@/assets/lattice/horizontal-lattice-2.jpg";
 import verticalLattice from "@/assets/lattice/vertical-lattice.jpg";
@@ -68,6 +69,61 @@ const LatticeToppers = () => {
     }
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are lattice toppers code compliant in Washington State?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Washington State building codes generally allow 6-foot solid privacy fences and prohibit 8-foot solid fences. Adding a 2-foot lattice topper with approximately 50% airflow satisfies code requirements while giving you 8 feet of total height. The lattice design ensures proper airflow, which is the key requirement for code compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do 2-foot lattice toppers cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lattice toppers typically add $15-25 per linear foot to your fence installation cost. The total cost depends on the lattice pattern chosen (horizontal, vertical, or custom), post requirements, and project size. Contact us for a free quote tailored to your specific project."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to install lattice toppers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Installation time depends on project size, but lattice toppers typically add 1-2 days to a standard fence installation. This includes time for installing larger 4x6 posts, pouring deeper 36-inch footings, and constructing the lattice panels. We'll provide an accurate timeline during your free consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need larger fence posts for lattice toppers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we recommend full 4x6x12' fence posts for lattice topper installations. These larger posts provide the structural support needed for 8-foot total height and withstand increased wind loads. We also pour deeper footings (approximately 36 inches) to ensure long-term stability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What lattice patterns are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our most popular options include horizontal lattice strips, vertical alternating boards, and custom patterns. The horizontal style is our fan favorite for its modern, clean appearance. We can also create custom lattice designs to match your property's aesthetic. All patterns maintain approximately 50% airflow for code compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can lattice toppers be added to existing fences?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In some cases, yes. However, existing fences must have posts strong enough to support the additional height and wind load. We'll need to inspect your current fence structure to determine if it can safely support a lattice topper or if post reinforcement is needed. Contact us for a free assessment."
+        }
+      }
+    ]
+  };
+
   const galleryImages = [
     {
       src: horizontalLattice1,
@@ -90,7 +146,7 @@ const LatticeToppers = () => {
         description="Add 2-foot lattice toppers to your 6-foot fence for extra height and privacy while staying Washington State code compliant. Horizontal, vertical, or custom patterns."
         canonical="https://myfence.com/fence-upgrades/lattice-toppers"
         image={horizontalLattice1}
-        structuredData={[breadcrumbData, serviceStructuredData]}
+        structuredData={[breadcrumbData, serviceStructuredData, faqData]}
       />
 
       {/* Hero Section */}
@@ -288,6 +344,75 @@ const LatticeToppers = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <HelpCircle className="w-8 h-8 text-primary" />
+                <CardTitle className="text-3xl">Frequently Asked Questions</CardTitle>
+              </div>
+              <CardDescription>
+                Common questions about lattice toppers and code compliance
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left">
+                    Are lattice toppers code compliant in Washington State?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes! Washington State building codes generally allow 6-foot solid privacy fences and prohibit 8-foot solid fences. Adding a 2-foot lattice topper with approximately 50% airflow satisfies code requirements while giving you 8 feet of total height. The lattice design ensures proper airflow, which is the key requirement for code compliance.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left">
+                    How much do 2-foot lattice toppers cost?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Lattice toppers typically add $15-25 per linear foot to your fence installation cost. The total cost depends on the lattice pattern chosen (horizontal, vertical, or custom), post requirements, and project size. Contact us for a free quote tailored to your specific project.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left">
+                    How long does it take to install lattice toppers?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Installation time depends on project size, but lattice toppers typically add 1-2 days to a standard fence installation. This includes time for installing larger 4x6 posts, pouring deeper 36-inch footings, and constructing the lattice panels. We'll provide an accurate timeline during your free consultation.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger className="text-left">
+                    Do I need larger fence posts for lattice toppers?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes, we recommend full 4x6x12' fence posts for lattice topper installations. These larger posts provide the structural support needed for 8-foot total height and withstand increased wind loads. We also pour deeper footings (approximately 36 inches) to ensure long-term stability.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger className="text-left">
+                    What lattice patterns are available?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Our most popular options include horizontal lattice strips, vertical alternating boards, and custom patterns. The horizontal style is our fan favorite for its modern, clean appearance. We can also create custom lattice designs to match your property's aesthetic. All patterns maintain approximately 50% airflow for code compliance.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6">
+                  <AccordionTrigger className="text-left">
+                    Can lattice toppers be added to existing fences?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    In some cases, yes. However, existing fences must have posts strong enough to support the additional height and wind load. We'll need to inspect your current fence structure to determine if it can safely support a lattice topper or if post reinforcement is needed. Contact us for a free assessment.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
