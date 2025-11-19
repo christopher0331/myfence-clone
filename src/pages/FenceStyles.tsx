@@ -332,7 +332,7 @@ const FenceStyles = () => {
       </section>
 
       <section className="container py-10">
-        <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight">Add-On Options</h2>
+        <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight">Optional Fence Upgrades</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">Optional upgrades that enhance durability, privacy, and finish.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {addOns.map((a) => (
