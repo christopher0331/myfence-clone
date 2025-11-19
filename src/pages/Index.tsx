@@ -271,7 +271,6 @@ const Index = () => {
     },
     url: "https://myfence.com",
     telephone: "+1-253-455-1885",
-    priceRange: "$$",
     address: { 
       "@type": "PostalAddress",
       streetAddress: "22927 257th Ave SE",
