@@ -5,9 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Check, Shield, Ruler, Wind, Trees, HelpCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import horizontalLattice1 from "@/assets/lattice/horizontal-lattice-1.jpg";
-import horizontalLattice2 from "@/assets/lattice/horizontal-lattice-2.jpg";
-import verticalLattice from "@/assets/lattice/vertical-lattice.jpg";
+import horizontalLattice1 from "@/assets/lattice/horizontal-lattice-vertical.jpg";
+import horizontalLattice2 from "@/assets/lattice/vertical-lattice-gate.jpg";
+import verticalLattice from "@/assets/lattice/horizontal-lattice-backyard.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -16,8 +16,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const LatticeToppers = () => {
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -127,15 +133,15 @@ const LatticeToppers = () => {
   const galleryImages = [
     {
       src: horizontalLattice1,
-      alt: "6-foot cedar fence with 2-foot horizontal lattice topper adding style and privacy to backyard"
+      alt: "6-foot cedar fence with 2-foot horizontal lattice topper along residential property line"
     },
     {
       src: horizontalLattice2,
-      alt: "Modern horizontal lattice topper on cedar fence with 50% airflow spacing"
+      alt: "Cedar fence with vertical alternating board lattice topper and custom double gate"
     },
     {
       src: verticalLattice,
-      alt: "Cedar fence with vertical alternating board lattice topper and custom gate"
+      alt: "Modern horizontal lattice topper on cedar fence creating beautiful backyard privacy"
     }
   ];
 
@@ -163,15 +169,22 @@ const LatticeToppers = () => {
       </section>
 
       {/* Image Gallery Carousel */}
-      <section className="container py-8">
-        <div className="max-w-4xl mx-auto">
-          <Carousel className="w-full">
-            <CarouselContent>
+      <section className="md:container py-8">
+        <div className="max-w-4xl md:mx-auto">
+          <Carousel 
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[autoplayPlugin.current]}
+          >
+            <CarouselContent className="md:ml-0">
               {galleryImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card className="overflow-hidden">
-                      {/* Mobile: Portrait 3/4 ratio, Desktop: Landscape 16/9 ratio */}
+                <CarouselItem key={index} className="md:pl-4">
+                  <div className="md:p-1">
+                    <Card className="overflow-hidden border-0 md:border rounded-none md:rounded-lg">
+                      {/* Mobile: Full viewport height portrait, Desktop: Landscape 16/9 ratio */}
                       <AspectRatio ratio={16/9} className="hidden md:block">
                         <img 
                           src={image.src} 
@@ -179,13 +192,13 @@ const LatticeToppers = () => {
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <AspectRatio ratio={3/4} className="md:hidden">
+                      <div className="md:hidden h-[70vh]">
                         <img 
                           src={image.src} 
                           alt={image.alt}
                           className="w-full h-full object-cover"
                         />
-                      </AspectRatio>
+                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
