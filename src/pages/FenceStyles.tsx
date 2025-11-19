@@ -378,6 +378,13 @@ const FenceStyles = () => {
                     </Link>
                   </Button>
                 )}
+                {a.title === "2 Foot Lattice Topper" && (
+                  <Button asChild className="mt-4 w-full">
+                    <Link to="/fence-upgrades/lattice-toppers">
+                      Learn More About Lattice Toppers
+                    </Link>
+                  </Button>
+                )}
                 {a.title === "Pre-Staining" && (
                   <Button asChild className="mt-4 w-full">
                     <Link to="/pre-staining-cedar-fence">
