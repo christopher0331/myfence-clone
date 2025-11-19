@@ -5,6 +5,7 @@ import { CheckCircle2, Shield, Clock, Award, ArrowLeft } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const UpperTehaleh = () => {
   return (
@@ -165,6 +166,38 @@ const UpperTehaleh = () => {
 
         {/* Virtual Quote Tool */}
         <VirtualQuoteTool fenceStyleName="Upper Tehaleh fence" />
+
+        {/* Upper Tehaleh Fencing Video Section */}
+        <section className="py-12 md:py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Upper Tehaleh Fencing
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    See our premium fence installations in Upper Tehaleh's luxury homes. From expansive property lines to mountain-view preserving designs, we deliver the quality your investment deserves.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Every Upper Tehaleh fence combines sophisticated aesthetics with family-friendly durability—creating safe, beautiful outdoor spaces for your growing family and active lifestyle.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/gzAzQLdfqDA?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Upper Tehaleh Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Installation Process */}
         <section className="py-16">

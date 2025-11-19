@@ -5,6 +5,7 @@ import { CheckCircle2, Shield, Clock, Award, ArrowLeft } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const LowerTehaleh = () => {
   return (
@@ -165,6 +166,38 @@ const LowerTehaleh = () => {
 
         {/* Virtual Quote Tool */}
         <VirtualQuoteTool fenceStyleName="Lower Tehaleh fence" />
+
+        {/* Lower Tehaleh Fencing Video Section */}
+        <section className="py-12 md:py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Lower Tehaleh Fencing
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our efficient installation process in Lower Tehaleh. We understand busy families need minimal disruption, delivering quality fences quickly while respecting your daily routine.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Whether you're securing a yard for young children, creating a peaceful retreat, or establishing low-maintenance boundaries—we build fences that match your lifestyle and life stage.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/gzAzQLdfqDA?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Lower Tehaleh Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Installation Process */}
         <section className="py-16">
