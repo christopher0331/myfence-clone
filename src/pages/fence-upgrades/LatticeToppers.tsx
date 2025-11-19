@@ -171,7 +171,15 @@ const LatticeToppers = () => {
                 <CarouselItem key={index}>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <AspectRatio ratio={16/9}>
+                      {/* Mobile: Portrait 3/4 ratio, Desktop: Landscape 16/9 ratio */}
+                      <AspectRatio ratio={16/9} className="hidden md:block">
+                        <img 
+                          src={image.src} 
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
+                      </AspectRatio>
+                      <AspectRatio ratio={3/4} className="md:hidden">
                         <img 
                           src={image.src} 
                           alt={image.alt}
@@ -183,8 +191,8 @@ const LatticeToppers = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
       </section>
