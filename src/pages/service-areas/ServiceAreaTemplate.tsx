@@ -506,6 +506,40 @@ const ServiceAreaTemplate = ({
         </section>
         )}
 
+        {/* Issaquah Fencing Video Section */}
+        {city === "Issaquah" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Issaquah Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    See our mountain-smart fence installations in Issaquah. From Tiger Mountain foothills to Squak Mountain neighborhoods, we build fences engineered for wildlife pressure and Pacific Northwest weather.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Every Issaquah fence balances privacy with your property's natural beauty—protecting your outdoor living spaces while preserving the mountain views that make this community special.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080&mute=1"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Issaquah Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Local Expertise Section */}
         {climateDescription && (
           <section className="py-16 bg-muted/50">
