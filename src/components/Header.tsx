@@ -27,7 +27,7 @@ const navItems = [
 const fenceStylesSections = [
   { label: "Fence Styles", hash: "#fence-styles" },
   { label: "Fence Post Options", hash: "#post-options" },
-  { label: "Add-On Options", hash: "#add-on-options" },
+  { label: "Upgrade Options", hash: "#add-on-options" },
 ];
 
 const serviceAreasByRegion = [
