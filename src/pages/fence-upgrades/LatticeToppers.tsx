@@ -156,7 +156,7 @@ const LatticeToppers = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-6 md:py-16">
+      <section className="container py-4 md:py-16">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4">Code-Compliant Height Solution</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -169,7 +169,7 @@ const LatticeToppers = () => {
       </section>
 
       {/* Image Gallery Carousel */}
-      <section className="md:container pt-0 pb-8 md:py-8">
+      <section className="md:container pt-0 pb-0 md:py-8">
         <div className="max-w-4xl md:mx-auto">
           <Carousel 
             className="w-full"
@@ -182,17 +182,17 @@ const LatticeToppers = () => {
             <CarouselContent className="md:ml-0">
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="md:pl-4">
-                  <div className="md:p-1">
-                    <Card className="overflow-hidden border-0 md:border rounded-none md:rounded-lg">
+                  <div className="p-3 md:p-1">
+                    <Card className="overflow-hidden border-2 border-primary rounded-lg p-2 md:p-3">
                       {/* Mobile: Full viewport height portrait, Desktop: Landscape 16/9 ratio */}
-                      <AspectRatio ratio={16/9} className="hidden md:block">
+                      <AspectRatio ratio={16/9} className="hidden md:block overflow-hidden rounded-md">
                         <img 
                           src={image.src} 
                           alt={image.alt}
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <div className="md:hidden h-[55vh]">
+                      <div className="md:hidden h-[50vh] overflow-hidden rounded-md">
                         <img 
                           src={image.src} 
                           alt={image.alt}
