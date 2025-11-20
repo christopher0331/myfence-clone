@@ -156,7 +156,7 @@ const LatticeToppers = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-12 md:py-16">
+      <section className="container py-6 md:py-16">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4">Code-Compliant Height Solution</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -192,7 +192,7 @@ const LatticeToppers = () => {
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <div className="md:hidden h-[70vh]">
+                      <div className="md:hidden h-[55vh]">
                         <img 
                           src={image.src} 
                           alt={image.alt}
