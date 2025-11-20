@@ -156,10 +156,10 @@ const LatticeToppers = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-4 md:py-16">
+      <section className="container py-3 md:py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge className="mb-4">Code-Compliant Height Solution</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <Badge className="mb-3">Code-Compliant Height Solution</Badge>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
             2-Foot Lattice Toppers: Extra Height, Privacy & Style
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -183,7 +183,7 @@ const LatticeToppers = () => {
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="md:pl-4">
                   <div className="p-3 md:p-1">
-                    <Card className="border-2 border-primary rounded-lg p-2 md:p-3 w-fit mx-auto">
+                    <Card className="border-2 border-primary rounded-lg p-2 md:p-3">
                       {/* Mobile: Natural vertical image height, Desktop: Landscape 16/9 ratio */}
                       <AspectRatio ratio={16/9} className="hidden md:block overflow-hidden rounded-md">
                         <img 
@@ -192,7 +192,7 @@ const LatticeToppers = () => {
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <div className="md:hidden rounded-md max-h-[75vh]">
+                      <div className="md:hidden rounded-md max-h-[75vh] overflow-hidden">
                         <img 
                           src={image.src} 
                           alt={image.alt}
