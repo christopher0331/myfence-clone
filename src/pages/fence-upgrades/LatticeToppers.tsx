@@ -171,8 +171,9 @@ const LatticeToppers = () => {
       {/* Image Gallery Carousel */}
       <section className="md:container pt-0 pb-0 md:py-8">
         <div className="max-w-4xl md:mx-auto">
+          {/* Desktop: Carousel */}
           <Carousel 
-            className="w-full"
+            className="w-full hidden md:block"
             opts={{
               align: "start",
               loop: true,
@@ -182,31 +183,36 @@ const LatticeToppers = () => {
             <CarouselContent className="md:ml-0">
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="md:pl-4">
-                  <div className="p-1 md:p-1">
-                    <Card className="border-2 border-primary rounded-lg p-0 md:p-3">
-                      {/* Mobile: Natural vertical image height, Desktop: Landscape 16/9 ratio */}
-                      <AspectRatio ratio={16/9} className="hidden md:block overflow-hidden rounded-md">
+                  <div className="p-1">
+                    <Card className="border-2 border-primary rounded-lg p-3">
+                      <AspectRatio ratio={16/9} className="overflow-hidden rounded-md">
                         <img 
                           src={image.src} 
                           alt={image.alt}
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <div className="md:hidden rounded-md h-auto overflow-hidden">
-                        <img 
-                          src={image.src} 
-                          alt={image.alt}
-                          className="w-full h-full object-cover rounded-md"
-                        />
-                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="flex" />
+            <CarouselNext className="flex" />
           </Carousel>
+
+          {/* Mobile: Simple stacked images */}
+          <div className="md:hidden space-y-4 p-4">
+            {galleryImages.map((image, index) => (
+              <Card key={index} className="border-2 border-primary rounded-lg overflow-hidden">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-auto object-cover"
+                />
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
