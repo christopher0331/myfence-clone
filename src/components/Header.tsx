@@ -129,15 +129,10 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-background border z-50">
               {fenceStylesSections.map((section) => (
-                <DropdownMenuItem
-                  key={section.hash}
-                  onSelect={() => {
-                    setTimeout(() => {
-                      window.location.href = `/fence-styles${section.hash}`;
-                    }, 100);
-                  }}
-                >
-                  {section.label}
+                <DropdownMenuItem key={section.hash} asChild>
+                  <Link to={`/fence-styles${section.hash}`}>
+                    {section.label}
+                  </Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -210,14 +205,14 @@ const Header = () => {
               </Link>
               <div className="flex flex-col gap-2 mt-2 pl-4">
                 {fenceStylesSections.map((section) => (
-                  <a
+                  <Link
                     key={section.hash}
-                    href={`/fence-styles${section.hash}`}
+                    to={`/fence-styles${section.hash}`}
                     onClick={() => setOpen(false)}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {section.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
