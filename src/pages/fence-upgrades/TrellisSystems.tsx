@@ -44,10 +44,10 @@ const TrellisSystems = () => {
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
               Learn More About Trellis Systems
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/90 max-w-2xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
               Stunning architectural elements that combine beauty with structural integrity
             </p>
           </div>
