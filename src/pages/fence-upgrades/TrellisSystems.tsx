@@ -35,14 +35,29 @@ const TrellisSystems = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="container relative z-10 py-16">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Learn More About Trellis Systems
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/lovable-uploads/trellis-hero.jpg"
+            alt="Cedar trellis system with swooped corners over horizontal lattice fence"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container relative z-10 py-20">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Cedar Trellis Systems
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               Stunning architectural elements that combine beauty with structural integrity
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Custom-built trellis systems that transform ordinary gates into elegant focal points 
+              while providing critical structural support to prevent gate post movement.
             </p>
           </div>
         </div>
