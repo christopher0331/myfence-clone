@@ -223,6 +223,34 @@ const SoilHaulAway = () => {
         </div>
       </section>
 
+      {/* Real Project Example */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">Real Project Example</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <img
+                src="/lovable-uploads/soil-haul-away-river-rock.png"
+                alt="Soil haul-away service protecting river rock landscaping during fence installation"
+                className="w-full rounded-lg"
+              />
+              <p className="text-muted-foreground leading-relaxed">
+                This customer had a fresh river rock bed installed along their fence line before we began the fence project. 
+                Obviously, they didn't want excavated soil covering their new decorative rock, so we bucketed out all the 
+                excavation debris and disposed of it at the dump.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The result: a beautiful craftsman-style fence with pristine river rock landscaping underneath—exactly as 
+                the homeowner envisioned. This is a perfect example of when soil haul-away service protects your investment 
+                in landscaping.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* When to Consider */}
       <section className="container py-8">
         <div className="max-w-4xl mx-auto">
