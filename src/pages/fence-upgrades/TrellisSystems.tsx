@@ -38,7 +38,7 @@ const TrellisSystems = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/lovable-uploads/trellis-hero.jpg')" }}
+          style={{ backgroundImage: "url('/lovable-uploads/trellis-system-hero.jpg')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
         </div>
