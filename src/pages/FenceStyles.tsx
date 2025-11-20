@@ -336,11 +336,11 @@ const FenceStyles = () => {
         <p className="text-muted-foreground mt-2 max-w-2xl">Optional upgrades that enhance durability, privacy, and finish.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {addOns.map((a) => (
-            <Card key={a.title} className="hover:shadow-elevated transition-shadow">
+            <Card key={a.title} className="hover:shadow-elevated transition-shadow flex flex-col">
               <CardHeader>
                 <CardTitle>{a.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <AspectRatio ratio={1}>
                   <img
                     src={a.img}
@@ -350,48 +350,50 @@ const FenceStyles = () => {
                   />
                 </AspectRatio>
                 <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
-                {a.title === "Upgrade to 4\" Screws" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/fence-upgrades/exterior-screws">
-                      Learn More About Exterior Screws
-                    </Link>
-                  </Button>
-                )}
-                {a.title === "Clear Cedar Fence Boards Upgrade" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/fence-upgrades/clear-cedar">
-                      Learn More About Clear Cedar
-                    </Link>
-                  </Button>
-                )}
-                {a.title === "Board on Board Style" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/fence-upgrades/board-on-board">
-                      Learn More About Board on Board
-                    </Link>
-                  </Button>
-                )}
-                {a.title === "2x4 Rot Board" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/fence-upgrades/rot-board">
-                      Learn More About Rot Boards
-                    </Link>
-                  </Button>
-                )}
-                {a.title === "2 Foot Lattice Topper" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/fence-upgrades/lattice-toppers">
-                      Learn More About Lattice Toppers
-                    </Link>
-                  </Button>
-                )}
-                {a.title === "Pre-Staining" && (
-                  <Button asChild className="mt-4 w-full">
-                    <Link to="/pre-staining-cedar-fence">
-                      Learn More About Pre-Staining
-                    </Link>
-                  </Button>
-                )}
+                <div className="mt-auto pt-4">
+                  {a.title === "Upgrade to 4\" Screws" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/exterior-screws">
+                        Learn More About Exterior Screws
+                      </Link>
+                    </Button>
+                  )}
+                  {a.title === "Clear Cedar Fence Boards Upgrade" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/clear-cedar">
+                        Learn More About Clear Cedar
+                      </Link>
+                    </Button>
+                  )}
+                  {a.title === "Board on Board Style" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/board-on-board">
+                        Learn More About Board on Board
+                      </Link>
+                    </Button>
+                  )}
+                  {a.title === "2x4 Rot Board" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/rot-board">
+                        Learn More About Rot Boards
+                      </Link>
+                    </Button>
+                  )}
+                  {a.title === "2 Foot Lattice Topper" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/lattice-toppers">
+                        Learn More About Lattice Toppers
+                      </Link>
+                    </Button>
+                  )}
+                  {a.title === "Pre-Staining" && (
+                    <Button asChild className="w-full">
+                      <Link to="/pre-staining-cedar-fence">
+                        Learn More About Pre-Staining
+                      </Link>
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
