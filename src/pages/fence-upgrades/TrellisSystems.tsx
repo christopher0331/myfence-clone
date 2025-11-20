@@ -35,7 +35,13 @@ const TrellisSystems = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-primary/5">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/lovable-uploads/trellis-hero.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
+        </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
