@@ -40,7 +40,7 @@ const TrellisSystems = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/lovable-uploads/trellis-system-hero.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/70" />
         </div>
         <div className="container relative z-10 py-16">
           <div className="max-w-4xl mx-auto text-center space-y-6">
