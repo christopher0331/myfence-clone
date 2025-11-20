@@ -183,7 +183,7 @@ const LatticeToppers = () => {
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="md:pl-4">
                   <div className="p-3 md:p-1">
-                    <Card className="overflow-hidden border-2 border-primary rounded-lg p-2 md:p-3">
+                    <Card className="border-2 border-primary rounded-lg p-2 md:p-3 w-fit mx-auto">
                       {/* Mobile: Natural vertical image height, Desktop: Landscape 16/9 ratio */}
                       <AspectRatio ratio={16/9} className="hidden md:block overflow-hidden rounded-md">
                         <img 
@@ -192,11 +192,11 @@ const LatticeToppers = () => {
                           className="w-full h-full object-cover"
                         />
                       </AspectRatio>
-                      <div className="md:hidden overflow-hidden rounded-md">
+                      <div className="md:hidden rounded-md max-h-[75vh]">
                         <img 
                           src={image.src} 
                           alt={image.alt}
-                          className="w-full h-auto object-contain"
+                          className="w-full h-full object-cover rounded-md"
                         />
                       </div>
                     </Card>
