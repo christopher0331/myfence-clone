@@ -169,7 +169,7 @@ const LatticeToppers = () => {
       </section>
 
       {/* Image Gallery Carousel */}
-      <section className="md:container py-8">
+      <section className="md:container pt-0 pb-8 md:py-8">
         <div className="max-w-4xl md:mx-auto">
           <Carousel 
             className="w-full"
