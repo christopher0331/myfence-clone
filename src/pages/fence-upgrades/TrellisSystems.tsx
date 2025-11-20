@@ -112,6 +112,85 @@ const TrellisSystems = () => {
         </div>
       </section>
 
+      {/* Project Gallery */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center">Project Gallery</h2>
+          <p className="text-center text-muted-foreground mb-8">
+            Real trellis installations showcasing various styles, finishes, and applications
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardContent className="p-0">
+                <img
+                  src="/lovable-uploads/chamfered-trellis-gate.jpg"
+                  alt="Chamfered edge trellis with black hardware over cedar gate"
+                  className="w-full rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2">Chamfered Modern Design</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Clean chamfered edges with upgraded black hardware over a board-on-board gate. 
+                    The modern aesthetic perfectly complements contemporary home styles.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-0">
+                <img
+                  src="/lovable-uploads/artisan-trellis-fence.jpg"
+                  alt="Artisan swooped corner trellis with decorative slats"
+                  className="w-full rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2">Artisan Swooped Style</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Traditional artisan design with elegant swooped corners above a horizontal lattice fence. 
+                    Natural cedar finish showcases the craftsmanship and warmth of the wood.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-0">
+                <img
+                  src="/lovable-uploads/chamfered-trellis-detail.jpg"
+                  alt="Close-up detail of chamfered trellis construction and black hardware"
+                  className="w-full rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2">Premium Hardware Detail</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Close-up showing the precision of chamfered edges and the quality of black powder-coated 
+                    hardware. Note the solid 6x6 posts and robust 2x8 runners.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-0">
+                <img
+                  src="/lovable-uploads/black-stained-trellis-picket-gate.jpg"
+                  alt="Black stained artisan trellis above picket fence gate"
+                  className="w-full rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2">Black Stained Artisan</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Stunning black-stained artisan trellis with swooped corners over a natural cedar picket gate. 
+                    The dramatic contrast creates an eye-catching entrance statement.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Design Options */}
       <section className="container py-8">
         <div className="max-w-4xl mx-auto">
