@@ -393,6 +393,13 @@ const FenceStyles = () => {
                       </Link>
                     </Button>
                   )}
+                  {a.title === "Soil Haul-Away" && (
+                    <Button asChild className="w-full">
+                      <Link to="/fence-upgrades/soil-haul-away">
+                        Learn More About Soil Haul-Away
+                      </Link>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
