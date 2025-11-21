@@ -259,7 +259,7 @@ const SoilHaulAway = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <img
-                src="/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"
+                src="/lovable-uploads/fence-soil-debris.jpg"
                 alt="Excavated soil roughly raked along fence line allowing grass regrowth"
                 className="w-full rounded-lg"
               />
