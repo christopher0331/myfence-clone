@@ -223,12 +223,15 @@ const SoilHaulAway = () => {
         </div>
       </section>
 
-      {/* Real Project Example */}
+      {/* Real Project Examples */}
       <section className="container py-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-3xl font-bold mb-6">Real Project Examples</h2>
+          
+          {/* Example 1: Soil Hauled Away */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Real Project Example</CardTitle>
+              <CardTitle className="text-xl">Soil Hauled Away - River Rock Protection</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <img
@@ -245,6 +248,30 @@ const SoilHaulAway = () => {
                 The result: a beautiful craftsman-style fence with pristine river rock landscaping underneath—exactly as 
                 the homeowner envisioned. This is a perfect example of when soil haul-away service protects your investment 
                 in landscaping.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Example 2: Soil Left */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Soil Left - Standard Approach</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <img
+                src="/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"
+                alt="Excavated soil roughly raked along fence line allowing grass regrowth"
+                className="w-full rounded-lg"
+              />
+              <p className="text-muted-foreground leading-relaxed">
+                This project shows our standard approach where excavated soil is roughly raked along the fence line. 
+                The soil you see along the base of the fence is from the post hole excavation, distributed evenly 
+                to allow grass to naturally grow back over time.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                This method is included in the base installation cost and works perfectly for properties without existing 
+                landscaping along the fence line. Many homeowners prefer this approach as it's cost-effective and the 
+                grass typically fills in within a growing season.
               </p>
             </CardContent>
           </Card>
