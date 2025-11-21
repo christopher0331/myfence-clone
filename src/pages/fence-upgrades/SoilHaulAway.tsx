@@ -267,7 +267,7 @@ const SoilHaulAway = () => {
               <div className="grid md:grid-cols-2 gap-6 items-start">
                 <div className="space-y-4">
                   <img
-                    src="/lovable-uploads/fence-soil-debris.jpg"
+                    src="/lovable-uploads/fence-soil-debris-cropped.png"
                     alt="Excavated soil roughly raked along fence line allowing grass regrowth"
                     className="w-full rounded-lg"
                   />
