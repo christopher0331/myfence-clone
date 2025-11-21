@@ -52,6 +52,73 @@ const SoilHaulAway = () => {
         </div>
       </section>
 
+      {/* Real Project Examples */}
+      <section className="container py-8">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <h2 className="text-3xl font-bold mb-6">Real Project Examples</h2>
+          
+          {/* Example 1: Soil Hauled Away */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Soil Hauled Away - River Rock Protection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="space-y-4">
+                  <img
+                    src="/lovable-uploads/soil-haul-away-river-rock.png"
+                    alt="Soil haul-away service protecting river rock landscaping during fence installation"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    This customer had a fresh river rock bed installed along their fence line before we began the fence project. 
+                    Obviously, they didn't want excavated soil covering their new decorative rock, so we bucketed out all the 
+                    excavation debris and disposed of it at the dump.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    The result: a beautiful craftsman-style fence with pristine river rock landscaping underneath—exactly as 
+                    the homeowner envisioned. This is a perfect example of when soil haul-away service protects your investment 
+                    in landscaping.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Example 2: Soil Left */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Soil Left - Standard Approach</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="space-y-4">
+                  <img
+                    src="/lovable-uploads/fence-soil-debris-cropped.png"
+                    alt="Excavated soil roughly raked along fence line allowing grass regrowth"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    This project shows our standard approach where excavated soil is roughly raked along the fence line. 
+                    The soil you see along the base of the fence is from the post hole excavation, distributed evenly 
+                    to allow grass to naturally grow back over time.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    This method is included in the base installation cost and works perfectly for properties without existing 
+                    landscaping along the fence line. Many homeowners prefer this approach as it's cost-effective and the 
+                    grass typically fills in within a growing season.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* What is Soil Haul-Away */}
       <section className="container py-8">
         <div className="max-w-4xl mx-auto">
@@ -223,72 +290,6 @@ const SoilHaulAway = () => {
         </div>
       </section>
 
-      {/* Real Project Examples */}
-      <section className="container py-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <h2 className="text-3xl font-bold mb-6">Real Project Examples</h2>
-          
-          {/* Example 1: Soil Hauled Away */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Soil Hauled Away - River Rock Protection</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6 items-start">
-                <div className="space-y-4">
-                  <img
-                    src="/lovable-uploads/soil-haul-away-river-rock.png"
-                    alt="Soil haul-away service protecting river rock landscaping during fence installation"
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    This customer had a fresh river rock bed installed along their fence line before we began the fence project. 
-                    Obviously, they didn't want excavated soil covering their new decorative rock, so we bucketed out all the 
-                    excavation debris and disposed of it at the dump.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    The result: a beautiful craftsman-style fence with pristine river rock landscaping underneath—exactly as 
-                    the homeowner envisioned. This is a perfect example of when soil haul-away service protects your investment 
-                    in landscaping.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Example 2: Soil Left */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Soil Left - Standard Approach</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6 items-start">
-                <div className="space-y-4">
-                  <img
-                    src="/lovable-uploads/fence-soil-debris-cropped.png"
-                    alt="Excavated soil roughly raked along fence line allowing grass regrowth"
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    This project shows our standard approach where excavated soil is roughly raked along the fence line. 
-                    The soil you see along the base of the fence is from the post hole excavation, distributed evenly 
-                    to allow grass to naturally grow back over time.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    This method is included in the base installation cost and works perfectly for properties without existing 
-                    landscaping along the fence line. Many homeowners prefer this approach as it's cost-effective and the 
-                    grass typically fills in within a growing season.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* When to Consider */}
       <section className="container py-8">
