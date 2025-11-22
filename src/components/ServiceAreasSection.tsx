@@ -56,7 +56,7 @@ const ServiceAreasSection = () => {
                   <Link
                     key={area.to}
                     to={area.to}
-                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group"
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group pb-2"
                   >
                     <span>{area.label}</span>
                     <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
