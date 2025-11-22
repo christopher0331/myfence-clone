@@ -37,27 +37,27 @@ const serviceAreasByRegion = [
 
 const ServiceAreasSection = () => {
   return (
-    <section className="container py-8 md:py-12">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Service Areas</h2>
-        <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+    <section className="container py-12 md:py-20">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Service Areas</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           Professional fence installation across King County, Pierce County, and East King County
         </p>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-6">
         {serviceAreasByRegion.map((region) => (
-          <Card key={region.region} className="border hover:border-primary/50 transition-colors">
-            <CardContent className="p-3">
-              <h3 className="text-lg font-semibold mb-2 text-foreground">{region.region}</h3>
-              <ul className="space-y-1">
+          <Card key={region.region} className="border-2 hover:border-primary/50 transition-colors">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">{region.region}</h3>
+              <ul className="space-y-3">
                 {region.areas.map((area) => (
                   <li key={area.to}>
                     <Link
                       to={area.to}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center group py-0.5"
+                      className="text-muted-foreground hover:text-primary transition-colors flex items-center group"
                     >
-                      <span className="w-1 h-1 rounded-full bg-primary mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {area.label}
                     </Link>
                   </li>
