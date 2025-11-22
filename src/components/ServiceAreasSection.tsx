@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const serviceAreasByRegion = [
   {
@@ -58,9 +58,8 @@ const ServiceAreasSection = () => {
                     to={area.to}
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group"
                   >
-                    <span className="w-1 h-1 rounded-sm bg-primary/60 group-hover:bg-primary transition-colors" />
                     <span>{area.label}</span>
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 ))}
               </div>
