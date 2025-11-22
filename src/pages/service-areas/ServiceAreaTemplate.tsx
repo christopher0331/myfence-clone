@@ -9,7 +9,6 @@ import { supabase } from "@/integrations/supabase/client";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
-import ServiceAreasSection from "@/components/ServiceAreasSection";
 
 export interface Neighborhood {
   name: string;
@@ -690,9 +689,6 @@ const ServiceAreaTemplate = ({
             </div>
           </section>
         )}
-
-        {/* Service Areas Section */}
-        <ServiceAreasSection />
       </div>
     </>
   );
