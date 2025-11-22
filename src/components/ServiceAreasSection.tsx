@@ -48,14 +48,14 @@ const ServiceAreasSection = () => {
       <div className="grid md:grid-cols-3 gap-4">
         {serviceAreasByRegion.map((region) => (
           <Card key={region.region} className="border hover:border-primary/50 transition-colors">
-            <CardContent className="p-4">
-              <h3 className="text-lg font-semibold mb-3 text-foreground">{region.region}</h3>
-              <ul className="space-y-2">
+            <CardContent className="p-3">
+              <h3 className="text-lg font-semibold mb-2 text-foreground">{region.region}</h3>
+              <ul className="space-y-1">
                 {region.areas.map((area) => (
                   <li key={area.to}>
                     <Link
                       to={area.to}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center group"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center group py-0.5"
                     >
                       <span className="w-1 h-1 rounded-full bg-primary mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {area.label}
