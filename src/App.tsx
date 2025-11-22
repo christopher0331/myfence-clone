@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import BlogSection from "./components/BlogSection";
 import GoogleBusinessMap from "./components/GoogleBusinessMap";
+import ServiceAreasSection from "./components/ServiceAreasSection";
 
 // Lazy load pages for better performance
 const Index = React.lazy(() => import("./pages/Index"));
@@ -358,6 +359,7 @@ const AppContent = () => {
           <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
         </section>
       )}
+      <ServiceAreasSection />
       <Footer />
     </>
   );
