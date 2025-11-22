@@ -1,17 +1,320 @@
 import ServiceAreaTemplate from "./ServiceAreaTemplate";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const KirklandArticle = () => (
-  <article className="space-y-8">
-    <header>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Fence Installation in Kirkland: Premium Solutions for Lakefront and Upscale Properties
+  <article className="space-y-12">
+    {/* Company Introduction */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Kirkland Fence Company - MyFence.com
       </h2>
-    </header>
+      <div className="grid md:grid-cols-4 gap-6">
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">30+</div>
+          <div className="text-sm text-muted-foreground">Years Experience</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">98%+</div>
+          <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
+          <div className="text-sm text-muted-foreground">Average Star Rating</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">150+</div>
+          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
+        </Card>
+      </div>
+      <p className="text-muted-foreground leading-relaxed text-lg">
+        Looking for a trusted Kirkland fencing company? For 30+ years, MyFence.com has specialized in lakefront and waterfront installations. As a father-son team, we bring unmatched craftsmanship and personalized service to every Kirkland fence installation project. Our Fence Genius technology ensures precision measurements and faster installations while maintaining the highest quality standards for your Lake Washington property.
+      </p>
+    </section>
 
+    {/* Kirkland Fence Installation */}
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Kirkland's Unique Fencing Environment</h3>
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Kirkland Fence Installation
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        MyFence.com takes Kirkland fence installation seriously. When we install your lakefront fence, we arrive fully prepared with marine-grade materials and professional-grade tools. Our 98%+ on-time installation rate is industry-leading because your time is valuable. We maintain a comprehensive stock of premium fence materials specifically selected for waterfront conditions, ensuring we complete your Kirkland fence installation on schedule without delays.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Our Fence Genius technology revolutionizes the installation process for lakefront properties. By manufacturing precision-cut panels off-site, we reduce installation time by 30-50% compared to traditional methods while ensuring perfect measurements every time. Whether you're installing a fence in Downtown Kirkland's urban properties or Bridle Trails' equestrian estates, our team has the expertise to handle mature landscaping and strict HOA requirements.
+      </p>
+    </section>
+
+    {/* Why Choose MyFence.com */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Why Choose MyFence.com for Your Kirkland Fence?
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Lakefront Specialists</h3>
+              <p className="text-muted-foreground">
+                Over 30 years of experience with Lake Washington properties. We understand marine-grade requirements, moisture patterns, and how to preserve your valuable lake views while adding privacy.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
+              <p className="text-muted-foreground">
+                Proprietary measurement and manufacturing system that ensures precision accuracy and 30-50% faster installation times, minimizing disruption to your waterfront lifestyle.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
+              <p className="text-muted-foreground">
+                {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty and up to 20-year materials warranty - far exceeding industry standards for waterfront installations.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Landscaping Protection</h3>
+              <p className="text-muted-foreground">
+                Expert installation around mature trees and landscaping common in Kirkland's established neighborhoods. We protect your property investments as if they were our own.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    {/* Fence Types Section */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Kirkland Fence Types & Materials
+      </h2>
+      
+      {/* Cedar Fencing */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Kirkland Cedar Fence Installation</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          At MyFence.com, we provide Kirkland cedar fence products engineered to last in waterfront conditions. We use premium Western Red Cedar, nature's most naturally rot-resistant wood species with oils that repel insects and resist decay. For Kirkland's luxury lakefront properties in neighborhoods like Market and Moss Bay, we offer clear-grade cedar (zero knots) that provides superior appearance and 15+ years of longevity even with increased moisture exposure.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Every cedar fence installation includes marine-grade stainless steel fasteners specifically chosen for Kirkland's lakefront microclimate. Standard galvanized hardware can corrode within 5-10 years near water, but our stainless steel fasteners maintain integrity for decades. We use triple-sealed joinery systems and premium pressure-treated posts that resist the 10-15% higher humidity waterfront properties experience. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> adds decades to your fence life by eliminating ground contact and wood rot.
+        </p>
+      </div>
+
+      {/* Materials We Install */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">What We Install in Kirkland</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. We've focused our expertise on these options to deliver superior installation quality and industry-leading warranties. Our specialized approach ensures every fence we install meets exacting standards for Kirkland's waterfront environment.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Cedar fencing</strong> remains the gold standard for natural beauty and durability in lakefront settings. <strong>Hogwire fencing</strong> combines rustic charm with modern functionality, perfect for equestrian properties wanting open views. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance at competitive pricing - ideal for busy lakefront professionals.
+        </p>
+      </div>
+
+      {/* Other Materials - Information Only */}
+      <div className="space-y-3 border-l-4 border-muted pl-4">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Composite materials</strong> provide wood-like appearance without regular staining, though at a 60-80% price premium over cedar. <strong>Vinyl fencing</strong> offers maintenance-free performance but lacks natural warmth. <strong>Ornamental aluminum and steel</strong> provide security with open sight lines. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee exceptional results for Kirkland's demanding waterfront environment.
+        </p>
+      </div>
+
+      {/* Hybrid Aluminum System */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Kirkland Hybrid Aluminum Fence System</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          For Kirkland properties seeking the perfect balance of low maintenance and lakefront durability, our hybrid aluminum fence system combines the best of both worlds. Instead of traditional all-wood construction, we use black aluminum panels with a cedar frame and pressure-treated fence posts. This innovative system delivers a modern, sleek appearance while dramatically reducing maintenance requirements in high-moisture waterfront conditions.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          The aluminum panels never require staining, painting, or sealing - perfect for busy Kirkland professionals and vacation homes. The cedar framework provides natural warmth and structural support while the pressure-treated posts ensure long-term stability near water. This hybrid approach keeps pricing competitive with traditional wood fencing while offering superior longevity and minimal upkeep. Ideal for Juanita and Downtown Kirkland properties wanting contemporary looks without constant maintenance.
+        </p>
+      </div>
+    </section>
+
+    {/* Financing Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Kirkland Fence Financing Options
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="space-y-4">
+          <p className="text-muted-foreground leading-relaxed">
+            We understand that a quality fence is an investment in your Kirkland lakefront property. That's why we partner with Wisetack to offer flexible fence financing options that make premium fencing accessible. Our financing plans feature:
+          </p>
+          <ul className="space-y-2 text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Loan amounts from $1,000 to $25,000 per project</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Flexible terms with competitive rates</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Quick pre-approval with soft credit check (no impact to credit score)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Same-day approvals available for qualified applicants</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Transparent terms with no hidden fees</span>
+            </li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            Apply in minutes and get a decision quickly. Our financing options let you install your dream fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+          </p>
+        </div>
+        <Card className="p-6 bg-primary/5">
+          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <p className="text-muted-foreground mb-4">
+            Check your financing options with no impact to your credit score. Get approved and start your Kirkland fence project immediately.
+          </p>
+          <Link to="/financing">
+            <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
+              Check Financing Options
+            </button>
+          </Link>
+        </Card>
+      </div>
+    </section>
+
+    {/* Warranty Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Industry-Leading Warranty Coverage
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        Your Kirkland fence installation comes with comprehensive warranty protection that exceeds industry standards. We stand behind our work with confidence because we use premium materials and expert installation techniques perfected over 30+ years of lakefront experience.
+      </p>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                We stand behind our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Structural integrity of posts and framework</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Gate alignment and functionality</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware installation and security</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Panel attachment and stability</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Up to 20-Year Materials Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Premium materials come with manufacturer warranties up to 20 years, protecting against defects in wood and metal components.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Cedar lumber defects</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Metal corrosion or deterioration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware and fastener failure</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Coating and finish degradation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <p className="text-sm text-muted-foreground">
+        Our warranties are fully transferable if you sell your Kirkland property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence we install for the long term.
+      </p>
+    </section>
+
+    {/* Kirkland-Specific Content */}
+
+    {/* Local Challenges & Solutions */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Kirkland-Specific Installation Expertise
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        Kirkland's lakefront location, mature neighborhoods, and premium property values require specialized knowledge that general contractors often lack. Here's how we address the specific challenges your Kirkland property faces:
+      </p>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Waterfront Moisture & Corrosion</h3>
+          <p className="text-muted-foreground">
+            Properties within a half-mile of Lake Washington experience 10-15% higher humidity and salt spray exposure. We use marine-grade stainless steel hardware that resists corrosion for decades, unlike standard galvanized fasteners that fail within 5-10 years in waterfront conditions.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3">Mature Landscaping</h3>
+          <p className="text-muted-foreground">
+            Kirkland's established neighborhoods feature 50+ year old trees and landscaping worth thousands of dollars. We use compact equipment and hand-digging techniques near roots and irrigation systems, protecting your valuable landscaping investments during installation.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3">View Preservation</h3>
+          <p className="text-muted-foreground">
+            Lakefront properties demand fence designs that provide privacy while preserving valuable Lake Washington views. We create custom horizontal spacing patterns and semi-private designs that balance visibility with security, maximizing your property's unique advantages.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3">HOA & Historic Districts</h3>
+          <p className="text-muted-foreground">
+            Many Kirkland neighborhoods have strict HOA requirements and historic district regulations. We provide architectural design packages for board approval and understand Forbes Creek area requirements. Our 30+ years of local experience streamlines the approval process.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Original Kirkland Specific Content */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Understanding Kirkland's Unique Environment</h3>
       <p className="text-muted-foreground leading-relaxed">
         Kirkland's position along Lake Washington creates a distinctive environment for fence installation. Lakefront properties face increased moisture exposure from lake effect weather patterns, with waterfront neighborhoods experiencing 10-15% more humidity than inland areas. Salt spray from the lake, while minimal compared to ocean exposure, still necessitates corrosion-resistant hardware for properties within a half-mile of the water. The city's reputation as one of the most desirable communities on the Eastside means property values are high, and homeowners expect installations that match the premium architecture and landscaping investments they've made.
       </p>
@@ -21,7 +324,7 @@ const KirklandArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Kirkland Permits and Regulations</h3>
+      <h3 className="text-2xl font-semibold">Permits and Regulations in Kirkland</h3>
       <p className="text-muted-foreground leading-relaxed">
         The City of Kirkland maintains specific requirements for fence installations outlined in <a href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Kirkland Zoning Code</a>. Residential fences under 8 feet generally do not require a building permit, but must comply with height limitations and setback requirements. Front yard fences are typically limited to 4 feet in height, while side and rear yards can accommodate 6-foot fences. Corner lots have additional sight-distance requirements to maintain visibility for traffic safety.
       </p>
@@ -216,6 +519,46 @@ const Kirkland = () => {
       ]}
       articleContent={<KirklandArticle />}
       faqStructuredData={faqStructuredData}
+      enhancedBusinessData={{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MyFence.com - Kirkland Fence Installation",
+        "image": "https://myfence.com/myfence-logo.png",
+        "@id": "https://myfence.com/service-areas/kirkland",
+        "url": "https://myfence.com/service-areas/kirkland",
+        "telephone": "(253) 455-1885",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Serving Kirkland",
+          "addressLocality": "Kirkland",
+          "addressRegion": "WA",
+          "postalCode": "98033",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 47.6769,
+          "longitude": -122.2060
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Kirkland"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        "sameAs": [
+          "https://www.facebook.com/people/MyFencecom/61554605109118/"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "150"
+        }
+      }}
     />
   );
 };
