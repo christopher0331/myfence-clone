@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 const serviceAreasByRegion = [
   {
@@ -49,20 +50,20 @@ const ServiceAreasSection = () => {
         {serviceAreasByRegion.map((region) => (
           <Card key={region.region} className="border-2 hover:border-primary/50 transition-colors">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">{region.region}</h3>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-semibold mb-4 text-foreground text-center">{region.region}</h3>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
                 {region.areas.map((area) => (
-                  <li key={area.to}>
-                    <Link
-                      to={area.to}
-                      className="text-muted-foreground hover:text-primary transition-colors flex items-center group"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {area.label}
-                    </Link>
-                  </li>
+                  <Link
+                    key={area.to}
+                    to={area.to}
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1 h-1 rounded-sm bg-primary/60 group-hover:bg-primary transition-colors" />
+                    <span>{area.label}</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </CardContent>
           </Card>
         ))}
