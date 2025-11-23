@@ -400,7 +400,7 @@ const KirklandArticle = () => (
 
     <section className="bg-muted/50 p-6 rounded-lg border">
       <p className="text-sm text-muted-foreground">
-        <strong>Note:</strong> Regulations and HOA requirements are subject to change. Always verify current requirements with the <a href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> and your homeowners association before beginning your fence project. MyFence.com's extensive experience with Kirkland installations helps streamline the process.
+        <strong>Note:</strong> Regulations and HOA requirements are subject to change. Always verify current requirements with the <a href="https://www.kirklandwa.gov/files/sharedassets/public/v/1/development-services/fence-requirements.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> and your homeowners association before beginning your fence project. MyFence.com's extensive experience with Kirkland installations helps streamline the process.
       </p>
     </section>
 
@@ -429,7 +429,7 @@ const KirklandArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need shoreline permits for fence installation in Kirkland?</h4>
           <p className="text-muted-foreground">
-            Properties within 200 feet of Lake Washington or other critical areas may require shoreline permits and environmental review. The <a href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> regulates construction near shorelines. Contact them at (425) 587-3600 to verify requirements for your specific property location before beginning any fence project.
+            Properties within 200 feet of Lake Washington or other critical areas may require shoreline permits and environmental review. The <a href="https://www.kirklandwa.gov/files/sharedassets/public/v/1/development-services/fence-requirements.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> regulates construction near shorelines. Contact them at (425) 587-3600 to verify requirements for your specific property location before beginning any fence project.
           </p>
         </div>
       </Card>
