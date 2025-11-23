@@ -403,6 +403,37 @@ const KirklandArticle = () => (
         <strong>Note:</strong> Regulations and HOA requirements are subject to change. Always verify current requirements with the <a href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> and your homeowners association before beginning your fence project. MyFence.com's extensive experience with Kirkland installations helps streamline the process.
       </p>
     </section>
+
+    {/* FAQ Section */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
+      <Card className="p-6 space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">How long does fence installation take in Kirkland?</h4>
+          <p className="text-muted-foreground">
+            Most residential fence projects take 1-3 days depending on size, waterfront access requirements, and slope conditions. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50% compared to traditional methods. Lakefront properties may require additional time for marine-grade installations and erosion control measures, and permit processing typically adds 2-4 weeks depending on whether HOA approval or shoreline permits are required.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">How much does fence installation cost in Kirkland?</h4>
+          <p className="text-muted-foreground">
+            Get accurate, instant pricing with our <Link to="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>. Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Waterfront properties requiring marine-grade materials and corrosion-resistant hardware may add 15-30% due to specialized requirements. A standard 6-foot cedar fence averages $45-55 per foot installed. Use our online tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">What fence materials work best for Kirkland's lakefront properties?</h4>
+          <p className="text-muted-foreground">
+            Western Red Cedar with marine-grade stainless steel fasteners is essential for lakefront properties to resist salt air and humidity from Lake Washington. We use triple-sealed joinery and corrosion-resistant hardware specifically engineered for waterfront installations. Hogwire fencing provides excellent lake views while maintaining privacy where needed. Our hybrid aluminum system (black aluminum panels with cedar frame and marine-grade hardware) offers superior corrosion resistance with minimal maintenance, perfect for properties within 500 feet of the shoreline.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Do I need shoreline permits for fence installation in Kirkland?</h4>
+          <p className="text-muted-foreground">
+            Properties within 200 feet of Lake Washington or other critical areas may require shoreline permits and environmental review. The <a href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Kirkland Planning and Building Department</a> regulates construction near shorelines. Contact them at (425) 587-3600 to verify requirements for your specific property location before beginning any fence project.
+          </p>
+        </div>
+      </Card>
+    </section>
   </article>
 );
 
@@ -413,26 +444,10 @@ const Kirkland = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How does lakefront location affect fence longevity?",
+        "name": "How long does fence installation take in Kirkland?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professionally installed cedar fence from MyFence.com in Kirkland typically lasts 25-35 years, even in waterfront locations. Our marine-grade stainless steel hardware resists the corrosion that causes premature failure in lakefront installations using standard galvanized fasteners. The superior 4.125 inch x 4.125 inch posts we use provide nearly 5 square inches more cross-sectional area than box store posts, resisting the warping and rot that plague cheaper installations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I preserve my lake view while adding privacy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Horizontal fence designs with custom spacing allow filtered views while providing privacy from neighboring properties. We can design sections with wider spacing near lake-facing areas and closer spacing toward property lines, giving you flexibility to balance views and privacy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What styles work best for Kirkland's upscale neighborhoods?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Horizontal cedar fences and modern board-on-board designs are particularly popular in Kirkland's premium neighborhoods. Clear-grade cedar offers the refined appearance that complements high-end properties, while our craftsman-style designs work beautifully with Kirkland's many arts and crafts homes."
+          "text": "Most residential fence projects take 1-3 days depending on size, waterfront access requirements, and slope conditions. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50% compared to traditional methods. Lakefront properties may require additional time for marine-grade installations and erosion control measures, and permit processing typically adds 2-4 weeks depending on whether HOA approval or shoreline permits are required."
         }
       },
       {
@@ -440,18 +455,67 @@ const Kirkland = () => {
         "name": "How much does fence installation cost in Kirkland?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cedar fence installation in Kirkland typically ranges from $45-70 per linear foot depending on style, materials, and site conditions. Clear-grade cedar and horizontal designs command premium pricing but deliver aesthetics worthy of Kirkland's property values. Waterfront installations may add 10-15% for marine-grade hardware and additional site preparation."
+          "text": "Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Waterfront properties requiring marine-grade materials and corrosion-resistant hardware may add 15-30% due to specialized requirements. A standard 6-foot cedar fence averages $45-55 per foot installed. Get accurate, instant pricing with our Virtual Quote Tool for a fast estimate."
         }
       },
       {
         "@type": "Question",
-        "name": "Will installation damage my mature landscaping?",
+        "name": "What fence materials work best for Kirkland's lakefront properties?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our experienced installation teams specialize in working around established landscaping common in Kirkland's mature neighborhoods. We use compact equipment, hand-digging when necessary near roots and irrigation systems. Our Fence Genius measurement system helps us plan precise post placement that minimizes impact on your valuable landscaping investments."
+          "text": "Western Red Cedar with marine-grade stainless steel fasteners is essential for lakefront properties to resist salt air and humidity from Lake Washington. We use triple-sealed joinery and corrosion-resistant hardware specifically engineered for waterfront installations. Hogwire fencing provides excellent lake views while maintaining privacy where needed. Our hybrid aluminum system offers superior corrosion resistance with minimal maintenance, perfect for properties within 500 feet of the shoreline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need shoreline permits for fence installation in Kirkland?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Properties within 200 feet of Lake Washington or other critical areas may require shoreline permits and environmental review. The City of Kirkland Planning and Building Department regulates construction near shorelines. Contact them at (425) 587-3600 to verify requirements for your specific property location before beginning any fence project."
         }
       }
     ]
+  };
+
+  const enhancedBusinessData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MyFence.com - Kirkland Fence Installation",
+    "image": "https://myfence.com/myfence-logo.png",
+    "@id": "https://myfence.com/service-areas/kirkland",
+    "url": "https://myfence.com/service-areas/kirkland",
+    "telephone": "(253) 455-1885",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Serving Kirkland",
+      "addressLocality": "Kirkland",
+      "addressRegion": "WA",
+      "postalCode": "98033",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.6769,
+      "longitude": -122.2060
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Kirkland"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/people/MyFencecom/61554605109118/"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "150"
+    }
   };
 
   return (
@@ -518,47 +582,7 @@ const Kirkland = () => {
         "Code-compliant solutions exceeding aesthetic expectations"
       ]}
       articleContent={<KirklandArticle />}
-      faqStructuredData={faqStructuredData}
-      enhancedBusinessData={{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "MyFence.com - Kirkland Fence Installation",
-        "image": "https://myfence.com/myfence-logo.png",
-        "@id": "https://myfence.com/service-areas/kirkland",
-        "url": "https://myfence.com/service-areas/kirkland",
-        "telephone": "(253) 455-1885",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Serving Kirkland",
-          "addressLocality": "Kirkland",
-          "addressRegion": "WA",
-          "postalCode": "98033",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 47.6769,
-          "longitude": -122.2060
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Kirkland"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "07:00",
-          "closes": "18:00"
-        },
-        "sameAs": [
-          "https://www.facebook.com/people/MyFencecom/61554605109118/"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "150"
-        }
-      }}
+      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
     />
   );
 };

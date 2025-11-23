@@ -309,6 +309,37 @@ const IssaquahArticle = () => (
         </div>
       </div>
     </section>
+
+    {/* FAQ Section */}
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
+      <Card className="p-6 space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">How long does fence installation take in Issaquah?</h4>
+          <p className="text-muted-foreground">
+            Most residential fence projects take 1-3 days depending on size, terrain complexity, and slope requirements. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50% compared to traditional methods. Mountain terrain and wildlife-smart installations may add additional time for specialized engineering, and permit processing typically adds 2-4 weeks depending on HOA requirements in communities like Issaquah Highlands.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">How much does fence installation cost in Issaquah?</h4>
+          <p className="text-muted-foreground">
+            Get accurate, instant pricing with our <Link to="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>. Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Slope installations and wildlife-smart designs may add 10-25% due to specialized engineering requirements. A standard 6-foot cedar fence on level terrain averages $45-55 per foot installed. Use our online tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">What fence materials work best for Issaquah's mountain climate?</h4>
+          <p className="text-muted-foreground">
+            Western Red Cedar is ideal for Issaquah's mountain climate due to its natural rot resistance and ability to withstand moisture fluctuations. For foothills properties, we recommend 8-foot heights with reinforced posts to handle wind loads from Tiger Mountain. Hogwire fencing provides excellent wildlife visibility while maintaining security. Our hybrid aluminum system (black aluminum panels with cedar frame) offers low-maintenance durability perfect for properties with snow exposure and temperature extremes.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Do I need special permits for slope installations in Issaquah?</h4>
+          <p className="text-muted-foreground">
+            Slope installations may require additional engineering documentation, especially on properties with grades exceeding 15%. Issaquah Highlands and other communities near Tiger Mountain often have specific requirements for hillside construction. Contact the <a href="https://www.issaquahwa.gov/2387/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Development Services</a> at (425) 837-3150 to verify requirements for your specific property location and terrain.
+          </p>
+        </div>
+      </Card>
+    </section>
   </article>
 );
 
@@ -449,8 +480,7 @@ const Issaquah = () => {
         "High-end finishes and clear cedar options for luxury homes"
       ]}
       articleContent={<IssaquahArticle />}
-      faqStructuredData={faqStructuredData}
-      enhancedBusinessData={enhancedBusinessData}
+      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
     />
   );
 };
