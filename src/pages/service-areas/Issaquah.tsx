@@ -335,7 +335,7 @@ const IssaquahArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need special permits for slope installations in Issaquah?</h4>
           <p className="text-muted-foreground">
-            Slope installations may require additional engineering documentation, especially on properties with grades exceeding 15%. Issaquah Highlands and other communities near Tiger Mountain often have specific requirements for hillside construction. Contact the <a href="https://www.issaquahwa.gov/2387/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Development Services</a> at (425) 837-3150 to verify requirements for your specific property location and terrain.
+            Slope installations may require additional engineering documentation, especially on properties with grades exceeding 15%. Issaquah Highlands and other communities near Tiger Mountain often have specific requirements for hillside construction. Contact the <a href="https://www.issaquahwa.gov/113/Community-Planning-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Development Services</a> at (425) 837-3150 to verify requirements for your specific property location and terrain.
           </p>
         </div>
       </Card>
