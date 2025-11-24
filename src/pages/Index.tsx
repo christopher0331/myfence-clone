@@ -259,6 +259,17 @@ const Index = () => {
     }
   };
 
+  const breadcrumbLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://myfence.com"
+    }]
+  }), []);
+
   const orgLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -277,7 +288,7 @@ const Index = () => {
       addressLocality: "Maple Valley", 
       addressRegion: "WA",
       postalCode: "98038",
-      addressCountry: "US" 
+      addressCountry: "US"
     },
     geo: {
       "@type": "GeoCoordinates",
@@ -472,7 +483,7 @@ const Index = () => {
         title="Cedar Fence Installation Seattle | MyFence.com"
         description="Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885."
         canonical="https://myfence.com/"
-        structuredData={[orgLd, faqSchema]}
+        structuredData={[breadcrumbLd, orgLd, faqSchema]}
       />
 
       <section className="relative h-64 sm:h-72 md:h-screen w-full border-b">
