@@ -51,6 +51,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/federal-way", label: "Federal Way" },
       { to: "/service-areas/gig-harbor", label: "Gig Harbor" },
       { to: "/service-areas/lake-tapps", label: "Lake Tapps" },
+      { to: "/service-areas/sumner", label: "Sumner" },
     ],
   },
   {
