@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
 import { Phone, Home } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -83,7 +84,7 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-2xl font-semibold tracking-tight">MyFence.com</span>
+            <span className="text-2xl font-semibold tracking-tight">{SITE_CONFIG.fullName}</span>
           </Link>
           <Badge variant="secondary" className="hidden lg:inline-flex">
             <Link to="/fence-genius" className="hover:underline flex items-center justify-center">Fence Genius Certified</Link>
@@ -107,7 +108,7 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-xl font-semibold tracking-tight">MyFence.com</span>
+            <span className="text-xl font-semibold tracking-tight">{SITE_CONFIG.fullName}</span>
           </Link>
 
           {/* Right: Menu Button */}

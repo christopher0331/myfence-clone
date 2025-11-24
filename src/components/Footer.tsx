@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Phone, Youtube, Music2, Pin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Company Info */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">MyFence.com</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">{SITE_CONFIG.fullName}</h3>
               <p className="text-muted-foreground mb-4">
                 Professional fencing solutions for residential and commercial properties. Quality craftsmanship you can trust.
               </p>
@@ -154,7 +155,7 @@ const Footer = () => {
 
           <div className="border-t border-border mt-8 pt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} MyFence.com. All rights reserved.
+              © {currentYear} {SITE_CONFIG.fullName}. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               WA Contractor License: MYFEN**772L3

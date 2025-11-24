@@ -2,6 +2,7 @@ import React from 'react';
 import Seo from "@/components/Seo";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import FenceCleaningStainingContent from './FenceCleaningStaining.mdx';
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const FenceCleaningStainingMDX = () => {
   const structuredData = {
@@ -11,20 +12,20 @@ const FenceCleaningStainingMDX = () => {
     "description": "Learn proper fence cleaning techniques before staining.",
     "author": { 
       "@type": "Organization", 
-      "name": "MyFence.com",
-      "url": "https://myfence.com",
+      "name": SITE_CONFIG.fullName,
+      "url": SITE_CONFIG.url,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://myfence.com/myfence-logo.png"
+        "url": SITE_CONFIG.logoUrl
       }
     },
     "publisher": { 
       "@type": "Organization", 
-      "name": "MyFence.com",
-      "url": "https://myfence.com",
+      "name": SITE_CONFIG.fullName,
+      "url": SITE_CONFIG.url,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://myfence.com/myfence-logo.png"
+        "url": SITE_CONFIG.logoUrl
       }
     },
     "datePublished": "2025-01-01",
@@ -36,7 +37,7 @@ const FenceCleaningStainingMDX = () => {
       <Seo
         title="Fence Cleaning Before Staining: Seattle Professional Cleaning Guide"
         description="Expert fence cleaning techniques for Seattle properties. Softwashing vs pressure washing."
-        canonical="https://myfence.com/blog/fence-cleaning-staining"
+        canonical={`${SITE_CONFIG.url}/blog/fence-cleaning-staining`}
         structuredData={structuredData}
       />
       <ErrorBoundary>

@@ -2,6 +2,7 @@ import React from 'react';
 import Seo from "@/components/Seo";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SixFtFenceCostContent from './SixFtFenceCost.mdx';
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const SixFtFenceCostMDX = () => {
   const structuredData = {
@@ -12,27 +13,27 @@ const SixFtFenceCostMDX = () => {
     "image": "https://myfence.com/lovable-uploads/840c5f7f-0578-45fa-9b5c-195760503695.png",
     "author": {
       "@type": "Organization",
-      "name": "MyFence.com",
-      "url": "https://myfence.com",
+      "name": SITE_CONFIG.fullName,
+      "url": SITE_CONFIG.url,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://myfence.com/myfence-logo.png"
+        "url": SITE_CONFIG.logoUrl
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "MyFence.com",
-      "url": "https://myfence.com",
+      "name": SITE_CONFIG.fullName,
+      "url": SITE_CONFIG.url,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://myfence.com/myfence-logo.png"
+        "url": SITE_CONFIG.logoUrl
       }
     },
     "datePublished": "2024-12-01",
     "dateModified": "2024-12-01",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://myfence.com/blog/fence-cost-seattle"
+      "@id": `${SITE_CONFIG.url}/blog/fence-cost-seattle`
     }
   };
 
@@ -41,7 +42,7 @@ const SixFtFenceCostMDX = () => {
       <Seo
         title="6ft Fence Cost Seattle 2025: Complete Installation Pricing Guide"
         description="Complete Seattle 6-foot fence cost breakdown for 2025. Cedar privacy fencing $42-60/LF. Materials, labor, permits included. Call (253) 478-8589 for quotes."
-        canonical="https://myfence.com/blog/fence-cost-seattle"
+        canonical={`${SITE_CONFIG.url}/blog/fence-cost-seattle`}
         structuredData={structuredData}
       />
       <ErrorBoundary>
