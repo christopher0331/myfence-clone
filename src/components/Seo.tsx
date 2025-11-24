@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 interface SeoProps {
   title: string;
@@ -20,7 +21,7 @@ const Seo = ({ title, description, canonical, image, structuredData }: SeoProps)
   const absoluteImage = image 
     ? image.startsWith('http') 
       ? image 
-      : `https://myfence.com${image}`
+      : `${SITE_CONFIG.url}${image}`
     : undefined;
 
   return (

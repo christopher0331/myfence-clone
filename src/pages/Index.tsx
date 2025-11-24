@@ -12,6 +12,7 @@ import { CheckCircle, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -266,34 +267,34 @@ const Index = () => {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://myfence.com"
+      "item": SITE_CONFIG.url
     }]
   }), []);
 
   const orgLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://myfence.com",
-    name: "MyFence.com",
-    image: "https://myfence.com/myfence-logo.png",
+    "@id": SITE_CONFIG.url,
+    name: SITE_CONFIG.fullName,
+    image: SITE_CONFIG.logoUrl,
     logo: {
       "@type": "ImageObject",
-      "url": "https://myfence.com/myfence-logo.png"
+      "url": SITE_CONFIG.logoUrl
     },
-    url: "https://myfence.com",
-    telephone: "+1-253-455-1885",
+    url: SITE_CONFIG.url,
+    telephone: `+1-253-455-1885`,
     address: { 
       "@type": "PostalAddress",
       streetAddress: "22927 257th Ave SE",
-      addressLocality: "Maple Valley", 
-      addressRegion: "WA",
-      postalCode: "98038",
-      addressCountry: "US"
+      addressLocality: SITE_CONFIG.address.city, 
+      addressRegion: SITE_CONFIG.address.state,
+      postalCode: SITE_CONFIG.address.zip,
+      addressCountry: SITE_CONFIG.address.country
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 47.3893811,
-      longitude: -122.0461921
+      latitude: SITE_CONFIG.coordinates.latitude,
+      longitude: SITE_CONFIG.coordinates.longitude
     },
     openingHoursSpecification: [
       {
@@ -482,7 +483,7 @@ const Index = () => {
       <Seo
         title="Cedar Fence Installation Seattle | MyFence.com"
         description="Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885."
-        canonical="https://myfence.com/"
+        canonical={SITE_CONFIG.url + "/"}
         structuredData={[breadcrumbLd, orgLd, faqSchema]}
       />
 

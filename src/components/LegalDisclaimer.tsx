@@ -1,5 +1,6 @@
 import { AlertTriangle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 export const LegalDisclaimer = () => {
   return (
@@ -7,7 +8,7 @@ export const LegalDisclaimer = () => {
       <AlertTriangle className="h-4 w-4" />
       <AlertDescription className="text-sm">
         <strong>Legal Disclaimer:</strong> This information is provided for general informational purposes only and does not constitute legal advice. 
-        Laws and regulations vary by jurisdiction and may change over time. MyFence.com makes no representations or warranties regarding the accuracy, 
+        Laws and regulations vary by jurisdiction and may change over time. {SITE_CONFIG.fullName} makes no representations or warranties regarding the accuracy, 
         completeness, or reliability of this information and assumes no liability for any damages, losses, or legal consequences resulting from the use 
         of this information. For specific legal guidance regarding fence laws in your area, please consult with a qualified attorney or local authority.
       </AlertDescription>
