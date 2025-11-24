@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
+import FenceStylesPreview from "@/components/FenceStylesPreview";
 
 export interface Neighborhood {
   name: string;
@@ -661,6 +662,9 @@ const ServiceAreaTemplate = ({
             </div>
           </div>
         </section>
+
+        {/* Fence Styles Preview */}
+        <FenceStylesPreview city={city} />
 
         {/* Quote Form */}
         <section className="py-16 bg-muted/50">
