@@ -1,20 +1,20 @@
 // Global warranty constants - update here to change across entire site
 export const WARRANTY_CONSTANTS = {
   // Core warranty information
-  YEARS: 2,
-  TITLE: "2-Year Workmanship Warranty",
-  SHORT_TITLE: "2-Year Warranty",
-  BADGE_TEXT: "2-Year Warranty",
+  YEARS: 3,
+  TITLE: "3-Year Workmanship Warranty",
+  SHORT_TITLE: "3-Year Warranty",
+  BADGE_TEXT: "3-Year Warranty",
   
   // Descriptions for different contexts
-  FULL_DESCRIPTION: "We stand behind our work with a comprehensive 2-year warranty on all installations — your peace of mind guaranteed.",
-  CARD_DESCRIPTION: "We stand behind our workmanship with a comprehensive 2-year warranty on all installations for your peace of mind.",
-  INLINE_TEXT: "2-year warranty on all installations",
-  ABOUT_TEXT: "Licensed, insured, and backed by a 2-year workmanship warranty",
+  FULL_DESCRIPTION: "We stand behind our work with a comprehensive 3-year warranty on all installations — your peace of mind guaranteed.",
+  CARD_DESCRIPTION: "We stand behind our workmanship with a comprehensive 3-year warranty on all installations for your peace of mind.",
+  INLINE_TEXT: "3-year warranty on all installations",
+  ABOUT_TEXT: "Licensed, insured, and backed by a 3-year workmanship warranty",
   
   // Formatted text for different uses
-  CHECKMARK_TEXT: "✓ 2-Year Workmanship Warranty on all installations",
-  BULLET_POINT: "• 2-year warranty on all installations",
+  CHECKMARK_TEXT: "✓ 3-Year Workmanship Warranty on all installations",
+  BULLET_POINT: "• 3-year warranty on all installations",
   
   // Helper functions for dynamic text
   getFullTitle: () => `${WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty`,
