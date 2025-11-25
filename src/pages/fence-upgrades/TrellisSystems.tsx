@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone } from "lucide-react";
 import Seo from "@/components/Seo";
+import trellisArtisanGate from "@/assets/trellis-artisan-gate.jpg";
 
 const TrellisSystems = () => {
   const structuredData = {
@@ -172,6 +173,23 @@ const TrellisSystems = () => {
                   <p className="text-sm text-muted-foreground">
                     Close-up showing the precision of chamfered edges and the quality of black powder-coated 
                     hardware. Note the solid 6x6 posts and robust 2x8 runners.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-0">
+                <img
+                  src={trellisArtisanGate}
+                  alt="Artisan radiused edge trellis with black hardware over lattice-style gate"
+                  className="w-full rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2">Artisan Lattice Gate Style</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Artisan trellis with radiused edges and black hardware above a lattice-style gate. 
+                    The open lattice pattern creates a more inviting, welcoming entrance compared to solid privacy fencing.
                   </p>
                 </div>
               </CardContent>
