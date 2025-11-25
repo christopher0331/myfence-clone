@@ -1,14 +1,105 @@
 import ServiceAreaTemplate from "./ServiceAreaTemplate";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
+import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const RedmondArticle = () => (
-  <article className="space-y-8">
-    <header>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Fence Installation in Redmond: Modern Solutions for the Pacific Northwest Tech Hub
+  <article className="space-y-12">
+    {/* Company Introduction */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Redmond Fence Company - MyFence.com
       </h2>
-    </header>
+      <div className="grid md:grid-cols-4 gap-6">
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">30+</div>
+          <div className="text-sm text-muted-foreground">Years Experience</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">98%+</div>
+          <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
+          <div className="text-sm text-muted-foreground">Average Star Rating</div>
+        </Card>
+        <Card className="p-6 text-center">
+          <div className="text-3xl font-bold text-primary mb-2">150+</div>
+          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
+        </Card>
+      </div>
+      <p className="text-muted-foreground leading-relaxed text-lg">
+        Looking for modern fence installation in Redmond? MyFence.com delivers the contemporary aesthetics and low-maintenance solutions that tech professionals demand. As a father-son team with 30+ years of experience, we understand Redmond's unique blend of innovation and outdoor lifestyle. From Overlake's modern developments to Education Hill's family neighborhoods, we provide precision-engineered fencing that complements your property and lifestyle.
+      </p>
+    </section>
+
+    {/* Redmond Fence Installation */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Redmond Fence Installation
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        MyFence.com approaches every Redmond fence installation with precision and professionalism. We arrive on schedule with all materials and professional-grade equipment, ready to complete your project efficiently. Our 98%+ on-time installation rate reflects our respect for your busy schedule and organized project management. We maintain comprehensive material inventory, eliminating delays that frustrate homeowners and extend timelines unnecessarily.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Our proprietary Fence Genius technology revolutionizes installation through precision-cut panels manufactured off-site. This reduces installation time by 30-50% compared to traditional methods while ensuring perfect measurements every time. Less disruption to your property, faster project completion, and superior quality - exactly what Redmond's tech-savvy homeowners expect. Whether installing horizontal cedar in Overlake or hogwire in Grass Lawn, our experienced team delivers results that exceed expectations.
+      </p>
+    </section>
+
+    {/* Why Choose MyFence.com */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Why Choose MyFence.com in Redmond?
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Modern Design Excellence</h3>
+              <p className="text-muted-foreground">
+                Contemporary horizontal designs and innovative materials that match Redmond's tech-forward aesthetic and architectural trends.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
+              <p className="text-muted-foreground">
+                Proprietary measurement and manufacturing system ensuring precision accuracy and 30-50% faster installation times.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
+              <p className="text-muted-foreground">
+                Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty and up to 20-year materials warranty for long-term protection.
+              </p>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">HOA & Wildlife Expertise</h3>
+              <p className="text-muted-foreground">
+                Deep understanding of Redmond's HOA requirements and wildlife deterrence solutions for greenbelt-adjacent properties.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
 
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Redmond's Distinctive Fencing Landscape</h3>
@@ -33,31 +124,252 @@ const RedmondArticle = () => (
       </p>
     </section>
 
-    <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Redmond</h3>
-      <p className="text-muted-foreground leading-relaxed">
-        MyFence.com specializes in three fencing systems for Redmond's tech-savvy homeowners: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver the contemporary aesthetics and superior craftsmanship Redmond properties demand. For premium neighborhoods like Overlake and Education Hill, clear-grade cedar provides the refined appearance that matches the area's high property values.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        Horizontal <strong>cedar designs</strong> have become extremely popular in Redmond, reflecting the contemporary aesthetic preferred by tech professionals. Our precision manufacturing and Fence Genius technology ensure every board aligns perfectly. <strong>Hogwire fencing</strong> offers modern rustic appeal for properties wanting open views of greenbelts. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance perfect for busy professionals - black aluminum panels with cedar framing that never requires staining.
-      </p>
-      <p className="text-muted-foreground leading-relaxed">
-        For properties backing to forests or greenbelt, 8-foot fence heights effectively deter deer while providing maximum privacy. All installations use MyFence.com's superior 4.125" x 4.125" posts with nearly 5 square inches more cross-sectional area than box store posts. We install posts with concrete poured to surface level, preventing soil contact and rot. This attention to detail ensures decades of protection for your property.
-      </p>
+    {/* Fence Types Section */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Redmond Fence Types & Materials
+      </h2>
+      
+      {/* Cedar Fencing */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation in Redmond</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          MyFence.com uses premium Western Red Cedar for all Redmond installations, nature's most naturally rot-resistant wood species. Our cedar contains natural oils that repel insects and resist decay even in the Pacific Northwest's challenging climate. For Redmond's premium neighborhoods like Overlake and Education Hill, we offer clear-grade cedar (zero knots) providing superior appearance and 15+ years of longevity with proper maintenance. Every fence uses heavy-duty lumber exceeding industry standards for structural integrity during windstorms.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          All cedar fence installations include marine-grade stainless steel fasteners engineered for the region's humidity. We use triple-sealed joinery systems and premium pressure-treated posts that resist moisture damage. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> adds decades to fence life by eliminating ground contact and wood rot at the post base - perfect for properties backing to Redmond's greenbelt areas.
+        </p>
+      </div>
+
+      {/* Materials We Install */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">What We Install in Redmond</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          MyFence.com specializes in three fencing systems for Redmond's tech-savvy homeowners: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver the contemporary aesthetics and superior craftsmanship Redmond properties demand. For premium neighborhoods like Overlake and Education Hill, clear-grade cedar provides the refined appearance that matches the area's high property values.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Horizontal <strong>cedar designs</strong> have become extremely popular in Redmond, reflecting the contemporary aesthetic preferred by tech professionals. Our precision manufacturing and Fence Genius technology ensure every board aligns perfectly. <strong>Hogwire fencing</strong> offers modern rustic appeal for properties wanting open views of greenbelts. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance perfect for busy professionals - black aluminum panels with cedar framing that never requires staining.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          For properties backing to forests or greenbelt, 8-foot fence heights effectively deter deer while providing maximum privacy. All installations use MyFence.com's superior 4.125" x 4.125" posts with nearly 5 square inches more cross-sectional area than box store posts. We install posts with concrete poured to surface level, preventing soil contact and rot. This attention to detail ensures decades of protection for your property.
+        </p>
+      </div>
+
+      {/* Other Materials - Information Only */}
+      <div className="space-y-3 border-l-4 border-muted pl-4">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong>Composite materials</strong> offer wood-like aesthetics without regular staining, though at 60-80% higher cost. The time savings appeal to busy professionals, but composites lack the natural warmth many prefer. <strong>Vinyl fencing</strong> requires minimal maintenance but lacks character. <strong>Ornamental aluminum and steel</strong> provide security with sight lines. While these materials have merit, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee the contemporary aesthetics and precision installation Redmond's tech-savvy homeowners expect.
+        </p>
+      </div>
+
+      {/* Hybrid Aluminum System */}
+      <div className="space-y-3">
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System in Redmond</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          For Redmond's busy tech professionals seeking low-maintenance solutions, our hybrid aluminum fence system delivers exceptional value. Black aluminum panels combined with cedar framing and pressure-treated posts create a sleek, modern appearance while dramatically reducing maintenance requirements compared to traditional wood fencing.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          The aluminum panels never require staining, painting, or sealing - perfect for professionals in Overlake and Grass Lawn with demanding schedules. Cedar framework provides natural warmth and structural support while pressure-treated posts ensure long-term stability. This hybrid approach maintains competitive pricing with traditional wood while offering superior longevity and minimal upkeep. Ideal for properties wanting contemporary aesthetics without premium composite costs.
+        </p>
+      </div>
     </section>
-    
-    <section className="space-y-4 border-l-4 border-muted pl-4">
-      <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
-      <p className="text-muted-foreground leading-relaxed text-sm">
-        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
-      </p>
+
+    {/* Financing Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Fence Financing Options in Redmond
+      </h2>
+      <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="space-y-4">
+          <p className="text-muted-foreground leading-relaxed">
+            We understand that premium fencing is an investment in your Redmond property. That's why we partner with Wisetack to offer flexible financing options that make modern fencing accessible. Our financing plans feature:
+          </p>
+          <ul className="space-y-2 text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Loan amounts from $1,000 to $25,000 per project</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Flexible terms with competitive rates</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Quick pre-approval with soft credit check (no credit score impact)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Same-day approvals available for qualified applicants</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span>Transparent terms with no hidden fees</span>
+            </li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            Apply in minutes and get quick decisions. Install your dream fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+          </p>
+        </div>
+        <Card className="p-6 bg-primary/5">
+          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <p className="text-muted-foreground mb-4">
+            Check your financing options with no impact to your credit score. Get approved and start your Redmond fence project immediately.
+          </p>
+          <Link to="/financing">
+            <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
+              Check Financing Options
+            </button>
+          </Link>
+        </Card>
+      </div>
+    </section>
+
+    {/* Warranty Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Industry-Leading Warranty Coverage
+      </h2>
       <p className="text-muted-foreground leading-relaxed">
-        <strong>Composite materials</strong> offer wood-like aesthetics without regular staining, though at 60-80% higher cost. The time savings appeal to busy professionals, but composites lack the natural warmth many prefer. <strong>Vinyl fencing</strong> requires minimal maintenance but lacks character. <strong>Ornamental aluminum and steel</strong> provide security with sight lines. While these materials have merit, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee the contemporary aesthetics and precision installation Redmond's tech-savvy homeowners expect.
+        Your Redmond fence installation includes comprehensive warranty protection exceeding industry standards. We stand behind our work with confidence because we use premium materials and installation techniques perfected over 30+ years.
+      </p>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                We guarantee our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Structural integrity of posts and framework</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Gate alignment and functionality</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware installation and security</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Panel attachment and stability</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-start gap-4">
+            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Up to 20-Year Materials Warranty</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Premium materials come with manufacturer warranties up to 20 years, protecting against defects in wood and metal components.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Cedar lumber defects and premature failure</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Metal corrosion or deterioration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Hardware and fastener failure</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Coating and finish degradation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <p className="text-sm text-muted-foreground">
+        Our warranties are fully transferable if you sell your Redmond property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence for the long term.
       </p>
     </section>
 
+    {/* Local Challenges & Solutions */}
+    <section className="space-y-6">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Redmond-Specific Installation Expertise
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        Redmond's unique geography, HOA requirements, and wildlife challenges require specialized knowledge. Here's how we address the specific characteristics of your Redmond property:
+      </p>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+            <CheckCircle2 className="h-6 w-6 text-primary" />
+            HOA Compliance & Modern Design
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Redmond's newer developments feature strict HOA guidelines requiring specific fence styles and materials. We provide professional renderings and specifications meeting architectural committee requirements, ensuring smooth approval while delivering the contemporary aesthetics you desire.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+            <CheckCircle2 className="h-6 w-6 text-primary" />
+            Wildlife Deterrence
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Properties backing to Bridle Trails or greenbelt areas face persistent deer pressure. Our 8-foot fence heights with reinforced posts effectively deter wildlife while maintaining aesthetic appeal. We understand Redmond's balance between nature access and property protection.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+            <CheckCircle2 className="h-6 w-6 text-primary" />
+            Terrain & Slope Solutions
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Redmond's rolling terrain throughout Education Hill and Grass Lawn requires specialized installation techniques. We use step-down methods and custom panel sizes ensuring level appearance while following natural grade. Our Fence Genius technology maintains precision even on challenging slopes.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+            <CheckCircle2 className="h-6 w-6 text-primary" />
+            Low-Maintenance Solutions
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">
+            Tech professionals demand low-maintenance options fitting busy lifestyles. Our hybrid aluminum/cedar system and properly installed cedar fencing minimize ongoing maintenance while delivering the modern aesthetics Redmond homeowners expect. Quality materials reduce long-term costs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Permit Information */}
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Redmond Fence Permits & Building Codes
+      </h2>
+      <p className="text-muted-foreground leading-relaxed">
+        The City of Redmond follows specific requirements outlined in <a href="https://www.redmond.gov/823/Building-Division" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Redmond Development Services</a> regulations. Residential fences under 8 feet typically do not require building permits but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Many Redmond neighborhoods, particularly developments built since the 1990s near Microsoft campus and Overlake, have homeowners associations with detailed architectural guidelines. These often require pre-approval of fence designs with specifications covering board spacing, stain colors, and style restrictions. We recommend reviewing your CC&Rs and submitting designs to your architectural committee early in planning.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Properties backing to critical areas such as streams, wetlands, or steep slopes may require additional review under Redmond's environmental codes. The city protects Bear Creek and other waterways with buffer requirements affecting fence placement. Always verify exact property boundaries with current surveys before installation. For specific questions, contact Redmond Development Services at (425) 556-2470.
+      </p>
+    </section>
+
+    {/* FAQ Section */}
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Frequently Asked Questions
+      </h2>
       <Card className="p-6 space-y-4">
         <div>
           <h4 className="font-semibold mb-2">How long does a cedar fence last in Redmond?</h4>
@@ -146,6 +458,45 @@ const Redmond = () => {
         }
       }
     ]
+  };
+
+  const enhancedBusinessData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE_CONFIG.url}/#organization`,
+    "name": SITE_CONFIG.fullName,
+    "legalName": SITE_CONFIG.legalName,
+    "url": SITE_CONFIG.url,
+    "logo": SITE_CONFIG.logoUrl,
+    "image": SITE_CONFIG.logoUrl,
+    "telephone": SITE_CONFIG.phone,
+    "areaServed": {
+      "@type": "City",
+      "name": "Redmond",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Washington"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": SITE_CONFIG.address.city,
+      "addressRegion": SITE_CONFIG.address.state,
+      "postalCode": SITE_CONFIG.address.zip,
+      "addressCountry": SITE_CONFIG.address.country
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": SITE_CONFIG.coordinates.latitude,
+      "longitude": SITE_CONFIG.coordinates.longitude
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   return (
