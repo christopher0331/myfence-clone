@@ -583,11 +583,13 @@ const Index = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
           <Card className="glass-card">
             <CardContent className="p-3">
-              <div className="glass-frame">
-                <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-                </AspectRatio>
-              </div>
+              <Link to="/fence-styles/picture-frame-fence" className="block">
+                <div className="glass-frame hover:opacity-90 transition-opacity">
+                  <AspectRatio ratio={1}>
+                    <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  </AspectRatio>
+                </div>
+              </Link>
               <div className="p-4 text-center">
                 <h3 className="font-semibold">Picture Frame Fences</h3>
                 <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
@@ -597,13 +599,15 @@ const Index = () => {
           </Card>
           <Card className="glass-card">
             <CardContent className="p-3">
-              <div className="glass-frame">
-                <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-                </AspectRatio>
-              </div>
+              <Link to="/fence-styles/3-rail-picture-frame-fence" className="block">
+                <div className="glass-frame hover:opacity-90 transition-opacity">
+                  <AspectRatio ratio={1}>
+                    <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  </AspectRatio>
+                </div>
+              </Link>
               <div className="p-4 text-center">
-                <h3 className="font-semibold">3-Rail Ranch Style Fences</h3>
+                <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
                 <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
                 <Button className="mt-3 w-full" onClick={() => setIsQuoteModalOpen(true)} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
               </div>
@@ -611,11 +615,13 @@ const Index = () => {
           </Card>
           <Card className="glass-card sm:col-span-2 lg:col-span-1">
             <CardContent className="p-3">
-              <div className="glass-frame">
-                <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
-                </AspectRatio>
-              </div>
+              <Link to="/fence-styles/horizontal-lattice-fence" className="block">
+                <div className="glass-frame hover:opacity-90 transition-opacity">
+                  <AspectRatio ratio={1}>
+                    <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  </AspectRatio>
+                </div>
+              </Link>
               <div className="p-4 text-center">
                 <h3 className="font-semibold">Horizontal Lattice & Trellis Systems</h3>
                 <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
