@@ -243,7 +243,7 @@ const FenceGenius = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              <Link to="/fence-styles/craftsman-style" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/craftsman-style-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png" 
@@ -258,7 +258,7 @@ const FenceGenius = () => {
                 </Card>
               </Link>
               
-              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/picture-frame-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/3678984e-bf2a-455f-ad3d-bc681fb586d8.png" 
@@ -273,7 +273,7 @@ const FenceGenius = () => {
                 </Card>
               </Link>
               
-              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/picture-frame-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/c62bb0dd-0907-4cbb-acd4-aa52eceb6fa2.png" 
@@ -288,7 +288,7 @@ const FenceGenius = () => {
                 </Card>
               </Link>
               
-              <Link to="/fence-styles/solid-board" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/solid-board-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/0bc68390-5573-45cd-ad88-fb9e8a21a5e9.png" 
@@ -303,7 +303,7 @@ const FenceGenius = () => {
                 </Card>
               </Link>
               
-              <Link to="/fence-styles/picture-frame" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/picture-frame-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/5ea38495-32f1-4638-bc1f-4c1743d777f4.png" 
@@ -318,7 +318,7 @@ const FenceGenius = () => {
                 </Card>
               </Link>
               
-              <Link to="/fence-styles/three-rail-picture-frame" className="block hover:opacity-80 transition-opacity">
+              <Link to="/fence-styles/3-rail-picture-frame-fence" className="block hover:opacity-80 transition-opacity">
                 <Card className="overflow-hidden">
                   <img 
                     src="/lovable-uploads/09ec72a6-74c9-469d-b523-3b02ca8d85b4.png" 
