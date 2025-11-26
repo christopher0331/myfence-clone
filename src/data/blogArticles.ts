@@ -36,6 +36,24 @@ export const blogArticles = [
     publishDate: "December 2024"
   },
   {
+    id: "fence-cleaning-staining",
+    title: "How Should I Clean My Fence for Staining?",
+    category: "Maintenance",
+    description: "Learn proper fence cleaning techniques before staining, including softwashing benefits and when to hire Seattle professionals like NW Pro Wash LLC.",
+    image: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png",
+    readTime: "8 min read",
+    publishDate: "January 2025"
+  },
+  {
+    id: "how-to-stain-fence",
+    title: "How Do I Stain My Fence?",
+    category: "Maintenance",
+    description: "Complete guide to fence staining in Seattle - brushing vs spraying techniques, best practices, and step-by-step instructions for lasting results.",
+    image: "/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png",
+    readTime: "10 min read",
+    publishDate: "January 2025"
+  },
+  {
     id: "fence-ownership",
     title: "How to Tell If a Fence Is Yours or Neighbors",
     category: "Legal",
@@ -69,24 +87,6 @@ export const blogArticles = [
     description: "Get detailed pricing for wood fence materials in 2025, including cedar, pine, and composite options with current market rates.",
     image: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
     readTime: "7 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "fence-cleaning-staining",
-    title: "How Should I Clean My Fence for Staining?",
-    category: "Maintenance",
-    description: "Learn proper fence cleaning techniques before staining, including softwashing benefits and when to hire Seattle professionals like NW Pro Wash LLC.",
-    image: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png",
-    readTime: "8 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "how-to-stain-fence",
-    title: "How Do I Stain My Fence?",
-    category: "Maintenance",
-    description: "Complete guide to fence staining in Seattle - brushing vs spraying techniques, best practices, and step-by-step instructions for lasting results.",
-    image: "/lovable-uploads/44503efa-b853-47c1-8bd9-52b13e55fbd1.png",
-    readTime: "10 min read",
     publishDate: "January 2025"
   }
 ];
