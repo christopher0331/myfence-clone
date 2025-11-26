@@ -129,9 +129,9 @@ const FenceGenius = () => {
             <div className="space-y-8">
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">1</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Traditional Start</h3>
                       <p className="text-sm md:text-base text-muted-foreground">Demo old fence, set new posts traditionally.</p>
                     </div>
@@ -141,12 +141,12 @@ const FenceGenius = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">2</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Precision Measurements</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3">Detailed measurements collected for the fence system:</p>
-                      <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-muted-foreground ml-4">
+                      <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">Detailed measurements collected:</p>
+                      <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-muted-foreground">
                         <li>• Distance between posts (1/16")</li>
                         <li>• Post height above ground</li>
                         <li>• Grade change at each location</li>
@@ -159,16 +159,15 @@ const FenceGenius = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">3</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Algorithmic Calculation</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">Software calculates the perfect build, maximizing material yield.</p>
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">Software calculates the perfect build, maximizing material yield.</p>
                       <img 
                         src="/lovable-uploads/123b8fa8-bbd2-4d47-9776-532daa49bfd8.png" 
                         alt="Fence Genius software showing algorithmic calculations for terrain adaptation and fence contour optimization"
-                        className="w-full rounded-lg mb-2 md:mb-3 -mx-2 md:mx-0 max-w-none md:max-w-full"
-                        style={{ width: 'calc(100% + 1rem)' }}
+                        className="w-full max-w-2xl mx-auto rounded-lg mb-3 md:mb-4"
                       />
                       <p className="text-xs md:text-sm text-muted-foreground italic">Terrain adaptation and contour calculations</p>
                     </div>
@@ -178,16 +177,15 @@ const FenceGenius = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">4</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Smart Adaptation</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">Choose smoothed or stepped top with dynamic bottom adjustments.</p>
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">Choose smoothed or stepped top with dynamic bottom adjustments.</p>
                       <img 
                         src="/lovable-uploads/44978e33-a78f-4e38-aee3-4ec81ae4d29e.png" 
                         alt="Fence Genius smart adaptation showing flat smoothed top versus stepped top fence configurations"
-                        className="w-full rounded-lg mb-2 md:mb-3 -mx-2 md:mx-0 max-w-none md:max-w-full"
-                        style={{ width: 'calc(100% + 1rem)' }}
+                        className="w-full max-w-2xl mx-auto rounded-lg mb-3 md:mb-4"
                       />
                       <p className="text-xs md:text-sm text-muted-foreground italic">Flat smoothed vs stepped configurations</p>
                     </div>
@@ -197,16 +195,15 @@ const FenceGenius = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">5</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Detailed Preview & Approval</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">Detailed PDF showing exactly what to expect. Changes are easy.</p>
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">Detailed PDF showing exactly what to expect. Changes are easy.</p>
                       <img 
                         src="/lovable-uploads/818b4ccb-e771-4819-84c3-b8cf621f070b.png" 
                         alt="Detailed PDF preview showing aerial view and 3D rendering of fence layout through customer's terrain"
-                        className="w-full rounded-lg mb-2 md:mb-3 -mx-2 md:mx-0 max-w-none md:max-w-full"
-                        style={{ width: 'calc(100% + 1rem)' }}
+                        className="w-full max-w-2xl mx-auto rounded-lg mb-3 md:mb-4"
                       />
                       <p className="text-xs md:text-sm text-muted-foreground italic">Aerial view and 3D rendering for approval</p>
                     </div>
@@ -216,16 +213,15 @@ const FenceGenius = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
-                    <div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-lg md:text-xl mb-4">6</div>
+                    <div className="w-full">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Custom Manufacturing & Delivery</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">Custom manufactured fence system delivered ready for installation.</p>
+                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">Custom manufactured fence system delivered ready for installation.</p>
                       <img 
                         src="/lovable-uploads/7394d658-efc7-4d06-bbd8-2b60655e4fb0.png" 
                         alt="Custom contour following fence system loaded on trailer ready for installation"
-                        className="w-full rounded-lg mb-2 md:mb-3 -mx-2 md:mx-0 max-w-none md:max-w-full"
-                        style={{ width: 'calc(100% + 1rem)' }}
+                        className="w-full max-w-2xl mx-auto rounded-lg mb-3 md:mb-4"
                       />
                       <p className="text-xs md:text-sm text-muted-foreground italic">Manufactured to exact specs, ready to install</p>
                     </div>
