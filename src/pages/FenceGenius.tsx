@@ -112,6 +112,19 @@ const FenceGenius = () => {
               </p>
             </div>
 
+            {/* Video Demonstration */}
+            <div className="mb-12">
+              <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/9k_jcZ3eEKk?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3"
+                  title="Fence Genius Technology Demonstration"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+
             {/* Process Steps */}
             <div className="space-y-8">
               <Card>
@@ -215,24 +228,6 @@ const FenceGenius = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Demonstration */}
-      <section className="py-16">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">See Fence Genius In Action</h2>
-            <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/9k_jcZ3eEKk?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3"
-                title="Fence Genius Technology Demonstration"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
             </div>
           </div>
         </div>
