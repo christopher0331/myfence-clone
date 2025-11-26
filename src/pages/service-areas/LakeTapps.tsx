@@ -180,15 +180,15 @@ const LakeTapps = () => {
         <ul className="space-y-2 mb-6">
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Cedar Privacy Fences:</strong> Full privacy with premium moisture-resistant treatments for waterfront durability</span>
+            <span><strong><Link to="/fence-styles/solid-board-fence" className="text-primary hover:underline">Cedar Privacy Fences</Link>:</strong> Full privacy with premium moisture-resistant treatments for waterfront durability</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Horizontal Cedar Fencing:</strong> View-friendly modern designs preserving lake sight lines while providing privacy</span>
+            <span><strong><Link to="/fence-styles/horizontal-fence" className="text-primary hover:underline">Horizontal Cedar Fencing</Link>:</strong> View-friendly modern designs preserving lake sight lines while providing privacy</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Hogwire Fence Systems:</strong> Unobstructed lake views with durable cedar frames and corrosion-resistant wire panels</span>
+            <span><strong><Link to="/fence-styles/black-hogwire-fence" className="text-primary hover:underline">Hogwire Fence Systems</Link>:</strong> Unobstructed lake views with durable cedar frames and corrosion-resistant wire panels</span>
           </li>
         </ul>
 

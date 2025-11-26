@@ -180,15 +180,15 @@ const Sumner = () => {
         <ul className="space-y-2 mb-6">
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Cedar Privacy Fences:</strong> Full privacy with deep footings engineered for clay soil stability</span>
+            <span><strong><Link to="/fence-styles/solid-board-fence" className="text-primary hover:underline">Cedar Privacy Fences</Link>:</strong> Full privacy with deep footings engineered for clay soil stability</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Historic Picket Fencing:</strong> Period-appropriate designs for downtown preservation district compliance</span>
+            <span><strong><Link to="/fence-styles/picket-fence" className="text-primary hover:underline">Historic Picket Fencing</Link>:</strong> Period-appropriate designs for downtown preservation district compliance</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
-            <span><strong>Board-on-Board Designs:</strong> Airflow-optimized construction reducing wind load while maintaining privacy</span>
+            <span><strong><Link to="/fence-upgrades/board-on-board" className="text-primary hover:underline">Board-on-Board Designs</Link>:</strong> Airflow-optimized construction reducing wind load while maintaining privacy</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
