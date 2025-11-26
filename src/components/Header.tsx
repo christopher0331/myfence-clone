@@ -218,6 +218,15 @@ const Header = () => {
                 ))}
               </div>
             </div>
+            <NavLink
+              to="/fence-genius"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
+              }
+            >
+              Fence Genius
+            </NavLink>
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
