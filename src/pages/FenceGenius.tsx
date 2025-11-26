@@ -116,7 +116,7 @@ const FenceGenius = () => {
             <div className="mb-8 md:mb-12 -mx-4 md:mx-0">
               <div className="aspect-video w-full md:rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.youtube-nocookie.com/embed/9k_jcZ3eEKk?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&loop=1&playlist=9k_jcZ3eEKk"
+                  src="https://www.youtube-nocookie.com/embed/aO_Zrt5qyGg?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&loop=1&playlist=aO_Zrt5qyGg"
                   title="Fence Genius Technology Demonstration"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
