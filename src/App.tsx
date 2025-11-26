@@ -340,12 +340,17 @@ const AppContent = () => {
           <Route path="/neighborhoods/upper-tehaleh" element={<UpperTehaleh />} />
           <Route path="/neighborhoods/lower-tehaleh" element={<LowerTehaleh />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
-          <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
-          <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplitMDX />} />
           <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolMDX />} />
           <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostMDX />} />
           <Route path="/blog/seattle-fence-cost-2025" element={<WoodenFenceCost2025MDX />} />
+          <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplitMDX />} />
+          <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
+          <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
+          {/* Redirect missing blog articles to main blog page until content is created */}
+          <Route path="/blog/fence-ownership" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog/street-setback" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog/property-line" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog/material-cost-2025" element={<Navigate to="/blog" replace />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
