@@ -46,6 +46,7 @@ const NeighborFenceCostSplitMDX = React.lazy(() => import("./pages/blog/Neighbor
 const VirtualQuoteToolMDX = React.lazy(() => import("./pages/blog/VirtualQuoteToolMDX"));
 const SixFtFenceCostMDX = React.lazy(() => import("./pages/blog/SixFtFenceCostMDX"));
 const WoodenFenceCost2025MDX = React.lazy(() => import("./pages/blog/WoodenFenceCost2025MDX"));
+const CedarBoardGradeMDX = React.lazy(() => import("./pages/blog/CedarBoardGradeMDX"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -346,6 +347,7 @@ const AppContent = () => {
           <Route path="/blog/fence-cost-shared-with-neighbor" element={<NeighborFenceCostSplitMDX />} />
           <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
           <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
+          <Route path="/blog/cedar-board-grade" element={<CedarBoardGradeMDX />} />
           {/* Redirect missing blog articles to main blog page until content is created */}
           <Route path="/blog/fence-ownership" element={<Navigate to="/blog" replace />} />
           <Route path="/blog/street-setback" element={<Navigate to="/blog" replace />} />
