@@ -102,7 +102,7 @@ const UpperTehaleh = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
                       <p className="text-muted-foreground">
-                        Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty plus up to 20-year materials coverage protecting your investment.
+                        Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty protecting your investment.
                       </p>
                     </div>
                   </div>
