@@ -54,7 +54,7 @@ const CedarBoardGradeMDX = () => {
           <ul className="space-y-2 mb-8">
             <li className="flex gap-3 text-muted-foreground">
               <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-              <span><strong className="text-foreground">1x4 boards:</strong> Approximately 3.5 inches wide (actual dimension)</span>
+              <span><strong className="text-foreground">1x4 boards:</strong> A true 4 inches wide</span>
             </li>
             <li className="flex gap-3 text-muted-foreground">
               <Check className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
@@ -140,7 +140,7 @@ const CedarBoardGradeMDX = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground"><strong className="text-foreground">Narrower 3.5-inch width</strong> perfect for patterns</span>
+                  <span className="text-muted-foreground"><strong className="text-foreground">4-inch width</strong> perfect for patterns</span>
                 </div>
                 <div className="flex gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -170,7 +170,7 @@ const CedarBoardGradeMDX = () => {
                     <strong className="text-foreground">The Shrinkage Advantage:</strong>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    One often-overlooked benefit of narrower boards is their dimensional stability. With only 4 inches to shrink versus 6 inches, the relative shrinkage is significantly less. This means fewer gaps develop between boards over time and a more consistent appearance throughout the fence's lifespan.
+                    One often-overlooked benefit of 4-inch boards is their dimensional stability. Since there is less material width to shrink, the gaps between boards remain more consistent over time compared to 6-inch boards, ensuring a more uniform appearance throughout the fence's lifespan.
                   </p>
                 </CardContent>
               </Card>
