@@ -144,7 +144,7 @@ const Header = () => {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
+                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`
               }
             >
               {item.label}
@@ -233,7 +233,7 @@ const Header = () => {
                 to={item.to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
+                  `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`
                 }
               >
                 {item.label}
