@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
 import { ArticleSummary } from "@/components/ArticleSummary";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 import img1x4x6Face from "@/assets/blog/1x4x6-1-2-face-cedar.jpg";
 import img1x4x6Clear from "@/assets/blog/1x4x6-clear-cedar.jpg";
@@ -18,6 +26,34 @@ const CedarBoardGradeMDX = () => {
   const pageTitle = "Choosing Cedar Fence Board Grade: A Complete Guide";
   const pageContent = `Learn about the different cedar fence board grades MyFence.com offers, including 1x4x6 #1 - 2 Face, 1x6x6 #1 & Better, and Clear Cedar options. Understand the benefits of different board widths, how shrinkage affects fence appearance over time, and which grade is best for your specific fence style and budget.`;
 
+  const cedarBoardImages = [
+    {
+      src: img1x6x6Better,
+      alt: "1x6x6 #1 & Better Cedar Fence Boards showing natural knots and grain patterns",
+      title: "1x6x6 #1 & Better Cedar"
+    },
+    {
+      src: img1x4x6Face,
+      alt: "1x4x6 #1 - 2 Face Cedar Fence Boards showing natural characteristics",
+      title: "1x4x6 #1 - 2 Face Cedar"
+    },
+    {
+      src: img1x4x6Clear,
+      alt: "1x4x6 Clear Cedar Fence Boards showing virtually knot-free appearance",
+      title: "1x4x6 Clear Cedar"
+    },
+    {
+      src: img1x4x8Clear,
+      alt: "1x4x8 Clear Cedar Fence Boards showing extended length and premium quality",
+      title: "1x4x8 Clear Cedar"
+    },
+    {
+      src: img1x6x6Clear,
+      alt: "1x6x6 Clear Cedar Fence Boards showing ultimate premium quality",
+      title: "1x6x6 Clear Cedar"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -29,6 +65,46 @@ const CedarBoardGradeMDX = () => {
           <p className="text-xl text-muted-foreground max-w-3xl">
             Learn about the different cedar fence board grades MyFence.com offers and how to choose the right grade for your fence project.
           </p>
+        </div>
+      </section>
+
+      {/* Cedar Board Image Carousel */}
+      <section className="container py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6 text-center">Cedar Fence Board Grades</h2>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {cedarBoardImages.map((image, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-2">
+                    <CardContent className="p-4">
+                      <div className="aspect-[3/4] overflow-hidden rounded-lg mb-3">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <h3 className="text-center font-semibold text-sm">{image.title}</h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 

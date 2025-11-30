@@ -70,7 +70,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
           <div className="flex items-center justify-center gap-3 mb-4">
             <Sparkles className="h-7 w-7 text-primary animate-pulse" />
             <h3 className="text-2xl md:text-3xl font-bold">
-              AI Company Summary
+              Article Summary
             </h3>
             <Sparkles className="h-7 w-7 text-primary animate-pulse" />
           </div>
@@ -78,7 +78,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
           {!summaries && !isLoading && (
             <div>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Get an AI-powered professional summary showcasing MyFence.com's innovative technology and commitment to excellence.
+                Get an AI-powered summary of this article for quick insights and key takeaways.
               </p>
               <Button 
                 onClick={generateSummary}
@@ -94,7 +94,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
           {isLoading && (
             <div className="flex flex-col items-center gap-3 py-8">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
-              <span className="text-muted-foreground">Generating professional summary...</span>
+              <span className="text-muted-foreground">Generating article summary...</span>
             </div>
           )}
 
