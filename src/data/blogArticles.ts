@@ -1,5 +1,14 @@
 export const blogArticles = [
   {
+    id: "cedar-board-grade",
+    title: "Choosing Cedar Fence Board Grade: A Complete Guide",
+    category: "Materials",
+    description: "Learn about the different cedar fence board grades MyFence.com offers, from #1-2 Face to Clear Cedar, and how to choose the right grade for your fence project.",
+    image: "/src/assets/blog/1x6x6-1-better-cedar.jpg",
+    readTime: "6 min read",
+    publishDate: "November 30, 2024"
+  },
+  {
     id: "virtual-quote-tool",
     title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
     category: "Pricing",
