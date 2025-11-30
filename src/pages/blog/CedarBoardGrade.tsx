@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import CedarBoardGradeMDX from "./CedarBoardGradeMDX";
+import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 
 const CedarBoardGrade = () => {
   const title = "Choosing Cedar Fence Board Grade: A Complete Guide";
@@ -12,7 +13,7 @@ const CedarBoardGrade = () => {
     "@type": "Article",
     "headline": title,
     "description": description,
-    "image": `${SITE_CONFIG.url}/src/assets/blog/1x6x6-1-better-cedar.jpg`,
+    "image": img1x6x6Better,
     "author": {
       "@type": "Organization",
       "name": SITE_CONFIG.fullName
@@ -35,7 +36,7 @@ const CedarBoardGrade = () => {
         title={title}
         description={description}
         canonical={canonical}
-        image="/src/assets/blog/1x6x6-1-better-cedar.jpg"
+        image={img1x6x6Better}
         structuredData={structuredData}
       />
       <CedarBoardGradeMDX />
