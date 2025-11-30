@@ -68,42 +68,42 @@ const CedarBoardGradeMDX = () => {
         </div>
       </section>
 
-      {/* Cedar Board Image Carousel */}
-      <section className="container py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-center">Cedar Fence Board Grades</h2>
+      {/* Cedar Board Hero Carousel */}
+      <section className="py-8 bg-gradient-to-b from-primary/5 to-background">
+        <div className="container">
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             plugins={[
               Autoplay({
-                delay: 4000,
+                delay: 3000,
+                stopOnInteraction: false,
               }),
             ]}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {cedarBoardImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="border-2">
-                    <CardContent className="p-4">
-                      <div className="aspect-[3/4] overflow-hidden rounded-lg mb-3">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <h3 className="text-center font-semibold text-sm">{image.title}</h3>
-                    </CardContent>
-                  </Card>
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="relative group overflow-hidden rounded-xl shadow-xl">
+                    <div className="aspect-[3/4] overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+                      <h3 className="text-white font-bold text-lg md:text-xl">{image.title}</h3>
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="hidden md:flex left-4" />
+            <CarouselNext className="hidden md:flex right-4" />
           </Carousel>
         </div>
       </section>
