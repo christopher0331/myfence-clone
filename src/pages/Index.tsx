@@ -545,7 +545,7 @@ const Index = () => {
             <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
           </div>
           <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-            <h2 className="text-xl font-semibold">10-Year Workmanship Warranty</h2>
+            <h2 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h2>
             <p className="text-muted-foreground mt-2">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
         </div>
