@@ -139,7 +139,7 @@ const Header = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {navItems.map((item) => (
+          {navItems.filter(item => item.to !== '/discounts').map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
