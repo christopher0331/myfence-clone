@@ -73,18 +73,20 @@ const CedarBoardGradeMDX = () => {
         <div className="container">
           <Carousel
             opts={{
-              align: "center",
+              align: "start",
               loop: true,
+              dragFree: true,
             }}
             plugins={[
               Autoplay({
-                delay: 3000,
+                delay: 0,
                 stopOnInteraction: false,
+                stopOnMouseEnter: false,
               }),
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-4 animate-slide hover:[animation-play-state:paused]">
               {cedarBoardImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="relative group overflow-hidden rounded-xl shadow-xl">
@@ -101,9 +103,24 @@ const CedarBoardGradeMDX = () => {
                   </div>
                 </CarouselItem>
               ))}
+              {/* Duplicate images for seamless loop */}
+              {cedarBoardImages.map((image, index) => (
+                <CarouselItem key={`duplicate-${index}`} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="relative group overflow-hidden rounded-xl shadow-xl">
+                    <div className="aspect-[3/4] overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+                      <h3 className="text-white font-bold text-lg md:text-xl">{image.title}</h3>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex left-4" />
-            <CarouselNext className="hidden md:flex right-4" />
           </Carousel>
         </div>
       </section>
