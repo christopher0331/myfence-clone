@@ -392,7 +392,7 @@ const Index = () => {
         name: "What is your warranty policy?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We offer a 5-year craftsmanship warranty on all installations. This covers any defects in workmanship, structural issues, and improper installation. Material warranties vary by manufacturer."
+          text: "We offer a 36 month workmanship warranty on all installations. This covers any defects in workmanship, structural issues, and improper installation."
         }
       },
       {

@@ -250,35 +250,6 @@ const NorthBendArticle = () => (
             </div>
           </div>
         </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Up to 20-Year Materials Warranty</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Manufacturer warranties protecting against material defects, with coverage terms varying by material type and grade selected.
-              </p>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Lumber defects and structural failure</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Vinyl brittleness and cracking</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Metal corrosion and powder coating failure</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Composite degradation and discoloration</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
       </div>
       <p className="text-sm text-muted-foreground">
         Warranties remain fully transferable if you sell your North Bend property, adding documented value to your home. We stand behind every installation for the long term.

@@ -81,7 +81,7 @@ const IssaquahArticle = () => (
             <div>
               <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
               <p className="text-muted-foreground">
-                {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty and up to 20-year materials warranty - far exceeding industry standards for mountain climate installations.
+                {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty - far exceeding industry standards for mountain climate installations.
               </p>
             </div>
           </div>
@@ -234,35 +234,6 @@ const IssaquahArticle = () => (
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <span>Panel attachment and stability</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Up to 20-Year Materials Warranty</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Premium materials come with manufacturer warranties up to 20 years, protecting against defects in wood and metal components.
-              </p>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Cedar lumber defects</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Metal corrosion or deterioration</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Hardware and fastener failure</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Coating and finish degradation</span>
                 </li>
               </ul>
             </div>
