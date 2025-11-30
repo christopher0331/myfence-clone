@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ChevronDown, ChevronUp, Loader2 } from "lucide-react";
@@ -8,6 +8,8 @@ import { useToast } from "@/hooks/use-toast";
 interface ArticleSummaryProps {
   pageTitle: string;
   pageContent: string;
+  summaryTitle?: string;
+  summaryDescription?: string;
 }
 
 interface Summaries {
@@ -16,11 +18,22 @@ interface Summaries {
   grok: string | null;
 }
 
-export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) => {
+export const ArticleSummary = ({ 
+  pageTitle, 
+  pageContent, 
+  summaryTitle = "Article Summary",
+  summaryDescription = "Get an AI-powered summary of this article for quick insights and key takeaways."
+}: ArticleSummaryProps) => {
   const [summaries, setSummaries] = useState<Summaries | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const { toast } = useToast();
+
+  // Reset summaries when page content changes
+  useEffect(() => {
+    setSummaries(null);
+    setIsExpanded(false);
+  }, [pageTitle, pageContent]);
 
   const generateSummary = async () => {
     setIsLoading(true);
@@ -70,7 +83,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
           <div className="flex items-center justify-center gap-3 mb-4">
             <Sparkles className="h-7 w-7 text-primary animate-pulse" />
             <h3 className="text-2xl md:text-3xl font-bold">
-              Article Summary
+              {summaryTitle}
             </h3>
             <Sparkles className="h-7 w-7 text-primary animate-pulse" />
           </div>
@@ -78,7 +91,7 @@ export const ArticleSummary = ({ pageTitle, pageContent }: ArticleSummaryProps) 
           {!summaries && !isLoading && (
             <div>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Get an AI-powered summary of this article for quick insights and key takeaways.
+                {summaryDescription}
               </p>
               <Button 
                 onClick={generateSummary}
