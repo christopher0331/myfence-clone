@@ -75,38 +75,22 @@ const CedarBoardGradeMDX = () => {
             opts={{
               align: "start",
               loop: true,
-              dragFree: true,
+              skipSnaps: false,
+              dragFree: false,
             }}
             plugins={[
               Autoplay({
-                delay: 0,
+                delay: 2500,
                 stopOnInteraction: false,
-                stopOnMouseEnter: false,
+                stopOnMouseEnter: true,
               }),
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4 animate-slide hover:[animation-play-state:paused]">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {cedarBoardImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="relative group overflow-hidden rounded-xl shadow-xl">
-                    <div className="aspect-[3/4] overflow-hidden">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-                      <h3 className="text-white font-bold text-lg md:text-xl">{image.title}</h3>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-              {/* Duplicate images for seamless loop */}
-              {cedarBoardImages.map((image, index) => (
-                <CarouselItem key={`duplicate-${index}`} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="relative group overflow-hidden rounded-xl shadow-xl">
+                  <div className="relative group overflow-hidden rounded-xl shadow-xl transition-all duration-300">
                     <div className="aspect-[3/4] overflow-hidden">
                       <img
                         src={image.src}
@@ -121,6 +105,8 @@ const CedarBoardGradeMDX = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="hidden md:flex left-4" />
+            <CarouselNext className="hidden md:flex right-4" />
           </Carousel>
         </div>
       </section>
