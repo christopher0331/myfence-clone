@@ -24,12 +24,12 @@ const panelsCloseupImg = "/lovable-uploads/barrier-boss-panels-closeup.png";
 
 const faqs = [
   {
-    question: "How does the Cedar/Aluminum Hybrid Fence compare to traditional cedar fencing?",
-    answer: "The hybrid fence uses powder-coated aluminum panels instead of cedar boards, providing superior longevity without the need for staining or sealing. The cedar frame gives you the natural Pacific Northwest aesthetic while the aluminum panels deliver maintenance-free privacy for decades."
+    question: "How does the Cedar/Steel Hybrid Fence compare to traditional cedar fencing?",
+    answer: "The hybrid fence uses 26 gauge corrugated steel panels with factory-finished HDP NoFade™ paint instead of cedar boards, providing superior longevity without the need for staining or sealing. The cedar frame gives you the natural Pacific Northwest aesthetic while the steel panels deliver maintenance-free privacy for decades."
   },
   {
-    question: "What colors are available for the aluminum panels?",
-    answer: "The aluminum panels come in a variety of colors, though black is the most popular choice as it creates a striking contrast with the natural cedar framing. Other colors are available through our suppliers ColorMax and Barrier Boss."
+    question: "What colors are available for the steel panels?",
+    answer: "The corrugated steel panels come in a variety of colors with HDP NoFade™ paint finish, though black is the most popular choice as it creates a striking contrast with the natural cedar framing. Other colors are available through our suppliers ColorMax and Barrier Boss."
   },
   {
     question: "Why do you prefer Barrier Boss panels?",
@@ -37,15 +37,15 @@ const faqs = [
   },
   {
     question: "What is the Ultimate Fence Package?",
-    answer: "The Ultimate Fence Package combines 4x4x12' Black Steel Posts, a 6' cedar-framed aluminum panel fence, and a 2' cedar horizontal lattice topper. This configuration provides maximum privacy, durability, and a premium architectural appearance with a lifetime warranty option."
+    answer: "The Ultimate Fence Package combines 4x4x12' Black Steel Posts, a 6' cedar-framed corrugated steel panel fence, and a 2' cedar horizontal lattice topper. This configuration provides maximum privacy, durability, and a premium architectural appearance with a lifetime warranty option."
   },
   {
-    question: "How much does the Cedar/Aluminum Hybrid Fence cost?",
+    question: "How much does the Cedar/Steel Hybrid Fence cost?",
     answer: "Starting at approximately $80 per linear foot, this is a premium investment compared to traditional cedar fencing. However, the long-term value is significant when you factor in zero staining costs, superior durability, and the optional 30-year lifetime warranty with black steel posts."
   },
   {
     question: "Can I get a lifetime warranty on this fence?",
-    answer: "Yes! When you upgrade to 4x4 black steel fence posts, you can qualify for a 30-year lifetime warranty on the system. The powder-coated aluminum panels are incredibly durable and combined with steel posts, this fence will outlast traditional cedar by decades."
+    answer: "Yes! When you upgrade to 4x4 black steel fence posts, you can qualify for a 30-year lifetime warranty on the system. The 26 gauge corrugated steel panels with HDP NoFade™ paint are incredibly durable and combined with steel posts, this fence will outlast traditional cedar by decades."
   },
 ];
 
@@ -66,8 +66,8 @@ const CedarAluminumHybridFence = () => {
   const productStructuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Cedar/Aluminum Hybrid Fence",
-    "description": "Modern industrial fence combining powder-coated aluminum panels with cedar framing. Ultimate privacy with zero maintenance on panels. Starting at $80/LF.",
+    "name": "Cedar/Steel Hybrid Fence",
+    "description": "Modern industrial fence combining 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Ultimate privacy with zero maintenance on panels. Starting at $80/LF.",
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
@@ -95,8 +95,8 @@ const CedarAluminumHybridFence = () => {
   return (
     <>
       <Seo
-        title="Cedar/Aluminum Hybrid Fence Seattle | Modern Privacy Fence"
-        description="Premium cedar/aluminum hybrid fence in Seattle. Powder-coated aluminum panels with cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF. Call (253) 455-1885."
+        title="Cedar/Steel Hybrid Fence Seattle | Modern Privacy Fence"
+        description="Premium cedar/steel hybrid fence in Seattle. 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/cedar-aluminum-hybrid-fence"
         image="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
         structuredData={[productStructuredData, faqStructuredData]}
@@ -120,10 +120,10 @@ const CedarAluminumHybridFence = () => {
               <div>
                 <Badge className="mb-4" variant="default">Premium Investment</Badge>
                 <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                  Cedar/Aluminum Hybrid Fence
+                  Cedar/Steel Hybrid Fence
                 </h1>
                 <p className="text-xl text-muted-foreground mb-4">
-                  The perfect marriage of modern industrial aesthetics and Pacific Northwest charm. Powder-coated aluminum panels replace traditional cedar boards for zero-maintenance privacy that lasts decades.
+                  The perfect marriage of modern industrial aesthetics and Pacific Northwest charm. 26 gauge corrugated steel panels with factory-finished HDP NoFade™ paint replace traditional cedar boards for zero-maintenance privacy that lasts decades.
                 </p>
                 <p className="text-lg text-muted-foreground mb-8">
                   <span className="font-semibold text-foreground">Starting at $80/LF</span> — a true investment for perimeter security and longevity.
@@ -140,7 +140,7 @@ const CedarAluminumHybridFence = () => {
               <div className="relative">
                 <img
                   src={heroImg}
-                  alt="Cedar/Aluminum Hybrid Fence with black powder-coated panels and natural cedar framing installed in backyard"
+                  alt="Cedar/Steel Hybrid Fence with black corrugated steel panels and natural cedar framing installed in backyard"
                   className="rounded-lg shadow-2xl w-full"
                   loading="eager"
                 />
@@ -152,14 +152,14 @@ const CedarAluminumHybridFence = () => {
         {/* Key Benefits */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Cedar/Aluminum Hybrid?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Cedar/Steel Hybrid?</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="text-center">
                 <CardContent className="pt-6">
                   <DollarSign className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-xl font-semibold mb-3">Long-Term Savings</h3>
                   <p className="text-muted-foreground">
-                    Eliminate recurring staining costs. Aluminum panels never need to be stained, sealed, or treated — saving thousands over the fence's lifetime.
+                    Eliminate recurring staining costs. Steel panels with HDP NoFade™ paint never need to be stained, sealed, or treated — saving thousands over the fence's lifetime.
                   </p>
                 </CardContent>
               </Card>
@@ -188,7 +188,7 @@ const CedarAluminumHybridFence = () => {
                   <Sparkles className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-xl font-semibold mb-3">Modern Industrial Look</h3>
                   <p className="text-muted-foreground">
-                    Black aluminum panels create a striking modern/industrial aesthetic that's increasingly popular in contemporary home design.
+                    Black corrugated steel panels create a striking modern/industrial aesthetic that's increasingly popular in contemporary home design.
                   </p>
                 </CardContent>
               </Card>
@@ -197,7 +197,7 @@ const CedarAluminumHybridFence = () => {
                   <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-xl font-semibold mb-3">PNW Character</h3>
                   <p className="text-muted-foreground">
-                    Cedar framing retains that authentic Pacific Northwest warmth while aluminum panels handle the heavy lifting of privacy and durability.
+                    Cedar framing retains that authentic Pacific Northwest warmth while steel panels handle the heavy lifting of privacy and durability.
                   </p>
                 </CardContent>
               </Card>
@@ -206,7 +206,7 @@ const CedarAluminumHybridFence = () => {
                   <Palette className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-xl font-semibold mb-3">Color Options</h3>
                   <p className="text-muted-foreground">
-                    Panels come in a variety of powder-coated colors. Black is the most popular for its contrast with cedar, but other options are available.
+                    Panels come in a variety of HDP NoFade™ paint colors. Black is the most popular for its contrast with cedar, but other options are available.
                   </p>
                 </CardContent>
               </Card>
@@ -222,7 +222,7 @@ const CedarAluminumHybridFence = () => {
               <div>
                 <img
                   src={diagramImg}
-                  alt="Diagram showing cedar/aluminum hybrid fence construction with cedar posts and framing surrounding black aluminum panel"
+                  alt="Diagram showing cedar/steel hybrid fence construction with cedar posts and framing surrounding corrugated steel panel"
                   className="rounded-lg shadow-lg w-full"
                   loading="lazy"
                 />
@@ -235,9 +235,9 @@ const CedarAluminumHybridFence = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Powder-Coated Aluminum Panels</h3>
+                  <h3 className="text-xl font-semibold mb-2">26 Gauge Corrugated Steel Panels</h3>
                   <p className="text-muted-foreground">
-                    Deep-groove aluminum panels are secured within the cedar frame. The powder coating provides exceptional weather resistance and never needs refinishing.
+                    Deep-groove corrugated steel panels are secured within the cedar frame. The factory-finished HDP NoFade™ paint on both sides provides exceptional weather resistance and never needs refinishing.
                   </p>
                 </div>
                 <div>
@@ -259,7 +259,7 @@ const CedarAluminumHybridFence = () => {
               <div>
                 <img
                   src={panelSingleImg}
-                  alt="Single Barrier Boss black deep groove aluminum panel"
+                  alt="Single Barrier Boss black deep groove corrugated steel panel"
                   className="rounded-lg shadow-lg w-full h-80 object-cover"
                   loading="lazy"
                 />
@@ -268,16 +268,16 @@ const CedarAluminumHybridFence = () => {
               <div>
                 <img
                   src={panelsCloseupImg}
-                  alt="Close-up of Barrier Boss black deep groove aluminum panels showing texture and finish"
+                  alt="Close-up of Barrier Boss black deep groove corrugated steel panels showing texture and HDP NoFade finish"
                   className="rounded-lg shadow-lg w-full h-80 object-cover"
                   loading="lazy"
                 />
-                <p className="text-sm text-muted-foreground mt-3 text-center">Premium powder-coated finish built to last</p>
+                <p className="text-sm text-muted-foreground mt-3 text-center">Factory-finished HDP NoFade™ paint on both sides</p>
               </div>
             </div>
             <div className="mt-8 text-center">
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We partner with <span className="font-semibold">Barrier Boss</span> and <span className="font-semibold">ColorMax</span> — two leading suppliers of powder-coated aluminum fencing panels. We prefer Barrier Boss for their taller panel sheets, ensuring maximum height retention on sloped properties.
+                We partner with <span className="font-semibold">Barrier Boss</span> and <span className="font-semibold">ColorMax</span> — two leading suppliers of 26 gauge corrugated steel fencing panels with HDP NoFade™ paint. We prefer Barrier Boss for their taller panel sheets, ensuring maximum height retention on sloped properties.
               </p>
             </div>
           </div>
@@ -306,7 +306,7 @@ const CedarAluminumHybridFence = () => {
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold mb-2">6' Hybrid Panel Fence</h3>
                   <p className="text-sm text-muted-foreground">
-                    Cedar-framed aluminum panels deliver zero-gap privacy with the modern industrial aesthetic.
+                    Cedar-framed corrugated steel panels deliver zero-gap privacy with the modern industrial aesthetic.
                   </p>
                 </CardContent>
               </Card>
@@ -338,7 +338,7 @@ const CedarAluminumHybridFence = () => {
                   <div className="space-y-3">
                     <div>
                       <p className="font-medium text-foreground">Panel Material</p>
-                      <p className="text-sm text-muted-foreground">Powder-coated aluminum with deep groove profile</p>
+                      <p className="text-sm text-muted-foreground">26 gauge corrugated steel with HDP NoFade™ paint (both sides)</p>
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Standard Height</p>
@@ -374,7 +374,7 @@ const CedarAluminumHybridFence = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Maintenance Required</p>
-                      <p className="text-sm text-muted-foreground">None for aluminum panels; cedar frame can be stained</p>
+                      <p className="text-sm text-muted-foreground">None for steel panels; cedar frame can be stained</p>
                     </div>
                   </div>
                 </CardContent>
@@ -409,7 +409,7 @@ const CedarAluminumHybridFence = () => {
                   <div className="space-y-4">
                     <h2 className="text-2xl font-bold">Family-Owned Excellence Since 1994</h2>
                     <p className="text-muted-foreground">
-                      MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our Cedar/Aluminum Hybrid Fence represents the cutting edge of fence technology — combining traditional craftsmanship with modern materials.
+                      MyFence.com has been serving the Pacific Northwest with premium fencing solutions for three decades. Our Cedar/Steel Hybrid Fence represents the cutting edge of fence technology — combining traditional craftsmanship with modern materials.
                     </p>
                     <p className="text-muted-foreground">
                       {WARRANTY_CONSTANTS.ABOUT_TEXT}, we take pride in delivering exceptional results with Fence Genius precision planning.
@@ -440,7 +440,7 @@ const CedarAluminumHybridFence = () => {
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Make your Cedar/Aluminum Hybrid Fence investment more manageable with our financing options. Calculate your monthly payment and see how easy it is to get started.
+                Make your Cedar/Steel Hybrid Fence investment more manageable with our financing options. Calculate your monthly payment and see how easy it is to get started.
               </p>
             </div>
             <PaymentCalculator />
@@ -448,7 +448,7 @@ const CedarAluminumHybridFence = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Cedar/Aluminum Hybrid Fence" />
+        <VirtualQuoteTool fenceStyleName="Cedar/Steel Hybrid Fence" />
 
         {/* Contact Form */}
         <section className="py-16">
@@ -458,7 +458,7 @@ const CedarAluminumHybridFence = () => {
                 Ready to Invest in Premium Privacy?
               </h2>
               <p className="text-center text-muted-foreground mb-8">
-                Get a personalized quote for your Cedar/Aluminum Hybrid Fence project. Our team will help you design the perfect solution for your property.
+                Get a personalized quote for your Cedar/Steel Hybrid Fence project. Our team will help you design the perfect solution for your property.
               </p>
               <InlineQuoteForm />
             </div>
