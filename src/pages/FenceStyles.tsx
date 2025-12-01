@@ -21,6 +21,7 @@ const styles = [
   { img: "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners." },
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option" },
   { img: "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png", title: "Horizontal Fence", desc: "Framed horizontal fence with center rail support for maximum durability.", badge: "Fan Favorite" },
+  { img: "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png", title: "Cedar/Aluminum Hybrid Fence", desc: "Powder-coated aluminum panels with cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF.", badge: "Premium Investment" },
   { img: "/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style." },
   { img: "/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png", title: "6' Black Hogwire Fence", desc: "Secure yet visually open fencing perfect for wooded properties. Cedar frame with powder-coated steel panels.", badge: "Security & Style" },
   { img: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png", title: "3' Black Hogwire Fence", desc: "Budget-friendly option with the same open feeling. Perfect for flat terrain and wooded backdrops.", badge: "Budget Option" },
@@ -279,6 +280,15 @@ const FenceStyles = () => {
                     aria-label="Learn more about Picket Fence"
                   >
                     Learn more about Picket Fence →
+                  </Link>
+                )}
+                {s.title === "Cedar/Aluminum Hybrid Fence" && (
+                  <Link
+                    to="/fence-styles/cedar-aluminum-hybrid-fence"
+                    className="mt-3 inline-flex text-primary hover:underline"
+                    aria-label="Learn more about Cedar/Aluminum Hybrid Fence"
+                  >
+                    Learn more about Cedar/Aluminum Hybrid Fence →
                   </Link>
                 )}
               </CardContent>
