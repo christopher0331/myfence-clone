@@ -72,12 +72,13 @@ Upper Tehaleh, Lower Tehaleh (in Bonney Lake)
 ## Blog & Resources
 
 Expert content on cedar fence installation, maintenance, costs, and best practices:
-- Wooden Fence Cost 2025 Guide
-- 6-Foot Fence Cost Analysis
-- Neighbor Fence Cost Splitting Guide
-- Cedar Board Grade Comparison
-- Fence Cleaning & Staining Guide
-- How to Stain Your Fence
+- [Wooden Fence Cost 2025 Guide](https://myfence.com/blog/wooden-fence-cost-2025)
+- [6-Foot Fence Cost Analysis](https://myfence.com/blog/six-ft-fence-cost)
+- [Neighbor Fence Cost Splitting Guide](https://myfence.com/blog/fence-cost-shared-with-neighbor)
+- [Cedar Board Grade Comparison](https://myfence.com/blog/cedar-board-grades)
+- [Fence Cleaning & Staining Guide](https://myfence.com/blog/fence-cleaning-staining)
+- [How to Stain Your Fence](https://myfence.com/blog/how-to-stain-fence)
+- [Virtual Quote Tool Guide](https://myfence.com/blog/virtual-quote-tool)
 
 ## Contact Information
 
