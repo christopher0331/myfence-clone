@@ -153,7 +153,7 @@ const CedarAluminumHybridFenceMDX = () => {
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              At MyFence.com, we have been installing these hybrid systems and watching them transform properties across the Greater Seattle area. In this comprehensive guide, we will walk you through everything you need to know about this premium fencing option - from the technology behind it to pricing and warranty options.
+              At MyFence.com, we have been installing these hybrid systems and watching them transform properties across the Greater Seattle area - from <Link to="/service-areas/seattle" className="text-primary hover:underline">Seattle</Link> and <Link to="/service-areas/bellevue" className="text-primary hover:underline">Bellevue</Link> to <Link to="/service-areas/kirkland" className="text-primary hover:underline">Kirkland</Link>, <Link to="/service-areas/redmond" className="text-primary hover:underline">Redmond</Link>, and <Link to="/service-areas/sammamish" className="text-primary hover:underline">Sammamish</Link>. In this comprehensive guide, we will walk you through everything you need to know about this premium fencing option - from the technology behind it to pricing and warranty options.
             </p>
           </div>
         </section>
@@ -174,7 +174,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Cedar Frame Construction</h3>
                   <p className="text-muted-foreground">
-                    The structural frame consists of premium cedar posts, top rail, and bottom rail. This natural wood provides warmth and integrates beautifully with Pacific Northwest landscapes. The cedar can be left natural, pre-stained, or finished to match your property aesthetic.
+                    The structural frame uses a <Link to="/fence-styles/picture-frame-fence" className="text-primary hover:underline">picture frame design</Link> with premium cedar posts, top rail, and bottom rail. This natural wood provides warmth and integrates beautifully with Pacific Northwest landscapes. The cedar can be left natural, <Link to="/pre-staining" className="text-primary hover:underline">pre-stained</Link>, or finished to match your property aesthetic.
                   </p>
                 </div>
                 <div>
@@ -287,7 +287,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-3">The Height Advantage</h3>
                   <p className="text-muted-foreground">
-                    Barrier Boss panels come in taller sheets. When panels are cut down to follow grade on sloped terrain - which is extremely common in the Pacific Northwest - you still retain a full 6-foot fence height. With shorter panels from other suppliers, grade-following can significantly reduce your effective fence height, sometimes leaving you with only 5 feet or less of privacy where your property slopes.
+                    Barrier Boss panels come in taller sheets. When panels are cut down to follow grade on sloped terrain - which is extremely common in the Pacific Northwest - you still retain a full 6-foot fence height. Our <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius precision installation</Link> ensures panels are cut perfectly to follow your property's contours. With shorter panels from other suppliers, grade-following can significantly reduce your effective fence height, sometimes leaving you with only 5 feet or less of privacy where your property slopes. This grade-following capability is especially important in hilly areas like <Link to="/service-areas/issaquah" className="text-primary hover:underline">Issaquah</Link>, <Link to="/service-areas/maple-valley" className="text-primary hover:underline">Maple Valley</Link>, and <Link to="/service-areas/enumclaw" className="text-primary hover:underline">Enumclaw</Link>.
                   </p>
                 </CardContent>
               </Card>
@@ -325,7 +325,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold mb-2">2-Foot Cedar Horizontal Lattice</h3>
                   <p className="text-sm text-muted-foreground">
-                    Adds architectural elegance and brings your total fence height to nearly 8 feet while complying with local building codes.
+                    Adds architectural elegance with our <Link to="/fence-upgrades/lattice-toppers" className="text-primary hover:underline">horizontal lattice topper</Link> and brings your total fence height to nearly 8 feet while complying with local building codes.
                   </p>
                 </CardContent>
               </Card>
@@ -363,7 +363,7 @@ const CedarAluminumHybridFenceMDX = () => {
                     </div>
                     <div className="flex gap-3">
                       <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Professional installation with Fence Genius precision</span>
+                      <span className="text-muted-foreground">Professional installation with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link> precision</span>
                     </div>
                     <div className="flex gap-3">
                       <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -396,7 +396,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 </div>
               </div>
               <p className="text-muted-foreground">
-                For homeowners planning to stay in their home long-term, or those who simply want the best available fencing solution, the Cedar/Aluminum Hybrid represents excellent value despite the higher initial cost.
+                For homeowners planning to stay in their home long-term, or those who simply want the best available fencing solution, the Cedar/Aluminum Hybrid represents excellent value despite the higher initial cost. We serve homeowners throughout the Puget Sound region including <Link to="/service-areas/gig-harbor" className="text-primary hover:underline">Gig Harbor</Link>, <Link to="/service-areas/federal-way" className="text-primary hover:underline">Federal Way</Link>, <Link to="/service-areas/renton" className="text-primary hover:underline">Renton</Link>, and <Link to="/service-areas/covington" className="text-primary hover:underline">Covington</Link>.
               </p>
             </div>
           </div>
