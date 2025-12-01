@@ -100,7 +100,7 @@ const CedarAluminumHybridFenceMDX = () => {
       <Seo
         title="Cedar/Steel Hybrid Fence Guide | Modern Privacy Fencing"
         description="Complete guide to cedar/steel hybrid fencing. Learn about Barrier Boss 26 gauge corrugated steel panels with HDP NoFade™ paint, pricing ($80/LF), 30-year warranty options, and why this is the ultimate privacy fence investment."
-        canonical="https://myfence.com/blog/cedar-aluminum-hybrid-fence"
+        canonical="https://myfence.com/blog/cedar-steel-hybrid-fence"
         image="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
         structuredData={[articleStructuredData, faqStructuredData]}
       />
@@ -432,7 +432,7 @@ const CedarAluminumHybridFenceMDX = () => {
                   <Link to="/quote">Get Your Free Quote</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/fence-styles/cedar-aluminum-hybrid-fence">View Fence Style Page</Link>
+                  <Link to="/fence-styles/cedar-steel-hybrid-fence">View Fence Style Page</Link>
                 </Button>
               </div>
             </div>
