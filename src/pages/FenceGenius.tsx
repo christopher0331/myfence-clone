@@ -20,13 +20,33 @@ const FenceGenius = () => {
     }
   };
 
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "What is Fence Genius and Why Does MyFence.com Use It?",
+    "description": "MyFence.com has a unique competitive edge right now in the fence construction industry as they are one of few to be using the new Fence Genius technology. But what exactly does that mean? Fence Genius enables total pre fabrication of custom contour following fence and gate systems through advanced software calculation practices. Taking the guess work out of the construction process. Big issue in the industry today? You really don't know what you're going to get, or what to expect from your contractor. With us, and Fence Genius, you have total clarity over how it will look and how it'll be built.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/aO_Zrt5qyGg/maxresdefault.jpg",
+    "uploadDate": "2025-11-26",
+    "duration": "PT1M23S",
+    "contentUrl": "https://www.youtube.com/watch?v=aO_Zrt5qyGg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/aO_Zrt5qyGg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MyFence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png"
+      }
+    }
+  };
+
   return (
     <main>
       <Seo
         title="Fence Genius: Precision Cedar Fences Seattle"
         description="Revolutionary Fence Genius technology for perfect fence installation in Seattle, WA. Eliminate guesswork with algorithmic precision. Call (253) 455-1885 for consultation."
         canonical="https://myfence.com/fence-genius"
-        structuredData={structuredData}
+        structuredData={[structuredData, videoSchema]}
       />
       
       {/* Hero Section */}
