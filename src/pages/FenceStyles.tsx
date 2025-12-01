@@ -15,17 +15,17 @@ import {
 import boardOnBoardImg from "@/assets/fences/board-on-board-updated.png";
 
 const styles = [
-  { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look." },
-  { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail." },
-  { img: "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png", title: "Craftsman Style Fence", desc: "Distinctive craftsman accents with open top detailing." },
-  { img: "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners." },
-  { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option" },
-  { img: "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png", title: "Horizontal Fence", desc: "Framed horizontal fence with center rail support for maximum durability.", badge: "Fan Favorite" },
-  { img: "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png", title: "Cedar/Aluminum Hybrid Fence", desc: "Powder-coated aluminum panels with cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF.", badge: "Premium Investment" },
-  { img: "/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style." },
-  { img: "/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png", title: "6' Black Hogwire Fence", desc: "Secure yet visually open fencing perfect for wooded properties. Cedar frame with powder-coated steel panels.", badge: "Security & Style" },
-  { img: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png", title: "3' Black Hogwire Fence", desc: "Budget-friendly option with the same open feeling. Perfect for flat terrain and wooded backdrops.", badge: "Budget Option" },
-  { img: "/lovable-uploads/be14d195-34f5-4c25-9618-a506bed8ecc1.png", title: "Picket Fence", desc: "Timeless neighborhood charm with classic pickets." },
+  { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look.", link: "/fence-styles/picture-frame-fence", badge: "Most Popular" },
+  { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail.", link: "/fence-styles/3-rail-picture-frame-fence" },
+  { img: "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png", title: "Craftsman Style Fence", desc: "Distinctive craftsman accents with open top detailing.", link: "/fence-styles/craftsman-style-fence" },
+  { img: "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners.", link: "/fence-styles/horizontal-lattice-fence" },
+  { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option", link: "/fence-styles/solid-board-fence" },
+  { img: "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png", title: "Horizontal Fence", desc: "Framed horizontal fence with center rail support for maximum durability.", badge: "Fan Favorite", link: "/fence-styles/horizontal-fence" },
+  { img: "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png", title: "Cedar/Aluminum Hybrid Fence", desc: "Powder-coated aluminum panels with cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF.", badge: "Premium Investment", link: "/fence-styles/cedar-aluminum-hybrid-fence" },
+  { img: "/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png", title: "5' Galvanized Hogwire Fence", desc: "Strong galvanized wire panels for durable visibility and style.", link: "/fence-styles/galvanized-hogwire-fence" },
+  { img: "/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png", title: "6' Black Hogwire Fence", desc: "Secure yet visually open fencing perfect for wooded properties. Cedar frame with powder-coated steel panels.", badge: "Security & Style", link: "/fence-styles/black-hogwire-fence" },
+  { img: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png", title: "3' Black Hogwire Fence", desc: "Budget-friendly option with the same open feeling. Perfect for flat terrain and wooded backdrops.", badge: "Budget Option", link: "/fence-styles/three-ft-black-hogwire-fence" },
+  { img: "/lovable-uploads/be14d195-34f5-4c25-9618-a506bed8ecc1.png", title: "Picket Fence", desc: "Timeless neighborhood charm with classic pickets.", link: "/fence-styles/picket-fence" },
 ];
 
 const postOptions = [
@@ -175,124 +175,27 @@ const FenceStyles = () => {
         <p className="text-muted-foreground max-w-2xl">We design and build fences that fit your property, lifestyle, and budget — backed by our exclusive <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius technology</Link> for perfect planning.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {styles.map((s) => (
-            <Card key={s.title} className="overflow-hidden hover:shadow-elevated transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>{s.title}</span>
-                  {s.title === "Picture Frame Fence" && (
-                    <Badge variant="secondary">Most Popular</Badge>
-                  )}
-                  {s.badge && (
-                    <Badge variant="secondary">{s.badge}</Badge>
-                  )}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <AspectRatio ratio={1}>
-                  <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-full object-cover rounded-md" />
-                </AspectRatio>
-                <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
-                {s.title === "Picture Frame Fence" && (
-                  <Link
-                    to="/fence-styles/picture-frame-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Picture Frame Fence"
-                  >
-                    Learn more about Picture Frame Fence →
-                  </Link>
-                )}
-                {s.title === "3 Rail Picture Frame Fence" && (
-                  <Link
-                    to="/fence-styles/3-rail-picture-frame-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about 3 Rail Picture Frame Fence"
-                  >
-                    Learn more about 3 Rail Picture Frame Fence →
-                  </Link>
-                )}
-                {s.title === "Craftsman Style Fence" && (
-                  <Link
-                    to="/fence-styles/craftsman-style-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Craftsman Style Fence"
-                  >
-                    Learn more about Craftsman Style Fence →
-                  </Link>
-                 )}
-                {s.title === "Horizontal Lattice Fence" && (
-                  <Link
-                    to="/fence-styles/horizontal-lattice-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Horizontal Lattice Fence"
-                  >
-                    Learn more about Horizontal Lattice Fence →
-                  </Link>
-                )}
-                {s.title === "Solid Board Fence" && (
-                  <Link
-                    to="/fence-styles/solid-board-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Solid Board Fence"
-                  >
-                    Learn more about Solid Board Fence →
-                  </Link>
-                )}
-                {s.title === "Horizontal Fence" && (
-                  <Link
-                    to="/fence-styles/horizontal-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Horizontal Fence"
-                  >
-                    Learn more about Horizontal Fence →
-                  </Link>
-                )}
-                {s.title === "6' Black Hogwire Fence" && (
-                  <Link
-                    to="/fence-styles/black-hogwire-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about 6' Black Hogwire Fence"
-                  >
-                    Learn more about 6' Black Hogwire Fence →
-                  </Link>
-                )}
-                {s.title === "3' Black Hogwire Fence" && (
-                  <Link
-                    to="/fence-styles/three-ft-black-hogwire-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about 3' Black Hogwire Fence"
-                  >
-                    Learn more about 3' Black Hogwire Fence →
-                  </Link>
-                )}
-                {s.title === "5' Galvanized Hogwire Fence" && (
-                  <Link
-                    to="/fence-styles/galvanized-hogwire-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about 5' Galvanized Hogwire Fence"
-                  >
-                    Learn more about 5' Galvanized Hogwire Fence →
-                  </Link>
-                )}
-                {s.title === "Picket Fence" && (
-                  <Link
-                    to="/fence-styles/picket-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Picket Fence"
-                  >
-                    Learn more about Picket Fence →
-                  </Link>
-                )}
-                {s.title === "Cedar/Aluminum Hybrid Fence" && (
-                  <Link
-                    to="/fence-styles/cedar-aluminum-hybrid-fence"
-                    className="mt-3 inline-flex text-primary hover:underline"
-                    aria-label="Learn more about Cedar/Aluminum Hybrid Fence"
-                  >
-                    Learn more about Cedar/Aluminum Hybrid Fence →
-                  </Link>
-                )}
-              </CardContent>
-            </Card>
+            <Link key={s.title} to={s.link} className="group">
+              <Card className="overflow-hidden hover:shadow-elevated transition-shadow h-full group-hover:border-primary/50">
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-between">
+                    <span className="group-hover:text-primary transition-colors">{s.title}</span>
+                    {s.badge && (
+                      <Badge variant="secondary">{s.badge}</Badge>
+                    )}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <AspectRatio ratio={1}>
+                    <img src={s.img} alt={`${s.title} fence in Seattle by MyFence.com`} loading="lazy" className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300" />
+                  </AspectRatio>
+                  <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
+                  <span className="mt-3 inline-flex text-primary group-hover:underline">
+                    Learn more →
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
