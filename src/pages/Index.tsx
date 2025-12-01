@@ -18,7 +18,6 @@ import { FaqSection } from "@/components/FaqSection";
 import { ContactForm } from "@/components/forms/ContactForm";
 
 const Index = () => {
-  console.log('[Index] Component rendering');
   
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -37,7 +36,6 @@ const Index = () => {
 
   // Load reviews from Supabase
   useEffect(() => {
-    console.log('[Index] useEffect - loadReviews running');
     const loadReviews = async () => {
       const { data, error } = await supabase
         .from('reviews')
@@ -47,7 +45,6 @@ const Index = () => {
       if (error) {
         console.error('Error loading reviews:', error);
       } else if (data) {
-        console.log(`Loaded ${data.length} reviews from database`);
         setReviews(data);
       }
     };
@@ -57,7 +54,6 @@ const Index = () => {
   
   // Load Trustindex reviews widget and sync to database
   useEffect(() => {
-    console.log('[Index] useEffect - Trustindex widget setup running');
     if (!reviewsRef.current) return;
     
     // Create the widget container div with proper Trustindex attributes
@@ -73,24 +69,17 @@ const Index = () => {
     
     // After widget loads, scrape and sync reviews
     s.onload = () => {
-      console.log('Trustindex script loaded, waiting for widget to render...');
       setTimeout(async () => {
         try {
-          console.log('Attempting to scrape reviews from widget...');
-          
           const scrapedReviews = scrapeReviewsFromWidget();
-          console.log(`Scraping result: found ${scrapedReviews.length} reviews`);
           
           if (scrapedReviews.length > 0) {
-            console.log('Sample review:', scrapedReviews[0]);
             await syncReviewsToDatabase(scrapedReviews);
-          } else {
-            console.warn('No reviews found in widget - check DOM structure');
           }
         } catch (error) {
           console.error('Error scraping reviews:', error);
         }
-      }, 4000); // Give widget more time to render
+      }, 4000);
     };
     
     reviewsRef.current.appendChild(s);
@@ -106,16 +95,6 @@ const Index = () => {
     const scrapedReviews: any[] = [];
     
     try {
-      // Search entire document since Trustindex may render outside our container
-      console.log('Searching entire document for Trustindex reviews...');
-      
-      // Log sample of page HTML to debug
-      const trustindexContainers = document.querySelectorAll('[class*="trustindex"], [id*="trustindex"]');
-      console.log(`Found ${trustindexContainers.length} trustindex containers`);
-      trustindexContainers.forEach((container, i) => {
-        console.log(`Container ${i}:`, container.className || container.id, container.innerHTML.substring(0, 200));
-      });
-      
       // Try to find review elements anywhere on the page
       let reviewElements = document.querySelectorAll('[data-trustindex-review], .ti-review-item, .trustindex-review-item');
       
@@ -128,19 +107,11 @@ const Index = () => {
         // Try finding by Trustindex widget structure
         const widget = document.querySelector('[data-widget-id], .ti-widget, #ti-widget-content');
         if (widget) {
-          console.log('Found widget:', widget.className || widget.id);
           reviewElements = widget.querySelectorAll('div[class*="review"], .ti-review, [class*="item"]');
         }
       }
       
-      console.log(`Found ${reviewElements.length} review elements to process`);
-      
-      reviewElements.forEach((element, index) => {
-        // Log first few elements to see structure
-        if (index < 3) {
-          console.log(`Review ${index} HTML:`, element.outerHTML.substring(0, 300));
-        }
-        
+      reviewElements.forEach((element) => {
         const authorElement = element.querySelector('[itemprop="author"], .ti-name, [class*="author"], [class*="name"]');
         const ratingElement = element.querySelector('[itemprop="ratingValue"], [class*="rating"], [class*="star"]');
         const textElement = element.querySelector('[itemprop="reviewBody"], .ti-review-text, [class*="review-text"], [class*="comment"]');
@@ -165,7 +136,6 @@ const Index = () => {
               review_date: dateText,
               source: 'trustindex'
             });
-            console.log(`Added review ${scrapedReviews.length} from ${author}`);
           }
         }
       });
@@ -173,7 +143,6 @@ const Index = () => {
       console.error('Error scraping reviews:', error);
     }
     
-    console.log(`Total scraped reviews: ${scrapedReviews.length}`);
     return scrapedReviews;
   };
 
@@ -184,8 +153,6 @@ const Index = () => {
       });
       
       if (error) throw error;
-      
-      console.log('Reviews synced:', data);
       
       // Reload reviews from database
       const { data: updatedReviews } = await supabase
@@ -214,19 +181,14 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting contact form with data:', formData);
-      
       // Use Supabase client to call edge function
       const { data, error } = await supabase.functions.invoke('send-contact-form', {
         body: formData,
       });
 
       if (error) {
-        console.error('Contact form error:', error);
         throw new Error(`Failed to send message: ${error.message}`);
       }
-
-      console.log('Email sent successfully:', data);
 
       // Success - trigger effects
       const formElement = document.querySelector('#contact-form');
@@ -249,7 +211,6 @@ const Index = () => {
       });
 
     } catch (error) {
-      console.error('Contact form submission error:', error);
       toast({
         title: "Error",
         description: `Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}`,
