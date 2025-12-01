@@ -1,0 +1,9 @@
+export { HeroVideoSection } from './HeroVideoSection';
+export { AboutUsSection } from './AboutUsSection';
+export { ValuePropsSection } from './ValuePropsSection';
+export { PopularStylesSection } from './PopularStylesSection';
+export { ReviewsSection } from './ReviewsSection';
+export { QuoteToolSection } from './QuoteToolSection';
+export { TrellisSection } from './TrellisSection';
+export { CTASection } from './CTASection';
+export { InlineContactSection } from './InlineContactSection';
