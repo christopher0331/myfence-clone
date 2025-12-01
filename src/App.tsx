@@ -59,6 +59,7 @@ const BlackHogwireFence = React.lazy(() => import("./pages/fence-styles/BlackHog
 const GalvanizedHogwireFence = React.lazy(() => import("./pages/fence-styles/GalvanizedHogwireFence"));
 const ThreeFtBlackHogwireFence = React.lazy(() => import("./pages/fence-styles/ThreeFtBlackHogwireFence"));
 const PicketFence = React.lazy(() => import("./pages/fence-styles/PicketFence"));
+const CedarAluminumHybridFence = React.lazy(() => import("./pages/fence-styles/CedarAluminumHybridFence"));
 
 // Lazy load fence post pages
 const FourPointOneTwoFivePosts = React.lazy(() => import("./pages/fence-posts/FourPointOneTwoFivePosts"));
@@ -300,6 +301,7 @@ const AppContent = () => {
           <Route path="/fence-styles/galvanized-hogwire-fence" element={<GalvanizedHogwireFence />} />
           <Route path="/fence-styles/three-ft-black-hogwire-fence" element={<ThreeFtBlackHogwireFence />} />
           <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
+          <Route path="/fence-styles/cedar-aluminum-hybrid-fence" element={<CedarAluminumHybridFence />} />
           <Route path="/fence-posts/4-125-posts" element={<FourPointOneTwoFivePosts />} />
           <Route path="/fence-posts/6x6" element={<SixBySixPosts />} />
           <Route path="/fence-posts/3-5-posts" element={<ThreePointFivePosts />} />
