@@ -302,7 +302,8 @@ const AppContent = () => {
           <Route path="/fence-styles/galvanized-hogwire-fence" element={<GalvanizedHogwireFence />} />
           <Route path="/fence-styles/three-ft-black-hogwire-fence" element={<ThreeFtBlackHogwireFence />} />
           <Route path="/fence-styles/picket-fence" element={<PicketFence />} />
-          <Route path="/fence-styles/cedar-aluminum-hybrid-fence" element={<CedarAluminumHybridFence />} />
+          <Route path="/fence-styles/cedar-aluminum-hybrid-fence" element={<Navigate to="/fence-styles/cedar-steel-hybrid-fence" replace />} />
+          <Route path="/fence-styles/cedar-steel-hybrid-fence" element={<CedarAluminumHybridFence />} />
           <Route path="/fence-posts/4-125-posts" element={<FourPointOneTwoFivePosts />} />
           <Route path="/fence-posts/6x6" element={<SixBySixPosts />} />
           <Route path="/fence-posts/3-5-posts" element={<ThreePointFivePosts />} />
@@ -351,7 +352,8 @@ const AppContent = () => {
           <Route path="/blog/fence-cleaning-staining" element={<FenceCleaningStainingMDX />} />
           <Route path="/blog/how-to-stain-fence" element={<HowToStainFenceMDX />} />
           <Route path="/blog/cedar-board-grade" element={<CedarBoardGradeMDX />} />
-          <Route path="/blog/cedar-aluminum-hybrid-fence" element={<CedarAluminumHybridFenceMDX />} />
+          <Route path="/blog/cedar-aluminum-hybrid-fence" element={<Navigate to="/blog/cedar-steel-hybrid-fence" replace />} />
+          <Route path="/blog/cedar-steel-hybrid-fence" element={<CedarAluminumHybridFenceMDX />} />
           {/* Redirect missing blog articles to main blog page until content is created */}
           <Route path="/blog/fence-ownership" element={<Navigate to="/blog" replace />} />
           <Route path="/blog/street-setback" element={<Navigate to="/blog" replace />} />

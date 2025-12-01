@@ -78,7 +78,7 @@ const CedarAluminumHybridFence = () => {
       "price": "80",
       "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock",
-      "url": "https://myfence.com/fence-styles/cedar-aluminum-hybrid-fence"
+      "url": "https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
     },
     "manufacturer": {
       "@type": "LocalBusiness",
@@ -97,7 +97,7 @@ const CedarAluminumHybridFence = () => {
       <Seo
         title="Cedar/Steel Hybrid Fence Seattle | Modern Privacy Fence"
         description="Premium cedar/steel hybrid fence in Seattle. 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF. Call (253) 455-1885."
-        canonical="https://myfence.com/fence-styles/cedar-aluminum-hybrid-fence"
+        canonical="https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
         image="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
         structuredData={[productStructuredData, faqStructuredData]}
       />
