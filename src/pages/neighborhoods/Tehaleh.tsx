@@ -61,8 +61,8 @@ const Tehaleh = () => {
                 <GoogleBusinessMap
                   city="Tehaleh"
                   state="Washington"
-                  radiusMiles={2}
-                  zoom={13}
+                  radiusMiles={3}
+                  zoom={11}
                   showBusinessInfo={true}
                 />
               </div>
