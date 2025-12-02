@@ -23,6 +23,7 @@ const DiscountsPage = React.lazy(() => import("./pages/Discounts"));
 
 // Backward-compat alias to avoid stale references
 const Discounts = DiscountsPage;
+const Referrals = React.lazy(() => import("./pages/Referrals"));
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
@@ -310,6 +311,7 @@ const AppContent = () => {
           <Route path="/quote" element={<QuoteTool />} />
           <Route path="/financing" element={<Financing />} />
           <Route path="/discounts" element={<DiscountsPage />} />
+          <Route path="/referrals" element={<Referrals />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
