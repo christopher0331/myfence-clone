@@ -87,8 +87,7 @@ const BonneyLake = React.lazy(() => import("./pages/service-areas/BonneyLake"));
 const Sumner = React.lazy(() => import("./pages/service-areas/Sumner"));
 
 // Lazy load neighborhood pages
-const UpperTehaleh = React.lazy(() => import("./pages/neighborhoods/UpperTehaleh"));
-const LowerTehaleh = React.lazy(() => import("./pages/neighborhoods/LowerTehaleh"));
+const Tehaleh = React.lazy(() => import("./pages/neighborhoods/Tehaleh"));
 
 // Loading component
 const PageLoader = () => (
@@ -342,8 +341,8 @@ const AppContent = () => {
           <Route path="/service-areas/north-bend" element={<NorthBend />} />
           <Route path="/service-areas/bonney-lake" element={<BonneyLake />} />
           <Route path="/service-areas/sumner" element={<Sumner />} />
-          <Route path="/neighborhoods/upper-tehaleh" element={<UpperTehaleh />} />
-          <Route path="/neighborhoods/lower-tehaleh" element={<LowerTehaleh />} />
+          <Route path="/neighborhoods/upper-tehaleh" element={<Navigate to="/neighborhoods/lower-tehaleh" replace />} />
+          <Route path="/neighborhoods/lower-tehaleh" element={<Tehaleh />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/virtual-quote-tool" element={<VirtualQuoteToolMDX />} />
           <Route path="/blog/fence-cost-seattle" element={<SixFtFenceCostMDX />} />
