@@ -697,13 +697,13 @@ const ServiceAreaTemplate = ({
         {/* Google Business Location */}
         <section className="py-16">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Visit Our Location
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                  Our Location
                 </h2>
-                <p className="text-muted-foreground">
-                  MyFence.com - Wood Fence Contractor serving {city} and the greater Seattle area
+                <p className="text-sm text-muted-foreground">
+                  Serving {city} and the greater Seattle area
                 </p>
               </div>
               <Card className="overflow-hidden">
@@ -711,7 +711,7 @@ const ServiceAreaTemplate = ({
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2706.5849474493!2d-122.04876700000001!3d47.389384699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906119f98d5b73%3A0x8ce80c589db968c5!2sMyFence.com%20-%20Wood%20Fence%20Contractor!5e0!3m2!1sen!2sus!4v1701500000000!5m2!1sen!2sus"
                     width="100%"
-                    height="450"
+                    height="300"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
@@ -719,24 +719,26 @@ const ServiceAreaTemplate = ({
                     title={`MyFence.com location serving ${city}`}
                     className="w-full"
                   />
-                  <div className="p-6 bg-muted/30">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                        <div>
-                          <p className="font-semibold">MyFence.com - Wood Fence Contractor</p>
-                          <p className="text-sm text-muted-foreground">22927 257th Ave SE, Maple Valley, WA 98038</p>
-                        </div>
+                  <div className="p-4 bg-muted/30">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
+                        <span className="text-muted-foreground">22927 257th Ave SE, Maple Valley, WA 98038</span>
                       </div>
-                      <a 
-                        href="https://www.google.com/maps/place/MyFence.com+-+Wood+Fence+Contractor/@47.3893847,-122.048767,17z" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
-                      >
-                        Get Directions
-                        <span>→</span>
-                      </a>
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-4 w-4 text-primary" />
+                          <span className="text-muted-foreground">Open 24/7</span>
+                        </div>
+                        <a 
+                          href="https://www.google.com/maps/place/MyFence.com+-+Wood+Fence+Contractor/@47.3893847,-122.048767,17z" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline font-medium"
+                        >
+                          Directions →
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
