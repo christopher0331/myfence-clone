@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -18,7 +19,7 @@ const Tehaleh = () => {
 
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/10">
+        <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
             <Link 
               to="/service-areas/bonney-lake" 
@@ -27,22 +28,42 @@ const Tehaleh = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to Bonney Lake
             </Link>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+              {/* Hero Content */}
+              <div className="text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+                  <MapPin className="h-6 w-6 text-primary" />
+                  <span className="text-lg text-muted-foreground">Serving Upper & Lower Tehaleh</span>
+                </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Tehaleh Fence Installation
+                  Professional Fence Installation in Tehaleh
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Quality fencing solutions for all Tehaleh homeowners—serving both Upper and Lower Tehaleh
+                  Expert HOA-compliant fence installation for Bonney Lake's premier master-planned community. Serving all Tehaleh neighborhoods with cedar, hogwire, and hybrid aluminum fencing solutions.
                 </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <a href="tel:12534551885">
+                    <Button size="lg" variant="hero" className="w-full sm:w-auto">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Call (253) 455-1885
+                    </Button>
+                  </a>
+                  <Link to="/quote">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                      Get Free Quote
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
+
+              {/* Service Area Map */}
+              <div className="w-full rounded-lg overflow-hidden shadow-lg">
                 <GoogleBusinessMap
                   city="Tehaleh"
                   state="Washington"
                   radiusMiles={2}
                   zoom={13}
-                  showBusinessInfo={false}
+                  showBusinessInfo={true}
                 />
               </div>
             </div>
