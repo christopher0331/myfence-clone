@@ -7,9 +7,10 @@ interface SeoProps {
   canonical?: string;
   image?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
+  ogTitle?: string; // Optional separate title for social sharing previews
 }
 
-const Seo = ({ title, description, canonical, image, structuredData }: SeoProps) => {
+const Seo = ({ title, description, canonical, image, structuredData, ogTitle }: SeoProps) => {
   // Handle both single structured data object and arrays
   const structuredDataArray = structuredData 
     ? Array.isArray(structuredData) 
@@ -30,7 +31,7 @@ const Seo = ({ title, description, canonical, image, structuredData }: SeoProps)
       <meta name="description" content={description} />
       
       {/* Open Graph tags */}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {canonical && <meta property="og:url" content={canonical} />}
@@ -40,7 +41,7 @@ const Seo = ({ title, description, canonical, image, structuredData }: SeoProps)
       
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={ogTitle || title} />
       <meta name="twitter:description" content={description} />
       {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
       

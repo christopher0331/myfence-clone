@@ -72,6 +72,8 @@ const Referrals = () => {
         description="Refer a friend to MyFence.com and you both receive a $150 Amazon Gift Card after their fence is installed. No limit on referrals!"
         canonical={`${SITE_CONFIG.url}/referrals`}
         structuredData={structuredData}
+        ogTitle="Share the Love, Earn Rewards 🎁"
+        image="/myfence-logo.png"
       />
       <Header />
 
