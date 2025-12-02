@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AlertCircle, XCircle, TrendingDown, AlertTriangle, DollarSign, Shield, Phone } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import postComparison from "@/assets/post-size-comparison.png";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const ThreePointFivePosts = () => {
   const breadcrumbData = {
@@ -46,9 +47,9 @@ const ThreePointFivePosts = () => {
                   <Link to="/quote">Get a Free Quote</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="tel:+12538667031">
+                  <a href={`tel:+1${SITE_CONFIG.phoneLink}`}>
                     <Phone className="h-4 w-4 mr-2" />
-                    (253) 866-7031
+                    {SITE_CONFIG.phone}
                   </a>
                 </Button>
               </div>
@@ -101,8 +102,8 @@ const ThreePointFivePosts = () => {
                   <XCircle className="w-12 h-12 text-destructive mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-foreground">Insufficient Height</h3>
                   <p className="text-muted-foreground">
-                    At only 8' tall, there's barely enough length for proper installation. You need 8.5-9 feet 
-                    minimum for a 6' fence with proper burial depth.
+                    At only 8' tall, there's barely enough length for proper installation. You need at least 8 feet 
+                    minimum for a 6' fence with proper 2-foot burial depth.
                   </p>
                 </CardContent>
               </Card>
@@ -112,7 +113,7 @@ const ThreePointFivePosts = () => {
                   <AlertTriangle className="w-12 h-12 text-destructive mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-foreground">Inadequate Depth</h3>
                   <p className="text-muted-foreground">
-                    For a 6' fence, you can't achieve the proper 2.5-3 feet of burial depth needed for stability. 
+                    For a 6' fence, you can't achieve the proper 2 feet of burial depth needed for stability. 
                     This results in leaning and failing fences.
                   </p>
                 </CardContent>
@@ -187,12 +188,11 @@ const ThreePointFivePosts = () => {
                 <p className="text-muted-foreground mb-4">For a proper 6-foot fence installation, you need:</p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>6 feet of fence height above ground</li>
-                  <li>At least 2.5-3 feet of post below ground for stability</li>
-                  <li><strong>Total required: 8.5-9 feet minimum</strong></li>
+                  <li>At least 2 feet of post below ground for stability</li>
+                  <li><strong>Total required: 8 feet minimum</strong></li>
                 </ul>
                 <p className="text-muted-foreground">
-                  With only 8 feet of total length, 3.5" x 3.5" posts simply can't provide adequate burial depth. 
-                  This results in unstable fences that lean, sag, or fail prematurely.
+                  With only 8 feet of total length and limited cross-section, 3.5" x 3.5" posts provide barely adequate burial depth and lack the structural integrity needed for long-term stability.
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ const ThreePointFivePosts = () => {
                   <Link to="/quote">Request Free Quote</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href="tel:+12538667031">
+                  <a href={`tel:+1${SITE_CONFIG.phoneLink}`}>
                     <Phone className="h-4 w-4 mr-2" />
                     Call Us Today
                   </a>

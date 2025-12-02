@@ -341,7 +341,7 @@ const PictureFrameFence = () => {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold">Professional Construction</h3>
                   <p className="text-muted-foreground">
-                    4.125" x 4.125" x 9' posts set deeper than 2' with approximately 180 lbs of properly mixed concrete for maximum stability.
+                    4.125" x 4.125" x 9' posts set approximately 2' deep with approximately 180 lbs of properly mixed concrete for maximum stability.
                   </p>
                   
                   <h3 className="text-xl font-semibold">Fence Genius Technology</h3>
