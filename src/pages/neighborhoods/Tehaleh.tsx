@@ -7,12 +7,12 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const LowerTehaleh = () => {
+const Tehaleh = () => {
   return (
     <>
       <Seo
-        title="Lower Tehaleh Fence Installation | Family-Friendly Fencing | MyFence.com"
-        description="Professional fence installation in Lower Tehaleh, Bonney Lake. Family-friendly designs, HOA-compliant solutions. Cedar, composite, vinyl fencing. Free quotes. Call today."
+        title="Tehaleh Fence Installation | HOA-Compliant Fencing | MyFence.com"
+        description="Professional fence installation throughout Tehaleh, Bonney Lake. Serving Upper and Lower Tehaleh with HOA-compliant designs. Cedar, hogwire & hybrid aluminum fencing. Free quotes."
         canonical="https://myfence.com/neighborhoods/lower-tehaleh"
       />
 
@@ -30,18 +30,18 @@ const LowerTehaleh = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Lower Tehaleh Fence Installation
+                  Tehaleh Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Smart fencing solutions for young families, professionals, and active retirees
+                  Quality fencing solutions for all Tehaleh homeowners—serving both Upper and Lower Tehaleh
                 </p>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <GoogleBusinessMap
-                  city="Lower Tehaleh"
+                  city="Tehaleh"
                   state="Washington"
-                  radiusMiles={1}
-                  zoom={14}
+                  radiusMiles={2}
+                  zoom={13}
                   showBusinessInfo={false}
                 />
               </div>
@@ -54,13 +54,13 @@ const LowerTehaleh = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Perfect Fencing for Lower Tehaleh Lifestyles
+                Expert Fencing Throughout Tehaleh
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Lower Tehaleh attracts diverse homeowners—young couples starting families, busy professionals working remotely, empty nesters downsizing, and active retirees enjoying walkable community living. The homes here (typically 1,800-2,500 sq ft) on manageable lots are perfect for 1-4 person households who value low maintenance, walkability to parks and trails, and community connections. Your fence needs to balance privacy without isolation, security without fortress mentality, and aesthetics without demanding your weekends for maintenance.
+                Tehaleh is one of Bonney Lake's most sought-after master-planned communities, featuring diverse neighborhoods that cater to families of all sizes and lifestyles. From cozy starter homes to expansive luxury properties with mountain views, we provide premium fence installation services throughout the entire Tehaleh development—including both Upper and Lower Tehaleh neighborhoods.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Lower Tehaleh's exceptional trail access, community centers, and neighborhood gathering spaces mean your outdoor space extends beyond your fence line. We design installations that complement this lifestyle—creating private backyards for morning coffee or evening relaxation while maintaining the neighborhood's welcoming character. Whether you're securing a yard for young children learning to ride bikes, creating a peaceful retreat from remote work, or establishing low-maintenance boundaries for retirement living, we have solutions that match your stage of life and daily routine.
+                Whether you live in an elevated homesite with commanding views of Mount Rainier or a walkable neighborhood close to trails and community centers, your fence needs to match your home's character while meeting Tehaleh's HOA standards. We understand the unique requirements of this community and have completed installations throughout every section of Tehaleh, from properties backing to trail systems to homes on challenging slopes.
               </p>
             </div>
           </div>
@@ -71,16 +71,16 @@ const LowerTehaleh = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Lower Tehaleh Families Trust MyFence.com
+                Why Tehaleh Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
                     <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Family-Focused Designs</h3>
+                      <h3 className="text-xl font-semibold mb-2">HOA Compliance Experts</h3>
                       <p className="text-muted-foreground">
-                        Safe, durable fencing solutions designed for active families with children and pets. Smooth finishes, secure gates, and child-safe hardware.
+                        Deep knowledge of Tehaleh's design standards and architectural review requirements. We handle all submission documentation and ensure first-time approval.
                       </p>
                     </div>
                   </div>
@@ -89,9 +89,9 @@ const LowerTehaleh = () => {
                   <div className="flex items-start gap-4">
                     <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Fast Installation</h3>
+                      <h3 className="text-xl font-semibold mb-2">Slope Specialists</h3>
                       <p className="text-muted-foreground">
-                        Fence Genius technology reduces installation time by 30-50%. Most Lower Tehaleh projects complete in 1-2 days with minimal disruption.
+                        Expert installation on Tehaleh's varied terrain using stepped and raked designs that maintain aesthetic appeal on challenging grades.
                       </p>
                     </div>
                   </div>
@@ -111,9 +111,9 @@ const LowerTehaleh = () => {
                   <div className="flex items-start gap-4">
                     <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">HOA Expertise</h3>
+                      <h3 className="text-xl font-semibold mb-2">Family-Focused Designs</h3>
                       <p className="text-muted-foreground">
-                        Complete knowledge of Tehaleh design standards. We handle architectural review submissions for hassle-free approval.
+                        Safe, durable fencing solutions designed for active families with children and pets. Smooth finishes, secure gates, and child-safe hardware.
                       </p>
                     </div>
                   </div>
@@ -123,40 +123,40 @@ const LowerTehaleh = () => {
           </div>
         </section>
 
-        {/* Lower Tehaleh Specific Considerations */}
+        {/* Tehaleh Specific Considerations */}
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Lower Tehaleh-Specific Installation Considerations
+                Tehaleh-Specific Installation Considerations
               </h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Family & Pet Safety</h3>
+                  <h3 className="text-2xl font-semibold mb-3">HOA Architectural Standards</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lower Tehaleh's family-oriented atmosphere means fences serve critical safety functions. We design installations with smooth boards (no splinters), secure latches that children can't easily open but adults can operate smoothly, and minimal gaps that prevent small pets from escaping. Our cedar and composite options provide solid barriers without sharp edges, while our hardware selections prioritize both security and ease of use for busy families managing kids, pets, and daily life.
+                    Tehaleh maintains rigorous architectural review standards to preserve the community's aesthetic cohesion. We're intimately familiar with the Tehaleh Design Review Committee's requirements, including approved fence styles, colors, and materials. Our team prepares comprehensive submission packages with detailed plans, material specifications, and color samples to ensure swift approval throughout all Tehaleh neighborhoods.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Neighborhood Character</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Topography and Slope Management</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lower Tehaleh maintains a welcoming, community-focused atmosphere where neighbors connect while respecting privacy. We help homeowners select fence styles that balance these values - privacy panels for backyard living spaces while considering semi-privacy or lower fence options along side yards to maintain sight lines and neighborhood friendliness. Our design consultations address both your family's needs and the community's character.
+                    Tehaleh's varied terrain—from elevated homesites with stunning views to gentler slopes near community centers—presents unique installation challenges. Our Fence Genius technology excels at creating custom panels that follow natural grade changes while maintaining consistent panel heights and professional appearance. We use specialized stepped designs for steeper slopes and raked panels for gentler grades.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Trail and Amenity Access</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Many Lower Tehaleh properties back to trails, parks, or common areas that make this neighborhood special. We design fence installations that provide security while respecting these amenity connections. Strategic gate placement, decorative picket sections along trail sides, and compliant setbacks ensure your fence enhances rather than conflicts with Lower Tehaleh's extensive trail network and community spaces.
+                    Many Tehaleh properties back to trails, parks, or common areas that make this community special. We design fence installations that provide security while respecting these amenity connections. Strategic gate placement, decorative picket sections along trail sides, and compliant setbacks ensure your fence enhances rather than conflicts with Tehaleh's extensive trail network and community spaces.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Durable, Low-Maintenance Options</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Premium, Low-Maintenance Materials</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lower Tehaleh families stay busy with community activities, work, and family life - fence maintenance shouldn't consume precious weekend time. Our hybrid aluminum system (black aluminum panels with cedar frame) never requires staining or painting, perfect for busy families. For those preferring natural cedar, our premium pressure-treated posts and marine-grade fasteners maximize longevity while our optional Post-on-Pipe upgrade virtually eliminates the most common failure point: rotting posts. We also offer hogwire fencing for properties wanting rustic charm with open views.
+                    Tehaleh homes deserve fencing materials that match their quality while minimizing maintenance demands on busy families. We offer clear-grade Western Red Cedar for superior appearance, hogwire fencing for properties wanting rustic elegance with open views, and our hybrid aluminum system (black panels with cedar framing) that never requires staining. All installations use marine-grade stainless steel fasteners and our optional Post-on-Pipe upgrade virtually eliminates the most common failure point: rotting posts.
                   </p>
                 </div>
               </div>
@@ -165,22 +165,22 @@ const LowerTehaleh = () => {
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Lower Tehaleh fence" />
+        <VirtualQuoteTool fenceStyleName="Tehaleh fence" />
 
-        {/* Lower Tehaleh Fencing Video Section */}
+        {/* Tehaleh Fencing Video Section */}
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                Lower Tehaleh Fencing
+                Tehaleh Fencing
               </h2>
               <div className="grid md:grid-cols-3 gap-8 items-start">
                 <div className="md:col-span-2 space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    Watch our efficient installation process in Lower Tehaleh. We understand busy families need minimal disruption, delivering quality fences quickly while respecting your daily routine.
+                    Watch our efficient installation process in Tehaleh. From elevated properties with mountain views to family-friendly neighborhoods near trails, we deliver quality fences that match your home and lifestyle.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Whether you're securing a yard for young children, creating a peaceful retreat, or establishing low-maintenance boundaries—we build fences that match your lifestyle and life stage.
+                    Every Tehaleh fence combines sophisticated aesthetics with family-friendly durability—creating safe, beautiful outdoor spaces whether you're in Upper or Lower Tehaleh.
                   </p>
                 </div>
                 <div className="w-full">
@@ -190,7 +190,7 @@ const LowerTehaleh = () => {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
-                      title="Lower Tehaleh Fencing"
+                      title="Tehaleh Fencing"
                     />
                   </AspectRatio>
                 </div>
@@ -204,13 +204,13 @@ const LowerTehaleh = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Lower Tehaleh Installation Process
+                Our Tehaleh Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">1. Free Consultation & Measurement</h3>
                   <p className="text-muted-foreground">
-                    We meet at your Lower Tehaleh home to understand your family's needs, assess your property, and discuss design options that comply with HOA standards. Our Fence Genius technology provides precise measurements on the spot.
+                    We meet at your Tehaleh home to understand your family's needs, assess your property's terrain, and discuss design options that comply with HOA standards. Our Fence Genius technology provides precise measurements on the spot.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -226,9 +226,9 @@ const LowerTehaleh = () => {
                   </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">4. Efficient Installation</h3>
+                  <h3 className="text-xl font-semibold mb-3">4. Professional Installation</h3>
                   <p className="text-muted-foreground">
-                    Our crew completes most Lower Tehaleh fence installations in 1-2 days. We arrive fully prepared with pre-built panels, professional equipment, and all materials needed for your project.
+                    Our experienced crew arrives fully prepared with pre-fabricated panels, specialized equipment for slope work, and all necessary materials. We complete most Tehaleh installations in 1-2 days with minimal property disruption.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -247,10 +247,10 @@ const LowerTehaleh = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Secure Your Lower Tehaleh Property?
+                Ready to Enhance Your Tehaleh Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Join hundreds of satisfied Lower Tehaleh families who trust MyFence.com for quality fence installation. Schedule your free consultation today.
+                Schedule a free consultation with Tehaleh's trusted fence installation experts. We serve all neighborhoods throughout Upper and Lower Tehaleh with the same commitment to quality and HOA compliance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/quote">
@@ -272,4 +272,4 @@ const LowerTehaleh = () => {
   );
 };
 
-export default LowerTehaleh;
+export default Tehaleh;

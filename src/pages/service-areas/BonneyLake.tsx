@@ -571,13 +571,8 @@ const BonneyLake = () => {
       zipCodes={["98391"]}
       neighborhoods={[
         {
-          name: "Upper Tehaleh",
-          description: "Luxury homes for growing families (4-6+ members) with spacious lots, mountain views, and premium outdoor living spaces. Click to learn more →",
-          link: "/neighborhoods/upper-tehaleh"
-        },
-        {
-          name: "Lower Tehaleh",
-          description: "Perfect for young families, professionals, and active retirees seeking walkable community living with low-maintenance homes. Click to learn more →",
+          name: "Tehaleh",
+          description: "Bonney Lake's premier master-planned community. We serve both Upper and Lower Tehaleh with HOA-compliant designs for all home sizes and lifestyles. Click to learn more →",
           link: "/neighborhoods/lower-tehaleh"
         },
         {
