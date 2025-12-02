@@ -84,7 +84,7 @@ const CraftsmanStyleFence = () => {
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Stainless fasteners are standard. Posts are typically 4.125 x 4.125 x 9' set deeper than 2' with roughly 180 lbs of properly mixed concrete.",
+            "Stainless fasteners are standard. Posts are typically 4.125 x 4.125 x 9' set approximately 2' deep with roughly 180 lbs of properly mixed concrete.",
         },
       },
     ],
@@ -166,7 +166,7 @@ const CraftsmanStyleFence = () => {
                 <li>Alternating board pattern: 5' and 6' fence boards creating 12" wind gaps.</li>
                 <li>Three trim boards that frame each panel to complement the rail structure.</li>
                 <li>Top 2x4 cap for a finished, architectural profile.</li>
-                <li>Standard posts: 4.125" x 4.125" x 9' set deeper than 2' with ~180 lbs of properly mixed concrete.</li>
+                <li>Standard posts: 4.125" x 4.125" x 9' set approximately 2' deep with ~180 lbs of properly mixed concrete.</li>
                 <li>Stainless steel fasteners standard to prevent corrosion and black streaking.</li>
               </ul>
               <p className="text-muted-foreground max-w-prose mt-2">
@@ -236,7 +236,7 @@ const CraftsmanStyleFence = () => {
                       <TableBody>
                         <TableRow>
                           <TableCell className="font-medium">Posts</TableCell>
-                          <TableCell>4.125" x 4.125" x 9' set deeper than 2' with ~180 lbs properly mixed concrete</TableCell>
+                          <TableCell>4.125" x 4.125" x 9' set approximately 2' deep with ~180 lbs properly mixed concrete</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell className="font-medium">Rails</TableCell>
