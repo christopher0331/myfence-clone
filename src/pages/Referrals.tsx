@@ -73,7 +73,7 @@ const Referrals = () => {
         canonical={`${SITE_CONFIG.url}/referrals`}
         structuredData={structuredData}
         ogTitle="Share the Love, Earn Rewards 🎁"
-        image="/myfence-logo.png"
+        image="/og-referrals.png"
       />
       <Header />
 
