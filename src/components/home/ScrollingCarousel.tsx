@@ -6,46 +6,57 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const images = [
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%208.webp?updatedAt=1762037717661&tr=w-280",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%208.webp?updatedAt=1762037717661&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/MyFence.com%201080x1080%201.webp?updatedAt=1762037747463&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/MyFence.com%201080x1080%201.webp?updatedAt=1762037747463&tr=w-400",
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%203.webp?updatedAt=1762037717155&tr=w-280",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%203.webp?updatedAt=1762037717155&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Extreme%20Terrain%20Fence%20Job.webp?updatedAt=1762037741363&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Extreme%20Terrain%20Fence%20Job.webp?updatedAt=1762037741363&tr=w-400",
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%205.webp?updatedAt=1762037716912&tr=w-280",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%205.webp?updatedAt=1762037716912&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Full%20Panel%20With%20Before%20Fence%20Genius%20Render.webp?updatedAt=1762037786713&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Full%20Panel%20With%20Before%20Fence%20Genius%20Render.webp?updatedAt=1762037786713&tr=w-570,h-320",
+    isWide: true,
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%204.webp?updatedAt=1762037716213&tr=w-280",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%204.webp?updatedAt=1762037716213&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Bryans%20Square.webp?updatedAt=1762037737857&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Bryans%20Square.webp?updatedAt=1762037737857&tr=w-400",
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software.webp?tr=w-380,h-220&updatedAt=1762037716032",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software.webp?tr=w-570,h-320&updatedAt=1762037716032",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/MyFence.com%201280x720%20Extreme%20Terrain.webp?updatedAt=1762037743125&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/MyFence.com%201280x720%20Extreme%20Terrain.webp?updatedAt=1762037743125&tr=w-570,h-320",
+    isWide: true,
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software%202.webp?updatedAt=1762037715388&tr=w-380,h-220",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software%202.webp?updatedAt=1762037715388&tr=w-570,h-320",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-400",
   },
   {
-    mobile:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence.com%203.webp?updatedAt=1762037711654&tr=w-280",
-    desktop:
-      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence.com%203.webp?updatedAt=1762037711654&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-400",
+  },
+  {
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-400",
+  },
+  {
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699&tr=w-280",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699&tr=w-400",
+  },
+  {
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%201280x720%20Software%204.webp?updatedAt=1762037635822&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%201280x720%20Software%204.webp?updatedAt=1762037635822&tr=w-570,h-320",
+    isWide: true,
+  },
+  {
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%20Software%20and%20Actual%203.webp?updatedAt=1762037647007&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%20Software%20and%20Actual%203.webp?updatedAt=1762037647007&tr=w-570,h-320",
+    isWide: true,
+  },
+  {
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%20Software%20and%20Actual%205.webp?updatedAt=1762037644149&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/MyFence.com%20Software%20and%20Actual%205.webp?updatedAt=1762037644149&tr=w-570,h-320",
+    isWide: true,
   },
 ];
 
@@ -153,16 +164,15 @@ export const ScrollingCarousel = () => {
       </div>
       <div className="relative">
         <div ref={containerRef} className="flex items-center will-change-transform">
-          {/* Triple set for seamless loop without visible reset */}
+        {/* Triple set for seamless loop without visible reset */}
           {[...images, ...images, ...images].map((image, index) => {
             const baseIndex = index % images.length;
-            const isWide = baseIndex === 4 || baseIndex === 5;
             const imageSrc = isMobile ? image.mobile : image.desktop;
             return (
               <div
                 key={`img-${index}`}
                 className={`flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 ${
-                  isWide
+                  image.isWide
                     ? "w-[320px] h-[180px] md:w-[570px] md:h-[320px]"
                     : "w-[280px] h-[280px] md:w-[400px] md:h-[400px]"
                 }`}
