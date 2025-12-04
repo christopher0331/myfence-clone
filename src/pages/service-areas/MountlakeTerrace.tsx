@@ -38,13 +38,13 @@ const MountlakeTerraceArticle = () => (
     {/* Mountlake Terrace Fence Installation */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Mountlake Terrace Fence Installation
+        How We Work in Mountlake Terrace
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        MyFence.com approaches every Mountlake Terrace fence installation with the same commitment to quality, whether you're in an established neighborhood like Gateway or updating a mid-century home in Cedar Terrace. We arrive on schedule with all materials and professional equipment, ready to complete your project efficiently. Our 98%+ on-time installation rate reflects our respect for your time and our organized project management. We maintain full material inventory, eliminating delays that frustrate homeowners and drive up costs.
+        Most Mountlake Terrace lots were developed in the 1950s-70s, which means narrow side yards, mature landscaping, and neighbors close enough to wave at from your kitchen window. We've learned to work efficiently in tight spaces — staging materials in driveways rather than lawns, hand-carrying panels through gates when trucks can't fit, and finishing before your neighbors lose patience with the noise.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Our Fence Genius technology delivers precision-cut panels manufactured off-site, reducing installation time by 30-50% while ensuring perfect measurements. This efficiency means lower labor costs passed to you without compromising quality. Whether working around mature trees in Cedar Way or installing along Melody Hill's slopes, our experienced team handles terrain challenges that would slow down less experienced contractors. We complete thorough quality inspections with you before considering the job done.
+        Our <Link to="/fence-genius" className="text-primary underline decoration-2 underline-offset-2">Fence Genius</Link> pre-fabrication system cuts panels to exact measurements at our shop, so installation day moves fast. Less sawing on-site means less mess in your yard and fewer hours of crews working next to your bedroom window. Most residential fences wrap up in one to two days — we show up with everything loaded, install efficiently, and haul out our debris the same day.
       </p>
     </section>
 
