@@ -87,7 +87,7 @@ export const ScrollingCarousel = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          timeoutId = setTimeout(() => setIsInView(true), 2000);
+          timeoutId = setTimeout(() => setIsInView(true), 1500);
         } else {
           clearTimeout(timeoutId);
           setIsInView(false);
