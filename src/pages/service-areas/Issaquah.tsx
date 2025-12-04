@@ -110,10 +110,10 @@ const IssaquahArticle = () => (
       <div className="space-y-3">
         <h3 className="text-2xl font-semibold">Issaquah Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
-          At MyFence.com, we provide Issaquah cedar fence products engineered to withstand mountain climate extremes. We use premium Western Red Cedar, nature's most naturally rot-resistant wood species with oils that repel insects and resist decay. For Issaquah's luxury properties in neighborhoods like Talus and Montreux, we offer clear-grade cedar (zero knots) that provides superior appearance and 15+ years of longevity even with higher precipitation levels.
+          Mountain properties demand fencing built for elevation. Our Issaquah cedar installations feature Western Red Cedar sourced specifically for its natural resistance to the Cascade foothills' wet winters and temperature swings. Neighborhoods like Talus and Montreux at higher elevations benefit from our clear-grade cedar option - knot-free boards that maintain structural integrity through freeze-thaw cycles and heavy snowfall common above 500 feet.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Every cedar fence installation includes marine-grade stainless steel fasteners specifically chosen for Issaquah's mountain moisture patterns and cooler temperatures. We use triple-sealed joinery systems and premium pressure-treated posts that resist the 20-30% higher rainfall totals compared to lowland areas. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> adds decades to your fence life by eliminating ground contact and wood rot - crucial in wet mountain soil.
+          Issaquah's proximity to Tiger and Cougar Mountains creates unique moisture challenges - fog, persistent drizzle, and forest canopy shade that keeps wood damp longer. We address this with extra-thick pressure-treated posts, corrosion-resistant hardware rated for mountain conditions, and construction techniques developed over three decades of Issaquah Alps installations. Our <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe system</Link> is especially valuable here, lifting cedar away from perpetually damp forest soil.
         </p>
       </div>
 
