@@ -128,14 +128,14 @@ const KirklandArticle = () => (
         </p>
       </div>
 
-      {/* Other Materials - Information Only */}
+      {/* Why We Don't Install These Near Water */}
       <div className="space-y-3 border-l-4 border-muted pl-4">
-        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Why We Skip Certain Materials for Lakefront Properties</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Full disclosure: MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing. Here's why that benefits Kirkland homeowners.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite materials</strong> provide wood-like appearance without regular staining, though at a 60-80% price premium over cedar. <strong>Vinyl fencing</strong> offers maintenance-free performance but lacks natural warmth. <strong>Ornamental aluminum and steel</strong> provide security with open sight lines. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee exceptional results for Kirkland's demanding waterfront environment.
+          <strong>Vinyl</strong> becomes brittle in Kirkland's freeze-thaw cycles near the lake and can crack during winter storms. <strong>Composite</strong> expands and contracts significantly with waterfront temperature swings, causing warping and gaps. <strong>Chain-link and ornamental iron</strong> rust quickly from Lake Washington's humidity despite galvanizing claims. We've watched these materials fail prematurely on lakefront properties. By specializing exclusively in cedar, hogwire, and our hybrid system, we install only materials proven to perform in Kirkland's unique waterfront conditions.
         </p>
       </div>
 
@@ -154,47 +154,43 @@ const KirklandArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Kirkland Fence Financing Options
+        Pay Monthly for Your Lakefront Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
-            We understand that a quality fence is an investment in your Kirkland lakefront property. That's why we partner with Wisetack to offer flexible fence financing options that make premium fencing accessible. Our financing plans feature:
+            Waterfront fencing requires marine-grade materials that add to project costs. Through our Wisetack partnership, you can spread that investment across comfortable monthly payments while enjoying your new fence immediately.
           </p>
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Loan amounts from $1,000 to $25,000 per project</span>
+              <span>Finance $1,000 to $25,000 — covers most lakefront projects</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Flexible terms with competitive rates</span>
+              <span>Pre-qualify in minutes with a soft credit check</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Quick pre-approval with soft credit check (no impact to credit score)</span>
+              <span>No prepayment penalties if you pay early</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Same-day approvals available for qualified applicants</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Transparent terms with no hidden fees</span>
+              <span>Decisions often same-day for qualified applicants</span>
             </li>
           </ul>
           <p className="text-muted-foreground leading-relaxed">
-            Apply in minutes and get a decision quickly. Our financing options let you install your dream fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+            Many Kirkland homeowners finance their fence alongside other waterfront improvements. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">See full financing details and apply</Link>.
           </p>
         </div>
         <Card className="p-6 bg-primary/5">
-          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <h3 className="text-xl font-semibold mb-4">Check Your Rate in 60 Seconds</h3>
           <p className="text-muted-foreground mb-4">
-            Check your financing options with no impact to your credit score. Get approved and start your Kirkland fence project immediately.
+            See what you qualify for without affecting your credit score. Start your lakefront fence project this week.
           </p>
           <Link to="/financing">
             <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
-              Check Financing Options
+              Get Pre-Qualified Now
             </button>
           </Link>
         </Card>
@@ -204,36 +200,36 @@ const KirklandArticle = () => (
     {/* Warranty Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Industry-Leading Warranty Coverage
+        Waterfront-Grade Warranty Protection
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        Your Kirkland fence installation comes with comprehensive warranty protection that exceeds industry standards. We stand behind our work with confidence because we use premium materials and expert installation techniques perfected over 30+ years of lakefront experience.
+        Lakefront fences face harsher conditions than inland installations. Our warranty reflects the extra care we put into every waterfront project — marine-grade hardware, moisture-resistant techniques, and installation methods refined across thousands of Lake Washington-area fences.
       </p>
       <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6">
           <div className="flex items-start gap-4">
             <Shield className="h-8 w-8 text-primary flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Workmanship Guarantee</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                We stand behind our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+                Our workmanship warranty covers installation defects for {WARRANTY_CONSTANTS.YEARS} years — significantly longer than most contractors offer for waterfront work.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Structural integrity of posts and framework</span>
+                  <span>Post stability and concrete footing integrity</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Gate alignment and functionality</span>
+                  <span>Gate swing, latch alignment, and hardware function</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Hardware installation and security</span>
+                  <span>Panel fastening and rail connections</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Panel attachment and stability</span>
+                  <span>Stainless steel fastener performance</span>
                 </li>
               </ul>
             </div>
@@ -241,7 +237,7 @@ const KirklandArticle = () => (
         </Card>
       </div>
       <p className="text-sm text-muted-foreground">
-        Our warranties are fully transferable if you sell your Kirkland property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence we install for the long term.
+        Selling your lakefront home? Our warranty transfers to the new owner — an asset when marketing premium Kirkland real estate.
       </p>
     </section>
 
@@ -324,12 +320,12 @@ const KirklandArticle = () => (
     </section>
     
     <section className="space-y-4 border-l-4 border-muted pl-4">
-      <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+      <h3 className="text-2xl font-semibold text-muted-foreground">Materials We've Chosen Not to Install</h3>
       <p className="text-muted-foreground leading-relaxed text-sm">
-        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+        <em>We're transparent about what we don't offer — and why lakefront homeowners benefit from our focused expertise.</em>
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        <strong>Composite materials</strong> provide wood-like appearance without regular staining, though at a 60-80% price premium over cedar. <strong>Vinyl fencing</strong> offers maintenance-free performance but lacks natural warmth. <strong>Ornamental aluminum and steel</strong> provide security with open sight lines. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee exceptional results for Kirkland's demanding waterfront environment.
+        After three decades installing fences near Lake Washington, we've seen what lasts and what fails. <strong>Vinyl</strong> looks great initially but becomes brittle and cracks in temperature swings between lake-cooled summers and freezing winters. <strong>Composite</strong> boards warp from moisture absorption when humidity rises off the water. <strong>Ornamental iron</strong> rusts within years despite coatings. Our specialization in cedar, hogwire, and hybrid aluminum means we know these systems inside-out — and can warranty our work with confidence.
       </p>
     </section>
 
