@@ -7,3 +7,4 @@ export { QuoteToolSection } from './QuoteToolSection';
 export { TrellisSection } from './TrellisSection';
 export { CTASection } from './CTASection';
 export { InlineContactSection } from './InlineContactSection';
+export { ScrollingCarousel } from './ScrollingCarousel';
