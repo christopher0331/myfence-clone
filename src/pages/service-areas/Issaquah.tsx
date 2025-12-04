@@ -130,23 +130,23 @@ const IssaquahArticle = () => (
 
       {/* Other Materials - Information Only */}
       <div className="space-y-3 border-l-4 border-muted pl-4">
-        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Materials We Don't Install (And Why)</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Transparency matters: here's what we don't offer and why mountain conditions guided our decision.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> has gained popularity in mountain communities for its 25-year lifespan and minimal maintenance. <strong>Vinyl fencing</strong> can become brittle in temperature extremes common at higher elevations. <strong>Ornamental aluminum and steel</strong> provide open sight lines for equestrian and estate properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we can deliver superior results for mountain conditions.
+          <strong>Vinyl</strong> becomes brittle during Issaquah's winter freezes and can crack under snow load - we've seen too many failures above 400 feet elevation. <strong>Composite boards</strong> handle moisture well but lack the structural rigidity needed for steep-grade installations. <strong>Ornamental metal</strong> works for flat lots but doesn't step gracefully down slopes. By concentrating on cedar, hogwire, and our hybrid system, we've mastered what actually performs in the Issaquah Alps.
         </p>
       </div>
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Issaquah Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Low-Maintenance Hybrid for Mountain Cabins & Second Homes</h3>
         <p className="text-muted-foreground leading-relaxed">
-          For Issaquah properties seeking the perfect balance of low maintenance and mountain durability, our hybrid aluminum fence system combines the best of both worlds. Instead of traditional all-wood construction, we use black aluminum panels with a cedar frame and pressure-treated fence posts. This innovative system delivers a modern, sleek appearance while dramatically reducing maintenance requirements in wet mountain conditions.
+          Many Issaquah property owners split time between work in Seattle and weekends in the foothills. Our hybrid aluminum/cedar fence was designed with that lifestyle in mind: black powder-coated aluminum panels mounted in a cedar frame, anchored by pressure-treated posts engineered for slope stability.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          The aluminum panels never require staining, painting, or sealing - perfect for busy Issaquah professionals and vacation homes. The cedar framework provides natural warmth and structural support while the pressure-treated posts ensure long-term stability on slopes. This hybrid approach keeps pricing competitive with traditional wood fencing while offering superior longevity in high-precipitation environments. Ideal for Grand Ridge and Issaquah Highlands properties wanting contemporary looks without constant maintenance.
+          You won't drive up to find weathered panels needing attention - aluminum shrugs off rain, snow, and UV without staining or sealing. The cedar framing ties visually to wooded surroundings while the metal core handles whatever the Cascades throw at it. Popular in Squak Mountain and Tibbetts Valley where owners want security without a maintenance schedule.
         </p>
       </div>
     </section>
@@ -154,47 +154,43 @@ const IssaquahArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Issaquah Fence Financing Options
+        Spread the Cost of Your Mountain Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
-            We understand that a quality fence is an investment in your Issaquah mountain property. That's why we partner with Wisetack to offer flexible fence financing options that make premium fencing accessible. Our financing plans feature:
+            Slope installations and wildlife-smart designs often run higher than standard flat-lot fencing. Through our partnership with Wisetack, you can break that investment into predictable monthly payments while enjoying your new fence immediately.
           </p>
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Loan amounts from $1,000 to $25,000 per project</span>
+              <span>Finance projects up to $25,000 - covers most Issaquah installations</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Flexible terms with competitive rates</span>
+              <span>Soft credit check during pre-approval won't affect your score</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Quick pre-approval with soft credit check (no impact to credit score)</span>
+              <span>Decisions typically within minutes, not days</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Same-day approvals available for qualified applicants</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Transparent terms with no hidden fees</span>
+              <span>No prepayment penalties if you pay off early</span>
             </li>
           </ul>
           <p className="text-muted-foreground leading-relaxed">
-            Apply in minutes and get a decision quickly. Our financing options let you install your dream fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+            Many homeowners finance the full project, then pay down faster once they see the finished result. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Explore Wisetack terms and rates</Link>.
           </p>
         </div>
         <Card className="p-6 bg-primary/5">
-          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <h3 className="text-xl font-semibold mb-4">See Your Payment Options</h3>
           <p className="text-muted-foreground mb-4">
-            Check your financing options with no impact to your credit score. Get approved and start your Issaquah fence project immediately.
+            Takes about 2 minutes. No obligation, no impact to credit.
           </p>
           <Link to="/financing">
             <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
-              Check Financing Options
+              Check Rates
             </button>
           </Link>
         </Card>
@@ -204,36 +200,36 @@ const IssaquahArticle = () => (
     {/* Warranty Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Industry-Leading Warranty Coverage
+        Our Commitment to Mountain-Grade Work
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        Your Issaquah fence installation comes with comprehensive warranty protection that exceeds industry standards. We stand behind our work with confidence because we use premium materials and expert installation techniques perfected over 30+ years of mountain property experience.
+        Fences in Issaquah face tougher conditions than lowland installations - more rain, steeper grades, freeze-thaw cycles. Our {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty reflects confidence built from three decades of foothills projects.
       </p>
       <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6">
           <div className="flex items-start gap-4">
             <Shield className="h-8 w-8 text-primary flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS} Years, No Fine Print</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                We stand behind our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+                If something we installed fails - posts, framework, gates, hardware - we come back and fix it. Period.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Structural integrity of posts and framework</span>
+                  <span>Post stability on slopes</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Gate alignment and functionality</span>
+                  <span>Gate operation through seasonal ground movement</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Hardware installation and security</span>
+                  <span>Panel attachment and fastener integrity</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Panel attachment and stability</span>
+                  <span>Framework alignment despite settling</span>
                 </li>
               </ul>
             </div>
@@ -241,7 +237,7 @@ const IssaquahArticle = () => (
         </Card>
       </div>
       <p className="text-sm text-muted-foreground">
-        Our warranties are fully transferable if you sell your Issaquah property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence we install for the long term.
+        Selling your Issaquah home? The warranty transfers to the new owner - a selling point in competitive real estate markets.
       </p>
     </section>
 
