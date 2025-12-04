@@ -141,12 +141,12 @@ const KirklandArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Kirkland Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Zero-Maintenance Option for Waterfront Lifestyles</h3>
         <p className="text-muted-foreground leading-relaxed">
-          For Kirkland properties seeking the perfect balance of low maintenance and lakefront durability, our hybrid aluminum fence system combines the best of both worlds. Instead of traditional all-wood construction, we use black aluminum panels with a cedar frame and pressure-treated fence posts. This innovative system delivers a modern, sleek appearance while dramatically reducing maintenance requirements in high-moisture waterfront conditions.
+          Weekends on the lake mean kayaking, sailing, or entertaining — not re-staining your fence. Our hybrid system pairs powder-coated black aluminum panels with a cedar post-and-rail frame. The aluminum never fades, warps, or needs sealing regardless of how much moisture blows off Lake Washington. Cedar handles the structural work while adding warmth that pure metal fences lack.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          The aluminum panels never require staining, painting, or sealing - perfect for busy Kirkland professionals and vacation homes. The cedar framework provides natural warmth and structural support while the pressure-treated posts ensure long-term stability near water. This hybrid approach keeps pricing competitive with traditional wood fencing while offering superior longevity and minimal upkeep. Ideal for Juanita and Downtown Kirkland properties wanting contemporary looks without constant maintenance.
+          This combination has become popular with Kirkland homeowners who travel frequently or own second homes. The fence looks identical in year five as it did on install day. We see strong demand in Moss Bay condos, Carillon Point townhomes, and newer construction near Google's Kirkland campus where residents prioritize their time over yard work. Pricing lands between all-cedar and composite options — with far less long-term hassle than either.
         </p>
       </div>
     </section>
