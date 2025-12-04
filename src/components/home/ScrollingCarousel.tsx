@@ -67,13 +67,31 @@ export const ScrollingCarousel = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const scrollPositionRef = useRef(0);
   const animationFrameRef = useRef<number>();
   const lastTimestampRef = useRef<number>();
   const setWidthRef = useRef(0);
+  const [isInView, setIsInView] = useState(false);
 
   const currentSpeed = speedOptions[speedIndex];
   const baseSpeed = 50; // pixels per second at 1x speed
+
+  // Intersection Observer to detect when component is in viewport
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -96,7 +114,7 @@ export const ScrollingCarousel = () => {
       const deltaTime = (timestamp - lastTimestampRef.current) / 1000; // seconds
       lastTimestampRef.current = timestamp;
 
-      if (!isPaused) {
+      if (!isPaused && isInView) {
         // advance position
         scrollPositionRef.current += baseSpeed * currentSpeed * deltaTime;
 
@@ -121,7 +139,7 @@ export const ScrollingCarousel = () => {
       }
       window.removeEventListener("resize", computeSetWidth);
     };
-  }, [currentSpeed, isPaused]);
+  }, [currentSpeed, isPaused, isInView]);
 
   const cycleSpeed = () => {
     setSpeedIndex((prev) => (prev + 1) % speedOptions.length);
@@ -132,7 +150,7 @@ export const ScrollingCarousel = () => {
   };
 
   return (
-    <section className="py-16 overflow-hidden bg-muted/50">
+    <section ref={sectionRef} className="py-16 overflow-hidden bg-muted/50">
       <div className="container mx-auto px-4 mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Powered by Fence Genius Technology</h2>
         <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
