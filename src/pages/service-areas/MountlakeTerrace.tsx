@@ -299,7 +299,7 @@ const MountlakeTerraceArticle = () => (
         The City of Mountlake Terrace follows standard Washington State regulations for residential fencing. Fences under 8 feet in height typically do not require building permits, but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Property line verification is essential before installation to prevent disputes with neighbors and ensure compliance with setback requirements. We recommend obtaining a current survey if one isn't available. For properties near designated critical areas or in neighborhoods with HOA oversight, additional approvals may be required. For specific questions about your Mountlake Terrace property, contact the <a href="https://www.cityofmlt.com/291/Community-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> at (425) 776-1220.
+        Property line verification is essential before installation to prevent disputes with neighbors and ensure compliance with setback requirements. We recommend obtaining a current survey if one isn't available. For properties near designated critical areas or in neighborhoods with HOA oversight, additional approvals may be required. For specific questions about your Mountlake Terrace property, contact the <a href="https://www.cityofmlt.com/169/Community-and-Economic-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> at (425) 776-1220.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com's experience with Mountlake Terrace installations means we understand local requirements and can guide you through any necessary approval processes. We ensure your fence complies with all applicable codes while meeting your privacy and aesthetic goals.
@@ -347,7 +347,7 @@ const MountlakeTerraceArticle = () => (
 
     <section className="bg-muted/50 p-6 rounded-lg border">
       <p className="text-sm text-muted-foreground">
-        <strong>Note:</strong> Regulations and requirements are subject to change. Always verify current requirements with the <a href="https://www.cityofmlt.com/291/Community-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> before beginning your fence project.
+        <strong>Note:</strong> Regulations and requirements are subject to change. Always verify current requirements with the <a href="https://www.cityofmlt.com/169/Community-and-Economic-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> before beginning your fence project.
       </p>
     </section>
   </article>
