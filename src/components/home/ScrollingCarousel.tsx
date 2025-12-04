@@ -28,16 +28,19 @@ const images = [
     isWide: true,
   },
   {
-    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-280",
-    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius%201.webp?updatedAt=1762037598601&tr=w-570,h-320",
+    isWide: true,
   },
   {
-    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-280",
-    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Craftsman%20Style/Craftsman%20Style%20Fence%20With%20Fence%20Genius.webp?updatedAt=1762037598862&tr=w-570,h-320",
+    isWide: true,
   },
   {
-    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-280",
-    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-400",
+    mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-380,h-220",
+    desktop: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271&tr=w-570,h-320",
+    isWide: true,
   },
   {
     mobile: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699&tr=w-280",
