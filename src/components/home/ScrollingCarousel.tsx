@@ -171,12 +171,15 @@ export const ScrollingCarousel = () => {
             return (
               <div
                 key={`img-${index}`}
-                className={`flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 ${
+                className={`relative flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 ${
                   image.isWide
                     ? "w-[320px] h-[180px] md:w-[570px] md:h-[320px]"
                     : "w-[280px] h-[280px] md:w-[400px] md:h-[400px]"
                 }`}
               >
+                <div className="absolute top-2 left-2 bg-black/70 text-white text-sm font-bold px-2 py-1 rounded z-10">
+                  {baseIndex + 1}
+                </div>
                 <OptimizedImage
                   src={imageSrc}
                   alt={`Seattle Fence Project ${baseIndex + 1}`}
