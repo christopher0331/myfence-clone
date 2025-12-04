@@ -1,4 +1,4 @@
-import { OptimizedImage } from "@/components/OptimizedImage";
+import OptimizedImage from "@/components/OptimizedImage";
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
