@@ -313,33 +313,33 @@ const MountlakeTerraceArticle = () => (
       </h2>
       <Card className="p-6 space-y-4">
         <div>
-          <h3 className="font-semibold mb-2">How long does a cedar fence last in Mountlake Terrace?</h3>
+          <h3 className="font-semibold mb-2">Why do fences near Lake Ballinger need special attention?</h3>
           <p className="text-muted-foreground">
-            A professionally installed cedar fence in Mountlake Terrace typically lasts 25-35 years with minimal maintenance. Our superior 4.125" x 4.125" posts resist warping and rot, while marine-grade fasteners handle the area's high humidity. We install posts with concrete at surface level to prevent soil contact. Regular cleaning and re-staining every 3-5 years can extend your fence life beyond 35 years.
+            Properties within a mile of Lake Ballinger experience 10-15% higher humidity than surrounding areas. This constant moisture accelerates wood rot in standard installations. We counter this with pressure-treated posts set in sloped concrete, stainless steel fasteners, and cedar graded for wet climates. Our <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> eliminates ground contact entirely for lakeside properties.
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">What fence styles are popular in Mountlake Terrace?</h3>
+          <h3 className="font-semibold mb-2">How do you handle the narrow side yards in older Mountlake Terrace homes?</h3>
           <p className="text-muted-foreground">
-            Mountlake Terrace homeowners favor traditional cedar privacy fences that complement the area's established neighborhoods. Picture frame and solid board styles blend well with mid-century architecture. Horizontal designs are growing in popularity for property updates. View our <Link to="/fence-styles" className="text-primary underline decoration-2 underline-offset-2">fence style gallery</Link> for options that fit Mountlake Terrace's character.
+            Most 1950s-70s Mountlake Terrace lots have side yards under 8 feet wide. We stage materials in driveways, hand-carry panels when needed, and use our Fence Genius pre-fabrication to minimize on-site cutting. This approach reduces installation time and keeps disruption to a minimum for you and your close neighbors.
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Can you work around mature trees?</h3>
+          <h3 className="font-semibold mb-2">Do I need a permit for my fence in Mountlake Terrace?</h3>
           <p className="text-muted-foreground">
-            Absolutely. We specialize in installations around established landscaping. Our techniques preserve root systems while ensuring fence stability. We adjust post placement as needed and use flexible installation methods that protect your valuable trees while delivering a quality fence.
+            Fences under 8 feet typically don't require permits in Mountlake Terrace, but must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals. We handle the research for your specific lot.
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">What does fence installation cost in Mountlake Terrace?</h3>
+          <h3 className="font-semibold mb-2">What if my old fence posts are rotted but the boards are still good?</h3>
           <p className="text-muted-foreground">
-            Cedar fence installation in Mountlake Terrace typically ranges from $38-55 per linear foot depending on style, height, and materials. Our efficient processes keep costs competitive while maintaining quality standards. Get an instant estimate with our <Link to="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>, then we'll confirm exact pricing with on-site measurement.
+            This is common in Mountlake Terrace's aging fence stock. We can often replace just the posts and rails while reusing solid boards — cutting your cost significantly. During our estimate, we'll assess board condition and give you honest options rather than pushing a full replacement you may not need.
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Do you offer financing options?</h3>
+          <h3 className="font-semibold mb-2">How quickly can you complete a typical backyard fence?</h3>
           <p className="text-muted-foreground">
-            Yes. We partner with Wisetack to offer flexible financing from $1,000 to $25,000 with competitive rates and terms. Quick pre-approval with soft credit check means no impact to your credit score. Same-day approvals available for qualified applicants. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about financing options</Link>.
+            Most standard backyard fences in Mountlake Terrace install in 1-2 days. Our pre-fabricated panels arrive cut to your measurements, so we spend installation day assembling rather than sawing. We haul out all debris the same day — no pile of old fence sitting in your yard for a week.
           </p>
         </div>
       </Card>
@@ -360,42 +360,42 @@ const MountlakeTerrace = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How long does a cedar fence last in Mountlake Terrace?",
+        "name": "Why do fences near Lake Ballinger need special attention?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professionally installed cedar fence in Mountlake Terrace typically lasts 25-35 years with minimal maintenance. Our superior 4.125 inch x 4.125 inch posts resist warping and rot, while marine-grade fasteners handle the area's high humidity. We install posts with concrete at surface level to prevent soil contact."
+          "text": "Properties within a mile of Lake Ballinger experience 10-15% higher humidity than surrounding areas. This constant moisture accelerates wood rot in standard installations. We counter this with pressure-treated posts set in sloped concrete, stainless steel fasteners, and cedar graded for wet climates. Our Post-on-Pipe upgrade eliminates ground contact entirely for lakeside properties."
         }
       },
       {
         "@type": "Question",
-        "name": "What fence styles are popular in Mountlake Terrace?",
+        "name": "How do you handle the narrow side yards in older Mountlake Terrace homes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mountlake Terrace homeowners favor traditional cedar privacy fences that complement the area's established neighborhoods. Picture frame and solid board styles blend well with mid-century architecture. Horizontal designs are growing in popularity for property updates."
+          "text": "Most 1950s-70s Mountlake Terrace lots have side yards under 8 feet wide. We stage materials in driveways, hand-carry panels when needed, and use our Fence Genius pre-fabrication to minimize on-site cutting. This approach reduces installation time and keeps disruption to a minimum for you and your close neighbors."
         }
       },
       {
         "@type": "Question",
-        "name": "Can you work around mature trees?",
+        "name": "Do I need a permit for my fence in Mountlake Terrace?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. We specialize in installations around established landscaping. Our techniques preserve root systems while ensuring fence stability. We adjust post placement as needed and use flexible installation methods that protect your valuable trees while delivering a quality fence."
+          "text": "Fences under 8 feet typically don't require permits in Mountlake Terrace, but must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals."
         }
       },
       {
         "@type": "Question",
-        "name": "What does fence installation cost in Mountlake Terrace?",
+        "name": "What if my old fence posts are rotted but the boards are still good?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cedar fence installation in Mountlake Terrace typically ranges from $38-55 per linear foot depending on style, height, and materials. Our efficient processes keep costs competitive while maintaining quality standards."
+          "text": "This is common in Mountlake Terrace's aging fence stock. We can often replace just the posts and rails while reusing solid boards — cutting your cost significantly. During our estimate, we'll assess board condition and give you honest options rather than pushing a full replacement you may not need."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer financing options?",
+        "name": "How quickly can you complete a typical backyard fence?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We partner with Wisetack to offer flexible financing from $1,000 to $25,000 with competitive rates and terms. Quick pre-approval with soft credit check means no impact to your credit score. Same-day approvals available for qualified applicants."
+          "text": "Most standard backyard fences in Mountlake Terrace install in 1-2 days. Our pre-fabricated panels arrive cut to your measurements, so we spend installation day assembling rather than sawing. We haul out all debris the same day."
         }
       }
     ]
