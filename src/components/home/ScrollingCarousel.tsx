@@ -121,7 +121,7 @@ export const ScrollingCarousel = () => {
   };
 
   return (
-    <section className="py-16 overflow-hidden bg-primary/10">
+    <section className="py-16 overflow-hidden bg-muted/50">
       <div className="container mx-auto px-4 mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Powered by Fence Genius Technology</h2>
         <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">

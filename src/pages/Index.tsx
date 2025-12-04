@@ -19,6 +19,7 @@ import {
   TrellisSection,
   CTASection,
   InlineContactSection,
+  ScrollingCarousel,
 } from "@/components/home";
 
 const Index = () => {
@@ -158,6 +159,8 @@ const Index = () => {
           summaryDescription="Get an AI-powered overview of our company, technology, and what sets us apart in the Seattle fencing industry."
         />
       </section>
+
+      <ScrollingCarousel />
 
       <PopularStylesSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
