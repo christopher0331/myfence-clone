@@ -119,12 +119,12 @@ const IssaquahArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Issaquah</h3>
+        <h3 className="text-2xl font-semibold">Fence Systems for Mountain Living</h3>
         <p className="text-muted-foreground leading-relaxed">
-          MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. We've focused our expertise on these options to deliver superior installation quality and industry-leading warranties. Our specialized approach ensures every fence we install meets exacting standards for Issaquah's challenging mountain environment.
+          After decades installing fences throughout the Issaquah Alps, we've narrowed our focus to three systems that perform reliably at elevation: Western Red Cedar, Hogwire, and our Hybrid Aluminum/Cedar design. Rather than offering everything, we've mastered what works in Issaquah's demanding terrain - steep grades, dense tree cover, and wildlife pressure that lowland contractors rarely encounter.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Cedar fencing</strong> remains the gold standard for natural beauty and durability in mountain settings. <strong>Hogwire fencing</strong> provides wildlife visibility while maintaining security - popular for wooded properties. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance at competitive pricing, ideal for vacation properties and busy homeowners.
+          <strong>Cedar</strong> blends naturally with forested lots in Grand Ridge and Squak Mountain neighborhoods. <strong>Hogwire panels</strong> let you maintain views of the surrounding wilderness while keeping deer out of gardens - a practical choice for properties bordering open space. Our <strong>Hybrid Aluminum/Cedar</strong> combination suits second homes and properties where owners want minimal upkeep between visits.
         </p>
       </div>
 
