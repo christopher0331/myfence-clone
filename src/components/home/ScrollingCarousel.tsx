@@ -219,6 +219,20 @@ export const ScrollingCarousel = () => {
           })}
         </div>
       </div>
+
+      {/* CTA Button */}
+      <div className="flex justify-center mt-10">
+        <Button
+          asChild
+          size="lg"
+          className="gap-2 text-base"
+        >
+          <a href="/fence-genius">
+            <Gauge className="h-5 w-5" />
+            See How Fence Genius Works
+          </a>
+        </Button>
+      </div>
     </section>
   );
 };
