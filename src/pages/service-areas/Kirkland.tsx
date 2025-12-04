@@ -108,23 +108,23 @@ const KirklandArticle = () => (
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Kirkland Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fencing Built for Lake Washington Shorelines</h3>
         <p className="text-muted-foreground leading-relaxed">
-          At MyFence.com, we provide Kirkland cedar fence products engineered to last in waterfront conditions. We use premium Western Red Cedar, nature's most naturally rot-resistant wood species with oils that repel insects and resist decay. For Kirkland's luxury lakefront properties in neighborhoods like Market and Moss Bay, we offer clear-grade cedar (zero knots) that provides superior appearance and 15+ years of longevity even with increased moisture exposure.
+          Lake Washington creates a microclimate unlike anywhere else on the Eastside. Morning fog rolls off the water, afternoon breezes carry moisture inland, and waterfront lots stay damp longer than properties even a few blocks away. We source Western Red Cedar specifically graded for these conditions — tight grain patterns that absorb stain evenly and natural oils concentrated enough to resist the constant moisture cycle. Homeowners along Juanita Beach, Finn Hill, and Houghton neighborhoods consistently choose cedar because it weathers gracefully to a silver-gray that complements the lake aesthetic.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Every cedar fence installation includes marine-grade stainless steel fasteners specifically chosen for Kirkland's lakefront microclimate. Standard galvanized hardware can corrode within 5-10 years near water, but our stainless steel fasteners maintain integrity for decades. We use triple-sealed joinery systems and premium pressure-treated posts that resist the 10-15% higher humidity waterfront properties experience. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> adds decades to your fence life by eliminating ground contact and wood rot.
+          Hardware matters as much as lumber when you live near water. We switched to 316-grade stainless steel fasteners years ago after watching galvanized screws rust through on shoreline properties. Every post gets set in concrete poured flush to grade level — no exposed wood-to-soil contact where rot starts. For properties within 500 feet of the waterline, we recommend our <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe system</Link> that suspends the cedar post inside a steel sleeve, completely eliminating ground contact rot.
         </p>
       </div>
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Kirkland</h3>
+        <h3 className="text-2xl font-semibold">Three Fence Systems — Each Suited to Lake Living</h3>
         <p className="text-muted-foreground leading-relaxed">
-          MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. We've focused our expertise on these options to deliver superior installation quality and industry-leading warranties. Our specialized approach ensures every fence we install meets exacting standards for Kirkland's waterfront environment.
+          Rather than offering every fence type, we focus on three systems that actually perform near water. This specialization means our crews install these systems constantly, know every detail, and can troubleshoot site challenges without delays.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Cedar fencing</strong> remains the gold standard for natural beauty and durability in lakefront settings. <strong>Hogwire fencing</strong> combines rustic charm with modern functionality, perfect for equestrian properties wanting open views. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance at competitive pricing - ideal for busy lakefront professionals.
+          <strong>Western Red Cedar:</strong> The classic choice for blending with Kirkland's forested lots and waterfront views. Works beautifully in horizontal, vertical, or picture-frame configurations. <strong>Hogwire panels:</strong> Welded wire mesh framed in cedar — popular with homeowners who want boundary definition without blocking lake breezes or sightlines to the water. <strong>Hybrid Aluminum/Cedar:</strong> Black aluminum slats with cedar framing for a modern industrial look that never needs staining. Increasingly requested in Totem Lake and downtown Kirkland redevelopments.
         </p>
       </div>
 
