@@ -1,0 +1,183 @@
+import { OptimizedImage } from "@/components/OptimizedImage";
+import { useState, useRef, useEffect } from "react";
+import { Play, Pause, Gauge } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
+
+const images = [
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%208.webp?updatedAt=1762037717661&tr=w-280",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%208.webp?updatedAt=1762037717661&tr=w-400",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%203.webp?updatedAt=1762037717155&tr=w-280",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%203.webp?updatedAt=1762037717155&tr=w-400",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%205.webp?updatedAt=1762037716912&tr=w-280",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%205.webp?updatedAt=1762037716912&tr=w-400",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%204.webp?updatedAt=1762037716213&tr=w-280",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%204.webp?updatedAt=1762037716213&tr=w-400",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software.webp?tr=w-380,h-220&updatedAt=1762037716032",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software.webp?tr=w-570,h-320&updatedAt=1762037716032",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software%202.webp?updatedAt=1762037715388&tr=w-380,h-220",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence%201280x720%20Software%202.webp?updatedAt=1762037715388&tr=w-570,h-320",
+  },
+  {
+    mobile:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence.com%203.webp?updatedAt=1762037711654&tr=w-280",
+    desktop:
+      "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/SeattleFence.com%20Images/SeattleFence.com%203.webp?updatedAt=1762037711654&tr=w-400",
+  },
+];
+
+export const ScrollingCarousel = () => {
+  const isMobile = useIsMobile();
+  const speedOptions = [1, 2, 3, 4, 5];
+  const [speedIndex, setSpeedIndex] = useState(0); // Start at 1x
+  const [isPaused, setIsPaused] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollPositionRef = useRef(0);
+  const animationFrameRef = useRef<number>();
+  const lastTimestampRef = useRef<number>();
+  const setWidthRef = useRef(0);
+
+  const currentSpeed = speedOptions[speedIndex];
+  const baseSpeed = 50; // pixels per second at 1x speed
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const computeSetWidth = () => {
+      const children = Array.from(container.children).slice(0, images.length) as HTMLElement[];
+      const total = children.reduce((acc, child) => acc + child.offsetWidth + 32, 0);
+      setWidthRef.current = total;
+    };
+
+    computeSetWidth();
+    window.addEventListener("resize", computeSetWidth);
+
+    const animate = (timestamp: number) => {
+      if (!lastTimestampRef.current) {
+        lastTimestampRef.current = timestamp;
+      }
+
+      const deltaTime = (timestamp - lastTimestampRef.current) / 1000; // seconds
+      lastTimestampRef.current = timestamp;
+
+      if (!isPaused) {
+        // advance position
+        scrollPositionRef.current += baseSpeed * currentSpeed * deltaTime;
+
+        // reset after one full set width
+        const totalWidth = setWidthRef.current;
+        if (totalWidth > 0 && scrollPositionRef.current >= totalWidth) {
+          scrollPositionRef.current -= totalWidth;
+        }
+
+        // apply transform without rerender
+        container.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      window.removeEventListener("resize", computeSetWidth);
+    };
+  }, [currentSpeed, isPaused]);
+
+  const cycleSpeed = () => {
+    setSpeedIndex((prev) => (prev + 1) % speedOptions.length);
+  };
+
+  const togglePause = () => {
+    setIsPaused((prev) => !prev);
+  };
+
+  return (
+    <section className="py-16 overflow-hidden bg-primary/10">
+      <div className="container mx-auto px-4 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Powered by Fence Genius Technology</h2>
+        <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+          See our process from design to installation. Our 3D renderings help prefabricate panels in the warehouse for
+          precision and efficiency, followed by expert installation at your property.
+        </p>
+
+        {/* Carousel Controls */}
+        <div className="flex justify-center items-center gap-3 mt-6">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={togglePause}
+            aria-label={isPaused ? "Play carousel" : "Pause carousel"}
+            className="rounded-full"
+          >
+            {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={cycleSpeed}
+            aria-label={`Change speed (current: ${currentSpeed}x)`}
+            className="rounded-full min-w-[80px] gap-2"
+          >
+            <Gauge className="h-4 w-4" />
+            <span className="font-semibold">{currentSpeed}x</span>
+          </Button>
+        </div>
+      </div>
+      <div className="relative">
+        <div ref={containerRef} className="flex items-center will-change-transform">
+          {/* Triple set for seamless loop without visible reset */}
+          {[...images, ...images, ...images].map((image, index) => {
+            const baseIndex = index % images.length;
+            const isWide = baseIndex === 4 || baseIndex === 5;
+            const imageSrc = isMobile ? image.mobile : image.desktop;
+            return (
+              <div
+                key={`img-${index}`}
+                className={`flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 ${
+                  isWide
+                    ? "w-[320px] h-[180px] md:w-[570px] md:h-[320px]"
+                    : "w-[280px] h-[280px] md:w-[400px] md:h-[400px]"
+                }`}
+              >
+                <OptimizedImage
+                  src={imageSrc}
+                  alt={`Seattle Fence Project ${baseIndex + 1}`}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
