@@ -109,45 +109,45 @@ const MountlakeTerraceArticle = () => (
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Cedar Fence Installation in Mountlake Terrace</h3>
+        <h3 className="text-2xl font-semibold">Cedar Built for Lake Ballinger's Microclimate</h3>
         <p className="text-muted-foreground leading-relaxed">
-          MyFence.com uses premium Western Red Cedar for Mountlake Terrace installations, nature's most rot-resistant wood species. Our cedar contains natural oils that repel insects and resist decay even in Lake Ballinger's high-humidity environment. We offer budget-conscious standard-grade cedar and premium clear-grade options for those wanting superior appearance. Every installation uses heavy-duty lumber exceeding industry minimums, ensuring structural integrity during Pacific Northwest windstorms.
+          Lake Ballinger sits at the heart of Mountlake Terrace, and properties within a mile of its shores experience noticeably higher humidity than surrounding areas. We source Western Red Cedar with tight grain patterns and concentrated natural oils — the kind that handles constant dampness without checking or warping. Homeowners in Cedar Way and Gateway neighborhoods often replace fences that failed prematurely because contractors used lumber graded for drier climates. We've learned which mills produce cedar that actually performs here.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          All cedar fence installations include marine-grade stainless steel fasteners engineered for Mountlake Terrace's consistent moisture exposure. We use triple-sealed joinery and premium pressure-treated posts that handle the area's year-round dampness. Our optional <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe upgrade</Link> eliminates ground contact entirely, adding decades to fence life by preventing the wood rot that shortens standard installations.
+          Post rot claims most fences in Mountlake Terrace before the boards ever fail. Our standard installation sets pressure-treated posts in concrete with the top sloped away from the wood — a small detail that prevents water pooling. For properties along Ballinger Creek or backing onto park areas, we recommend our <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe system</Link> that keeps cedar completely out of the ground. The extra cost pays off when you're not replacing posts every 12-15 years.
         </p>
       </div>
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Mountlake Terrace</h3>
+        <h3 className="text-2xl font-semibold">Focused on What Works — Not Everything</h3>
         <p className="text-muted-foreground leading-relaxed">
-          MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. By focusing exclusively on these materials, we deliver superior installation quality backed by industry-leading warranties. Our specialized approach ensures every fence meets our exacting standards for durability and appearance.
+          Some contractors list fifteen fence types on their website and install whichever sells. We took the opposite approach — three systems we know inside out. Every crew member has built hundreds of cedar, hogwire, and hybrid aluminum fences. When something unexpected happens on-site (and something always does), they've seen it before.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Cedar fencing</strong> provides natural beauty and proven durability at accessible price points. <strong>Hogwire fencing</strong> offers rustic charm with open views, perfect for properties wanting character without solid barriers. Our <strong>Hybrid Aluminum/Cedar system</strong> combines low-maintenance aluminum panels with cedar framing for modern aesthetics at competitive pricing. Each system uses marine-grade fasteners and materials engineered for Mountlake Terrace's climate.
+          <strong>Western Red Cedar</strong> handles Mountlake Terrace's wet winters and delivers that classic Northwest look — we install it in picture frame, horizontal, craftsman, and solid board styles. <strong>Hogwire</strong> works well for corner lots and properties backing onto Interurban Trail where homeowners want boundaries without blocking sightlines. <strong>Hybrid Aluminum/Cedar</strong> appeals to younger families moving into Town Center's newer developments who'd rather spend weekends at the lake than staining a fence.
         </p>
       </div>
 
       {/* Other Materials - Information Only */}
       <div className="space-y-3 border-l-4 border-muted pl-4">
-        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Materials We Don't Install (And Why)</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Sharing this so you can make informed comparisons — we're not trying to sell you on materials we don't carry.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> offers low maintenance but at significantly higher cost. <strong>Vinyl fencing</strong> requires minimal upkeep but can become brittle over time. <strong>Ornamental aluminum and steel</strong> provide security with visibility. While these materials have applications, we've chosen to specialize in cedar, hogwire, and hybrid systems where we can guarantee quality results at fair prices.
+          Vinyl fencing becomes brittle after years of UV exposure and cracks during cold snaps — we've seen failures throughout older Mountlake Terrace subdivisions. Composite boards expand and contract with temperature swings, creating gaps and warping over time. Chain-link and ornamental iron rust despite galvanizing claims, especially near Lake Ballinger's constant humidity. We'd rather specialize in materials we can confidently warranty than offer options we know underperform locally.
         </p>
       </div>
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Set-and-Forget Fencing for Busy Households</h3>
         <p className="text-muted-foreground leading-relaxed">
-          For Mountlake Terrace families seeking low maintenance at reasonable cost, our hybrid aluminum fence system delivers exceptional value. Black aluminum panels combined with cedar framing and pressure-treated posts create a contemporary look that never requires staining. This system provides modern aesthetics without premium pricing.
+          Between commuting to Seattle, managing kids' schedules, and actually enjoying the lake on weekends, most Mountlake Terrace families have zero interest in annual fence maintenance. Our hybrid system solves that problem — powder-coated aluminum panels that look identical in year ten as they did on installation day. No staining, no sealing, no pressure washing.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          The aluminum panels resist moisture damage in Mountlake Terrace's damp climate while requiring zero maintenance. Cedar framework adds natural warmth and structural support. Pressure-treated posts ensure long-term stability. This hybrid approach maintains competitive pricing with traditional wood while offering superior longevity and minimal upkeep - perfect for busy families throughout Town Center and Gateway neighborhoods.
+          The cedar post-and-rail frame adds warmth that all-metal fences lack, blending with the established trees throughout Gateway and Melody Hill. Pressure-treated posts handle ground contact so the cedar frame stays dry and stable. We're seeing strong interest from first-time homebuyers in the newer condos near Town Center — people who want curb appeal without adding another chore to the list.
         </p>
       </div>
     </section>
@@ -155,43 +155,39 @@ const MountlakeTerraceArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Fence Financing Options in Mountlake Terrace
+        Spread the Cost Without Waiting
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
-            Quality fencing should be accessible to every Mountlake Terrace family. We partner with Wisetack to offer flexible financing that makes premium fencing affordable through manageable monthly payments:
+            A quality fence shouldn't require draining your savings or delaying until next year. We work with Wisetack financing so Mountlake Terrace homeowners can install now and pay over time — no second mortgage, no home equity line, no complicated paperwork.
           </p>
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Loan amounts from $1,000 to $25,000 per project</span>
+              <span>Finance $1,000 to $25,000 depending on project scope</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Flexible terms with competitive rates</span>
+              <span>Soft credit check for pre-approval — no hit to your score</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Quick pre-approval with soft credit check (no credit score impact)</span>
+              <span>Most applicants approved same day</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Same-day approvals for qualified applicants</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span>Transparent terms with no hidden fees</span>
+              <span>Fixed monthly payments you can plan around</span>
             </li>
           </ul>
           <p className="text-muted-foreground leading-relaxed">
-            Apply in minutes and receive fast decisions. Install your fence now and pay over time with manageable monthly payments. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">Learn more about Wisetack financing options</Link>.
+            Plenty of Gateway and Cedar Terrace homeowners finance their fences — it's a practical way to handle an unexpected expense or upgrade sooner than planned. <Link to="/financing" className="text-primary underline decoration-2 underline-offset-2">See current rates and terms</Link>.
           </p>
         </div>
         <Card className="p-6 bg-primary/5">
-          <h3 className="text-xl font-semibold mb-4">Get Pre-Approved Today</h3>
+          <h3 className="text-xl font-semibold mb-4">Check Your Options in 2 Minutes</h3>
           <p className="text-muted-foreground mb-4">
-            Check your financing options with no impact to your credit score. Get approved and start your Mountlake Terrace fence project immediately.
+            Pre-qualify without affecting your credit. Know your budget before we even come out for an estimate.
           </p>
           <Link to="/financing">
             <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-colors">
@@ -205,36 +201,36 @@ const MountlakeTerraceArticle = () => (
     {/* Warranty Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Industry-Leading Warranty Coverage
+        We Fix What We Build — Period
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        Every Mountlake Terrace fence installation includes comprehensive warranty protection exceeding industry standards. We stand behind our work with confidence because we use premium materials and installation techniques perfected over 30+ years.
+        Our {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty means if something we installed fails, we come back and make it right. No arguing about whether it's "normal wear" or "customer damage." Posts leaning? Gates binding? Hardware pulling loose? Call us and we'll handle it.
       </p>
       <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6">
           <div className="flex items-start gap-4">
             <Shield className="h-8 w-8 text-primary flex-shrink-0" />
             <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
+              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Workmanship Coverage</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                We guarantee our installation workmanship with a comprehensive {WARRANTY_CONSTANTS.YEARS}-year warranty covering all labor and installation defects.
+                Covers our installation work — how we set posts, attach rails, hang gates, and secure panels. If our work fails, we fix it free.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Structural integrity of posts and framework</span>
+                  <span>Post stability and alignment</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Gate alignment and functionality</span>
+                  <span>Gate operation and swing clearance</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Hardware installation and security</span>
+                  <span>Fastener holding and attachment points</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Panel attachment and stability</span>
+                  <span>Panel and rail connections</span>
                 </li>
               </ul>
             </div>
@@ -242,7 +238,7 @@ const MountlakeTerraceArticle = () => (
         </Card>
       </div>
       <p className="text-sm text-muted-foreground">
-        Our warranties are fully transferable if you sell your Mountlake Terrace property, adding value to your home. We're committed to your complete satisfaction and standing behind every fence for the long term.
+        Selling your house? The warranty transfers to the new owner — which looks good on a listing disclosure. Most contractors won't put that in writing.
       </p>
     </section>
 
