@@ -82,15 +82,25 @@ export const ScrollingCarousel = () => {
     const section = sectionRef.current;
     if (!section) return;
 
+    let timeoutId: NodeJS.Timeout;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          timeoutId = setTimeout(() => setIsInView(true), 2000);
+        } else {
+          clearTimeout(timeoutId);
+          setIsInView(false);
+        }
       },
       { threshold: 0.1 }
     );
 
     observer.observe(section);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {
