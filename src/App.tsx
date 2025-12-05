@@ -86,6 +86,7 @@ const Enumclaw = React.lazy(() => import("./pages/service-areas/Enumclaw"));
 const NorthBend = React.lazy(() => import("./pages/service-areas/NorthBend"));
 const BonneyLake = React.lazy(() => import("./pages/service-areas/BonneyLake"));
 const Sumner = React.lazy(() => import("./pages/service-areas/Sumner"));
+const Tukwila = React.lazy(() => import("./pages/service-areas/Tukwila"));
 
 // Lazy load neighborhood pages
 const Tehaleh = React.lazy(() => import("./pages/neighborhoods/Tehaleh"));
@@ -343,6 +344,7 @@ const AppContent = () => {
           <Route path="/service-areas/north-bend" element={<NorthBend />} />
           <Route path="/service-areas/bonney-lake" element={<BonneyLake />} />
           <Route path="/service-areas/sumner" element={<Sumner />} />
+          <Route path="/service-areas/tukwila" element={<Tukwila />} />
           <Route path="/neighborhoods/upper-tehaleh" element={<Navigate to="/neighborhoods/lower-tehaleh" replace />} />
           <Route path="/neighborhoods/lower-tehaleh" element={<Tehaleh />} />
           <Route path="/blog" element={<Blog />} />
