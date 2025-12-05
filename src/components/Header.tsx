@@ -157,24 +157,58 @@ const Header = () => {
               Service Areas
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" sideOffset={8} className="bg-background border z-50 w-[500px] p-4 mt-0">
-              <div className="grid grid-cols-3 gap-6">
-                {serviceAreasByRegion.map((region) => (
-                  <div key={region.region} className="space-y-2">
-                    <h3 className="font-semibold text-sm text-foreground mb-3">{region.region}</h3>
-                    <div className="flex flex-col gap-1">
-                      {region.areas.map((area) => (
-                        <Link
-                          key={area.to}
-                          to={area.to}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
-                        >
-                          {area.label}
-                        </Link>
-                      ))}
+            <DropdownMenuContent align="end" sideOffset={8} className="bg-background border z-50 w-[600px] p-4 mt-0">
+              <div className="grid grid-cols-4 gap-6">
+                {serviceAreasByRegion.map((region) => {
+                  const isKingCounty = region.region === "King County";
+                  const midpoint = Math.ceil(region.areas.length / 2);
+                  const firstColumn = isKingCounty ? region.areas.slice(0, midpoint) : region.areas;
+                  const secondColumn = isKingCounty ? region.areas.slice(midpoint) : [];
+                  
+                  return (
+                    <div key={region.region} className={`space-y-2 ${isKingCounty ? 'col-span-2' : ''}`}>
+                      <h3 className="font-semibold text-sm text-foreground mb-3">{region.region}</h3>
+                      <div className={`${isKingCounty ? 'grid grid-cols-2 gap-x-4' : 'flex flex-col'} gap-1`}>
+                        {isKingCounty ? (
+                          <>
+                            <div className="flex flex-col gap-1">
+                              {firstColumn.map((area) => (
+                                <Link
+                                  key={area.to}
+                                  to={area.to}
+                                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                                >
+                                  {area.label}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="flex flex-col gap-1">
+                              {secondColumn.map((area) => (
+                                <Link
+                                  key={area.to}
+                                  to={area.to}
+                                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                                >
+                                  {area.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </>
+                        ) : (
+                          region.areas.map((area) => (
+                            <Link
+                              key={area.to}
+                              to={area.to}
+                              className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                            >
+                              {area.label}
+                            </Link>
+                          ))
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
