@@ -14,6 +14,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/renton", label: "Renton" },
       { to: "/service-areas/sammamish", label: "Sammamish" },
       { to: "/service-areas/seattle", label: "Seattle" },
+      { to: "/service-areas/tukwila", label: "Tukwila" },
     ],
   },
   {
