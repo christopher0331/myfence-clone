@@ -168,10 +168,10 @@ const Header = () => {
                   return (
                     <div key={region.region} className={`space-y-2 ${isKingCounty ? 'col-span-2' : ''}`}>
                       <h3 className="font-semibold text-sm text-foreground mb-3 text-center">{region.region}</h3>
-                      <div className={`${isKingCounty ? 'flex justify-center gap-x-8' : 'flex flex-col items-center'} gap-1`}>
+                      <div className={`${isKingCounty ? 'flex justify-center gap-x-12' : 'flex flex-col items-center'} gap-1`}>
                         {isKingCounty ? (
                           <>
-                            <div className="flex flex-col gap-1 items-end">
+                            <div className="flex flex-col gap-1 items-center">
                               {firstColumn.map((area) => (
                                 <Link
                                   key={area.to}
@@ -182,7 +182,7 @@ const Header = () => {
                                 </Link>
                               ))}
                             </div>
-                            <div className="flex flex-col gap-1 items-start">
+                            <div className="flex flex-col gap-1 items-center">
                               {secondColumn.map((area) => (
                                 <Link
                                   key={area.to}
