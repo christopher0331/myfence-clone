@@ -331,12 +331,6 @@ const MountlakeTerraceArticle = () => (
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">What if my old fence posts are rotted but the boards are still good?</h3>
-          <p className="text-muted-foreground">
-            This is common in Mountlake Terrace's aging fence stock. We can often replace just the posts and rails while reusing solid boards — cutting your cost significantly. During our estimate, we'll assess board condition and give you honest options rather than pushing a full replacement you may not need.
-          </p>
-        </div>
-        <div>
           <h3 className="font-semibold mb-2">How quickly can you complete a typical backyard fence?</h3>
           <p className="text-muted-foreground">
             Most standard backyard fences in Mountlake Terrace install in 1-2 days. Our pre-fabricated panels arrive cut to your measurements, so we spend installation day assembling rather than sawing. We haul out all debris the same day — no pile of old fence sitting in your yard for a week.
@@ -380,14 +374,6 @@ const MountlakeTerrace = () => {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Fences under 8 feet typically don't require permits in Mountlake Terrace, but must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my old fence posts are rotted but the boards are still good?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This is common in Mountlake Terrace's aging fence stock. We can often replace just the posts and rails while reusing solid boards — cutting your cost significantly. During our estimate, we'll assess board condition and give you honest options rather than pushing a full replacement you may not need."
         }
       },
       {
