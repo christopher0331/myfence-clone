@@ -2,6 +2,21 @@ import ServiceAreaTemplate from "./ServiceAreaTemplate";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import AboutCityModal from "@/components/AboutCityModal";
+
+const ABOUT_RENTON_CONTENT = `Renton, Washington sits at the southern tip of Lake Washington, a city of approximately 107,000 residents that has transformed from an industrial coal and lumber town into one of the Puget Sound region's most diverse and dynamic communities. Located 11 miles southeast of Seattle, Renton occupies the Cedar River valley where it meets the lake, creating a geography that ranges from waterfront to hillside within city limits.
+
+The Duwamish people inhabited this valley for millennia before European American settlers arrived in the 1850s, drawn by the confluence of rivers and proximity to coal deposits. The city takes its name from Captain William Renton, who established lumber mills along the waterfront in the 1870s. Coal mining dominated the early economy, but Boeing's arrival in 1941 permanently altered Renton's trajectory. The company's massive assembly plant—still producing 737 aircraft—made Renton synonymous with aerospace manufacturing and brought waves of workers seeking nearby housing.
+
+The city's geography creates distinct living environments within a compact area. Downtown Renton sits in the valley floor where the Cedar River enters Lake Washington, an area prone to moisture and historically subject to flooding before modern engineering. The Renton Highlands rise dramatically to the east, offering views of Mount Rainier and the Cascades from properties perched hundreds of feet above the valley. Kennydale hugs the Lake Washington shoreline with waterfront homes and parks. Fairwood and East Renton Plateau spread across the elevated terrain to the east, featuring newer suburban development.
+
+Lake Washington and the Cedar River dominate Renton's climate and character. The valley's low elevation creates a bowl effect that traps moisture and fog, particularly during fall and winter months. Properties near the water experience higher humidity than hillside locations just a mile away. Annual rainfall averages about 38 inches, similar to Seattle, but the valley floor retains moisture longer due to limited air circulation. Summers bring welcome relief with warm, dry conditions and temperatures reaching the mid-70s.
+
+Renton's transformation over the past two decades reflects broader regional trends. What was once a blue-collar aerospace town has become remarkably diverse—the city's population is now majority-minority, with large Vietnamese, East African, and Hispanic communities reshaping the cultural landscape. Restaurants along Rainier Avenue serve cuisine from dozens of countries. This diversity extends to housing: lakefront mansions in Kennydale contrast sharply with modest valley homes and new apartment complexes near the transit center.
+
+The economic base has diversified beyond Boeing. IKEA's only Pacific Northwest store anchors The Landing shopping development. Healthcare, logistics, and technology companies have established presences. The city's affordability relative to Seattle and the Eastside continues attracting families and businesses seeking value. Light rail extension plans promise to strengthen connections to Seattle and Bellevue, likely accelerating development pressure in transit-accessible neighborhoods.
+
+Gene Coulon Memorial Beach Park represents Renton's relationship with its waterfront—a beloved public space where residents gather for swimming, picnicking, and evening walks along Lake Washington. The Cedar River Trail provides a green corridor through the valley, connecting to a regional trail network. These amenities, combined with proximity to major employers and relative affordability, make Renton an increasingly attractive option for families seeking the benefits of urban access without Seattle's costs.`;
 
 const RentonArticle = () => (
   <div className="space-y-8">
@@ -115,6 +130,8 @@ const RentonArticle = () => (
         </div>
       </div>
     </section>
+
+    <AboutCityModal cityName="Renton" content={ABOUT_RENTON_CONTENT} />
   </div>
 );
 
