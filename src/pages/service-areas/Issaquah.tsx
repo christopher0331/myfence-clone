@@ -3,7 +3,21 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import AboutCityModal from "@/components/AboutCityModal";
 
+const ABOUT_ISSAQUAH_CONTENT = `Issaquah, Washington nestles at the western foot of the Cascade Range, a city of approximately 40,000 residents where suburban amenities meet wilderness access. Located 17 miles east of Seattle at the convergence of three mountains—Tiger, Squak, and Cougar—Issaquah has evolved from a coal mining and hop farming community into one of the Puget Sound's most desirable addresses for families and outdoor enthusiasts.
+
+The Snoqualmie people inhabited this valley for thousands of years before European American settlers arrived in the 1860s, drawn by timber and fertile farmland. The name "Issaquah" derives from a Salish word meaning "the sound of birds" or "snake," depending on linguistic interpretation. Coal mining dominated the late 19th century economy, with several mines operating in the surrounding hills until the 1930s. The community later became famous for its salmon hatchery, established in 1936, which still releases hundreds of thousands of salmon annually and hosts the beloved Salmon Days festival each October.
+
+The transformation from rural community to upscale suburb accelerated with Interstate 90's completion in the 1960s, putting Seattle within easy commuting distance. Costco's headquarters arrived in 1987, followed by waves of technology company employees seeking mountain-adjacent living. Today, Issaquah hosts T-Mobile's headquarters and draws residents from Microsoft, Amazon, and countless startups who want forest trails outside their back doors.
+
+Issaquah's geography defines daily life. The city occupies a valley floor surrounded by the Issaquah Alps—a local term for Tiger Mountain (3,004 feet), Squak Mountain (1,975 feet), and Cougar Mountain (1,595 feet). These peaks create a dramatic backdrop visible from most neighborhoods and offer hundreds of miles of hiking trails. Issaquah Creek flows through town, feeding into Lake Sammamish to the north. The terrain ranges from flat valley bottom near historic downtown to steep hillsides in communities like Talus and the Issaquah Highlands.
+
+The climate reflects Issaquah's position at the Cascade foothills' edge. The city receives approximately 45 inches of annual rainfall—20-30% more than Seattle—as moisture-laden Pacific air rises against the mountains. Higher elevation neighborhoods experience occasional snow that may linger while valley floors remain clear. Summers are gloriously dry and warm, with temperatures averaging 75-80°F from July through September. Winters hover around 40°F at lower elevations but can be significantly colder on hillsides.
+
+Neighborhoods span from established communities to master-planned developments. Historic downtown maintains small-town charm with Front Street shops and restaurants. Gilman Village offers upscale shopping in converted farm buildings. The Issaquah Highlands, a massive planned community begun in the 1990s, features strict design guidelines and extensive green space. Talus rises dramatically up hillsides with contemporary architecture. Squak Mountain and Lake Sammamish neighborhoods offer larger lots and forest privacy.
+
+Wildlife encounters are part of Issaquah life. Black bears roam through neighborhoods seasonally, coyotes hunt in greenbelts, and deer browse through virtually every yard without adequate fencing. Cougars occasionally make headlines, and salmon return annually to Issaquah Creek where residents gather to watch their journey. This coexistence with nature shapes everything from garbage storage to garden planning—and makes thoughtful fence design essential for protecting property while respecting the wildlife corridors that make Issaquah special.`;
 const IssaquahArticle = () => (
   <article className="space-y-12">
     {/* Company Introduction */}
@@ -307,6 +321,8 @@ const IssaquahArticle = () => (
         </div>
       </Card>
     </section>
+
+    <AboutCityModal cityName="Issaquah" content={ABOUT_ISSAQUAH_CONTENT} />
   </article>
 );
 
