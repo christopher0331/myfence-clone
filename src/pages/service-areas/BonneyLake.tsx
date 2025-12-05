@@ -368,27 +368,33 @@ const BonneyLakeArticle = () => (
       <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
       <Card className="p-6 space-y-4">
         <div>
-          <h4 className="font-semibold mb-2">How long does fence installation take in Bonney Lake?</h4>
+          <h4 className="font-semibold mb-2">What are Tehaleh's HOA fence requirements?</h4>
           <p className="text-muted-foreground">
-            Most residential fence projects in Bonney Lake take 1-3 days depending on project size, terrain complexity, and material selection. Our Fence Genius technology significantly reduces installation time by manufacturing panels off-site, allowing us to complete projects 30-50% faster than traditional methods while maintaining superior quality standards.
+            Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly — our estimates include guidance on meeting your specific CC&R requirements.
           </p>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">How much does fence installation cost in Bonney Lake?</h4>
+          <h4 className="font-semibold mb-2">How do you handle Bonney Lake's rocky volcanic soil?</h4>
           <p className="text-muted-foreground">
-            Get precise, instant pricing using our <Link to="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>. Typical wood fence installation ranges from $35-65 per linear foot depending on style, height, and material grade. A standard 6-foot cedar privacy fence averages $45-55 per linear foot installed. Our online tool provides fast estimates, followed by exact on-site pricing using Fence Genius measurements - guaranteeing no surprise charges.
+            Bonney Lake sits on Mount Rainier lahar deposits — we hit rock and compacted volcanic material on nearly every job. Our crews carry hydraulic augers and rock bars specifically for this geology. When we encounter boulders, we adjust post placement slightly rather than fighting immovable stone. This local experience prevents the delays and change orders that catch other contractors off guard.
           </p>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">Do I need to involve my neighbors?</h4>
+          <h4 className="font-semibold mb-2">Can you install fences on Bonney Lake's steep hillside lots?</h4>
           <p className="text-muted-foreground">
-            <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a> addresses shared fence costs. If your fence sits on the property line and serves both properties, neighbors may share cost responsibility. We recommend early discussion with neighbors and providing professional documentation. Review <Link to="/blog/fence-cost-shared-with-neighbor" className="text-primary underline decoration-2 underline-offset-2">Washington State fence cost sharing laws and best practices</Link> for detailed guidance.
+            Absolutely — hillside installations are common in areas like Mountain Creek and Falling Water. We use stair-stepped or racked panel designs depending on slope severity, always keeping the bottom rail consistent with grade to prevent gaps. Steep lots typically add 10-20% to material costs due to custom panel cutting, but our <Link to="/fence-genius" className="text-primary underline decoration-2 underline-offset-2">Fence Genius</Link> pre-fabrication handles the complexity without slowing installation.
           </p>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">When is the best time to install a fence in Bonney Lake?</h4>
+          <h4 className="font-semibold mb-2">Do deer damage cedar fences in Bonney Lake?</h4>
           <p className="text-muted-foreground">
-            Late spring through early fall (May-October) provides optimal weather conditions for fence installation in Bonney Lake. However, professional contractors work year-round, and winter installation may offer better availability and competitive pricing. We ensure proper concrete curing regardless of weather conditions.
+            Deer throughout Bonney Lake — especially near Fennel Creek and the greenbelt trails — will rub antlers on fence posts during velvet season. We recommend 6-foot solid privacy fences that deter jumping, and <Link to="/fence-upgrades/post-on-pipe" className="text-primary underline decoration-2 underline-offset-2">Post-on-Pipe</Link> upgrades that eliminate exposed wood at ground level where bucks tend to rub. Hogwire panels also work well since deer see through them and don't attempt to jump.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Should I wait until my new Bonney Lake home is landscaped before installing a fence?</h4>
+          <p className="text-muted-foreground">
+            In Tehaleh and other new developments, we recommend installing your fence before major landscaping. Fencing first establishes property boundaries, keeps pets and kids contained during the chaotic post-move period, and prevents equipment from damaging freshly planted lawns. We coordinate with landscapers regularly and can leave gates wide for equipment access if your yard work follows shortly after.
           </p>
         </div>
       </Card>
@@ -409,42 +415,42 @@ const BonneyLake = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How long does fence installation take in Bonney Lake?",
+        "name": "What are Tehaleh's HOA fence requirements?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most residential fence projects in Bonney Lake take 1-3 days depending on project size, terrain complexity, and material selection. Our Fence Genius technology significantly reduces installation time by manufacturing panels off-site, allowing us to complete projects 30-50% faster than traditional methods while maintaining superior quality standards."
+          "text": "Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly."
         }
       },
       {
         "@type": "Question",
-        "name": "How much does fence installation cost in Bonney Lake?",
+        "name": "How do you handle Bonney Lake's rocky volcanic soil?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Typical wood fence installation ranges from $35-65 per linear foot depending on style, height, and material grade. A standard 6-foot cedar privacy fence averages $45-55 per linear foot installed. Get precise, instant pricing using our Virtual Quote Tool for fast estimates, followed by exact on-site pricing using Fence Genius measurements."
+          "text": "Bonney Lake sits on Mount Rainier lahar deposits — we hit rock and compacted volcanic material on nearly every job. Our crews carry hydraulic augers and rock bars specifically for this geology. When we encounter boulders, we adjust post placement slightly rather than fighting immovable stone."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to involve my neighbors?",
+        "name": "Can you install fences on Bonney Lake's steep hillside lots?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Washington State law (RCW 16.60.020) addresses shared fence costs. If your fence sits on the property line and serves both properties, neighbors may share cost responsibility. We recommend early discussion with neighbors and providing professional documentation."
+          "text": "Absolutely — hillside installations are common in areas like Mountain Creek and Falling Water. We use stair-stepped or racked panel designs depending on slope severity, always keeping the bottom rail consistent with grade to prevent gaps. Steep lots typically add 10-20% to material costs due to custom panel cutting."
         }
       },
       {
         "@type": "Question",
-        "name": "When is the best time to install a fence in Bonney Lake?",
+        "name": "Do deer damage cedar fences in Bonney Lake?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Late spring through early fall (May-October) provides optimal weather conditions for fence installation in Bonney Lake. However, professional contractors work year-round, and winter installation may offer better availability and competitive pricing."
+          "text": "Deer throughout Bonney Lake — especially near Fennel Creek and the greenbelt trails — will rub antlers on fence posts during velvet season. We recommend 6-foot solid privacy fences that deter jumping, and Post-on-Pipe upgrades that eliminate exposed wood at ground level where bucks tend to rub."
         }
       },
       {
         "@type": "Question",
-        "name": "What types of fences work best in Bonney Lake's climate?",
+        "name": "Should I wait until my new Bonney Lake home is landscaped before installing a fence?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Western Red Cedar is the gold standard for wood fencing due to its natural resistance to rot, decay, and insects. Composite fencing offers 25+ year warranties without maintenance requirements. Premium vinyl fencing resists weather extremes. All materials should use corrosion-resistant fasteners due to Pacific Northwest moisture levels."
+          "text": "In Tehaleh and other new developments, we recommend installing your fence before major landscaping. Fencing first establishes property boundaries, keeps pets and kids contained during the chaotic post-move period, and prevents equipment from damaging freshly planted lawns."
         }
       }
     ]
