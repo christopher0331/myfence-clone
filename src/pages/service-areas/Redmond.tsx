@@ -4,6 +4,21 @@ import { Link } from "react-router-dom";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import AboutCityModal from "@/components/AboutCityModal";
+
+const ABOUT_REDMOND_CONTENT = `Redmond, Washington sits at the heart of the Pacific Northwest's technology corridor, a city of approximately 75,000 residents that has transformed from a quiet logging and farming community into one of America's most innovative urban centers. Located 15 miles east of Seattle on the Eastside of Lake Washington, Redmond occupies 17.2 square miles of rolling terrain where the Sammamish River flows northward toward Lake Washington.
+
+The area's first settlers arrived in the 1870s, drawn by rich timber resources and fertile farmland. Luke McRedmond, the city's namesake, established a trading post in 1871 that would grow into the downtown core. The arrival of the railroad in 1888 accelerated growth, but Redmond remained primarily agricultural through the mid-20th century, known especially for its bicycle racing traditions that continue today at Marymoor Park's velodrome.
+
+The transformation began in 1979 when Microsoft relocated from Albuquerque to Redmond, eventually establishing its sprawling corporate campus that now houses over 50,000 employees. Nintendo of America followed in 1982, cementing Redmond's identity as a global technology hub. Today, the city hosts numerous tech companies, startups, and research facilities, earning it the nickname "Bicycle Capital of the Northwest" for its extensive trail system and cycling culture that coexists with its tech identity.
+
+Redmond's geography shapes daily life profoundly. The city sits in a valley surrounded by forested hills, with Marymoor Park's 640 acres providing a green centerpiece along the Sammamish River. Bridle Trails State Park on the western edge preserves old-growth forest and maintains the city's equestrian heritage. The Sammamish River Trail connects Redmond to surrounding communities, while numerous neighborhood parks and green spaces give the city a distinctly less urban feel than Seattle.
+
+The climate mirrors the greater Puget Sound region but with notable Eastside variations. Redmond receives approximately 35 inches of annual rainfall, roughly 10 inches less than Seattle, thanks to the rain shadow effect of the Olympic Mountains. Summers are pleasantly warm and dry, with temperatures averaging 75-80°F from June through September. Winters bring temperatures hovering around 40°F with occasional snow that can paralyze the hilly neighborhoods. The area experiences roughly 150 days of measurable precipitation annually, primarily between October and May.
+
+Redmond's neighborhoods reflect its evolution from rural community to tech hub. Education Hill, named for the schools that anchor it, attracts families seeking top-rated public education. Overlake has transformed into a dense urban village near the Microsoft campus and new light rail stations. Grass Lawn and Willows/Rose Hill maintain more traditional suburban character, while Idylwood and areas near Bridle Trails offer larger lots and forest proximity. This diversity means fence installations must account for everything from tight urban lots to expansive properties bordering protected forestland.
+
+The economic vitality brings both opportunity and challenge. Median household income exceeds $130,000, driving demand for premium home improvements including fencing. Property values in desirable neighborhoods often exceed $1 million, justifying investments in quality materials and craftsmanship. The highly educated population tends to research thoroughly before purchasing, expecting clear communication and technical competence from contractors.`;
 
 const RedmondArticle = () => (
   <article className="space-y-12">
@@ -380,6 +395,8 @@ const RedmondArticle = () => (
         <strong>Note:</strong> Regulations and HOA requirements are subject to change. Always verify current requirements with <a href="https://www.redmond.gov/823/Building-Division" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Redmond Development Services</a> and your homeowners association before beginning your fence project. MyFence.com's extensive experience with Redmond installations helps ensure smooth approvals and quality results.
       </p>
     </section>
+
+    <AboutCityModal cityName="Redmond" content={ABOUT_REDMOND_CONTENT} />
   </article>
 );
 
