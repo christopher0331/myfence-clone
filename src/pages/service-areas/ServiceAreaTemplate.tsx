@@ -10,18 +10,11 @@ import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import FenceStylesPreview from "@/components/FenceStylesPreview";
-import TruncatedArticleModal from "@/components/TruncatedArticleModal";
 
 export interface Neighborhood {
   name: string;
   description: string;
   link?: string;
-}
-
-export interface TruncatedArticleConfig {
-  title: string;
-  preview: string;
-  content: React.ReactNode;
 }
 
 interface ServiceAreaTemplateProps {
@@ -38,7 +31,6 @@ interface ServiceAreaTemplateProps {
   localSolutions?: string[];
   climateDescription?: string;
   articleContent?: React.ReactNode;
-  truncatedArticle?: TruncatedArticleConfig;
   faqStructuredData?: any;
   enhancedBusinessData?: any;
 }
@@ -57,7 +49,6 @@ const ServiceAreaTemplate = ({
   localSolutions = [],
   climateDescription = "",
   articleContent,
-  truncatedArticle,
   faqStructuredData,
   enhancedBusinessData
 }: ServiceAreaTemplateProps) => {
@@ -698,22 +689,6 @@ const ServiceAreaTemplate = ({
             <div className="container">
               <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4 hover:prose-a:decoration-primary">
                 {articleContent}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Truncated Article */}
-        {truncatedArticle && (
-          <section className="py-8">
-            <div className="container">
-              <div className="max-w-4xl mx-auto">
-                <TruncatedArticleModal
-                  title={truncatedArticle.title}
-                  preview={truncatedArticle.preview}
-                >
-                  {truncatedArticle.content}
-                </TruncatedArticleModal>
               </div>
             </div>
           </section>

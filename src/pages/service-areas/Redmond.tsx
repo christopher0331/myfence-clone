@@ -470,8 +470,6 @@ const Redmond = () => {
     }
   };
 
-  const redmondArticlePreview = "Redmond's identity as the home of Microsoft and a major tech hub shapes its fencing needs in unique ways. The city's professionals expect modern aesthetics, quality craftsmanship, and low-maintenance solutions that align with their busy lifestyles. Neighborhoods like Overlake, Education Hill, and Grass Lawn feature newer developments with homeowners associations.";
-
   return (
     <ServiceAreaTemplate 
       city="Redmond" 
@@ -533,11 +531,7 @@ const Redmond = () => {
         "Low-maintenance hybrid aluminum/cedar system for busy professionals",
         "Wildlife-deterrent height options without sacrificing aesthetics"
       ]}
-      truncatedArticle={{
-        title: "About Fencing in Redmond",
-        preview: redmondArticlePreview,
-        content: <RedmondArticle />
-      }}
+      articleContent={<RedmondArticle />}
       faqStructuredData={faqStructuredData}
     />
   );
