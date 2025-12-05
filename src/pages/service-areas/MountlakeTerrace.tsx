@@ -4,7 +4,21 @@ import { Link } from "react-router-dom";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import AboutCityModal from "@/components/AboutCityModal";
 
+const ABOUT_MOUNTLAKE_TERRACE_CONTENT = `Mountlake Terrace, Washington occupies 4.3 square miles of south Snohomish County, a city of approximately 21,000 residents that has evolved from a planned postwar community into a diverse, transit-connected suburb with its own distinct character. Situated 15 miles north of Seattle, Mountlake Terrace offers affordability and livability that nearby cities have priced out of reach for many families.
+
+The city's origins trace to the 1950s when developers transformed farmland into what they marketed as a complete planned community—among the first such developments in the Pacific Northwest. The name combines "Mount" (acknowledging distant views of Mount Rainier and the Cascades), "Lake" (referencing Lake Ballinger at its heart), and "Terrace" (describing the gently terraced topography). Unlike organic cities that grew over centuries, Mountlake Terrace was designed from scratch with curving streets, neighborhood parks, and a town center concept ahead of its time.
+
+Lake Ballinger defines the city's geography and character. This 100-acre natural lake sits at the junction of Mountlake Terrace, Edmonds, and Shoreline, with most of its shoreline within city limits. The lake feeds Ballinger Creek, which flows south toward Lake Washington through a green corridor that provides wildlife habitat and walking trails. The terrain rises gently from the lake's 300-foot elevation to higher ground in neighborhoods like Melody Hill, creating the "terrace" effect that inspired the city's name.
+
+The city's climate mirrors the broader Puget Sound region but with microclimatic variations worth noting. Lake Ballinger's presence increases humidity in surrounding neighborhoods, particularly during summer evenings when cooler air settles over the water. Annual rainfall averages about 37 inches, concentrated between October and May. Summers bring reliably pleasant weather with temperatures reaching the mid-70s. Winters are mild by national standards, with temperatures rarely dropping below freezing for extended periods.
+
+The original neighborhoods—Gateway, Cedar Terrace, Cedar Way—feature mid-century ramblers and split-levels on generous lots with mature landscaping. These homes attract families seeking affordable entry into homeownership in a strong school district. The Town Center area has seen significant redevelopment since light rail planning began, with new apartment buildings and condominiums bringing younger residents and urban energy. The Recreation Pavilion and Nile Golf Course provide community gathering spaces uncommon in cities this size.
+
+Light rail transformed Mountlake Terrace's trajectory. The 2024 opening of the Lynnwood Link Extension placed a station directly in the city's Town Center, connecting residents to downtown Seattle in under 30 minutes. Property values near the station have increased substantially, and development pressure has intensified. Long-time residents watch this transformation with mixed emotions—appreciating improved transit access while mourning the loss of affordable neighborhood character that defined the community.
+
+The population reflects the city's accessibility and diversity. Mountlake Terrace has become notably more diverse over the past two decades, with significant Asian, Hispanic, and immigrant communities finding affordable housing near employment centers. The school district serves this diversity well, and community events like the Tour de Terrace summer festival bring neighbors together across demographic lines. This isn't a wealthy enclave or a struggling suburb—it's a working middle-class community where families invest in their homes and take pride in their neighborhoods.`;
 const MountlakeTerraceArticle = () => (
   <article className="space-y-12">
     {/* Company Introduction */}
@@ -344,6 +358,8 @@ const MountlakeTerraceArticle = () => (
         <strong>Note:</strong> Regulations and requirements are subject to change. Always verify current requirements with the <a href="https://www.cityofmlt.com/169/Community-and-Economic-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> before beginning your fence project.
       </p>
     </section>
+
+    <AboutCityModal cityName="Mountlake Terrace" content={ABOUT_MOUNTLAKE_TERRACE_CONTENT} />
   </article>
 );
 
