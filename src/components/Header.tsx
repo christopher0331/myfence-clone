@@ -171,7 +171,7 @@ const Header = () => {
                       <div className={`${isKingCounty ? 'flex justify-center gap-x-8' : 'flex flex-col items-center'} gap-1`}>
                         {isKingCounty ? (
                           <>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 items-end">
                               {firstColumn.map((area) => (
                                 <Link
                                   key={area.to}
@@ -182,7 +182,7 @@ const Header = () => {
                                 </Link>
                               ))}
                             </div>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 items-start">
                               {secondColumn.map((area) => (
                                 <Link
                                   key={area.to}
