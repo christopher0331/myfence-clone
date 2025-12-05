@@ -3,6 +3,21 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import AboutCityModal from "@/components/AboutCityModal";
+
+const ABOUT_BELLEVUE_CONTENT = `Bellevue, Washington stands as the Pacific Northwest's premier Eastside city, a thriving metropolis of approximately 155,000 residents that has evolved from a quiet strawberry farming community into one of America's most affluent and innovative urban centers. Situated directly across Lake Washington from Seattle, Bellevue occupies 36 square miles of rolling terrain where downtown skyscrapers rise above forested neighborhoods and waterfront estates.
+
+The area's recorded history begins with Native American settlements along the lake shores, followed by European American pioneers who arrived in the 1860s seeking farmland. The name "Bellevue," French for "beautiful view," was coined in 1882 by Postmaster Bert Marett's wife, inspired by the panoramic vistas of Lake Washington and the Cascade Mountains. The community remained agricultural through the mid-20th century, known particularly for its Japanese-American strawberry farms that were tragically disrupted by World War II internment.
+
+The transformation from bedroom community to economic powerhouse began with the construction of the first Lake Washington floating bridge in 1940, followed by the opening of Bellevue Square shopping center in 1946. By the 1990s, technology companies discovered Bellevue's advantages: proximity to Seattle without its urban congestion, excellent schools, and a business-friendly environment. Today, Bellevue hosts headquarters and major offices for Amazon, Meta, Microsoft, T-Mobile, and countless startups, earning its reputation as Seattle's corporate sibling.
+
+The city's geography creates distinct neighborhoods with varying character. Downtown Bellevue has transformed into an urban village with high-rises, luxury retail, and world-class dining. Medina and Clyde Hill represent old-money estates where tech billionaires now neighbor legacy families. West Bellevue neighborhoods like Enatai and Beaux Arts enjoy waterfront access and historic character. The Crossroads area provides diverse, affordable options, while Somerset and Newport Hills offer hillside living with Cascade Mountain views.
+
+Bellevue's climate reflects its position in the Puget Sound Lowland but with notable differences from Seattle. The city receives approximately 37 inches of annual rainfall, similar to Seattle but distributed differently across the year. The "dual-lake effect" from Lake Washington and Lake Sammamish creates a distinct microclimate with 15-20% more humidity than areas further from water. Summers are gloriously dry and warm, with temperatures averaging 75-80°F from July through September. Winters remain mild by national standards, hovering around 40°F with occasional snow that rarely lingers in lower elevations.
+
+The city's prosperity brings unique considerations for property improvements. Median home values exceed $1.5 million in many neighborhoods, with waterfront properties and prestigious areas like Medina commanding prices in the tens of millions. This real estate landscape means homeowners invest significantly in quality improvements that enhance rather than diminish property values. Homeowners associations in newer developments and architectural review boards in established neighborhoods enforce strict standards for exterior modifications.
+
+Bellevue's diverse population includes families attracted by the Bellevue School District's nationally-ranked schools, executives drawn by corporate headquarters, international residents (approximately 40% of residents speak a language other than English at home), and retirees enjoying the city's amenities. This demographic mix creates demand for varying fence styles: modern horizontal designs in contemporary developments, traditional cedar privacy fences in family neighborhoods, and estate-style fencing with automated gates in luxury enclaves.`;
 
 const BellevueArticle = () => (
   <article className="space-y-12">
@@ -375,6 +390,8 @@ const BellevueArticle = () => (
         <strong>Note:</strong> Building codes and HOA regulations are subject to change. Always verify current requirements with the <a href="https://bellevuewa.gov/city-government/departments/development-services" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bellevue Development Services</a> and your homeowners association before beginning any fence project. Professional fence contractors familiar with local regulations can help streamline the permit and approval process.
       </p>
     </section>
+
+    <AboutCityModal cityName="Bellevue" content={ABOUT_BELLEVUE_CONTENT} />
   </article>
 );
 
