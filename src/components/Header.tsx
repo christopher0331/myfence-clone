@@ -168,7 +168,7 @@ const Header = () => {
                   return (
                     <div key={region.region} className={`space-y-2 ${isKingCounty ? 'col-span-2' : ''}`}>
                       <h3 className="font-semibold text-sm text-foreground mb-3 text-center">{region.region}</h3>
-                      <div className={`${isKingCounty ? 'grid grid-cols-2 gap-x-4 justify-items-center' : 'flex flex-col items-center'} gap-1`}>
+                      <div className={`${isKingCounty ? 'flex justify-center gap-x-8' : 'flex flex-col items-center'} gap-1`}>
                         {isKingCounty ? (
                           <>
                             <div className="flex flex-col gap-1">
