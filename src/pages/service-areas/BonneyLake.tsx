@@ -119,34 +119,34 @@ const BonneyLakeArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Bonney Lake</h3>
+        <h3 className="text-2xl font-semibold">Three Systems Built for Bonney Lake Properties</h3>
         <p className="text-muted-foreground leading-relaxed">
-          MyFence.com specializes in three proven fencing systems for Bonney Lake properties: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. By focusing our expertise on these options, we deliver superior craftsmanship backed by our industry-leading warranty. This specialized approach ensures every installation meets our exacting quality standards.
+          We've narrowed our offerings to three fencing systems after years of learning what actually holds up in Bonney Lake. Every crew member has installed these options dozens of times across Tehaleh, Falling Water, and the older plateau neighborhoods — they know the quirks, the shortcuts that backfire, and the details that make fences last here.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Cedar fencing</strong> offers natural beauty and exceptional durability in Pacific Northwest conditions. <strong>Hogwire fencing</strong> provides rustic charm with unobstructed views, ideal for properties with scenic backdrops. Our <strong>Hybrid Aluminum/Cedar system</strong> combines low-maintenance aluminum panels with cedar framing for contemporary aesthetics at traditional pricing. Each system uses corrosion-resistant fasteners engineered for Bonney Lake's climate.
+          <strong>Western Red Cedar</strong> remains the standard for good reason — it weathers beautifully, resists rot naturally, and meets every Tehaleh architectural guideline we've encountered. <strong>Hogwire panels</strong> work exceptionally well on larger lots where homeowners want to contain dogs without blocking views of Mount Rainier or the surrounding evergreens. <strong>Hybrid Aluminum/Cedar</strong> has become our fastest-growing option in new construction, especially for buyers relocating from maintenance-heavy climates who want zero upkeep from day one.
         </p>
       </div>
 
       {/* Other Materials - Information Only */}
       <div className="space-y-3 border-l-4 border-muted pl-4">
-        <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Why We Skip Vinyl and Composite in Bonney Lake</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>We're sharing this to help you compare options — not to sell you something we don't carry.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> combines wood fibers with polymers for 25+ year lifespans without maintenance. <strong>Vinyl fencing</strong> requires no staining but can struggle with temperature extremes. <strong>Ornamental aluminum and steel</strong> offer maximum security and sight lines. While these materials have applications, we've chosen to specialize in cedar, hogwire, and hybrid systems where we can guarantee exceptional results.
+          Bonney Lake's temperature swings stress vinyl panels — they expand in summer heat and turn brittle during plateau cold snaps. We've replaced cracked vinyl fences throughout the older neighborhoods that simply couldn't handle the freeze-thaw cycles. Composite decking has improved, but composite fencing still warps when exposed to direct sun on south-facing lots. Ornamental iron looks sharp initially but rusts despite galvanizing claims, especially where irrigation overspray keeps metal wet. We'd rather install materials we can confidently stand behind than offer everything and hope for the best.
         </p>
       </div>
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bonney Lake Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">The No-Maintenance Option Tehaleh Buyers Love</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Our hybrid aluminum fence system delivers outstanding value for Bonney Lake property owners seeking minimal maintenance without premium pricing. This innovative system combines black aluminum panels with a cedar frame and pressure-treated fence posts, creating a modern aesthetic that requires virtually no upkeep. The aluminum panels never need staining or sealing, making it an excellent choice for busy families in neighborhoods like Falling Water and Upper Tehaleh where time spent maintaining a fence detracts from enjoying your outdoor space.
+          Young families moving to Tehaleh often relocate from areas where fence maintenance consumed entire weekends. They want the backyard enclosed for kids and dogs but have zero interest in staining schedules. Our hybrid system answers that — powder-coated black aluminum panels that look identical in year fifteen as they did at installation. No annual staining, no pressure washing, no fading to manage.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          The hybrid system provides exceptional longevity and clean contemporary lines that complement new construction in Bonney Lake developments. Unlike traditional all-wood fencing, the aluminum panels resist weathering, warping, and fading while the cedar framework provides structural warmth and the pressure-treated posts ensure long-term stability in Pacific Northwest conditions. This combination keeps costs competitive with standard cedar fencing while dramatically reducing maintenance requirements. Perfect for properties wanting a sleek, modern look without the expense of all-composite systems.
+          The cedar post-and-rail frame keeps the fence from looking industrial while meeting Tehaleh's earth-tone aesthetic requirements. Pressure-treated posts handle the volcanic soil contact. And unlike all-aluminum fences that feel cold and commercial, the wood framing adds warmth that fits Bonney Lake's mountain-community character. We're installing more hybrid systems each year as word spreads through the Tehaleh neighborhood Facebook groups — the "set it and forget it" appeal resonates with busy commuters who'd rather spend weekends at the lake than maintaining their property.
         </p>
       </div>
     </section>
