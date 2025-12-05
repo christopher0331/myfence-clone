@@ -26,95 +26,105 @@ const Index = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const { reviews, reviewsRef } = useTrustindexReviews();
 
-  const breadcrumbLd = useMemo(() => ({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": SITE_CONFIG.url
-    }]
-  }), []);
+  const breadcrumbLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_CONFIG.url,
+        },
+      ],
+    }),
+    [],
+  );
 
-  const orgLd = useMemo(() => ({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": SITE_CONFIG.url,
-    name: SITE_CONFIG.fullName,
-    image: SITE_CONFIG.logoUrl,
-    logo: {
-      "@type": "ImageObject",
-      "url": SITE_CONFIG.logoUrl
-    },
-    url: SITE_CONFIG.url,
-    telephone: `+1-253-455-1885`,
-    address: { 
-      "@type": "PostalAddress",
-      streetAddress: "22927 257th Ave SE",
-      addressLocality: SITE_CONFIG.address.city, 
-      addressRegion: SITE_CONFIG.address.state,
-      postalCode: SITE_CONFIG.address.zip,
-      addressCountry: SITE_CONFIG.address.country
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: SITE_CONFIG.coordinates.latitude,
-      longitude: SITE_CONFIG.coordinates.longitude
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "00:00",
-        closes: "23:59"
-      }
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "150"
-    },
-    review: reviews.map(review => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: review.author_name
+  const orgLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": SITE_CONFIG.url,
+      name: SITE_CONFIG.fullName,
+      image: SITE_CONFIG.logoUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: SITE_CONFIG.logoUrl,
       },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: review.rating.toString(),
-        bestRating: "5"
+      url: SITE_CONFIG.url,
+      telephone: `+1-253-455-1885`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "22927 257th Ave SE",
+        addressLocality: SITE_CONFIG.address.city,
+        addressRegion: SITE_CONFIG.address.state,
+        postalCode: SITE_CONFIG.address.zip,
+        addressCountry: SITE_CONFIG.address.country,
       },
-      datePublished: review.review_date,
-      reviewBody: review.review_text
-    })),
-    areaServed: [
-      { "@type": "City", "name": "Seattle, WA" },
-      { "@type": "City", "name": "Bellevue, WA" },
-      { "@type": "City", "name": "Covington, WA" },
-      { "@type": "City", "name": "Enumclaw, WA" },
-      { "@type": "City", "name": "Federal Way, WA" },
-      { "@type": "City", "name": "Gig Harbor, WA" },
-      { "@type": "City", "name": "Issaquah, WA" },
-      { "@type": "City", "name": "Kirkland, WA" },
-      { "@type": "City", "name": "Lake Tapps, WA" },
-      { "@type": "City", "name": "Maple Valley, WA" },
-      { "@type": "City", "name": "Mountlake Terrace, WA" },
-      { "@type": "City", "name": "Redmond, WA" },
-      { "@type": "City", "name": "Renton, WA" },
-      { "@type": "City", "name": "Sammamish, WA" }
-    ],
-    sameAs: [
-      "https://www.facebook.com/myfence.com.official",
-      "https://www.instagram.com/myfence.com.official/",
-      "https://twitter.com/MyFenceDotCom",
-      "https://www.youtube.com/@fencegenius",
-      "https://www.linkedin.com/company/myfence-com/",
-      "https://www.pinterest.com/MyFenceDotCom/",
-      "https://www.tiktok.com/@myfence.com"
-    ]
-  }), [reviews]);
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: SITE_CONFIG.coordinates.latitude,
+        longitude: SITE_CONFIG.coordinates.longitude,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        reviewCount: "150",
+      },
+      review: reviews.map((review) => ({
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: review.author_name,
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.rating.toString(),
+          bestRating: "5",
+        },
+        datePublished: review.review_date,
+        reviewBody: review.review_text,
+      })),
+      areaServed: [
+        { "@type": "City", name: "Seattle, WA" },
+        { "@type": "City", name: "Bellevue, WA" },
+        { "@type": "City", name: "Bonney Lake, WA" },
+        { "@type": "City", name: "Covington, WA" },
+        { "@type": "City", name: "Enumclaw, WA" },
+        { "@type": "City", name: "Federal Way, WA" },
+        { "@type": "City", name: "Gig Harbor, WA" },
+        { "@type": "City", name: "Issaquah, WA" },
+        { "@type": "City", name: "Kirkland, WA" },
+        { "@type": "City", name: "Lake Tapps, WA" },
+        { "@type": "City", name: "Maple Valley, WA" },
+        { "@type": "City", name: "Mountlake Terrace, WA" },
+        { "@type": "City", name: "Redmond, WA" },
+        { "@type": "City", name: "Renton, WA" },
+        { "@type": "City", name: "Sammamish, WA" },
+        { "@type": "City", name: "Sumner, WA" },
+      ],
+      sameAs: [
+        "https://www.facebook.com/myfence.com.official",
+        "https://www.instagram.com/myfence.com.official/",
+        "https://twitter.com/MyFenceDotCom",
+        "https://www.youtube.com/@fencegenius",
+        "https://www.linkedin.com/company/myfence-com/",
+        "https://www.pinterest.com/MyFenceDotCom/",
+        "https://www.tiktok.com/@myfence.com",
+      ],
+    }),
+    [reviews],
+  );
 
   const faqSchema = useMemo(() => generateFaqSchema(), []);
 
