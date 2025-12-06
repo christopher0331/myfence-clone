@@ -35,7 +35,7 @@ const ThreeFtBlackHogwireFence = () => {
         title="3' Black Hogwire Fence - Budget-Friendly Open Fencing | MyFence.com"
         description="Affordable 3' Black Hogwire Fence with cedar frame. Ideal for flat terrain and wooded backdrops. Maintains visual openness while providing boundary definition."
         canonical="https://myfence.com/fence-styles/three-ft-black-hogwire-fence"
-        image="/lovable-uploads/8b824630-caac-4d82-8592-5043d8f1a099.png"
+        image="/lovable-uploads/3ft-black-hogwire-og.webp"
         structuredData={structuredData}
       />
       
