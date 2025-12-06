@@ -81,6 +81,13 @@ const CedarAluminumHybridFence = () => {
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "247",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "manufacturer": {
       "@type": "LocalBusiness",
       "name": "MyFence.com",
