@@ -79,7 +79,37 @@ const CedarAluminumHybridFence = () => {
       "price": "80",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
-      "url": "https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
+      "url": "https://myfence.com/fence-styles/cedar-steel-hybrid-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US",
+          "addressRegion": "WA"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "7",
+            "maxValue": "14",
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
