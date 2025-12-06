@@ -67,6 +67,7 @@ const CedarAluminumHybridFence = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cedar/Steel Hybrid Fence",
+    "image": "https://myfence.com/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
     "description": "Modern industrial fence combining 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Ultimate privacy with zero maintenance on panels. Starting at $80/LF.",
     "brand": {
       "@type": "Brand",
@@ -76,7 +77,7 @@ const CedarAluminumHybridFence = () => {
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "80",
-      "priceValidUntil": "2025-12-31",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
     },
