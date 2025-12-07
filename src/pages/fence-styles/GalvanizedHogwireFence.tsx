@@ -32,7 +32,7 @@ const GalvanizedHogwireFence = () => {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
-            "price": "40",
+            "price": "51",
             "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "url": "https://myfence.com/fence-styles/galvanized-hogwire-fence",

@@ -33,7 +33,7 @@ const BlackHogwireFence = () => {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
-            "price": "50",
+            "price": "71",
             "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "url": "https://myfence.com/fence-styles/black-hogwire-fence",

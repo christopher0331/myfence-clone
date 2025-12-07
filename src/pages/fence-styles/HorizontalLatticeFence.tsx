@@ -41,7 +41,7 @@ const HorizontalLatticeFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "65",
+      "price": "55.75",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/horizontal-lattice-fence",
