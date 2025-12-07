@@ -51,14 +51,48 @@ const PictureFrameFence = () => {
     "@type": "Product",
     "name": "Picture Frame Fence",
     "description": "Premium picture frame cedar fences with clean trim details, strong structure, and precise planning with Fence Genius technology.",
+    "image": "https://myfence.com/lovable-uploads/3ab63582-2f4d-4294-99aa-f04fd0426960.png",
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
     },
     "offers": {
       "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "45",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD"
+      "url": "https://myfence.com/fence-styles/picture-frame-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US",
+          "addressRegion": "WA"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "7",
+            "maxValue": "14",
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
