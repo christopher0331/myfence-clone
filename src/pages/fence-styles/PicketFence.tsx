@@ -22,7 +22,7 @@ const PicketFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "30",
+      "price": "38",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/picket-fence",

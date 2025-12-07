@@ -100,7 +100,7 @@ const CraftsmanStyleFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "50",
+      "price": "49",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": canonical,

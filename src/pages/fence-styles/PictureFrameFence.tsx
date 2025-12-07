@@ -59,7 +59,7 @@ const PictureFrameFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "45",
+      "price": "46",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/picture-frame-fence",

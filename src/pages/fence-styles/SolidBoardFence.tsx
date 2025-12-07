@@ -38,7 +38,7 @@ const SolidBoardFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "35",
+      "price": "42",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/solid-board-fence",

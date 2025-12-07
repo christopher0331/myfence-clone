@@ -22,7 +22,7 @@ const ThreeFtBlackHogwireFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "35",
+      "price": "47",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://myfence.com/fence-styles/three-ft-black-hogwire-fence",
