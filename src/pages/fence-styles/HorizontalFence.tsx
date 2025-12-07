@@ -49,6 +49,7 @@ const HorizontalFence = () => {
     "@type": "Product",
     "name": "Horizontal Cedar Fence",
     "description": "Professional horizontal cedar fence with external 2x4 frame, center vertical rail support, and stainless steel fasteners for maximum durability.",
+    "image": "https://myfence.com/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png",
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
@@ -56,7 +57,24 @@ const HorizontalFence = () => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "price": "55",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://myfence.com/fence-styles/horizontal-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",

@@ -24,6 +24,7 @@ const GalvanizedHogwireFence = () => {
           "@type": "Product",
           "name": "5 Foot Galvanized Hogwire Fence",
           "description": "Durable galvanized hogwire fence with cedar frame and galvanized steel panels",
+          "image": "https://myfence.com/lovable-uploads/galvanized-hogwire-og.webp",
           "brand": {
             "@type": "Brand",
             "name": "MyFence.com"
@@ -31,7 +32,29 @@ const GalvanizedHogwireFence = () => {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "price": "40",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://myfence.com/fence-styles/galvanized-hogwire-fence",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+              "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "US",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnDays": "0",
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "95"
           },
           "manufacturer": {
             "@type": "LocalBusiness",

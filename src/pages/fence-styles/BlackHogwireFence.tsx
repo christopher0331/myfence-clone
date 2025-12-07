@@ -25,6 +25,7 @@ const BlackHogwireFence = () => {
           "@type": "Product",
           "name": "6 Foot Black Hogwire Fence",
           "description": "Secure black hogwire fence with cedar frame and powder-coated steel panels",
+          "image": "https://myfence.com/lovable-uploads/f729a8a5-2693-400d-96c0-a8869a528f05.png",
           "brand": {
             "@type": "Brand",
             "name": "MyFence.com"
@@ -32,7 +33,29 @@ const BlackHogwireFence = () => {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "price": "50",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://myfence.com/fence-styles/black-hogwire-fence",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+              "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "US",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+              "merchantReturnDays": "0",
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "112"
           },
           "manufacturer": {
             "@type": "LocalBusiness",

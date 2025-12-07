@@ -30,14 +30,32 @@ const SolidBoardFence = () => {
     "@type": "Product",
     "name": "Solid Board Fence",
     "description": "Budget-friendly solid board fencing with 2 rails and stainless steel fasteners. Most economical fence option for privacy and property boundaries.",
+    "image": "https://myfence.com/lovable-uploads/ee554667-1407-47ea-a6f4-ec25700f4bcb.png",
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
     },
     "offers": {
       "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "35",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD"
+      "url": "https://myfence.com/fence-styles/solid-board-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
