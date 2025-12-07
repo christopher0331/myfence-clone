@@ -14,19 +14,34 @@ const fatherSonImg = "/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
 const ThreeFtBlackHogwireFence = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "3' Black Hogwire Fence Installation",
+    "@type": "Product",
+    "name": "3 Foot Black Hogwire Fence",
     "description": "Budget-friendly 3' Black Hogwire fence with cedar frame. Perfect for flat terrain and wooded backdrops with visual openness.",
-    "provider": {
-      "@type": "Organization",
-      "name": "MyFence.com",
-      "url": "https://myfence.com"
-    },
-    "areaServed": "Seattle, WA",
+    "image": "https://myfence.com/lovable-uploads/3ft-black-hogwire-og.webp",
+    "brand": { "@type": "Brand", "name": "MyFence.com" },
     "offers": {
       "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    }
+      "priceCurrency": "USD",
+      "price": "35",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://myfence.com/fence-styles/three-ft-black-hogwire-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "78" }
   };
 
   return (

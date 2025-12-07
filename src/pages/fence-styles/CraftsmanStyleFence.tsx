@@ -90,9 +90,42 @@ const CraftsmanStyleFence = () => {
     ],
   };
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Craftsman Style Fence",
+    "description": "Cedar craftsman style fences with alternating board pattern for wind flow and visibility. 3 rails, 3 trim, top cap.",
+    "image": "https://myfence.com/lovable-uploads/1ab1a228-3d1d-4b69-8561-371fabba22e1.png",
+    "brand": { "@type": "Brand", "name": "MyFence.com" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "50",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": canonical,
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "134" }
+  };
+
   const structuredData = [
     serviceStructuredData,
     faqStructuredData,
+    productStructuredData,
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

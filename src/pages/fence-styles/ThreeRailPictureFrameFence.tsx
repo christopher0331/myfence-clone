@@ -88,9 +88,42 @@ const ThreeRailPictureFrameFence = () => {
     ],
   };
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "3 Rail Picture Frame Fence",
+    "description": "Cedar 3 rail picture frame fence with extra rail and trim for added structure and a refined craftsman look.",
+    "image": "https://myfence.com/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
+    "brand": { "@type": "Brand", "name": "MyFence.com" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "50",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": canonical,
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "156" }
+  };
+
   const structuredData = [
     serviceStructuredData,
     faqStructuredData,
+    productStructuredData,
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

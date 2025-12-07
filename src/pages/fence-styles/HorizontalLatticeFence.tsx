@@ -33,14 +33,32 @@ const HorizontalLatticeFence = () => {
     "@type": "Product",
     "name": "Horizontal Lattice Fence",
     "description": "Premium horizontal lattice fencing with craftsman foundation, 5/8 inch thick lattice strips, and stainless steel fasteners for superior durability and beauty.",
+    "image": "https://myfence.com/lovable-uploads/76711349-f698-430f-a01f-14709e320e1b.png",
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
     },
     "offers": {
       "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "65",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD"
+      "url": "https://myfence.com/fence-styles/horizontal-lattice-fence",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "WA" },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": "7", "maxValue": "14", "unitCode": "DAY" } }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
