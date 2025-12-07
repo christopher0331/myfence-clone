@@ -16,6 +16,8 @@ const heroImg = "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png";
 const diagramImg = "/lovable-uploads/cedar-aluminum-hybrid-diagram.png";
 const panelSingleImg = "/lovable-uploads/barrier-boss-panel-single.png";
 const panelsCloseupImg = "/lovable-uploads/barrier-boss-panels-closeup.png";
+const steelPostsFenceImg = "/lovable-uploads/black-steel-posts-fence.webp";
+const steelPostCloseupImg = "/lovable-uploads/barrier-boss-steel-post-closeup.webp";
 
 const CedarAluminumHybridFenceMDX = () => {
   useEffect(() => {
@@ -48,7 +50,7 @@ const CedarAluminumHybridFenceMDX = () => {
     },
     {
       question: "What colors are available for the steel panels?",
-      answer: "The corrugated steel panels come in a variety of HDP NoFade™ paint colors through our suppliers ColorMax and Barrier Boss. Black is the most popular choice as it creates a striking contrast with natural cedar framing, but other colors are available upon request."
+      answer: "The corrugated steel panels come in a variety of HDP NoFade™ paint colors from manufacturers like ColorMax and Barrier Boss, which we source through local distributors. Black is the most popular choice as it creates a striking contrast with natural cedar framing, but other colors are available upon request."
     },
     {
       question: "Do I need to maintain a Cedar/Steel Hybrid Fence?",
@@ -281,7 +283,7 @@ const CedarAluminumHybridFenceMDX = () => {
             </div>
             <div className="max-w-3xl mx-auto">
               <p className="text-muted-foreground mb-6">
-                We partner with two leading suppliers: <strong className="text-foreground">Barrier Boss</strong> and <strong className="text-foreground">ColorMax</strong>. While both produce quality 26 gauge corrugated steel fence panels with HDP NoFade™ paint, we generally prefer Barrier Boss for one critical reason:
+                We source our corrugated steel panels from two industry-leading manufacturers through local distributors: <strong className="text-foreground">Barrier Boss</strong> and <strong className="text-foreground">ColorMax</strong>. While both produce quality 26 gauge corrugated steel fence panels with HDP NoFade™ paint, we generally prefer Barrier Boss for one critical reason:
               </p>
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-6">
@@ -289,6 +291,75 @@ const CedarAluminumHybridFenceMDX = () => {
                   <p className="text-muted-foreground">
                     Barrier Boss panels come in taller sheets. When panels are cut down to follow grade on sloped terrain - which is extremely common in the Pacific Northwest - you still retain a full 6-foot fence height. Our <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius precision installation</Link> ensures panels are cut perfectly to follow your property's contours. With shorter panels from other suppliers, grade-following can significantly reduce your effective fence height, sometimes leaving you with only 5 feet or less of privacy where your property slopes. This grade-following capability is especially important in hilly areas like <Link to="/service-areas/issaquah" className="text-primary hover:underline">Issaquah</Link>, <Link to="/service-areas/maple-valley" className="text-primary hover:underline">Maple Valley</Link>, and <Link to="/service-areas/enumclaw" className="text-primary hover:underline">Enumclaw</Link>.
                   </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Steel Post Upgrade Section */}
+        <section className="py-16">
+          <div className="container">
+            <h2 className="text-3xl font-bold mb-8 text-center">Upgrade to Black Steel 4x4 Fence Posts</h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <div>
+                <img
+                  src={steelPostsFenceImg}
+                  alt="Cedar/Steel hybrid fence with black 4x4 steel posts and corrugated panels"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  While our standard hybrid fence uses traditional wood posts, upgrading to <strong className="text-foreground">black-coated 4x4 steel fence posts</strong> takes your investment to the next level. These posts are backed by Barrier Boss's robust <strong className="text-foreground">40-year warranty</strong> — a testament to their exceptional durability.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Traditional wood fence posts are the most common point of failure in any fence system. Over time, even pressure-treated posts absorb moisture at ground level, leading to rot and eventual structural failure. This is why so many fences lean, sag, or collapse entirely within 10-15 years.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Steel posts eliminate this problem entirely. They won't rot, warp, or weaken over time. Combined with Barrier Boss or ColorMax corrugated steel panels, you get a fence system where the structural components are designed to last for generations.
+                </p>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card>
+                <CardContent className="p-6">
+                  <img
+                    src={steelPostCloseupImg}
+                    alt="Close-up of black powder-coated steel fence post with fade and rust-proof finish"
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-semibold mb-3">The Modern Industrial Aesthetic</h3>
+                  <p className="text-muted-foreground">
+                    The black steel posts perfectly complement the black corrugated panels, creating a cohesive modern industrial look. Paired with natural cedar framing, the contrast creates a striking visual that's both contemporary and warm — the perfect balance for Pacific Northwest properties.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Why Steel Posts Are Worth the Investment</h3>
+                  <div className="space-y-3">
+                    <div className="flex gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground"><strong className="text-foreground">40-year warranty</strong> from Barrier Boss</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground"><strong className="text-foreground">Zero rot or decay</strong> at ground level</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground"><strong className="text-foreground">No leaning or sagging</strong> over time</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground"><strong className="text-foreground">Cohesive black finish</strong> matches steel panels</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground"><strong className="text-foreground">True long-term investment</strong> for property perimeters</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -309,7 +380,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-semibold mb-2">4x4x12-Foot Black Steel Posts</h3>
                   <p className="text-sm text-muted-foreground">
-                    Heavy-duty steel posts provide unmatched rigidity and qualify for the 30-year lifetime warranty. No rot, no lean, no replacement.
+                    Heavy-duty steel posts backed by Barrier Boss's 40-year warranty provide unmatched rigidity. No rot, no lean, no replacement — ever.
                   </p>
                 </CardContent>
               </Card>
