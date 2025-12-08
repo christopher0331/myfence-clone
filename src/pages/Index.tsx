@@ -81,20 +81,6 @@ const Index = () => {
         ratingValue: "5.0",
         reviewCount: "150",
       },
-      review: reviews.map((review) => ({
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: review.author_name,
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: review.rating.toString(),
-          bestRating: "5",
-        },
-        datePublished: review.review_date,
-        reviewBody: review.review_text,
-      })),
       areaServed: [
         { "@type": "City", name: "Seattle, WA" },
         { "@type": "City", name: "Bellevue, WA" },
@@ -123,7 +109,7 @@ const Index = () => {
         "https://www.tiktok.com/@myfence.com",
       ],
     }),
-    [reviews],
+    [],
   );
 
   const faqSchema = useMemo(() => generateFaqSchema(), []);
