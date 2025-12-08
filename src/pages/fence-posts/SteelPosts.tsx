@@ -35,6 +35,8 @@ const SteelPosts = () => {
     "@type": "Product",
     "name": "4x4 Black Steel Fence Posts",
     "description": "Premium black powder-coated 4x4 steel fence posts from Barrier Boss with 40-year warranty. Available in 9' and 12' heights for 6' fences or 6' fences with 2' lattice toppers.",
+    "image": "https://myfence.com/lovable-uploads/barrier-boss-4x4-steel-post.webp",
+    "url": "https://myfence.com/fence-posts/steel-posts",
     "brand": {
       "@type": "Brand",
       "name": "Barrier Boss"
@@ -45,12 +47,35 @@ const SteelPosts = () => {
       "highPrice": "250",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2026-12-31"
+      "priceValidUntil": "2026-12-31",
+      "url": "https://myfence.com/fence-posts/steel-posts"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "89"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US",
+        "addressRegion": "WA"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 14,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
     }
   };
 
