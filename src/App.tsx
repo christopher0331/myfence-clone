@@ -49,6 +49,7 @@ const SixFtFenceCostMDX = React.lazy(() => import("./pages/blog/SixFtFenceCostMD
 const WoodenFenceCost2025MDX = React.lazy(() => import("./pages/blog/WoodenFenceCost2025MDX"));
 const CedarBoardGradeMDX = React.lazy(() => import("./pages/blog/CedarBoardGradeMDX"));
 const CedarAluminumHybridFenceMDX = React.lazy(() => import("./pages/blog/CedarAluminumHybridFenceMDX"));
+const SteelVsWoodPosts = React.lazy(() => import("./pages/blog/SteelVsWoodPosts"));
 
 // Lazy load fence style pages
 const PictureFrameFence = React.lazy(() => import("./pages/fence-styles/PictureFrameFence"));
@@ -359,6 +360,7 @@ const AppContent = () => {
           <Route path="/blog/cedar-board-grade" element={<CedarBoardGradeMDX />} />
           <Route path="/blog/cedar-aluminum-hybrid-fence" element={<Navigate to="/blog/cedar-steel-hybrid-fence" replace />} />
           <Route path="/blog/cedar-steel-hybrid-fence" element={<CedarAluminumHybridFenceMDX />} />
+          <Route path="/blog/steel-vs-wood-fence-posts" element={<SteelVsWoodPosts />} />
           {/* Redirect missing blog articles to main blog page until content is created */}
           <Route path="/blog/fence-ownership" element={<Navigate to="/blog" replace />} />
           <Route path="/blog/street-setback" element={<Navigate to="/blog" replace />} />
