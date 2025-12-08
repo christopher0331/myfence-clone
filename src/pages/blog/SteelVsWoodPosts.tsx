@@ -89,7 +89,7 @@ const SteelVsWoodPosts = () => {
         "name": "Are steel fence posts worth the extra cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, when you factor in the total cost of ownership. While steel posts cost more upfront ($225-$250 per post), wood posts may need replacement 2-3 times over the same period at $100-150 per replacement including labor."
+          "text": "Yes, when you factor in the total cost of ownership. While steel posts cost more upfront ($225-$250 per post), wood post replacements typically cost around $500 per post because small repairs are difficult for companies to schedule—making steel the clear long-term value."
         }
       },
       {
@@ -387,21 +387,21 @@ const SteelVsWoodPosts = () => {
                         </div>
                         <div className="flex justify-between">
                           <span>Replacement at Year 12:</span>
-                          <span>$100-$150*</span>
+                          <span>~$500*</span>
                         </div>
                         <div className="flex justify-between">
                           <span>Replacement at Year 24:</span>
-                          <span>$100-$150*</span>
+                          <span>~$500*</span>
                         </div>
                         <div className="flex justify-between">
                           <span>Replacement at Year 36:</span>
-                          <span>$100-$150*</span>
+                          <span>~$500*</span>
                         </div>
                         <div className="border-t pt-2 flex justify-between font-semibold">
                           <span>40-Year Total:</span>
-                          <span className="text-destructive">$345-$525+</span>
+                          <span className="text-destructive">$1,545-$1,575+</span>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-2">*Includes labor for removal and installation</p>
+                        <p className="text-xs text-muted-foreground mt-2">*Small repairs are difficult to schedule—most contractors charge ~$500/post minimum</p>
                       </div>
                     </div>
 
@@ -435,7 +435,7 @@ const SteelVsWoodPosts = () => {
 
                   <div className="mt-6 bg-green-50 dark:bg-green-950/30 p-4 rounded-lg">
                     <p className="text-center font-semibold">
-                      <span className="text-green-600">Potential Savings:</span> $120-$275+ per post over 40 years—plus avoiding the hassle and disruption of multiple post replacements.
+                      <span className="text-green-600">Potential Savings:</span> $1,300+ per post over 40 years—plus avoiding the hassle and disruption of scheduling multiple small repairs.
                     </p>
                   </div>
                 </CardContent>
@@ -601,7 +601,7 @@ const SteelVsWoodPosts = () => {
                     <h3 className="font-semibold mb-2">Are steel fence posts worth the extra cost?</h3>
                     <p className="text-muted-foreground">
                       Yes, when you factor in the total cost of ownership. While steel posts cost more upfront ($225-$250 per post), 
-                      wood posts may need replacement 2-3 times over the same period at $100-150 per replacement including labor.
+                      wood post replacements typically cost around $500 per post because small repairs are difficult for companies to schedule—making steel the clear long-term value.
                     </p>
                   </CardContent>
                 </Card>
