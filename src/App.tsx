@@ -67,6 +67,7 @@ const CedarAluminumHybridFence = React.lazy(() => import("./pages/fence-styles/C
 const FourPointOneTwoFivePosts = React.lazy(() => import("./pages/fence-posts/FourPointOneTwoFivePosts"));
 const SixBySixPosts = React.lazy(() => import("./pages/fence-posts/SixBySixPosts"));
 const ThreePointFivePosts = React.lazy(() => import("./pages/fence-posts/ThreePointFivePosts"));
+const SteelPosts = React.lazy(() => import("./pages/fence-posts/SteelPosts"));
 
 // Lazy load service area pages
 const FederalWay = React.lazy(() => import("./pages/service-areas/FederalWay"));
@@ -308,6 +309,7 @@ const AppContent = () => {
           <Route path="/fence-posts/4-125-posts" element={<FourPointOneTwoFivePosts />} />
           <Route path="/fence-posts/6x6" element={<SixBySixPosts />} />
           <Route path="/fence-posts/3-5-posts" element={<ThreePointFivePosts />} />
+          <Route path="/fence-posts/steel-posts" element={<SteelPosts />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<QuoteTool />} />
           <Route path="/financing" element={<Financing />} />

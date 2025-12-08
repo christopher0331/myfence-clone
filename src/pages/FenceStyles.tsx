@@ -48,6 +48,12 @@ const postOptions = [
     desc: 'Premium, heavy-duty posts providing maximum rigidity and the best long-term performance.',
   },
   {
+    title: '4x4 Steel Posts',
+    badge: '40-Year Warranty',
+    img: '/lovable-uploads/barrier-boss-4x4-steel-post.webp',
+    desc: 'Barrier Boss black steel posts—never rot, never fail. 9\' ($225) or 12\' ($250) for lattice toppers.',
+  },
+  {
     title: 'Post on Pipe',
     badge: 'Steel core',
     img: '/lovable-uploads/4240161f-87d0-4bbd-9c54-8d4fe261f7be.png',
@@ -241,6 +247,13 @@ const FenceStyles = () => {
                   <Button asChild className="mt-auto w-full">
                     <Link to="/fence-posts/6x6">
                       Learn More About 6x6 Posts
+                    </Link>
+                  </Button>
+                )}
+                {p.title === "4x4 Steel Posts" && (
+                  <Button asChild className="mt-auto w-full">
+                    <Link to="/fence-posts/steel-posts">
+                      Learn More About Steel Posts
                     </Link>
                   </Button>
                 )}
