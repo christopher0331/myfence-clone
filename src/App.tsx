@@ -69,6 +69,7 @@ const FourPointOneTwoFivePosts = React.lazy(() => import("./pages/fence-posts/Fo
 const SixBySixPosts = React.lazy(() => import("./pages/fence-posts/SixBySixPosts"));
 const ThreePointFivePosts = React.lazy(() => import("./pages/fence-posts/ThreePointFivePosts"));
 const SteelPosts = React.lazy(() => import("./pages/fence-posts/SteelPosts"));
+const CedarPostOnPipe = React.lazy(() => import("./pages/fence-posts/CedarPostOnPipe"));
 
 // Lazy load service area pages
 const FederalWay = React.lazy(() => import("./pages/service-areas/FederalWay"));
@@ -311,6 +312,7 @@ const AppContent = () => {
           <Route path="/fence-posts/6x6" element={<SixBySixPosts />} />
           <Route path="/fence-posts/3-5-posts" element={<ThreePointFivePosts />} />
           <Route path="/fence-posts/steel-posts" element={<SteelPosts />} />
+          <Route path="/fence-posts/cedar-post-on-pipe" element={<CedarPostOnPipe />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/quote" element={<QuoteTool />} />
           <Route path="/financing" element={<Financing />} />
