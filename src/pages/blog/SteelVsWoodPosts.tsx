@@ -418,6 +418,57 @@ const SteelVsWoodPosts = () => {
               </Card>
             </section>
 
+            {/* Future Panel Replacement Savings */}
+            <section className="mb-10">
+              <Card className="border-green-500/30 bg-gradient-to-r from-green-50/50 to-emerald-50/50 dark:from-green-950/20 dark:to-emerald-950/20">
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    The Hidden Benefit: Future Panel Replacement Savings
+                  </h2>
+
+                  <p className="mb-4">
+                    Here's something most homeowners don't consider: <strong>cedar fence panels often outlast wood fence posts</strong>. 
+                    This creates an expensive problem when it's time to replace rotted posts.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div className="bg-destructive/10 p-4 rounded-lg border border-destructive/20">
+                      <h3 className="font-semibold mb-3 text-destructive">With Wood Posts</h3>
+                      <p className="text-sm mb-2">
+                        When wood posts fail after 10-15 years, but your cedar panels still have life left—you can't capitalize on that 
+                        remaining value. The entire fence must be torn down and replaced because the posts are integrated with the panels.
+                      </p>
+                      <p className="text-sm font-semibold text-destructive">
+                        Result: You pay for a complete new fence, wasting the remaining life of your cedar.
+                      </p>
+                    </div>
+
+                    <div className="bg-green-100/50 dark:bg-green-900/20 p-4 rounded-lg border border-green-500/30">
+                      <h3 className="font-semibold mb-3 text-green-700 dark:text-green-400">With Steel Posts + Fence Genius</h3>
+                      <p className="text-sm mb-2">
+                        Steel posts will actually <strong>outlast your cedar fence panels</strong>. When it's time to refresh your fence 
+                        20-30 years from now, your steel posts remain in perfect condition. Combined with{" "}
+                        <Link to="/fence-genius" className="text-primary hover:underline font-semibold">Fence Genius</Link> technology, 
+                        all your fence measurements and specifications are saved digitally.
+                      </p>
+                      <p className="text-sm font-semibold text-green-700 dark:text-green-400">
+                        Result: Replace only the panels—save approximately 40% on your next fence!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-primary/10 p-4 rounded-lg">
+                    <p className="text-center">
+                      <span className="font-semibold">The Steel Posts + Fence Genius Advantage:</span> When panels need replacement, 
+                      we already have your exact specifications on file. Your steel posts stay in place, and you only pay for new pre-fabricated 
+                      panels—<span className="text-primary font-semibold">saving ~40% compared to a full fence replacement</span>.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+
             {/* Wet Soil Areas Section */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
