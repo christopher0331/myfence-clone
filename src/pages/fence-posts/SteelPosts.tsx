@@ -430,6 +430,14 @@ const SteelPosts = () => {
                 </tbody>
               </table>
             </div>
+            <div className="mt-8 text-center">
+              <Link 
+                to="/blog/steel-vs-wood-fence-posts" 
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+              >
+                Read our full comparison: Steel vs Wood Fence Posts →
+              </Link>
+            </div>
           </div>
         </section>
 

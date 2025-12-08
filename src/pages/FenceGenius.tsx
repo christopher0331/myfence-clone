@@ -371,9 +371,21 @@ const FenceGenius = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Choosing us means you are guaranteed to have an algorithmically perfect fence.
               </p>
-              <p className="text-xl font-semibold text-primary">
+              <p className="text-xl font-semibold text-primary mb-6">
                 And who doesn't like certainty of outcome?
               </p>
+              <div className="bg-background/50 p-4 rounded-lg">
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Pro Tip:</strong> Pair Fence Genius with <Link to="/fence-posts/steel-posts" className="text-primary hover:underline">4x4 steel fence posts</Link> for 
+                  maximum long-term value. When it's time to refresh your fence, your measurements stay on file—saving ~40% on panel replacement.
+                </p>
+                <Link 
+                  to="/blog/steel-vs-wood-fence-posts" 
+                  className="text-primary hover:underline text-sm font-medium"
+                >
+                  Learn more about steel posts and future savings →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
