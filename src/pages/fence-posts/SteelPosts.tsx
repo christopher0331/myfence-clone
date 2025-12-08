@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock } from "lucide-react";
+import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink } from "lucide-react";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -78,7 +78,7 @@ const SteelPosts = () => {
                 4x4 Black Steel Fence Posts
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                The ultimate long-term investment. Barrier Boss steel posts backed by a robust 40-year warranty—never rot, never fail.
+                The ultimate long-term investment. <a href="https://barrierbossusa.com/products/metal-fence-posts-for-wood-fence?variant=47959096557787" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">Barrier Boss steel posts<ExternalLink className="w-4 h-4" /></a> backed by a robust 40-year warranty—won't rot like wood.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button size="lg" asChild>
@@ -109,9 +109,9 @@ const SteelPosts = () => {
 
               <div className="bg-card p-6 rounded-lg shadow-sm border">
                 <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Never Rot, Never Fail</h3>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Won't Rot Like Wood</h3>
                 <p className="text-muted-foreground">
-                  Unlike traditional wood posts that rot out and fail over time, steel posts are immune to ground-rot, moisture damage, and insect infestation.
+                  Unlike traditional <Link to="/fence-posts/6x6" className="text-primary hover:underline">wood posts</Link> that rot out over time, steel posts are immune to ground-rot, moisture damage, and insect infestation.
                 </p>
               </div>
 
@@ -119,7 +119,7 @@ const SteelPosts = () => {
                 <Ruler className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-foreground">9' and 12' Options</h3>
                 <p className="text-muted-foreground">
-                  Available in 9' tall (for standard 6' fences) or 12' tall (for 6' fences with 2' lattice toppers for added privacy and style).
+                  Available in 9' tall (for standard 6' fences) or 12' tall (for 6' fences with 2' <Link to="/fence-upgrades/lattice-toppers" className="text-primary hover:underline">lattice toppers</Link> for added privacy and style).
                 </p>
               </div>
 
@@ -257,7 +257,7 @@ const SteelPosts = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-foreground">Barrier Boss Panels</h3>
                   <p className="text-muted-foreground">
-                    Pair with Barrier Boss corrugated steel panels for a complete steel-core fence system with matching warranty coverage.
+                    Pair with Barrier Boss corrugated steel panels for a complete steel-core fence system. See our <Link to="/fence-styles/cedar-steel-hybrid-fence" className="text-primary hover:underline">Cedar/Steel Hybrid Fence</Link> for details.
                   </p>
                 </div>
               </div>
@@ -287,7 +287,7 @@ const SteelPosts = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-foreground">Lattice Toppers</h3>
                   <p className="text-muted-foreground">
-                    12' posts are ideal for adding 2' horizontal or vertical lattice toppers for enhanced privacy and style.
+                    12' posts are ideal for adding 2' <Link to="/fence-upgrades/lattice-toppers" className="text-primary hover:underline">horizontal or vertical lattice toppers</Link> for enhanced privacy and style.
                   </p>
                 </div>
               </div>
