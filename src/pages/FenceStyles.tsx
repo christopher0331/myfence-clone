@@ -51,7 +51,7 @@ const postOptions = [
     title: '4x4 Steel Posts',
     badge: '40-Year Warranty',
     img: '/lovable-uploads/barrier-boss-4x4-steel-post.webp',
-    desc: 'Barrier Boss black steel posts—never rot, never fail. 9\' ($225) or 12\' ($250) for lattice toppers.',
+    desc: 'Barrier Boss black steel posts—won\'t rot like wood. Available in 9\' and 12\' heights for lattice toppers.',
   },
   {
     title: 'Post on Pipe',
