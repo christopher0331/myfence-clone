@@ -39,13 +39,27 @@ const SteelVsWoodPosts = () => {
     "@type": "Article",
     "headline": "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
     "description": "Compare 4x4 black steel fence posts with traditional wood posts. Learn about durability, cost differences, and why steel posts are ideal for wet soil areas in the Pacific Northwest.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/lovable-uploads/barrier-boss-4x4-steel-post.webp",
+      "width": 1200,
+      "height": 630
+    },
     "author": {
       "@type": "Organization",
-      "name": SITE_CONFIG.fullName
+      "name": SITE_CONFIG.fullName,
+      "url": "https://myfence.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": SITE_CONFIG.fullName
+      "name": SITE_CONFIG.fullName,
+      "url": "https://myfence.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myfence.com/myfence-logo.png",
+        "width": 600,
+        "height": 60
+      }
     },
     "datePublished": "2025-12-08",
     "dateModified": "2025-12-08",
@@ -53,7 +67,9 @@ const SteelVsWoodPosts = () => {
       "@type": "WebPage",
       "@id": "https://myfence.com/blog/steel-vs-wood-fence-posts"
     },
-    "image": "https://myfence.com/lovable-uploads/barrier-boss-4x4-steel-post.webp"
+    "articleSection": "Fence Posts",
+    "wordCount": 2500,
+    "keywords": "steel fence posts, wood fence posts, fence post comparison, 40-year warranty, Barrier Boss, Seattle fence, wet soil fence posts"
   };
 
   const faqSchema = {
