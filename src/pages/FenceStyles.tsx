@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import boardOnBoardImg from "@/assets/fences/board-on-board-updated.png";
-
+import cedarPostOnPipeImg from "@/assets/cedar-post-on-pipe.jpg";
 const styles = [
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look.", link: "/fence-styles/picture-frame-fence", badge: "Most Popular" },
   { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail.", link: "/fence-styles/3-rail-picture-frame-fence" },
@@ -58,6 +58,12 @@ const postOptions = [
     badge: 'Steel core',
     img: '/lovable-uploads/4240161f-87d0-4bbd-9c54-8d4fe261f7be.png',
     desc: 'A steel fence post inserted into a 4.125" x 4.125" x 7\' wood post to resist ground-rot factors.',
+  },
+  {
+    title: 'Cedar Post on Pipe',
+    badge: 'Premium Cedar',
+    img: cedarPostOnPipeImg,
+    desc: 'Cedar post on steel pipe with through-bolt for enhanced wind resistance. Maintains consistent cedar aesthetic.',
   },
 ];
 
@@ -261,6 +267,13 @@ const FenceStyles = () => {
                   <Button asChild className="mt-auto w-full">
                     <Link to="/fence-upgrades/post-on-pipe">
                       Learn More About Post on Pipe
+                    </Link>
+                  </Button>
+                )}
+                {p.title === "Cedar Post on Pipe" && (
+                  <Button asChild className="mt-auto w-full">
+                    <Link to="/fence-posts/cedar-post-on-pipe">
+                      Learn More About Cedar Post on Pipe
                     </Link>
                   </Button>
                 )}
