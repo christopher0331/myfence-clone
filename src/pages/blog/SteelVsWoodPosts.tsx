@@ -83,6 +83,14 @@ const SteelVsWoodPosts = () => {
           "@type": "Answer",
           "text": "Steel posts are especially valuable in wet soil areas like Enumclaw, West Seattle, Kirkland, Newcastle, Issaquah, North Bend, and Maple Valley where ground moisture accelerates wood post decay."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How can steel posts save 40% on future fence replacement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cedar fence panels often outlast wood posts, but when posts fail the entire fence must be replaced. Steel posts outlast cedar panels, so when it's time to refresh your fence, the posts stay in place. Combined with Fence Genius technology that stores your exact fence specifications, you only pay for new pre-fabricated panels—saving approximately 40% compared to a full fence replacement."
+        }
       }
     ]
   };
