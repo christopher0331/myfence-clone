@@ -398,12 +398,18 @@ const CedarPostOnPipe = () => {
       {/* Related Pages */}
       <section className="container py-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">Related Post Options</h2>
+          <h2 className="text-2xl font-semibold mb-4">All Fence Post Options</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Button asChild variant="outline" className="h-auto py-4">
-              <Link to="/fence-upgrades/post-on-pipe" className="flex flex-col items-start text-left">
-                <span className="font-semibold">Standard Post on Pipe</span>
-                <span className="text-sm text-muted-foreground">Pressure-treated option</span>
+              <Link to="/fence-posts/4-125-posts" className="flex flex-col items-start text-left">
+                <span className="font-semibold">4.125" x 4.125" Posts</span>
+                <span className="text-sm text-muted-foreground">Our recommended standard</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-4">
+              <Link to="/fence-posts/6x6" className="flex flex-col items-start text-left">
+                <span className="font-semibold">6x6 Posts</span>
+                <span className="text-sm text-muted-foreground">Maximum strength & longevity</span>
               </Link>
             </Button>
             <Button asChild variant="outline" className="h-auto py-4">
@@ -413,9 +419,15 @@ const CedarPostOnPipe = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" className="h-auto py-4">
-              <Link to="/fence-posts/4-125-posts" className="flex flex-col items-start text-left">
-                <span className="font-semibold">4.125" Posts</span>
-                <span className="text-sm text-muted-foreground">Our recommended standard</span>
+              <Link to="/fence-upgrades/post-on-pipe" className="flex flex-col items-start text-left">
+                <span className="font-semibold">Post on Pipe</span>
+                <span className="text-sm text-muted-foreground">Pressure-treated option</span>
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="h-auto py-4">
+              <Link to="/fence-posts/3-5-posts" className="flex flex-col items-start text-left">
+                <span className="font-semibold">3.5" x 3.5" Posts</span>
+                <span className="text-sm text-muted-foreground">Why we don't recommend</span>
               </Link>
             </Button>
           </div>
