@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink } from "lucide-react";
+import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink, Droplets } from "lucide-react";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -150,7 +150,53 @@ const SteelPosts = () => {
           </div>
         </section>
 
-        {/* Size Options Section */}
+        {/* Ideal for Wet Soil Areas Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-8">
+              <div className="flex items-start gap-4">
+                <Droplets className="w-10 h-10 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">
+                    Ideal for Wet Soil Areas
+                  </h2>
+                  <p className="text-muted-foreground mb-4">
+                    Steel posts are especially valuable in areas with high moisture, poor drainage, or saturated soil conditions. Unlike wood posts that absorb moisture and accelerate rot, steel posts remain unaffected by ground water levels.
+                  </p>
+                  <p className="text-foreground mb-4">
+                    We highly recommend steel posts for properties in:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Link to="/service-areas/enumclaw" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      Enumclaw
+                    </Link>
+                    <Link to="/service-areas/seattle" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      West Seattle
+                    </Link>
+                    <Link to="/service-areas/kirkland" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      Kirkland
+                    </Link>
+                    <Link to="/service-areas/renton" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      Newcastle
+                    </Link>
+                    <Link to="/service-areas/issaquah" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      Issaquah
+                    </Link>
+                    <Link to="/service-areas/north-bend" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      North Bend
+                    </Link>
+                    <Link to="/service-areas/maple-valley" className="inline-flex items-center px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-sm font-medium transition-colors">
+                      Maple Valley
+                    </Link>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    Properties near lakes, rivers, wetlands, or in low-lying areas benefit most from the rot-proof nature of steel posts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
