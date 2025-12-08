@@ -2,6 +2,15 @@ import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 
 export const blogArticles = [
   {
+    id: "steel-vs-wood-fence-posts",
+    title: "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
+    category: "Fence Posts",
+    description: "Compare 4x4 black steel fence posts with traditional wood posts. 40-year warranty vs 10-15 year lifespan. Learn why steel posts are ideal for wet Seattle soil.",
+    image: "/lovable-uploads/barrier-boss-4x4-steel-post.webp",
+    readTime: "8 min read",
+    publishDate: "December 2025"
+  },
+  {
     id: "cedar-steel-hybrid-fence",
     title: "Cedar/Steel Hybrid Fence: The Ultimate Guide to Modern Privacy Fencing",
     category: "Premium Fencing",
