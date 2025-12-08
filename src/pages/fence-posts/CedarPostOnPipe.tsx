@@ -38,6 +38,12 @@ const CedarPostOnPipe = () => {
     "@type": "Product",
     "name": "Cedar Post on Pipe Fence System",
     "description": "Cedar post on pipe fence system with through-bolt reinforcement for enhanced wind resistance. Eliminates post rot while maintaining consistent cedar aesthetic throughout your fence.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://myfence.com/assets/cedar-post-on-pipe.jpg",
+      "width": 1200,
+      "height": 900
+    },
     "brand": {
       "@type": "Brand",
       "name": "MyFence.com"
@@ -48,14 +54,35 @@ const CedarPostOnPipe = () => {
       "price": "85",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
-      "url": "https://myfence.com/fence-posts/cedar-post-on-pipe"
+      "url": "https://myfence.com/fence-posts/cedar-post-on-pipe",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US",
+          "addressRegion": "WA"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 7,
+            "maxValue": 14,
+            "unitCode": "d"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "89"
-    },
-    "image": "https://myfence.com/assets/cedar-post-on-pipe.jpg"
+    }
   };
 
   return (
