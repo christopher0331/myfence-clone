@@ -599,6 +599,18 @@ const SteelVsWoodPosts = () => {
                     </p>
                   </CardContent>
                 </Card>
+
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold mb-2">How can steel posts save 40% on future fence replacement?</h3>
+                    <p className="text-muted-foreground">
+                      Cedar fence panels often outlast wood posts, but when posts fail the entire fence must be replaced. Steel posts outlast cedar panels, 
+                      so when it's time to refresh your fence, the posts stay in place. Combined with{" "}
+                      <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link> technology that stores your exact fence 
+                      specifications, you only pay for new pre-fabricated panels—saving approximately 40% compared to a full fence replacement.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </section>
 
