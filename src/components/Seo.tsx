@@ -33,32 +33,37 @@ const Seo = ({ title, description, canonical, image, structuredData, ogTitle }: 
     : undefined;
 
   return (
-    <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
 
-      {/* Open Graph tags */}
-      <meta property="og:title" content={ogTitle || title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      {canonical && <meta property="og:url" content={canonical} />}
-      {absoluteImage && <meta property="og:image" content={absoluteImage} />}
-      {absoluteImage && <meta property="og:image:width" content="1200" />}
-      {absoluteImage && <meta property="og:image:height" content="630" />}
+        {/* Open Graph tags */}
+        <meta property="og:title" content={ogTitle || title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        {canonical && <meta property="og:url" content={canonical} />}
+        {absoluteImage && <meta property="og:image" content={absoluteImage} />}
+        {absoluteImage && <meta property="og:image:width" content="1200" />}
+        {absoluteImage && <meta property="og:image:height" content="630" />}
 
-      {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={ogTitle || title} />
-      <meta name="twitter:description" content={description} />
-      {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ogTitle || title} />
+        <meta name="twitter:description" content={description} />
+        {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
 
-      {canonical && <link rel="canonical" href={canonical} />}
+        {canonical && <link rel="canonical" href={canonical} />}
+      </Head>
+      {/* Render JSON-LD in body for App Router compatibility */}
       {structuredDataArray.map((data, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(data)}
-        </script>
+        <script 
+          key={`schema-${index}`} 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
       ))}
-    </Head>
+    </>
   );
 };
 
