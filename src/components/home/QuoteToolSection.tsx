@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export const QuoteToolSection = () => {
   return (
@@ -37,7 +37,7 @@ export const QuoteToolSection = () => {
               </ul>
               <div className="mt-6">
                 <Button size="lg" className="w-full sm:w-auto" asChild>
-                  <Link to="/quote" aria-label="Start Building Your Estimate on the quote page">Start Building Your Estimate</Link>
+                  <Link href="/quote" aria-label="Start Building Your Estimate on the quote page">Start Building Your Estimate</Link>
                 </Button>
               </div>
             </div>

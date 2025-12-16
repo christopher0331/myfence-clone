@@ -183,22 +183,3 @@ All colors MUST be HSL.
   }
 }
 
-/* Mobile-first typography and form usability (does not affect desktop) */
-@layer base {
-  /* Balance headings to improve multi-line readability */
-  h1, h2, h3 { text-wrap: balance; }
-
-  @media (max-width: 767px) {
-    h1 { @apply text-3xl leading-tight; }
-    h2 { @apply text-2xl leading-tight; }
-    h3 { @apply text-xl leading-snug; }
-    p  { @apply text-base leading-7; }
-
-    /* Comfortable page padding on small screens */
-    .container { @apply px-4; }
-
-    /* Prevent iOS zoom and ensure adequate tap targets */
-    input, textarea, select, button { font-size: 16px; }
-    input, select, button { @apply h-11; }
-  }
-}

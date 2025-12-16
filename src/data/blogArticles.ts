@@ -2,7 +2,7 @@ import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 
 export const blogArticles = [
   {
-    id: "steel-vs-wood-fence-posts",
+    id: "steel-vs-wood-posts",
     title: "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
     category: "Fence Posts",
     description: "Compare 4x4 black steel fence posts with traditional wood posts. 40-year warranty vs 10-15 year lifespan. Learn why steel posts are ideal for wet Seattle soil.",
@@ -11,7 +11,7 @@ export const blogArticles = [
     publishDate: "December 2025"
   },
   {
-    id: "cedar-steel-hybrid-fence",
+    id: "cedar-aluminum-hybrid-fence-mdx",
     title: "Cedar/Steel Hybrid Fence: The Ultimate Guide to Modern Privacy Fencing",
     category: "Premium Fencing",
     description: "Discover the cedar/steel hybrid fence system - 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Learn about pricing ($80/LF), 30-year warranty options, and why this is the ultimate privacy fence investment.",
@@ -38,7 +38,7 @@ export const blogArticles = [
     publishDate: "January 2025"
   },
   {
-    id: "fence-cost-seattle",
+    id: "six-ft-fence-cost",
     title: "How Much Does a 6-Foot Privacy Fence Cost in Seattle?",
     category: "Pricing", 
     description: "Get a comprehensive breakdown of 6-foot privacy fence costs in Seattle, including materials, labor, and factors that affect your total investment.",
@@ -47,7 +47,7 @@ export const blogArticles = [
     publishDate: "December 2024"
   },
   {
-    id: "seattle-fence-cost-2025",
+    id: "wooden-fence-cost2025",
     title: "How Much Does a Wooden Fence Cost in Seattle in 2025?",
     category: "Pricing",
     description: "Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.",
@@ -56,7 +56,7 @@ export const blogArticles = [
     publishDate: "January 2025"
   },
   {
-    id: "fence-cost-shared-with-neighbor",
+    id: "neighbor-fence-cost-split",
     title: "Should My Neighbor Split Our Fence Cost With Me?",
     category: "Legal",
     description: "Navigate the complexities of shared fence costs with neighbors, including Washington State laws and best practices for property line fencing.",

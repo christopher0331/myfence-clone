@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
+import type { StaticImageData } from 'next/image';
 
 interface OptimizedImageProps {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   className?: string;
   loading?: 'lazy' | 'eager';
@@ -21,9 +22,11 @@ const OptimizedImage = memo(({
   onLoad,
   onError 
 }: OptimizedImageProps) => {
+  const resolvedSrc = typeof src === 'string' ? src : src.src;
+
   return (
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       className={className}
       loading={loading}

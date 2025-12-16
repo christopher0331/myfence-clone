@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 // Simple payment calculator for financing estimates
 // NOTE: These are example APRs per common term length. Adjust as needed.
@@ -103,7 +103,11 @@ export default function PaymentCalculator() {
                 <li>Pay off early anytime.</li>
               </ul>
               <p className="mt-3 text-sm text-muted-foreground">
-                Learn more on our <Link to="/financing" className="text-primary underline">Financing</Link> page.
+                Learn more on our
+                <Link href="/financing" className="text-primary underline">
+                  Financing
+                </Link>
+                page.
               </p>
             </Card>
           </div>

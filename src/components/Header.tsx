@@ -1,7 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
 import { Phone, Home } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
@@ -75,22 +78,58 @@ const serviceAreas = serviceAreasByRegion.flatMap(region =>
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      // Always show near the very top of the page
+      if (currentY <= 10) {
+        setHidden(false);
+        lastScrollY = currentY;
+        return;
+      }
+
+      const isScrollingDown = currentY > lastScrollY;
+
+      if (isScrollingDown) {
+        // Only hide after we've scrolled a meaningful distance
+        if (currentY > 200) {
+          setHidden(true);
+        }
+      } else {
+        // Any upward scroll away from the top should reveal the header
+        setHidden(false);
+      }
+
+      lastScrollY = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b">
-      <div className="container flex h-20 md:h-24 items-center justify-between">
+    <header className="bg-background border-b">
+      <div className="container flex h-28 md:h-36 items-center justify-center gap-6">
         {/* Desktop Layout */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2" onClick={(e) => {
+        <div className="hidden lg:flex items-center gap-3 mr-4">
+          <Link href="/" className="flex flex-col items-start" onClick={(e) => {
             const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
             const x = e.clientX || rect.left + rect.width / 2;
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-2xl font-semibold tracking-tight">{SITE_CONFIG.fullName}</span>
+            <img
+              src="/testing-3.png"
+              alt={SITE_CONFIG.fullName}
+              className="h-24 md:h-32 w-auto"
+            />
           </Link>
-          <Badge variant="secondary" className="hidden lg:inline-flex">
-            <Link to="/fence-genius" className="hover:underline flex items-center justify-center">Fence Genius Certified</Link>
-          </Badge>
         </div>
 
         {/* Mobile Layout */}
@@ -104,7 +143,7 @@ const Header = () => {
           </a>
 
           {/* Center: Logo */}
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5" onClick={(e) => {
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5" onClick={(e) => {
             const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
             const x = e.clientX || rect.left + rect.width / 2;
             const y = e.clientY || rect.top + rect.height / 2;
@@ -125,7 +164,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6 pt-3">
           <DropdownMenu>
             <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
               Fence Styles
@@ -134,24 +173,25 @@ const Header = () => {
             <DropdownMenuContent className="bg-background border z-50">
               {fenceStylesSections.map((section) => (
                 <DropdownMenuItem key={section.hash} asChild>
-                  <Link to={`/fence-styles${section.hash}`}>
+                  <Link href={`/fence-styles${section.hash}`}>
                     {section.label}
                   </Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {navItems.filter(item => item.to !== '/discounts').map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) =>
-                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {navItems.filter(item => item.to !== '/discounts').map((item) => {
+            const isActive = pathname === item.to;
+            return (
+              <Link
+                key={item.to}
+                href={item.to}
+                className={`px-2 text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <DropdownMenu>
             <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
               Service Areas
@@ -175,7 +215,7 @@ const Header = () => {
                               {firstColumn.map((area) => (
                                 <Link
                                   key={area.to}
-                                  to={area.to}
+                                  href={area.to}
                                   className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                                 >
                                   {area.label}
@@ -186,7 +226,7 @@ const Header = () => {
                               {secondColumn.map((area) => (
                                 <Link
                                   key={area.to}
-                                  to={area.to}
+                                  href={area.to}
                                   className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                                 >
                                   {area.label}
@@ -198,7 +238,7 @@ const Header = () => {
                           region.areas.map((area) => (
                             <Link
                               key={area.to}
-                              to={area.to}
+                              href={area.to}
                               className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                             >
                               {area.label}
@@ -212,9 +252,14 @@ const Header = () => {
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to="/contact">
-            <Button variant="hero" size="lg">(253) 455-1885</Button>
-          </Link>
+          <div className="flex flex-col items-center gap-1 ml-4">
+            <Link href="/contact">
+              <Button variant="hero" size="lg">(253) 455-1885</Button>
+            </Link>
+            <Badge variant="secondary">
+              <Link href="/fence-genius" className="hover:underline flex items-center justify-center">Fence Genius Certified</Link>
+            </Badge>
+          </div>
         </nav>
 
       </div>
@@ -228,24 +273,22 @@ const Header = () => {
       
       <div className={`lg:hidden fixed right-0 border-t border-l h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 ${open ? 'translate-x-0' : 'translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch', top: '5rem' }}>
         <div className="py-3 px-4 flex flex-col gap-3">
-            <NavLink
-              to="/"
+            <Link
+              href="/"
               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
-              }
+              className={`text-base transition-colors hover:text-primary ${pathname === "/" ? "text-primary" : "text-muted-foreground"}`}
             >
               Home
-            </NavLink>
+            </Link>
             <div className="text-base font-medium text-foreground">
-              <Link to="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
+              <Link href="/fence-styles" onClick={() => setOpen(false)} className="hover:text-primary transition-colors">
                 Fence Styles
               </Link>
               <div className="flex flex-col gap-2 mt-2 pl-4">
                 {fenceStylesSections.map((section) => (
                   <Link
                     key={section.hash}
-                    to={`/fence-styles${section.hash}`}
+                    href={`/fence-styles${section.hash}`}
                     onClick={() => setOpen(false)}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
@@ -254,27 +297,26 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            <NavLink
-              to="/fence-genius"
+            <Link
+              href="/fence-genius"
               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`
-              }
+              className={`text-base transition-colors hover:text-primary ${pathname === "/fence-genius" ? "text-primary" : "text-muted-foreground"}`}
             >
               Fence Genius
-            </NavLink>
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            </Link>
+            {navItems.map((item) => {
+              const isActive = pathname === item.to;
+              return (
+                <Link
+                  key={item.to}
+                  href={item.to}
+                  onClick={() => setOpen(false)}
+                  className={`text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Collapsible
               open={serviceAreasOpen}
               onOpenChange={setServiceAreasOpen}
@@ -288,7 +330,7 @@ const Header = () => {
                 {serviceAreas.map((area, i) => (
                   <Link
                     key={area.to}
-                    to={area.to}
+                    href={area.to}
                     onClick={() => setOpen(false)}
                     className="text-base text-muted-foreground hover:text-primary transition-colors pl-4 opacity-0 animate-slide-fade-in"
                     style={{ 

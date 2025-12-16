@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 export const ValuePropsSection = () => {
@@ -11,7 +11,13 @@ export const ValuePropsSection = () => {
         </div>
         <div className="text-center sm:text-left">
           <h2 className="text-xl font-semibold">Transparent Fence Pricing in Seattle</h2>
-          <p className="text-muted-foreground mt-2">Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link>.</p>
+          <p className="text-muted-foreground mt-2">
+            Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with
+            <Link href="/fence-genius" className="text-primary hover:underline">
+              Fence Genius
+            </Link>
+            .
+          </p>
         </div>
         <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
           <h2 className="text-xl font-semibold">{WARRANTY_CONSTANTS.TITLE}</h2>

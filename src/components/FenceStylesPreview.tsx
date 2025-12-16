@@ -1,8 +1,9 @@
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface FenceStyle {
   img: string;
@@ -72,7 +73,7 @@ const FenceStylesPreview = ({ city }: FenceStylesPreviewProps) => {
           </p>
         </div>
         <Button asChild variant="outline" size="lg">
-          <Link to="/fence-styles">
+          <Link href="/fence-styles">
             View All Styles
           </Link>
         </Button>
@@ -101,7 +102,7 @@ const FenceStylesPreview = ({ city }: FenceStylesPreviewProps) => {
               <p className="text-sm text-muted-foreground mt-3 mb-4">{style.desc}</p>
               {style.link && (
                 <Link
-                  to={style.link}
+                  href={style.link}
                   className="inline-flex text-primary hover:underline text-sm font-medium"
                   aria-label={`Learn more about ${style.title}`}
                 >

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 
@@ -57,7 +57,7 @@ const ServiceAreasSection = () => {
                 {region.areas.map((area) => (
                   <Link
                     key={area.to}
-                    to={area.to}
+                    href={area.to}
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 group pb-2"
                   >
                     <span>{area.label}</span>

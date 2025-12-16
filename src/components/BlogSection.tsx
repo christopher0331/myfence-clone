@@ -1,13 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import OptimizedImage from "@/components/OptimizedImage";
 import { blogArticles } from "@/data/blogArticles";
 
-const BlogSection = () => {
-  // Get the latest 4 articles
-  const featuredArticles = blogArticles.slice(0, 4);
+interface BlogSectionProps {
+  limit?: number;
+}
+
+const BlogSection = ({ limit }: BlogSectionProps) => {
+  const featuredArticles = limit ? blogArticles.slice(0, limit) : blogArticles;
 
   return (
     <section className="bg-muted py-16 px-4">
@@ -23,7 +26,7 @@ const BlogSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {featuredArticles.map((article) => (
-            <Link key={article.id} to={`/blog/${article.id}`} className="block">
+            <Link key={article.id} href={`/blog/${article.id}`} className="block">
               <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
                 <CardHeader className="p-0">
                   <AspectRatio ratio={4/3}>
@@ -65,7 +68,7 @@ const BlogSection = () => {
 
         <div className="text-center">
           <Button asChild>
-            <Link to="/blog">View All Articles</Link>
+            <Link href="/blog">View All Articles</Link>
           </Button>
         </div>
       </div>
