@@ -88,17 +88,19 @@ ${pageContent}`;
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gpt-5-mini-2025-08-07',
+          // Use a currently supported Chat Completions model
+          model: 'gpt-4o-mini',
           messages: [
             { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
             { role: 'user', content: prompt }
           ],
-          max_completion_tokens: 500,
+          // Standard Chat Completions parameter name
+          max_tokens: 500,
         })
       }).then(async (res) => {
         if (!res.ok) throw new Error(`OpenAI API error: ${res.status}`);
         const data = await res.json();
-        return data.choices[0].message.content;
+        return data.choices?.[0]?.message?.content ?? null;
       }).catch((error) => {
         console.error('ChatGPT error:', error);
         return null;
