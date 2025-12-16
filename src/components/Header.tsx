@@ -164,7 +164,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-6 pt-3">
+        <nav className="hidden lg:flex items-center gap-8 pt-3">
           <DropdownMenu>
             <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
               Fence Styles
