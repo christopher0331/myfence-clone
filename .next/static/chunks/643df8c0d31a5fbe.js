@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/blog/wooden-fence-cost2025", [
+  "static/chunks/90986466df7b1fb2.js",
+  "static/chunks/cf7c75daec783f25.js",
+  "static/chunks/5b930ff61867ee1a.js",
+  "static/chunks/1d202af1f853f2a4.js",
+  "static/chunks/dcaddb9cf75883fc.js",
+  "static/chunks/cc7578c45b9bbd35.js",
+  "static/chunks/turbopack-db160ee10fc787a5.js"
+])

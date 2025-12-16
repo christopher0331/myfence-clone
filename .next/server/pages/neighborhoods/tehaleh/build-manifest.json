@@ -1,0 +1,19 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/neighborhoods/tehaleh": [
+      "static/chunks/90986466df7b1fb2.js",
+      "static/chunks/cf7c75daec783f25.js",
+      "static/chunks/73539db57daaf02a.js",
+      "static/chunks/dcaddb9cf75883fc.js",
+      "static/chunks/1d202af1f853f2a4.js",
+      "static/chunks/5a421839b95d005c.js",
+      "static/chunks/turbopack-c6203384a2a03597.js"
+    ]
+  },
+  "ampFirstPages": []
+}

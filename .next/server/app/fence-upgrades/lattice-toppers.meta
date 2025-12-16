@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/fence-upgrades/layout,_N_T_/fence-upgrades/lattice-toppers/layout,_N_T_/fence-upgrades/lattice-toppers/page,_N_T_/fence-upgrades/lattice-toppers"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/fence-upgrades/lattice-toppers/__PAGE__",
+    "/fence-upgrades/lattice-toppers",
+    "/fence-upgrades",
+    "/_index",
+    "/_head"
+  ]
+}

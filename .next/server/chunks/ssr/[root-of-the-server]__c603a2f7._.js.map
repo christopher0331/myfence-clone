@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/app/service-areas/%5Bcity%5D/page.tsx"],"sourcesContent":["type ServiceAreaCityPageProps = {\n  params: {\n    city: string;\n  };\n};\n\nexport default function ServiceAreaCityPage(_props: ServiceAreaCityPageProps) {\n  return null;\n}\n\n"],"names":[],"mappings":"mUAMe,SAAS,EAAoB,CAAgC,EAC1E,OAAO,IACT"}

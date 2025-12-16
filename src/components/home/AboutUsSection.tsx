@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface AboutUsSectionProps {
   onOpenQuoteModal: () => void;
@@ -15,7 +15,15 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
           <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Contractor | Fence Installation & Design in Seattle</h1>
           <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
           <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
-            MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a franchise—just a local company with a killer name! As the original company using <Link to="/fence-genius" className="text-primary hover:underline">Fence Genius</Link> technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to deliver exceptional, transparent results.
+            MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a
+            franchise—just a local company with a killer name! As the original company using
+            <Link href="/fence-genius" className="text-primary hover:underline">
+              Fence Genius
+            </Link>
+            technology, we're spearheading efforts to modernize an outdated industry where traditional contractors build
+            everything onsite with no customer clarity about what they'll receive. With zero subcontracting, everything
+            is done in-house by our skilled team, combining traditional craftsmanship with innovative technology to
+            deliver exceptional, transparent results.
           </p>
           <div className="mt-5 flex justify-center relative">
             <Button size="lg" variant="secondary" onClick={onOpenQuoteModal} className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">

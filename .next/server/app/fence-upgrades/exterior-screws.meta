@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/fence-upgrades/layout,_N_T_/fence-upgrades/exterior-screws/layout,_N_T_/fence-upgrades/exterior-screws/page,_N_T_/fence-upgrades/exterior-screws"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/fence-upgrades/exterior-screws/__PAGE__",
+    "/fence-upgrades/exterior-screws",
+    "/fence-upgrades",
+    "/_index",
+    "/_head"
+  ]
+}

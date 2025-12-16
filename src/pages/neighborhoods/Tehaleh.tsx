@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ const Tehaleh = () => {
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
             <Link
-              to="/service-areas/bonney-lake"
+              href="/service-areas/bonney-lake"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -49,7 +49,7 @@ const Tehaleh = () => {
                       Call (253) 455-1885
                     </Button>
                   </a>
-                  <Link to="/quote">
+                  <Link href="/quote">
                     <Button size="lg" variant="outline" className="w-full sm:w-auto">
                       Get Free Quote
                     </Button>
@@ -304,12 +304,12 @@ const Tehaleh = () => {
                 neighborhoods throughout Upper and Lower Tehaleh with the same commitment to quality and HOA compliance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/quote">
+                <Link href="/quote">
                   <button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-semibold transition-colors">
                     Get Free Quote
                   </button>
                 </Link>
-                <Link to="/contact">
+                <Link href="/contact">
                   <button className="px-8 py-4 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-lg font-semibold transition-colors">
                     Contact Us
                   </button>

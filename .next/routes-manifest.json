@@ -1,0 +1,551 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/service-areas/[city]",
+      "regex": "^/service\\-areas/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcity": "nxtPcity"
+      },
+      "namedRegex": "^/service\\-areas/(?<nxtPcity>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/blog/cedar-aluminum-hybrid-fence-mdx",
+      "regex": "^/blog/cedar\\-aluminum\\-hybrid\\-fence\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/cedar\\-aluminum\\-hybrid\\-fence\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/cedar-board-grade",
+      "regex": "^/blog/cedar\\-board\\-grade(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/cedar\\-board\\-grade(?:/)?$"
+    },
+    {
+      "page": "/blog/cedar-board-grade-mdx",
+      "regex": "^/blog/cedar\\-board\\-grade\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/cedar\\-board\\-grade\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/fence-cleaning-staining",
+      "regex": "^/blog/fence\\-cleaning\\-staining(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/fence\\-cleaning\\-staining(?:/)?$"
+    },
+    {
+      "page": "/blog/fence-cleaning-staining-mdx",
+      "regex": "^/blog/fence\\-cleaning\\-staining\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/fence\\-cleaning\\-staining\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/how-to-stain-fence",
+      "regex": "^/blog/how\\-to\\-stain\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/how\\-to\\-stain\\-fence(?:/)?$"
+    },
+    {
+      "page": "/blog/how-to-stain-fence-mdx",
+      "regex": "^/blog/how\\-to\\-stain\\-fence\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/how\\-to\\-stain\\-fence\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/neighbor-fence-cost-split",
+      "regex": "^/blog/neighbor\\-fence\\-cost\\-split(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/neighbor\\-fence\\-cost\\-split(?:/)?$"
+    },
+    {
+      "page": "/blog/neighbor-fence-cost-split-mdx",
+      "regex": "^/blog/neighbor\\-fence\\-cost\\-split\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/neighbor\\-fence\\-cost\\-split\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/six-ft-fence-cost",
+      "regex": "^/blog/six\\-ft\\-fence\\-cost(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/six\\-ft\\-fence\\-cost(?:/)?$"
+    },
+    {
+      "page": "/blog/six-ft-fence-cost-mdx",
+      "regex": "^/blog/six\\-ft\\-fence\\-cost\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/six\\-ft\\-fence\\-cost\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/steel-vs-wood-posts",
+      "regex": "^/blog/steel\\-vs\\-wood\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/steel\\-vs\\-wood\\-posts(?:/)?$"
+    },
+    {
+      "page": "/blog/virtual-quote-tool",
+      "regex": "^/blog/virtual\\-quote\\-tool(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/virtual\\-quote\\-tool(?:/)?$"
+    },
+    {
+      "page": "/blog/virtual-quote-tool-mdx",
+      "regex": "^/blog/virtual\\-quote\\-tool\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/virtual\\-quote\\-tool\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/blog/wooden-fence-cost2025",
+      "regex": "^/blog/wooden\\-fence\\-cost2025(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/wooden\\-fence\\-cost2025(?:/)?$"
+    },
+    {
+      "page": "/blog/wooden-fence-cost2025-mdx",
+      "regex": "^/blog/wooden\\-fence\\-cost2025\\-mdx(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/wooden\\-fence\\-cost2025\\-mdx(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/discounts",
+      "regex": "^/discounts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/discounts(?:/)?$"
+    },
+    {
+      "page": "/faq",
+      "regex": "^/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faq(?:/)?$"
+    },
+    {
+      "page": "/fence-genius",
+      "regex": "^/fence\\-genius(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-genius(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/3-5-posts",
+      "regex": "^/fence\\-posts/3\\-5\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/3\\-5\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/4-125-posts",
+      "regex": "^/fence\\-posts/4\\-125\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/4\\-125\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/6x6",
+      "regex": "^/fence\\-posts/6x6(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/6x6(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/cedar-post-on-pipe",
+      "regex": "^/fence\\-posts/cedar\\-post\\-on\\-pipe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/cedar\\-post\\-on\\-pipe(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/four-point-one-two-five-posts",
+      "regex": "^/fence\\-posts/four\\-point\\-one\\-two\\-five\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/four\\-point\\-one\\-two\\-five\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/six-by-six-posts",
+      "regex": "^/fence\\-posts/six\\-by\\-six\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/six\\-by\\-six\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/steel-posts",
+      "regex": "^/fence\\-posts/steel\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/steel\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-posts/three-point-five-posts",
+      "regex": "^/fence\\-posts/three\\-point\\-five\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-posts/three\\-point\\-five\\-posts(?:/)?$"
+    },
+    {
+      "page": "/fence-staining",
+      "regex": "^/fence\\-staining(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-staining(?:/)?$"
+    },
+    {
+      "page": "/fence-styles",
+      "regex": "^/fence\\-styles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/3-rail-picture-frame-fence",
+      "regex": "^/fence\\-styles/3\\-rail\\-picture\\-frame\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/3\\-rail\\-picture\\-frame\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/black-hogwire-fence",
+      "regex": "^/fence\\-styles/black\\-hogwire\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/black\\-hogwire\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/cedar-aluminum-hybrid-fence",
+      "regex": "^/fence\\-styles/cedar\\-aluminum\\-hybrid\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/cedar\\-aluminum\\-hybrid\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/craftsman-style-fence",
+      "regex": "^/fence\\-styles/craftsman\\-style\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/craftsman\\-style\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/galvanized-hogwire-fence",
+      "regex": "^/fence\\-styles/galvanized\\-hogwire\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/galvanized\\-hogwire\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/horizontal-fence",
+      "regex": "^/fence\\-styles/horizontal\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/horizontal\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/horizontal-lattice-fence",
+      "regex": "^/fence\\-styles/horizontal\\-lattice\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/horizontal\\-lattice\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/picket-fence",
+      "regex": "^/fence\\-styles/picket\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/picket\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/picture-frame-fence",
+      "regex": "^/fence\\-styles/picture\\-frame\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/picture\\-frame\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/solid-board-fence",
+      "regex": "^/fence\\-styles/solid\\-board\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/solid\\-board\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-styles/three-ft-black-hogwire-fence",
+      "regex": "^/fence\\-styles/three\\-ft\\-black\\-hogwire\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-styles/three\\-ft\\-black\\-hogwire\\-fence(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/board-on-board",
+      "regex": "^/fence\\-upgrades/board\\-on\\-board(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/board\\-on\\-board(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/clear-cedar",
+      "regex": "^/fence\\-upgrades/clear\\-cedar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/clear\\-cedar(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/exterior-screws",
+      "regex": "^/fence\\-upgrades/exterior\\-screws(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/exterior\\-screws(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/lattice-toppers",
+      "regex": "^/fence\\-upgrades/lattice\\-toppers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/lattice\\-toppers(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/post-on-pipe",
+      "regex": "^/fence\\-upgrades/post\\-on\\-pipe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/post\\-on\\-pipe(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/rot-board",
+      "regex": "^/fence\\-upgrades/rot\\-board(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/rot\\-board(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/soil-haul-away",
+      "regex": "^/fence\\-upgrades/soil\\-haul\\-away(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/soil\\-haul\\-away(?:/)?$"
+    },
+    {
+      "page": "/fence-upgrades/trellis-systems",
+      "regex": "^/fence\\-upgrades/trellis\\-systems(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fence\\-upgrades/trellis\\-systems(?:/)?$"
+    },
+    {
+      "page": "/financing",
+      "regex": "^/financing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/financing(?:/)?$"
+    },
+    {
+      "page": "/gallery",
+      "regex": "^/gallery(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gallery(?:/)?$"
+    },
+    {
+      "page": "/neighborhoods/lower-tehaleh",
+      "regex": "^/neighborhoods/lower\\-tehaleh(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/neighborhoods/lower\\-tehaleh(?:/)?$"
+    },
+    {
+      "page": "/neighborhoods/tehaleh",
+      "regex": "^/neighborhoods/tehaleh(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/neighborhoods/tehaleh(?:/)?$"
+    },
+    {
+      "page": "/not-found",
+      "regex": "^/not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/not\\-found(?:/)?$"
+    },
+    {
+      "page": "/pre-staining",
+      "regex": "^/pre\\-staining(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pre\\-staining(?:/)?$"
+    },
+    {
+      "page": "/pre-staining-cedar-fence",
+      "regex": "^/pre\\-staining\\-cedar\\-fence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pre\\-staining\\-cedar\\-fence(?:/)?$"
+    },
+    {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/quote",
+      "regex": "^/quote(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/quote(?:/)?$"
+    },
+    {
+      "page": "/quote-tool",
+      "regex": "^/quote\\-tool(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/quote\\-tool(?:/)?$"
+    },
+    {
+      "page": "/referrals",
+      "regex": "^/referrals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/referrals(?:/)?$"
+    },
+    {
+      "page": "/service-areas",
+      "regex": "^/service\\-areas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas(?:/)?$"
+    },
+    {
+      "page": "/service-areas/bellevue",
+      "regex": "^/service\\-areas/bellevue(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/bellevue(?:/)?$"
+    },
+    {
+      "page": "/service-areas/bonney-lake",
+      "regex": "^/service\\-areas/bonney\\-lake(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/bonney\\-lake(?:/)?$"
+    },
+    {
+      "page": "/service-areas/covington",
+      "regex": "^/service\\-areas/covington(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/covington(?:/)?$"
+    },
+    {
+      "page": "/service-areas/enumclaw",
+      "regex": "^/service\\-areas/enumclaw(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/enumclaw(?:/)?$"
+    },
+    {
+      "page": "/service-areas/federal-way",
+      "regex": "^/service\\-areas/federal\\-way(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/federal\\-way(?:/)?$"
+    },
+    {
+      "page": "/service-areas/gig-harbor",
+      "regex": "^/service\\-areas/gig\\-harbor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/gig\\-harbor(?:/)?$"
+    },
+    {
+      "page": "/service-areas/issaquah",
+      "regex": "^/service\\-areas/issaquah(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/issaquah(?:/)?$"
+    },
+    {
+      "page": "/service-areas/kirkland",
+      "regex": "^/service\\-areas/kirkland(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/kirkland(?:/)?$"
+    },
+    {
+      "page": "/service-areas/lake-tapps",
+      "regex": "^/service\\-areas/lake\\-tapps(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/lake\\-tapps(?:/)?$"
+    },
+    {
+      "page": "/service-areas/maple-valley",
+      "regex": "^/service\\-areas/maple\\-valley(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/maple\\-valley(?:/)?$"
+    },
+    {
+      "page": "/service-areas/mountlake-terrace",
+      "regex": "^/service\\-areas/mountlake\\-terrace(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/mountlake\\-terrace(?:/)?$"
+    },
+    {
+      "page": "/service-areas/north-bend",
+      "regex": "^/service\\-areas/north\\-bend(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/north\\-bend(?:/)?$"
+    },
+    {
+      "page": "/service-areas/redmond",
+      "regex": "^/service\\-areas/redmond(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/redmond(?:/)?$"
+    },
+    {
+      "page": "/service-areas/renton",
+      "regex": "^/service\\-areas/renton(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/renton(?:/)?$"
+    },
+    {
+      "page": "/service-areas/sammamish",
+      "regex": "^/service\\-areas/sammamish(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/sammamish(?:/)?$"
+    },
+    {
+      "page": "/service-areas/seattle",
+      "regex": "^/service\\-areas/seattle(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/seattle(?:/)?$"
+    },
+    {
+      "page": "/service-areas/sumner",
+      "regex": "^/service\\-areas/sumner(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/sumner(?:/)?$"
+    },
+    {
+      "page": "/service-areas/tukwila",
+      "regex": "^/service\\-areas/tukwila(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/service\\-areas/tukwila(?:/)?$"
+    },
+    {
+      "page": "/terms-conditions",
+      "regex": "^/terms\\-conditions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-conditions(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

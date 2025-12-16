@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/service-areas/layout,_N_T_/service-areas/federal-way/layout,_N_T_/service-areas/federal-way/page,_N_T_/service-areas/federal-way"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/service-areas/federal-way/__PAGE__",
+    "/service-areas/federal-way",
+    "/service-areas",
+    "/_index",
+    "/_head"
+  ]
+}

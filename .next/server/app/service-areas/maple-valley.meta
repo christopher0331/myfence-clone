@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/service-areas/layout,_N_T_/service-areas/maple-valley/layout,_N_T_/service-areas/maple-valley/page,_N_T_/service-areas/maple-valley"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/service-areas/maple-valley/__PAGE__",
+    "/service-areas/maple-valley",
+    "/service-areas",
+    "/_index",
+    "/_head"
+  ]
+}

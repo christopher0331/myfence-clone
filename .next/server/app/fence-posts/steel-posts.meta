@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/fence-posts/layout,_N_T_/fence-posts/steel-posts/layout,_N_T_/fence-posts/steel-posts/page,_N_T_/fence-posts/steel-posts"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/fence-posts/steel-posts/__PAGE__",
+    "/fence-posts/steel-posts",
+    "/fence-posts",
+    "/_index",
+    "/_head"
+  ]
+}

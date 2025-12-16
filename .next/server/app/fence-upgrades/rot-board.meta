@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/fence-upgrades/layout,_N_T_/fence-upgrades/rot-board/layout,_N_T_/fence-upgrades/rot-board/page,_N_T_/fence-upgrades/rot-board"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/fence-upgrades/rot-board/__PAGE__",
+    "/fence-upgrades/rot-board",
+    "/fence-upgrades",
+    "/_index",
+    "/_head"
+  ]
+}

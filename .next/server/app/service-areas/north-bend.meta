@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/service-areas/layout,_N_T_/service-areas/north-bend/layout,_N_T_/service-areas/north-bend/page,_N_T_/service-areas/north-bend"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/service-areas/north-bend/__PAGE__",
+    "/service-areas/north-bend",
+    "/service-areas",
+    "/_index",
+    "/_head"
+  ]
+}

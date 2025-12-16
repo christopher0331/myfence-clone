@@ -49,7 +49,7 @@ export const burstFirework = (x?: number, y?: number) => {
 
     const start = performance.now();
     const duration = 800;
-    function tick(now: number) {
+    const tick = (now: number) => {
       const t = (now - start) / duration;
       ctx.clearRect(0, 0, w, h);
       particles.forEach(p => {
@@ -68,7 +68,7 @@ export const burstFirework = (x?: number, y?: number) => {
         ctx.globalAlpha = 1;
         document.body.removeChild(canvas);
       }
-    }
+    };
     requestAnimationFrame(tick);
   } catch {
     // no-op

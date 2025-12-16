@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Phone, Youtube, Music2, Pin } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 const Footer = () => {
@@ -28,37 +28,37 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">
                     Fence Styles
                   </Link>
                 </li>
                 <li>
-                  <Link to="/gallery" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/gallery" className="text-muted-foreground hover:text-primary transition-colors">
                     Gallery
                   </Link>
                 </li>
                 <li>
-                  <Link to="/quote" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/quote" className="text-muted-foreground hover:text-primary transition-colors">
                     Get Quote
                   </Link>
                 </li>
                 <li>
-                  <Link to="/discounts" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/discounts" className="text-muted-foreground hover:text-primary transition-colors">
                     Discounts
                   </Link>
                 </li>
                 <li>
-                  <Link to="/financing" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/financing" className="text-muted-foreground hover:text-primary transition-colors">
                     Financing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -137,19 +137,19 @@ const Footer = () => {
               </div>
               <div className="space-y-2">
                 <Link
-                  to="/privacy-policy"
+                  href="/privacy-policy"
                   className="block text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  to="/terms-conditions"
+                  href="/terms-conditions"
                   className="block text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms & Conditions
                 </Link>
                 <Link
-                  to="/fence-genius"
+                  href="/fence-genius"
                   className="block text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Fence Genius Technology

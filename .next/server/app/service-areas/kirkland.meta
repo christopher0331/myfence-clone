@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/service-areas/layout,_N_T_/service-areas/kirkland/layout,_N_T_/service-areas/kirkland/page,_N_T_/service-areas/kirkland"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/service-areas/kirkland/__PAGE__",
+    "/service-areas/kirkland",
+    "/service-areas",
+    "/_index",
+    "/_head"
+  ]
+}

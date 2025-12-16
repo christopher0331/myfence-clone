@@ -1,11 +1,12 @@
-import { Helmet } from "react-helmet-async";
+import Head from "next/head";
+import type { StaticImageData } from "next/image";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 interface SeoProps {
   title: string;
   description: string;
   canonical?: string;
-  image?: string;
+  image?: string | StaticImageData;
   structuredData?: Record<string, any> | Record<string, any>[];
   ogTitle?: string; // Optional separate title for social sharing previews
 }
@@ -19,17 +20,23 @@ const Seo = ({ title, description, canonical, image, structuredData, ogTitle }: 
     : [];
 
   // Convert relative image URLs to absolute URLs
-  const absoluteImage = image 
-    ? image.startsWith('http') 
-      ? image 
-      : `${SITE_CONFIG.url}${image}`
+  const rawImage = image
+    ? typeof image === "string"
+      ? image
+      : image.src
+    : undefined;
+
+  const absoluteImage = rawImage
+    ? rawImage.startsWith("http")
+      ? rawImage
+      : `${SITE_CONFIG.url}${rawImage}`
     : undefined;
 
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      
+
       {/* Open Graph tags */}
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={description} />
@@ -38,20 +45,20 @@ const Seo = ({ title, description, canonical, image, structuredData, ogTitle }: 
       {absoluteImage && <meta property="og:image" content={absoluteImage} />}
       {absoluteImage && <meta property="og:image:width" content="1200" />}
       {absoluteImage && <meta property="og:image:height" content="630" />}
-      
+
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={ogTitle || title} />
       <meta name="twitter:description" content={description} />
       {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
-      
+
       {canonical && <link rel="canonical" href={canonical} />}
       {structuredDataArray.map((data, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(data)}
         </script>
       ))}
-    </Helmet>
+    </Head>
   );
 };
 

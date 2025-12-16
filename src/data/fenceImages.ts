@@ -1,6 +1,7 @@
 // Centralized image registry for fence styles
 // Uses existing assets and public uploads so pages can import from one place
 
+import type { StaticImageData } from "next/image";
 import aluminumSlat from "@/assets/fences/aluminum-slat.jpg";
 import cedar from "@/assets/fences/cedar.jpg";
 import chainlink from "@/assets/fences/chainlink.jpg";
@@ -18,7 +19,7 @@ export type FenceStyleKey =
   | "wrought-iron";
 
 export interface FenceImageInfo {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
 }
 
