@@ -3,7 +3,7 @@ import { Clock, Calendar, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import OptimizedImage from "@/components/OptimizedImage";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArticleSummary } from "@/components/ArticleSummary";
 
 <article className="min-h-screen bg-background">
@@ -360,7 +360,7 @@ import { ArticleSummary } from "@/components/ArticleSummary";
                 asChild
                 className="flex items-center gap-2"
               >
-                <Link to="/quote">
+                <Link href="/quote">
                   <MessageCircle className="h-5 w-5" />
                   Get Virtual Estimate
                 </Link>
@@ -371,7 +371,7 @@ import { ArticleSummary } from "@/components/ArticleSummary";
                 asChild
                 className="flex items-center gap-2"
               >
-                <Link to="/contact">
+                <Link href="/contact">
                   <Phone className="h-5 w-5" />
                   Speak with an Expert
                 </Link>

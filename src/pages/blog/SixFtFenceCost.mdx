@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowLeft, DollarSign, Clock, CheckCircle, AlertTriangle, Star, Shield } from "lucide-react";
 import { ArticleSummary } from "@/components/ArticleSummary";
 
@@ -10,7 +10,7 @@ import { ArticleSummary } from "@/components/ArticleSummary";
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <Button variant="ghost" size="sm" asChild className="mb-4">
-              <Link to="/blog" className="flex items-center gap-2">
+              <Link href="/blog" className="flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4" />
                 Back to Blog
               </Link>
@@ -193,7 +193,7 @@ import { ArticleSummary } from "@/components/ArticleSummary";
                     <li>No proper drainage or concrete footings</li>
                   </ul>
                   <p>
-                    <strong>It's always better to invest in the correct fence company the first time, even if that means exploring <Link to="/financing" className="text-primary hover:underline">financing options</Link>.</strong>
+                    <strong>It's always better to invest in the correct fence company the first time, even if that means exploring <Link href="/financing" className="text-primary hover:underline">financing options</Link>.</strong>
                   </p>
                 </CardContent>
               </Card>
@@ -364,17 +364,17 @@ import { ArticleSummary } from "@/components/ArticleSummary";
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button asChild>
-                      <Link to="/quote">
+                      <Link href="/quote">
                         Get My Instant Quote
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
-                      <Link to="/financing">
+                      <Link href="/financing">
                         Explore Financing Options
                       </Link>
                     </Button>
                     <Button variant="outline" asChild>
-                      <Link to="/contact">
+                      <Link href="/contact">
                         Speak with an Expert
                       </Link>
                     </Button>
