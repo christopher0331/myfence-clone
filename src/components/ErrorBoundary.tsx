@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -45,10 +45,10 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
               <div className="flex gap-3">
                 <Button onClick={this.handleRetry}>Try again</Button>
                 <Button variant="outline" asChild>
-                  <Link to="/blog">Back to Blog</Link>
+                  <Link href="/blog">Back to Blog</Link>
                 </Button>
               </div>
-              {import.meta.env.DEV && this.state.error && (
+              {process.env.NODE_ENV !== 'production' && this.state.error && (
                 <pre className="mt-4 text-xs bg-muted p-3 rounded overflow-auto">
                   {this.state.error?.toString()}
                 </pre>
