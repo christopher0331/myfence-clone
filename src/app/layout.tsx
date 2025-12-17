@@ -8,7 +8,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1">
+        {/* Add top padding so content clears the fixed header */}
+        <main className="flex-1 pt-28 md:pt-36">
           {children}
         </main>
         <Footer />

@@ -78,44 +78,26 @@ const serviceAreas = serviceAreasByRegion.flatMap(region =>
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      const currentY = window.scrollY;
-
-      // Always show near the very top of the page
-      if (currentY <= 10) {
-        setHidden(false);
-        lastScrollY = currentY;
-        return;
-      }
-
-      const isScrollingDown = currentY > lastScrollY;
-
-      if (isScrollingDown) {
-        // Only hide after we've scrolled a meaningful distance
-        if (currentY > 200) {
-          setHidden(true);
-        }
-      } else {
-        // Any upward scroll away from the top should reveal the header
-        setHidden(false);
-      }
-
-      lastScrollY = currentY;
+      setIsScrolled(window.scrollY > 40);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="bg-background border-b">
-      <div className="container flex h-28 md:h-36 items-center justify-center gap-6">
+    <header className="fixed top-0 left-0 right-0 bg-background border-b z-50 transition-all duration-300">
+      <div
+        className={`container flex items-center justify-center gap-6 transition-all duration-300 ${
+          isScrolled ? "h-20 md:h-24" : "h-28 md:h-36"
+        }`}
+      >
         {/* Desktop Layout */}
         <div className="hidden lg:flex items-center gap-3 mr-4">
           <Link href="/" className="flex flex-col items-start" onClick={(e) => {
@@ -127,7 +109,9 @@ const Header = () => {
             <img
               src="/testing-3.png"
               alt={SITE_CONFIG.fullName}
-              className="h-24 md:h-32 w-auto"
+              className={`w-auto transition-all duration-300 ${
+                isScrolled ? "h-12 md:h-16" : "h-24 md:h-32"
+              }`}
             />
           </Link>
         </div>
