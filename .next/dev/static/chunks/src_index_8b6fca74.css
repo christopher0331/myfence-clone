@@ -2668,6 +2668,10 @@ html, body {
   padding-top: 2rem;
 }
 
+.pt-28 {
+  padding-top: 7rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4761,6 +4765,14 @@ html, body {
     height: 100vh;
   }
 
+  .md\:h-16 {
+    height: 4rem;
+  }
+
+  .md\:h-24 {
+    height: 6rem;
+  }
+
   .md\:w-12 {
     width: 3rem;
   }
@@ -4918,6 +4930,10 @@ html, body {
 
   .md\:pt-28 {
     padding-top: 7rem;
+  }
+
+  .md\:pt-36 {
+    padding-top: 9rem;
   }
 
   .md\:text-left {
