@@ -1,3 +1,5 @@
+"use client";
+
 import OptimizedImage from "@/components/OptimizedImage";
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Gauge } from "lucide-react";

@@ -36,11 +36,11 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
           <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
             <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
               <img
-                src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
+                src="https://ik.imagekit.io/xft9mcl5v/tr:w-648,h-864,q-auto/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
                 alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
                 loading="eager"
                 fetchPriority="high"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_55%]"
               />
             </AspectRatio>
           </div>
