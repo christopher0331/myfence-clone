@@ -708,7 +708,7 @@ const navItems = [
         label: "Financing"
     },
     {
-        to: "/faq",
+        to: "/blog",
         label: "FAQ"
     },
     {
@@ -826,40 +826,23 @@ const serviceAreas = serviceAreasByRegion.flatMap((region)=>region.areas.map((ar
 const Header = ()=>{
     const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
     const [serviceAreasOpen, setServiceAreasOpen] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
-    const [hidden, setHidden] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
+    const [isScrolled, setIsScrolled] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
-        let lastScrollY = window.scrollY;
         const handleScroll = ()=>{
-            const currentY = window.scrollY;
-            // Always show near the very top of the page
-            if (currentY <= 10) {
-                setHidden(false);
-                lastScrollY = currentY;
-                return;
-            }
-            const isScrollingDown = currentY > lastScrollY;
-            if (isScrollingDown) {
-                // Only hide after we've scrolled a meaningful distance
-                if (currentY > 200) {
-                    setHidden(true);
-                }
-            } else {
-                // Any upward scroll away from the top should reveal the header
-                setHidden(false);
-            }
-            lastScrollY = currentY;
+            setIsScrolled(window.scrollY > 40);
         };
+        handleScroll();
         window.addEventListener("scroll", handleScroll, {
             passive: true
         });
         return ()=>window.removeEventListener("scroll", handleScroll);
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("header", {
-        className: "bg-background border-b",
+        className: "fixed top-0 left-0 right-0 bg-background border-b z-50 transition-all duration-300",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "container flex h-28 md:h-36 items-center justify-center gap-6",
+                className: `container flex items-center justify-center gap-6 transition-all duration-300 ${isScrolled ? "h-20 md:h-24" : "h-28 md:h-36"}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         className: "hidden lg:flex items-center gap-3 mr-4",
@@ -875,20 +858,20 @@ const Header = ()=>{
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 src: "/testing-3.png",
                                 alt: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$siteConfig$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["SITE_CONFIG"].fullName,
-                                className: "h-24 md:h-32 w-auto"
+                                className: `w-auto transition-all duration-300 ${isScrolled ? "h-12 md:h-16" : "h-24 md:h-32"}`
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 127,
+                                lineNumber: 109,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 121,
+                            lineNumber: 103,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 120,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -905,19 +888,19 @@ const Header = ()=>{
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 124,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Call"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 138,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -934,12 +917,12 @@ const Header = ()=>{
                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$siteConfig$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["SITE_CONFIG"].fullName
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 136,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 146,
+                                lineNumber: 130,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -951,37 +934,37 @@ const Header = ()=>{
                                         className: `w-6 h-0.5 bg-primary-foreground transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 145,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                         className: `w-6 h-0.5 bg-primary-foreground transition-all duration-300 ${open ? 'opacity-0' : ''}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 146,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                         className: `w-6 h-0.5 bg-primary-foreground transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 147,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 156,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 136,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("nav", {
-                        className: "hidden lg:flex items-center gap-6 pt-3",
+                        className: "hidden lg:flex items-center gap-8 pt-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
                                 children: [
@@ -993,13 +976,13 @@ const Header = ()=>{
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Header.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 155,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 153,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -1011,23 +994,23 @@ const Header = ()=>{
                                                     children: section.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Header.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 160,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, section.hash, false, {
                                                 fileName: "[project]/src/components/Header.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 159,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 157,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 168,
+                                lineNumber: 152,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             navItems.filter((item)=>item.to !== '/discounts').map((item)=>{
@@ -1038,7 +1021,7 @@ const Header = ()=>{
                                     children: item.label
                                 }, item.to, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 170,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0));
                             }),
@@ -1052,13 +1035,13 @@ const Header = ()=>{
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Header.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 182,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 180,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -1080,7 +1063,7 @@ const Header = ()=>{
                                                             children: region.region
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Header.tsx",
-                                                            lineNumber: 210,
+                                                            lineNumber: 194,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1095,12 +1078,12 @@ const Header = ()=>{
                                                                                 children: area.label
                                                                             }, area.to, false, {
                                                                                 fileName: "[project]/src/components/Header.tsx",
-                                                                                lineNumber: 216,
+                                                                                lineNumber: 200,
                                                                                 columnNumber: 33
                                                                             }, ("TURBOPACK compile-time value", void 0)))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Header.tsx",
-                                                                        lineNumber: 214,
+                                                                        lineNumber: 198,
                                                                         columnNumber: 29
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1111,12 +1094,12 @@ const Header = ()=>{
                                                                                 children: area.label
                                                                             }, area.to, false, {
                                                                                 fileName: "[project]/src/components/Header.tsx",
-                                                                                lineNumber: 227,
+                                                                                lineNumber: 211,
                                                                                 columnNumber: 33
                                                                             }, ("TURBOPACK compile-time value", void 0)))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Header.tsx",
-                                                                        lineNumber: 225,
+                                                                        lineNumber: 209,
                                                                         columnNumber: 29
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
@@ -1126,35 +1109,35 @@ const Header = ()=>{
                                                                     children: area.label
                                                                 }, area.to, false, {
                                                                     fileName: "[project]/src/components/Header.tsx",
-                                                                    lineNumber: 239,
+                                                                    lineNumber: 223,
                                                                     columnNumber: 29
                                                                 }, ("TURBOPACK compile-time value", void 0)))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Header.tsx",
-                                                            lineNumber: 211,
+                                                            lineNumber: 195,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, region.region, true, {
                                                     fileName: "[project]/src/components/Header.tsx",
-                                                    lineNumber: 209,
+                                                    lineNumber: 193,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0));
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 185,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 184,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 195,
+                                lineNumber: 179,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1168,12 +1151,12 @@ const Header = ()=>{
                                             children: "(253) 455-1885"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 257,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 256,
+                                        lineNumber: 240,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1184,45 +1167,45 @@ const Header = ()=>{
                                             children: "Fence Genius Certified"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 260,
+                                            lineNumber: 244,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 259,
+                                        lineNumber: 243,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 255,
+                                lineNumber: 239,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 167,
+                        lineNumber: 151,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Header.tsx",
-                lineNumber: 118,
+                lineNumber: 96,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: `lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`,
+                className: `lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm transition-opacity duration-300 z-40 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`,
                 onClick: ()=>setOpen(false),
                 style: {
                     top: '5rem'
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/Header.tsx",
-                lineNumber: 268,
+                lineNumber: 252,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: `lg:hidden fixed right-0 border-t border-l h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 ${open ? 'translate-x-0' : 'translate-x-full'}`,
+                className: `lg:hidden fixed right-0 border-t border-l h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 z-50 ${open ? 'translate-x-0' : 'translate-x-full'}`,
                 style: {
                     WebkitOverflowScrolling: 'touch',
                     top: '5rem'
@@ -1237,7 +1220,7 @@ const Header = ()=>{
                             children: "Home"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 276,
+                            lineNumber: 260,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1250,7 +1233,7 @@ const Header = ()=>{
                                     children: "Fence Styles"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 284,
+                                    lineNumber: 268,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1262,18 +1245,18 @@ const Header = ()=>{
                                             children: section.label
                                         }, section.hash, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 289,
+                                            lineNumber: 273,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 287,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 283,
+                            lineNumber: 267,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1283,7 +1266,7 @@ const Header = ()=>{
                             children: "Fence Genius"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 300,
+                            lineNumber: 284,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         navItems.map((item)=>{
@@ -1295,7 +1278,7 @@ const Header = ()=>{
                                 children: item.label
                             }, item.to, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 310,
+                                lineNumber: 294,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0));
                         }),
@@ -1312,13 +1295,13 @@ const Header = ()=>{
                                             className: `h-4 w-4 transition-transform duration-300 ${serviceAreasOpen ? 'rotate-180' : ''}`
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 327,
+                                            lineNumber: 311,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 325,
+                                    lineNumber: 309,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$collapsible$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["CollapsibleContent"], {
@@ -1334,35 +1317,35 @@ const Header = ()=>{
                                             children: area.label
                                         }, area.to, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 315,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 329,
+                                    lineNumber: 313,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 320,
+                            lineNumber: 304,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header.tsx",
-                    lineNumber: 275,
+                    lineNumber: 259,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Header.tsx",
-                lineNumber: 274,
+                lineNumber: 258,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Header.tsx",
-        lineNumber: 117,
+        lineNumber: 95,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

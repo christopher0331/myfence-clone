@@ -3557,8 +3557,19 @@ __turbopack_context__.s([
     ()=>HeroVideoSection
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+"use client";
+;
 ;
 const HeroVideoSection = ()=>{
+    const [showVideo, setShowVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        // Defer mounting the iframe until after the first paint
+        const id = window.requestAnimationFrame(()=>{
+            setShowVideo(true);
+        });
+        return ()=>window.cancelAnimationFrame(id);
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "relative h-64 sm:h-72 md:h-screen w-full border-b",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3567,20 +3578,21 @@ const HeroVideoSection = ()=>{
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "video-hero",
                     "aria-hidden": "true",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                    children: showVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
                         className: "w-full h-full",
                         src: "https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0",
                         allow: "autoplay; encrypted-media; picture-in-picture",
                         referrerPolicy: "no-referrer-when-downgrade",
-                        title: "MyFence.com installation montage"
+                        title: "MyFence.com installation montage",
+                        loading: "lazy"
                     }, void 0, false, {
                         fileName: "[project]/src/components/home/HeroVideoSection.tsx",
-                        lineNumber: 6,
-                        columnNumber: 11
+                        lineNumber: 22,
+                        columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/home/HeroVideoSection.tsx",
-                    lineNumber: 5,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3588,18 +3600,18 @@ const HeroVideoSection = ()=>{
                     "aria-hidden": "true"
                 }, void 0, false, {
                     fileName: "[project]/src/components/home/HeroVideoSection.tsx",
-                    lineNumber: 14,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/home/HeroVideoSection.tsx",
-            lineNumber: 4,
+            lineNumber: 19,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/home/HeroVideoSection.tsx",
-        lineNumber: 3,
+        lineNumber: 18,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3715,11 +3727,11 @@ const AboutUsSection = ({ onOpenQuoteModal })=>{
                             ratio: 16 / 9,
                             className: "md:aspect-[4/3]",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png",
+                                src: "https://ik.imagekit.io/xft9mcl5v/tr:w-648,h-864,q-auto/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152",
                                 alt: "Father and son team at MyFence.com standing in front of a cedar fence in Seattle",
                                 loading: "eager",
                                 fetchPriority: "high",
-                                className: "w-full h-full object-cover"
+                                className: "w-full h-full object-cover object-[center_55%]"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home/AboutUsSection.tsx",
                                 lineNumber: 38,
@@ -5910,17 +5922,23 @@ const __TURBOPACK__default__export__ = Index;
 
 __turbopack_context__.s([
     "default",
-    ()=>HomePage
+    ()=>HomePage,
+    "metadata",
+    ()=>metadata
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HomePage$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/HomePage.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
+const metadata = {
+    title: "Seattle Fence Installation | Cedar, Hogwire & Hybrid Fences | MyFence.com",
+    description: "Premium fence installation in the Seattle-Tacoma area. Cedar privacy fences, hogwire, hybrid aluminum systems, and HOA-compliant designs. 30+ years father-son craftsmanship. Get a fast virtual quote."
+};
 function HomePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HomePage$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 6,
+        lineNumber: 13,
         columnNumber: 10
     }, this);
 }

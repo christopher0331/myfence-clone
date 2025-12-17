@@ -1,8 +1,0 @@
-__turbopack_load_page_chunks__("/fence-posts/four-point-one-two-five-posts", [
-  "static/chunks/f6577d8d19284bad.js",
-  "static/chunks/90986466df7b1fb2.js",
-  "static/chunks/239884a423380a6e.js",
-  "static/chunks/1d202af1f853f2a4.js",
-  "static/chunks/cf7c75daec783f25.js",
-  "static/chunks/turbopack-49295a6d896bfdaf.js"
-])

@@ -1,4 +1,7 @@
+"use client";
+
 import { useState, useMemo } from "react";
+import dynamic from "next/dynamic";
 import Seo from "@/components/Seo";
 import QuoteModal from "@/components/QuoteModal";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,7 +12,6 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
 import { generateFaqSchema } from "@/data/faqData";
 import BlogSection from "@/components/BlogSection";
-import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 
 import {
@@ -24,6 +26,12 @@ import {
   InlineContactSection,
   ScrollingCarousel,
 } from "@/components/home";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const Index = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);

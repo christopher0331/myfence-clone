@@ -2407,6 +2407,11 @@ html, body {
   object-fit: cover;
 }
 
+.object-\[center_55\%\] {
+  -o-object-position: center 55%;
+  object-position: center 55%;
+}
+
 .p-0 {
   padding: 0;
 }
@@ -2652,6 +2657,10 @@ html, body {
   padding-top: 6rem;
 }
 
+.pt-28 {
+  padding-top: 7rem;
+}
+
 .pt-3 {
   padding-top: .75rem;
 }
@@ -2666,10 +2675,6 @@ html, body {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-28 {
-  padding-top: 7rem;
 }
 
 .text-left {
@@ -4729,8 +4734,16 @@ html, body {
     height: 3rem;
   }
 
+  .md\:h-16 {
+    height: 4rem;
+  }
+
   .md\:h-20 {
     height: 5rem;
+  }
+
+  .md\:h-24 {
+    height: 6rem;
   }
 
   .md\:h-32 {
@@ -4763,14 +4776,6 @@ html, body {
 
   .md\:h-screen {
     height: 100vh;
-  }
-
-  .md\:h-16 {
-    height: 4rem;
-  }
-
-  .md\:h-24 {
-    height: 6rem;
   }
 
   .md\:w-12 {

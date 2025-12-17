@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/fence-posts/six-by-six-posts", [
+  "static/chunks/bda1411ef57318a7.js",
+  "static/chunks/90986466df7b1fb2.js",
+  "static/chunks/cf7c75daec783f25.js",
+  "static/chunks/1d202af1f853f2a4.js",
+  "static/chunks/239884a423380a6e.js",
+  "static/chunks/turbopack-b17b3ba689e23c41.js"
+])

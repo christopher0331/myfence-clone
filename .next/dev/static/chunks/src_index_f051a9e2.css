@@ -561,6 +561,10 @@ html, body {
   z-index: 20;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -2403,6 +2407,11 @@ html, body {
   object-fit: cover;
 }
 
+.object-\[center_55\%\] {
+  -o-object-position: center 55%;
+  object-position: center 55%;
+}
+
 .p-0 {
   padding: 0;
 }
@@ -2646,6 +2655,10 @@ html, body {
 
 .pt-24 {
   padding-top: 6rem;
+}
+
+.pt-28 {
+  padding-top: 7rem;
 }
 
 .pt-3 {
@@ -4721,8 +4734,16 @@ html, body {
     height: 3rem;
   }
 
+  .md\:h-16 {
+    height: 4rem;
+  }
+
   .md\:h-20 {
     height: 5rem;
+  }
+
+  .md\:h-24 {
+    height: 6rem;
   }
 
   .md\:h-32 {
@@ -4914,6 +4935,10 @@ html, body {
 
   .md\:pt-28 {
     padding-top: 7rem;
+  }
+
+  .md\:pt-36 {
+    padding-top: 9rem;
   }
 
   .md\:text-left {

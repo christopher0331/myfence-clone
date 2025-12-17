@@ -1,6 +1,51 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/[root-of-the-server]__c8b05ee7._.js",
+      "static/chunks/node_modules_next_dist_compiled_8ca6b690._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_4677c81f._.js",
+      "static/chunks/node_modules_next_dist_client_9ad483b7._.js",
+      "static/chunks/node_modules_next_dist_ec0ff3d3._.js",
+      "static/chunks/node_modules_next_eb5b9d22._.js",
+      "static/chunks/node_modules_react_e3593a73._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
+      "static/chunks/node_modules_react-dom_8a8085df._.js",
+      "static/chunks/node_modules_4066e05f._.js",
+      "static/chunks/src_index_f051a9e2.css",
+      "static/chunks/src_pages__app_2da965e7._.js",
+      "static/chunks/turbopack-src_pages__app_edc965ac._.js"
+    ],
+    "/_error": [
+      "static/chunks/node_modules_next_dist_compiled_8ca6b690._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_cf5b50a6._.js",
+      "static/chunks/node_modules_next_dist_client_d0aa886c._.js",
+      "static/chunks/node_modules_next_dist_19fd0646._.js",
+      "static/chunks/node_modules_next_error_1cfbb379.js",
+      "static/chunks/[next]_entry_page-loader_ts_43b523b5._.js",
+      "static/chunks/node_modules_react_b4bd21af._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
+      "static/chunks/node_modules_react-dom_8a8085df._.js",
+      "static/chunks/node_modules_1184f5a3._.js",
+      "static/chunks/[root-of-the-server]__a2d5dfc8._.js",
+      "static/chunks/src_pages__error_2da965e7._.js",
+      "static/chunks/turbopack-src_pages__error_7972b4bc._.js"
+    ],
+    "/fence-styles/picture-frame-fence": [
+      "static/chunks/node_modules_@supabase_node-fetch_browser_bcf6ea59.js",
+      "static/chunks/[root-of-the-server]__4c2f3e98._.js",
+      "static/chunks/node_modules_next_dist_compiled_caaa605a._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_2202bc1a._.js",
+      "static/chunks/node_modules_next_dist_client_3ede7da4._.js",
+      "static/chunks/node_modules_next_dist_6024eba3._.js",
+      "static/chunks/node_modules_next_74932de7._.js",
+      "static/chunks/node_modules_react_e3593a73._.js",
+      "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
+      "static/chunks/node_modules_react-dom_8a8085df._.js",
+      "static/chunks/node_modules_@supabase_auth-js_dist_module_ee427b70._.js",
+      "static/chunks/node_modules_325ae98f._.js",
+      "static/chunks/src_pages_fence-styles_picture-frame-fence_tsx_2da965e7._.js",
+      "static/chunks/turbopack-src_pages_fence-styles_picture-frame-fence_tsx_f9f66a81._.js"
+    ]
   },
   "devFiles": [],
   "polyfillFiles": [

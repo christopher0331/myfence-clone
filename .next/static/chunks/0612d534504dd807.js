@@ -1,0 +1,9 @@
+__turbopack_load_page_chunks__("/quote-tool", [
+  "static/chunks/740515358f5e8e0a.js",
+  "static/chunks/8c230cbdba317be4.js",
+  "static/chunks/90986466df7b1fb2.js",
+  "static/chunks/dcaddb9cf75883fc.js",
+  "static/chunks/1d202af1f853f2a4.js",
+  "static/chunks/cf7c75daec783f25.js",
+  "static/chunks/turbopack-fe9f92446afde441.js"
+])

@@ -4,12 +4,12 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/2175c632845be560.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/0de39daa37924c94.js",
-      "static/chunks/c642fea43c495fe5.js",
+      "static/chunks/cd84f9fe359e6e8d.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/63aa2d132cf16504.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/013bcdad1c71b8da.css",
-      "static/chunks/turbopack-1b750e41d121b3c0.js"
+      "static/chunks/64c4a8dd5b996281.css",
+      "static/chunks/turbopack-6640867fee3f50b9.js"
     ],
     "/_error": [
       "static/chunks/94733884807fe21c.js",
@@ -19,32 +19,32 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/turbopack-dcec5efca9dbb623.js"
     ],
     "/blog": [
-      "static/chunks/70f32ca3b660dae2.js",
+      "static/chunks/d987cfef84979e24.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/27c7607a4ff5aa46.js",
-      "static/chunks/turbopack-261d835c3969dc37.js"
+      "static/chunks/turbopack-647c525df2a307c9.js"
     ],
     "/blog/cedar-aluminum-hybrid-fence-mdx": [
       "static/chunks/167cb242f939e250.js",
       "static/chunks/27c7607a4ff5aa46.js",
-      "static/chunks/2e9959bcbecfe310.js",
+      "static/chunks/90986466df7b1fb2.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
-      "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-fd0c7189f861310c.js"
+      "static/chunks/d86fafc2500a2404.js",
+      "static/chunks/turbopack-b9925cea538666df.js"
     ],
     "/blog/cedar-board-grade": [
-      "static/chunks/29712b6c7c5dfd01.js",
+      "static/chunks/cb3e44b4fe3dac5a.js",
       "static/chunks/2b9403608c51374e.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/27c7607a4ff5aa46.js",
-      "static/chunks/turbopack-27664e1d88945cbe.js"
+      "static/chunks/turbopack-c43a0b97c264fe21.js"
     ],
     "/blog/cedar-board-grade-mdx": [
       "static/chunks/5ca14f81d47f367f.js",
@@ -57,13 +57,13 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/turbopack-3b785415f10be671.js"
     ],
     "/blog/fence-cleaning-staining": [
-      "static/chunks/ee6345d1f9f8db9c.js",
+      "static/chunks/f791a2ba36787877.js",
       "static/chunks/63aa2d132cf16504.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/1d202af1f853f2a4.js",
-      "static/chunks/turbopack-055a0e77fe304d17.js"
+      "static/chunks/turbopack-14b056086e7421fa.js"
     ],
     "/blog/fence-cleaning-staining-mdx": [
       "static/chunks/a8fcd65830b8fae5.js",
@@ -75,11 +75,11 @@ globalThis.__BUILD_MANIFEST = {
     "/blog/how-to-stain-fence": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/63aa2d132cf16504.js",
-      "static/chunks/626f165f56996cb1.js",
+      "static/chunks/2147d942ee00b61e.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-f8336fd49734d061.js"
+      "static/chunks/turbopack-bc3f2e642be4f64f.js"
     ],
     "/blog/how-to-stain-fence-mdx": [
       "static/chunks/c4504cf96be903b0.js",
@@ -91,11 +91,11 @@ globalThis.__BUILD_MANIFEST = {
     "/blog/neighbor-fence-cost-split": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/a51fbfd49be023f7.js",
-      "static/chunks/7d08cee540e79d62.js",
+      "static/chunks/f8d3a95a62d4d584.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-62005da00c9003b8.js"
+      "static/chunks/turbopack-bd832990d0ec7028.js"
     ],
     "/blog/neighbor-fence-cost-split-mdx": [
       "static/chunks/ff095450c09e5695.js",
@@ -107,11 +107,11 @@ globalThis.__BUILD_MANIFEST = {
     "/blog/six-ft-fence-cost": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/ee84c04e470451c6.js",
+      "static/chunks/c45c51487d65265b.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-e125f8a3630c0663.js"
+      "static/chunks/turbopack-2af4cbf65a031634.js"
     ],
     "/blog/six-ft-fence-cost-mdx": [
       "static/chunks/5270fbedb7795f00.js",
@@ -123,20 +123,20 @@ globalThis.__BUILD_MANIFEST = {
     "/blog/steel-vs-wood-posts": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cc7578c45b9bbd35.js",
-      "static/chunks/cf249a9e05464be4.js",
+      "static/chunks/40855fdcb344a1f0.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-fa213a508fbf3016.js"
+      "static/chunks/turbopack-56560dffed30e819.js"
     ],
     "/blog/virtual-quote-tool": [
-      "static/chunks/6414e0257b189bae.js",
-      "static/chunks/239884a423380a6e.js",
       "static/chunks/90986466df7b1fb2.js",
+      "static/chunks/239884a423380a6e.js",
+      "static/chunks/a8eabad655cd5fde.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
-      "static/chunks/turbopack-f5c6b148fcb7b063.js"
+      "static/chunks/turbopack-a7577c9935ae71d6.js"
     ],
     "/blog/virtual-quote-tool-mdx": [
       "static/chunks/56aa863e6adb2da7.js",
@@ -148,11 +148,11 @@ globalThis.__BUILD_MANIFEST = {
     "/blog/wooden-fence-cost2025": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/5b930ff61867ee1a.js",
+      "static/chunks/2aa1d0d995d06310.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cc7578c45b9bbd35.js",
-      "static/chunks/turbopack-db160ee10fc787a5.js"
+      "static/chunks/turbopack-bc034790ade936e2.js"
     ],
     "/blog/wooden-fence-cost2025-mdx": [
       "static/chunks/606ebf6632ae998a.js",
@@ -162,97 +162,97 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/turbopack-8d6e4d228a5b2708.js"
     ],
     "/fence-posts/cedar-post-on-pipe": [
-      "static/chunks/378d7c1ddc3dbf66.js",
+      "static/chunks/bf7f76309ddfaa34.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/27c7607a4ff5aa46.js",
-      "static/chunks/turbopack-36f2bfea95152601.js"
+      "static/chunks/turbopack-402561483a9c36dc.js"
     ],
     "/fence-posts/four-point-one-two-five-posts": [
-      "static/chunks/f6577d8d19284bad.js",
+      "static/chunks/e5692b0b6b3fd600.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/239884a423380a6e.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-49295a6d896bfdaf.js"
+      "static/chunks/turbopack-78c32e16454126cc.js"
     ],
     "/fence-posts/six-by-six-posts": [
-      "static/chunks/30d28f61cf996c89.js",
+      "static/chunks/bda1411ef57318a7.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/turbopack-3e79532489823a2f.js"
+      "static/chunks/turbopack-b17b3ba689e23c41.js"
     ],
     "/fence-posts/three-point-five-posts": [
-      "static/chunks/37655b4ced21bf57.js",
+      "static/chunks/51ef07c392af1d45.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/turbopack-4c348c03cccbb2cc.js"
+      "static/chunks/turbopack-bb74dbafa5189671.js"
     ],
     "/fence-styles/3-rail-picture-frame-fence": [
       "static/chunks/39c6ca85389c28ea.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-0922a0414dcabc15.js"
+      "static/chunks/turbopack-5361c33db96223b0.js"
     ],
     "/fence-styles/black-hogwire-fence": [
       "static/chunks/029cf3ca8b4b5bac.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-d89c6cc5181d28f5.js"
+      "static/chunks/turbopack-8114fa41a404e43b.js"
     ],
     "/fence-styles/cedar-aluminum-hybrid-fence": [
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/239884a423380a6e.js",
       "static/chunks/3cf566155fe4e99a.js",
-      "static/chunks/turbopack-2a3c5e929434d31f.js"
+      "static/chunks/turbopack-74dccf7667159d2b.js"
     ],
     "/fence-styles/craftsman-style-fence": [
       "static/chunks/528c6bdd9900a9ce.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-62259c2703528b71.js"
+      "static/chunks/turbopack-56ff6bb13fb8660f.js"
     ],
     "/fence-styles/galvanized-hogwire-fence": [
       "static/chunks/5eb5da2f5d7dc1bf.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-b5b26f5a5ee109da.js"
+      "static/chunks/turbopack-317d88f5bc48cd5d.js"
     ],
     "/fence-styles/horizontal-fence": [
       "static/chunks/05c3514d537e75f7.js",
       "static/chunks/51ad3862b51014ab.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/27c7607a4ff5aa46.js",
       "static/chunks/1d202af1f853f2a4.js",
-      "static/chunks/turbopack-a1761ddaebee7211.js"
+      "static/chunks/turbopack-cc8a933a8e9d087e.js"
     ],
     "/fence-styles/horizontal-lattice-fence": [
       "static/chunks/05c3514d537e75f7.js",
@@ -261,18 +261,18 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/dcaddb9cf75883fc.js",
-      "static/chunks/5ace20f8ed84ae60.js",
-      "static/chunks/turbopack-d5ee14e400a2e920.js"
+      "static/chunks/f0aefb7135cc2794.js",
+      "static/chunks/turbopack-b9391a06d39b453b.js"
     ],
     "/fence-styles/picket-fence": [
       "static/chunks/a5b615b7bd309ae0.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-c422c3056298e87f.js"
+      "static/chunks/turbopack-999a8dc61092c242.js"
     ],
     "/fence-styles/picture-frame-fence": [
       "static/chunks/05c3514d537e75f7.js",
@@ -281,55 +281,55 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/f432794783961a4e.js",
-      "static/chunks/turbopack-fb87404046f55972.js"
+      "static/chunks/7d83ff4c60b09440.js",
+      "static/chunks/turbopack-880e28d7847318c1.js"
     ],
     "/fence-styles/solid-board-fence": [
       "static/chunks/05c3514d537e75f7.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/4a41a59a792ec5bc.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/cc7578c45b9bbd35.js",
       "static/chunks/dcaddb9cf75883fc.js",
-      "static/chunks/turbopack-54d2896208850bd1.js"
+      "static/chunks/turbopack-a140803a9f0b5c17.js"
     ],
     "/fence-styles/three-ft-black-hogwire-fence": [
       "static/chunks/03db7ed21cfc9922.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/4f2009fd66076c4a.js",
+      "static/chunks/d3df6ce9955a9a1d.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/90986466df7b1fb2.js",
-      "static/chunks/turbopack-c485b3b3d3256707.js"
+      "static/chunks/turbopack-07f0a003e5d4fc40.js"
     ],
     "/fence-upgrades/board-on-board": [
-      "static/chunks/335c69500624ac8c.js",
+      "static/chunks/83244c0026f2f65c.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/27c7607a4ff5aa46.js",
-      "static/chunks/turbopack-0d3be2e2e9de1011.js"
+      "static/chunks/turbopack-c7194438e17499db.js"
     ],
     "/fence-upgrades/clear-cedar": [
-      "static/chunks/48c88b2744204073.js",
+      "static/chunks/f8377eaece9ec30d.js",
       "static/chunks/27c7607a4ff5aa46.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
-      "static/chunks/turbopack-43a19cbc80f2fcdf.js"
+      "static/chunks/turbopack-cb8bb5d3e21cb4be.js"
     ],
     "/neighborhoods/tehaleh": [
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/73539db57daaf02a.js",
+      "static/chunks/00ad78640b75bcd1.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/5a421839b95d005c.js",
-      "static/chunks/turbopack-c6203384a2a03597.js"
+      "static/chunks/turbopack-d5e794dbc9c4baae.js"
     ],
     "/not-found": [
       "static/chunks/30f38a7230908f79.js",
@@ -339,35 +339,35 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/turbopack-7c192bd505555e4e.js"
     ],
     "/pre-staining": [
-      "static/chunks/6a35ad2758fe2575.js",
+      "static/chunks/7e7fd7263dfbef30.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/cf7c75daec783f25.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/239884a423380a6e.js",
-      "static/chunks/turbopack-ff73f1c128c7d5a4.js"
+      "static/chunks/turbopack-6d284b53720a93e2.js"
     ],
     "/privacy-policy": [
-      "static/chunks/c8c88b8089f1e0dd.js",
+      "static/chunks/1dd8c503f48d0fae.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-1d2afe849680c134.js"
+      "static/chunks/turbopack-12b1a3b982007f8a.js"
     ],
     "/quote-tool": [
-      "static/chunks/997b5fffbe4c3f38.js",
+      "static/chunks/740515358f5e8e0a.js",
       "static/chunks/8c230cbdba317be4.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/dcaddb9cf75883fc.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-4b127bc35e20199f.js"
+      "static/chunks/turbopack-fe9f92446afde441.js"
     ],
     "/terms-conditions": [
-      "static/chunks/8d3f08109abcd00a.js",
+      "static/chunks/78375252913b0655.js",
       "static/chunks/90986466df7b1fb2.js",
       "static/chunks/1d202af1f853f2a4.js",
       "static/chunks/cf7c75daec783f25.js",
-      "static/chunks/turbopack-9643e4de3fa234b9.js"
+      "static/chunks/turbopack-a2ca5d759e321662.js"
     ]
   },
   "devFiles": [],
