@@ -13,7 +13,7 @@ const BlogSection = ({ limit }: BlogSectionProps) => {
   const featuredArticles = limit ? blogArticles.slice(0, limit) : blogArticles;
 
   return (
-    <section className="bg-muted py-16 px-4">
+    <section className="bg-background pt-8 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

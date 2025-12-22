@@ -7,6 +7,15 @@ import Link from "next/link";
 import { Check, X, Shield, Wrench, DollarSign, Anchor } from "lucide-react";
 import cedarPostOnPipe from "@/assets/cedar-post-on-pipe.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const CedarPostOnPipe = () => {
   const breadcrumbData = {
@@ -87,7 +96,7 @@ const CedarPostOnPipe = () => {
   };
 
   return (
-    <main>
+    <>
       <Seo
         title="Cedar Post on Pipe | Rot-Free Cedar Posts | Seattle"
         description="Cedar Post on Pipe system with through-bolt reinforcement for enhanced wind resistance. Consistent cedar aesthetic with zero ground rot. Premium upgrade for Seattle fences."
@@ -97,7 +106,7 @@ const CedarPostOnPipe = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-12 md:py-16">
+      <section className="container pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4">Premium Cedar Option</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -434,7 +443,22 @@ const CedarPostOnPipe = () => {
           </div>
         </div>
       </section>
-    </main>
+
+      {/* Blog Articles Section */}
+      <BlogSection limit={4} />
+
+      {/* Service Area Map Section */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+          Proudly serving the greater Seattle area within a 28-mile radius
+        </p>
+        <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+      </section>
+
+      {/* Service Areas List Section */}
+      <ServiceAreasSection />
+    </>
   );
 };
 

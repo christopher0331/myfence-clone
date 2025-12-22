@@ -4,6 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Seo from "@/components/Seo";
 import Link from "next/link";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const FourPointOneTwoFivePostsPage = () => {
   const breadcrumbData = {
@@ -23,7 +32,7 @@ const FourPointOneTwoFivePostsPage = () => {
   ];
 
   return (
-    <main>
+    <>
       <Seo
         title={"4.125\" x 4.125\" Fence Posts - Best Value & Strength | MyFence.com"}
         description={"Discover why 4.125\" x 4.125\" fence posts are the best choice for Seattle fences. Superior strength, less warping, and excellent value."}
@@ -32,7 +41,7 @@ const FourPointOneTwoFivePostsPage = () => {
       />
 
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="relative pt-8 pb-20 bg-background">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Premium 4.125" x 4.125" x 9' Fence Posts</h1>
@@ -67,6 +76,56 @@ const FourPointOneTwoFivePostsPage = () => {
         </div>
       </section>
 
+      {/* Professional Installation Process */}
+      <section className="container py-16 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            MyFence.com's Professional Installation Process
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Our expert team follows proven techniques to ensure your fence posts last for decades in Seattle's unique climate.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Precise Post Placement</h3>
+                <p className="text-muted-foreground">
+                  We use our Fence Genius technology to ensure exact spacing and alignment for structural integrity.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Surface-Level Concrete</h3>
+                <p className="text-muted-foreground">
+                  Concrete poured at or near surface level prevents soil contact, dramatically reducing rot risk.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary font-bold text-xl">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Quality Cedar Posts</h3>
+                <p className="text-muted-foreground">
+                  Premium 4.125" x 4.125" x 9' cedar posts selected for strength and natural rot resistance.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="container py-16">
         <div className="max-w-6xl mx-auto">
@@ -84,7 +143,7 @@ const FourPointOneTwoFivePostsPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="container py-16 bg-muted/30">
+      <section className="container py-16 bg-background">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Build with Better Posts?</h2>
           <p className="text-muted-foreground mb-6">Get a free quote from MyFence.com for your project using premium 4.125" posts.</p>
@@ -98,7 +157,22 @@ const FourPointOneTwoFivePostsPage = () => {
           </div>
         </div>
       </section>
-    </main>
+
+      {/* Blog Articles Section */}
+      <BlogSection limit={4} />
+
+      {/* Service Area Map Section */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+          Proudly serving the greater Seattle area within a 28-mile radius
+        </p>
+        <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+      </section>
+
+      {/* Service Areas List Section */}
+      <ServiceAreasSection />
+    </>
   );
 };
 

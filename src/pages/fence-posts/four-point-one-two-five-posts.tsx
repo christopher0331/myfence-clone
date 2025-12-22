@@ -3,6 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const FourPointOneTwoFivePosts = () => {
   const breadcrumbData = {
@@ -40,7 +49,7 @@ const FourPointOneTwoFivePosts = () => {
   ];
 
   return (
-    <main>
+    <>
       <Seo
         title="4.125&quot; x 4.125&quot; Fence Posts - Best Value &amp; Strength | MyFence.com"
         description="Discover why 4.125&quot; x 4.125&quot; fence posts are the best choice for Seattle fences. Superior strength, less warping, and excellent value. 30+ years experience."
@@ -49,7 +58,7 @@ const FourPointOneTwoFivePosts = () => {
         structuredData={breadcrumbData}
       />
       
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="relative pt-8 pb-20 bg-background">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
@@ -271,7 +280,22 @@ const FourPointOneTwoFivePosts = () => {
           </CardContent>
         </Card>
       </section>
-    </main>
+
+      {/* Blog Articles Section */}
+      <BlogSection limit={4} />
+
+      {/* Service Area Map Section */}
+      <section className="container py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+          Proudly serving the greater Seattle area within a 28-mile radius
+        </p>
+        <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+      </section>
+
+      {/* Service Areas List Section */}
+      <ServiceAreasSection />
+    </>
   );
 };
 

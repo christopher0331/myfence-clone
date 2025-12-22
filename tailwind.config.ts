@@ -5,7 +5,11 @@ export default {
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
+		"./app/**/page.{ts,tsx}",
+		"./app/**/layout.{ts,tsx}",
+		"./app/**/loading.{ts,tsx}",
+		"./app/**/error.{ts,tsx}",
+		"./app/**/not-found.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
 	prefix: "",

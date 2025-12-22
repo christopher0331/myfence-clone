@@ -1,0 +1,11 @@
+{
+  "[project]/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_@supabase_node-fetch_browser_ebbd8575.js",
+      "static/chunks/node_modules_75cea5ff._.js",
+      "static/chunks/src_2c30da7e._.js",
+      "static/chunks/src_components_GoogleBusinessMap_tsx_05e2b3d9._.js"
+    ]
+  }
+}

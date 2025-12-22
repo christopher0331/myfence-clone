@@ -1,3 +1,12 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/fence-posts/4-125-posts/page": "app/fence-posts/4-125-posts/page.js",
+  "/fence-posts/6x6/page": "app/fence-posts/6x6/page.js",
+  "/fence-posts/steel-posts/page": "app/fence-posts/steel-posts/page.js",
+  "/fence-styles/page": "app/fence-styles/page.js",
+  "/fence-upgrades/lattice-toppers/page": "app/fence-upgrades/lattice-toppers/page.js",
+  "/page": "app/page.js",
+  "/quote/page": "app/quote/page.js",
+  "/referrals/page": "app/referrals/page.js",
+  "/service-areas/bellevue/page": "app/service-areas/bellevue/page.js"
 }

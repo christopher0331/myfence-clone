@@ -682,6 +682,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__
 ]);
 [__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+"use client";
 ;
 ;
 ;
@@ -764,7 +765,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                             children: "Get Your Free Quote"
                         }, void 0, false, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 90,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -772,13 +773,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                             children: "Tell us about your fencing project and we'll provide a detailed estimate"
                         }, void 0, false, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 91,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 89,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
@@ -793,7 +794,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Full Name *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 98,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -806,13 +807,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "name"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 101,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 97,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -823,7 +824,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Email Address *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -838,13 +839,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     inputMode: "email"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 114,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 110,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -855,7 +856,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Phone Number *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -870,13 +871,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     inputMode: "tel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 129,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 125,
+                            lineNumber: 127,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -887,7 +888,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Project Address *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 143,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -900,13 +901,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "street-address"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 140,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -917,7 +918,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Project Description *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -931,13 +932,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "off"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 153,
+                            lineNumber: 155,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -952,7 +953,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 168,
+                                    lineNumber: 170,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -965,7 +966,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                                 className: "mr-2 h-4 w-4 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/QuoteModal.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 186,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Sending..."
@@ -973,19 +974,19 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     }, void 0, true) : "Send Quote Request"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 179,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 167,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 96,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -998,14 +999,14 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$warranty$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["WARRANTY_CONSTANTS"].TITLE
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 197,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " on all installations"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 195,
+                            lineNumber: 197,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1015,30 +1016,30 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "(253) 455-1885"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 198,
                                     columnNumber: 45
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 196,
+                            lineNumber: 198,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 194,
+                    lineNumber: 196,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/QuoteModal.tsx",
-            lineNumber: 88,
+            lineNumber: 90,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/QuoteModal.tsx",
-        lineNumber: 87,
+        lineNumber: 89,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2147,133 +2148,139 @@ const Seo = ({ title, description, canonical, image, structuredData, ogTitle })=
     // Convert relative image URLs to absolute URLs
     const rawImage = image ? typeof image === "string" ? image : image.src : undefined;
     const absoluteImage = rawImage ? rawImage.startsWith("http") ? rawImage : `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$siteConfig$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["SITE_CONFIG"].url}${rawImage}` : undefined;
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
-                children: title
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("title", {
+                        children: title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 38,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 39,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:title",
+                        content: ogTitle || title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:type",
+                        content: "website"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:url",
+                        content: canonical
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 45,
+                        columnNumber: 23
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:image",
+                        content: absoluteImage
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 46,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:image:width",
+                        content: "1200"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 47,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        property: "og:image:height",
+                        content: "630"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 48,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        name: "twitter:card",
+                        content: "summary_large_image"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 51,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        name: "twitter:title",
+                        content: ogTitle || title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        name: "twitter:description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
+                        name: "twitter:image",
+                        content: absoluteImage
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 54,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: canonical
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 56,
+                        columnNumber: 23
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/Seo.tsx",
                 lineNumber: 37,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                name: "description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 38,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:title",
-                content: ogTitle || title
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 41,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 42,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:type",
-                content: "website"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 43,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:url",
-                content: canonical
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 44,
-                columnNumber: 21
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:image",
-                content: absoluteImage
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 45,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:image:width",
-                content: "1200"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 46,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                property: "og:image:height",
-                content: "630"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 47,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                name: "twitter:card",
-                content: "summary_large_image"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 50,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                name: "twitter:title",
-                content: ogTitle || title
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 51,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                name: "twitter:description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 52,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meta", {
-                name: "twitter:image",
-                content: absoluteImage
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 53,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("link", {
-                rel: "canonical",
-                href: canonical
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 55,
-                columnNumber: 21
-            }, ("TURBOPACK compile-time value", void 0)),
             structuredDataArray.map((data, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("script", {
                     type: "application/ld+json",
-                    children: JSON.stringify(data)
-                }, index, false, {
+                    dangerouslySetInnerHTML: {
+                        __html: JSON.stringify(data)
+                    }
+                }, `schema-${index}`, false, {
                     fileName: "[project]/src/components/Seo.tsx",
-                    lineNumber: 57,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)))
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Seo.tsx",
-        lineNumber: 36,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
+    }, void 0, true);
 };
 const __TURBOPACK__default__export__ = Seo;
 }),

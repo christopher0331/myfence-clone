@@ -5,6 +5,15 @@ import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import sixBySixTrellis from "@/assets/6x6-trellis-gate.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const SixBySixPosts = () => {
   const breadcrumbData = {
@@ -49,7 +58,7 @@ const SixBySixPosts = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-background to-background">
+        <section className="pt-8 pb-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -262,7 +271,7 @@ const SixBySixPosts = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-primary/10 to-background">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               Ready for Premium 6x6 Posts?
@@ -283,6 +292,21 @@ const SixBySixPosts = () => {
             </p>
           </div>
         </section>
+
+        {/* Blog Articles Section */}
+        <BlogSection limit={4} />
+
+        {/* Service Area Map Section */}
+        <section className="container py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            Proudly serving the greater Seattle area within a 28-mile radius
+          </p>
+          <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+        </section>
+
+        {/* Service Areas List Section */}
+        <ServiceAreasSection />
       </div>
     </>
   );

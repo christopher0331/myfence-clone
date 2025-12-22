@@ -1235,7 +1235,7 @@ const Header = ()=>{
         className: "fixed top-0 left-0 right-0 bg-background border-b z-50 transition-all duration-300",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `container flex items-center justify-center gap-6 transition-all duration-300 ${isScrolled ? "h-20 md:h-24" : "h-28 md:h-36"}`,
+                className: `container flex items-center justify-center gap-6 transition-all duration-300 ${isScrolled ? "h-16 md:h-20" : "h-24 md:h-32"}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "hidden lg:flex items-center gap-3 mr-4",
@@ -1251,7 +1251,7 @@ const Header = ()=>{
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/testing-3.png",
                                 alt: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$siteConfig$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["SITE_CONFIG"].fullName,
-                                className: `w-auto transition-all duration-300 ${isScrolled ? "h-12 md:h-16" : "h-24 md:h-32"}`
+                                className: `w-auto transition-all duration-300 ${isScrolled ? "h-8 md:h-12" : "h-16 md:h-24"}`
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
                                 lineNumber: 109,

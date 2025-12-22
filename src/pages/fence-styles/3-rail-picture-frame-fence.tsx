@@ -136,7 +136,7 @@ const ThreeRailPictureFrameFence = () => {
   ];
 
   return (
-    <main>
+    <>
       <Seo
         title="3 Rail Picture Frame Fence | Seattle | MyFence.com"
         description="Cedar 3 rail picture frame fences in Seattle. Extra rail and trim for added structure and a refined craftsman look. Get a fast quote today."
@@ -145,7 +145,7 @@ const ThreeRailPictureFrameFence = () => {
         structuredData={structuredData}
       />
 
-      <article className="container py-10">
+      <article className="container pt-24 md:pt-32 pb-10">
         <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
           <div>
             <h1 className="text-4xl font-bold tracking-tight">3 Rail Picture Frame Fence</h1>
@@ -410,7 +410,7 @@ const ThreeRailPictureFrameFence = () => {
       </section>
 
       </article>
-    </main>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import { Check } from "lucide-react";
 
 const ExteriorScrewsPage = () => {
   return (
-    <main>
+    <>
       <Seo
         title="4 Inch Exterior Screws for Fence Installation | Seattle WA"
         description="Upgrade your Seattle fence with 4-inch exterior screws instead of nails. Superior hold, longer lasting performance, and no nail pop-out. Perfect for PNW weather."
@@ -30,7 +30,7 @@ const ExteriorScrewsPage = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/5 to-background py-16">
+      <section className="bg-background pt-8 pb-16">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Upgrade to 4" Exterior Screws for Superior Fence Durability</h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
@@ -115,7 +115,7 @@ const ExteriorScrewsPage = () => {
               <li className="flex gap-2"><span className="text-destructive font-bold">•</span><span>Eventual fence failure requiring costly repairs</span></li>
             </ul>
 
-            <Card className="bg-muted">
+            <Card className="bg-background border-border">
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">Investment in Quality</h3>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -132,7 +132,7 @@ const ExteriorScrewsPage = () => {
       </section>
 
       {/* Technical Details */}
-      <section className="bg-muted/50 py-12">
+      <section className="bg-background py-12">
         <div className="container">
           <h2 className="text-3xl font-semibold mb-6 text-center">Our Installation Standards</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -169,7 +169,7 @@ const ExteriorScrewsPage = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

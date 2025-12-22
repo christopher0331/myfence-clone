@@ -547,133 +547,139 @@ const Seo = ({ title, description, canonical, image, structuredData, ogTitle })=
     // Convert relative image URLs to absolute URLs
     const rawImage = image ? typeof image === "string" ? image : image.src : undefined;
     const absoluteImage = rawImage ? rawImage.startsWith("http") ? rawImage : `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$siteConfig$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["SITE_CONFIG"].url}${rawImage}` : undefined;
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                children: title
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+                        children: title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 38,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 39,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:title",
+                        content: ogTitle || title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:type",
+                        content: "website"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:url",
+                        content: canonical
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 45,
+                        columnNumber: 23
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:image",
+                        content: absoluteImage
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 46,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:image:width",
+                        content: "1200"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 47,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        property: "og:image:height",
+                        content: "630"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 48,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:card",
+                        content: "summary_large_image"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 51,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:title",
+                        content: ogTitle || title
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:description",
+                        content: description
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:image",
+                        content: absoluteImage
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 54,
+                        columnNumber: 27
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: canonical
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Seo.tsx",
+                        lineNumber: 56,
+                        columnNumber: 23
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/Seo.tsx",
                 lineNumber: 37,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                name: "description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 38,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:title",
-                content: ogTitle || title
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 41,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 42,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:type",
-                content: "website"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 43,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:url",
-                content: canonical
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 44,
-                columnNumber: 21
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:image",
-                content: absoluteImage
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 45,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:image:width",
-                content: "1200"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 46,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                property: "og:image:height",
-                content: "630"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 47,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                name: "twitter:card",
-                content: "summary_large_image"
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 50,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                name: "twitter:title",
-                content: ogTitle || title
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 51,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                name: "twitter:description",
-                content: description
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 52,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            absoluteImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                name: "twitter:image",
-                content: absoluteImage
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 53,
-                columnNumber: 25
-            }, ("TURBOPACK compile-time value", void 0)),
-            canonical && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
-                rel: "canonical",
-                href: canonical
-            }, void 0, false, {
-                fileName: "[project]/src/components/Seo.tsx",
-                lineNumber: 55,
-                columnNumber: 21
-            }, ("TURBOPACK compile-time value", void 0)),
             structuredDataArray.map((data, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                     type: "application/ld+json",
-                    children: JSON.stringify(data)
-                }, index, false, {
+                    dangerouslySetInnerHTML: {
+                        __html: JSON.stringify(data)
+                    }
+                }, `schema-${index}`, false, {
                     fileName: "[project]/src/components/Seo.tsx",
-                    lineNumber: 57,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)))
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Seo.tsx",
-        lineNumber: 36,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
+    }, void 0, true);
 };
 _c = Seo;
 const __TURBOPACK__default__export__ = Seo;
@@ -2874,7 +2880,7 @@ const ThreeRailPictureFrameFence = ()=>{
             ]
         }
     ];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Seo$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                 title: "3 Rail Picture Frame Fence | Seattle | MyFence.com",
@@ -2888,7 +2894,7 @@ const ThreeRailPictureFrameFence = ()=>{
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
-                className: "container py-10",
+                className: "container pt-8 pb-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
                         className: "grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto",
@@ -4091,11 +4097,7 @@ const ThreeRailPictureFrameFence = ()=>{
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/pages/fence-styles/3-rail-picture-frame-fence.tsx",
-        lineNumber: 139,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
+    }, void 0, true);
 };
 _c = ThreeRailPictureFrameFence;
 const __TURBOPACK__default__export__ = ThreeRailPictureFrameFence;

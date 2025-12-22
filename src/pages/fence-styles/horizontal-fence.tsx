@@ -93,9 +93,9 @@ const HorizontalFence = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
+      <div className="min-h-screen bg-background">
         {/* Breadcrumb */}
-        <div className="container mx-auto px-4 pt-8">
+        <div className="container mx-auto px-4 pt-28 md:pt-36">
           <nav className="text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-primary">Home</Link>
             <span className="mx-2">/</span>
@@ -106,7 +106,7 @@ const HorizontalFence = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-12">
+        <section className="container mx-auto px-4 pt-4 pb-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
@@ -187,7 +187,7 @@ const HorizontalFence = () => {
         </section>
 
         {/* Key Features */}
-        <section className="bg-muted/50 py-16">
+        <section className="bg-background py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Superior Construction Features</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -281,7 +281,7 @@ const HorizontalFence = () => {
         </section>
 
         {/* About Horizontal Fencing */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">About Horizontal Cedar Fencing</h2>
             
@@ -423,7 +423,7 @@ const HorizontalFence = () => {
         </section>
 
         {/* Finance Calculator */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>
@@ -439,7 +439,7 @@ const HorizontalFence = () => {
         <VirtualQuoteTool fenceStyleName="Horizontal Fence" />
 
         {/* Inline Quote Form */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <InlineQuoteForm />
           </div>

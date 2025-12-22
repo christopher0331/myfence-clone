@@ -7,6 +7,15 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import OptimizedImage from "@/components/OptimizedImage";
 import postComparison from "@/assets/post-size-comparison.png";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const ThreePointFivePosts = () => {
   const breadcrumbData = {
@@ -30,7 +39,7 @@ const ThreePointFivePosts = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-destructive/5 via-background to-background">
+        <section className="pt-8 pb-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 rounded-full mb-6">
@@ -73,7 +82,7 @@ const ThreePointFivePosts = () => {
         </section>
 
         {/* Size Comparison */}
-        <section className="py-16 px-4 bg-muted/30">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
               Visual Size Comparison
@@ -168,7 +177,7 @@ const ThreePointFivePosts = () => {
         </section>
 
         {/* Why Cheap Contractors Use Them */}
-        <section className="py-16 px-4 bg-muted/30">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-bold mb-8 text-foreground">
               Why Cheap Contractors Use 3.5" x 3.5" Posts
@@ -318,6 +327,21 @@ const ThreePointFivePosts = () => {
             </Button>
           </div>
         </div>
+
+        {/* Blog Articles Section */}
+        <BlogSection limit={4} />
+
+        {/* Service Area Map Section */}
+        <section className="container py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            Proudly serving the greater Seattle area within a 28-mile radius
+          </p>
+          <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+        </section>
+
+        {/* Service Areas List Section */}
+        <ServiceAreasSection />
       </div>
     </>
   );
