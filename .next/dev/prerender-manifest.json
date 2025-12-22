@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "4dd9cb8f9348be30b7aadebfd21ddb89",
-    "previewModeSigningKey": "62f0580c236b3d6412ddb939587545fd25dd97741f998c40b223847ddd970fa9",
-    "previewModeEncryptionKey": "cb4dabed219074a504c63b8679ff704fcd8c143119d5cd4c47b2934d97e05b49"
-  }
-}
+{"version":4,"routes":{"/blog/steel-vs-wood-posts":{},"/blog/cedar-aluminum-hybrid-fence-mdx":{},"/blog/cedar-board-grade":{},"/blog/virtual-quote-tool":{},"/blog/six-ft-fence-cost":{},"/blog/wooden-fence-cost2025":{},"/blog/neighbor-fence-cost-split":{},"/blog/fence-cleaning-staining":{},"/blog/how-to-stain-fence":{},"/blog/fence-ownership":{},"/blog/street-setback":{},"/blog/property-line":{},"/blog/material-cost-2025":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"4dd9cb8f9348be30b7aadebfd21ddb89","previewModeSigningKey":"62f0580c236b3d6412ddb939587545fd25dd97741f998c40b223847ddd970fa9","previewModeEncryptionKey":"cb4dabed219074a504c63b8679ff704fcd8c143119d5cd4c47b2934d97e05b49"}}
