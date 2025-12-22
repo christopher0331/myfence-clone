@@ -50,6 +50,7 @@
   "exclude": [
     "node_modules",
     "supabase",
-    "pages-router-backup"
+    "pages-router-backup",
+    "stash"
   ]
 }
