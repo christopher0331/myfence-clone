@@ -1,24 +1,6 @@
 self.__BUILD_MANIFEST = {
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
-  "/blog": [
-    "static/chunks/pages/blog.js"
-  ],
-  "/fence-posts/cedar-post-on-pipe": [
-    "static/chunks/pages/fence-posts/cedar-post-on-pipe.js"
-  ],
-  "/fence-styles/3-rail-picture-frame-fence": [
-    "static/chunks/pages/fence-styles/3-rail-picture-frame-fence.js"
-  ],
   "/fence-styles/horizontal-fence": [
     "static/chunks/pages/fence-styles/horizontal-fence.js"
-  ],
-  "/fence-styles/picture-frame-fence": [
-    "static/chunks/pages/fence-styles/picture-frame-fence.js"
-  ],
-  "/fence-styles/solid-board-fence": [
-    "static/chunks/pages/fence-styles/solid-board-fence.js"
   ],
   "__rewrites": {
     "afterFiles": [],
