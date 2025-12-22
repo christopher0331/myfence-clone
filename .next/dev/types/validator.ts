@@ -20,23 +20,6 @@ type AppPageConfig<Route extends AppRoutes = AppRoutes> = {
   viewport?: any
 }
 
-type PagesPageConfig = {
-  default: React.ComponentType<any> | ((props: any) => React.ReactNode | Promise<React.ReactNode> | never | void)
-  getStaticProps?: (context: any) => Promise<any> | any
-  getStaticPaths?: (context: any) => Promise<any> | any
-  getServerSideProps?: (context: any) => Promise<any> | any
-  getInitialProps?: (context: any) => Promise<any> | any
-  /**
-   * Segment configuration for legacy Pages Router pages.
-   * Validated at build-time by parsePagesSegmentConfig.
-   */
-  config?: {
-    maxDuration?: number
-    runtime?: 'edge' | 'experimental-edge' | 'nodejs' | string // necessary unless config is exported as const
-    regions?: string[]
-  }
-}
-
 type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   default: React.ComponentType<LayoutProps<Route>> | ((props: LayoutProps<Route>) => React.ReactNode | Promise<React.ReactNode> | never | void | Promise<void>)
   generateStaticParams?: (props: { params: ParamMap[Route] }) => Promise<any[]> | any[]
@@ -52,6 +35,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   viewport?: any
 }
 
+
+// Validate ../../../src/app/blog/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/blog">> = Specific
+  const handler = {} as typeof import("../../../src/app/blog/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../../src/app/contact/page.tsx
 {
@@ -134,10 +126,109 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/fence-styles/3-rail-picture-frame-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/3-rail-picture-frame-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/3-rail-picture-frame-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/black-hogwire-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/black-hogwire-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/black-hogwire-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/cedar-steel-hybrid-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/cedar-steel-hybrid-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/cedar-steel-hybrid-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/craftsman-style-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/craftsman-style-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/craftsman-style-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/galvanized-hogwire-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/galvanized-hogwire-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/galvanized-hogwire-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/horizontal-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/horizontal-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/horizontal-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/horizontal-lattice-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/horizontal-lattice-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/horizontal-lattice-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/fence-styles/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/fence-styles">> = Specific
   const handler = {} as typeof import("../../../src/app/fence-styles/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/picket-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/picket-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/picket-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/picture-frame-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/picture-frame-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/picture-frame-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/solid-board-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/solid-board-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/solid-board-fence/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/fence-styles/three-ft-black-hogwire-fence/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fence-styles/three-ft-black-hogwire-fence">> = Specific
+  const handler = {} as typeof import("../../../src/app/fence-styles/three-ft-black-hogwire-fence/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -442,374 +533,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
-// Validate ../../../src/pages/_app.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/_app.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
 
-// Validate ../../../src/pages/blog/cedar-aluminum-hybrid-fence-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/cedar-aluminum-hybrid-fence-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/cedar-board-grade-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/cedar-board-grade-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/cedar-board-grade.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/cedar-board-grade.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/fence-cleaning-staining-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/fence-cleaning-staining-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/fence-cleaning-staining.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/fence-cleaning-staining.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/how-to-stain-fence-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/how-to-stain-fence-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/how-to-stain-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/how-to-stain-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/index.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/index.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/neighbor-fence-cost-split-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/neighbor-fence-cost-split-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/neighbor-fence-cost-split.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/neighbor-fence-cost-split.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/six-ft-fence-cost-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/six-ft-fence-cost-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/six-ft-fence-cost.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/six-ft-fence-cost.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/steel-vs-wood-posts.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/steel-vs-wood-posts.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/virtual-quote-tool-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/virtual-quote-tool-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/virtual-quote-tool.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/virtual-quote-tool.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/wooden-fence-cost2025-mdx.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/wooden-fence-cost2025-mdx.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/blog/wooden-fence-cost2025.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/blog/wooden-fence-cost2025.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-posts/cedar-post-on-pipe.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-posts/cedar-post-on-pipe.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-posts/four-point-one-two-five-posts.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-posts/four-point-one-two-five-posts.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-posts/six-by-six-posts.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-posts/six-by-six-posts.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-posts/three-point-five-posts.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-posts/three-point-five-posts.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/3-rail-picture-frame-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/3-rail-picture-frame-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/black-hogwire-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/black-hogwire-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/cedar-aluminum-hybrid-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/cedar-aluminum-hybrid-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/craftsman-style-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/craftsman-style-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/galvanized-hogwire-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/galvanized-hogwire-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/horizontal-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/horizontal-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/horizontal-lattice-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/horizontal-lattice-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/picket-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/picket-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/picture-frame-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/picture-frame-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/solid-board-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/solid-board-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-styles/three-ft-black-hogwire-fence.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-styles/three-ft-black-hogwire-fence.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-upgrades/board-on-board.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-upgrades/board-on-board.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/fence-upgrades/clear-cedar.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/fence-upgrades/clear-cedar.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/neighborhoods/Tehaleh.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/neighborhoods/Tehaleh.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/not-found.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/not-found.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/pre-staining.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/pre-staining.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/privacy-policy.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/privacy-policy.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/quote-tool.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/quote-tool.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/pages/terms-conditions.tsx
-{
-  type __IsExpected<Specific extends PagesPageConfig> = Specific
-  const handler = {} as typeof import("../../../src/pages/terms-conditions.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
 
 
 

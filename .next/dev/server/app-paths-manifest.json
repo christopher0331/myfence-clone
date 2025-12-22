@@ -1,1 +1,14 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/fence-styles/3-rail-picture-frame-fence/page": "app/fence-styles/3-rail-picture-frame-fence/page.js",
+  "/fence-styles/page": "app/fence-styles/page.js",
+  "/financing/page": "app/financing/page.js",
+  "/page": "app/page.js",
+  "/quote/page": "app/quote/page.js",
+  "/referrals/page": "app/referrals/page.js",
+  "/service-areas/bellevue/page": "app/service-areas/bellevue/page.js",
+  "/service-areas/bonney-lake/page": "app/service-areas/bonney-lake/page.js",
+  "/service-areas/covington/page": "app/service-areas/covington/page.js"
+}
