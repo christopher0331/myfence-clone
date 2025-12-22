@@ -193,27 +193,29 @@ const FenceStylesIndexPage = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {styles.map((s) => (
-            <Link key={s.title} href={s.link} className="group">
-              <Card className="overflow-hidden hover:shadow-elevated transition-shadow h-full group-hover:border-primary/50">
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    <span className="group-hover:text-primary transition-colors">{s.title}</span>
-                    {s.badge && <Badge variant="secondary">{s.badge}</Badge>}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <AspectRatio ratio={1}>
-                    <OptimizedImage
-                      src={s.img}
-                      alt={`${s.title} fence in Seattle by MyFence.com`}
-                      className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </AspectRatio>
-                  <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
-                  <span className="mt-3 inline-flex text-primary group-hover:underline">Learn more →</span>
-                </CardContent>
-              </Card>
-            </Link>
+            <Card key={s.title} className="overflow-hidden hover:shadow-elevated transition-shadow h-full flex flex-col group">
+              <CardHeader>
+                <CardTitle className="flex items-center justify-between">
+                  <span className="group-hover:text-primary transition-colors">{s.title}</span>
+                  {s.badge && <Badge variant="secondary">{s.badge}</Badge>}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-1">
+                <AspectRatio ratio={1}>
+                  <OptimizedImage
+                    src={s.img}
+                    alt={`${s.title} fence in Seattle by MyFence.com`}
+                    className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
+                  />
+                </AspectRatio>
+                <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
+                <div className="mt-auto pt-4">
+                  <Button asChild className="w-full">
+                    <Link href={s.link}>Learn More</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
