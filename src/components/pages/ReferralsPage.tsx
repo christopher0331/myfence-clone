@@ -76,7 +76,7 @@ const ReferralsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Seo
         title="Refer a Friend | $150 Amazon Gift Card | MyFence.com"
         description="Refer a friend to MyFence.com and you both receive a $150 Amazon Gift Card after their fence is installed. No limit on referrals!"
@@ -86,9 +86,8 @@ const ReferralsPage = () => {
         image="/og-referrals.png"
       />
 
-      <main className="flex-1 pt-24 md:pt-28">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-16 md:py-24">
+      {/* Hero Section */}
+      <section className="bg-background pt-8 pb-16 md:pt-12 md:pb-24">
           <div className="container text-center">
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full mb-6">
               <Gift className="h-5 w-5" />
@@ -234,7 +233,6 @@ const ReferralsPage = () => {
             </div>
           </div>
         </section>
-      </main>
     </div>
   );
 };

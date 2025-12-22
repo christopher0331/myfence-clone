@@ -38,7 +38,7 @@ const PostOnPipePage = () => {
   } as const;
 
   return (
-    <main>
+    <>
       <Seo
         title="Post on Pipe Fence Posts | Rot-Free Foundation | Seattle"
         description="Eliminate fence post rot with our Post on Pipe system. Galvanized steel pipe foundation prevents soil contact damage. Perfect for Pacific Northwest fences."
@@ -48,7 +48,7 @@ const PostOnPipePage = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-12 md:py-16">
+      <section className="container pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4">Revolutionary Fence Post System</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Post on Pipe: Never Replace a Rotted Post Again</h1>
@@ -160,17 +160,97 @@ const PostOnPipePage = () => {
           <Card className="border-amber-500/50 bg-amber-500/5">
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
-                <X className="w-6 h-6 text-amber-500" /> Important: Wind Shear Considerations for 6' Privacy Fences
+                <X className="w-6 h-6 text-amber-500" />
+                Important: Wind Shear Considerations for 6' Privacy Fences
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                In high-wind environments with 6' solid cedar privacy fences, failure can occur at the lower portion of the wood post where the pipe
-                occupies internal volume. In exposed locations, prefer traditional full-depth wood posts.
+                <strong>The one limitation of Post on Pipe:</strong> In high-wind environments with 6' solid cedar privacy
+                fences, the system can be prone to premature failure — not from the steel pipe breaking, but from the wood
+                post itself failing.
               </p>
-              <p className="text-muted-foreground leading-relaxed">This does not apply to shorter fences or hogwire fences, or 6' fences in low-wind locations.</p>
+              <p className="text-muted-foreground leading-relaxed">
+                Here's why: The steel pipe extends 10"-18" into the wood post. When strong winds hit a 6' tall solid fence,
+                all the force transfer occurs at the lower portion of the post where most of the wood has been carved out to
+                accommodate the steel pipe. This leaves less wood structure to resist the torque applied by the tall fence panel.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong>Bottom line:</strong> If you live in an exposed, windy area and plan to install a 6' solid cedar privacy
+                fence, we recommend traditional full-depth wood posts instead. However, if your yard is protected from wind by
+                trees, neighboring structures, or terrain, Post on Pipe can work perfectly.
+              </p>
+              <p className="text-muted-foreground leading-relaxed font-semibold">
+                This concern does NOT apply to shorter fences, hogwire fences, or 6' fences in low-wind locations.
+              </p>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Best Applications */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Ideal Applications for Post on Pipe</h2>
+          <div className="grid gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Perfect For:</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>All Hogwire Fences (3', 5', 6')</strong> — The open panel design creates minimal wind resistance,
+                    making Post on Pipe ideal regardless of wind exposure.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>Shorter Privacy Fences (3' and 4')</strong> — Lower profiles catch less wind, making Post on Pipe
+                    a smart choice for maximum longevity.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>6' Fences in Protected Areas</strong> — Properties with natural windbreaks (dense trees, neighboring
+                    buildings, terrain features) are excellent candidates.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>Properties Prioritizing Zero Post Rot</strong> — If eliminating ground-level rot is your top priority
+                    and you understand the wind considerations, Post on Pipe delivers unmatched durability.
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Not Recommended For:</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <X className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>6' Solid Fences in High-Wind Areas</strong> — Exposed hilltops, open fields, waterfront properties,
+                    or locations with frequent strong winds should use traditional full-depth posts.
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <X className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <strong>Properties with Frequent Severe Weather</strong> — If your area experiences regular windstorms
+                    or extreme weather events, traditional posts provide better structural redundancy.
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -196,11 +276,43 @@ const PostOnPipePage = () => {
                   <p className="text-sm text-muted-foreground mt-1">Standard 4.125" × 4.125" × 9' post with concrete footing</p>
                 </div>
               </div>
-              <ul className="list-disc ml-5 text-muted-foreground space-y-2">
-                <li>Eliminates soil-contact rot</li>
-                <li>Easier future replacements</li>
-                <li>Longer lifespan in wet climates</li>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                While Post on Pipe costs approximately $30 more per post upfront, the investment pays off through:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
+                <li>Complete elimination of soil-contact post rot</li>
+                <li>Significantly easier post replacement if ever needed</li>
+                <li>Longer overall fence lifespan in wet climates</li>
+                <li>Reduced long-term maintenance and repair costs</li>
               </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Pacific Northwest Context */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Why Post on Pipe Makes Sense in the Pacific Northwest</h2>
+          <Card>
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                The Pacific Northwest's wet climate is notoriously hard on traditional wood fence posts. Even pressure-treated
+                lumber, designed to resist rot, will eventually fail when constantly exposed to our wet soil conditions.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Post rot typically occurs 6"-12" below ground level where moisture is constant and air circulation is minimal.
+                By the time you notice a leaning or loose post, the damage is already severe — requiring complete post replacement
+                including digging out the old concrete footing.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Post on Pipe eliminates this failure mode entirely. The steel pipe handles all below-grade duty, and galvanized
+                steel in concrete simply doesn't rot. Your fence's structural integrity is permanently protected from our wet soil.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For homeowners planning to stay in their homes long-term, Post on Pipe represents the most durable foundation
+                option for fence styles that can accommodate it. It's an investment in never dealing with rotted posts.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -210,7 +322,9 @@ const PostOnPipePage = () => {
       <section className="container py-12 md:py-16">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           <h2 className="text-3xl font-bold">Ready to Build a Rot-Free Fence?</h2>
-          <p className="text-lg text-muted-foreground">Let's discuss whether Post on Pipe is right for your property and wind conditions.</p>
+          <p className="text-lg text-muted-foreground">
+            Let's discuss whether Post on Pipe is the right choice for your property, fence style, and local wind conditions.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
               <Link href="/contact">Get a Free Consultation</Link>
@@ -219,9 +333,12 @@ const PostOnPipePage = () => {
               <Link href="/fence-styles">Explore Fence Styles</Link>
             </Button>
           </div>
+          <p className="text-sm text-muted-foreground">
+            Questions? Call us at <a href="tel:+12534551885" className="text-primary hover:underline">(253) 455-1885</a>
+          </p>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

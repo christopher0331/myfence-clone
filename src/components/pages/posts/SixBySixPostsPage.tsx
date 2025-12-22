@@ -6,6 +6,15 @@ import Seo from "@/components/Seo";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import sixBySixTrellis from "@/assets/6x6-trellis-gate.jpg";
+import BlogSection from "@/components/BlogSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
+import dynamic from "next/dynamic";
+
+// Lazy-load Google Maps to keep it off the initial critical path
+const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const SixBySixPostsPage = () => {
   const breadcrumbData = {
@@ -35,7 +44,7 @@ const SixBySixPostsPage = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-background to-background">
+        <section className="pt-8 pb-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Premium 6x6 Fence Posts</h1>
@@ -55,7 +64,7 @@ const SixBySixPostsPage = () => {
         </section>
 
         {/* Key Benefits Section */}
-        <section className="py-16 px-4 bg-muted/30">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Why Choose 6x6 Cedar Posts?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -93,8 +102,121 @@ const SixBySixPostsPage = () => {
           </div>
         </section>
 
+        {/* Understanding Checking Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <div className="bg-amber-50 dark:bg-amber-950/20 border-l-4 border-amber-500 p-6 rounded-r-lg">
+              <h2 className="text-2xl font-bold mb-4 text-foreground flex items-center gap-3">
+                <Shield className="w-8 h-8 text-amber-600" />
+                Understanding "Checking" in 6x6 Posts
+              </h2>
+              <p className="text-foreground/90 mb-4">
+                With this much wood mass, a natural phenomenon called <strong>"checking"</strong> is more prone to occur. Checking causes visual cracks in the fence post when the outer layers of wood dry faster than the inner layers, leading to layer separation.
+              </p>
+              <p className="text-foreground/90 mb-4">
+                <strong>This is completely natural</strong> and may occur in any large cedar post. It doesn't compromise the structural integrity of the post—it's simply part of the wood's natural drying process.
+              </p>
+              <div className="bg-amber-100 dark:bg-amber-900/20 p-4 rounded-lg mt-4">
+                <p className="text-sm text-foreground/80">
+                  <strong>Note:</strong> Our {WARRANTY_CONSTANTS.SHORT_TITLE} covers workmanship, but does not cover organic defects such as checking of fence posts, as this is a natural characteristic of cedar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Professional Installation Section */}
+        <section className="py-16 px-4 bg-background">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+              Professional Installation Process
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  1
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Precise Measurement</h3>
+                <p className="text-muted-foreground">
+                  We carefully measure and mark post locations to ensure perfect alignment and spacing for your fence line.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  2
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Deep-Set Installation</h3>
+                <p className="text-muted-foreground">
+                  Each post is set deep and secured with 180+ pounds of concrete per hole for maximum stability and wind resistance.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  3
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Quality Assurance</h3>
+                <p className="text-muted-foreground">
+                  We verify plumb, level, and alignment before the concrete sets—ensuring a fence that stands straight for 30 years.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ideal For Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+              Perfect For These Applications
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4 p-4 bg-card rounded-lg border">
+                <Wind className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">High-Wind Areas</h3>
+                  <p className="text-muted-foreground">
+                    Exposed properties or areas with frequent strong winds benefit from the extra mass and strength.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-card rounded-lg border">
+                <Hammer className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">Craftsman Aesthetics</h3>
+                  <p className="text-muted-foreground">
+                    The robust appearance of 6x6 posts enhances craftsman-style fencing with a premium look.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-card rounded-lg border">
+                <CheckCircle2 className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">Heavy Gates</h3>
+                  <p className="text-muted-foreground">
+                    Ideal hinge posts for large driveway gates or double gates that need extra support.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-card rounded-lg border">
+                <Shield className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">Long-Term Investment</h3>
+                  <p className="text-muted-foreground">
+                    When you want a fence that will last 30 years with minimal maintenance—this is the choice.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Gallery Section */}
-        <section className="py-16 px-4 bg-muted/30">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">6x6 Posts in Action</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -113,7 +235,7 @@ const SixBySixPostsPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-primary/10 to-background">
+        <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Ready for Premium 6x6 Posts?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -130,6 +252,21 @@ const SixBySixPostsPage = () => {
             <p className="text-sm text-muted-foreground mt-6">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
           </div>
         </section>
+
+        {/* Blog Articles Section */}
+        <BlogSection limit={4} />
+
+        {/* Service Area Map Section */}
+        <section className="container py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            Proudly serving the greater Seattle area within a 28-mile radius
+          </p>
+          <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+        </section>
+
+        {/* Service Areas List Section */}
+        <ServiceAreasSection />
       </div>
     </>
   );

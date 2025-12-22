@@ -102,7 +102,7 @@ const FenceStylesIndexPage = () => {
   };
 
   return (
-    <main>
+    <>
       <Seo
         title="Seattle Cedar Fence Styles: Picture Frame, Horizontal"
         description="Expert fence styles in Seattle, WA: picture frame cedar, horizontal, hogwire, craftsman designs. 30+ years experience. Call (253) 455-1885 for free estimates."
@@ -136,7 +136,7 @@ const FenceStylesIndexPage = () => {
         ]}
       />
 
-      <section id="fence-styles" className="container py-10">
+      <section id="fence-styles" className="container pt-8 pb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
           <h1 className="text-4xl font-bold tracking-tight">Fence Styles for Every Seattle Home</h1>
           <DropdownMenu>
@@ -349,7 +349,7 @@ const FenceStylesIndexPage = () => {
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

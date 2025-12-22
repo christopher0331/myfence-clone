@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Check, DollarSign } from "lucide-react";
 
 const SoilHaulAwayPage = () => {
   const structuredData = {
@@ -22,7 +23,7 @@ const SoilHaulAwayPage = () => {
   } as const;
 
   return (
-    <main>
+    <>
       <Seo
         title="Soil Haul-Away Service | Fence Installation Cleanup | Seattle"
         description="Professional soil removal service for Seattle fence installations. Keep your property clean with our excavation debris haul-away service. Learn about costs and benefits."
@@ -31,7 +32,7 @@ const SoilHaulAwayPage = () => {
       />
 
       {/* Hero Section */}
-      <section className="container py-12 md:py-16">
+      <section className="container pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Soil Haul-Away Service</h1>
           <p className="text-xl text-muted-foreground">Keep your property clean during fence installation with professional excavation debris removal</p>
@@ -121,22 +122,215 @@ const SoilHaulAwayPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container py-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-4">Ready to Keep Your Yard Clean?</h2>
-          <p className="text-muted-foreground mb-6">Add soil haul-away to your fence project and protect your landscaping investment.</p>
+      {/* The Process */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">How Soil Haul-Away Works</h2>
+          <Card>
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold">
+                  1
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Excavation</h3>
+                  <p className="text-muted-foreground">
+                    As we dig each fence post hole (minimum 2 feet deep, approximately 10 inches wide), all excavated
+                    soil, dirt, and rock is carefully set aside.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold">
+                  2
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Collection</h3>
+                  <p className="text-muted-foreground">
+                    Instead of spreading the debris along your fence line, we bucket out all of the dirt and rock,
+                    transporting it to our trailer in a clean and organized manner.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold">
+                  3
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Disposal</h3>
+                  <p className="text-muted-foreground">
+                    We haul all excavated material to the dump, leaving your property clean and ready for landscaping
+                    or your preferred ground cover along the fence line.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Benefits of Soil Haul-Away</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  Clean Property
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Keep your landscaping, gardens, and lawn areas pristine without mounds of excavated soil
+                  disrupting the aesthetic of your property.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  Protect Landscaping
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  If you have plants, flowers, or decorative elements near your fence line, removing the soil
+                  prevents unwanted debris from covering or damaging your existing landscaping.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  Easier Maintenance
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Without piles of rocky soil along your fence, mowing, trimming, and general yard maintenance
+                  becomes significantly easier and more efficient.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  Ready for Your Plans
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Whether you plan to install a new lawn, garden, or hardscaping along your fence line,
+                  starting with a clean slate makes your next project easier.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Cost Information */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <DollarSign className="w-6 h-6 text-primary" />
+                Cost Considerations
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                Soil haul-away is an added service to our standard fence installation process. Because it requires additional
+                time for collection, loading, transportation, and disposal fees, there is an additional cost.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For the average residential fence project, soil haul-away generally adds approximately <strong>$500</strong> to
+                the total cost. This fee covers labor for bucketing and loading the excavated material, transportation to the
+                dump, and disposal fees.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The exact cost may vary based on the size of your fence project, the amount of material excavated, and
+                accessibility of your property. We'll provide a specific quote for your project during the estimate process.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* When to Consider */}
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">When to Consider Soil Haul-Away</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    You have existing landscaping, gardens, or decorative elements along your fence line
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    You plan to install new landscaping or hardscaping after fence installation
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    You prefer a completely clean property finish without soil mounds
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    Your property has limited space to spread excavated material
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    You want to maintain a pristine appearance during and after installation
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container py-12 md:py-16">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl font-bold">Need Soil Haul-Away for Your Project?</h2>
+          <p className="text-lg text-muted-foreground">
+            Contact us today to add soil haul-away service to your fence installation quote.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link href="/quote">Request a Quote</Link>
+              <Link href="/contact">Get a Free Quote</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/fence-styles">View All Fence Styles</Link>
+              <Link href="/fence-styles">Explore Fence Styles</Link>
             </Button>
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

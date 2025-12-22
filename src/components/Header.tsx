@@ -95,7 +95,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-background border-b z-50 transition-all duration-300">
       <div
         className={`container flex items-center justify-center gap-6 transition-all duration-300 ${
-          isScrolled ? "h-20 md:h-24" : "h-28 md:h-36"
+          isScrolled ? "h-16 md:h-20" : "h-24 md:h-32"
         }`}
       >
         {/* Desktop Layout */}
@@ -110,7 +110,7 @@ const Header = () => {
               src="/testing-3.png"
               alt={SITE_CONFIG.fullName}
               className={`w-auto transition-all duration-300 ${
-                isScrolled ? "h-12 md:h-16" : "h-24 md:h-32"
+                isScrolled ? "h-8 md:h-12" : "h-16 md:h-24"
               }`}
             />
           </Link>

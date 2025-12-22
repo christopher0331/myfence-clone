@@ -74,9 +74,9 @@ const SolidBoardFence = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
+      <div className="min-h-screen bg-background">
         {/* Breadcrumb Navigation */}
-        <nav className="bg-muted/30 py-3 border-b">
+        <nav className="bg-background pt-8 pb-3 border-b">
           <div className="container mx-auto px-4">
             <div className="flex items-center space-x-2 text-sm">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
@@ -88,9 +88,9 @@ const SolidBoardFence = () => {
           </div>
         </nav>
 
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-8">
           {/* Back Button */}
-          <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6">
+          <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Fence Styles
           </Link>
@@ -352,7 +352,7 @@ const SolidBoardFence = () => {
           <Separator className="my-12" />
 
           {/* About Solid Board Fencing */}
-          <section className="py-16 bg-secondary/20">
+          <section className="py-16 bg-background">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold text-center mb-12">About Solid Board Fencing</h2>
               

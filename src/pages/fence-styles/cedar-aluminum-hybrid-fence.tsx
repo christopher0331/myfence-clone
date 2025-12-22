@@ -142,8 +142,8 @@ const CedarAluminumHybridFence = () => {
       
       <div className="min-h-screen bg-background">
         {/* Navigation */}
-        <div className="container mx-auto px-4 py-4">
-          <Button variant="ghost" asChild className="mb-4">
+        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-4">
+          <Button variant="ghost" asChild className="mb-2">
             <Link href="/fence-styles" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Fence Styles
@@ -152,7 +152,7 @@ const CedarAluminumHybridFence = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-background to-secondary/20">
+        <section className="pb-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -253,7 +253,7 @@ const CedarAluminumHybridFence = () => {
         </section>
 
         {/* How It Works / Diagram Section */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">How the Hybrid System Works</h2>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -322,7 +322,7 @@ const CedarAluminumHybridFence = () => {
         </section>
 
         {/* Ultimate Package Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4" variant="default">Ultimate Privacy Solution</Badge>
@@ -422,7 +422,7 @@ const CedarAluminumHybridFence = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div className="max-w-3xl mx-auto">
@@ -473,7 +473,7 @@ const CedarAluminumHybridFence = () => {
         </section>
 
         {/* Finance Calculator */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Flexible Financing Options</h2>

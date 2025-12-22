@@ -138,7 +138,7 @@ const CraftsmanStyleFence = () => {
   ];
 
   return (
-    <main>
+    <>
       <Seo
         title="Craftsman Style Fence | Seattle | MyFence.com"
         description="Cedar craftsman style fences in Seattle with alternating board pattern for wind flow and visibility. 3 rails, 3 trim, top cap. Get a fast quote today."
@@ -147,7 +147,7 @@ const CraftsmanStyleFence = () => {
         structuredData={structuredData}
       />
 
-      <article className="container py-10">
+      <article className="container pt-24 md:pt-32 pb-10">
         <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
           <div>
             <h1 className="text-4xl font-bold tracking-tight">Craftsman Style Fence</h1>
@@ -407,7 +407,7 @@ const CraftsmanStyleFence = () => {
         </section>
 
         {/* About Craftsman Style Fencing */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">About Craftsman Style Fencing</h2>
             
@@ -453,7 +453,7 @@ const CraftsmanStyleFence = () => {
           </div>
         </section>
       </article>
-    </main>
+    </>
   );
 };
 
