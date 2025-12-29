@@ -35,12 +35,30 @@ export const InlineContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke('send-contact-form', {
-        body: formData,
+      const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: first || "",
+          last_name: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          fence_type: "",
+          message: formData.message,
+        }),
       });
 
-      if (error) {
-        throw new Error(`Failed to send message: ${error.message}`);
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        const legacy = await supabase.functions.invoke("send-contact-form", {
+          body: formData,
+        });
+        if (legacy.error) {
+          throw new Error(j?.error || legacy.error.message || "Failed to send message");
+        }
       }
 
       const formElement = document.querySelector('#inline-contact-form');

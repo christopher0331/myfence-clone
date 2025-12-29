@@ -126,7 +126,7 @@ const Index = () => {
   const faqSchema = useMemo(() => generateFaqSchema(), []);
 
   return (
-    <main>
+    <div>
       <Seo
         title="Cedar Fence Installation Seattle | MyFence.com"
         description="Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885."
@@ -196,7 +196,7 @@ const Index = () => {
       </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
-    </main>
+    </div>
   );
 };
 

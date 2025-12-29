@@ -33,12 +33,29 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("send-contact-form", {
-        body: JSON.stringify(formData),
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          fence_type: "",
+          message: formData.message,
+        }),
       });
 
-      if (error) {
-        throw error;
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        const legacy = await supabase.functions.invoke("send-contact-form", {
+          body: JSON.stringify(formData),
+        });
+        if (legacy.error) {
+          throw new Error(j?.error || legacy.error.message || "Failed to send message");
+        }
       }
 
       await import("@/lib/effects").then((m) =>
@@ -141,9 +158,11 @@ const ContactPage = () => {
             <div>
               <p className="text-muted-foreground">
                 Father & son owned and operated. We build with our proprietary
+                {" "}
                 <Link href="/fence-genius" className="text-primary hover:underline">
                   Fence Genius technology
                 </Link>
+                {" "}
                 for superior build quality and unmatched customer clarity from estimate to final walkthrough.
               </p>
 
