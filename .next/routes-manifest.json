@@ -21,6 +21,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/service-areas/[city]",
       "regex": "^/service\\-areas/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -37,112 +45,28 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
       "page": "/_not-found",
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/website-lead",
+      "regex": "^/api/website\\-lead(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/website\\-lead(?:/)?$"
+    },
+    {
       "page": "/blog",
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/blog(?:/)?$"
-    },
-    {
-      "page": "/blog/cedar-aluminum-hybrid-fence-mdx",
-      "regex": "^/blog/cedar\\-aluminum\\-hybrid\\-fence\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/cedar\\-aluminum\\-hybrid\\-fence\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/cedar-board-grade",
-      "regex": "^/blog/cedar\\-board\\-grade(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/cedar\\-board\\-grade(?:/)?$"
-    },
-    {
-      "page": "/blog/cedar-board-grade-mdx",
-      "regex": "^/blog/cedar\\-board\\-grade\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/cedar\\-board\\-grade\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/fence-cleaning-staining",
-      "regex": "^/blog/fence\\-cleaning\\-staining(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/fence\\-cleaning\\-staining(?:/)?$"
-    },
-    {
-      "page": "/blog/fence-cleaning-staining-mdx",
-      "regex": "^/blog/fence\\-cleaning\\-staining\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/fence\\-cleaning\\-staining\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/how-to-stain-fence",
-      "regex": "^/blog/how\\-to\\-stain\\-fence(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/how\\-to\\-stain\\-fence(?:/)?$"
-    },
-    {
-      "page": "/blog/how-to-stain-fence-mdx",
-      "regex": "^/blog/how\\-to\\-stain\\-fence\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/how\\-to\\-stain\\-fence\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/neighbor-fence-cost-split",
-      "regex": "^/blog/neighbor\\-fence\\-cost\\-split(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/neighbor\\-fence\\-cost\\-split(?:/)?$"
-    },
-    {
-      "page": "/blog/neighbor-fence-cost-split-mdx",
-      "regex": "^/blog/neighbor\\-fence\\-cost\\-split\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/neighbor\\-fence\\-cost\\-split\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/six-ft-fence-cost",
-      "regex": "^/blog/six\\-ft\\-fence\\-cost(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/six\\-ft\\-fence\\-cost(?:/)?$"
-    },
-    {
-      "page": "/blog/six-ft-fence-cost-mdx",
-      "regex": "^/blog/six\\-ft\\-fence\\-cost\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/six\\-ft\\-fence\\-cost\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/steel-vs-wood-posts",
-      "regex": "^/blog/steel\\-vs\\-wood\\-posts(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/steel\\-vs\\-wood\\-posts(?:/)?$"
-    },
-    {
-      "page": "/blog/virtual-quote-tool",
-      "regex": "^/blog/virtual\\-quote\\-tool(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/virtual\\-quote\\-tool(?:/)?$"
-    },
-    {
-      "page": "/blog/virtual-quote-tool-mdx",
-      "regex": "^/blog/virtual\\-quote\\-tool\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/virtual\\-quote\\-tool\\-mdx(?:/)?$"
-    },
-    {
-      "page": "/blog/wooden-fence-cost2025",
-      "regex": "^/blog/wooden\\-fence\\-cost2025(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/wooden\\-fence\\-cost2025(?:/)?$"
-    },
-    {
-      "page": "/blog/wooden-fence-cost2025-mdx",
-      "regex": "^/blog/wooden\\-fence\\-cost2025\\-mdx(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/wooden\\-fence\\-cost2025\\-mdx(?:/)?$"
     },
     {
       "page": "/contact",
@@ -193,28 +117,10 @@
       "namedRegex": "^/fence\\-posts/cedar\\-post\\-on\\-pipe(?:/)?$"
     },
     {
-      "page": "/fence-posts/four-point-one-two-five-posts",
-      "regex": "^/fence\\-posts/four\\-point\\-one\\-two\\-five\\-posts(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/fence\\-posts/four\\-point\\-one\\-two\\-five\\-posts(?:/)?$"
-    },
-    {
-      "page": "/fence-posts/six-by-six-posts",
-      "regex": "^/fence\\-posts/six\\-by\\-six\\-posts(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/fence\\-posts/six\\-by\\-six\\-posts(?:/)?$"
-    },
-    {
       "page": "/fence-posts/steel-posts",
       "regex": "^/fence\\-posts/steel\\-posts(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/fence\\-posts/steel\\-posts(?:/)?$"
-    },
-    {
-      "page": "/fence-posts/three-point-five-posts",
-      "regex": "^/fence\\-posts/three\\-point\\-five\\-posts(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/fence\\-posts/three\\-point\\-five\\-posts(?:/)?$"
     },
     {
       "page": "/fence-staining",
@@ -241,10 +147,10 @@
       "namedRegex": "^/fence\\-styles/black\\-hogwire\\-fence(?:/)?$"
     },
     {
-      "page": "/fence-styles/cedar-aluminum-hybrid-fence",
-      "regex": "^/fence\\-styles/cedar\\-aluminum\\-hybrid\\-fence(?:/)?$",
+      "page": "/fence-styles/cedar-steel-hybrid-fence",
+      "regex": "^/fence\\-styles/cedar\\-steel\\-hybrid\\-fence(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/fence\\-styles/cedar\\-aluminum\\-hybrid\\-fence(?:/)?$"
+      "namedRegex": "^/fence\\-styles/cedar\\-steel\\-hybrid\\-fence(?:/)?$"
     },
     {
       "page": "/fence-styles/craftsman-style-fence",
@@ -361,24 +267,6 @@
       "namedRegex": "^/neighborhoods/lower\\-tehaleh(?:/)?$"
     },
     {
-      "page": "/neighborhoods/tehaleh",
-      "regex": "^/neighborhoods/tehaleh(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/neighborhoods/tehaleh(?:/)?$"
-    },
-    {
-      "page": "/not-found",
-      "regex": "^/not\\-found(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/not\\-found(?:/)?$"
-    },
-    {
-      "page": "/pre-staining",
-      "regex": "^/pre\\-staining(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/pre\\-staining(?:/)?$"
-    },
-    {
       "page": "/pre-staining-cedar-fence",
       "regex": "^/pre\\-staining\\-cedar\\-fence(?:/)?$",
       "routeKeys": {},
@@ -395,12 +283,6 @@
       "regex": "^/quote(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/quote(?:/)?$"
-    },
-    {
-      "page": "/quote-tool",
-      "regex": "^/quote\\-tool(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/quote\\-tool(?:/)?$"
     },
     {
       "page": "/referrals",

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/fence-styles/layout,_N_T_/fence-styles/3-rail-picture-frame-fence/layout,_N_T_/fence-styles/3-rail-picture-frame-fence/page,_N_T_/fence-styles/3-rail-picture-frame-fence"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/fence-styles/3-rail-picture-frame-fence/__PAGE__",
+    "/fence-styles/3-rail-picture-frame-fence",
+    "/fence-styles",
+    "/_index",
+    "/_head"
+  ]
+}

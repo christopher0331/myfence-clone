@@ -58,11 +58,26 @@ export const ArticleSummary = ({
         return;
       }
 
-      setSummaries(data.summaries);
-      
-      const successCount = [data.summaries.gemini, data.summaries.chatgpt, data.summaries.grok].filter(Boolean).length;
+      const nextSummaries = data?.summaries as Summaries | undefined;
+      const successCount = nextSummaries
+        ? [nextSummaries.gemini, nextSummaries.chatgpt, nextSummaries.grok].filter(Boolean).length
+        : 0;
+
+      if (!nextSummaries || successCount === 0) {
+        const providerErrors = data?.errors ? Object.values(data.errors).filter(Boolean).join(" | ") : "";
+        toast({
+          variant: "destructive",
+          title: "AI summary temporarily unavailable",
+          description: providerErrors ? providerErrors : "Please try again later.",
+        });
+        setSummaries(null);
+        setIsExpanded(false);
+        return;
+      }
+
+      setSummaries(nextSummaries);
       toast({
-        title: "Summaries generated!",
+        title: "Summary generated!",
         description: `${successCount} AI ${successCount === 1 ? 'summary' : 'summaries'} created successfully.`,
       });
     } catch (error) {

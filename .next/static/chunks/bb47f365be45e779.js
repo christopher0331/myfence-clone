@@ -1,9 +1,0 @@
-__turbopack_load_page_chunks__("/blog/neighbor-fence-cost-split", [
-  "static/chunks/90986466df7b1fb2.js",
-  "static/chunks/a51fbfd49be023f7.js",
-  "static/chunks/f8d3a95a62d4d584.js",
-  "static/chunks/1d202af1f853f2a4.js",
-  "static/chunks/dcaddb9cf75883fc.js",
-  "static/chunks/cf7c75daec783f25.js",
-  "static/chunks/turbopack-bd832990d0ec7028.js"
-])

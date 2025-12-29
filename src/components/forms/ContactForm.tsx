@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -42,11 +42,31 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke("send-contact-form", {
-        body: data,
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: data.firstName,
+          last_name: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          address: data.address,
+          fence_type: "",
+          message: data.description,
+        }),
       });
 
-      if (error) throw error;
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        // if the webhook isn't configured / reachable.
+        const legacy = await supabase.functions.invoke("send-contact-form", {
+          body: data,
+        });
+        if (legacy.error) {
+          throw new Error(j?.error || legacy.error.message || "Failed to send message");
+        }
+      }
 
       toast({
         title: "Message sent!",

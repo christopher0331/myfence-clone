@@ -1,0 +1,9 @@
+:HL["/_next/static/chunks/3e810fd71fd6c5d3.css","style"]
+:HL["/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png","image"]
+:HL["/lovable-uploads/200fbe25-bf04-4245-812e-ab3d518b830d.png","image"]
+:HL["/lovable-uploads/76312c18-6afb-42d7-916a-5dae8fceadbb.png","image"]
+:HL["/lovable-uploads/c13a6e02-2011-4437-a7cb-5de49f6f62b9.png","image"]
+:HL["/lovable-uploads/bc08ad97-c013-4147-9f4e-4bf7d991ee7f.png","image"]
+:HL["/lovable-uploads/7b4d4dc3-c1cc-4f43-9fb0-fbcd570a1b17.png","image"]
+:HL["/lovable-uploads/bd583fb2-b610-4156-bd27-3e7f528192e1.png","image"]
+0:{"buildId":"2U6Ylf0RH-3RuHKY8B_x-","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"blog","paramType":null,"paramKey":"blog","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"six-ft-fence-cost","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -56,80 +56,130 @@ CRITICAL RULES:
 Article content:
 ${pageContent}`;
 
-    // Call all three AI providers in parallel
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+    async function fetchJsonWithText(res: Response) {
+      const text = await res.text();
+      try {
+        return { json: JSON.parse(text), text };
+      } catch {
+        return { json: null, text };
+      }
+    }
+
+    async function fetchWithRetry(url: string, init: RequestInit, retries = 2) {
+      let attempt = 0;
+      while (true) {
+        const res = await fetch(url, init);
+        if (res.status !== 429 || attempt >= retries) return res;
+        const retryAfter = res.headers.get("retry-after");
+        const delayMs = retryAfter ? Number(retryAfter) * 1000 : 500 * Math.pow(2, attempt);
+        await sleep(Number.isFinite(delayMs) ? delayMs : 500);
+        attempt += 1;
+      }
+    }
+
+    const errors: Record<string, string> = {};
+
+    // Call providers in parallel, but skip if env key missing.
     const [geminiResult, chatgptResult, grokResult] = await Promise.allSettled([
-      // Gemini (Google Direct API)
-      fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=' + geminiApiKey, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{ text: prompt }]
-          }],
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 500,
-          }
-        })
-      }).then(async (res) => {
-        if (!res.ok) throw new Error(`Gemini API error: ${res.status}`);
+      (async () => {
+        if (!geminiApiKey) {
+          errors.gemini = "Missing GOOGLE_GEMINI_API_KEY";
+          return null;
+        }
+        const res = await fetchWithRetry(
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + geminiApiKey,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { temperature: 0.7, maxOutputTokens: 500 },
+            }),
+          },
+          2,
+        );
+        if (!res.ok) {
+          const { text } = await fetchJsonWithText(res);
+          errors.gemini = `Gemini API error: ${res.status} ${text?.slice(0, 200) ?? ""}`.trim();
+          return null;
+        }
         const data = await res.json();
-        return data.candidates[0].content.parts[0].text;
-      }).catch((error) => {
-        console.error('Gemini error:', error);
-        return null;
-      }),
+        return data?.candidates?.[0]?.content?.parts?.[0]?.text ?? null;
+      })(),
 
-      // ChatGPT (OpenAI)
-      fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${openaiApiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          // Use a currently supported Chat Completions model
-          model: 'gpt-4o-mini',
-          messages: [
-            { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
-            { role: 'user', content: prompt }
-          ],
-          // Standard Chat Completions parameter name
-          max_tokens: 500,
-        })
-      }).then(async (res) => {
-        if (!res.ok) throw new Error(`OpenAI API error: ${res.status}`);
+      (async () => {
+        if (!openaiApiKey) {
+          errors.chatgpt = "Missing OPENAI_API_KEY";
+          return null;
+        }
+        const res = await fetch('https://api.openai.com/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${openaiApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: 'gpt-4o-mini',
+            messages: [
+              { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
+              { role: 'user', content: prompt }
+            ],
+            max_tokens: 500,
+          })
+        });
+        if (!res.ok) {
+          const { text } = await fetchJsonWithText(res);
+          errors.chatgpt = `OpenAI API error: ${res.status} ${text?.slice(0, 200) ?? ""}`.trim();
+          return null;
+        }
         const data = await res.json();
-        return data.choices?.[0]?.message?.content ?? null;
-      }).catch((error) => {
-        console.error('ChatGPT error:', error);
-        return null;
-      }),
+        return data?.choices?.[0]?.message?.content ?? null;
+      })(),
 
-      // Grok (xAI)
-      fetch('https://api.x.ai/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${grokApiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'grok-2-latest',
-          messages: [
-            { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
-            { role: 'user', content: prompt }
-          ],
-          max_tokens: 500,
-          temperature: 0.7,
-        })
-      }).then(async (res) => {
-        if (!res.ok) throw new Error(`Grok API error: ${res.status}`);
+      (async () => {
+        if (!grokApiKey) {
+          errors.grok = "Missing GROK_API_KEY";
+          return null;
+        }
+
+        async function callGrok(model: string) {
+          const res = await fetch('https://api.x.ai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${grokApiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              model,
+              messages: [
+                { role: 'system', content: 'You are an enthusiastic sales assistant that creates POSITIVE, BENEFIT-FOCUSED summaries. NEVER mention drawbacks or considerations.' },
+                { role: 'user', content: prompt }
+              ],
+              max_tokens: 500,
+              temperature: 0.7,
+            })
+          });
+          return res;
+        }
+
+        // Try the configured model first, then a fallback model if we get 404.
+        const primary = 'grok-2-latest';
+        let res = await callGrok(primary);
+        if (res.status === 404) {
+          res = await callGrok('grok-2');
+        }
+
+        if (!res.ok) {
+          const { text } = await fetchJsonWithText(res);
+          errors.grok = `Grok API error: ${res.status} ${text?.slice(0, 200) ?? ""}`.trim();
+          return null;
+        }
+
         const data = await res.json();
-        return data.choices[0].message.content;
-      }).catch((error) => {
-        console.error('Grok error:', error);
-        return null;
-      })
+        return data?.choices?.[0]?.message?.content ?? null;
+      })(),
     ]);
 
     const summaries = {
@@ -145,19 +195,12 @@ ${pageContent}`;
       grok: !!summaries.grok
     });
 
-    // At least one provider must succeed
-    if (!summaries.gemini && !summaries.chatgpt && !summaries.grok) {
-      return new Response(
-        JSON.stringify({ error: 'All AI providers failed to generate summaries' }), 
-        { 
-          status: 500, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-        }
-      );
-    }
-
     return new Response(
-      JSON.stringify({ summaries }), 
+      JSON.stringify({
+        summaries,
+        errors,
+        ok: !!(summaries.gemini || summaries.chatgpt || summaries.grok),
+      }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       }

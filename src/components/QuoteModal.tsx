@@ -8,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -41,19 +41,32 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting quote request with data:', formData);
-      
-      // Use Supabase client to call edge function
-      const { data, error } = await supabase.functions.invoke('send-quote-request', {
-        body: formData,
+      const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
+
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: first || "",
+          last_name: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          fence_type: "",
+          message: formData.projectDescription,
+        }),
       });
 
-      if (error) {
-        console.error('Quote request error:', error);
-        throw new Error(`Failed to send quote request: ${error.message}`);
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        const legacy = await supabase.functions.invoke("send-quote-request", {
+          body: formData,
+        });
+        if (legacy.error) {
+          throw new Error(j?.error || legacy.error.message || "Failed to send quote request");
+        }
       }
-
-      console.log('Quote request sent successfully:', data);
       
       // Trigger fireworks animation
       burstFirework();

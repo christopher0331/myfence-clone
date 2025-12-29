@@ -326,12 +326,27 @@ const DiscountsPage = () => {
         description: formDescription || "General inquiry from discount page",
       };
 
-      const { error } = await supabase.functions.invoke("send-contact-form", {
-        body: emailData,
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: emailData.firstName,
+          last_name: emailData.lastName,
+          email: emailData.email,
+          phone: emailData.phone,
+          address: emailData.address || "",
+          fence_type: "Discounts Page",
+          message: emailData.description || "General inquiry from discount page",
+        }),
       });
 
-      if (error) {
-        throw error;
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        const { error } = await supabase.functions.invoke("send-contact-form", {
+          body: emailData,
+        });
+        if (error) throw new Error(j?.error || error.message || "Failed to send message");
       }
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");

@@ -1,9 +1,0 @@
-__turbopack_load_page_chunks__("/neighborhoods/tehaleh", [
-  "static/chunks/90986466df7b1fb2.js",
-  "static/chunks/cf7c75daec783f25.js",
-  "static/chunks/00ad78640b75bcd1.js",
-  "static/chunks/dcaddb9cf75883fc.js",
-  "static/chunks/1d202af1f853f2a4.js",
-  "static/chunks/5a421839b95d005c.js",
-  "static/chunks/turbopack-d5e794dbc9c4baae.js"
-])

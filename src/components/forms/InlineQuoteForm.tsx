@@ -5,9 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { supabase } from "@/integrations/supabase/client";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -34,25 +34,38 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     setIsSubmitting(true);
 
     try {
-      const payload = {
-        ...formData,
-        projectDescription: context
-          ? `[Source: ${context}]\n` + formData.projectDescription
-          : formData.projectDescription,
-      };
+      const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
+      const message = context
+        ? `[Source: ${context}]\n${formData.projectDescription}`
+        : formData.projectDescription;
 
-      console.log('Submitting quote request with data:', payload);
-
-      const { data, error } = await supabase.functions.invoke('send-quote-request', {
-        body: JSON.stringify(payload),
+      const res = await fetch("/api/website-lead", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          first_name: first || "",
+          last_name: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          fence_type: "",
+          message,
+        }),
       });
 
-      if (error) {
-        console.error('Quote request error:', error);
-        throw error;
+      const j = await res.json().catch(() => null);
+      if (!res.ok || j?.ok === false) {
+        // Fail-safe during transition: fall back to the legacy Supabase email flow
+        const legacy = await supabase.functions.invoke("send-quote-request", {
+          body: JSON.stringify({
+            ...formData,
+            projectDescription: message,
+          }),
+        });
+        if (legacy.error) {
+          throw new Error(j?.error || legacy.error.message || "Failed to send quote request");
+        }
       }
-
-      console.log('Quote request sent successfully:', data);
       
       // Trigger fireworks animation
       burstFirework();

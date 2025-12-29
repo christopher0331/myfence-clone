@@ -13,6 +13,7 @@ export const ValuePropsSection = () => {
           <h2 className="text-xl font-semibold">Transparent Fence Pricing in Seattle</h2>
           <p className="text-muted-foreground mt-2">
             Use our Virtual Quote Tool for a fast estimate, then we confirm on-site with
+            {" "}
             <Link href="/fence-genius" className="text-primary hover:underline">
               Fence Genius
             </Link>

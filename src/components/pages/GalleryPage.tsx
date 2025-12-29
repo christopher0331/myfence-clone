@@ -67,9 +67,11 @@ const GalleryPage = () => {
         <h1 className="text-4xl font-bold tracking-tight mb-3">Project Gallery</h1>
         <p className="text-muted-foreground max-w-2xl">
           A look at our craftsmanship across Seattle neighborhoods. Every project is precisely planned using
+          {" "}
           <Link href="/fence-genius" className="text-primary hover:underline">
             Fence Genius technology
           </Link>
+          {" "}
           and executed to perfection.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">

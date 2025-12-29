@@ -69,9 +69,11 @@ const QuoteToolPage = () => {
           <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Instant Online Quote</h1>
           <p className="max-w-2xl text-background/90">
             Use our online tool to get real-time pricing for your fence project. After your quote, we'll use
+            {" "}
             <Link href="/fence-genius" className="underline hover:no-underline text-background">
               Fence Genius technology
             </Link>
+            {" "}
             to ensure perfect installation.
           </p>
 
