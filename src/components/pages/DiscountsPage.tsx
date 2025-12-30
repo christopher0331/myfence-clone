@@ -344,12 +344,20 @@ const DiscountsPage = () => {
         leadError = e instanceof Error ? e.message : String(e);
       }
 
-      // Fail-safe during transition: fall back to legacy email flow
-      if (leadError) {
-        const { error } = await supabase.functions.invoke("send-contact-form", {
+      // Always send the legacy email notification too (info@myfence.com).
+      let emailError: string | null = null;
+      try {
+        const legacy = await supabase.functions.invoke("send-contact-form", {
           body: emailData,
         });
-        if (error) throw new Error(leadError || error.message || "Failed to send message");
+        if (legacy.error) emailError = legacy.error.message;
+      } catch (e) {
+        emailError = e instanceof Error ? e.message : String(e);
+      }
+
+      // Only fail if BOTH webhook + email failed.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");

@@ -51,14 +51,20 @@ const ContactPage = () => {
         leadError = e instanceof Error ? e.message : String(e);
       }
 
-      // Fail-safe during transition: fall back to legacy email flow
-      if (leadError) {
+      // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
+      let emailError: string | null = null;
+      try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: JSON.stringify(formData),
         });
-        if (legacy.error) {
-          throw new Error(leadError || legacy.error.message || "Failed to send message");
-        }
+        if (legacy.error) emailError = legacy.error.message;
+      } catch (e) {
+        emailError = e instanceof Error ? e.message : String(e);
+      }
+
+      // Only fail if BOTH webhook + email failed.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       await import("@/lib/effects").then((m) =>
