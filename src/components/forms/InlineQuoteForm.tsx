@@ -39,23 +39,21 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         ? `[Source: ${context}]\n${formData.projectDescription}`
         : formData.projectDescription;
 
-      const res = await fetch("/api/website-lead", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          first_name: first || "",
-          last_name: rest.join(" "),
+      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        body: {
+          firstName: first || "",
+          lastName: rest.join(" "),
           email: formData.email,
           phone: formData.phone,
-          address: formData.address,
-          fence_type: "",
+          propertyAddress: formData.address,
+          fenceType: "Quote Request",
           message,
-        }),
+        },
       });
 
-      const j = await res.json().catch(() => null);
-      if (!res.ok || j?.ok === false) {
-        // Fail-safe during transition: fall back to the legacy Supabase email flow
+      // Fail-safe: fall back to legacy email flow
+      if (lead.error) {
         const legacy = await supabase.functions.invoke("send-quote-request", {
           body: JSON.stringify({
             ...formData,
@@ -63,7 +61,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           }),
         });
         if (legacy.error) {
-          throw new Error(j?.error || legacy.error.message || "Failed to send quote request");
+          throw new Error(lead.error.message || legacy.error.message || "Failed to send quote request");
         }
       }
       

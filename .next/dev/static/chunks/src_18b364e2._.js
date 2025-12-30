@@ -732,29 +732,25 @@ const QuoteModal = ({ isOpen, onClose })=>{
         setIsSubmitting(true);
         try {
             const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
-            const res = await fetch("/api/website-lead", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify({
-                    first_name: first || "",
-                    last_name: rest.join(" "),
+            // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+            const lead = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-website-lead-webhook", {
+                body: {
+                    firstName: first || "",
+                    lastName: rest.join(" "),
                     email: formData.email,
                     phone: formData.phone,
-                    address: formData.address,
-                    fence_type: "",
+                    propertyAddress: formData.address,
+                    fenceType: "Quote Modal",
                     message: formData.projectDescription
-                })
+                }
             });
-            const j = await res.json().catch(()=>null);
-            if (!res.ok || j?.ok === false) {
-                // Fail-safe during transition: fall back to the legacy Supabase email flow
+            // Fail-safe: fall back to legacy email flow
+            if (lead.error) {
                 const legacy = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-quote-request", {
                     body: formData
                 });
                 if (legacy.error) {
-                    throw new Error(j?.error || legacy.error.message || "Failed to send quote request");
+                    throw new Error(lead.error.message || legacy.error.message || "Failed to send quote request");
                 }
             }
             // Trigger fireworks animation
@@ -796,7 +792,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                             children: "Get Your Free Quote"
                         }, void 0, false, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 105,
+                            lineNumber: 103,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -804,13 +800,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                             children: "Tell us about your fencing project and we'll provide a detailed estimate"
                         }, void 0, false, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 106,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 104,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -825,7 +821,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Full Name *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 111,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -838,13 +834,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "name"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 112,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 112,
+                            lineNumber: 110,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -855,7 +851,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Email Address *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -870,13 +866,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     inputMode: "email"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 125,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -887,7 +883,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Phone Number *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -902,13 +898,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     inputMode: "tel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 140,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 140,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -919,7 +915,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Project Address *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 154,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -932,13 +928,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "street-address"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 157,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 155,
+                            lineNumber: 153,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -949,7 +945,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Project Description *"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 167,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -963,13 +959,13 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     autoComplete: "off"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 168,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 168,
+                            lineNumber: 166,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -984,7 +980,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 183,
+                                    lineNumber: 181,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -997,7 +993,7 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                                 className: "mr-2 h-4 w-4 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/QuoteModal.tsx",
-                                                lineNumber: 199,
+                                                lineNumber: 197,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             "Sending..."
@@ -1005,19 +1001,19 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     }, void 0, true) : "Send Quote Request"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 182,
+                            lineNumber: 180,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 111,
+                    lineNumber: 109,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1030,14 +1026,14 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$warranty$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WARRANTY_CONSTANTS"].TITLE
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 208,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " on all installations"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 210,
+                            lineNumber: 208,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1047,30 +1043,30 @@ const QuoteModal = ({ isOpen, onClose })=>{
                                     children: "(253) 455-1885"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuoteModal.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 209,
                                     columnNumber: 45
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/QuoteModal.tsx",
-                            lineNumber: 211,
+                            lineNumber: 209,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/QuoteModal.tsx",
-                    lineNumber: 209,
+                    lineNumber: 207,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/QuoteModal.tsx",
-            lineNumber: 103,
+            lineNumber: 101,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/QuoteModal.tsx",
-        lineNumber: 102,
+        lineNumber: 100,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2328,30 +2324,25 @@ function ContactForm() {
     const onSubmit = async (data)=>{
         setIsSubmitting(true);
         try {
-            const res = await fetch("/api/website-lead", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify({
-                    first_name: data.firstName,
-                    last_name: data.lastName,
+            // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+            const lead = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-website-lead-webhook", {
+                body: {
+                    firstName: data.firstName,
+                    lastName: data.lastName,
                     email: data.email,
                     phone: data.phone,
-                    address: data.address,
-                    fence_type: "",
+                    propertyAddress: data.address,
+                    fenceType: "Contact Form",
                     message: data.description
-                })
+                }
             });
-            const j = await res.json().catch(()=>null);
-            if (!res.ok || j?.ok === false) {
-                // Fail-safe during transition: fall back to the legacy Supabase email flow
-                // if the webhook isn't configured / reachable.
+            // Fail-safe: if webhook function fails, fall back to the legacy email flow
+            if (lead.error) {
                 const legacy = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-contact-form", {
                     body: data
                 });
                 if (legacy.error) {
-                    throw new Error(j?.error || legacy.error.message || "Failed to send message");
+                    throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
                 }
             }
             toast({
@@ -2388,7 +2379,7 @@ function ContactForm() {
                                             children: "First Name"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 94,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2397,28 +2388,28 @@ function ContactForm() {
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 96,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 95,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 98,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 93,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 92,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -2430,7 +2421,7 @@ function ContactForm() {
                                             children: "Last Name"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2439,28 +2430,28 @@ function ContactForm() {
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 110,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 109,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 112,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 106,
+                            lineNumber: 103,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -2472,7 +2463,7 @@ function ContactForm() {
                                             children: "Email"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 122,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2482,28 +2473,28 @@ function ContactForm() {
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 124,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 126,
+                                            lineNumber: 123,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 126,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 124,
+                                    lineNumber: 121,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 120,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -2515,7 +2506,7 @@ function ContactForm() {
                                             children: "Phone"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 136,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2525,28 +2516,28 @@ function ContactForm() {
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 138,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 140,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 135,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 134,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -2558,7 +2549,7 @@ function ContactForm() {
                                             children: "Address"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 150,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2567,34 +2558,34 @@ function ContactForm() {
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 151,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                            lineNumber: 157,
+                                            lineNumber: 154,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 149,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 148,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                    lineNumber: 91,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -2606,7 +2597,7 @@ function ContactForm() {
                                     children: "Message"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 168,
+                                    lineNumber: 165,
                                     columnNumber: 15
                                 }, void 0),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -2616,28 +2607,28 @@ function ContactForm() {
                                         ...field
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 167,
                                         columnNumber: 17
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 166,
                                     columnNumber: 15
                                 }, void 0),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                                    lineNumber: 176,
+                                    lineNumber: 173,
                                     columnNumber: 15
                                 }, void 0)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 167,
+                            lineNumber: 164,
                             columnNumber: 13
                         }, void 0)
                 }, void 0, false, {
                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                    lineNumber: 163,
+                    lineNumber: 160,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2649,25 +2640,25 @@ function ContactForm() {
                             className: "mr-2 h-4 w-4 animate-spin"
                         }, void 0, false, {
                             fileName: "[project]/src/components/forms/ContactForm.tsx",
-                            lineNumber: 182,
+                            lineNumber: 179,
                             columnNumber: 28
                         }, this),
                         "Send Message"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/forms/ContactForm.tsx",
-                    lineNumber: 181,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/forms/ContactForm.tsx",
-            lineNumber: 90,
+            lineNumber: 87,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/forms/ContactForm.tsx",
-        lineNumber: 89,
+        lineNumber: 86,
         columnNumber: 5
     }, this);
 }
@@ -4782,29 +4773,25 @@ const InlineContactSection = ()=>{
         setIsSubmitting(true);
         try {
             const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
-            const res = await fetch("/api/website-lead", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify({
-                    first_name: first || "",
-                    last_name: rest.join(" "),
+            // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+            const lead = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-website-lead-webhook", {
+                body: {
+                    firstName: first || "",
+                    lastName: rest.join(" "),
                     email: formData.email,
                     phone: formData.phone,
-                    address: formData.address,
-                    fence_type: "",
+                    propertyAddress: formData.address,
+                    fenceType: "Inline Contact",
                     message: formData.message
-                })
+                }
             });
-            const j = await res.json().catch(()=>null);
-            if (!res.ok || j?.ok === false) {
-                // Fail-safe during transition: fall back to the legacy Supabase email flow
+            // Fail-safe: fall back to the legacy Supabase email flow
+            if (lead.error) {
                 const legacy = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-contact-form", {
                     body: formData
                 });
                 if (legacy.error) {
-                    throw new Error(j?.error || legacy.error.message || "Failed to send message");
+                    throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
                 }
             }
             const formElement = document.querySelector('#inline-contact-form');
@@ -4840,7 +4827,7 @@ const InlineContactSection = ()=>{
                 children: "Contact Us"
             }, void 0, false, {
                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                lineNumber: 95,
+                lineNumber: 93,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4848,7 +4835,7 @@ const InlineContactSection = ()=>{
                 children: "Tell us about your project. We'll reply quickly."
             }, void 0, false, {
                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                lineNumber: 96,
+                lineNumber: 94,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -4862,7 +4849,7 @@ const InlineContactSection = ()=>{
                                 className: "h-16 w-16 text-green-500 mx-auto mb-4"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 102,
+                                lineNumber: 100,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4870,7 +4857,7 @@ const InlineContactSection = ()=>{
                                 children: "Form Successfully Sent!"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 103,
+                                lineNumber: 101,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4878,7 +4865,7 @@ const InlineContactSection = ()=>{
                                 children: "Thank you for your message. We'll get back to you within 24 hours."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 104,
+                                lineNumber: 102,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4890,18 +4877,18 @@ const InlineContactSection = ()=>{
                                     children: "(253) 455-1885"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 106,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 107,
+                                lineNumber: 105,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                        lineNumber: 101,
+                        lineNumber: 99,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                         id: "inline-contact-form",
@@ -4919,7 +4906,7 @@ const InlineContactSection = ()=>{
                                                 children: "Name *"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 117,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -4932,13 +4919,13 @@ const InlineContactSection = ()=>{
                                                 className: "mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 118,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 116,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4949,7 +4936,7 @@ const InlineContactSection = ()=>{
                                                 children: "Email *"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 129,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -4962,13 +4949,13 @@ const InlineContactSection = ()=>{
                                                 className: "mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 130,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 128,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4979,7 +4966,7 @@ const InlineContactSection = ()=>{
                                                 children: "Phone"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 141,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -4991,13 +4978,13 @@ const InlineContactSection = ()=>{
                                                 className: "mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 144,
+                                                lineNumber: 142,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 140,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5008,7 +4995,7 @@ const InlineContactSection = ()=>{
                                                 children: "Property Address"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5021,19 +5008,19 @@ const InlineContactSection = ()=>{
                                                 placeholder: "Seattle, WA"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 153,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 151,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 117,
+                                lineNumber: 115,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5047,7 +5034,7 @@ const InlineContactSection = ()=>{
                                                 children: "Project Details"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 168,
+                                                lineNumber: 166,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -5059,13 +5046,13 @@ const InlineContactSection = ()=>{
                                                 placeholder: "Tell us about your fence project..."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 167,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 165,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -5075,35 +5062,35 @@ const InlineContactSection = ()=>{
                                         children: isSubmitting ? "Sending..." : "Send Message"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 176,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                                lineNumber: 166,
+                                lineNumber: 164,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                        lineNumber: 112,
+                        lineNumber: 110,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                    lineNumber: 99,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/home/InlineContactSection.tsx",
-                lineNumber: 98,
+                lineNumber: 96,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home/InlineContactSection.tsx",
-        lineNumber: 94,
+        lineNumber: 92,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
