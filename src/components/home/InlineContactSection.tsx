@@ -54,14 +54,20 @@ export const InlineContactSection = () => {
         leadError = e instanceof Error ? e.message : String(e);
       }
 
-      // Fail-safe: fall back to the legacy Supabase email flow
-      if (leadError) {
+      // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
+      let emailError: string | null = null;
+      try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: formData,
         });
-        if (legacy.error) {
-          throw new Error(leadError || legacy.error.message || "Failed to send message");
-        }
+        if (legacy.error) emailError = legacy.error.message;
+      } catch (e) {
+        emailError = e instanceof Error ? e.message : String(e);
+      }
+
+      // Only fail if BOTH webhook + email failed.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       const formElement = document.querySelector('#inline-contact-form');
