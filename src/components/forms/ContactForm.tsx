@@ -42,26 +42,32 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
-      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-        body: {
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          phone: data.phone,
-          propertyAddress: data.address,
-          fenceType: "Contact Form",
-          message: data.description,
-        },
-      });
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            propertyAddress: data.address,
+            fenceType: "Contact Form",
+            message: data.description,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        // Network/CORS failures throw; treat as webhook failure and fall back.
+        leadError = e instanceof Error ? e.message : String(e);
+      }
 
-      // Fail-safe: if webhook function fails, fall back to the legacy email flow
-      if (lead.error) {
+      // Fail-safe: if webhook invoke fails (including CORS), fall back to legacy email flow
+      if (leadError) {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: data,
         });
         if (legacy.error) {
-          throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
+          throw new Error(leadError || legacy.error.message || "Failed to send message");
         }
       }
 

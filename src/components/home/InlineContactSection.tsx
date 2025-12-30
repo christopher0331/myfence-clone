@@ -36,26 +36,31 @@ export const InlineContactSection = () => {
 
     try {
       const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
-      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
-      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-        body: {
-          firstName: first || "",
-          lastName: rest.join(" "),
-          email: formData.email,
-          phone: formData.phone,
-          propertyAddress: formData.address,
-          fenceType: "Inline Contact",
-          message: formData.message,
-        },
-      });
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: first || "",
+            lastName: rest.join(" "),
+            email: formData.email,
+            phone: formData.phone,
+            propertyAddress: formData.address,
+            fenceType: "Inline Contact",
+            message: formData.message,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        leadError = e instanceof Error ? e.message : String(e);
+      }
 
       // Fail-safe: fall back to the legacy Supabase email flow
-      if (lead.error) {
+      if (leadError) {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: formData,
         });
         if (legacy.error) {
-          throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
+          throw new Error(leadError || legacy.error.message || "Failed to send message");
         }
       }
 

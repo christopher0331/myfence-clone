@@ -326,25 +326,30 @@ const DiscountsPage = () => {
         description: formDescription || "General inquiry from discount page",
       };
 
-      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
-      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-        body: {
-          firstName: emailData.firstName,
-          lastName: emailData.lastName,
-          email: emailData.email,
-          phone: emailData.phone,
-          propertyAddress: emailData.address || "",
-          fenceType: "Discounts Page",
-          message: emailData.description || "General inquiry from discount page",
-        },
-      });
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: emailData.firstName,
+            lastName: emailData.lastName,
+            email: emailData.email,
+            phone: emailData.phone,
+            propertyAddress: emailData.address || "",
+            fenceType: "Discounts Page",
+            message: emailData.description || "General inquiry from discount page",
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        leadError = e instanceof Error ? e.message : String(e);
+      }
 
       // Fail-safe during transition: fall back to legacy email flow
-      if (lead.error) {
+      if (leadError) {
         const { error } = await supabase.functions.invoke("send-contact-form", {
           body: emailData,
         });
-        if (error) throw new Error(lead.error.message || error.message || "Failed to send message");
+        if (error) throw new Error(leadError || error.message || "Failed to send message");
       }
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");
