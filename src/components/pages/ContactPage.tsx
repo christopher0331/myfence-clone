@@ -33,28 +33,26 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/website-lead", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          first_name: formData.firstName,
-          last_name: formData.lastName,
+      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        body: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          address: formData.address,
-          fence_type: "",
+          propertyAddress: formData.address,
+          fenceType: "Contact Page",
           message: formData.message,
-        }),
+        },
       });
 
-      const j = await res.json().catch(() => null);
-      if (!res.ok || j?.ok === false) {
-        // Fail-safe during transition: fall back to the legacy Supabase email flow
+      // Fail-safe during transition: fall back to legacy email flow
+      if (lead.error) {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: JSON.stringify(formData),
         });
         if (legacy.error) {
-          throw new Error(j?.error || legacy.error.message || "Failed to send message");
+          throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
         }
       }
 

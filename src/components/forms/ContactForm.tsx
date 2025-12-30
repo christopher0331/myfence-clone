@@ -42,29 +42,26 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/website-lead", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          first_name: data.firstName,
-          last_name: data.lastName,
+      // Primary: forward to webhook via Supabase Edge Function (secrets live in Supabase)
+      const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        body: {
+          firstName: data.firstName,
+          lastName: data.lastName,
           email: data.email,
           phone: data.phone,
-          address: data.address,
-          fence_type: "",
+          propertyAddress: data.address,
+          fenceType: "Contact Form",
           message: data.description,
-        }),
+        },
       });
 
-      const j = await res.json().catch(() => null);
-      if (!res.ok || j?.ok === false) {
-        // Fail-safe during transition: fall back to the legacy Supabase email flow
-        // if the webhook isn't configured / reachable.
+      // Fail-safe: if webhook function fails, fall back to the legacy email flow
+      if (lead.error) {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: data,
         });
         if (legacy.error) {
-          throw new Error(j?.error || legacy.error.message || "Failed to send message");
+          throw new Error(lead.error.message || legacy.error.message || "Failed to send message");
         }
       }
 
