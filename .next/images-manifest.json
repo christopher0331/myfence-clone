@@ -2,6 +2,11 @@
   "version": 1,
   "images": {
     "deviceSizes": [
+      320,
+      360,
+      420,
+      480,
+      560,
       640,
       750,
       828,
@@ -40,12 +45,23 @@
         "search": ""
       }
     ],
-    "remotePatterns": [],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "^(?:^(?:ik\\.imagekit\\.io)$)$",
+        "pathname": "^(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?))$"
+      }
+    ],
     "qualities": [
       75
     ],
     "unoptimized": false,
     "sizes": [
+      320,
+      360,
+      420,
+      480,
+      560,
       640,
       750,
       828,

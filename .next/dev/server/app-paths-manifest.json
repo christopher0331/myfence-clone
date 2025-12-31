@@ -1,7 +1,14 @@
 {
-  "/api/website-lead/route": "app/api/website-lead/route.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/fence-posts/4-125-posts/page": "app/fence-posts/4-125-posts/page.js",
+  "/discounts/page": "app/discounts/page.js",
   "/fence-styles/page": "app/fence-styles/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/service-areas/covington/page": "app/service-areas/covington/page.js",
+  "/service-areas/enumclaw/page": "app/service-areas/enumclaw/page.js",
+  "/service-areas/federal-way/page": "app/service-areas/federal-way/page.js",
+  "/service-areas/gig-harbor/page": "app/service-areas/gig-harbor/page.js",
+  "/service-areas/lake-tapps/page": "app/service-areas/lake-tapps/page.js",
+  "/service-areas/maple-valley/page": "app/service-areas/maple-valley/page.js",
+  "/service-areas/north-bend/page": "app/service-areas/north-bend/page.js",
+  "/service-areas/sumner/page": "app/service-areas/sumner/page.js"
 }

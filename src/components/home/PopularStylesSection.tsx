@@ -2,10 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
+import Image from "next/image";
+import { imageKitLoader } from "@/lib/imagekit";
 
 interface PopularStylesSectionProps {
   onOpenQuoteModal: () => void;
 }
+
+const pictureFrameHeroUrl =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Pictrue%20Frame%20Fence%20Hero.webp?updatedAt=1762037742056";
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
   return (
@@ -18,7 +23,17 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <Link href="/fence-styles/picture-frame-fence" className="block">
               <div className="glass-frame hover:opacity-90 transition-opacity">
                 <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/83d708ee-9b9e-4c77-8965-6ab1e7d3b1d6.png" alt="Picture frame cedar fence by MyFence.com in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  <div className="relative h-full w-full">
+                    <Image
+                      loader={imageKitLoader}
+                      src={pictureFrameHeroUrl}
+                      alt="Picture frame cedar fence by MyFence.com in Seattle"
+                      fill
+                      // Use fixed-ish sizes so mobile doesn't jump to Next's default 640/750 widths.
+                      sizes="(max-width: 480px) 320px, (max-width: 640px) 340px, (max-width: 1024px) 300px, 360px"
+                      className="object-cover"
+                    />
+                  </div>
                 </AspectRatio>
               </div>
             </Link>

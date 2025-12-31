@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
+import Image from "next/image";
+import { imageKitLoader } from "@/lib/imagekit";
 
 interface AboutUsSectionProps {
   onOpenQuoteModal: () => void;
@@ -37,13 +39,19 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
         <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
           <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
             <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
-              <img
-                src="https://ik.imagekit.io/xft9mcl5v/tr:w-648,h-864,q-auto/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
-                alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-                loading="eager"
-                fetchPriority="high"
-                className="w-full h-full object-cover object-[center_55%]"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  loader={imageKitLoader}
+                  src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
+                  alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
+                  fill
+                  priority
+                  fetchPriority="high"
+                  loading="eager"
+                  sizes="(max-width: 480px) 320px, (max-width: 768px) 360px, 540px"
+                  className="object-cover object-[center_55%]"
+                />
+              </div>
             </AspectRatio>
           </div>
         </div>
