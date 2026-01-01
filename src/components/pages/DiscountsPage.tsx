@@ -451,6 +451,12 @@ const DiscountsPage = () => {
             </p>
           </div>
 
+          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+            <p className="text-center text-sm text-amber-900 dark:text-amber-100">
+              <strong>Disclaimer:</strong> We have a project minimum of $3,500+Tax.
+            </p>
+          </div>
+
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="text-2xl text-center">Today's Riddle</CardTitle>
