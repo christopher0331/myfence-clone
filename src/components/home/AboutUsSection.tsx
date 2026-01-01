@@ -48,7 +48,7 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
                   priority
                   fetchPriority="high"
                   loading="eager"
-                  sizes="(max-width: 480px) 320px, (max-width: 768px) 360px, 540px"
+                  sizes="(max-width: 640px) 324px, (max-width: 1024px) 540px, 540px"
                   className="object-cover object-[center_55%]"
                 />
               </div>

@@ -29,8 +29,8 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                       src={pictureFrameHeroUrl}
                       alt="Picture frame cedar fence by MyFence.com in Seattle"
                       fill
-                      // Use fixed-ish sizes so mobile doesn't jump to Next's default 640/750 widths.
-                      sizes="(max-width: 480px) 320px, (max-width: 640px) 340px, (max-width: 1024px) 300px, 360px"
+                      // Keep slot size accurate; DPR may still request a larger width for crispness.
+                      sizes="(max-width: 640px) 328px, (max-width: 1024px) 300px, 360px"
                       className="object-cover"
                     />
                   </div>

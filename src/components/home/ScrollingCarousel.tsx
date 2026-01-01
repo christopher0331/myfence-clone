@@ -1,10 +1,8 @@
 "use client";
 
-import OptimizedImage from "@/components/OptimizedImage";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Play, Pause, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const images = [
   {
@@ -63,25 +61,17 @@ const images = [
 ];
 
 export const ScrollingCarousel = () => {
-  const isMobile = useIsMobile();
   const speedOptions = [1, 2, 3, 4, 5];
   const [speedIndex, setSpeedIndex] = useState(0); // Start at 1x
   const [isPaused, setIsPaused] = useState(false);
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const scrollPositionRef = useRef(0);
-  const animationFrameRef = useRef<number>();
-  const lastTimestampRef = useRef<number>();
-  const setWidthRef = useRef(0);
   const [isInView, setIsInView] = useState(false);
 
   const currentSpeed = speedOptions[speedIndex];
-  const baseSpeed = 50; // pixels per second at 1x speed
 
   // Intersection Observer to detect when component is in viewport
   useEffect(() => {
-    const section = sectionRef.current;
+    const section = document.getElementById("scrolling-carousel");
     if (!section) return;
 
     let timeoutId: NodeJS.Timeout;
@@ -105,54 +95,6 @@ export const ScrollingCarousel = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const computeSetWidth = () => {
-      const children = Array.from(container.children).slice(0, images.length) as HTMLElement[];
-      const total = children.reduce((acc, child) => acc + child.offsetWidth + 32, 0);
-      setWidthRef.current = total;
-    };
-
-    computeSetWidth();
-    window.addEventListener("resize", computeSetWidth);
-
-    const animate = (timestamp: number) => {
-      if (!lastTimestampRef.current) {
-        lastTimestampRef.current = timestamp;
-      }
-
-      const deltaTime = (timestamp - lastTimestampRef.current) / 1000; // seconds
-      lastTimestampRef.current = timestamp;
-
-      if (!isPaused && isInView) {
-        // advance position
-        scrollPositionRef.current += baseSpeed * currentSpeed * deltaTime;
-
-        // reset after one full set width
-        const totalWidth = setWidthRef.current;
-        if (totalWidth > 0 && scrollPositionRef.current >= totalWidth) {
-          scrollPositionRef.current -= totalWidth;
-        }
-
-        // apply transform without rerender
-        container.style.transform = `translateX(-${scrollPositionRef.current}px)`;
-      }
-
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      window.removeEventListener("resize", computeSetWidth);
-    };
-  }, [currentSpeed, isPaused, isInView]);
-
   const cycleSpeed = () => {
     setSpeedIndex((prev) => (prev + 1) % speedOptions.length);
   };
@@ -162,7 +104,7 @@ export const ScrollingCarousel = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 overflow-hidden bg-muted/50">
+    <section id="scrolling-carousel" className="py-16 overflow-hidden bg-muted/50">
       <div className="container mx-auto px-4 mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Powered by Fence Genius Technology</h2>
         <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
@@ -193,29 +135,49 @@ export const ScrollingCarousel = () => {
         </div>
       </div>
       <div className="relative">
-        <div ref={containerRef} className="flex items-center will-change-transform">
-        {/* Triple set for seamless loop without visible reset */}
-          {[...images, ...images, ...images].map((image, index) => {
+        {/* CSS marquee: no layout reads, no rAF loop, and only 2x DOM duplication */}
+        <div
+          className={[
+            "flex items-center w-max will-change-transform scrolling-marquee",
+            isPaused || !isInView ? "scrolling-marquee-paused" : "",
+          ].join(" ")}
+          style={
+            {
+              // 1x ≈ 55s, faster speeds reduce duration.
+              ["--marquee-duration" as any]: `${55 / currentSpeed}s`,
+            } as React.CSSProperties
+          }
+        >
+          {[...images, ...images].map((image, index) => {
             const baseIndex = index % images.length;
-            const imageSrc = isMobile ? image.mobile : image.desktop;
+            const isDuplicateSet = index >= images.length;
+
             return (
               <div
                 key={`img-${index}`}
+                aria-hidden={isDuplicateSet ? "true" : undefined}
                 className={`relative flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 ${
                   image.isWide
                     ? "w-[320px] h-[180px] md:w-[570px] md:h-[320px]"
                     : "w-[280px] h-[280px] md:w-[400px] md:h-[400px]"
                 }`}
               >
-                <div className="absolute top-2 left-2 bg-black/70 text-white text-sm font-bold px-2 py-1 rounded z-10">
-                  {baseIndex + 1}
-                </div>
-                <OptimizedImage
-                  src={imageSrc}
-                  alt={`Seattle Fence Project ${baseIndex + 1}`}
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
+                {!isDuplicateSet && (
+                  <div className="absolute top-2 left-2 bg-black/70 text-white text-sm font-bold px-2 py-1 rounded z-10">
+                    {baseIndex + 1}
+                  </div>
+                )}
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={image.mobile} />
+                  <source media="(min-width: 768px)" srcSet={image.desktop} />
+                  <img
+                    src={image.desktop}
+                    alt={isDuplicateSet ? "" : `Seattle Fence Project ${baseIndex + 1}`}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             );
           })}

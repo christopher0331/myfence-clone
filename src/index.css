@@ -183,3 +183,21 @@ All colors MUST be HSL.
   }
 }
 
+/* Scrolling carousel marquee (CSS-only to avoid forced reflows from JS measurements) */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-marquee {
+  animation: marquee-x var(--marquee-duration, 55s) linear infinite;
+}
+
+.scrolling-marquee-paused {
+  animation-play-state: paused;
+}
+

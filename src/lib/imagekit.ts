@@ -9,18 +9,23 @@ export const imageKitLoader: ImageLoader = ({ src, width, quality }) => {
 
   const inferredQuality =
     quality ??
-    // Aggressive on mobile to improve Lighthouse.
+    // Mobile-first compression (Google/Lighthouse index mobile first), but keep desktop crisp.
+    // Note: width here is the requested pixel width (often includes DPR).
     (width <= 360
-      ? 42
+      ? 38
       : width <= 420
-        ? 46
+        ? 40
         : width <= 560
-          ? 52
+          ? 42
           : width <= 640
-            ? 56
+            ? 45
             : width <= 768
-              ? 62
-              : 74);
+              ? 55
+              : width <= 1024
+                ? 70
+                : width <= 1440
+                  ? 78
+                  : 82);
 
   // Use ImageKit's transformation query param.
   // If the URL already contains `tr`, we overwrite it so Next's responsive widths stay accurate.
