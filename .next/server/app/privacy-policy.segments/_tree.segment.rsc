@@ -1,2 +1,2 @@
-:HL["/_next/static/chunks/ca1f135c38706ae2.css","style"]
-0:{"buildId":"UW32EXubqtECrTniZ-erT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"privacy-policy","paramType":null,"paramKey":"privacy-policy","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/_next/static/chunks/33faf9a7f809cc0d.css","style"]
+0:{"buildId":"3u2713ciiG8kLLgfZ3Kkh","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"privacy-policy","paramType":null,"paramKey":"privacy-policy","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -80,23 +80,21 @@ const ServiceAreaTemplate = ({
   useEffect(() => {
     console.log('[ServiceArea] useEffect - Trustindex widget setup running');
     if (!reviewsRef.current) return;
-    
-    // Create the widget container div with proper Trustindex attributes
-    const widgetDiv = document.createElement("div");
-    widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");
-    widgetDiv.className = "trustindex-widget";
-    reviewsRef.current.appendChild(widgetDiv);
-    
-    const s = document.createElement("script");
-    s.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
-    s.async = true;
-    s.defer = true;
-    
-    reviewsRef.current.appendChild(s);
-    
+    // Defer Trustindex loader (prevents main-thread work near LCP)
+    import("@/lib/trustindex").then(({ mountTrustindexWidget }) => {
+      if (!reviewsRef.current) return;
+      const cleanup = mountTrustindexWidget(reviewsRef.current, {
+        rootMargin: "400px",
+        delayMs: 1500,
+      });
+
+      // attach cleanup to ref so unmount clears it
+      (reviewsRef.current as any).__trustindexCleanup = cleanup;
+    });
+
     return () => {
-      s.remove();
-      widgetDiv.remove();
+      const c = (reviewsRef.current as any)?.__trustindexCleanup as undefined | (() => void);
+      c?.();
       if (reviewsRef.current) reviewsRef.current.innerHTML = "";
     };
   }, []);
