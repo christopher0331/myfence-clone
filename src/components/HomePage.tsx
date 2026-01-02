@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import Seo from "@/components/Seo";
 import QuoteModal from "@/components/QuoteModal";
 import { Card, CardContent } from "@/components/ui/card";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import { ArticleSummary } from "@/components/ArticleSummary";
+import dynamicImport from "next/dynamic";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
@@ -33,9 +33,18 @@ const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap")
   loading: () => null,
 });
 
+const LazyArticleSummary = dynamicImport(
+  () => import("@/components/ArticleSummary").then((m) => m.ArticleSummary),
+  { ssr: true, loading: () => null },
+);
+
 const Index = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const { reviews, reviewsRef } = useTrustindexReviews();
+  const [showSummary, setShowSummary] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+  const summaryRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<HTMLDivElement | null>(null);
 
   const breadcrumbLd = useMemo(
     () => ({
@@ -125,6 +134,40 @@ const Index = () => {
 
   const faqSchema = useMemo(() => generateFaqSchema(), []);
 
+  // Intersection gating for ArticleSummary
+  useEffect(() => {
+    const el = summaryRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowSummary(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Intersection gating for GoogleBusinessMap
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "250px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       <Seo
@@ -158,13 +201,17 @@ const Index = () => {
       </section>
 
       {/* AI Company Summary */}
-      <section className="container py-12 md:py-16">
-        <ArticleSummary
-          pageTitle="MyFence.com Company Overview"
-          pageContent="Write a professional company summary for MyFence.com, a Seattle-area wood fence contractor that is family-owned and operated by a father-and-son team of engineers. Highlight how MyFence.com leverages exclusive technology developed by its sister company, Fence Genius, to revolutionize the outdated fence construction industry. The Fence Genius system includes software and manufacturing technology that enables off-site prefabrication of custom, slope-following fence panels and gates, ensuring unmatched precision, quality, and efficiency. Emphasize that MyFence.com is the only contractor in the market using this patented system. Despite using advanced technology and delivering higher-quality results, their pricing remains competitive with traditional installers. The company is committed to raising standards in fence building and is rapidly growing in Seattle, WA and the surrounding region."
-          summaryTitle="About MyFence.com & Fence Genius"
-          summaryDescription="Get an AI-powered overview of our company, technology, and what sets us apart in the Seattle fencing industry."
-        />
+      <section className="container py-12 md:py-16" ref={summaryRef}>
+        {showSummary ? (
+          <LazyArticleSummary
+            pageTitle="MyFence.com Company Overview"
+            pageContent="Write a professional company summary for MyFence.com, a Seattle-area wood fence contractor that is family-owned and operated by a father-and-son team of engineers. Highlight how MyFence.com leverages exclusive technology developed by its sister company, Fence Genius, to revolutionize the outdated fence construction industry. The Fence Genius system includes software and manufacturing technology that enables off-site prefabrication of custom, slope-following fence panels and gates, ensuring unmatched precision, quality, and efficiency. Emphasize that MyFence.com is the only contractor in the market using this patented system. Despite using advanced technology and delivering higher-quality results, their pricing remains competitive with traditional installers. The company is committed to raising standards in fence building and is rapidly growing in Seattle, WA and the surrounding region."
+            summaryTitle="About MyFence.com & Fence Genius"
+            summaryDescription="Get an AI-powered overview of our company, technology, and what sets us apart in the Seattle fencing industry."
+          />
+        ) : (
+          <div className="h-48 w-full animate-pulse rounded-lg bg-muted/40" />
+        )}
       </section>
 
       <ScrollingCarousel />
@@ -187,12 +234,16 @@ const Index = () => {
 
       <ServiceAreasSection />
 
-      <section className="container py-12 md:py-16">
+      <section className="container py-12 md:py-16" ref={mapRef}>
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
         <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
           Proudly serving the greater Seattle area within a 28-mile radius
         </p>
-        <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+        {showMap ? (
+          <GoogleBusinessMap city="Maple Valley" state="WA" radiusMiles={28} showBusinessInfo={false} />
+        ) : (
+          <div className="h-[360px] w-full rounded-lg bg-muted/40 animate-pulse" />
+        )}
       </section>
 
       <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
