@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,7 @@ import { useState, useEffect } from "react";
 import { burstFirework, popEmoji } from "@/lib/effects";
 import { Phone, Home } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import { imageKitLoader } from "@/lib/imagekit";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -75,6 +77,8 @@ const serviceAreas = serviceAreasByRegion.flatMap(region =>
   region.areas.map(area => ({ ...area, label: `${area.label}, WA` }))
 ).sort((a, b) => a.label.localeCompare(b.label));
 
+const headerLogoUrl = "https://ik.imagekit.io/xft9mcl5v/testing-3.webp";
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [serviceAreasOpen, setServiceAreasOpen] = useState(false);
@@ -106,9 +110,14 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <img
-              src="/testing-3.png"
+            <Image
+              loader={imageKitLoader}
+              src={headerLogoUrl}
               alt={SITE_CONFIG.fullName}
+              width={240}
+              height={80}
+              priority
+              sizes="(max-width: 1024px) 160px, 220px"
               className={`w-auto transition-all duration-300 ${
                 isScrolled ? "h-8 md:h-12" : "h-16 md:h-24"
               }`}
@@ -133,7 +142,16 @@ const Header = () => {
             const y = e.clientY || rect.top + rect.height / 2;
             burstFirework(x, y);
           }}>
-            <span className="text-xl font-semibold tracking-tight">{SITE_CONFIG.fullName}</span>
+            <Image
+              loader={imageKitLoader}
+              src={headerLogoUrl}
+              alt={SITE_CONFIG.fullName}
+              width={180}
+              height={56}
+              sizes="140px"
+              priority
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Right: Menu Button */}
