@@ -32,10 +32,7 @@ interface TurnstileWidgetProps {
 }
 
 const RAW_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-const SITE_KEY =
-  typeof RAW_SITE_KEY === "string" && RAW_SITE_KEY.trim().length > 0
-    ? RAW_SITE_KEY.trim()
-    : "0x4AAAAAACKXOd-Fzgaex5Li"; // fallback to provided key
+const SITE_KEY = String(RAW_SITE_KEY ?? "0x4AAAAAACKXOd-Fzgaex5Li").trim();
 
 export function TurnstileWidget({
   onSuccess,
@@ -84,7 +81,7 @@ export function TurnstileWidget({
   // render once
   useEffect(() => {
     if (!isLoaded || !containerRef.current || !window.turnstile || isRenderedRef.current) return;
-    if (!SITE_KEY || typeof SITE_KEY !== "string") {
+    if (!SITE_KEY || SITE_KEY === "[object Object]") {
       console.error("[Turnstile] Missing or invalid sitekey; set NEXT_PUBLIC_TURNSTILE_SITE_KEY.");
       return;
     }
