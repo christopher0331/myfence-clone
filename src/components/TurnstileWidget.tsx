@@ -19,9 +19,11 @@ interface TurnstileWidgetProps {
   onError?: () => void;
 }
 
+const RAW_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const SITE_KEY =
-  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
-  "0x4AAAAAACKXOd-Fzgaex5Li"; // fallback to provided key
+  typeof RAW_SITE_KEY === "string" && RAW_SITE_KEY.trim().length > 0
+    ? RAW_SITE_KEY.trim()
+    : "0x4AAAAAACKXOd-Fzgaex5Li"; // fallback to provided key
 
 export function TurnstileWidget({ onSuccess, onExpire, onError }: TurnstileWidgetProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -50,6 +52,10 @@ export function TurnstileWidget({ onSuccess, onExpire, onError }: TurnstileWidge
     ensureScript().then(() => {
       if (cancelled) return;
       if (!containerRef.current || !window.turnstile) return;
+      if (typeof SITE_KEY !== "string" || SITE_KEY.length === 0) {
+        console.error("[Turnstile] Missing or invalid sitekey; set NEXT_PUBLIC_TURNSTILE_SITE_KEY.");
+        return;
+      }
       window.turnstile.render(containerRef.current, {
         sitekey: SITE_KEY,
         callback: (token: string) => onSuccess(token),
