@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -19,6 +20,7 @@ const formSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   address: z.string().trim().min(1, "Address is required").max(255),
   description: z.string().trim().min(1, "Message is required").max(1000),
+  turnstileToken: z.string().min(1, "Verification required"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -53,6 +55,7 @@ export function ContactForm() {
             propertyAddress: data.address,
             fenceType: "Contact Form",
             message: data.description,
+            turnstileToken: data.turnstileToken,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -166,6 +169,27 @@ export function ContactForm() {
             )}
           />
         </div>
+
+        <FormField
+          control={form.control}
+          name="turnstileToken"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Verification</FormLabel>
+              <FormControl>
+                <div className="flex flex-col gap-2">
+                  <TurnstileWidget
+                    onSuccess={(token) => field.onChange(token)}
+                    onExpire={() => field.onChange("")}
+                    onError={() => field.onChange("")}
+                  />
+                  <input type="hidden" {...field} />
+                </div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <FormField
           control={form.control}
