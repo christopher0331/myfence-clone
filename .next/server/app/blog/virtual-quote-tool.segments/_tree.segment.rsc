@@ -1,3 +1,0 @@
-:HL["/_next/static/chunks/342f18d462087102.css","style"]
-:HL["/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png","image"]
-0:{"buildId":"3B2VNwruip0CMYP_TvALr","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"blog","paramType":null,"paramKey":"blog","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"virtual-quote-tool","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
