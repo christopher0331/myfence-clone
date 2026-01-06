@@ -514,11 +514,36 @@ const ContactPage = ()=>{
         e.preventDefault();
         setIsSubmitting(true);
         try {
-            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-contact-form", {
-                body: JSON.stringify(formData)
-            });
-            if (error) {
-                throw error;
+            let leadError = null;
+            try {
+                const lead = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-website-lead-webhook", {
+                    body: {
+                        firstName: formData.firstName,
+                        lastName: formData.lastName,
+                        email: formData.email,
+                        phone: formData.phone,
+                        propertyAddress: formData.address,
+                        fenceType: "Contact Page",
+                        message: formData.message
+                    }
+                });
+                if (lead.error) leadError = lead.error.message;
+            } catch (e) {
+                leadError = e instanceof Error ? e.message : String(e);
+            }
+            // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
+            let emailError = null;
+            try {
+                const legacy = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$integrations$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].functions.invoke("send-contact-form", {
+                    body: JSON.stringify(formData)
+                });
+                if (legacy.error) emailError = legacy.error.message;
+            } catch (e) {
+                emailError = e instanceof Error ? e.message : String(e);
+            }
+            // Only fail if BOTH webhook + email failed.
+            if (leadError && emailError) {
+                throw new Error(leadError || emailError || "Failed to send message");
             }
             await __turbopack_context__.A("[project]/src/lib/effects.ts [app-client] (ecmascript, async loader)").then((m)=>m.burstFirework(window.innerWidth / 2, window.innerHeight / 2));
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
@@ -586,7 +611,7 @@ const ContactPage = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                lineNumber: 104,
+                lineNumber: 130,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -597,7 +622,7 @@ const ContactPage = ()=>{
                         children: "Contact Us"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                        lineNumber: 111,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -610,14 +635,14 @@ const ContactPage = ()=>{
                                 children: "(253) 455-1885"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 114,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             "or send us a message below."
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                        lineNumber: 112,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     isSubmitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -628,7 +653,7 @@ const ContactPage = ()=>{
                                 children: "🎉"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 122,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -636,7 +661,7 @@ const ContactPage = ()=>{
                                 children: "Message Sent Successfully!"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 123,
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -644,7 +669,7 @@ const ContactPage = ()=>{
                                 children: "Thank you for contacting us! We'll get back to you within 24 hours."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 124,
+                                lineNumber: 150,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -656,7 +681,7 @@ const ContactPage = ()=>{
                                         children: "Send Another Message"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 154,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -665,19 +690,19 @@ const ContactPage = ()=>{
                                         children: "Call Us Now"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 127,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                        lineNumber: 121,
+                        lineNumber: 147,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start",
@@ -688,20 +713,22 @@ const ContactPage = ()=>{
                                         className: "text-muted-foreground",
                                         children: [
                                             "Father & son owned and operated. We build with our proprietary",
+                                            " ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 href: "/fence-genius",
                                                 className: "text-primary hover:underline",
                                                 children: "Fence Genius technology"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                lineNumber: 144,
+                                                lineNumber: 171,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
+                                            " ",
                                             "for superior build quality and unmatched customer clarity from estimate to final walkthrough."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 168,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -718,7 +745,7 @@ const ContactPage = ()=>{
                                                                 children: "First Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 153,
+                                                                lineNumber: 181,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -731,13 +758,13 @@ const ContactPage = ()=>{
                                                                 maxLength: 100
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 154,
+                                                                lineNumber: 182,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 152,
+                                                        lineNumber: 180,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -747,7 +774,7 @@ const ContactPage = ()=>{
                                                                 children: "Last Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 165,
+                                                                lineNumber: 193,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -760,13 +787,13 @@ const ContactPage = ()=>{
                                                                 maxLength: 100
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 166,
+                                                                lineNumber: 194,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 164,
+                                                        lineNumber: 192,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -776,7 +803,7 @@ const ContactPage = ()=>{
                                                                 children: "Email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 177,
+                                                                lineNumber: 205,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -791,13 +818,13 @@ const ContactPage = ()=>{
                                                                 maxLength: 255
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 178,
+                                                                lineNumber: 206,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 204,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -807,7 +834,7 @@ const ContactPage = ()=>{
                                                                 children: "Phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 191,
+                                                                lineNumber: 219,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -822,13 +849,13 @@ const ContactPage = ()=>{
                                                                 maxLength: 20
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 192,
+                                                                lineNumber: 220,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 218,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -838,7 +865,7 @@ const ContactPage = ()=>{
                                                                 children: "Address"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 205,
+                                                                lineNumber: 233,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -851,19 +878,19 @@ const ContactPage = ()=>{
                                                                 maxLength: 200
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 234,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 232,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                lineNumber: 151,
+                                                lineNumber: 179,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -876,7 +903,7 @@ const ContactPage = ()=>{
                                                                 children: "How can we help?"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 219,
+                                                                lineNumber: 247,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -890,13 +917,13 @@ const ContactPage = ()=>{
                                                                 maxLength: 1000
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 220,
+                                                                lineNumber: 248,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 218,
+                                                        lineNumber: 246,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -913,7 +940,7 @@ const ContactPage = ()=>{
                                                                             className: "mr-2 h-4 w-4 animate-spin"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                            lineNumber: 235,
+                                                                            lineNumber: 263,
                                                                             columnNumber: 27
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         " Sending..."
@@ -921,7 +948,7 @@ const ContactPage = ()=>{
                                                                 }, void 0, true) : "Send Message"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 232,
+                                                                lineNumber: 260,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -932,31 +959,31 @@ const ContactPage = ()=>{
                                                                 children: "Call Now"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                                lineNumber: 241,
+                                                                lineNumber: 269,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                        lineNumber: 231,
+                                                        lineNumber: 259,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                                lineNumber: 217,
+                                                lineNumber: 245,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 178,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 141,
+                                lineNumber: 167,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
@@ -970,12 +997,12 @@ const ContactPage = ()=>{
                                             className: "w-full h-full object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                            lineNumber: 255,
+                                            lineNumber: 283,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 254,
+                                        lineNumber: 282,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
@@ -983,31 +1010,31 @@ const ContactPage = ()=>{
                                         children: "Father and son owned fence company using Fence Genius technology"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                        lineNumber: 262,
+                                        lineNumber: 290,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                                lineNumber: 253,
+                                lineNumber: 281,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pages/ContactPage.tsx",
-                        lineNumber: 140,
+                        lineNumber: 166,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pages/ContactPage.tsx",
-                lineNumber: 110,
+                lineNumber: 136,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pages/ContactPage.tsx",
-        lineNumber: 103,
+        lineNumber: 129,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

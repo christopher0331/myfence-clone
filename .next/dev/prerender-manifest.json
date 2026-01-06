@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/steel-vs-wood-posts":{},"/blog/cedar-aluminum-hybrid-fence-mdx":{},"/blog/cedar-board-grade":{},"/blog/virtual-quote-tool":{},"/blog/six-ft-fence-cost":{},"/blog/wooden-fence-cost2025":{},"/blog/neighbor-fence-cost-split":{},"/blog/fence-cleaning-staining":{},"/blog/how-to-stain-fence":{},"/blog/fence-ownership":{},"/blog/street-setback":{},"/blog/property-line":{},"/blog/material-cost-2025":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"b5f1f30fa07032e0f28041f62ee44933","previewModeSigningKey":"610cfd2fa42a88e61ae61faae855c76db06f985920df3721d13884cb36fbb7db","previewModeEncryptionKey":"eacd6e7774a10ff98cd790ede7646ddaafee1d5c902c5cb053e73935b6fa5785"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "fcc1a2b2474a522ae6a6fa19e81269de",
+    "previewModeSigningKey": "64bdc7f654b17a430515e0e4a1e4222f4f502e4b7608748c8183556b3c26c789",
+    "previewModeEncryptionKey": "2e4c8dd540ad192e6f224393bdc475de161000d9970fa91487f513746980f007"
+  }
+}

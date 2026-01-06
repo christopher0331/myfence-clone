@@ -4,6 +4,8 @@ export const TRUSTINDEX_SCRIPT_SRC = `https://cdn.trustindex.io/loader.js?${TRUS
 type MountOptions = {
   /** Only load the script when the widget scrolls near the viewport */
   rootMargin?: string;
+  /** If true, load immediately without intersection gating */
+  immediate?: boolean;
   /** Delay before loading the script after intersection */
   delayMs?: number;
   /** Called once the loader script is loaded (or already present) */
@@ -31,15 +33,18 @@ function ensureTrustindexScript(onLoaded?: () => void) {
   );
 
   if (existing) {
+    console.info("[Trustindex] script already present");
     onLoaded?.();
     return () => {};
   }
 
+  console.info("[Trustindex] injecting script", TRUSTINDEX_SCRIPT_SRC);
   const script = document.createElement("script");
   script.src = TRUSTINDEX_SCRIPT_SRC;
   script.async = true;
   script.defer = true;
   script.onload = () => onLoaded?.();
+  script.onerror = (e) => console.error("[Trustindex] script load error", e);
   document.body.appendChild(script);
 
   return () => {
@@ -48,12 +53,13 @@ function ensureTrustindexScript(onLoaded?: () => void) {
 }
 
 export function mountTrustindexWidget(container: HTMLElement, options: MountOptions = {}) {
-  const { rootMargin = "250px", delayMs = 1200, onLoaded } = options;
+  const { rootMargin = "250px", delayMs = 1200, onLoaded, immediate = false } = options;
 
   const widgetDiv = document.createElement("div");
   widgetDiv.setAttribute("data-widget-id", TRUSTINDEX_WIDGET_ID);
   widgetDiv.className = "trustindex-widget";
   container.appendChild(widgetDiv);
+  console.info("[Trustindex] widget div appended");
 
   let cancelled = false;
   let cancelIdle: (() => void) | null = null;
@@ -67,20 +73,28 @@ export function mountTrustindexWidget(container: HTMLElement, options: MountOpti
     });
   };
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) return;
-      observer.disconnect();
-      delayTimer = window.setTimeout(load, delayMs);
-    },
-    { rootMargin },
-  );
+  if (immediate) {
+    console.info("[Trustindex] immediate load requested");
+    delayTimer = window.setTimeout(load, delayMs);
+  } else {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        delayTimer = window.setTimeout(load, delayMs);
+      },
+      { rootMargin },
+    );
 
-  observer.observe(container);
+    console.info("[Trustindex] observing for viewport", { rootMargin });
+    observer.observe(container);
+  }
 
   return () => {
     cancelled = true;
-    observer.disconnect();
+    // observer only exists when not immediate
+    // @ts-ignore
+    if (typeof observer !== "undefined") observer.disconnect();
     if (delayTimer) window.clearTimeout(delayTimer);
     cancelIdle?.();
     widgetDiv.remove();

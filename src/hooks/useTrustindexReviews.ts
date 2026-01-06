@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { mountTrustindexWidget } from "@/lib/trustindex";
 
 interface Review {
   id?: string;
@@ -35,35 +34,39 @@ export const useTrustindexReviews = () => {
     loadReviews();
   }, []);
 
-  // Load Trustindex reviews widget and sync to database
+  // Load Trustindex reviews widget and sync to database (legacy direct embed)
   useEffect(() => {
     if (!reviewsRef.current) return;
 
-    const cleanup = mountTrustindexWidget(reviewsRef.current, {
-      // Load a bit after the user scrolls near reviews, and during idle time.
-      rootMargin: "400px",
-      delayMs: 1500,
-      onLoaded: () => {
-        // Avoid heavy DOM scraping during critical rendering.
-        window.setTimeout(async () => {
-          try {
-            const w = window as unknown as { __trustindexScraped?: boolean };
-            if (w.__trustindexScraped) return;
-            w.__trustindexScraped = true;
+    const widgetDiv = document.createElement("div");
+    widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");
+    widgetDiv.className = "trustindex-widget";
+    reviewsRef.current.appendChild(widgetDiv);
 
-            const scrapedReviews = scrapeReviewsFromWidget();
-            if (scrapedReviews.length > 0) {
-              await syncReviewsToDatabase(scrapedReviews, setReviews);
-            }
-          } catch (error) {
-            console.error("Error scraping reviews:", error);
+    const script = document.createElement("script");
+    script.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
+    script.async = true;
+    script.defer = true;
+
+    script.onload = () => {
+      setTimeout(async () => {
+        try {
+          const scrapedReviews = scrapeReviewsFromWidget();
+
+          if (scrapedReviews.length > 0) {
+            await syncReviewsToDatabase(scrapedReviews, setReviews);
           }
-        }, 6000);
-      },
-    });
+        } catch (error) {
+          console.error('Error scraping reviews:', error);
+        }
+      }, 4000);
+    };
+
+    reviewsRef.current.appendChild(script);
 
     return () => {
-      cleanup();
+      script.remove();
+      widgetDiv.remove();
       if (reviewsRef.current) reviewsRef.current.innerHTML = "";
     };
   }, []);

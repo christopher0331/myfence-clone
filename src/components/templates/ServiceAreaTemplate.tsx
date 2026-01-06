@@ -84,8 +84,8 @@ const ServiceAreaTemplate = ({
     import("@/lib/trustindex").then(({ mountTrustindexWidget }) => {
       if (!reviewsRef.current) return;
       const cleanup = mountTrustindexWidget(reviewsRef.current, {
-        rootMargin: "400px",
-        delayMs: 1500,
+        immediate: true,
+        delayMs: 0,
       });
 
       // attach cleanup to ref so unmount clears it
