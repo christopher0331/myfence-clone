@@ -150,7 +150,7 @@ const Header = () => {
               height={56}
               sizes="140px"
               priority
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain min-w-[75px] min-h-[75px]"
             />
           </Link>
 

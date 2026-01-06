@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
 import Image from "next/image";
 import { imageKitLoader } from "@/lib/imagekit";
+import type { ImageLoader } from "next/image";
 
 interface PopularStylesSectionProps {
   onOpenQuoteModal: () => void;
@@ -11,6 +12,15 @@ interface PopularStylesSectionProps {
 
 const pictureFrameHeroUrl =
   "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Pictrue%20Frame%20Fence%20Hero.webp?updatedAt=1762037742056";
+
+// Heavier compression + clamp width for mobile; leave desktop quality unchanged.
+const mobileCompressedPictureFrameLoader: ImageLoader = ({ src, width, quality }) => {
+  const targetW = width <= 640 ? 328 : width;
+  const q = width <= 640 ? 32 : quality ?? 80;
+  const url = new URL(src);
+  url.searchParams.set("tr", `w-${targetW},q-${q}`);
+  return url.toString();
+};
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
   return (
@@ -25,7 +35,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                 <AspectRatio ratio={1}>
                   <div className="relative h-full w-full">
                     <Image
-                      loader={imageKitLoader}
+                      loader={mobileCompressedPictureFrameLoader}
                       src={pictureFrameHeroUrl}
                       alt="Picture frame cedar fence by MyFence.com in Seattle"
                       fill

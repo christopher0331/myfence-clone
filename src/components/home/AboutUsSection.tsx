@@ -3,12 +3,21 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
 import Image from "next/image";
 import { imageKitLoader } from "@/lib/imagekit";
+import type { ImageLoader } from "next/image";
 
 interface AboutUsSectionProps {
   onOpenQuoteModal: () => void;
 }
 
 export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
+  const aboutUsMobileCompressedLoader: ImageLoader = ({ src, width, quality }) => {
+    const targetW = width <= 640 ? 324 : width;
+    const q = width <= 640 ? 32 : quality ?? 78;
+    const url = new URL(src);
+    url.searchParams.set("tr", `w-${targetW},q-${q}`);
+    return url.toString();
+  };
+
   return (
     <section className="container relative z-10 -mt-12 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
       <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
@@ -41,7 +50,7 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
             <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
               <div className="relative h-full w-full">
                 <Image
-                  loader={imageKitLoader}
+                  loader={aboutUsMobileCompressedLoader}
                   src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
                   alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
                   fill
