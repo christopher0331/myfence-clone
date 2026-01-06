@@ -48,15 +48,6 @@ serve(async (req) => {
   }
 
   try {
-    // Verify Turnstile token
-    const secretKey = Deno.env.get("CLOUDFLARE_SECRET_KEY");
-    if (!secretKey) {
-      return new Response(JSON.stringify({ error: "Turnstile secret not configured" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
     const webhookUrl = Deno.env.get("LEAD_WEBHOOK_URL");
     const apiKey = Deno.env.get("LEAD_WEBHOOK_API_KEY");
 
@@ -75,31 +66,6 @@ serve(async (req) => {
     }
 
     const leadData: LeadData = await req.json();
-
-    if (!leadData.turnstileToken) {
-      return new Response(JSON.stringify({ error: "Missing Turnstile token" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
-    const verifyResp = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        secret: secretKey,
-        response: leadData.turnstileToken,
-      }),
-    }).catch(() => null);
-
-    const verifyJson = verifyResp ? await verifyResp.json().catch(() => null) : null;
-
-    if (!verifyJson?.success) {
-      return new Response(JSON.stringify({ error: "Turnstile verification failed" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
 
     const firstName = toStr(leadData.firstName);
     const lastName = toStr(leadData.lastName);
