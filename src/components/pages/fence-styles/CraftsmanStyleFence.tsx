@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { ArrowLeft } from "lucide-react";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
 const heroImg = "/lovable-uploads/1ab1a228-3d1d-4b69-8561-371fabba22e1.png"; // Angled craftsman fence with Fence Genius planning
@@ -149,36 +150,62 @@ const CraftsmanStyleFence = () => {
         structuredData={structuredData}
       />
 
-      <article className="container pt-24 md:pt-32 pb-10">
-        <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">Craftsman Style Fence</h1>
-            <p className="mt-3 text-muted-foreground max-w-prose">
-              The craftsman style fence features an alternating board pattern with 5' and 6' fence boards,
-              creating 12" gaps for wind flow and visibility. Built with 3 rails, 3 trim, and a top cap in
-              #1 grade cedar for a unique architectural look with Fence Genius precision.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">Unique Pattern</Badge>
-              <Badge variant="secondary">Wind Flow</Badge>
-              <Badge variant="secondary">Fence Genius Precision</Badge>
+      <div className="min-h-screen bg-background">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">
+                Fence Styles
+              </Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">Craftsman Style Fence</span>
             </div>
           </div>
-          <div>
-            <AspectRatio ratio={16 / 9}>
-              <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
-            </AspectRatio>
-          </div>
-        </header>
+        </nav>
 
-        <section className="mt-6">
-          <Alert>
-            <AlertTitle>Distinctive Craftsman Design</AlertTitle>
-            <AlertDescription>The alternating board pattern creates a unique visual appeal while providing wind flow and enhanced visibility.</AlertDescription>
-          </Alert>
-        </section>
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-8">
+          <Button variant="ghost" asChild className="mb-4">
+            <Link href="/fence-styles" className="flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Fence Styles
+            </Link>
+          </Button>
 
-        <section className="mt-10 space-y-8 max-w-6xl mx-auto">
+          <article className="pt-2 md:pt-4 pb-10">
+            <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
+              <div>
+                <h1 className="text-4xl font-bold tracking-tight">Craftsman Style Fence</h1>
+                <p className="mt-3 text-muted-foreground max-w-prose">
+                  The craftsman style fence features an alternating board pattern with 5' and 6' fence boards,
+                  creating 12" gaps for wind flow and visibility. Built with 3 rails, 3 trim, and a top cap in
+                  #1 grade cedar for a unique architectural look with Fence Genius precision.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <Badge variant="secondary">Unique Pattern</Badge>
+                  <Badge variant="secondary">Wind Flow</Badge>
+                  <Badge variant="secondary">Fence Genius Precision</Badge>
+                </div>
+              </div>
+              <div>
+                <AspectRatio ratio={16 / 9}>
+                  <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
+                </AspectRatio>
+              </div>
+            </header>
+
+            <section className="mt-6">
+              <Alert>
+                <AlertTitle>Distinctive Craftsman Design</AlertTitle>
+                <AlertDescription>The alternating board pattern creates a unique visual appeal while providing wind flow and enhanced visibility.</AlertDescription>
+              </Alert>
+            </section>
+
+            <section className="mt-10 space-y-8 max-w-6xl mx-auto">
           <div className="space-y-6">
             <Card className="p-6 md:p-8 glass-card">
               <h2 className="text-2xl font-semibold tracking-tight">Why homeowners choose craftsman style</h2>
@@ -409,8 +436,8 @@ const CraftsmanStyleFence = () => {
         </section>
 
         {/* About Craftsman Style Fencing */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
+            <section className="py-16 bg-background">
+              <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">About Craftsman Style Fencing</h2>
             
             {/* Unique Alternating Pattern */}
@@ -453,8 +480,10 @@ const CraftsmanStyleFence = () => {
             </div>
             <PaymentCalculator />
           </div>
-        </section>
-      </article>
+            </section>
+          </article>
+        </div>
+      </div>
     </>
   );
 };

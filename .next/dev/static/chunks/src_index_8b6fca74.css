@@ -5001,6 +5001,10 @@ html, body {
     padding-top: 9rem;
   }
 
+  .md\:pt-4 {
+    padding-top: 1rem;
+  }
+
   .md\:text-left {
     text-align: left;
   }
