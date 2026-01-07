@@ -1,9 +1,16 @@
 {
-  "[project]/Desktop/repos/myfence-clone/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/Desktop/repos/myfence-clone/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)",
+  "[project]/src/components/ArticleSummary.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/ArticleSummary.tsx [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/Desktop_repos_myfence-clone_adbcb59f._.js",
-      "static/chunks/Desktop_repos_myfence-clone_src_components_GoogleBusinessMap_tsx_5711ece5._.js"
+      "static/chunks/_11145511._.js",
+      "static/chunks/src_components_ArticleSummary_tsx_8a2427bf._.js"
+    ]
+  },
+  "[project]/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/GoogleBusinessMap.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_a8a6a164._.js",
+      "static/chunks/src_components_GoogleBusinessMap_tsx_8a2427bf._.js"
     ]
   }
 }

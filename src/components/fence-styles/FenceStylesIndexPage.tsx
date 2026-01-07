@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Seo from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -82,6 +83,11 @@ const addOns = [
 ];
 
 const FenceStylesIndexPage = () => {
+  // Ensure page loads at the top (mobile menu link was leaving us offset)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
+
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -195,8 +201,8 @@ const FenceStylesIndexPage = () => {
           {styles.map((s) => (
             <Card key={s.title} className="overflow-hidden hover:shadow-elevated transition-shadow h-full flex flex-col group">
               <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span className="group-hover:text-primary transition-colors">{s.title}</span>
+                <CardTitle className="flex items-start justify-between gap-2 flex-wrap">
+                  <span className="group-hover:text-primary transition-colors leading-tight">{s.title}</span>
                   {s.badge && <Badge variant="secondary">{s.badge}</Badge>}
                 </CardTitle>
               </CardHeader>
@@ -208,9 +214,9 @@ const FenceStylesIndexPage = () => {
                     className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
                   />
                 </AspectRatio>
-                <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
+                <p className="text-sm text-muted-foreground mt-4 leading-tight">{s.desc}</p>
                 <div className="mt-auto pt-4">
-                  <Button asChild className="w-full">
+                  <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                     <Link href={s.link}>Learn More</Link>
                   </Button>
                 </div>
@@ -232,8 +238,8 @@ const FenceStylesIndexPage = () => {
           {postOptions.map((p) => (
             <Card key={p.title} className="hover:shadow-elevated transition-shadow flex flex-col">
               <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>{p.title}</span>
+                <CardTitle className="flex items-start justify-between gap-2 flex-wrap">
+                  <span className="leading-tight">{p.title}</span>
                   <Badge variant="secondary">{p.badge}</Badge>
                 </CardTitle>
               </CardHeader>
@@ -245,35 +251,35 @@ const FenceStylesIndexPage = () => {
                     className="w-full h-full object-cover rounded-md"
                   />
                 </AspectRatio>
-                <p className="text-sm text-muted-foreground mt-4 mb-4">{p.desc}</p>
+                <p className="text-sm text-muted-foreground mt-4 mb-4 leading-tight">{p.desc}</p>
                 {p.title === '3.5" x 3.5" Fence Posts' && (
-                  <Button asChild className="mt-auto w-full" variant="destructive">
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2" variant="destructive">
                     <Link href="/fence-posts/3-5-posts">Learn Why We Don't Use These</Link>
                   </Button>
                 )}
                 {p.title === "4.125\" x 4.125\" x 9' Posts" && (
-                  <Button asChild className="mt-auto w-full">
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2">
                     <Link href="/fence-posts/4-125-posts">Learn More</Link>
                   </Button>
                 )}
                 {p.title === "5.5\" x 5.5\" x 10' (6x6)" && (
-                  <Button asChild className="mt-auto w-full">
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2">
                     <Link href="/fence-posts/6x6">Learn More About 6x6 Posts</Link>
                   </Button>
                 )}
                 {p.title === "4x4 Steel Posts" && (
-                  <Button asChild className="mt-auto w-full">
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2">
                     <Link href="/fence-posts/steel-posts">Learn More About Steel Posts</Link>
                   </Button>
                 )}
                 {p.title === "Post on Pipe" && (
-                  <Button asChild className="mt-auto w-full">
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2">
                     <Link href="/fence-upgrades/post-on-pipe">Learn More About Post on Pipe</Link>
                   </Button>
                 )}
                 {p.title === "Cedar Post on Pipe" && (
-                  <Button asChild className="mt-auto w-full">
-                    <Link href="/fence-posts/cedar-post-on-pipe">Learn More About Cedar Post on Pipe</Link>
+                  <Button asChild className="mt-auto w-full text-sm whitespace-normal leading-tight justify-center py-2">
+                    <Link href="/fence-posts/cedar-post-on-pipe">See Cedar Post on Pipe</Link>
                   </Button>
                 )}
               </CardContent>
@@ -293,7 +299,7 @@ const FenceStylesIndexPage = () => {
           {addOns.map((a) => (
             <Card key={a.title} className="hover:shadow-elevated transition-shadow flex flex-col">
               <CardHeader>
-                <CardTitle>{a.title}</CardTitle>
+                <CardTitle className="leading-tight">{a.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
                 <AspectRatio ratio={1}>
@@ -303,45 +309,45 @@ const FenceStylesIndexPage = () => {
                     className="w-full h-full object-cover rounded-md"
                   />
                 </AspectRatio>
-                <p className="text-sm text-muted-foreground mt-4">{a.desc}</p>
+                <p className="text-sm text-muted-foreground mt-4 leading-tight">{a.desc}</p>
                 <div className="mt-auto pt-4">
                   {a.title === 'Upgrade to 4" Screws' && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/exterior-screws">Learn More About Exterior Screws</Link>
                     </Button>
                   )}
                   {a.title === "Clear Cedar Fence Boards Upgrade" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/clear-cedar">Learn More About Clear Cedar</Link>
                     </Button>
                   )}
                   {a.title === "Board on Board Style" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/board-on-board">Learn More About Board on Board</Link>
                     </Button>
                   )}
                   {a.title === "2x4 Rot Board" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/rot-board">Learn More About Rot Boards</Link>
                     </Button>
                   )}
                   {a.title === "2 Foot Lattice Topper" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/lattice-toppers">Learn More About Lattice Toppers</Link>
                     </Button>
                   )}
                   {a.title === "Pre-Staining" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/pre-staining-cedar-fence">Learn More About Pre-Staining</Link>
                     </Button>
                   )}
                   {a.title === "Soil Haul-Away" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/soil-haul-away">Learn More About Soil Haul-Away</Link>
                     </Button>
                   )}
                   {a.title === "Trellis Systems" && (
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/trellis-systems">Learn More About Trellis Systems</Link>
                     </Button>
                   )}

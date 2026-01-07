@@ -1,18 +1,5 @@
 {
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/discounts/page": "app/discounts/page.js",
-  "/fence-genius/page": "app/fence-genius/page.js",
-  "/fence-styles/3-rail-picture-frame-fence/page": "app/fence-styles/3-rail-picture-frame-fence/page.js",
-  "/fence-styles/horizontal-lattice-fence/page": "app/fence-styles/horizontal-lattice-fence/page.js",
   "/fence-styles/page": "app/fence-styles/page.js",
-  "/fence-styles/picture-frame-fence/page": "app/fence-styles/picture-frame-fence/page.js",
-  "/financing/page": "app/financing/page.js",
-  "/gallery/page": "app/gallery/page.js",
   "/page": "app/page.js",
-  "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/quote/page": "app/quote/page.js",
-  "/service-areas/north-bend/page": "app/service-areas/north-bend/page.js",
-  "/service-areas/sumner/page": "app/service-areas/sumner/page.js",
-  "/terms-conditions/page": "app/terms-conditions/page.js"
+  "/quote/page": "app/quote/page.js"
 }
