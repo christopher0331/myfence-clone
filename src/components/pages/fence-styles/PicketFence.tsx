@@ -57,8 +57,21 @@ const PicketFence = () => {
       />
       
       <div className="min-h-screen bg-background">
-        {/* Navigation */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-4">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">Fence Styles</Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">Picket Fence</span>
+            </div>
+          </div>
+        </nav>
+
+        {/* Back Button */}
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           <Button variant="ghost" asChild className="mb-2">
             <Link href="/fence-styles" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />

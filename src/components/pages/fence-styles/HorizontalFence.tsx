@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Award, Clock, Wrench, Star, CheckCircle } from 'lucide-react';
+import { Shield, Award, Clock, Wrench, Star, CheckCircle, ArrowLeft } from 'lucide-react';
 import QuoteModal from '@/components/QuoteModal';
 import InlineQuoteForm from '@/components/forms/InlineQuoteForm';
 import VirtualQuoteTool from '@/components/VirtualQuoteTool';
@@ -97,14 +97,18 @@ const HorizontalFence = () => {
       
       <div className="min-h-screen bg-background">
         {/* Breadcrumb */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36">
-          <nav className="text-sm text-muted-foreground mb-8">
+        <div className="container mx-auto px-4 pt-4 md:pt-28">
+          <nav className="text-sm text-muted-foreground mb-4">
             <Link href="/" className="hover:text-primary">Home</Link>
             <span className="mx-2">/</span>
             <Link href="/fence-styles" className="hover:text-primary">Fence Styles</Link>
             <span className="mx-2">/</span>
             <span>Horizontal Fence</span>
           </nav>
+          <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Fence Styles
+          </Link>
         </div>
 
         {/* Hero Section */}

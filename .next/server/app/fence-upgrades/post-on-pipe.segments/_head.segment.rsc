@@ -2,6 +2,6 @@
 2:I[97367,["/_next/static/chunks/c2841c2553815d1e.js","/_next/static/chunks/d0f194f1021c0223.js"],"ViewportBoundary"]
 4:I[97367,["/_next/static/chunks/c2841c2553815d1e.js","/_next/static/chunks/d0f194f1021c0223.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
-0:{"buildId":"B9NziTLmX5EDjkhlOAfCY","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+0:{"buildId":"hVvnEkUMgZw79QCmM6-RX","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 6:[["$","title","0",{"children":"Post on Pipe Fence Posts | Rot-Free Foundation | Seattle"}],["$","meta","1",{"name":"description","content":"Eliminate fence post rot with our Post on Pipe system. Galvanized steel pipe foundation prevents soil contact damage. Perfect for Pacific Northwest fences."}],["$","link","2",{"rel":"canonical","href":"https://myfence.com/fence-upgrades/post-on-pipe"}]]

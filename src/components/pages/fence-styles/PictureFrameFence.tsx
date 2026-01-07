@@ -163,7 +163,7 @@ const PictureFrameFence = () => {
       
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Navigation */}
-        <nav className="bg-background pt-8 pb-3 border-b">
+        <nav className="bg-background pt-4 pb-2 border-b">
           <div className="container mx-auto px-4">
             <div className="flex items-center space-x-2 text-sm">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
@@ -175,7 +175,7 @@ const PictureFrameFence = () => {
           </div>
         </nav>
 
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-8">
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           {/* Back Button */}
           <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
