@@ -409,7 +409,7 @@ const styles = [
         link: "/fence-styles/cedar-steel-hybrid-fence"
     },
     {
-        img: "/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png",
+        img: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4554.webp?updatedAt=1766269883425",
         title: "5' Galvanized Hogwire Fence",
         desc: "Strong galvanized wire panels for durable visibility and style.",
         link: "/fence-styles/galvanized-hogwire-fence"

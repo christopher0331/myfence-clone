@@ -6,6 +6,7 @@ interface OptimizedImageProps {
   alt: string;
   className?: string;
   loading?: 'lazy' | 'eager';
+  fetchPriority?: 'high' | 'low' | 'auto';
   width?: number;
   height?: number;
   onLoad?: () => void;
@@ -17,6 +18,7 @@ const OptimizedImage = memo(({
   alt, 
   className = '', 
   loading = 'lazy',
+  fetchPriority = 'auto',
   width,
   height,
   onLoad,
@@ -30,6 +32,7 @@ const OptimizedImage = memo(({
       alt={alt}
       className={className}
       loading={loading}
+      fetchPriority={fetchPriority}
       width={width}
       height={height}
       onLoad={onLoad}

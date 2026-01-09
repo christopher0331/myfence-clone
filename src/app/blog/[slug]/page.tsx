@@ -19,6 +19,7 @@ const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<
   "street-setback": () => import("@/components/pages/blog/StreetSetback"),
   "property-line": () => import("@/components/pages/blog/PropertyLine"),
   "material-cost-2025": () => import("@/components/pages/blog/MaterialCost2025"),
+  "pre-staining-dry-panels": () => import("@/components/pages/blog/PreStainingDryPanels"),
 };
 
 interface BlogPostPageProps {
