@@ -1,13 +1,3 @@
 {
-  "/fence-posts/3-5-posts/page": "app/fence-posts/3-5-posts/page.js",
-  "/fence-styles/3-rail-picture-frame-fence/page": "app/fence-styles/3-rail-picture-frame-fence/page.js",
-  "/fence-styles/craftsman-style-fence/page": "app/fence-styles/craftsman-style-fence/page.js",
-  "/fence-styles/horizontal-fence/page": "app/fence-styles/horizontal-fence/page.js",
-  "/fence-styles/page": "app/fence-styles/page.js",
-  "/fence-styles/picket-fence/page": "app/fence-styles/picket-fence/page.js",
-  "/fence-styles/picture-frame-fence/page": "app/fence-styles/picture-frame-fence/page.js",
-  "/fence-styles/solid-board-fence/page": "app/fence-styles/solid-board-fence/page.js",
-  "/fence-upgrades/exterior-screws/page": "app/fence-upgrades/exterior-screws/page.js",
-  "/page": "app/page.js",
-  "/quote/page": "app/quote/page.js"
+  "/page": "app/page.js"
 }
