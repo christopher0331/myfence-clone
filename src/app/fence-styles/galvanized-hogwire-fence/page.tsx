@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     url: "https://myfence.com/fence-styles/galvanized-hogwire-fence",
     images: [
       {
-        url: "https://myfence.com/lovable-uploads/84481d29-7e44-45ca-8f45-7cb118cf360e.png",
+        url: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4554.webp?updatedAt=1766269883425&tr=w-1200,q-75",
         width: 1200,
-        height: 630,
-        alt: "Galvanized hogwire fence in Seattle by MyFence.com",
+        height: 800,
+        alt: "5' galvanized hogwire fence hero image by MyFence.com",
       },
     ],
   },

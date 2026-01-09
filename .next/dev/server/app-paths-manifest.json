@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/service-areas/enumclaw/page": "app/service-areas/enumclaw/page.js"
+  "/fence-styles/galvanized-hogwire-fence/page": "app/fence-styles/galvanized-hogwire-fence/page.js",
+  "/fence-styles/page": "app/fence-styles/page.js"
 }
