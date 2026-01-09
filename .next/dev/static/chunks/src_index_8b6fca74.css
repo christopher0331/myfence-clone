@@ -3362,10 +3362,6 @@ html, body {
   animation-timing-function: cubic-bezier(0, 0, .2, 1);
 }
 
-.running {
-  animation-play-state: running;
-}
-
 .bg-gradient-primary {
   background-image: var(--gradient-primary);
 }

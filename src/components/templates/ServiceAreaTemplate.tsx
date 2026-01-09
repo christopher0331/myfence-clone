@@ -5,12 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import { useMemo, useEffect, useRef, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useMemo, useState } from "react";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import FenceStylesPreview from "@/components/FenceStylesPreview";
+import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
 
 export interface Neighborhood {
   name: string;
@@ -54,50 +54,8 @@ const ServiceAreaTemplate = ({
   enhancedBusinessData
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-  const reviewsRef = useRef<HTMLDivElement | null>(null);
-  const [reviews, setReviews] = useState<any[]>([]);
+  const { reviews, reviewsRef } = useTrustindexReviews();
   const [showFullClimate, setShowFullClimate] = useState(false);
-  
-  // Load reviews from Supabase
-  useEffect(() => {
-    const loadReviews = async () => {
-      const { data, error } = await supabase
-        .from('reviews')
-        .select('*')
-        .order('review_date', { ascending: false });
-      
-      if (error) {
-        console.error('Error loading reviews:', error);
-      } else if (data) {
-        setReviews(data);
-      }
-    };
-
-    loadReviews();
-  }, []);
-  
-  // Load Trustindex reviews widget
-  useEffect(() => {
-    console.log('[ServiceArea] useEffect - Trustindex widget setup running');
-    if (!reviewsRef.current) return;
-    // Defer Trustindex loader (prevents main-thread work near LCP)
-    import("@/lib/trustindex").then(({ mountTrustindexWidget }) => {
-      if (!reviewsRef.current) return;
-      const cleanup = mountTrustindexWidget(reviewsRef.current, {
-        rootMargin: "400px",
-        delayMs: 1500,
-      });
-
-      // attach cleanup to ref so unmount clears it
-      (reviewsRef.current as any).__trustindexCleanup = cleanup;
-    });
-
-    return () => {
-      const c = (reviewsRef.current as any)?.__trustindexCleanup as undefined | (() => void);
-      c?.();
-      if (reviewsRef.current) reviewsRef.current.innerHTML = "";
-    };
-  }, []);
   
   const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
