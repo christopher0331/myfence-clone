@@ -227,7 +227,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/pre-staining-dry-panels": {
+    "/blog/onsite-staining-vs-pre-staining": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -241,7 +241,7 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/pre-staining-dry-panels.rsc",
+      "dataRoute": "/blog/onsite-staining-vs-pre-staining.rsc",
       "prefetchDataRoute": null,
       "allowHeader": [
         "host",

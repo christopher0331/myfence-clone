@@ -160,6 +160,15 @@ const blogArticles = [
         image: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
         readTime: "7 min read",
         publishDate: "January 2025"
+    },
+    {
+        id: "onsite-staining-vs-pre-staining",
+        title: "Onsite Fence Staining Problems vs Pre Staining Components",
+        category: "Maintenance",
+        description: "Why MyFence.com dries every board, stains all sides, and avoids onsite staining risks like hidden surfaces, rain, and cold snaps.",
+        image: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4369.webp?tr=w-960,q-70",
+        readTime: "6 min read",
+        publishDate: "January 2026"
     }
 ];
 }),
@@ -356,7 +365,8 @@ const blogPostComponents = {
     "fence-ownership": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/FenceOwnership.tsx [app-rsc] (ecmascript, async loader)"),
     "street-setback": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/StreetSetback.tsx [app-rsc] (ecmascript, async loader)"),
     "property-line": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/PropertyLine.tsx [app-rsc] (ecmascript, async loader)"),
-    "material-cost-2025": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/MaterialCost2025.tsx [app-rsc] (ecmascript, async loader)")
+    "material-cost-2025": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/MaterialCost2025.tsx [app-rsc] (ecmascript, async loader)"),
+    "onsite-staining-vs-pre-staining": ()=>__turbopack_context__.A("[project]/src/components/pages/blog/PreStainingDryPanels.tsx [app-rsc] (ecmascript, async loader)")
 };
 async function generateStaticParams() {
     return __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$blogArticles$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["blogArticles"].map((article)=>({
@@ -423,12 +433,12 @@ async function BlogPostPage({ params }) {
                 structuredData: structuredData
             }, void 0, false, {
                 fileName: "[project]/src/app/blog/[slug]/page.tsx",
-                lineNumber: 95,
+                lineNumber: 96,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {}, void 0, false, {
                 fileName: "[project]/src/app/blog/[slug]/page.tsx",
-                lineNumber: 102,
+                lineNumber: 103,
                 columnNumber: 7
             }, this)
         ]
