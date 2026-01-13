@@ -201,13 +201,15 @@ const FenceStylesIndexPage = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
-                <AspectRatio ratio={1}>
-                  <OptimizedImage
-                    src={s.img}
-                    alt={`${s.title} fence in Seattle by MyFence.com`}
-                    className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
-                  />
-                </AspectRatio>
+                <Link href={s.link} className="block cursor-pointer">
+                  <AspectRatio ratio={1}>
+                    <OptimizedImage
+                      src={s.img}
+                      alt={`${s.title} fence in Seattle by MyFence.com`}
+                      className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </AspectRatio>
+                </Link>
                 <p className="text-sm text-muted-foreground mt-4">{s.desc}</p>
                 <div className="mt-auto pt-4">
                   <Button asChild className="w-full">

@@ -167,7 +167,7 @@ const RedmondArticle = () => (
           Horizontal <strong>cedar designs</strong> have become extremely popular in Redmond, reflecting the contemporary aesthetic preferred by tech professionals. Our precision manufacturing and Fence Genius technology ensure every board aligns perfectly. <strong>Hogwire fencing</strong> offers modern rustic appeal for properties wanting open views of greenbelts. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance perfect for busy professionals - black aluminum panels with cedar framing that never requires staining.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          For properties backing to forests or greenbelt, 8-foot fence heights effectively deter deer while providing maximum privacy. All installations use MyFence.com's superior 4.125" x 4.125" posts with nearly 5 square inches more cross-sectional area than box store posts. We install posts with concrete poured to surface level, preventing soil contact and rot. This attention to detail ensures decades of protection for your property.
+          For properties backing to forests or greenbelt, 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) effectively deter deer while providing maximum privacy. All installations use MyFence.com's superior 4.125" x 4.125" posts with nearly 5 square inches more cross-sectional area than box store posts. We install posts with concrete poured to surface level, preventing soil contact and rot. This attention to detail ensures decades of protection for your property.
         </p>
       </div>
 
@@ -312,7 +312,7 @@ const RedmondArticle = () => (
             Wildlife Deterrence
           </h3>
           <p className="text-muted-foreground leading-relaxed">
-            Properties backing to Bridle Trails or greenbelt areas face persistent deer pressure. Our 8-foot fence heights with reinforced posts effectively deter wildlife while maintaining aesthetic appeal. We understand Redmond's balance between nature access and property protection.
+            Properties backing to Bridle Trails or greenbelt areas face persistent deer pressure. Our 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) with reinforced posts effectively deter wildlife while maintaining aesthetic appeal. We understand Redmond's balance between nature access and property protection.
           </p>
         </div>
         <div>
@@ -367,7 +367,7 @@ const RedmondArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">What fence height deters deer in Redmond?</h4>
           <p className="text-muted-foreground">
-            For effective deer deterrence in Redmond's greenbelt-adjacent properties, we recommend 8-foot fence heights. Deer can jump 6-foot fences when motivated by garden plants or landscaping. Our 8-foot privacy fence installations use reinforced 4.125" x 4.125" posts for the additional strength required, ensuring your fence remains stable and straight for decades while protecting your landscaping investment from wildlife damage.
+            For effective deer deterrence in Redmond's greenbelt-adjacent properties, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet). Deer can jump 6-foot fences when motivated by garden plants or landscaping. Our installations with lattice toppers use reinforced 4.125" x 4.125" posts for the additional strength required, ensuring your fence remains stable and straight for decades while protecting your landscaping investment from wildlife damage.
           </p>
         </div>
         <div>
@@ -419,7 +419,7 @@ const Redmond = () => {
         "name": "What fence height deters deer in Redmond?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For effective deer deterrence in Redmond's greenbelt-adjacent properties, we recommend 8-foot fence heights. Deer can jump 6-foot fences when motivated by garden plants or landscaping. Our 8-foot privacy fence installations use reinforced 4.125 inch x 4.125 inch posts for the additional strength required."
+          "text": "For effective deer deterrence in Redmond's greenbelt-adjacent properties, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet). Deer can jump 6-foot fences when motivated by garden plants or landscaping. Our installations with lattice toppers use reinforced 4.125 inch x 4.125 inch posts for the additional strength required."
         }
       },
       {

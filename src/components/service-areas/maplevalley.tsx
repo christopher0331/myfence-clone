@@ -43,7 +43,7 @@ const MapleValleyArticle = () => (
         <strong>Cedar fencing</strong> offers natural resistance to rot and insects, with beautiful grain patterns complementing Maple Valley's forested aesthetic. For properties bordering wooded areas, clear-grade cedar provides enhanced durability with fewer weak points. <strong>Hogwire fencing</strong> combines rustic charm with wildlife deterrence, perfect for properties backing onto greenbelts. Our <strong>Hybrid Aluminum/Cedar system</strong> delivers low-maintenance performance for busy families, with aluminum panels that never require staining.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        For garden protection against deer, we recommend 8-foot cedar privacy fences or hogwire systems. All installations use our reinforced 4.125" x 4.125" posts - nearly 5 square inches more cross-sectional area than box store posts - ensuring your fence withstands Maple Valley's weather and wildlife for decades.
+        For garden protection against deer, we recommend 6-foot cedar privacy fences with 2-foot lattice toppers (totaling 8 feet) or hogwire systems. All installations use our reinforced 4.125" x 4.125" posts - nearly 5 square inches more cross-sectional area than box store posts - ensuring your fence withstands Maple Valley's weather and wildlife for decades.
       </p>
     </section>
     
@@ -202,7 +202,7 @@ const MapleValley = () => {
       localSolutions={[
         "Slope-adapted fence designs maintaining level appearance",
         "Reinforced posts for areas with challenging root systems",
-        "8-foot privacy options for wildlife deterrence",
+        "6-foot fences with lattice toppers for wildlife deterrence",
         "Drainage-conscious installation preventing water pooling"
       ]}
       articleContent={<MapleValleyArticle />}

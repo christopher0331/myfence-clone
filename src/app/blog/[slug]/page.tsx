@@ -7,7 +7,7 @@ import type { ComponentType } from "react";
 // Dynamic imports for blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
   "steel-vs-wood-posts": () => import("@/components/pages/blog/SteelVsWoodPosts"),
-  "cedar-aluminum-hybrid-fence-mdx": () => import("@/components/pages/blog/CedarAluminumHybridFenceMDX"),
+  "cedar-steel-hybrid-fence": () => import("@/components/pages/blog/CedarAluminumHybridFenceMDX"),
   "cedar-board-grade": () => import("@/components/pages/blog/CedarBoardGrade"),
   "virtual-quote-tool": () => import("@/components/pages/blog/VirtualQuoteTool"),
   "six-ft-fence-cost": () => import("@/components/pages/blog/SixFtFenceCost"),

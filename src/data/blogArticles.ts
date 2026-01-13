@@ -11,7 +11,7 @@ export const blogArticles = [
     publishDate: "December 2025"
   },
   {
-    id: "cedar-aluminum-hybrid-fence-mdx",
+    id: "cedar-steel-hybrid-fence",
     title: "Cedar/Steel Hybrid Fence: The Ultimate Guide to Modern Privacy Fencing",
     category: "Premium Fencing",
     description: "Discover the cedar/steel hybrid fence system - 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Learn about pricing ($80/LF), 30-year warranty options, and why this is the ultimate privacy fence investment.",

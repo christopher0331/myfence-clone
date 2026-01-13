@@ -295,6 +295,22 @@ const CedarAluminumHybridFence = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Barrier Boss Deep Groove Panels</h2>
+            <div className="max-w-4xl mx-auto mb-12">
+              <Card className="overflow-hidden pointer-events-none">
+                <CardContent className="p-0">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      className="w-full h-full pointer-events-none"
+                      src="https://www.youtube.com/embed/y1gHU5GDPt4?autoplay=1&mute=1&loop=1&playlist=y1gHU5GDPt4&controls=0&playsinline=1&modestbranding=1&rel=0"
+                      title="Barrier Boss Deep Groove Panels"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+                </CardContent>
+              </Card>
+            </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div>
                 <img

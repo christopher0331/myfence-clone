@@ -289,7 +289,7 @@ const ThreeRailPictureFrameFence = () => {
                         </TableRow>
                         <TableRow>
                           <TableCell className="font-medium">Heights</TableCell>
-                          <TableCell>Available: 4', 5', 6', 8'</TableCell>
+                          <TableCell>Available: 4', 5', 6'</TableCell>
                         </TableRow>
                       </TableBody>
                     </Table>

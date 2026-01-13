@@ -150,6 +150,17 @@ const SteelVsWoodPosts = () => {
                   className="w-full h-64 md:h-80 object-cover"
                 />
               </div>
+              <p className="text-center text-sm text-muted-foreground mb-8">
+                Image courtesy of{" "}
+                <a
+                  href="https://barrierbossusa.com/collections/metal-fence-posts/products/metal-fence-posts-for-wood-fence?variant=47959096557787"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Barrier Boss USA
+                </a>
+              </p>
             </header>
 
             {/* AI Summary */}
@@ -324,10 +335,31 @@ const SteelVsWoodPosts = () => {
                   className="w-full h-64 object-cover rounded-lg"
                 />
               </div>
+              <p className="text-center text-sm text-muted-foreground mb-6">
+                Images courtesy of{" "}
+                <a
+                  href="https://barrierbossusa.com/collections/metal-fence-posts/products/metal-fence-posts-for-wood-fence?variant=47959096557787"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Barrier Boss USA
+                </a>
+              </p>
 
               <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 mb-6">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Barrier Boss Steel Posts Features</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    <a
+                      href="https://barrierbossusa.com/collections/metal-fence-posts/products/metal-fence-posts-for-wood-fence?variant=47959096557787"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-primary transition-colors"
+                    >
+                      Barrier Boss
+                    </a>{" "}
+                    Steel Posts Features
+                  </h3>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3">
                       <Shield className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -686,6 +718,25 @@ const SteelVsWoodPosts = () => {
                   <h3 className="font-semibold text-primary">Fence Cost Guide 2025</h3>
                   <p className="text-sm text-muted-foreground">Complete Seattle pricing breakdown</p>
                 </Link>
+              </div>
+            </section>
+
+            {/* Image Attribution */}
+            <section className="mt-10 pt-6 border-t">
+              <h2 className="text-xl font-semibold mb-4">References & Image Attribution</h2>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>
+                  Images featured in this article are courtesy of{" "}
+                  <a
+                    href="https://barrierbossusa.com/collections/metal-fence-posts/products/metal-fence-posts-for-wood-fence?variant=47959096557787"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Barrier Boss USA
+                  </a>
+                  , a supplier of premium metal fence posts and fencing materials.
+                </p>
               </div>
             </section>
           </article>

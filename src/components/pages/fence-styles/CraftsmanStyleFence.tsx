@@ -299,7 +299,7 @@ const CraftsmanStyleFence = () => {
                         </TableRow>
                         <TableRow>
                           <TableCell className="font-medium">Heights</TableCell>
-                          <TableCell>Available: 4', 5', 6', 8' (alternating pattern maintained)</TableCell>
+                          <TableCell>Available: 4', 5', 6' (alternating pattern maintained)</TableCell>
                         </TableRow>
                       </TableBody>
                     </Table>
