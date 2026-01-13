@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check, ArrowRight, DollarSign, Shield, Clock, Sparkles, Lock, Palette } from "lucide-react";
@@ -265,6 +266,22 @@ const CedarAluminumHybridFenceMDX = () => {
         <section className="bg-muted/50 py-16">
           <div className="container">
             <h2 className="text-3xl font-bold mb-8 text-center">Why We Prefer Barrier Boss Panels</h2>
+            <div className="max-w-4xl mx-auto mb-8">
+              <Card className="overflow-hidden pointer-events-none">
+                <CardContent className="p-0">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      className="w-full h-full pointer-events-none"
+                      src="https://www.youtube.com/embed/y1gHU5GDPt4?autoplay=1&mute=1&loop=1&playlist=y1gHU5GDPt4&controls=0&playsinline=1&modestbranding=1&rel=0"
+                      title="Barrier Boss Deep Groove Panels"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+                </CardContent>
+              </Card>
+            </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
               <div>
                 <img
@@ -283,9 +300,25 @@ const CedarAluminumHybridFenceMDX = () => {
                 <p className="text-sm text-muted-foreground mt-3 text-center">Factory-finished HDP NoFade™ paint on both sides</p>
               </div>
             </div>
+            <p className="text-center text-sm text-muted-foreground mb-6">
+              Images courtesy of{" "}
+              <a
+                href="https://barrierbossusa.com/collections/unframed-corrugated-metal-fence-sheets/products/the-frontier-ribbed-sheet-metal-fence-panels-with-dualcoat%E2%84%A2-unframed?variant=46830827864283"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Barrier Boss USA
+              </a>
+            </p>
             <div className="max-w-3xl mx-auto">
               <p className="text-muted-foreground mb-6">
-                We source our corrugated steel panels from two industry-leading manufacturers through local distributors: <strong className="text-foreground">Barrier Boss</strong> and <strong className="text-foreground">ColorMax</strong>. While both produce quality 26 gauge corrugated steel fence panels with HDP NoFade™ paint, we generally prefer Barrier Boss for one critical reason:
+                We source our corrugated steel panels from two industry-leading manufacturers through local distributors: <strong className="text-foreground"><a
+                  href="https://barrierbossusa.com/collections/unframed-corrugated-metal-fence-sheets/products/the-frontier-ribbed-sheet-metal-fence-panels-with-dualcoat%E2%84%A2-unframed?variant=46830827864283"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-primary transition-colors underline"
+                >Barrier Boss</a></strong> and <strong className="text-foreground">ColorMax</strong>. While both produce quality 26 gauge corrugated steel fence panels with HDP NoFade™ paint, we generally prefer Barrier Boss for one critical reason:
               </p>
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-6">
@@ -568,6 +601,27 @@ const CedarAluminumHybridFenceMDX = () => {
                   </Link>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* References & Image Attribution */}
+        <section className="py-12 border-t">
+          <div className="container">
+            <h2 className="text-xl font-semibold mb-4">References & Image Attribution</h2>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>
+                Steel panels featured in this article are sourced from{" "}
+                <a
+                  href="https://barrierbossusa.com/collections/unframed-corrugated-metal-fence-sheets/products/the-frontier-ribbed-sheet-metal-fence-panels-with-dualcoat%E2%84%A2-unframed?variant=46830827864283"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Barrier Boss USA
+                </a>
+                , a supplier of premium corrugated steel fence panels and metal fencing materials.
+              </p>
             </div>
           </div>
         </section>

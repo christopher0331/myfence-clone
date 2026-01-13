@@ -274,7 +274,7 @@ const IssaquahArticle = () => (
         <div>
           <h3 className="text-xl font-semibold mb-3">Wildlife Corridors</h3>
           <p className="text-muted-foreground">
-            Proximity to Cougar Mountain and Tiger Mountain means wildlife encounters are common. We recommend 8-foot privacy fencing or strategic placement to deter deer, coyotes, and bears while maintaining property security. Our designs work with natural migration patterns common in Issaquah's wooded neighborhoods.
+            Proximity to Cougar Mountain and Tiger Mountain means wildlife encounters are common. We recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) or strategic placement to deter deer, coyotes, and bears while maintaining property security. Our designs work with natural migration patterns common in Issaquah's wooded neighborhoods.
           </p>
         </div>
         <div>
@@ -311,7 +311,7 @@ const IssaquahArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">What fence materials work best for Issaquah's mountain climate?</h4>
           <p className="text-muted-foreground">
-            Western Red Cedar is ideal for Issaquah's mountain climate due to its natural rot resistance and ability to withstand moisture fluctuations. For foothills properties, we recommend 8-foot heights with reinforced posts to handle wind loads from Tiger Mountain. Hogwire fencing provides excellent wildlife visibility while maintaining security. Our hybrid aluminum system (black aluminum panels with cedar frame) offers low-maintenance durability perfect for properties with snow exposure and temperature extremes.
+            Western Red Cedar is ideal for Issaquah's mountain climate due to its natural rot resistance and ability to withstand moisture fluctuations. For foothills properties, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) with reinforced posts to handle wind loads from Tiger Mountain. Hogwire fencing provides excellent wildlife visibility while maintaining security. Our hybrid aluminum system (black aluminum panels with cedar frame) offers low-maintenance durability perfect for properties with snow exposure and temperature extremes.
           </p>
         </div>
         <div>
@@ -345,7 +345,7 @@ const Issaquah = () => {
         "name": "What fence height is best for wildlife protection in Issaquah?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For effective wildlife deterrence in Issaquah's mountain communities, we recommend 8-foot privacy fencing. This height effectively discourages deer, coyotes, and other wildlife common to areas near Cougar Mountain and Tiger Mountain while providing complete privacy and security for your family and pets."
+          "text": "For effective wildlife deterrence in Issaquah's mountain communities, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet). This height effectively discourages deer, coyotes, and other wildlife common to areas near Cougar Mountain and Tiger Mountain while providing complete privacy and security for your family and pets."
         }
       },
       {
@@ -460,7 +460,7 @@ const Issaquah = () => {
         "Terrain-adaptive installations for hillside properties",
         "Premium materials suited to wet mountain climate",
         "Custom designs meeting community architectural guidelines",
-        "8-foot privacy fencing for wildlife security",
+        "6-foot fences with lattice toppers for wildlife security",
         "High-end finishes and clear cedar options for luxury homes"
       ]}
       articleContent={<IssaquahArticle />}
