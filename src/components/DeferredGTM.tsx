@@ -11,21 +11,29 @@ export default function DeferredGTM() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    // 1. Wait for the window load event
-    // 2. Add an additional delay to ensure everything else is settled
+    // Wait for the first user interaction (scroll, click, or mouse move)
+    // or a long timeout (8 seconds) if no interaction happens.
     const loadGTM = () => {
-      setTimeout(() => {
-        setShouldLoad(true);
-      }, 3500); // 3.5s delay after load
+      if (shouldLoad) return;
+      setShouldLoad(true);
+      window.removeEventListener("scroll", loadGTM);
+      window.removeEventListener("mousemove", loadGTM);
+      window.removeEventListener("touchstart", loadGTM);
     };
 
-    if (document.readyState === "complete") {
-      loadGTM();
-    } else {
-      window.addEventListener("load", loadGTM);
-      return () => window.removeEventListener("load", loadGTM);
-    }
-  }, []);
+    const timer = setTimeout(loadGTM, 8000);
+
+    window.addEventListener("scroll", loadGTM, { passive: true });
+    window.addEventListener("mousemove", loadGTM, { passive: true });
+    window.addEventListener("touchstart", loadGTM, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", loadGTM);
+      window.removeEventListener("mousemove", loadGTM);
+      window.removeEventListener("touchstart", loadGTM);
+    };
+  }, [shouldLoad]);
 
   if (!shouldLoad) return null;
 

@@ -5,10 +5,12 @@
   "type": "module",
   "browserslist": {
     "production": [
-      "defaults",
+      "Chrome >= 93",
+      "Safari >= 15.4",
+      "Firefox >= 92",
+      "Edge >= 93",
       "not dead",
-      "supports es6-module",
-      "not op_mini all"
+      "not ie 11"
     ],
     "development": [
       "last 1 chrome version",

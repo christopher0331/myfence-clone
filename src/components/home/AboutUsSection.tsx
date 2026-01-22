@@ -1,23 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
-import Image from "next/image";
-import { imageKitLoader } from "@/lib/imagekit";
-import type { ImageLoader } from "next/image";
 
-interface AboutUsSectionProps {
-  onOpenQuoteModal: () => void;
-}
-
-export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
-  const aboutUsMobileCompressedLoader: ImageLoader = ({ src, width, quality }) => {
-    const targetW = width <= 640 ? 324 : width;
-    const q = width <= 640 ? 32 : quality ?? 78;
-    const url = new URL(src);
-    url.searchParams.set("tr", `w-${targetW},q-${q}`);
-    return url.toString();
-  };
-
+export const AboutUsSection = () => {
   return (
     <section className="container relative z-10 -mt-12 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
       <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
@@ -39,32 +26,28 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
             deliver exceptional, transparent results.
           </p>
           <div className="mt-5 flex justify-center relative">
-            <Button size="lg" variant="secondary" onClick={onOpenQuoteModal} className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">
-              Free Quotes
+            <Button size="lg" variant="secondary" asChild className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">
+              <Link href="/quote">Free Quotes</Link>
             </Button>
             <span className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-40 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
           </div>
         </div>
         <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
-          <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-            <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
-              <div className="relative h-full w-full">
-                <Image
-                  loader={aboutUsMobileCompressedLoader}
-                  src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
-                  alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  loading="eager"
-                  sizes="(max-width: 640px) 324px, (max-width: 1024px) 540px, 540px"
-                  className="object-cover object-[center_55%]"
-                />
-              </div>
-            </AspectRatio>
+          <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow w-full max-w-[432px] aspect-[4/3] shrink-0">
+            <img
+              src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?tr=w-432,h-324,fo-auto,q-40"
+              alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
+              width="432"
+              height="324"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover object-[center_55%]"
+            />
           </div>
         </div>
       </div>
     </section>
   );
 };
+

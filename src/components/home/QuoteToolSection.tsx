@@ -42,13 +42,11 @@ export const QuoteToolSection = () => {
               </div>
             </div>
             <div className="relative min-h-[220px] lg:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center">
-              <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-                <img
-                  src="/lovable-uploads/f8a11a30-3a13-42cb-8880-f95fd7547c0e.png"
-                  alt="Fence layout map example from SeattleFenceQuote"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow bg-background/20 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <ShieldCheck className="w-16 h-16 text-primary/40 mx-auto mb-4" />
+                  <p className="text-sm font-medium text-foreground/80">Interactive Design Tool</p>
+                </div>
               </div>
               <div className="absolute inset-x-4 bottom-4">
                 <p className="text-xs md:text-sm bg-background/70 text-foreground rounded-md px-3 py-2 shadow-elevated backdrop-blur">

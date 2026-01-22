@@ -19,6 +19,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        {/* Preload the LCP Hero Image for faster production loading */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?tr=w-432,h-324,fo-auto,q-40"
+          fetchPriority="high"
+        />
         {/* Optimize CSS loading with resource hints */}
         <script
           dangerouslySetInnerHTML={{

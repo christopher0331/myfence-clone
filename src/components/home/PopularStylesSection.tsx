@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -7,7 +9,7 @@ import { imageKitLoader } from "@/lib/imagekit";
 import type { ImageLoader } from "next/image";
 
 interface PopularStylesSectionProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
 const pictureFrameHeroUrl =
@@ -23,6 +25,23 @@ const mobileCompressedPictureFrameLoader: ImageLoader = ({ src, width, quality }
 };
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
+  const EstimateButton = ({ label }: { label: string }) => {
+    if (onOpenQuoteModal) {
+      return (
+        <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label={`Click here for Free Estimate for ${label}`}>
+          Click here for Free Estimate
+        </Button>
+      );
+    }
+    return (
+      <Button className="mt-3 w-full" asChild>
+        <Link href="/quote" aria-label={`Click here for Free Estimate for ${label}`}>
+          Click here for Free Estimate
+        </Link>
+      </Button>
+    );
+  };
+
   return (
     <section className="container py-12 md:py-16">
       <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles in Seattle</h2>
@@ -50,7 +69,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <div className="p-4 text-center">
               <h3 className="font-semibold">Picture Frame Fences</h3>
               <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="Picture Frame Fence" />
             </div>
           </CardContent>
         </Card>
@@ -66,7 +85,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <div className="p-4 text-center">
               <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
               <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="3 Rail Picture Frame Fence" />
             </div>
           </CardContent>
         </Card>
@@ -82,7 +101,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <div className="p-4 text-center">
               <h3 className="font-semibold">Horizontal Lattice & Trellis Systems</h3>
               <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="Horizontal Lattice Fence" />
             </div>
           </CardContent>
         </Card>
