@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/dev/repos/myfence-clone/src/app/fence-styles/3-rail-picture-frame-fence/page.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\r\nimport ThreeRailPictureFrameFence from \"@/components/pages/fence-styles/ThreeRailPictureFrameFence\";\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"3 Rail Picture Frame Fence | Seattle | MyFence.com\",\r\n  description: \"Cedar 3 rail picture frame fences in Seattle. Extra rail and trim for added structure and a refined craftsman look. Get a fast quote today.\",\r\n  alternates: {\r\n    canonical: \"https://myfence.com/fence-styles/3-rail-picture-frame-fence\",\r\n  },\r\n};\r\n\r\nexport default function ThreeRailPictureFrameFencePage() {\r\n  return <ThreeRailPictureFrameFence />;\r\n}\r\n\r\n"],"names":[],"mappings":";;;;;;;;;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;IACb,YAAY;QACV,WAAW;IACb;AACF;AAEe,SAAS;IACtB,qBAAO,8OAAC;;;;;AACV"}}]
-}

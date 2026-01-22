@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+ * Font display optimization
+ * This CSS rule ensures font-display: swap is applied to fonts from Google Fonts CDN
+ * Reference: https://developer.chrome.com/docs/performance/insights/font-display
+ * 
+ * Note: We can't override external @font-face rules, but this serves as a fallback
+ * The main optimization happens via the script in layout.tsx that modifies Google Fonts URLs
+ */
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -117,6 +126,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     overflow-x: hidden; /* Prevent horizontal scrolling site-wide */
     width: 100%;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 }
 

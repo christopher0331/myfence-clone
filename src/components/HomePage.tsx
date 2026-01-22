@@ -1,31 +1,18 @@
 "use client";
 
 import { useState, useMemo, useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 import dynamic from "next/dynamic";
 import Seo from "@/components/Seo";
 import QuoteModal from "@/components/QuoteModal";
 import { Card, CardContent } from "@/components/ui/card";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import dynamicImport from "next/dynamic";
-import { FaqSection } from "@/components/FaqSection";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
 import { generateFaqSchema } from "@/data/faqData";
-import BlogSection from "@/components/BlogSection";
-import ServiceAreasSection from "@/components/ServiceAreasSection";
-
-import {
-  HeroVideoSection,
-  AboutUsSection,
-  ValuePropsSection,
-  PopularStylesSection,
-  ReviewsSection,
-  QuoteToolSection,
-  TrellisSection,
-  CTASection,
-  InlineContactSection,
-  ScrollingCarousel,
-} from "@/components/home";
+import { HeroVideoSection } from "@/components/home/HeroVideoSection";
+import { AboutUsSection } from "@/components/home/AboutUsSection";
+import { ValuePropsSection } from "@/components/home/ValuePropsSection";
 
 // Lazy-load Google Maps to keep it off the initial critical path
 const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
@@ -33,14 +20,94 @@ const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap")
   loading: () => null,
 });
 
+const LazyScrollingCarousel = dynamic(
+  () => import("@/components/home/ScrollingCarousel").then((m) => m.ScrollingCarousel),
+  { ssr: false, loading: () => null },
+);
+
+const LazyPopularStylesSection = dynamic(
+  () => import("@/components/home/PopularStylesSection").then((m) => m.PopularStylesSection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyReviewsSection = dynamic(
+  () => import("@/components/home/ReviewsSectionWithData"),
+  { ssr: false, loading: () => null },
+);
+
+const LazyQuoteToolSection = dynamic(
+  () => import("@/components/home/QuoteToolSection").then((m) => m.QuoteToolSection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyTrellisSection = dynamic(
+  () => import("@/components/home/TrellisSection").then((m) => m.TrellisSection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyInlineContactSection = dynamic(
+  () => import("@/components/home/InlineContactSection").then((m) => m.InlineContactSection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyCTASection = dynamic(
+  () => import("@/components/home/CTASection").then((m) => m.CTASection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyFaqSection = dynamic(
+  () => import("@/components/FaqSection").then((m) => m.FaqSection),
+  { ssr: false, loading: () => null },
+);
+
+const LazyBlogSection = dynamic(
+  () => import("@/components/BlogSection"),
+  { ssr: false, loading: () => null },
+);
+
+const LazyServiceAreasSection = dynamic(
+  () => import("@/components/ServiceAreasSection"),
+  { ssr: false, loading: () => null },
+);
+
 const LazyArticleSummary = dynamicImport(
   () => import("@/components/ArticleSummary").then((m) => m.ArticleSummary),
   { ssr: true, loading: () => null },
 );
 
+type DeferredSectionProps = {
+  children: ReactNode;
+  placeholder?: React.ReactNode;
+  rootMargin?: string;
+};
+
+const DeferredSection = ({ children, placeholder, rootMargin = "200px" }: DeferredSectionProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || isVisible) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [isVisible, rootMargin]);
+
+  return <div ref={ref}>{isVisible ? children : placeholder}</div>;
+};
+
 const Index = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const { reviews, reviewsRef } = useTrustindexReviews();
   const [showSummary, setShowSummary] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const summaryRef = useRef<HTMLDivElement | null>(null);
@@ -214,25 +281,65 @@ const Index = () => {
         )}
       </section>
 
-      <ScrollingCarousel />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-32 bg-muted/20 rounded-lg" />}
+      >
+        <LazyScrollingCarousel />
+      </DeferredSection>
 
-      <PopularStylesSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-64 bg-muted/20 rounded-lg" />}
+      >
+        <LazyPopularStylesSection onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+      </DeferredSection>
 
-      <ReviewsSection reviewsRef={reviewsRef} />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-32 bg-muted/20 rounded-lg" />}
+      >
+        <LazyReviewsSection />
+      </DeferredSection>
 
-      <QuoteToolSection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-48 bg-muted/20 rounded-lg" />}
+      >
+        <LazyQuoteToolSection />
+      </DeferredSection>
 
-      <TrellisSection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-32 bg-muted/20 rounded-lg" />}
+      >
+        <LazyTrellisSection />
+      </DeferredSection>
 
-      <InlineContactSection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-32 bg-muted/20 rounded-lg" />}
+      >
+        <LazyInlineContactSection />
+      </DeferredSection>
 
-      <CTASection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-24 bg-muted/20 rounded-lg" />}
+      >
+        <LazyCTASection />
+      </DeferredSection>
 
-      <FaqSection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-48 bg-muted/20 rounded-lg" />}
+      >
+        <LazyFaqSection />
+      </DeferredSection>
 
-      <BlogSection limit={4} />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-64 bg-muted/20 rounded-lg" />}
+      >
+        <LazyBlogSection limit={4} />
+      </DeferredSection>
 
-      <ServiceAreasSection />
+      <DeferredSection
+        placeholder={<div className="container py-12 md:py-16 h-48 bg-muted/20 rounded-lg" />}
+      >
+        <LazyServiceAreasSection />
+      </DeferredSection>
 
       <section className="container py-12 md:py-16" ref={mapRef}>
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Service Area</h2>
