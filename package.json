@@ -6,7 +6,7 @@
   "browserslist": {
     "production": [
       "Chrome >= 93",
-      "Safari >= 15.4",
+      "Safari >= 14",
       "Firefox >= 92",
       "Edge >= 93",
       "not dead",

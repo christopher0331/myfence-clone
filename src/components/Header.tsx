@@ -175,7 +175,7 @@ const Header = () => {
         style={{ top: '5rem' }}
       />
       
-      <div className={`lg:hidden fixed right-0 border-t border-l h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 z-50 ${open ? 'translate-x-0' : 'translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch', top: '5rem' }}>
+      <div className={`lg:hidden fixed right-0 border-t border-l mobile-menu-height overflow-y-auto overscroll-contain pb-2 pb-[env(safe-area-inset-bottom)] bg-background transition-transform duration-300 w-64 z-50 ${open ? 'translate-x-0' : 'translate-x-full'}`} style={{ WebkitOverflowScrolling: 'touch', top: '5rem' }}>
         {open && <MobileMenu onClose={() => setOpen(false)} pathname={pathname} />}
       </div>
     </header>

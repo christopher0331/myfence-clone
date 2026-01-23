@@ -163,6 +163,11 @@ All colors MUST be HSL.
     border-radius: calc(var(--radius) * 1.25);
     overflow: hidden;
   }
+  
+  .mobile-menu-height {
+    height: calc(100vh - 5rem);
+    height: calc(100dvh - 5rem);
+  }
 }
 
 /* Hero video cover style - fills width, crops letterboxing */
