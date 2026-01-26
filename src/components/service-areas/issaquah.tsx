@@ -464,7 +464,8 @@ const Issaquah = () => {
         "High-end finishes and clear cedar options for luxury homes"
       ]}
       articleContent={<IssaquahArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

@@ -550,7 +550,8 @@ const Kirkland = () => {
         "Code-compliant solutions exceeding aesthetic expectations"
       ]}
       articleContent={<KirklandArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

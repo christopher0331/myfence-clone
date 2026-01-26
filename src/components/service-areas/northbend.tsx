@@ -532,11 +532,7 @@ const NorthBend = () => {
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "reviewCount": "150",
-      "itemReviewed": {
-        "@type": "LocalBusiness",
-        "name": "MyFence.com"
-      }
+      "reviewCount": "150"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -693,7 +689,8 @@ const NorthBend = () => {
         "Specialized installation techniques including hand-digging near trees and root-zone protection protocols"
       ]}
       articleContent={<NorthBendArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

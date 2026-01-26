@@ -503,6 +503,7 @@ const MountlakeTerrace = () => {
       ]}
       articleContent={<MountlakeTerraceArticle />}
       faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

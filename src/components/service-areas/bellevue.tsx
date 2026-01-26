@@ -513,11 +513,7 @@ const Bellevue = () => {
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "reviewCount": "150",
-      "itemReviewed": {
-        "@type": "LocalBusiness",
-        "name": "MyFence.com"
-      }
+      "reviewCount": "150"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -683,7 +679,8 @@ const Bellevue = () => {
         "Premium Western Red Cedar clear-grade (zero knots) matching Bellevue's luxury market expectations and lasting 15+ years with proper maintenance"
       ]}
       articleContent={<BellevueArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

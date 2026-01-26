@@ -139,7 +139,6 @@ const Header = () => {
           </DropdownMenu>
           {[
             { to: "/quote", label: "Virtual Quote Tool" },
-            { to: "/referrals", label: "Referrals" },
             { to: "/financing", label: "Financing" },
             { to: "/blog", label: "FAQ" },
             { to: "/contact", label: "Contact us" },

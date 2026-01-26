@@ -551,6 +551,7 @@ const Redmond = () => {
       ]}
       articleContent={<RedmondArticle />}
       faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
     />
   );
 };

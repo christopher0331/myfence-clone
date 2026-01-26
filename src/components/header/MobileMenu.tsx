@@ -17,7 +17,6 @@ interface MobileMenuProps {
 const navItems = [
   { to: "/quote", label: "Virtual Quote Tool" },
   { to: "/discounts", label: "Discounts" },
-  { to: "/referrals", label: "Referrals" },
   { to: "/financing", label: "Financing" },
   { to: "/blog", label: "FAQ" },
   { to: "/contact", label: "Contact us" },

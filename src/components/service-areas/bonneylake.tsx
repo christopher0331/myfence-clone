@@ -603,7 +603,8 @@ const BonneyLake = () => {
         "Bonney Lake Library"
       ]}
       articleContent={<BonneyLakeArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
       climateDescription="Bonney Lake experiences Pacific Northwest climate with wet winters and warm, dry summers. Average annual rainfall of 40-45 inches concentrates between October and April, requiring moisture-resistant fence materials and construction techniques. Summer temperatures typically reach 75-85°F, with winter lows averaging 35-40°F. Occasional freezing conditions and snow events demand proper post installation with deep footings and freeze-thaw resistant concrete. The area's rolling terrain creates varied microclimates affecting moisture exposure and sun exposure across different property locations."
       localChallenges={[
         "Variable soil conditions from clay-heavy to rocky terrain",

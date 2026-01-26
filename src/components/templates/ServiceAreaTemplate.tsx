@@ -221,6 +221,37 @@ const ServiceAreaTemplate = ({
     ]
   }), [city, citySlug, state, reviews]);
 
+  // Merge enhanced business data with reviews and other dynamic fields if provided
+  const finalBusinessData = useMemo(() => {
+    if (!enhancedBusinessData) return structuredData;
+    
+    // Ensure reviews from Trustindex are included in enhanced data if not present
+    const data = { ...enhancedBusinessData };
+    if (!data.review && reviews.length > 0) {
+      data.review = reviews.map(review => ({
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": review.author_name
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": review.rating.toString(),
+          "bestRating": "5"
+        },
+        "datePublished": review.review_date,
+        "reviewBody": review.review_text
+      }));
+    }
+    
+    // Ensure aggregateRating uses the dynamic count if not set
+    if (data.aggregateRating && !data.aggregateRating.reviewCount && reviews.length > 0) {
+      data.aggregateRating.reviewCount = reviews.length.toString();
+    }
+    
+    return data;
+  }, [enhancedBusinessData, structuredData, reviews]);
+
   return (
     <>
       <Seo 
@@ -229,7 +260,7 @@ const ServiceAreaTemplate = ({
         canonical={`https://myfence.com/service-areas/${citySlug}`}
         structuredData={[
           breadcrumbData,
-          ...(enhancedBusinessData ? [enhancedBusinessData] : [structuredData]),
+          finalBusinessData,
           ...(faqStructuredData ? (Array.isArray(faqStructuredData) ? faqStructuredData : [faqStructuredData]) : [])
         ]}
       />
