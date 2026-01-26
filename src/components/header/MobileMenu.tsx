@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
@@ -106,12 +107,27 @@ export default function MobileMenu({ onClose, pathname }: MobileMenuProps) {
       </Link>
       {navItems.map((item) => {
         const isActive = pathname === item.to;
+        if (item.to === '/contact') {
+          return (
+            <Button 
+              key={item.to} 
+              variant="default" 
+              asChild 
+              className="w-full justify-center mt-2 text-white font-bold"
+              onClick={onClose}
+            >
+              <Link href={item.to}>
+                {item.label}
+              </Link>
+            </Button>
+          );
+        }
         return (
           <Link
             key={item.to}
             href={item.to}
             onClick={onClose}
-            className={`text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`}
+            className={`text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`}
           >
             {item.label}
           </Link>
