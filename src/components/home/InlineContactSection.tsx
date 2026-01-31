@@ -6,9 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 export const InlineContactSection = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +18,8 @@ export const InlineContactSection = () => {
     email: '',
     phone: '',
     address: '',
-    message: ''
+    message: '',
+    textConsent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -26,12 +29,23 @@ export const InlineContactSection = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -159,6 +173,20 @@ export const InlineContactSection = () => {
                     className="mt-1"
                   />
                 </div>
+                {formData.phone.trim() ? (
+                  <div className="flex items-start space-x-2">
+                    <Checkbox
+                      id="inline-text-consent"
+                      checked={formData.textConsent}
+                      onCheckedChange={(checked) =>
+                        setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+                      }
+                    />
+                    <Label htmlFor="inline-text-consent" className="text-xs leading-5 text-muted-foreground">
+                      {TEXT_CONSENT_MESSAGE}
+                    </Label>
+                  </div>
+                ) : null}
                 <div>
                   <Label htmlFor="inline-address" className="text-sm font-medium">Property Address</Label>
                   <Input
