@@ -61,6 +61,7 @@ const ContactPage = () => {
             propertyAddress: formData.address,
             fenceType: "Contact Page",
             message: formData.message,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;

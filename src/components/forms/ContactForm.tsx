@@ -57,6 +57,7 @@ export function ContactForm() {
             propertyAddress: data.address,
             fenceType: "Contact Form",
             message: data.description,
+            textConsent: data.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;

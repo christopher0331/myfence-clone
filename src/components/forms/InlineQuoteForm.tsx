@@ -67,6 +67,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             propertyAddress: formData.address,
             fenceType: "Quote Request",
             message,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;

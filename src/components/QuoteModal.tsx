@@ -68,6 +68,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             propertyAddress: formData.address,
             fenceType: "Quote Modal",
             message: formData.projectDescription,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;

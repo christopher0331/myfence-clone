@@ -330,6 +330,7 @@ const DiscountsPage = () => {
         address: formAddress,
         email: formEmail,
         phone: formPhone,
+        textConsent: formTextConsent,
         description: formDescription || "General inquiry from discount page",
       };
 
@@ -344,6 +345,7 @@ const DiscountsPage = () => {
             propertyAddress: emailData.address || "",
             fenceType: "Discounts Page",
             message: emailData.description || "General inquiry from discount page",
+            textConsent: emailData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -407,6 +409,7 @@ const DiscountsPage = () => {
         riddle: riddles[currentRiddleIndex].question,
         answer: riddles[currentRiddleIndex].answers[0],
         discount: selectedDiscount,
+        textConsent: formTextConsent,
         description: formDescription || "Discount wheel submission",
       };
 

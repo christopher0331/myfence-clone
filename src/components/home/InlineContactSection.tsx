@@ -61,6 +61,7 @@ export const InlineContactSection = () => {
             propertyAddress: formData.address,
             fenceType: "Inline Contact",
             message: formData.message,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
