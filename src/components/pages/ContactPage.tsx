@@ -6,10 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,15 +23,30 @@ const ContactPage = () => {
     phone: "",
     address: "",
     message: "",
+    textConsent: false,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -44,6 +61,7 @@ const ContactPage = () => {
             propertyAddress: formData.address,
             fenceType: "Contact Page",
             message: formData.message,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -229,6 +247,23 @@ const ContactPage = () => {
                       maxLength={20}
                     />
                   </div>
+                  {formData.phone.trim() ? (
+                    <div className="flex items-start space-x-2">
+                      <Checkbox
+                        id="contact-page-text-consent"
+                        checked={formData.textConsent}
+                        onCheckedChange={(checked) =>
+                          setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+                        }
+                      />
+                      <Label
+                        htmlFor="contact-page-text-consent"
+                        className="text-xs leading-5 text-muted-foreground"
+                      >
+                        {TEXT_CONSENT_MESSAGE}
+                      </Label>
+                    </div>
+                  ) : null}
                   <div>
                     <Label htmlFor="address">Address</Label>
                     <Input

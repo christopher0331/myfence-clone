@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -24,7 +26,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     email: "",
     phone: "",
     address: "",
-    projectDescription: ""
+    projectDescription: "",
+    textConsent: false,
   });
   const { toast } = useToast();
 
@@ -32,12 +35,23 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -54,6 +68,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             propertyAddress: formData.address,
             fenceType: "Quote Modal",
             message: formData.projectDescription,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -91,7 +106,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         email: "",
         phone: "",
         address: "",
-        projectDescription: ""
+        projectDescription: "",
+        textConsent: false,
       });
       
       onClose();
@@ -160,6 +176,20 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               inputMode="tel"
             />
           </div>
+          {formData.phone.trim() ? (
+            <div className="flex items-start space-x-2">
+              <Checkbox
+                id="quote-modal-text-consent"
+                checked={formData.textConsent}
+                onCheckedChange={(checked) =>
+                  setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+                }
+              />
+              <Label htmlFor="quote-modal-text-consent" className="text-xs leading-5 text-muted-foreground">
+                {TEXT_CONSENT_MESSAGE}
+              </Label>
+            </div>
+          ) : null}
 
           <div className="space-y-2">
             <Label htmlFor="address">Project Address *</Label>

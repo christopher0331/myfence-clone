@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -21,16 +23,31 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     phone: "",
     address: "",
     projectDescription: "",
+    textConsent: false,
   });
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -50,6 +67,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             propertyAddress: formData.address,
             fenceType: "Quote Request",
             message,
+            textConsent: formData.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -84,7 +102,14 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         description: "We'll get back to you within 24 hours with a detailed quote.",
       });
 
-      setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "" });
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+        projectDescription: "",
+        textConsent: false,
+      });
     } catch (err) {
       console.error('Quote request submission error:', err);
       toast({
@@ -147,6 +172,20 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             inputMode="tel"
           />
         </div>
+        {formData.phone.trim() ? (
+          <div className="flex items-start space-x-2">
+            <Checkbox
+              id="inline-quote-text-consent"
+              checked={formData.textConsent}
+              onCheckedChange={(checked) =>
+                setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+              }
+            />
+            <Label htmlFor="inline-quote-text-consent" className="text-xs leading-5 text-muted-foreground">
+              {TEXT_CONSENT_MESSAGE}
+            </Label>
+          </div>
+        ) : null}
 
         <div className="space-y-2">
           <Label htmlFor="address">Project Address *</Label>

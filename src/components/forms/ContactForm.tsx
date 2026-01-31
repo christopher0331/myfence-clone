@@ -11,6 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { Checkbox } from "@/components/ui/checkbox";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -19,6 +21,7 @@ const formSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   address: z.string().trim().min(1, "Address is required").max(255),
   description: z.string().trim().min(1, "Message is required").max(1000),
+  textConsent: z.boolean().refine((value) => value, "Consent is required to receive text messages."),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -36,6 +39,7 @@ export function ContactForm() {
       phone: "",
       address: "",
       description: "",
+      textConsent: false,
     },
   });
 
@@ -53,6 +57,7 @@ export function ContactForm() {
             propertyAddress: data.address,
             fenceType: "Contact Form",
             message: data.description,
+            textConsent: data.textConsent,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -181,6 +186,28 @@ export function ContactForm() {
                 />
               </FormControl>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="textConsent"
+          render={({ field }) => (
+            <FormItem className="flex items-start space-x-2">
+              <FormControl>
+                <Checkbox
+                  id="contact-text-consent"
+                  checked={field.value}
+                  onCheckedChange={(checked) => field.onChange(checked === true)}
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel htmlFor="contact-text-consent" className="text-xs text-muted-foreground">
+                  {TEXT_CONSENT_MESSAGE}
+                </FormLabel>
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
