@@ -247,23 +247,21 @@ const ContactPage = () => {
                       maxLength={20}
                     />
                   </div>
-                  {formData.phone.trim() ? (
-                    <div className="flex items-start space-x-2">
-                      <Checkbox
-                        id="contact-page-text-consent"
-                        checked={formData.textConsent}
-                        onCheckedChange={(checked) =>
-                          setFormData((prev) => ({ ...prev, textConsent: checked === true }))
-                        }
-                      />
-                      <Label
-                        htmlFor="contact-page-text-consent"
-                        className="text-xs leading-5 text-muted-foreground"
-                      >
-                        {TEXT_CONSENT_MESSAGE}
-                      </Label>
-                    </div>
-                  ) : null}
+                  <div className="flex items-start space-x-2">
+                    <Checkbox
+                      id="contact-page-text-consent"
+                      checked={formData.textConsent}
+                      onCheckedChange={(checked) =>
+                        setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+                      }
+                    />
+                    <Label
+                      htmlFor="contact-page-text-consent"
+                      className="text-xs leading-5 text-muted-foreground"
+                    >
+                      {TEXT_CONSENT_MESSAGE}
+                    </Label>
+                  </div>
                   <div>
                     <Label htmlFor="address">Address</Label>
                     <Input
