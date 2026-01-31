@@ -7,10 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 const riddles = [
   {
@@ -136,6 +138,7 @@ const DiscountsPage = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
+  const [formTextConsent, setFormTextConsent] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -311,6 +314,10 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
+      if (formPhone.trim() && !formTextConsent) {
+        toast.error("Please consent to receive text messages before submitting your phone number.");
+        return;
+      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
@@ -368,6 +375,7 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
+      setFormTextConsent(false);
     } catch {
       toast.error("There was an error submitting your information. Please try again.");
     }
@@ -378,6 +386,10 @@ const DiscountsPage = () => {
     try {
       if (!formFirstName.trim() || !formLastName.trim() || !formEmail.trim() || !formPhone.trim()) {
         toast.error("Please fill in all required fields.");
+        return;
+      }
+      if (formPhone.trim() && !formTextConsent) {
+        toast.error("Please consent to receive text messages before submitting your phone number.");
         return;
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -421,6 +433,7 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
+      setFormTextConsent(false);
 
       setShouldClick(false);
       if (clickTimeout) {
@@ -674,10 +687,28 @@ const DiscountsPage = () => {
                     <Input
                       id="phone"
                       value={formPhone}
-                      onChange={(e) => setFormPhone(e.target.value)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFormPhone(value);
+                        if (!value.trim()) {
+                          setFormTextConsent(false);
+                        }
+                      }}
                       required
                     />
                   </div>
+                  {formPhone.trim() ? (
+                    <div className="flex items-start space-x-2">
+                      <Checkbox
+                        id="discounts-text-consent"
+                        checked={formTextConsent}
+                        onCheckedChange={(checked) => setFormTextConsent(checked === true)}
+                      />
+                      <Label htmlFor="discounts-text-consent" className="text-xs leading-5 text-muted-foreground">
+                        {TEXT_CONSENT_MESSAGE}
+                      </Label>
+                    </div>
+                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="description">Project Description</Label>
@@ -755,10 +786,28 @@ const DiscountsPage = () => {
                     <Input
                       id="alreadyPlayedPhone"
                       value={formPhone}
-                      onChange={(e) => setFormPhone(e.target.value)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFormPhone(value);
+                        if (!value.trim()) {
+                          setFormTextConsent(false);
+                        }
+                      }}
                       required
                     />
                   </div>
+                  {formPhone.trim() ? (
+                    <div className="flex items-start space-x-2">
+                      <Checkbox
+                        id="already-played-text-consent"
+                        checked={formTextConsent}
+                        onCheckedChange={(checked) => setFormTextConsent(checked === true)}
+                      />
+                      <Label htmlFor="already-played-text-consent" className="text-xs leading-5 text-muted-foreground">
+                        {TEXT_CONSENT_MESSAGE}
+                      </Label>
+                    </div>
+                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="alreadyPlayedDescription">Project Description</Label>
