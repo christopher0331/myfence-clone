@@ -174,20 +174,18 @@ export const InlineContactSection = () => {
                     className="mt-1"
                   />
                 </div>
-                {formData.phone.trim() ? (
-                  <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="inline-text-consent"
-                      checked={formData.textConsent}
-                      onCheckedChange={(checked) =>
-                        setFormData((prev) => ({ ...prev, textConsent: checked === true }))
-                      }
-                    />
-                    <Label htmlFor="inline-text-consent" className="text-xs leading-5 text-muted-foreground">
-                      {TEXT_CONSENT_MESSAGE}
-                    </Label>
-                  </div>
-                ) : null}
+                <div className="flex items-start space-x-2">
+                  <Checkbox
+                    id="inline-text-consent"
+                    checked={formData.textConsent}
+                    onCheckedChange={(checked) =>
+                      setFormData((prev) => ({ ...prev, textConsent: checked === true }))
+                    }
+                  />
+                  <Label htmlFor="inline-text-consent" className="text-xs leading-5 text-muted-foreground">
+                    {TEXT_CONSENT_MESSAGE}
+                  </Label>
+                </div>
                 <div>
                   <Label htmlFor="inline-address" className="text-sm font-medium">Property Address</Label>
                   <Input
