@@ -18,7 +18,7 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Request body parsed:', requestBody)
     
-    const { name, email, phone, message, firstName, lastName, address, description } = requestBody
+    const { name, email, phone, message, firstName, lastName, address, description, textConsent } = requestBody
 
     console.log('Validating fields...')
     
@@ -47,6 +47,9 @@ serve(async (req) => {
       )
     }
 
+    const consentValue = textConsent === true || textConsent === 'true';
+    const consentLabel = consentValue ? 'Yes' : 'No';
+
     const emailBody = `
 New Contact Form Submission from MyFence.com
 
@@ -55,6 +58,7 @@ Name: ${customerName}
 Email: ${email}
 Phone: ${phone}
 Address: ${address}
+Text message consent: ${consentLabel}
 
 Message:
 ${customerMessage}
@@ -78,6 +82,7 @@ This message was submitted through the MyFence.com contact form.
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Phone:</strong> ${phone}</li>
           <li><strong>Address:</strong> ${address}</li>
+          <li><strong>Text message consent:</strong> ${consentLabel}</li>
         </ul>
         
         <h3>Message:</h3>

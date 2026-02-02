@@ -17,6 +17,7 @@ interface DiscountEmailRequest {
   answer: string;
   discount: string;
   description?: string;
+  textConsent?: boolean;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -26,7 +27,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, address, email, phone, riddle, answer, discount, description }: DiscountEmailRequest = await req.json();
+    const { firstName, lastName, address, email, phone, riddle, answer, discount, description, textConsent }: DiscountEmailRequest = await req.json();
 
     // Validate required fields
     if (!firstName || !lastName || !email || !riddle || !answer || !discount) {
@@ -55,6 +56,7 @@ const handler = async (req: Request): Promise<Response> => {
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Text message consent:</strong> ${textConsent === true || textConsent === 'true' ? 'Yes' : 'No'}</p>
           ${address ? `<p><strong>Address:</strong> ${address}</p>` : ''}
         </div>
 
@@ -85,6 +87,7 @@ Customer Information:
 Name: ${firstName} ${lastName}
 Email: ${email}
 Phone: ${phone}
+Text message consent: ${textConsent === true || textConsent === 'true' ? 'Yes' : 'No'}
 ${address ? `Address: ${address}` : ''}
 
 Riddle Challenge Results:

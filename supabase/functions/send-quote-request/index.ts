@@ -18,7 +18,7 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Quote request body parsed:', requestBody)
     
-    const { fullName, email, phone, address, projectDescription } = requestBody
+    const { fullName, email, phone, address, projectDescription, textConsent } = requestBody
 
     console.log('Validating quote fields...')
     // Validate required fields
@@ -42,6 +42,9 @@ serve(async (req) => {
       )
     }
 
+    const consentValue = textConsent === true || textConsent === 'true';
+    const consentLabel = consentValue ? 'Yes' : 'No';
+
     const emailBody = `
 New Quote Request from MyFence.com
 
@@ -50,6 +53,7 @@ Name: ${fullName}
 Email: ${email}
 Phone: ${phone}
 Address: ${address}
+Text message consent: ${consentLabel}
 
 Project Description:
 ${projectDescription}
@@ -73,6 +77,7 @@ This request was submitted through the MyFence.com website.
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Phone:</strong> ${phone}</li>
           <li><strong>Address:</strong> ${address}</li>
+          <li><strong>Text message consent:</strong> ${consentLabel}</li>
         </ul>
         
         <h3>Project Description:</h3>
