@@ -569,6 +569,40 @@ const ServiceAreaTemplate = ({
         </section>
         )}
 
+        {/* Covington Fencing Video Section */}
+        {city === "Covington" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Covington Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Experience our professional fence installation in Covington. We specialize in durable cedar and hybrid systems designed to withstand the Pacific Northwest's varied weather conditions.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From family-oriented neighborhoods to larger residential lots, every Covington fence we build combines engineering precision with local craftsmanship to protect and enhance your property.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/pN0wqFY3g9s?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Covington Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Black Diamond Fencing Video Section */}
         {city === "Black Diamond" && (
           <section className="py-12 md:py-16">
