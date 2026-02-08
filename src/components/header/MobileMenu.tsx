@@ -57,6 +57,7 @@ const serviceAreasByRegion = [
   {
     region: "East King County",
     areas: [
+      { to: "/service-areas/black-diamond", label: "Black Diamond" },
       { to: "/service-areas/covington", label: "Covington" },
       { to: "/service-areas/enumclaw", label: "Enumclaw" },
       { to: "/service-areas/maple-valley", label: "Maple Valley" },

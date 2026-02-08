@@ -535,6 +535,74 @@ const ServiceAreaTemplate = ({
         </section>
         )}
 
+        {/* Maple Valley Fencing Video Section */}
+        {city === "Maple Valley" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Maple Valley Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our expert fence installation process in Maple Valley. We combine traditional craftsmanship with exclusive Fence Genius technology to build fences that handle the Plateau's unique terrain.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Summit neighborhoods to Wilderness Rim slopes, every Maple Valley fence we build is engineered for maximum durability in our local climate.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/Tct8oXAwQ04?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Maple Valley Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Black Diamond Fencing Video Section */}
+        {city === "Black Diamond" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Black Diamond Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Black Diamond. We specialize in Ten Trails HOA-approved designs and durable solutions for the foothills environment.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From master-planned communities to historic properties, every Black Diamond fence we build is engineered for moisture, wind, and lasting beauty.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1bbv1lVJv2Y?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Black Diamond Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Local Expertise Section */}
         {climateDescription && (
           <section className="py-16 bg-muted/50">
@@ -682,58 +750,6 @@ const ServiceAreaTemplate = ({
           </section>
         )}
 
-        {/* Google Business Location */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                  Our Location
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  Serving {city} and the greater Seattle area
-                </p>
-              </div>
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2706.5849474493!2d-122.04876700000001!3d47.389384699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906119f98d5b73%3A0x8ce80c589db968c5!2sMyFence.com%20-%20Wood%20Fence%20Contractor!5e0!3m2!1sen!2sus!4v1701500000000!5m2!1sen!2sus"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`MyFence.com location serving ${city}`}
-                    className="w-full"
-                  />
-                  <div className="p-4 bg-muted/30">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-                      <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">22927 257th Ave SE, Maple Valley, WA 98038</span>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-primary" />
-                          <span className="text-muted-foreground">Open 24/7</span>
-                        </div>
-                        <a 
-                          href="https://www.google.com/maps/place/MyFence.com+-+Wood+Fence+Contractor/@47.3893847,-122.048767,17z" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline font-medium"
-                        >
-                          Directions →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
