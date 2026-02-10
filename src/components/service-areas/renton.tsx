@@ -295,6 +295,10 @@ const Renton = () => {
       articleContent={<RentonArticle />}
       faqStructuredData={rentonFaqLd}
       enhancedBusinessData={rentonLocalBusinessLd}
+      videoTags={[
+        { label: "Picture Frame Style", link: "/fence-styles/picture-frame-fence" },
+        { label: "2x6 Rot Board", link: "/fence-upgrades/rot-board" }
+      ]}
     />
     </>
   );

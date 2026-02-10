@@ -18,6 +18,11 @@ export interface Neighborhood {
   link?: string;
 }
 
+export interface VideoTag {
+  label: string;
+  link: string;
+}
+
 interface ServiceAreaTemplateProps {
   city: string;
   state: string;
@@ -34,6 +39,7 @@ interface ServiceAreaTemplateProps {
   articleContent?: React.ReactNode;
   faqStructuredData?: any;
   enhancedBusinessData?: any;
+  videoTags?: VideoTag[];
 }
 
 const ServiceAreaTemplate = ({ 
@@ -51,7 +57,8 @@ const ServiceAreaTemplate = ({
   climateDescription = "",
   articleContent,
   faqStructuredData,
-  enhancedBusinessData
+  enhancedBusinessData,
+  videoTags = []
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const { reviews, reviewsRef } = useTrustindexReviews();
@@ -501,6 +508,53 @@ const ServiceAreaTemplate = ({
         </section>
         )}
 
+        {/* Renton Fencing Video Section */}
+        {city === "Renton" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Renton Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Renton. We specialize in durable cedar systems engineered for the unique terrain and climate of the South End.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Highlands neighborhoods to Fairwood estates, we build quality fences that provide privacy, security, and lasting value for your Renton property.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/iUUnbPpWYvo?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Renton Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Issaquah Fencing Video Section */}
         {city === "Issaquah" && (
           <section className="py-12 md:py-16">
@@ -594,6 +648,100 @@ const ServiceAreaTemplate = ({
                       allowFullScreen
                       className="w-full h-full"
                       title="Covington Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* SeaTac Fencing Video Section */}
+        {city === "SeaTac" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  SeaTac Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our expert fence installation process in SeaTac. We specialize in high-density privacy solutions designed to handle the unique noise and environment challenges of the SeaTac plateau.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Angle Lake waterfronts to McMicken Heights neighborhoods, we build durable fences that provide peace, security, and lasting beauty for your SeaTac home.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/iS2gYdbPO9k?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="SeaTac Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Tukwila Fencing Video Section */}
+        {city === "Tukwila" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Tukwila Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Tukwila. We specialize in precision-engineered cedar and hybrid systems built to handle the unique river valley terrain.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Riverton Heights hillsides to Foster neighborhood lots, we deliver quality fences that combine durability with local craftsmanship.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/8nMPyw4JjW8?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Tukwila Fencing"
                     />
                   </AspectRatio>
                 </div>

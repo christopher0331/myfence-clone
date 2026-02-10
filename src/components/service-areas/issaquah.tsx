@@ -412,7 +412,8 @@ const Issaquah = () => {
       neighborhoods={[
         {
           name: "Issaquah Highlands",
-          description: "Master-planned community with HOA requirements demanding approved designs and premium materials for upscale properties"
+          description: "Master-planned community with HOA requirements demanding approved designs and premium materials for upscale properties",
+          link: "/service-areas/issaquah-highlands"
         },
         {
           name: "Olde Town Issaquah",

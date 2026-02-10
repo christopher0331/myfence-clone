@@ -488,6 +488,12 @@ const Tukwila = () => {
       articleContent={<TukwilaArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
+      videoTags={[
+        { label: "Craftsman Style", link: "/fence-styles/craftsman-style-fence" },
+        { label: "Board on Board", link: "/fence-upgrades/board-on-board" },
+        { label: "Pre Stained", link: "/pre-staining-cedar-fence" },
+        { label: "Rot Board", link: "/fence-upgrades/rot-board" }
+      ]}
     />
   );
 };
