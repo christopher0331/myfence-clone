@@ -12,14 +12,34 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface TehalehPageProps {
   canonical?: string;
+  isUpper?: boolean;
+  title?: string;
+  description?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  videoUrl?: string;
 }
 
-const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-tehaleh" }: TehalehPageProps) => {
+const TehalehPage = ({ 
+  canonical = "https://myfence.com/service-areas/lower-tehaleh",
+  isUpper = false,
+  title,
+  description,
+  metaTitle,
+  metaDescription,
+  videoUrl = "gzAzQLdfqDA"
+}: TehalehPageProps) => {
+  const displayTitle = title || (isUpper ? "Upper Tehaleh Fence Installation" : "Lower Tehaleh Fence Installation");
+  const displayMetaTitle = metaTitle || (isUpper ? "Upper Tehaleh Fence Installation | MyFence.com" : "Lower Tehaleh Fence Installation | MyFence.com");
+  const displayMetaDesc = metaDescription || (isUpper 
+    ? "Expert fence installation for Upper Tehaleh's elevated homesites. HOA-compliant cedar and hybrid fencing built for mountain views and plateau winds." 
+    : "Professional fence installation for Lower Tehaleh's family neighborhoods. Serving walkable communities with HOA-approved cedar and hogwire fencing.");
+
   return (
     <>
       <Seo
-        title="Tehaleh Fence Installation | HOA-Compliant Fencing | MyFence.com"
-        description="Professional fence installation throughout Tehaleh, Bonney Lake. Serving Upper and Lower Tehaleh with HOA-compliant designs. Cedar, hogwire & hybrid aluminum fencing. Free quotes."
+        title={displayMetaTitle}
+        description={displayMetaDesc}
         canonical={canonical}
       />
 
@@ -39,14 +59,15 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
-                  <span className="text-lg text-muted-foreground">Serving Upper & Lower Tehaleh</span>
+                  <span className="text-lg text-muted-foreground">Serving {isUpper ? "Upper Tehaleh" : "Lower Tehaleh"}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Professional Fence Installation in Tehaleh
+                  {displayTitle}
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Expert HOA-compliant fence installation for Bonney Lake's premier master-planned community. Serving
-                  all Tehaleh neighborhoods with cedar, hogwire, and hybrid aluminum fencing solutions.
+                  {description || (isUpper 
+                    ? "Specialized HOA-compliant fence installation for Tehaleh's upper plateau. We build durable solutions engineered for elevated terrain and stunning mountain views."
+                    : "Expert fence installation for Tehaleh's established family neighborhoods. Providing secure, beautiful, and HOA-approved fencing for your walkable community.")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -64,10 +85,10 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
               {/* Service Area Map */}
               <div className="w-full rounded-lg overflow-hidden shadow-lg">
                 <GoogleBusinessMap
-                  city="Tehaleh"
+                  city={isUpper ? "Upper Tehaleh" : "Lower Tehaleh"}
                   state="Washington"
-                  radiusMiles={3}
-                  zoom={12}
+                  radiusMiles={2}
+                  zoom={13}
                   showBusinessInfo={true}
                 />
               </div>
@@ -79,19 +100,18 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">Expert Fencing Throughout Tehaleh</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                {isUpper ? "Fencing for the Upper Plateau" : "Fencing for Walkable Neighborhoods"}
+              </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Tehaleh is one of Bonney Lake's most sought-after master-planned communities, featuring diverse
-                neighborhoods that cater to families of all sizes and lifestyles. From cozy starter homes to expansive
-                luxury properties with mountain views, we provide premium fence installation services throughout the
-                entire Tehaleh development—including both Upper and Lower Tehaleh neighborhoods.
+                {isUpper 
+                  ? "Upper Tehaleh represents the newest evolution of Bonney Lake's premier master-planned community. Living on the upper plateau offers unmatched proximity to nature and breathtaking views of Mt. Rainier, but it also brings unique challenges for fencing—including increased wind exposure and sharper terrain changes."
+                  : "Lower Tehaleh is the heart of the community, characterized by established neighborhoods, the iconic Tehaleh Post, and miles of interconnected trails. Fencing here requires a balance between backyard privacy and the open, welcoming aesthetic that defines these walkable neighborhoods."}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you live in an elevated homesite with commanding views of Mount Rainier or a walkable
-                neighborhood close to trails and community centers, your fence needs to match your home's character
-                while meeting Tehaleh's HOA standards. We understand the unique requirements of this community and have
-                completed installations throughout every section of Tehaleh, from properties backing to trail systems to
-                homes on challenging slopes.
+                {isUpper
+                  ? "We specialize in 'mountain-smart' installations for Upper Tehaleh. Our hybrid systems are particularly popular here, combining the natural look of cedar with the wind-resistant strength of aluminum posts. We ensure every fence meets the specific architectural standards of the upper neighborhoods while maximizing the longevity of your investment."
+                  : "In Lower Tehaleh, we focus on family-friendly designs that provide security for pets and children without obstructing the community feel. We're intimately familiar with the HOA requirements for neighborhoods near the trail systems and community parks, ensuring your project gets approved quickly and builds lasting value."}
               </p>
             </div>
           </div>
@@ -102,7 +122,7 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Tehaleh Homeowners Trust MyFence.com
+                Why {isUpper ? "Upper Tehaleh" : "Lower Tehaleh"} Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
@@ -111,8 +131,8 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
                     <div>
                       <h3 className="text-xl font-semibold mb-2">HOA Compliance Experts</h3>
                       <p className="text-muted-foreground">
-                        Deep knowledge of Tehaleh's design standards and architectural review requirements. We handle
-                        all submission documentation and ensure first-time approval.
+                        Deep knowledge of Tehaleh's design standards. We handle
+                        all submission documentation and ensure first-time approval for {isUpper ? "Plateau" : "Valley"} neighborhoods.
                       </p>
                     </div>
                   </div>
@@ -121,10 +141,13 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
                   <div className="flex items-start gap-4">
                     <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Slope Specialists</h3>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {isUpper ? "Wind & Slope Specialists" : "Trailside Specialists"}
+                      </h3>
                       <p className="text-muted-foreground">
-                        Expert installation on Tehaleh's varied terrain using stepped and raked designs that maintain
-                        aesthetic appeal on challenging grades.
+                        {isUpper 
+                          ? "Expert installation on the plateau's varied terrain using reinforced systems built for higher wind exposure."
+                          : "Specialized designs for properties backing to Tehaleh's extensive trail network and community amenities."}
                       </p>
                     </div>
                   </div>
@@ -135,7 +158,7 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
                       <p className="text-muted-foreground">
-                        Comprehensive {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty giving you peace of mind.
+                        Comprehensive {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty giving you peace of mind in {isUpper ? "Upper" : "Lower"} Tehaleh.
                       </p>
                     </div>
                   </div>
@@ -146,8 +169,7 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Family-Focused Designs</h3>
                       <p className="text-muted-foreground">
-                        Safe, durable fencing solutions designed for active families with children and pets. Smooth
-                        finishes, secure gates, and child-safe hardware.
+                        Safe, durable fencing solutions designed for active Tehaleh families with children and pets.
                       </p>
                     </div>
                   </div>
@@ -161,51 +183,31 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">Tehaleh-Specific Installation Considerations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">{isUpper ? "Upper" : "Lower"} Tehaleh-Specific Considerations</h2>
 
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">HOA Architectural Standards</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Tehaleh maintains rigorous architectural review standards to preserve the community's aesthetic
-                    cohesion. We're intimately familiar with the Tehaleh Design Review Committee's requirements,
-                    including approved fence styles, colors, and materials. Our team prepares comprehensive submission
-                    packages with detailed plans, material specifications, and color samples to ensure swift approval
-                    throughout all Tehaleh neighborhoods.
+                    Tehaleh maintains rigorous architectural review standards. We're intimately familiar with the Tehaleh Design Review Committee's requirements for both the {isUpper ? "newest phases on the plateau" : "established neighborhoods near the community center"}. Our team prepares comprehensive submission packages to ensure swift approval.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Topography and Slope Management</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Topography and {isUpper ? "Wind" : "Trail"} Management</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Tehaleh's varied terrain—from elevated homesites with stunning views to gentler slopes near
-                    community centers—presents unique installation challenges. Our Fence Genius technology excels at
-                    creating custom panels that follow natural grade changes while maintaining consistent panel heights
-                    and professional appearance. We use specialized stepped designs for steeper slopes and raked panels
-                    for gentler grades.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-semibold mb-3">Trail and Amenity Access</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Many Tehaleh properties back to trails, parks, or common areas that make this community special. We
-                    design fence installations that provide security while respecting these amenity connections.
-                    Strategic gate placement, decorative picket sections along trail sides, and compliant setbacks
-                    ensure your fence enhances rather than conflicts with Tehaleh's extensive trail network and
-                    community spaces.
+                    {isUpper 
+                      ? "The upper plateau's unique geography requires fencing that can handle both steep grade changes and increased wind loads. We use Fence Genius technology to create custom panels that follow the terrain perfectly while maintaining structural integrity."
+                      : "Lower Tehaleh's properties often border the community's signature trail system. We design installations that provide privacy while respecting the setbacks and aesthetic requirements for these shared spaces."}
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Premium, Low-Maintenance Materials</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Tehaleh homes deserve fencing materials that match their quality while minimizing maintenance
-                    demands on busy families. We offer clear-grade Western Red Cedar for superior appearance, hogwire
-                    fencing for properties wanting rustic elegance with open views, and our hybrid aluminum system
-                    (black panels with cedar framing) that never requires staining. All installations use marine-grade
-                    stainless steel fasteners and our optional Post-on-Pipe upgrade virtually eliminates the most common
-                    failure point: rotting posts.
+                    {isUpper 
+                      ? "For the newer homes in Upper Tehaleh, we recommend our hybrid aluminum/cedar systems. They provide a modern look that complements the latest architectural styles while virtually eliminating maintenance requirements."
+                      : "In Lower Tehaleh, our Western Red Cedar privacy fences and hogwire systems are highly popular, offering a timeless Pacific Northwest look that fits the established neighborhood character."}
                   </p>
                 </div>
               </div>
@@ -214,33 +216,32 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
         </section>
 
         {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Tehaleh fence" />
+        <VirtualQuoteTool fenceStyleName={`${isUpper ? "Upper" : "Lower"} Tehaleh fence`} />
 
         {/* Tehaleh Fencing Video Section */}
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Tehaleh Fencing</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">{isUpper ? "Upper" : "Lower"} Tehaleh Fencing</h2>
               <div className="grid md:grid-cols-3 gap-8 items-start">
                 <div className="md:col-span-2 space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    Watch our efficient installation process in Tehaleh. From elevated properties with mountain views to
-                    family-friendly neighborhoods near trails, we deliver quality fences that match your home and
-                    lifestyle.
+                    Watch our efficient installation process in {isUpper ? "Upper" : "Lower"} Tehaleh. {isUpper 
+                      ? "From plateau properties with mountain views to newer developments, we deliver mountain-smart fencing built for durability."
+                      : "From family neighborhoods near the Post to trailside homes, we deliver quality fences that match the walkable community lifestyle."}
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Every Tehaleh fence combines sophisticated aesthetics with family-friendly durability—creating safe,
-                    beautiful outdoor spaces whether you're in Upper or Lower Tehaleh.
+                    Every {isUpper ? "Upper" : "Lower"} Tehaleh fence combines sophisticated aesthetics with family-friendly durability.
                   </p>
                 </div>
                 <div className="w-full">
                   <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.youtube-nocookie.com/embed/gzAzQLdfqDA?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      src={`https://www.youtube-nocookie.com/embed/${videoUrl}?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
-                      title="Tehaleh Fencing"
+                      title={`${isUpper ? "Upper" : "Lower"} Tehaleh Fencing`}
                     />
                   </AspectRatio>
                 </div>
@@ -253,44 +254,36 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Tehaleh Installation Process</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Our {isUpper ? "Upper" : "Lower"} Tehaleh Installation Process</h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">1. Free Consultation & Measurement</h3>
                   <p className="text-muted-foreground">
-                    We meet at your Tehaleh home to understand your family's needs, assess your property's terrain, and
-                    discuss design options that comply with HOA standards. Our Fence Genius technology provides precise
-                    measurements on the spot.
+                    We meet at your home to understand your family's needs, assess your property's {isUpper ? "plateau" : "neighborhood"} terrain, and discuss HOA-compliant designs.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">2. Design Selection & HOA Approval</h3>
                   <p className="text-muted-foreground">
-                    Choose from cedar, hogwire, or hybrid aluminum options with colors and styles approved for Tehaleh.
-                    We prepare and submit all required documentation to the architectural review committee.
+                    Choose from cedar, hogwire, or hybrid options approved for {isUpper ? "Upper" : "Lower"} Tehaleh. We handle all architectural committee documentation.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">3. Off-Site Panel Manufacturing</h3>
                   <p className="text-muted-foreground">
-                    Using your exact measurements, we manufacture custom panels at our facility. This ensures consistent
-                    quality, reduces installation time, and minimizes disruption to your daily routine.
+                    Custom panels manufactured at our facility ensure consistent quality and minimize disruption to your daily routine.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">4. Professional Installation</h3>
                   <p className="text-muted-foreground">
-                    Our experienced crew arrives fully prepared with pre-fabricated panels, specialized equipment for
-                    slope work, and all necessary materials. We complete most Tehaleh installations in 1-2 days with
-                    minimal property disruption.
+                    Our crew arrives prepared with pre-fabricated panels and specialized equipment for {isUpper ? "wind-resistant" : "precise"} installation. Most projects finished in 1-2 days.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">5. Final Walkthrough & Warranty</h3>
                   <p className="text-muted-foreground">
-                    We inspect every detail with you, demonstrate gate operation, provide maintenance guidance, and
-                    ensure complete satisfaction before finalizing your {WARRANTY_CONSTANTS.YEARS}-year warranty
-                    coverage.
+                    Full walkthrough and activation of your {WARRANTY_CONSTANTS.YEARS}-year warranty coverage.
                   </p>
                 </Card>
               </div>
@@ -302,10 +295,9 @@ const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-teha
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Enhance Your Tehaleh Property?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Enhance Your {isUpper ? "Upper" : "Lower"} Tehaleh Property?</h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Schedule a free consultation with Tehaleh's trusted fence installation experts. We serve all
-                neighborhoods throughout Upper and Lower Tehaleh with the same commitment to quality and HOA compliance.
+                Schedule a free consultation with Tehaleh's trusted fence installation experts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">

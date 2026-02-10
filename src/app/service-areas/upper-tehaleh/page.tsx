@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function UpperTehalehPage() {
-  return <TehalehPage canonical="https://myfence.com/service-areas/upper-tehaleh" />;
+  return <TehalehPage isUpper={true} canonical="https://myfence.com/service-areas/upper-tehaleh" />;
 }
