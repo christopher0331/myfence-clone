@@ -147,3 +147,8 @@
 # General page redirects
 /about-us* /contact 301
 /book-online* /contact 301
+
+# Tehaleh Neighborhood redirects
+/neighborhoods/upper-tehaleh /service-areas/upper-tehaleh 301
+/neighborhoods/lower-tehaleh /service-areas/lower-tehaleh 301
+/neighborhoods/tehaleh /service-areas/lower-tehaleh 301

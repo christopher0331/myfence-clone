@@ -10,13 +10,17 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const TehalehPage = () => {
+interface TehalehPageProps {
+  canonical?: string;
+}
+
+const TehalehPage = ({ canonical = "https://myfence.com/service-areas/lower-tehaleh" }: TehalehPageProps) => {
   return (
     <>
       <Seo
         title="Tehaleh Fence Installation | HOA-Compliant Fencing | MyFence.com"
         description="Professional fence installation throughout Tehaleh, Bonney Lake. Serving Upper and Lower Tehaleh with HOA-compliant designs. Cedar, hogwire & hybrid aluminum fencing. Free quotes."
-        canonical="https://myfence.com/neighborhoods/lower-tehaleh"
+        canonical={canonical}
       />
 
       <main className="min-h-screen">
