@@ -1,9 +1,10 @@
+import createMDX from "@next/mdx";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Ensure proper routing for both App Router and Pages Router
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   trailingSlash: false,
-  // Compress output
   compress: true,
   images: {
     // Add smaller device sizes so high-DPR mobile screens don't jump straight to 640/750w.
@@ -42,4 +43,11 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
+  },
+});
+
+export default withMDX(nextConfig);

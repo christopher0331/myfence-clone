@@ -3,8 +3,7 @@ import { blogArticles } from "@/data/blogArticles";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import type { ComponentType } from "react";
-import { getMdxBlogPost, getMdxBlogPosts } from "@/lib/blog";
-import MdxContent from "@/components/MdxContent";
+import { getMdxBlogPosts } from "@/lib/blog";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
@@ -29,20 +28,27 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  // Only pre-render legacy component-based posts. MDX posts (from Studio) are
-  // rendered on-demand to avoid React version conflict during static generation.
-  return blogArticles.map((a) => ({ slug: a.id }));
+  const mdxSlugs = getMdxBlogPosts().map((p) => ({ slug: p.slug }));
+  const legacySlugs = blogArticles.map((a) => ({ slug: a.id }));
+  const seen = new Set(mdxSlugs.map((s) => s.slug));
+  const uniqueLegacy = legacySlugs.filter((s) => !seen.has(s.slug));
+  return [...mdxSlugs, ...uniqueLegacy];
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const mdxPost = getMdxBlogPost(slug);
-  if (mdxPost) {
-    return {
-      title: `${mdxPost.title} | MyFence.com Blog`,
-      description: mdxPost.description,
-      alternates: { canonical: `https://myfence.com/blog/${slug}` },
-    };
+  try {
+    const mod = await import(`@/content/blog/${slug}.mdx`);
+    const fm = mod.frontmatter || {};
+    if (fm.title) {
+      return {
+        title: `${fm.title} | MyFence.com Blog`,
+        description: fm.description || "",
+        alternates: { canonical: `https://myfence.com/blog/${slug}` },
+      };
+    }
+  } catch {
+    // Not an MDX post, try legacy
   }
   const article = blogArticles.find((a) => a.id === slug);
   if (!article) return { title: "Blog Post Not Found | MyFence.com" };
@@ -61,45 +67,52 @@ function getImageUrl(image: string | { src?: string }): string {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
 
-  // Prefer MDX from Studio (src/content/blog/*.mdx)
-  const mdxPost = getMdxBlogPost(slug);
-  if (mdxPost) {
+  // Try MDX from Studio (src/content/blog/*.mdx) - compiled at build time via @next/mdx
+  try {
+    const mod = await import(`@/content/blog/${slug}.mdx`);
+    const Post = mod.default;
+    const fm = mod.frontmatter || {};
+    const title = fm.title || "Untitled";
+    const description = fm.description || "";
+    const image = fm.image || fm.featured_image || "";
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: mdxPost.title,
-      description: mdxPost.description,
-      image: mdxPost.image ? { "@type": "ImageObject", url: getImageUrl(mdxPost.image) } : undefined,
+      headline: title,
+      description,
+      image: image ? { "@type": "ImageObject", url: image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}` } : undefined,
       author: { "@type": "Organization", name: SITE_CONFIG.fullName },
       publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
     };
     return (
       <>
         <Seo
-          title={`${mdxPost.title} | MyFence.com Blog`}
-          description={mdxPost.description}
+          title={`${title} | MyFence.com Blog`}
+          description={description}
           canonical={`https://myfence.com/blog/${slug}`}
-          image={mdxPost.image ? getImageUrl(mdxPost.image) : undefined}
+          image={image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : undefined}
           structuredData={structuredData}
         />
         <div className="min-h-screen bg-background">
           <section className="bg-gradient-to-b from-primary/5 to-background py-16">
             <div className="container max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{mdxPost.title}</h1>
-              <p className="text-xl text-muted-foreground">{mdxPost.description}</p>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{title}</h1>
+              <p className="text-xl text-muted-foreground">{description}</p>
               <div className="flex gap-4 mt-4 text-sm text-muted-foreground">
-                {mdxPost.category && <span className="bg-primary/10 text-primary px-2 py-1 rounded">{mdxPost.category}</span>}
-                {mdxPost.readTime && <span>{mdxPost.readTime}</span>}
-                {mdxPost.publishDate && <span>{mdxPost.publishDate}</span>}
+                {fm.category && <span className="bg-primary/10 text-primary px-2 py-1 rounded">{fm.category}</span>}
+                {fm.readTime && <span>{fm.readTime}</span>}
+                {fm.publishDate && <span>{fm.publishDate}</span>}
               </div>
             </div>
           </section>
-          <section className="container max-w-3xl py-12">
-            <MdxContent source={mdxPost.body} />
+          <section className="container max-w-3xl py-12 prose prose-lg dark:prose-invert max-w-none">
+            <Post />
           </section>
         </div>
       </>
     );
+  } catch {
+    // Not an MDX post, fall through to legacy
   }
 
   // Fall back to legacy component-based posts
