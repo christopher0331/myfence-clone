@@ -9,7 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import OptimizedImage from "@/components/OptimizedImage";
 import postComparison from "@/assets/post-size-comparison.png";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
 
@@ -331,7 +331,7 @@ const ThreePointFivePostsPage = () => {
         </div>
 
         {/* Blog Articles Section */}
-        <BlogSection limit={4} />
+        <BlogSectionClient limit={4} />
 
         {/* Service Area Map Section */}
         <section className="container py-12 md:py-16">

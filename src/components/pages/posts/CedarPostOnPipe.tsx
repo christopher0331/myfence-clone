@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Check, X, Shield, Wrench, DollarSign, Anchor } from "lucide-react";
 import cedarPostOnPipe from "@/assets/cedar-post-on-pipe.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
 
@@ -447,7 +447,7 @@ const CedarPostOnPipe = () => {
       </section>
 
       {/* Blog Articles Section */}
-      <BlogSection limit={4} />
+      <BlogSectionClient limit={4} />
 
       {/* Service Area Map Section */}
       <section className="container py-12 md:py-16">

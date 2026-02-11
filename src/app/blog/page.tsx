@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Seo from "@/components/Seo";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionWithData from "@/components/BlogSectionWithData";
 
 export const metadata: Metadata = {
   title: "Fence FAQ & Learning Center | MyFence.com",
@@ -18,7 +18,7 @@ export default function BlogPage() {
         description="Browse in-depth fence FAQs, cost guides, and how-to articles from MyFence.com. Learn about fence pricing, neighbor rules, staining, and more for Seattle-area homeowners."
         canonical="https://myfence.com/blog"
       />
-      <BlogSection />
+      <BlogSectionWithData />
     </>
   );
 }

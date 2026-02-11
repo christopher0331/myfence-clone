@@ -1,0 +1,148 @@
+name: Auto-Publish Scheduled Blog Posts
+
+on:
+  # Run daily at 8 AM UTC (midnight PST)
+  schedule:
+    - cron: '0 8 * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  publish-scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for scheduled posts and create PRs
+        uses: actions/github-script@v7
+        env:
+          SUPABASE_URL: ${{ secrets.STUDIO_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.STUDIO_SUPABASE_SERVICE_KEY }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const supabaseUrl = process.env.SUPABASE_URL;
+            const supabaseKey = process.env.SUPABASE_KEY;
+
+            if (!supabaseUrl || !supabaseKey) {
+              console.log('Supabase credentials not configured. Skipping.');
+              return;
+            }
+
+            // Query Supabase for posts due today
+            const today = new Date().toISOString().split('T')[0];
+            const queryUrl = `${supabaseUrl}/rest/v1/blog_drafts?status=eq.scheduled&scheduled_date=lte.${today}&select=*`;
+
+            const response = await fetch(queryUrl, {
+              headers: {
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`,
+                'Content-Type': 'application/json',
+              },
+            });
+
+            if (!response.ok) {
+              console.log('Failed to query Supabase:', response.status);
+              return;
+            }
+
+            const posts = await response.json();
+            console.log(`Found ${posts.length} scheduled post(s) due for publishing.`);
+
+            for (const post of posts) {
+              try {
+                console.log(`Publishing: ${post.title} (${post.slug})`);
+
+                // Build MDX content with frontmatter
+                const publishDate = new Date().toLocaleDateString('en-US', {
+                  month: 'long',
+                  year: 'numeric',
+                });
+
+                const frontmatter = [
+                  '---',
+                  `title: "${post.title.replace(/"/g, '\\"')}"`,
+                  `description: "${(post.meta_description || '').replace(/"/g, '\\"')}"`,
+                  `slug: "${post.slug}"`,
+                  `category: "${post.category || ''}"`,
+                  `image: "${post.featured_image || ''}"`,
+                  `readTime: "${post.read_time || ''}"`,
+                  `publishDate: "${publishDate}"`,
+                  `datePublished: "${today}"`,
+                  `dateModified: "${today}"`,
+                  '---',
+                ].join('\n');
+
+                const mdxContent = `${frontmatter}\n\n${post.body_mdx}`;
+                const filePath = `src/content/blog/${post.slug}.mdx`;
+                const branchName = `blog/${post.slug}`;
+
+                // Get default branch SHA
+                const { data: ref } = await github.rest.git.getRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/main`,
+                });
+
+                // Create branch
+                await github.rest.git.createRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `refs/heads/${branchName}`,
+                  sha: ref.object.sha,
+                });
+
+                // Create file
+                const contentBase64 = Buffer.from(mdxContent).toString('base64');
+                await github.rest.repos.createOrUpdateFileContents({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  path: filePath,
+                  message: `Add blog post: ${post.title}`,
+                  content: contentBase64,
+                  branch: branchName,
+                });
+
+                // Open PR
+                const { data: pr } = await github.rest.pulls.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `📝 New Blog: ${post.title}`,
+                  body: `## Auto-published from MyFence Studio\n\n**Post:** ${post.title}\n**Slug:** \`/blog/${post.slug}\`\n**File:** \`${filePath}\`\n\n---\n*This PR was created automatically by the scheduled publishing workflow.*`,
+                  head: branchName,
+                  base: 'main',
+                });
+
+                console.log(`PR created: ${pr.html_url}`);
+
+                // Update draft status in Supabase
+                await fetch(`${supabaseUrl}/rest/v1/blog_drafts?id=eq.${post.id}`, {
+                  method: 'PATCH',
+                  headers: {
+                    'apikey': supabaseKey,
+                    'Authorization': `Bearer ${supabaseKey}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal',
+                  },
+                  body: JSON.stringify({
+                    status: 'published',
+                    published_at: new Date().toISOString(),
+                    github_pr_url: pr.html_url,
+                  }),
+                });
+
+                console.log(`Draft ${post.id} marked as published.`);
+              } catch (err) {
+                console.error(`Failed to publish ${post.slug}:`, err.message);
+
+                // Mark as failed in Supabase
+                await fetch(`${supabaseUrl}/rest/v1/blog_drafts?id=eq.${post.id}`, {
+                  method: 'PATCH',
+                  headers: {
+                    'apikey': supabaseKey,
+                    'Authorization': `Bearer ${supabaseKey}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal',
+                  },
+                  body: JSON.stringify({ status: 'failed' }),
+                });
+              }
+            }

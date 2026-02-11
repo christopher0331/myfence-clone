@@ -6,7 +6,7 @@ import Seo from "@/components/Seo";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import OptimizedImage from "@/components/OptimizedImage";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
 
@@ -462,7 +462,7 @@ const SteelPostsPage = () => {
         </section>
 
         {/* Blog Articles Section */}
-        <BlogSection limit={4} />
+        <BlogSectionClient limit={4} />
 
         {/* Service Area Map Section */}
         <section className="container py-12 md:py-16">

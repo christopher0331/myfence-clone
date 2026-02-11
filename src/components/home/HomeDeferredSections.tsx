@@ -98,7 +98,7 @@ export default function HomeDeferredSections() {
       />
 
       <DeferredSection
-        importFn={() => import("@/components/BlogSection")}
+        importFn={() => import("@/components/BlogSectionClient")}
         placeholder={<div className="container py-12 md:py-16 h-64 bg-muted/10 animate-pulse rounded-lg" />}
       />
 

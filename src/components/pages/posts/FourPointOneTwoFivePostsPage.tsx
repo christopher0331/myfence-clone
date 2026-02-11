@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Seo from "@/components/Seo";
 import Link from "next/link";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
 
@@ -159,7 +159,7 @@ const FourPointOneTwoFivePostsPage = () => {
       </section>
 
       {/* Blog Articles Section */}
-      <BlogSection limit={4} />
+      <BlogSectionClient limit={4} />
 
       {/* Service Area Map Section */}
       <section className="container py-12 md:py-16">
