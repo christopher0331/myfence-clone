@@ -62,6 +62,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </td>
     ),
     Callout,
+    ProTtip: Callout, // Alias for Gemini typo
+    ProTip: Callout,
     Card,
     CardContent,
     ImageCaption,
