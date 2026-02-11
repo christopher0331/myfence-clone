@@ -1,9 +1,13 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Clock } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import type { ComponentType } from "react";
 import { getMdxBlogPosts } from "@/lib/blog";
+import OptimizedImage from "@/components/OptimizedImage";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
@@ -84,29 +88,64 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       author: { "@type": "Organization", name: SITE_CONFIG.fullName },
       publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
     };
+    const imageUrl = image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : null;
+
     return (
       <>
         <Seo
           title={`${title} | MyFence.com Blog`}
           description={description}
           canonical={`https://myfence.com/blog/${slug}`}
-          image={image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : undefined}
+          image={imageUrl ?? undefined}
           structuredData={structuredData}
         />
         <div className="min-h-screen bg-background">
-          <section className="bg-gradient-to-b from-primary/5 to-background py-16">
-            <div className="container max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{title}</h1>
-              <p className="text-xl text-muted-foreground">{description}</p>
-              <div className="flex gap-4 mt-4 text-sm text-muted-foreground">
-                {fm.category && <span className="bg-primary/10 text-primary px-2 py-1 rounded">{fm.category}</span>}
-                {fm.readTime && <span>{fm.readTime}</span>}
-                {fm.publishDate && <span>{fm.publishDate}</span>}
+          <section className="relative py-20 px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-6">
+                <Link href="/blog" className="text-primary hover:underline">
+                  ← Back to Blog
+                </Link>
+              </div>
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  {fm.category && (
+                    <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                      {fm.category}
+                    </span>
+                  )}
+                  <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">{title}</h1>
+                  <p className="text-xl text-muted-foreground mb-6">{description}</p>
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    {fm.readTime && (
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        {fm.readTime}
+                      </span>
+                    )}
+                    {fm.publishDate && <span>{fm.publishDate}</span>}
+                  </div>
+                </div>
+                {imageUrl && (
+                  <div>
+                    <AspectRatio ratio={4 / 3}>
+                      <OptimizedImage
+                        src={imageUrl}
+                        alt={title}
+                        className="w-full h-full object-cover rounded-lg"
+                        loading="eager"
+                        fetchPriority="high"
+                      />
+                    </AspectRatio>
+                  </div>
+                )}
               </div>
             </div>
           </section>
-          <section className="container max-w-3xl py-12 prose prose-lg dark:prose-invert max-w-none">
-            <Post />
+          <section className="py-12 px-4">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+              <Post />
+            </div>
           </section>
         </div>
       </>
