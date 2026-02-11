@@ -24,13 +24,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <a href={href} {...props}>{children}</a>
       );
     },
-    img: ({ src, alt, ...props }) => (
+    img: ({ src, alt }) => (
       <span className="block my-6">
         <OptimizedImage
           src={src || ""}
           alt={alt || ""}
           className="w-full h-auto rounded-lg object-cover"
-          {...props}
         />
       </span>
     ),
