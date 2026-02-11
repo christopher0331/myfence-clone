@@ -29,11 +29,9 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const mdxSlugs = getMdxBlogPosts().map((p) => ({ slug: p.slug }));
-  const legacySlugs = blogArticles.map((a) => ({ slug: a.id }));
-  const seen = new Set(mdxSlugs.map((s) => s.slug));
-  const uniqueLegacy = legacySlugs.filter((s) => !seen.has(s.slug));
-  return [...mdxSlugs, ...uniqueLegacy];
+  // Only pre-render legacy component-based posts. MDX posts (from Studio) are
+  // rendered on-demand to avoid React version conflict during static generation.
+  return blogArticles.map((a) => ({ slug: a.id }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
