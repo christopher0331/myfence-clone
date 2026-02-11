@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { blogArticles } from "@/data/blogArticles";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
@@ -8,6 +9,7 @@ import type { ComponentType } from "react";
 import { getMdxBlogPosts } from "@/lib/blog";
 import OptimizedImage from "@/components/OptimizedImage";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ArticleSummary } from "@/components/ArticleSummary";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
@@ -89,6 +91,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
     };
     const imageUrl = image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : null;
+    const layout = fm.layout || "two-column";
+    const showArticleSummary = fm.showArticleSummary === true || fm.showArticleSummary === "true";
 
     return (
       <>
@@ -99,55 +103,99 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           image={imageUrl ?? undefined}
           structuredData={structuredData}
         />
-        <div className="min-h-screen bg-background">
-          <section className="relative py-20 px-4">
-            <div className="max-w-4xl mx-auto">
+        <main className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+          <div className="container mx-auto px-4 py-8">
+            <article className="max-w-4xl mx-auto">
               <div className="mb-6">
                 <Link href="/blog" className="text-primary hover:underline">
                   ← Back to Blog
                 </Link>
               </div>
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  {fm.category && (
-                    <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
-                      {fm.category}
-                    </span>
-                  )}
-                  <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">{title}</h1>
-                  <p className="text-xl text-muted-foreground mb-6">{description}</p>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    {fm.readTime && (
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {fm.readTime}
-                      </span>
+
+              {layout === "centered" ? (
+                <>
+                  <header className="text-center mb-8">
+                    <div className="flex items-center justify-center gap-4 mb-4">
+                      {fm.category && <Badge variant="secondary">{fm.category}</Badge>}
+                      {fm.readTime && (
+                        <span className="text-sm text-muted-foreground flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {fm.readTime}
+                        </span>
+                      )}
+                      {fm.publishDate && <span className="text-sm text-muted-foreground">{fm.publishDate}</span>}
+                    </div>
+                    <h1 className="text-4xl font-bold mb-4">{title}</h1>
+                    <p className="text-xl text-muted-foreground mb-8">{description}</p>
+                    {imageUrl && (
+                      <>
+                        <div className="relative rounded-lg overflow-hidden mb-4">
+                          <OptimizedImage
+                            src={imageUrl}
+                            alt={title}
+                            className="w-full h-64 md:h-80 object-cover"
+                            loading="eager"
+                            fetchPriority="high"
+                          />
+                        </div>
+                        {fm.imageCaption && (
+                          <p className="text-center text-sm text-muted-foreground mb-8">{fm.imageCaption}</p>
+                        )}
+                      </>
                     )}
-                    {fm.publishDate && <span>{fm.publishDate}</span>}
+                  </header>
+                  {showArticleSummary && (
+                    <div className="mb-12">
+                      <ArticleSummary pageTitle={title} pageContent={description} />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <section className="relative py-4 pb-8">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                      {fm.category && (
+                        <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                          {fm.category}
+                        </span>
+                      )}
+                      <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6">{title}</h1>
+                      <p className="text-xl text-muted-foreground mb-6">{description}</p>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        {fm.readTime && (
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            {fm.readTime}
+                          </span>
+                        )}
+                        {fm.publishDate && <span>{fm.publishDate}</span>}
+                      </div>
+                    </div>
+                    {imageUrl && (
+                      <div>
+                        <AspectRatio ratio={4 / 3}>
+                          <OptimizedImage
+                            src={imageUrl}
+                            alt={title}
+                            className="w-full h-full object-cover rounded-lg"
+                            loading="eager"
+                            fetchPriority="high"
+                          />
+                        </AspectRatio>
+                      </div>
+                    )}
                   </div>
+                </section>
+              )}
+
+              <section className="py-8 px-0">
+                <div className="prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline max-w-none">
+                  <Post />
                 </div>
-                {imageUrl && (
-                  <div>
-                    <AspectRatio ratio={4 / 3}>
-                      <OptimizedImage
-                        src={imageUrl}
-                        alt={title}
-                        className="w-full h-full object-cover rounded-lg"
-                        loading="eager"
-                        fetchPriority="high"
-                      />
-                    </AspectRatio>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-          <section className="py-12 px-4">
-            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-              <Post />
-            </div>
-          </section>
-        </div>
+              </section>
+            </article>
+          </div>
+        </main>
       </>
     );
   } catch {
