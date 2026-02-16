@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
 
               <section className="py-8 px-0">
-                <div className="prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:max-w-[65ch] prose-li:text-muted-foreground prose-ul:my-5 prose-ol:my-5 prose-li:my-1 prose-a:text-primary prose-a:no-underline hover:prose-a:underline max-w-none [&_ul]:pl-5 [&_ol]:pl-5 [&_ul]:border-l-2 [&_ul]:border-primary/20 [&_ol]:border-l-2 [&_ol]:border-primary/20">
+                <div className="prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4 prose-li:text-muted-foreground prose-ul:my-5 prose-ol:my-5 prose-li:my-1 prose-a:text-primary prose-a:no-underline hover:prose-a:underline max-w-none [&_ul]:pl-5 [&_ol]:pl-5 [&_ul]:border-l-2 [&_ul]:border-primary/20 [&_ol]:border-l-2 [&_ol]:border-primary/20">
                   <Post />
                 </div>
               </section>
