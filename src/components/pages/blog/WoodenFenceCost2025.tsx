@@ -29,7 +29,7 @@ const WoodenFenceCost2025 = () => {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Wooden Fence Cost 2025",
+        "name": "Wooden Fence Cost 2026",
         "item": "https://myfence.com/blog/seattle-fence-cost-2025"
       }
     ]
@@ -38,8 +38,8 @@ const WoodenFenceCost2025 = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How Much Does a Wooden Fence Cost in Seattle in 2025?",
-    "description": "Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.",
+    "headline": "How Much Does a Wooden Fence Cost in Seattle in 2026?",
+    "description": "Updated pricing guide for wooden fence installation in Seattle for 2026, including market trends and cost-saving tips for homeowners.",
     "author": {
       "@type": "Person",
       "name": "Seattle Fence Company"
@@ -48,19 +48,19 @@ const WoodenFenceCost2025 = () => {
       "@type": "Organization",
       "name": "Seattle Fence Company"
     },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-01",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-01-01",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://seattlefence.com/blog/seattle-fence-cost-2025"
+      "@id": "https://seattlefence.com/blog/seattle-fence-cost-2026"
     }
   };
 
   return (
     <>
       <Seo
-        title="Wooden Fence Cost Seattle 2025: Complete Pricing Guide & Estimates"
-        description="Updated 2025 wooden fence costs in Seattle, WA. Cedar prices $35-60/LF. Market trends, labor costs, permits. Free estimates. Call (253) 455-1885."
+        title="Wooden Fence Cost Seattle 2026: Complete Pricing Guide & Estimates"
+        description="Updated 2026 wooden fence costs in Seattle, WA. Cedar prices $35-60/LF. Market trends, labor costs, permits. Free estimates. Call (253) 455-1885."
         canonical="https://myfence.com/blog/seattle-fence-cost-2025"
         structuredData={[breadcrumbData, structuredData]}
       />
@@ -75,15 +75,15 @@ const WoodenFenceCost2025 = () => {
                   <Clock className="h-4 w-4" />
                   6 min read
                 </span>
-                <span className="text-sm text-muted-foreground">January 2025</span>
+                <span className="text-sm text-muted-foreground">January 2026</span>
               </div>
               
               <h1 className="text-4xl font-bold mb-4">
-                How Much Does a Wooden Fence Cost in Seattle in 2025?
+                How Much Does a Wooden Fence Cost in Seattle in 2026?
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8">
-                Updated pricing guide for wooden fence installation in Seattle for 2025, including market trends and cost-saving tips for homeowners.
+                Updated pricing guide for wooden fence installation in Seattle for 2026, including market trends and cost-saving tips for homeowners.
               </p>
               
               <div className="relative rounded-lg overflow-hidden mb-8">
@@ -98,18 +98,18 @@ const WoodenFenceCost2025 = () => {
             {/* AI Summary Section */}
             <div className="mb-12">
               <ArticleSummary 
-                pageTitle="How Much Does a Wooden Fence Cost in Seattle in 2025?"
-                pageContent={`Updated 2025 wooden fence pricing guide for Seattle homeowners. Great news: prices have come down significantly from COVID-19 peaks, with current Seattle fence pricing at $35-60 per linear foot before upgrades. The lumber market is now secure and stable, making 2025 an excellent time to purchase. Seattle has specific height restrictions including a 4-foot limitation for front yards - recommended solutions include traditional picket fences and newly introduced hogwire panels. For backyard privacy, a traditional 6-foot cedar fence costs $46-47 per linear foot, providing excellent privacy and property value. To reach 8-foot height, top 2 feet must be lattice or trellis for wind flow. Factors influencing cost include style selection (basic picket to premium privacy), height requirements (4ft front yard to 8ft options), and utility/function (security, privacy, decorative). Cedar remains the gold standard for Seattle installations due to natural moisture and insect resistance. Financing options available through Wisetack with no penalties, late fees, or compounding interest, covering projects from $500-$25,000 with flexible 3-60 month terms. Seattle's marine climate and municipal regulations require proper installation techniques.`}
+                pageTitle="How Much Does a Wooden Fence Cost in Seattle in 2026?"
+                pageContent={`Updated 2026 wooden fence pricing guide for Seattle homeowners. Great news: prices have come down significantly from COVID-19 peaks, with current Seattle fence pricing at $35-60 per linear foot before upgrades. The lumber market is now secure and stable, making 2026 an excellent time to purchase. Seattle has specific height restrictions including a 4-foot limitation for front yards - recommended solutions include traditional picket fences and newly introduced hogwire panels. For backyard privacy, a traditional 6-foot cedar fence costs $46-47 per linear foot, providing excellent privacy and property value. To reach 8-foot height, top 2 feet must be lattice or trellis for wind flow. Factors influencing cost include style selection (basic picket to premium privacy), height requirements (4ft front yard to 8ft options), and utility/function (security, privacy, decorative). Cedar remains the gold standard for Seattle installations due to natural moisture and insect resistance. Financing options available through Wisetack with no penalties, late fees, or compounding interest, covering projects from $500-$25,000 with flexible 3-60 month terms. Seattle's marine climate and municipal regulations require proper installation techniques.`}
               />
             </div>
 
             <div className="prose prose-lg max-w-none">
               <section className="mb-8">
                 <div className="bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-950 dark:to-gray-950 p-6 rounded-lg">
-                  <h2 className="text-2xl font-bold mb-4">Complete Guide to Wooden Fence Costs in Seattle 2025</h2>
+                  <h2 className="text-2xl font-bold mb-4">Complete Guide to Wooden Fence Costs in Seattle 2026</h2>
                   <p className="mb-4">
                     Planning a wooden fence installation in Seattle? Understanding current market pricing is crucial for budgeting your project effectively. 
-                    As we enter 2025, homeowners in the Greater Seattle area are seeing significant improvements in both material availability and pricing stability 
+                    As we enter 2026, homeowners in the Greater Seattle area are seeing significant improvements in both material availability and pricing stability 
                     compared to the volatile COVID-19 era. This comprehensive guide breaks down everything you need to know about wooden fence costs, 
                     from basic picket fences to premium privacy installations.
                   </p>
@@ -121,7 +121,7 @@ const WoodenFenceCost2025 = () => {
                   </p>
                   <p className="mb-4">
                     Whether you're looking to enhance privacy in your backyard, secure your front yard within Seattle's 4-foot height restrictions, 
-                    or add property value with attractive fencing, this guide provides current 2025 pricing, style options, and regulatory information 
+                    or add property value with attractive fencing, this guide provides current 2026 pricing, style options, and regulatory information 
                     specific to Seattle homeowners. We'll cover everything from basic costs per linear foot to factors that influence your total project investment.
                   </p>
                 </div>
@@ -145,7 +145,7 @@ const WoodenFenceCost2025 = () => {
                   <CardContent className="p-6">
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <CheckCircle className="h-6 w-6 text-green-600" />
-                      Great News for 2025: Prices Have Come Down!
+                      Great News for 2026: Prices Have Come Down!
                     </h2>
                     <p className="mb-4">
                       Thankfully, prices have come way down from the COVID-19 heights caused by supply chain issues. 
@@ -165,7 +165,7 @@ const WoodenFenceCost2025 = () => {
 
               <div className="mb-8">
                 <OptimizedImage
-                  src="/lovable-uploads/1437b79e-8006-437b-b489-6428ff12ade9.png"
+                  src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/cedarFenceBoardsUpgrade.webp?updatedAt=1762470320116"
                   alt="Picture frame fence corner with pergola and flowering tree - Seattle fence installation"
                   className="w-full h-64 object-cover rounded-lg"
                 />
