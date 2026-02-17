@@ -594,7 +594,8 @@ const BonneyLake = () => {
         },
         {
           name: "Mountain Creek",
-          description: "Hillside community requiring specialized slope management and engineering for fence installations."
+          description: "Hillside community with steeper grade transitions and view-oriented lots. Explore our dedicated Mountain Creek page for slope-ready fence planning. Click to learn more →",
+          link: "/service-areas/mountain-creek"
         },
         {
           name: "Downtown Bonney Lake",
