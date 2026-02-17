@@ -69,6 +69,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ImageCaption,
     ImageGrid,
     AspectRatio,
+    OptimizedImage,
     ...components,
   };
 }
