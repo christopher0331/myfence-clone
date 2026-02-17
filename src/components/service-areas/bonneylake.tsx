@@ -599,7 +599,8 @@ const BonneyLake = () => {
         },
         {
           name: "Downtown Bonney Lake",
-          description: "Central area with mix of commercial and residential properties requiring diverse fencing solutions."
+          description: "Central Bonney Lake neighborhood with compact lots, mixed-use edges, and high-traffic access patterns. Explore our dedicated Downtown service page for durable, low-maintenance fence planning. Click to learn more →",
+          link: "/service-areas/downtown-bonney-lake"
         }
       ]}
       landmarks={[
