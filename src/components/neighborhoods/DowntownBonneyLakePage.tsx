@@ -21,6 +21,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface DowntownBonneyLakePageProps {
   canonical?: string;
@@ -29,12 +30,38 @@ interface DowntownBonneyLakePageProps {
 const DowntownBonneyLakePage = ({
   canonical = "https://myfence.com/service-areas/downtown-bonney-lake",
 }: DowntownBonneyLakePageProps) => {
+  const structuredData = buildNeighborhoodStructuredData({
+    canonical,
+    neighborhoodName: "Downtown Bonney Lake",
+    pageTitle: "Downtown Bonney Lake Fence Installation",
+    description:
+      "Professional fence installation in Downtown Bonney Lake. Cedar, hogwire, and hybrid fence systems designed for compact lots, mixed-use surroundings, and long-term durability.",
+    faqItems: [
+      {
+        question: "How long does a typical downtown fence project take?",
+        answer:
+          "Most residential projects are completed quickly once installation begins, but the exact timeline depends on linear footage, gate count, and site complexity.",
+      },
+      {
+        question: "Can you help with replacement on older lots?",
+        answer:
+          "Yes. We routinely replace aging fence lines in established neighborhoods and can recommend modern materials that improve durability and curb appeal.",
+      },
+      {
+        question: "What fence style is best for privacy near busy streets?",
+        answer:
+          "Full-privacy cedar and select hybrid designs are usually the best fit. We review your specific visibility and access needs before finalizing recommendations.",
+      },
+    ],
+  });
+
   return (
     <>
       <Seo
         title="Downtown Bonney Lake Fence Installation | Bonney Lake Neighborhood Experts"
         description="Professional fence installation in Downtown Bonney Lake. Cedar, hogwire, and hybrid fence systems designed for compact lots, mixed-use surroundings, and long-term durability."
         canonical={canonical}
+        structuredData={structuredData}
       />
 
       <main className="min-h-screen">

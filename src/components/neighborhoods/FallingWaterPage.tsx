@@ -9,6 +9,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface FallingWaterPageProps {
   canonical?: string;
@@ -17,12 +18,21 @@ interface FallingWaterPageProps {
 const FallingWaterPage = ({
   canonical = "https://myfence.com/service-areas/falling-water",
 }: FallingWaterPageProps) => {
+  const structuredData = buildNeighborhoodStructuredData({
+    canonical,
+    neighborhoodName: "Falling Water",
+    pageTitle: "Falling Water Fence Installation",
+    description:
+      "Professional fence installation in Falling Water, Bonney Lake. HOA-aligned cedar, hogwire, and hybrid fencing built for hillside lots and family backyards.",
+  });
+
   return (
     <>
       <Seo
         title="Falling Water Fence Installation | Bonney Lake Neighborhood Experts"
         description="Professional fence installation in Falling Water, Bonney Lake. HOA-aligned cedar, hogwire, and hybrid fencing built for hillside lots and family backyards."
         canonical={canonical}
+        structuredData={structuredData}
       />
 
       <main className="min-h-screen">

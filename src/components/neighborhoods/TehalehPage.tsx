@@ -9,6 +9,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface TehalehPageProps {
   canonical?: string;
@@ -34,6 +35,12 @@ const TehalehPage = ({
   const displayMetaDesc = metaDescription || (isUpper 
     ? "Expert fence installation for Upper Tehaleh's elevated homesites. HOA-compliant cedar and hybrid fencing built for mountain views and plateau winds." 
     : "Professional fence installation for Lower Tehaleh's family neighborhoods. Serving walkable communities with HOA-approved cedar and hogwire fencing.");
+  const structuredData = buildNeighborhoodStructuredData({
+    canonical,
+    neighborhoodName: isUpper ? "Upper Tehaleh" : "Lower Tehaleh",
+    pageTitle: displayTitle,
+    description: displayMetaDesc,
+  });
 
   return (
     <>
@@ -41,6 +48,7 @@ const TehalehPage = ({
         title={displayMetaTitle}
         description={displayMetaDesc}
         canonical={canonical}
+        structuredData={structuredData}
       />
 
       <main className="min-h-screen">
