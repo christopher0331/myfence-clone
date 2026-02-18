@@ -4,7 +4,19 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone } from "lucide-react";
+import {
+  CheckCircle2,
+  Shield,
+  Clock,
+  Award,
+  ArrowLeft,
+  MapPin,
+  Phone,
+  Hammer,
+  Trees,
+  Home,
+  Ruler,
+} from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -43,7 +55,8 @@ const DowntownBonneyLakePage = ({
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Downtown Bonney Lake Fence Installation</h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Fence solutions designed for central Bonney Lake properties with tighter lot lines, higher traffic flow, and a mix of home and business-adjacent settings.
+                  Premium fence systems for central Bonney Lake properties with tighter lot lines,
+                  higher traffic flow, and a mix of residential and business-adjacent surroundings.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -67,21 +80,59 @@ const DowntownBonneyLakePage = ({
 
         <section className="py-16">
           <div className="container">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">Built for Downtown Bonney Lake Lots and Lifestyles</h2>
+            <div className="max-w-5xl mx-auto space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold">Built for Downtown Bonney Lake Lots, Lifestyles, and Long-Term Value</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Downtown Bonney Lake includes older homes, updated infill, and properties near busier corridors where privacy and access both matter. These projects usually demand tighter layout work, precise gate positioning, and cleaner offsets from driveways, sidewalks, and shared boundaries.
+                Downtown Bonney Lake includes long-established homes, updated infill lots, and
+                properties close to more active commercial streets. Fence design in this area has
+                to do more than mark a boundary. It needs to improve privacy, control visibility,
+                support safer access points, and hold up to constant daily use.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We build cedar privacy, hogwire, and hybrid aluminum fences selected for long-term durability in Pacific Northwest weather and for curb appeal in mixed-use areas. Every plan is customized to your lot so your fence improves security and daily function without feeling overbuilt.
+                We install cedar privacy fences, decorative picture-frame systems, modern horizontal
+                layouts, and cedar/aluminum hybrids that are engineered for Pacific Northwest
+                weather and built to match how your property functions. Our approach is detailed and
+                practical: clear layout planning, durable post systems, and clean finish work that
+                helps your fence look intentional from every angle.
               </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you&apos;re improving a backyard retreat, upgrading a side-yard corridor, or
+                replacing an aging perimeter, our team builds with the same goals in mind:
+                precision, longevity, and curb appeal that supports property value.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-muted/40">
+          <div className="container">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Downtown Bonney Lake Fence Company | MyFence.com</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Card className="p-6 text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
+                  <p className="text-sm text-muted-foreground">Years of Fence Building Experience</p>
+                </Card>
+                <Card className="p-6 text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">98%+</div>
+                  <p className="text-sm text-muted-foreground">On-Time Installation Rate</p>
+                </Card>
+                <Card className="p-6 text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">150+</div>
+                  <p className="text-sm text-muted-foreground">Five-Star Customer Reviews</p>
+                </Card>
+                <Card className="p-6 text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">{WARRANTY_CONSTANTS.YEARS}-Year</div>
+                  <p className="text-sm text-muted-foreground">Craftsmanship Warranty Coverage</p>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="py-16 bg-muted/50">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Why Downtown Homeowners Choose MyFence.com</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
@@ -89,34 +140,49 @@ const DowntownBonneyLakePage = ({
                     <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Lot-Specific Layout Planning</h3>
-                      <p className="text-muted-foreground">We map each fence run to your property lines, traffic flow, and access points for a clean fit that looks intentional from every angle.</p>
+                      <p className="text-muted-foreground">
+                        We map each run to lot lines, easements, access points, grade changes, and
+                        driveway transitions so the installation fits your property cleanly.
+                      </p>
                     </div>
                   </div>
                 </Card>
+
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
                     <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Efficient, Predictable Installations</h3>
-                      <p className="text-muted-foreground">Our pre-fabrication workflow helps reduce on-site disruption and keeps your project moving in active downtown neighborhoods.</p>
+                      <h3 className="text-xl font-semibold mb-2">Efficient, Predictable Scheduling</h3>
+                      <p className="text-muted-foreground">
+                        Our pre-build process reduces jobsite surprises and helps keep timelines
+                        reliable in busier neighborhood settings.
+                      </p>
                     </div>
                   </div>
                 </Card>
+
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
                     <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Craftsmanship Warranty</h3>
-                      <p className="text-muted-foreground">Every installation includes long-term workmanship coverage so you can invest with confidence.</p>
+                      <h3 className="text-xl font-semibold mb-2">Durable Materials for Daily Use</h3>
+                      <p className="text-muted-foreground">
+                        We recommend fence systems and hardware that handle frequent gate cycles,
+                        wet weather, and high-visibility frontage without constant upkeep.
+                      </p>
                     </div>
                   </div>
                 </Card>
+
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
                     <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Materials That Hold Up</h3>
-                      <p className="text-muted-foreground">We focus on fence systems that perform through wet winters, seasonal temperature swings, and heavy day-to-day use.</p>
+                      <h3 className="text-xl font-semibold mb-2">Clean Finish Quality</h3>
+                      <p className="text-muted-foreground">
+                        Straight lines, balanced reveals, and consistent detailing give your fence a
+                        polished appearance that supports home value.
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -127,21 +193,98 @@ const DowntownBonneyLakePage = ({
 
         <section className="py-16">
           <div className="container">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">Downtown Bonney Lake-Specific Considerations</h2>
-              <div className="space-y-6">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Downtown Bonney Lake Planning Considerations</h2>
+              <div className="space-y-8">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Compact Lots and Shared Boundaries</h3>
-                  <p className="text-muted-foreground leading-relaxed">Downtown properties often have tighter spacing and less room for installation error. We use precise measurements and clear boundary planning to avoid setbacks and create clean fence lines.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    With tighter spacing between structures, layout precision is critical. We confirm
+                    fence runs and transitions before installation so the final build is clean,
+                    compliant, and coordinated with neighboring lines.
+                  </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Street Exposure and Gate Use</h3>
-                  <p className="text-muted-foreground leading-relaxed">Frequent entry points and visible frontage need durable gates, reliable hardware, and thoughtful placement. We design for daily convenience while maintaining security.</p>
+                  <h3 className="text-2xl font-semibold mb-3">Street Exposure and Security Balance</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Downtown frontage often calls for a blend of privacy and design. We help select
+                    heights, top profiles, and gate locations that improve security while keeping
+                    curb appeal strong.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Gate Traffic and Hardware Performance</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Side-yard and driveway gates see repeated daily use. We specify hinges, latches,
+                    and framing approaches built for long-term reliability and smoother operation.
+                  </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Mixed Residential-Commercial Edges</h3>
-                  <p className="text-muted-foreground leading-relaxed">Where homes border busier areas, fence style and height choices have to balance privacy, appearance, and long-term maintenance. We help you choose materials that perform and still look polished.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Where homes border higher-activity corridors, fence style and material choices
+                    have to balance appearance, durability, and maintenance. We prioritize systems
+                    that stay attractive with less upkeep.
+                  </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-primary/5">
+          <div className="container">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Fence Styles Popular in Downtown Bonney Lake</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Home className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Full-Privacy Cedar Fences</h3>
+                      <p className="text-muted-foreground">
+                        A go-to choice for homes near higher-traffic streets or close neighboring
+                        lots. Full-privacy cedar helps create a quieter, more enclosed backyard.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Trees className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Picture Frame and Decorative Cedar</h3>
+                      <p className="text-muted-foreground">
+                        Decorative profiles and trim details keep fencing functional while elevating
+                        street-facing appearance in established neighborhood blocks.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Ruler className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Cedar + Aluminum Hybrid Systems</h3>
+                      <p className="text-muted-foreground">
+                        Hybrid systems pair wood warmth with metal stability and lower maintenance,
+                        offering a modern look for updated homes and remodels.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Hammer className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Custom Gate Packages</h3>
+                      <p className="text-muted-foreground">
+                        From pedestrian access to driveway entries, we build reinforced gates and
+                        set hardware for smoother, longer-lasting operation.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
               </div>
             </div>
           </div>
@@ -155,8 +298,14 @@ const DowntownBonneyLakePage = ({
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Downtown Bonney Lake Fencing</h2>
               <div className="grid md:grid-cols-3 gap-8 items-start">
                 <div className="md:col-span-2 space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">See how our crew installs clean, durable fences in Bonney Lake neighborhoods with detailed layout prep and efficient on-site execution.</p>
-                  <p className="text-muted-foreground leading-relaxed">From privacy-focused backyards to low-maintenance perimeter designs, we tailor each build to match your property and goals.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    See how our crew installs clean, durable fences in Bonney Lake neighborhoods with
+                    detailed layout prep, efficient execution, and consistent quality checks.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From privacy-focused backyards to low-maintenance perimeter designs, we tailor
+                    each build to your lot conditions, goals, and long-term maintenance preferences.
+                  </p>
                 </div>
                 <div className="w-full">
                   <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden">
@@ -180,24 +329,70 @@ const DowntownBonneyLakePage = ({
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Downtown Bonney Lake Installation Process</h2>
               <div className="space-y-6">
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">1. Site Walk and Project Goals</h3>
-                  <p className="text-muted-foreground">We review layout constraints, access points, and privacy priorities to create a practical plan for your property.</p>
+                  <h3 className="text-xl font-semibold mb-3">1. Site Walk + Project Priorities</h3>
+                  <p className="text-muted-foreground">
+                    We review boundaries, access, grade, and privacy targets so every decision starts
+                    with real property constraints and daily use needs.
+                  </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">2. Design and Material Selection</h3>
-                  <p className="text-muted-foreground">Choose cedar, hogwire, or hybrid systems with recommendations based on maintenance preference, visibility, and neighborhood fit.</p>
+                  <h3 className="text-xl font-semibold mb-3">2. Design Direction + Material Recommendations</h3>
+                  <p className="text-muted-foreground">
+                    Choose cedar, hogwire, or hybrid systems with guidance based on aesthetics,
+                    neighborhood fit, budget, and maintenance expectations.
+                  </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">3. Precision Layout and Fabrication</h3>
-                  <p className="text-muted-foreground">Detailed measurements guide fabrication so installation is cleaner, faster, and more predictable on build day.</p>
+                  <h3 className="text-xl font-semibold mb-3">3. Precision Layout + Pre-Build Preparation</h3>
+                  <p className="text-muted-foreground">
+                    Detailed measurements and planning reduce on-site delays and make installation
+                    cleaner and more predictable.
+                  </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">4. Professional Installation</h3>
-                  <p className="text-muted-foreground">Our crew installs with careful alignment, strong post setting, and attention to finish details that elevate curb appeal.</p>
+                  <h3 className="text-xl font-semibold mb-3">4. Professional Installation + Daily Quality Control</h3>
+                  <p className="text-muted-foreground">
+                    Our crew sets posts, installs framing, and aligns panels with careful attention
+                    to strength, line consistency, and finished appearance.
+                  </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">5. Final Walkthrough and Warranty</h3>
-                  <p className="text-muted-foreground">We review the completed project with you and finalize your {WARRANTY_CONSTANTS.YEARS}-year craftsmanship coverage.</p>
+                  <h3 className="text-xl font-semibold mb-3">5. Final Walkthrough + Warranty Documentation</h3>
+                  <p className="text-muted-foreground">
+                    We review the finished project together, answer final questions, and finalize
+                    your {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty.
+                  </p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-muted/30">
+          <div className="container">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently Asked Questions: Downtown Bonney Lake Fencing</h2>
+              <div className="space-y-4">
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">How long does a typical downtown fence project take?</h3>
+                  <p className="text-muted-foreground">
+                    Most residential projects are completed quickly once installation begins, but the
+                    exact timeline depends on linear footage, gate count, and site complexity.
+                  </p>
+                </Card>
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Can you help with replacement on older lots?</h3>
+                  <p className="text-muted-foreground">
+                    Yes. We routinely replace aging fence lines in established neighborhoods and can
+                    recommend modern materials that improve durability and curb appeal.
+                  </p>
+                </Card>
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">What fence style is best for privacy near busy streets?</h3>
+                  <p className="text-muted-foreground">
+                    Full-privacy cedar and select hybrid designs are usually the best fit. We review
+                    your specific visibility and access needs before finalizing recommendations.
+                  </p>
                 </Card>
               </div>
             </div>
@@ -208,7 +403,10 @@ const DowntownBonneyLakePage = ({
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Downtown Bonney Lake Property?</h2>
-              <p className="text-muted-foreground text-lg mb-8">Book a free consultation with our Bonney Lake fencing team and get a clear plan for your project.</p>
+              <p className="text-muted-foreground text-lg mb-8">
+                Book a free consultation with our Bonney Lake fencing team and get a clear, practical
+                plan tailored to your lot and goals.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
                   <Link href="/quote">Get Free Quote</Link>
