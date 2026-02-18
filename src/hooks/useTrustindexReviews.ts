@@ -51,6 +51,9 @@ export const useTrustindexReviews = () => {
     script.onload = () => {
       setTimeout(async () => {
         try {
+          // Remove the bad JSON-LD that Trustindex injects (Product schema with no @context)
+          removeTrustindexJsonLd();
+
           const scrapedReviews = scrapeReviewsFromWidget();
 
           if (scrapedReviews.length > 0) {
@@ -124,6 +127,28 @@ const scrapeReviewsFromWidget = (): Review[] => {
   }
   
   return scrapedReviews;
+};
+
+/**
+ * Trustindex injects a <script type="application/ld+json"> with @type: Product
+ * and no @context, causing all types to resolve as relative URLs
+ * (e.g. https://myfence.com/service-areas/Product). Remove it.
+ */
+const removeTrustindexJsonLd = () => {
+  const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+  scripts.forEach((script) => {
+    try {
+      const data = JSON.parse(script.textContent || "");
+      if (
+        data["@type"] === "Product" &&
+        data.manufacturer?.["@id"]?.includes("trustindex")
+      ) {
+        script.remove();
+      }
+    } catch {
+      // not valid JSON, skip
+    }
+  });
 };
 
 const syncReviewsToDatabase = async (
