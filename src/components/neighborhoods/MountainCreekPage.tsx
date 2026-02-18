@@ -9,6 +9,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface MountainCreekPageProps {
   canonical?: string;
@@ -17,12 +18,21 @@ interface MountainCreekPageProps {
 const MountainCreekPage = ({
   canonical = "https://myfence.com/service-areas/mountain-creek",
 }: MountainCreekPageProps) => {
+  const structuredData = buildNeighborhoodStructuredData({
+    canonical,
+    neighborhoodName: "Mountain Creek",
+    pageTitle: "Mountain Creek Fence Installation",
+    description:
+      "Professional fence installation in Mountain Creek, Bonney Lake. HOA-aligned cedar, hogwire, and hybrid fencing built for hillside lots and family backyards.",
+  });
+
   return (
     <>
       <Seo
         title="Mountain Creek Fence Installation | Bonney Lake Neighborhood Experts"
         description="Professional fence installation in Mountain Creek, Bonney Lake. HOA-aligned cedar, hogwire, and hybrid fencing built for hillside lots and family backyards."
         canonical={canonical}
+        structuredData={structuredData}
       />
 
       <main className="min-h-screen">
