@@ -149,6 +149,13 @@
 /book-online* /contact 301
 
 # Tehaleh Neighborhood redirects
-/neighborhoods/upper-tehaleh /service-areas/upper-tehaleh 301
-/neighborhoods/lower-tehaleh /service-areas/lower-tehaleh 301
-/neighborhoods/tehaleh /service-areas/lower-tehaleh 301
+/neighborhoods/upper-tehaleh /service-areas/bonney-lake/upper-tehaleh 301
+/neighborhoods/lower-tehaleh /service-areas/bonney-lake/lower-tehaleh 301
+/neighborhoods/tehaleh /service-areas/bonney-lake/lower-tehaleh 301
+
+# Bonney Lake neighborhood URL migration
+/service-areas/upper-tehaleh /service-areas/bonney-lake/upper-tehaleh 301
+/service-areas/lower-tehaleh /service-areas/bonney-lake/lower-tehaleh 301
+/service-areas/falling-water /service-areas/bonney-lake/falling-water 301
+/service-areas/mountain-creek /service-areas/bonney-lake/mountain-creek 301
+/service-areas/downtown-bonney-lake /service-areas/bonney-lake/downtown-bonney-lake 301

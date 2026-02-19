@@ -345,7 +345,7 @@ const BonneyLakeArticle = () => (
         Understanding Bonney Lake's permit requirements starts with knowing when permits are necessary. According to the <a href="https://www.ci.bonney-lake.wa.us/Government/Departments/Public_Services/Planning_Building" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Planning & Building page</a>, residential fences under 8 feet in height generally do not require building permits, but you must still comply with all zoning codes and setback requirements. Height restrictions typically limit fences to 6 feet in side and rear yards, with more restrictive limits (often 3-4 feet) in front yard setback areas.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Property line considerations are critical in Bonney Lake. Washington State law requires building on your side of the property line, and setback requirements may add additional distance from the boundary. We strongly recommend obtaining a professional property survey before installation to avoid costly disputes or required fence removal. For properties within HOA-governed communities like <a href="https://tehaleh.com/life-at-tehaleh/community/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tehaleh</a> or <Link href="/service-areas/falling-water" className="text-primary underline decoration-2 underline-offset-2">Falling Water</Link>, additional architectural review processes may apply, often requiring design approval before construction begins.
+        Property line considerations are critical in Bonney Lake. Washington State law requires building on your side of the property line, and setback requirements may add additional distance from the boundary. We strongly recommend obtaining a professional property survey before installation to avoid costly disputes or required fence removal. For properties within HOA-governed communities like <a href="https://tehaleh.com/life-at-tehaleh/community/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tehaleh</a> or <Link href="/service-areas/bonney-lake/falling-water" className="text-primary underline decoration-2 underline-offset-2">Falling Water</Link>, additional architectural review processes may apply, often requiring design approval before construction begins.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         For the most current information on Bonney Lake fence requirements, contact the <a href="https://www.ci.bonney-lake.wa.us/government/departments/public_services/planning_building/comprehensive_plan" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Community Development Department</a> at <a href="tel:253-447-4356" className="text-primary underline decoration-2 underline-offset-2">253-447-4356</a> or visit their offices at 9002 Main Street E. You can also access the <a href="https://www.ci.bonney-lake.wa.us/Government/Departments/Public_Services/Code_Enforcement" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Bonney Lake Code Enforcement</a> page for complete fence regulations.
@@ -580,27 +580,27 @@ const BonneyLake = () => {
         {
           name: "Upper Tehaleh",
           description: "Elevated homesites and neighborhoods in the upper plateau of Tehaleh. We provide HOA-compliant fencing for premium lots with mountain views. Click to learn more →",
-          link: "/service-areas/upper-tehaleh"
+          link: "/service-areas/bonney-lake/upper-tehaleh"
         },
         {
           name: "Lower Tehaleh",
           description: "Family neighborhoods and community-focused areas in the lower sections of Tehaleh. Expert installation meeting all architectural standards. Click to learn more →",
-          link: "/service-areas/lower-tehaleh"
+          link: "/service-areas/bonney-lake/lower-tehaleh"
         },
         {
           name: "Falling Water",
           description: "Established neighborhood with mixed elevations and varied lot sizes. Explore our dedicated Falling Water service page for HOA-aligned fence options. Click to learn more →",
-          link: "/service-areas/falling-water"
+          link: "/service-areas/bonney-lake/falling-water"
         },
         {
           name: "Mountain Creek",
           description: "Hillside community with steeper grade transitions and view-oriented lots. Explore our dedicated Mountain Creek page for slope-ready fence planning. Click to learn more →",
-          link: "/service-areas/mountain-creek"
+          link: "/service-areas/bonney-lake/mountain-creek"
         },
         {
           name: "Downtown Bonney Lake",
           description: "Central Bonney Lake neighborhood with compact lots, mixed-use edges, and high-traffic access patterns. Explore our dedicated Downtown service page for durable, low-maintenance fence planning. Click to learn more →",
-          link: "/service-areas/downtown-bonney-lake"
+          link: "/service-areas/bonney-lake/downtown-bonney-lake"
         }
       ]}
       landmarks={[
