@@ -16,7 +16,7 @@ interface FallingWaterPageProps {
 }
 
 const FallingWaterPage = ({
-  canonical = "https://myfence.com/service-areas/falling-water",
+  canonical = "https://myfence.com/service-areas/bonney-lake/falling-water",
 }: FallingWaterPageProps) => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical,

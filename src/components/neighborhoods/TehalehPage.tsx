@@ -22,7 +22,7 @@ interface TehalehPageProps {
 }
 
 const TehalehPage = ({ 
-  canonical = "https://myfence.com/service-areas/lower-tehaleh",
+  canonical = "https://myfence.com/service-areas/bonney-lake/lower-tehaleh",
   isUpper = false,
   title,
   description,

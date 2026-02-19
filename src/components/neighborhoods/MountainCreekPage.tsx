@@ -16,7 +16,7 @@ interface MountainCreekPageProps {
 }
 
 const MountainCreekPage = ({
-  canonical = "https://myfence.com/service-areas/mountain-creek",
+  canonical = "https://myfence.com/service-areas/bonney-lake/mountain-creek",
 }: MountainCreekPageProps) => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical,

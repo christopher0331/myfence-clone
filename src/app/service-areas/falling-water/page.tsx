@@ -1,15 +1,5 @@
-import type { Metadata } from "next";
-import FallingWaterPage from "@/components/neighborhoods/FallingWaterPage";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Falling Water Fence Installation | Bonney Lake Neighborhood Experts",
-  description:
-    "Professional fence installation in Falling Water, Bonney Lake. HOA-aligned cedar, hogwire, and hybrid fencing built for hillside lots and active households.",
-  alternates: {
-    canonical: "https://myfence.com/service-areas/falling-water",
-  },
-};
-
-export default function FallingWaterServiceAreaPage() {
-  return <FallingWaterPage />;
+export default function FallingWaterLegacyPage() {
+  redirect("/service-areas/bonney-lake/falling-water");
 }

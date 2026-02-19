@@ -28,7 +28,7 @@ interface DowntownBonneyLakePageProps {
 }
 
 const DowntownBonneyLakePage = ({
-  canonical = "https://myfence.com/service-areas/downtown-bonney-lake",
+  canonical = "https://myfence.com/service-areas/bonney-lake/downtown-bonney-lake",
 }: DowntownBonneyLakePageProps) => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical,
