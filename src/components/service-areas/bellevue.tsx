@@ -625,7 +625,8 @@ const Bellevue = () => {
         },
         {
           name: "Somerset",
-          description: "Hillside properties with panoramic views demanding slope installations and sound-dampening solutions for I-90 traffic noise"
+          description: "Hillside properties with panoramic views demanding slope installations and sound-dampening solutions for I-90 traffic noise. Click to learn more →",
+          link: "/service-areas/bellevue/somerset"
         },
         {
           name: "Crossroads",

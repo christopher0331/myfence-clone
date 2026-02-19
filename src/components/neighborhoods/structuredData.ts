@@ -1,3 +1,17 @@
+function buildBreadcrumbItems(canonical: string, neighborhoodName: string) {
+  // Derive parent city from canonical URL: /service-areas/{city}/{neighborhood}
+  const parts = canonical.replace("https://myfence.com/", "").split("/");
+  const citySlug = parts[1] || "bonney-lake";
+  const cityName = citySlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+
+  return [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://myfence.com" },
+    { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://myfence.com/service-areas" },
+    { "@type": "ListItem", position: 3, name: cityName, item: `https://myfence.com/service-areas/${citySlug}` },
+    { "@type": "ListItem", position: 4, name: neighborhoodName, item: canonical },
+  ];
+}
+
 interface NeighborhoodSchemaConfig {
   canonical: string;
   neighborhoodName: string;
@@ -62,32 +76,7 @@ export function buildNeighborhoodStructuredData({
   const breadcrumbSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://myfence.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Service Areas",
-        item: "https://myfence.com/service-areas",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Bonney Lake",
-        item: "https://myfence.com/service-areas/bonney-lake",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: neighborhoodName,
-        item: canonical,
-      },
-    ],
+    itemListElement: buildBreadcrumbItems(canonical, neighborhoodName),
   };
 
   const schemas: Record<string, unknown>[] = [localBusinessSchema, serviceSchema, breadcrumbSchema];
