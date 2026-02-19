@@ -471,7 +471,7 @@ const BonneyLake = () => {
       "width": 600,
       "height": 600
     },
-    "url": "https://myfence.com",
+    "url": "https://myfence.com/service-areas/bonney-lake",
     "telephone": "+12534551885",
     "email": "info@myfence.com",
     "address": {
@@ -558,7 +558,7 @@ const BonneyLake = () => {
     "slogan": "Father-Son Excellence in Fence Installation Since 1990",
     "founder": {
       "@type": "Person",
-      "name": "MyFence.com Founders"
+      "name": "Andrew Knudsen"
     },
     "paymentAccepted": "Cash, Check, Credit Card, Debit Card, Financing",
     "currenciesAccepted": "USD",
