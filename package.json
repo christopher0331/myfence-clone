@@ -5,10 +5,10 @@
   "type": "module",
   "browserslist": {
     "production": [
-      "Chrome >= 93",
-      "Safari >= 14",
-      "Firefox >= 92",
-      "Edge >= 93",
+      "Chrome >= 80",
+      "Safari >= 13",
+      "Firefox >= 78",
+      "Edge >= 80",
       "not dead",
       "not ie 11"
     ],
