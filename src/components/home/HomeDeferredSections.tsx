@@ -3,6 +3,18 @@
 import dynamic from "next/dynamic";
 import { useRef, useState, useEffect, ReactNode, useMemo } from "react";
 
+// Eagerly loaded versions (ssr: true so they render in server HTML for crawlers)
+const EagerScrollingCarousel = dynamic(() => import("@/components/home/ScrollingCarousel").then((m) => m.ScrollingCarousel));
+const EagerPopularStyles = dynamic(() => import("@/components/home/PopularStylesSection").then((m) => m.PopularStylesSection));
+const EagerReviews = dynamic(() => import("@/components/home/ReviewsSectionWithData"));
+const EagerQuoteTool = dynamic(() => import("@/components/home/QuoteToolSection").then((m) => m.QuoteToolSection));
+const EagerTrellis = dynamic(() => import("@/components/home/TrellisSection").then((m) => m.TrellisSection));
+const EagerInlineContact = dynamic(() => import("@/components/home/InlineContactSection").then((m) => m.InlineContactSection));
+const EagerCTA = dynamic(() => import("@/components/home/CTASection").then((m) => m.CTASection));
+const EagerFaq = dynamic(() => import("@/components/FaqSection").then((m) => m.FaqSection));
+const EagerBlog = dynamic(() => import("@/components/BlogSectionClient"));
+const EagerServiceAreas = dynamic(() => import("@/components/ServiceAreasSection"));
+
 // Intersection observer wrapper that ONLY loads the component when visible
 const DeferredSection = ({ 
   importFn, 
@@ -47,7 +59,23 @@ const DeferredSection = ({
   );
 };
 
-export default function HomeDeferredSections() {
+export default function HomeDeferredSections({ eager = false }: { eager?: boolean }) {
+  if (eager) {
+    return (
+      <>
+        <EagerScrollingCarousel />
+        <EagerPopularStyles />
+        <EagerReviews />
+        <EagerQuoteTool />
+        <EagerTrellis />
+        <EagerInlineContact />
+        <EagerCTA />
+        <EagerFaq />
+        <EagerBlog />
+        <EagerServiceAreas />
+      </>
+    );
+  }
   return (
     <>
       <section className="container py-12 md:py-16">

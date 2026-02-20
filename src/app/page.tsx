@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { generateFaqSchema } from "@/data/faqData";
 import { HeroVideoSection } from "@/components/home/HeroVideoSection";
@@ -18,7 +19,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+const BOT_RE = /Googlebot|bingbot|Baiduspider|YandexBot|DuckDuckBot|Slurp|facebookexternalhit|Twitterbot|rogerbot|linkedinbot|Chrome-Lighthouse/i;
+
+export default async function HomePage() {
+  const ua = (await headers()).get("user-agent") ?? "";
+  const isCrawler = BOT_RE.test(ua);
   const faqSchema = generateFaqSchema();
   const orgLd = {
     "@context": "https://schema.org",
@@ -89,8 +94,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Below the fold - Lazy Loaded Islands */}
-      <HomeDeferredSections />
+      {/* Below the fold - Lazy Loaded Islands (eager for crawlers) */}
+      <HomeDeferredSections eager={isCrawler} />
       <ServiceAreaMapSection />
     </>
   );
