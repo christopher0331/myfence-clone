@@ -601,6 +601,11 @@ const BonneyLake = () => {
           name: "Downtown Bonney Lake",
           description: "Central Bonney Lake neighborhood with compact lots, mixed-use edges, and high-traffic access patterns. Explore our dedicated Downtown service page for durable, low-maintenance fence planning. Click to learn more →",
           link: "/service-areas/bonney-lake/downtown-bonney-lake"
+        },
+        {
+          name: "Lake Tapps",
+          description: "Lake-adjacent and plateau neighborhoods with larger lots, volcanic soil, and Pierce County weather. Cedar, hogwire & hybrid fencing. Click to learn more →",
+          link: "/service-areas/bonney-lake/lake-tapps"
         }
       ]}
       landmarks={[

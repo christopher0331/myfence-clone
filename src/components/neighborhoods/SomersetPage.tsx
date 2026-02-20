@@ -91,8 +91,8 @@ const SomersetPage = ({
                 <GoogleBusinessMap
                   city="Somerset, Bellevue"
                   state="Washington"
-                  radiusMiles={2}
-                  zoom={14}
+                  radiusMiles={5}
+                  zoom={11}
                   showBusinessInfo={true}
                 />
               </div>

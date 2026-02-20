@@ -502,7 +502,8 @@ const Kirkland = () => {
         },
         {
           name: "Juanita",
-          description: "Waterfront neighborhood on Lake Washington demanding marine-grade installations and view-preserving designs for lakeside living"
+          description: "Waterfront neighborhood on Lake Washington demanding marine-grade installations and view-preserving designs for lakeside living",
+          link: "/service-areas/kirkland/juanita"
         },
         {
           name: "Finn Hill",

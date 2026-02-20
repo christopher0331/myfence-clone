@@ -12,15 +12,13 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Hammer,
-  Trees,
-  Home,
-  Ruler,
+  Star,
 } from "lucide-react";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import OptimizedImage from "@/components/OptimizedImage";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface DowntownBonneyLakePageProps {
@@ -32,25 +30,30 @@ const DowntownBonneyLakePage = ({
 }: DowntownBonneyLakePageProps) => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical,
-    neighborhoodName: "Downtown Bonney Lake",
+    neighborhoodName: "Downtown Bonney Lake, Bonney Lake",
     pageTitle: "Downtown Bonney Lake Fence Installation",
     description:
       "Professional fence installation in Downtown Bonney Lake. Cedar, hogwire, and hybrid fence systems designed for compact lots, mixed-use surroundings, and long-term durability.",
     faqItems: [
       {
-        question: "How long does a typical downtown fence project take?",
+        question: "How long does a typical downtown Bonney Lake fence project take?",
         answer:
-          "Most residential projects are completed quickly once installation begins, but the exact timeline depends on linear footage, gate count, and site complexity.",
+          "Most residential projects are completed quickly once installation begins—often 1–2 days on-site. Exact timeline depends on linear footage, gate count, and site complexity.",
       },
       {
-        question: "Can you help with replacement on older lots?",
+        question: "Can you help with replacement on older lots in Downtown Bonney Lake?",
         answer:
-          "Yes. We routinely replace aging fence lines in established neighborhoods and can recommend modern materials that improve durability and curb appeal.",
+          "Yes. We routinely replace aging fence lines in established downtown neighborhoods and can recommend modern materials that improve durability and curb appeal.",
       },
       {
         question: "What fence style is best for privacy near busy streets?",
         answer:
           "Full-privacy cedar and select hybrid designs are usually the best fit. We review your specific visibility and access needs before finalizing recommendations.",
+      },
+      {
+        question: "How much does fence installation cost in Downtown Bonney Lake?",
+        answer:
+          "Downtown Bonney Lake fence installation typically runs $44–$68 per linear foot depending on style, gate count, and site access. We provide exact pricing after a free on-site measurement.",
       },
     ],
   });
@@ -78,7 +81,7 @@ const DowntownBonneyLakePage = ({
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
-                  <span className="text-lg text-muted-foreground">Serving Downtown Bonney Lake</span>
+                  <span className="text-lg text-muted-foreground">Serving Downtown Bonney Lake, Bonney Lake WA</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Downtown Bonney Lake Fence Installation</h1>
                 <p className="text-xl text-muted-foreground mb-8">
@@ -99,7 +102,7 @@ const DowntownBonneyLakePage = ({
               </div>
 
               <div className="w-full rounded-lg overflow-hidden shadow-lg">
-                <GoogleBusinessMap city="Downtown Bonney Lake" state="Washington" radiusMiles={2} zoom={14} showBusinessInfo={true} />
+                <GoogleBusinessMap city="Downtown Bonney Lake" state="Washington" radiusMiles={5} zoom={11} showBusinessInfo={true} />
               </div>
             </div>
           </div>
@@ -131,28 +134,26 @@ const DowntownBonneyLakePage = ({
           </div>
         </section>
 
-        <section className="py-16 bg-muted/40">
+        {/* Trust Badges Bar */}
+        <section className="py-6 border-y bg-muted/30">
           <div className="container">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Downtown Bonney Lake Fence Company | MyFence.com</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
-                  <p className="text-sm text-muted-foreground">Years of Fence Building Experience</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">98%+</div>
-                  <p className="text-sm text-muted-foreground">On-Time Installation Rate</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">150+</div>
-                  <p className="text-sm text-muted-foreground">Five-Star Customer Reviews</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">{WARRANTY_CONSTANTS.YEARS}-Year</div>
-                  <p className="text-sm text-muted-foreground">Craftsmanship Warranty Coverage</p>
-                </Card>
-              </div>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 text-sm">
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <Shield className="h-5 w-5 text-primary" />
+                Licensed & Insured
+              </span>
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <Star className="h-5 w-5 text-primary fill-primary" />
+                5.0 ★ Google Rating
+              </span>
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <Award className="h-5 w-5 text-primary" />
+                {WARRANTY_CONSTANTS.YEARS}-Year Warranty
+              </span>
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                150+ Five-Star Reviews
+              </span>
             </div>
           </div>
         </section>
@@ -218,13 +219,134 @@ const DowntownBonneyLakePage = ({
           </div>
         </section>
 
+        {/* Local Reviews */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                What Downtown Bonney Lake Homeowners Say
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "We're on a busy street and needed privacy without feeling boxed in. They did a cedar fence with a clean top line and a solid gate. The crew was in and out in two days and the yard looks great."
+                  </p>
+                  <p className="text-sm font-medium">— Mike in Downtown Bonney Lake</p>
+                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "Replaced an old failing fence on a tight lot. They confirmed the property line with us and the neighbor, and the new fence looks intentional from both sides. Very professional and the warranty gives us peace of mind."
+                  </p>
+                  <p className="text-sm font-medium">— Lisa in Downtown Bonney Lake</p>
+                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Project Gallery */}
+        <section className="py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Our Work in Downtown Bonney Lake & Bonney Lake
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We've completed fence projects throughout Downtown Bonney Lake and the greater Bonney Lake area—cedar privacy, picture-frame, hogwire, and hybrid installations for compact lots and busy street frontage.
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <Card className="overflow-hidden">
+                  <div className="aspect-[4/3] relative bg-muted/50">
+                    <OptimizedImage
+                      src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/IMG_6977.webp?updatedAt=1762037835797"
+                      alt="6' cedar privacy fence installation in Downtown Bonney Lake"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold">6' Cedar Privacy</h3>
+                    <p className="text-sm text-muted-foreground">Downtown Bonney Lake lot</p>
+                  </div>
+                </Card>
+                <Card className="overflow-hidden">
+                  <div className="aspect-[4/3] relative bg-muted/50">
+                    <OptimizedImage
+                      src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/6_%20Black%20Hogwire/IMG_7356.webp?updatedAt=1762037826604"
+                      alt="Hogwire with cedar frame fence in Downtown Bonney Lake"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold">Hogwire with Cedar Frame</h3>
+                    <p className="text-sm text-muted-foreground">Street-side perimeter</p>
+                  </div>
+                </Card>
+                <Card className="overflow-hidden">
+                  <div className="aspect-[4/3] relative bg-muted/50">
+                    <OptimizedImage
+                      src="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
+                      alt="Cedar aluminum hybrid fence in Downtown Bonney Lake"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold">Hybrid Aluminum/Cedar</h3>
+                    <p className="text-sm text-muted-foreground">Low-maintenance curb appeal</p>
+                  </div>
+                </Card>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                <Link href="/gallery" className="text-primary hover:underline">View full gallery</Link> for more Bonney Lake–area projects.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Case Study */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Featured Downtown Bonney Lake Installation
+              </h2>
+              <Card className="p-6 md:p-8">
+                <div className="aspect-video rounded-lg mb-6 overflow-hidden">
+                  <OptimizedImage
+                    src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/IMG_6977.webp?updatedAt=1762037835797"
+                    alt="Featured Downtown Bonney Lake installation: cedar fence"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  A Downtown Bonney Lake homeowner on a compact lot near a busier corridor needed to replace a failing fence and improve privacy from the street. We installed a 6' cedar privacy fence with picture-frame styling, marine-grade stainless fasteners, and a reinforced driveway gate built for daily use. Layout was coordinated with the neighbor on the shared boundary. Total linear footage was 165 feet; installation was completed in two days. The fence is under our {WARRANTY_CONSTANTS.YEARS}-year warranty and built for Bonney Lake's wet winters and high-visibility frontage.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Style:</strong> Cedar privacy, picture-frame · <strong>Location:</strong> Downtown Bonney Lake, Bonney Lake
+                </p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Downtown Bonney Lake Planning Considerations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Downtown Bonney Lake–Specific Fencing Considerations</h2>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Compact Lots and Shared Boundaries</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Downtown Bonney Lake Compact Lots and Shared Boundaries</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     With tighter spacing between structures, layout precision is critical. We confirm
                     fence runs and transitions before installation so the final build is clean,
@@ -232,7 +354,7 @@ const DowntownBonneyLakePage = ({
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Street Exposure and Security Balance</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Downtown Bonney Lake Street Exposure and Security Balance</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Downtown frontage often calls for a blend of privacy and design. We help select
                     heights, top profiles, and gate locations that improve security while keeping
@@ -240,14 +362,14 @@ const DowntownBonneyLakePage = ({
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Gate Traffic and Hardware Performance</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Downtown Bonney Lake Gate Traffic and Hardware Performance</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Side-yard and driveway gates see repeated daily use. We specify hinges, latches,
                     and framing approaches built for long-term reliability and smoother operation.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Mixed Residential-Commercial Edges</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Downtown Bonney Lake Mixed Residential-Commercial Edges</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Where homes border higher-activity corridors, fence style and material choices
                     have to balance appearance, durability, and maintenance. We prioritize systems
@@ -259,65 +381,80 @@ const DowntownBonneyLakePage = ({
           </div>
         </section>
 
-        <section className="py-16 bg-primary/5">
+        {/* Pricing Transparency */}
+        <section className="py-16 bg-muted/50">
           <div className="container">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Fence Styles Popular in Downtown Bonney Lake</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+                Fence Installation Cost in Downtown Bonney Lake
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                Fencing is an investment in your Downtown Bonney Lake property. Below are typical ranges; your exact price depends on linear footage, style, and gate count.
+              </p>
+              <Card className="p-6 mb-6">
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex justify-between gap-4">
+                    <span><strong className="text-foreground">Cedar privacy (6'):</strong> $44–$65 per linear foot</span>
+                  </li>
+                  <li className="flex justify-between gap-4">
+                    <span><strong className="text-foreground">Hogwire (cedar frame):</strong> $40–$55 per linear foot</span>
+                  </li>
+                  <li className="flex justify-between gap-4">
+                    <span><strong className="text-foreground">Hybrid aluminum/cedar:</strong> $52–$68 per linear foot</span>
+                  </li>
+                </ul>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Gate packages and site access may affect cost. Get an exact quote for your Downtown Bonney Lake property with our free on-site measurement.
+                </p>
+              </Card>
+              <div className="text-center">
+                <Button asChild size="lg">
+                  <Link href="/quote">Get an exact quote for your Downtown Bonney Lake property</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Fence Styles */}
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Popular Fence Styles in Downtown Bonney Lake</h2>
+              <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Home className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Full-Privacy Cedar Fences</h3>
-                      <p className="text-muted-foreground">
-                        A go-to choice for homes near higher-traffic streets or close neighboring
-                        lots. Full-privacy cedar helps create a quieter, more enclosed backyard.
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    The go-to for Downtown Bonney Lake backyards near busy streets. Full-privacy cedar with picture-frame or board-on-board creates a quieter, more enclosed yard with strong curb appeal.
+                  </p>
+                  <Link href="/fence-styles/picture-frame-fence" className="text-primary text-sm font-medium hover:underline">
+                    View cedar styles →
+                  </Link>
                 </Card>
                 <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Trees className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Picture Frame and Decorative Cedar</h3>
-                      <p className="text-muted-foreground">
-                        Decorative profiles and trim details keep fencing functional while elevating
-                        street-facing appearance in established neighborhood blocks.
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    Defines the boundary without blocking light or feeling heavy. Cedar frame with black or galvanized mesh; fits compact lots and street-side frontage where you want definition without full enclosure.
+                  </p>
+                  <Link href="/fence-styles/black-hogwire-fence" className="text-primary text-sm font-medium hover:underline">
+                    View hogwire styles →
+                  </Link>
                 </Card>
                 <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Ruler className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Cedar + Aluminum Hybrid Systems</h3>
-                      <p className="text-muted-foreground">
-                        Hybrid systems pair wood warmth with metal stability and lower maintenance,
-                        offering a modern look for updated homes and remodels.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Hammer className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Custom Gate Packages</h3>
-                      <p className="text-muted-foreground">
-                        From pedestrian access to driveway entries, we build reinforced gates and
-                        set hardware for smoother, longer-lasting operation.
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    Pairs wood warmth with metal stability and lower maintenance. Ideal for updated Downtown Bonney Lake homes and remodels; holds up to daily gate use and Pacific Northwest weather.
+                  </p>
+                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                    View hybrid system →
+                  </Link>
                 </Card>
               </div>
             </div>
           </div>
         </section>
 
-        <VirtualQuoteTool fenceStyleName="Downtown Bonney Lake fence" />
+        <VirtualQuoteTool fenceStyleName="Downtown Bonney Lake Bonney Lake fence" />
 
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container">
@@ -356,38 +493,33 @@ const DowntownBonneyLakePage = ({
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Downtown Bonney Lake Installation Process</h2>
               <div className="space-y-6">
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">1. Site Walk + Project Priorities</h3>
+                  <h3 className="text-xl font-semibold mb-3">1. Downtown Bonney Lake Site Assessment</h3>
                   <p className="text-muted-foreground">
-                    We review boundaries, access, grade, and privacy targets so every decision starts
-                    with real property constraints and daily use needs.
+                    We review boundaries, access, grade, street exposure, and privacy targets so every decision starts with real property constraints and daily use needs.
                   </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">2. Design Direction + Material Recommendations</h3>
+                  <h3 className="text-xl font-semibold mb-3">2. Downtown Bonney Lake Design & Material Selection</h3>
                   <p className="text-muted-foreground">
-                    Choose cedar, hogwire, or hybrid systems with guidance based on aesthetics,
-                    neighborhood fit, budget, and maintenance expectations.
+                    Choose cedar, hogwire, or hybrid systems with guidance based on aesthetics, neighborhood fit, budget, and maintenance expectations.
                   </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">3. Precision Layout + Pre-Build Preparation</h3>
+                  <h3 className="text-xl font-semibold mb-3">3. Precision Layout & Pre-Build Preparation</h3>
                   <p className="text-muted-foreground">
-                    Detailed measurements and planning reduce on-site delays and make installation
-                    cleaner and more predictable.
+                    Detailed measurements and planning reduce on-site delays and make installation cleaner and more predictable for compact downtown lots.
                   </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">4. Professional Installation + Daily Quality Control</h3>
+                  <h3 className="text-xl font-semibold mb-3">4. Professional Downtown Bonney Lake Installation</h3>
                   <p className="text-muted-foreground">
-                    Our crew sets posts, installs framing, and aligns panels with careful attention
-                    to strength, line consistency, and finished appearance.
+                    Our crew sets posts, installs framing, and aligns panels with careful attention to strength, line consistency, and finished appearance. Most downtown projects complete in 1–2 days.
                   </p>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">5. Final Walkthrough + Warranty Documentation</h3>
+                  <h3 className="text-xl font-semibold mb-3">5. Walkthrough & {WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
                   <p className="text-muted-foreground">
-                    We review the finished project together, answer final questions, and finalize
-                    your {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty.
+                    We review the finished project together, answer final questions, and activate your {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty.
                   </p>
                 </Card>
               </div>
@@ -421,6 +553,46 @@ const DowntownBonneyLakePage = ({
                     your specific visibility and access needs before finalizing recommendations.
                   </p>
                 </Card>
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">How much does fence installation cost in Downtown Bonney Lake?</h3>
+                  <p className="text-muted-foreground">
+                    Downtown Bonney Lake fence installation typically runs $44–$68 per linear foot depending on style, gate count, and site access. We provide exact pricing after a free on-site measurement.
+                  </p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Adjacent Neighborhoods */}
+        <section className="py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+                Also Serving Nearby Bonney Lake Neighborhoods
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We install fences throughout the Bonney Lake area. If you're in Downtown Bonney Lake, we also serve Tehaleh, Falling Water, Mountain Creek, and Lake Tapps.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake">Bonney Lake overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/lower-tehaleh">Tehaleh</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/falling-water">Falling Water</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/mountain-creek">Mountain Creek</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/lake-tapps">Lake Tapps</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas">All service areas</Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -431,8 +603,7 @@ const DowntownBonneyLakePage = ({
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Downtown Bonney Lake Property?</h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Book a free consultation with our Bonney Lake fencing team and get a clear, practical
-                plan tailored to your lot and goals.
+                Same-day estimates available in Downtown Bonney Lake. Book a free consultation with our Bonney Lake fencing team and get a clear, practical plan tailored to your lot and goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">

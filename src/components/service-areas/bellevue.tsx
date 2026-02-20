@@ -650,7 +650,8 @@ const Bellevue = () => {
         },
         {
           name: "Newport Hills",
-          description: "Wooded hillside community with steep slopes and tall trees requiring reinforced posts and drainage-integrated designs"
+          description: "Wooded hillside community with steep slopes and tall trees requiring reinforced posts and drainage-integrated designs. Click to learn more →",
+          link: "/service-areas/bellevue/newport-hills"
         }
       ]}
       landmarks={[
