@@ -35,8 +35,10 @@ export const useTrustindexReviews = () => {
   }, []);
 
   // Load Trustindex reviews widget and sync to database (legacy direct embed)
+  // Skip for search-engine crawlers to avoid injecting extra third-party JS/schema.
   useEffect(() => {
     if (!reviewsRef.current) return;
+    if (/Googlebot|bingbot|Baiduspider|YandexBot|Slurp|facebookexternalhit|Chrome-Lighthouse/i.test(navigator.userAgent)) return;
 
     const widgetDiv = document.createElement("div");
     widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");

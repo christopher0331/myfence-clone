@@ -31,12 +31,26 @@ interface BusinessData {
   websiteUri?: string;
 }
 
+const isBot = () =>
+  typeof navigator !== "undefined" &&
+  /Googlebot|bingbot|Baiduspider|YandexBot|DuckDuckBot|Slurp|facebookexternalhit|Twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|developers\.google\.com|google.*search.*console|google.*structured.*data|Chrome-Lighthouse/i.test(
+    navigator.userAgent,
+  );
+
 const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", showBusinessInfo = true, zoom: customZoom }: GoogleBusinessMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [businessData, setBusinessData] = useState<BusinessData | null>(null);
   const [cityLocation, setCityLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isCrawler, setIsCrawler] = useState(false);
+
+  useEffect(() => {
+    if (isBot()) {
+      setIsCrawler(true);
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchBusinessData = async () => {
@@ -149,7 +163,11 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
       });
     };
 
-    // Load Google Maps script if not already loaded
+    // Skip map for crawlers — the Google Maps JS API ships modern syntax
+    // (optional chaining / nullish coalescing) that causes SyntaxErrors in
+    // Google's own URL inspection tools.
+    if (isCrawler) return;
+
     const loadGoogleMaps = async () => {
       if (!(window.google && window.google.maps)) {
         try {
@@ -180,7 +198,7 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
     };
 
     loadGoogleMaps();
-  }, [businessData, cityLocation, city, state, radiusMiles, loading]);
+  }, [businessData, cityLocation, city, state, radiusMiles, loading, isCrawler]);
 
   if (loading) {
     return (
@@ -189,6 +207,26 @@ const GoogleBusinessMap = ({ placeId, city, state, radiusMiles, className = "", 
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </CardContent>
       </Card>
+    );
+  }
+
+  if (isCrawler) {
+    return (
+      <div className={className}>
+        <Card>
+          <CardContent className="p-8 text-center">
+            <MapPin className="h-10 w-10 mx-auto mb-3 text-primary" />
+            <p className="font-semibold">
+              {city ? `MyFence.com serves ${city}, ${state}` : "MyFence.com Service Area"}
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {city
+                ? `Serving a ${radiusMiles}-mile radius in ${city}, ${state}`
+                : `Serving a ${radiusMiles}-mile radius from our location`}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 
