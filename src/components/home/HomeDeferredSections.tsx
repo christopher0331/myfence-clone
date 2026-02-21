@@ -12,7 +12,7 @@ const EagerTrellis = dynamic(() => import("@/components/home/TrellisSection").th
 const EagerInlineContact = dynamic(() => import("@/components/home/InlineContactSection").then((m) => m.InlineContactSection));
 const EagerCTA = dynamic(() => import("@/components/home/CTASection").then((m) => m.CTASection));
 const EagerFaq = dynamic(() => import("@/components/FaqSection").then((m) => m.FaqSection));
-const EagerBlog = dynamic(() => import("@/components/BlogSectionClient"));
+const EagerBlog = dynamic(() => import("@/components/BlogSectionHome"));
 const EagerServiceAreas = dynamic(() => import("@/components/ServiceAreasSection"));
 
 // Intersection observer wrapper that ONLY loads the component when visible
@@ -126,7 +126,7 @@ export default function HomeDeferredSections({ eager = false }: { eager?: boolea
       />
 
       <DeferredSection
-        importFn={() => import("@/components/BlogSectionClient")}
+        importFn={() => import("@/components/BlogSectionHome")}
         placeholder={<div className="container py-12 md:py-16 h-64 bg-muted/10 animate-pulse rounded-lg" />}
       />
 

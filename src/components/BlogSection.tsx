@@ -25,11 +25,16 @@ const BlogSection = ({ articles, limit }: BlogSectionProps) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {featuredArticles.map((article) => {
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+          {featuredArticles.map((article, index) => {
             const imgSrc = typeof article.image === "string" ? article.image : article.image?.src;
+            const isFourthOnMobile = limit === 4 && index === 3;
             return (
-            <Link key={article.id} href={`/blog/${article.id}`} className="block">
+            <Link
+              key={article.id}
+              href={`/blog/${article.id}`}
+              className={`block ${isFourthOnMobile ? "hidden sm:block" : ""}`}
+            >
               <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
                 <CardHeader className="p-0">
                   <AspectRatio ratio={4/3}>
