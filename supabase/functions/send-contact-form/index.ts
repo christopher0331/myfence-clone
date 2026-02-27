@@ -118,54 +118,10 @@ This message was submitted through the MyFence.com contact form.
 
     console.log('Admin email sent successfully:', adminResult)
 
-    const customerConfirmationHtml = `
-      <h2>Thanks for contacting MyFence.com</h2>
-      <p>Hi ${customerName},</p>
-      <p>We received your message and will get back to you soon.</p>
-      <p><strong>Your message:</strong><br>${normalizedMessage.replace(/\n/g, '<br>')}</p>
-      <hr>
-      <p>If you need immediate help, call us at <a href="tel:+12534551885">(253) 455-1885</a>.</p>
-      <p><em>- MyFence.com</em></p>
-    `;
-
-    const customerConfirmationText = `
-Hi ${customerName},
-
-Thanks for contacting MyFence.com. We received your message and will get back to you soon.
-
-Your message:
-${normalizedMessage}
-
-If you need immediate help, call us at (253) 455-1885.
-
-- MyFence.com
-    `.trim();
-
-    let customerConfirmationSent = false;
-    try {
-      const { data: customerResult, error: customerResendError } = await resendInstance.emails.send({
-        from: 'MyFence.com <onboarding@resend.dev>',
-        to: [normalizedEmail],
-        subject: 'We received your message | MyFence.com',
-        html: customerConfirmationHtml,
-        text: customerConfirmationText,
-      });
-
-      if (customerResendError) {
-        console.error('Resend API error (customer confirmation):', customerResendError);
-      } else {
-        customerConfirmationSent = true;
-        console.log('Customer confirmation sent successfully:', customerResult);
-      }
-    } catch (customerError) {
-      console.error('Customer confirmation send failed:', customerError);
-    }
-
     return new Response(
       JSON.stringify({
         success: true,
         id: adminResult?.id,
-        customerConfirmationSent,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )

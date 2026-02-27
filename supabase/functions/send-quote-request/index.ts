@@ -102,63 +102,10 @@ This request was submitted through the MyFence.com website.
 
     console.log('Admin quote email sent successfully:', adminResult)
 
-    const customerConfirmationHtml = `
-      <h2>Thanks for your quote request</h2>
-      <p>Hi ${fullName},</p>
-      <p>We received your quote request and our team will review it shortly.</p>
-      <h3>Request summary</h3>
-      <ul>
-        <li><strong>Address:</strong> ${address}</li>
-        <li><strong>Phone:</strong> ${phone}</li>
-      </ul>
-      <p><strong>Project description:</strong><br>${projectDescription.replace(/\n/g, '<br>')}</p>
-      <hr>
-      <p>If you need immediate help, call us at <a href="tel:+12534551885">(253) 455-1885</a>.</p>
-      <p><em>- MyFence.com</em></p>
-    `;
-
-    const customerConfirmationText = `
-Hi ${fullName},
-
-Thanks for your quote request. We received it and our team will review it shortly.
-
-Request summary
-- Address: ${address}
-- Phone: ${phone}
-
-Project description:
-${projectDescription}
-
-If you need immediate help, call us at (253) 455-1885.
-
-- MyFence.com
-    `.trim();
-
-    let customerConfirmationSent = false;
-    try {
-      const { data: customerResult, error: customerResendError } = await resendInstance.emails.send({
-        from: 'MyFence.com <onboarding@resend.dev>',
-        to: [email],
-        subject: 'We received your quote request | MyFence.com',
-        html: customerConfirmationHtml,
-        text: customerConfirmationText,
-      });
-
-      if (customerResendError) {
-        console.error('Resend API error (quote customer confirmation):', customerResendError);
-      } else {
-        customerConfirmationSent = true;
-        console.log('Quote customer confirmation sent successfully:', customerResult);
-      }
-    } catch (customerError) {
-      console.error('Quote customer confirmation send failed:', customerError);
-    }
-
     return new Response(
       JSON.stringify({
         success: true,
         id: adminResult?.id,
-        customerConfirmationSent,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
