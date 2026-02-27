@@ -56,24 +56,26 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         ? `[Source: ${context}]\n${formData.projectDescription}`
         : formData.projectDescription;
 
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Quote Request",
-            message,
-            textConsent: formData.textConsent,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // TEMP: Turnstile/webhook path disabled to restore quote delivery immediately.
+      // Re-enable once Turnstile token flow is fixed end-to-end.
+      // let leadError: string | null = null;
+      // try {
+      //   const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+      //     body: {
+      //       firstName: first || "",
+      //       lastName: rest.join(" "),
+      //       email: formData.email,
+      //       phone: formData.phone,
+      //       propertyAddress: formData.address,
+      //       fenceType: "Quote Request",
+      //       message,
+      //       textConsent: formData.textConsent,
+      //     },
+      //   });
+      //   if (lead.error) leadError = lead.error.message;
+      // } catch (e) {
+      //   leadError = e instanceof Error ? e.message : String(e);
+      // }
 
       // Always send the legacy quote email notification too (info@myfence.com).
       let emailError: string | null = null;
@@ -89,9 +91,9 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send quote request");
+      // With webhook disabled, only fail if legacy email fails.
+      if (emailError) {
+        throw new Error(emailError || "Failed to send quote request");
       }
       
       // Trigger fireworks animation
