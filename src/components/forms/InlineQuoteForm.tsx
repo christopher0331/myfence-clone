@@ -17,6 +17,7 @@ interface InlineQuoteFormProps {
 
 const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [textConsentError, setTextConsentError] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -34,12 +35,20 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       [name]: value,
       textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
+    if (name === "phone" && value.trim() === "") {
+      setTextConsentError(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.phone.trim() && !formData.textConsent) {
+      setTextConsentError(true);
+      document.getElementById("inline-quote-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       toast({
         title: "Consent required",
         description: "Please consent to receive text messages before submitting your phone number.",
@@ -175,18 +184,29 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           />
         </div>
         {formData.phone.trim() ? (
-          <div className="flex items-start space-x-2">
+          <div
+            id="inline-quote-text-consent-row"
+            className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+          >
             <Checkbox
               id="inline-quote-text-consent"
               checked={formData.textConsent}
-              onCheckedChange={(checked) =>
-                setFormData((prev) => ({ ...prev, textConsent: checked === true }))
-              }
+              onCheckedChange={(checked) => {
+                const consentGiven = checked === true;
+                setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
+                if (consentGiven) setTextConsentError(false);
+              }}
             />
-            <Label htmlFor="inline-quote-text-consent" className="text-xs leading-5 text-muted-foreground">
+            <Label
+              htmlFor="inline-quote-text-consent"
+              className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+            >
               {TEXT_CONSENT_MESSAGE}
             </Label>
           </div>
+          {textConsentError ? (
+            <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+          ) : null}
         ) : null}
 
         <div className="space-y-2">

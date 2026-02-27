@@ -100,7 +100,7 @@ ${description ? `Project Description: ${description}` : ''}
 This email was generated from the MyFence.com discount wheel challenge.
     `;
 
-    const emailResponse = await resend.emails.send({
+    const adminEmailResponse = await resend.emails.send({
       from: "MyFence Discounts <onboarding@resend.dev>",
       to: ["info@myfence.com"],
       subject: `🎉 New Discount Winner - ${discount}`,
@@ -108,15 +108,61 @@ This email was generated from the MyFence.com discount wheel challenge.
       text: plainText,
     });
 
-    console.log("Discount email sent successfully:", emailResponse);
+    console.log("Discount admin email sent successfully:", adminEmailResponse);
 
-    return new Response(JSON.stringify(emailResponse), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        ...corsHeaders,
-      },
-    });
+    const customerHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h1 style="color: #2563eb;">Thanks for submitting your discount form!</h1>
+        <p>Hi ${firstName},</p>
+        <p>We received your submission and discount details.</p>
+        <p><strong>Your discount:</strong> ${discount}</p>
+        ${description ? `<p><strong>Project description:</strong> ${description}</p>` : ""}
+        <p>Our team will follow up shortly.</p>
+        <hr>
+        <p style="color: #6b7280;">Need immediate help? Call (253) 455-1885.</p>
+      </div>
+    `;
+
+    const customerText = `
+Hi ${firstName},
+
+Thanks for submitting your discount form. We received your submission.
+
+Your discount: ${discount}
+${description ? `Project description: ${description}` : ""}
+
+Our team will follow up shortly.
+Need immediate help? Call (253) 455-1885.
+    `.trim();
+
+    let customerConfirmationSent = false;
+    try {
+      const customerEmailResponse = await resend.emails.send({
+        from: "MyFence.com <onboarding@resend.dev>",
+        to: [email],
+        subject: "We received your discount submission | MyFence.com",
+        html: customerHtml,
+        text: customerText,
+      });
+      customerConfirmationSent = true;
+      console.log("Discount customer confirmation sent:", customerEmailResponse);
+    } catch (customerError: any) {
+      console.error("Discount customer confirmation failed:", customerError);
+    }
+
+    return new Response(
+      JSON.stringify({
+        ...adminEmailResponse,
+        customerConfirmationSent,
+      }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          ...corsHeaders,
+        },
+      }
+    );
   } catch (error: any) {
     console.error("Error in send-discount-email function:", error);
     return new Response(

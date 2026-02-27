@@ -13,6 +13,7 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import type { FieldErrors } from "react-hook-form";
 
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -99,9 +100,23 @@ export function ContactForm() {
     }
   };
 
+  const onInvalid = (errors: FieldErrors<FormData>) => {
+    if (errors.textConsent) {
+      document.getElementById("contact-form-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      toast({
+        title: "Consent required",
+        description: "Please check the text consent box before submitting your phone number.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <FormField
             control={form.control}
@@ -196,7 +211,10 @@ export function ContactForm() {
           control={form.control}
           name="textConsent"
           render={({ field }) => (
-            <FormItem className="flex items-start space-x-2">
+            <FormItem
+              id="contact-form-text-consent-row"
+              className={`flex items-start space-x-2 rounded-md ${form.formState.errors.textConsent ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+            >
               <FormControl>
                 <Checkbox
                   id="contact-text-consent"
@@ -205,10 +223,18 @@ export function ContactForm() {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel htmlFor="contact-text-consent" className="text-xs text-muted-foreground">
+                <FormLabel
+                  htmlFor="contact-text-consent"
+                  className={`text-xs ${form.formState.errors.textConsent ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                >
                   {TEXT_CONSENT_MESSAGE}
                 </FormLabel>
                 <FormMessage />
+                {form.formState.errors.textConsent ? (
+                  <p className="text-sm font-semibold text-amber-800">
+                    ⚠ Required: check this box to submit when a phone number is entered.
+                  </p>
+                ) : null}
               </div>
             </FormItem>
           )}

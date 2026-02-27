@@ -26,11 +26,22 @@ serve(async (req) => {
     const customerName = name || (firstName && lastName ? `${firstName} ${lastName}` : '')
     const customerMessage = message || description || ''
     
-    // Validate required fields
-    if (!customerName || !email || !phone || !address || !customerMessage) {
-      console.log('Validation failed - missing required fields')
+    // Be tolerant here so lead capture is resilient even if a field is omitted by
+    // an older frontend build or a transient client-side serialization issue.
+    const normalizedEmail = typeof email === "string" ? email.trim() : "";
+    const normalizedPhone = typeof phone === "string" ? phone.trim() : "";
+    const normalizedAddress = typeof address === "string" ? address.trim() : "";
+    const normalizedMessage = typeof customerMessage === "string" ? customerMessage.trim() : "";
+
+    // Hard requirements for contact delivery.
+    if (!customerName || !normalizedEmail || !normalizedMessage) {
+      console.log('Validation failed - missing core fields', {
+        hasName: !!customerName,
+        hasEmail: !!normalizedEmail,
+        hasMessage: !!normalizedMessage,
+      })
       return new Response(
-        JSON.stringify({ error: 'All fields (name, email, phone, address, message) are required' }),
+        JSON.stringify({ error: 'Name, email, and message are required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
@@ -55,22 +66,22 @@ New Contact Form Submission from MyFence.com
 
 Customer Information:
 Name: ${customerName}
-Email: ${email}
-Phone: ${phone}
-Address: ${address}
+Email: ${normalizedEmail}
+Phone: ${normalizedPhone || "Not provided"}
+Address: ${normalizedAddress || "Not provided"}
 Text message consent: ${consentLabel}
 
 Message:
-${customerMessage}
+${normalizedMessage}
 
 This message was submitted through the MyFence.com contact form.
     `.trim()
 
-    console.log('Creating email data...')
-    const emailData = {
+    console.log('Creating admin email data...')
+    const adminEmailData = {
       from: 'MyFence.com <onboarding@resend.dev>',
       to: ['info@myfence.com'],
-      reply_to: email,
+      reply_to: normalizedEmail,
       subject: `New Contact Form Message from ${customerName}`,
       text: emailBody,
       html: `
@@ -79,36 +90,83 @@ This message was submitted through the MyFence.com contact form.
         <h3>Customer Information:</h3>
         <ul>
           <li><strong>Name:</strong> ${customerName}</li>
-          <li><strong>Email:</strong> ${email}</li>
-          <li><strong>Phone:</strong> ${phone}</li>
-          <li><strong>Address:</strong> ${address}</li>
+          <li><strong>Email:</strong> ${normalizedEmail}</li>
+          <li><strong>Phone:</strong> ${normalizedPhone || "Not provided"}</li>
+          <li><strong>Address:</strong> ${normalizedAddress || "Not provided"}</li>
           <li><strong>Text message consent:</strong> ${consentLabel}</li>
         </ul>
         
         <h3>Message:</h3>
-        <p>${customerMessage.replace(/\n/g, '<br>')}</p>
+        <p>${normalizedMessage.replace(/\n/g, '<br>')}</p>
         
         <hr>
         <p><em>This message was submitted through the MyFence.com contact form.</em></p>
       `
     }
 
-    console.log('Sending email...')
+    console.log('Sending admin email...')
     const resendInstance = new Resend(apiKey)
-    const { data: result, error: resendError } = await resendInstance.emails.send(emailData)
+    const { data: adminResult, error: adminResendError } = await resendInstance.emails.send(adminEmailData)
 
-    if (resendError) {
-      console.error('Resend API error:', resendError)
+    if (adminResendError) {
+      console.error('Resend API error (admin email):', adminResendError)
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
 
-    console.log('Email sent successfully:', result)
+    console.log('Admin email sent successfully:', adminResult)
+
+    const customerConfirmationHtml = `
+      <h2>Thanks for contacting MyFence.com</h2>
+      <p>Hi ${customerName},</p>
+      <p>We received your message and will get back to you soon.</p>
+      <p><strong>Your message:</strong><br>${normalizedMessage.replace(/\n/g, '<br>')}</p>
+      <hr>
+      <p>If you need immediate help, call us at <a href="tel:+12534551885">(253) 455-1885</a>.</p>
+      <p><em>- MyFence.com</em></p>
+    `;
+
+    const customerConfirmationText = `
+Hi ${customerName},
+
+Thanks for contacting MyFence.com. We received your message and will get back to you soon.
+
+Your message:
+${normalizedMessage}
+
+If you need immediate help, call us at (253) 455-1885.
+
+- MyFence.com
+    `.trim();
+
+    let customerConfirmationSent = false;
+    try {
+      const { data: customerResult, error: customerResendError } = await resendInstance.emails.send({
+        from: 'MyFence.com <onboarding@resend.dev>',
+        to: [normalizedEmail],
+        subject: 'We received your message | MyFence.com',
+        html: customerConfirmationHtml,
+        text: customerConfirmationText,
+      });
+
+      if (customerResendError) {
+        console.error('Resend API error (customer confirmation):', customerResendError);
+      } else {
+        customerConfirmationSent = true;
+        console.log('Customer confirmation sent successfully:', customerResult);
+      }
+    } catch (customerError) {
+      console.error('Customer confirmation send failed:', customerError);
+    }
 
     return new Response(
-      JSON.stringify({ success: true, id: result?.id }),
+      JSON.stringify({
+        success: true,
+        id: adminResult?.id,
+        customerConfirmationSent,
+      }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
 

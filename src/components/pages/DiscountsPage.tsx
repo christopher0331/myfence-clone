@@ -139,6 +139,7 @@ const DiscountsPage = () => {
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
   const [formTextConsent, setFormTextConsent] = useState(false);
+  const [textConsentError, setTextConsentError] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -315,6 +316,11 @@ const DiscountsPage = () => {
         return;
       }
       if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("already-played-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
         toast.error("Please consent to receive text messages before submitting your phone number.");
         return;
       }
@@ -334,26 +340,8 @@ const DiscountsPage = () => {
         description: formDescription || "General inquiry from discount page",
       };
 
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: emailData.firstName,
-            lastName: emailData.lastName,
-            email: emailData.email,
-            phone: emailData.phone,
-            propertyAddress: emailData.address || "",
-            fenceType: "Discounts Page",
-            message: emailData.description || "General inquiry from discount page",
-            textConsent: emailData.textConsent,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
-
-      // Always send the legacy email notification too (info@myfence.com).
+      // TEMP: Turnstile/webhook path disabled to route all sends via Resend.
+      // Send via Resend-backed legacy function only.
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
@@ -364,9 +352,8 @@ const DiscountsPage = () => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      if (emailError) {
+        throw new Error(emailError || "Failed to send message");
       }
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");
@@ -391,6 +378,11 @@ const DiscountsPage = () => {
         return;
       }
       if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("discounts-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
         toast.error("Please consent to receive text messages before submitting your phone number.");
         return;
       }
@@ -695,22 +687,36 @@ const DiscountsPage = () => {
                         setFormPhone(value);
                         if (!value.trim()) {
                           setFormTextConsent(false);
+                          setTextConsentError(false);
                         }
                       }}
                       required
                     />
                   </div>
                   {formPhone.trim() ? (
-                    <div className="flex items-start space-x-2">
+                    <div
+                      id="discounts-text-consent-row"
+                      className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                    >
                       <Checkbox
                         id="discounts-text-consent"
                         checked={formTextConsent}
-                        onCheckedChange={(checked) => setFormTextConsent(checked === true)}
+                        onCheckedChange={(checked) => {
+                          const consentGiven = checked === true;
+                          setFormTextConsent(consentGiven);
+                          if (consentGiven) setTextConsentError(false);
+                        }}
                       />
-                      <Label htmlFor="discounts-text-consent" className="text-xs leading-5 text-muted-foreground">
+                      <Label
+                        htmlFor="discounts-text-consent"
+                        className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                      >
                         {TEXT_CONSENT_MESSAGE}
                       </Label>
                     </div>
+                    {textConsentError ? (
+                      <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                    ) : null}
                   ) : null}
 
                   <div className="space-y-2">
@@ -794,22 +800,36 @@ const DiscountsPage = () => {
                         setFormPhone(value);
                         if (!value.trim()) {
                           setFormTextConsent(false);
+                          setTextConsentError(false);
                         }
                       }}
                       required
                     />
                   </div>
                   {formPhone.trim() ? (
-                    <div className="flex items-start space-x-2">
+                    <div
+                      id="already-played-text-consent-row"
+                      className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                    >
                       <Checkbox
                         id="already-played-text-consent"
                         checked={formTextConsent}
-                        onCheckedChange={(checked) => setFormTextConsent(checked === true)}
+                        onCheckedChange={(checked) => {
+                          const consentGiven = checked === true;
+                          setFormTextConsent(consentGiven);
+                          if (consentGiven) setTextConsentError(false);
+                        }}
                       />
-                      <Label htmlFor="already-played-text-consent" className="text-xs leading-5 text-muted-foreground">
+                      <Label
+                        htmlFor="already-played-text-consent"
+                        className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                      >
                         {TEXT_CONSENT_MESSAGE}
                       </Label>
                     </div>
+                    {textConsentError ? (
+                      <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                    ) : null}
                   ) : null}
 
                   <div className="space-y-2">

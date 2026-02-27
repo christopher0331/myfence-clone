@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 export const InlineContactSection = () => {
+  const [textConsentError, setTextConsentError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,12 +33,20 @@ export const InlineContactSection = () => {
       [name]: value,
       textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
+    if (name === "phone" && value.trim() === "") {
+      setTextConsentError(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formData.phone.trim() && !formData.textConsent) {
+      setTextConsentError(true);
+      document.getElementById("inline-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       toast({
         title: "Consent required",
         description: "Please consent to receive text messages before submitting your phone number.",
@@ -49,27 +58,9 @@ export const InlineContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Inline Contact",
-            message: formData.message,
-            textConsent: formData.textConsent,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // TEMP: Turnstile/webhook path disabled to route all sends via Resend.
 
-      // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
+      // Send via Resend-backed legacy function only.
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
@@ -80,9 +71,8 @@ export const InlineContactSection = () => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      if (emailError) {
+        throw new Error(emailError || "Failed to send message");
       }
 
       const formElement = document.querySelector('#inline-contact-form');
@@ -174,18 +164,31 @@ export const InlineContactSection = () => {
                     className="mt-1"
                   />
                 </div>
-                <div className="flex items-start space-x-2">
+                <div
+                  id="inline-text-consent-row"
+                  className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                >
                   <Checkbox
                     id="inline-text-consent"
                     checked={formData.textConsent}
-                    onCheckedChange={(checked) =>
-                      setFormData((prev) => ({ ...prev, textConsent: checked === true }))
-                    }
+                    onCheckedChange={(checked) => {
+                      const consentGiven = checked === true;
+                      setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
+                      if (consentGiven) setTextConsentError(false);
+                    }}
                   />
-                  <Label htmlFor="inline-text-consent" className="text-xs leading-5 text-muted-foreground">
+                  <Label
+                    htmlFor="inline-text-consent"
+                    className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                  >
                     {TEXT_CONSENT_MESSAGE}
                   </Label>
                 </div>
+                {textConsentError ? (
+                  <p className="text-sm font-semibold text-amber-800 mt-1">
+                    ⚠ Required: check this box to submit when a phone number is entered.
+                  </p>
+                ) : null}
                 <div>
                   <Label htmlFor="inline-address" className="text-sm font-medium">Property Address</Label>
                   <Input
