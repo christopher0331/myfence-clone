@@ -712,7 +712,7 @@ const SteelVsWoodPosts = () => {
                   <p className="text-sm text-muted-foreground">Another option for post longevity</p>
                 </Link>
                 <Link
-                  href="/blog/seattle-fence-cost-2025"
+                  href="/blog/wooden-fence-cost2025"
                   className="p-4 rounded-lg border bg-card hover:bg-accent transition-colors"
                 >
                   <h3 className="font-semibold text-primary">Fence Cost Guide 2025</h3>

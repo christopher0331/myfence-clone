@@ -106,7 +106,7 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 - 3-column grid of `Card` components:
   - **Cedar Privacy Fence** → links to `/fence-styles/picture-frame-fence`
   - **Hogwire Fence** → links to `/fence-styles/black-hogwire-fence`
-  - **Hybrid Aluminum/Cedar** → links to `/fence-styles/cedar-aluminum-hybrid-fence`
+  - **Hybrid Aluminum/Cedar** → links to `/fence-styles/cedar-steel-hybrid-fence`
 - Each card: H3 title, short description tailored to the neighborhood, "View styles →" link
 
 ### 11. Virtual Quote Tool

@@ -385,7 +385,7 @@ const MountainCreekPage = ({
                   <p className="text-muted-foreground text-sm mb-3">
                     Strong and low-maintenance for Mountain Creek's wind and moisture. Black aluminum panels in cedar frame; slope-ready with minimal upkeep.
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system →
                   </Link>
                 </Card>

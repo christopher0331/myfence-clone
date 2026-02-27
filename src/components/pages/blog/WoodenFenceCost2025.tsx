@@ -30,7 +30,7 @@ const WoodenFenceCost2025 = () => {
         "@type": "ListItem",
         "position": 3,
         "name": "Wooden Fence Cost 2026",
-        "item": "https://myfence.com/blog/seattle-fence-cost-2025"
+        "item": "https://myfence.com/blog/wooden-fence-cost2025"
       }
     ]
   };
@@ -61,7 +61,7 @@ const WoodenFenceCost2025 = () => {
       <Seo
         title="Wooden Fence Cost Seattle 2026: Complete Pricing Guide & Estimates"
         description="Updated 2026 wooden fence costs in Seattle, WA. Cedar prices $35-60/LF. Market trends, labor costs, permits. Free estimates. Call (253) 455-1885."
-        canonical="https://myfence.com/blog/seattle-fence-cost-2025"
+        canonical="https://myfence.com/blog/wooden-fence-cost2025"
         structuredData={[breadcrumbData, structuredData]}
       />
       

@@ -242,7 +242,7 @@ const SomersetPage = ({
                   <p className="text-muted-foreground text-sm mb-3">
                     Our strongest system — aluminum panels in a cedar frame on steel posts. Perfect for Somerset's wind exposure and steep slopes. Zero staining or sealing required.
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system &rarr;
                   </Link>
                 </Card>

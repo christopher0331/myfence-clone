@@ -460,7 +460,7 @@ const TehalehPage = ({
                   <p className="text-muted-foreground text-sm mb-3">
                     {isUpper ? "Our strongest system for plateau wind and slope. Black aluminum panels in cedar frame; zero staining. Often recommended for newer Upper Tehaleh homes." : "Low-maintenance option for busy Tehaleh families. Black aluminum and cedar; HOA-approved and durable for kids and pets."}
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system →
                   </Link>
                 </Card>

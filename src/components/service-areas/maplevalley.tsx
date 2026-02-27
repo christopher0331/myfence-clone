@@ -87,7 +87,7 @@ const MapleValleyArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need to share fence costs with my neighbor?</h4>
           <p className="text-muted-foreground">
-            Under <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a>, neighbors may be required to share costs for boundary fences. We recommend early communication with neighbors and can provide professional documentation to facilitate discussions. Read our detailed guide on <Link href="/blog/fence-cost-shared-with-neighbor" className="text-primary underline decoration-2 underline-offset-2">Washington fence cost sharing laws and best practices</Link>.
+            Under <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a>, neighbors may be required to share costs for boundary fences. We recommend early communication with neighbors and can provide professional documentation to facilitate discussions. Read our detailed guide on <Link href="/blog/neighbor-fence-cost-split" className="text-primary underline decoration-2 underline-offset-2">Washington fence cost sharing laws and best practices</Link>.
           </p>
         </div>
       </Card>

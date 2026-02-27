@@ -384,7 +384,7 @@ const BowLakePage = ({
                   <p className="text-muted-foreground text-sm mb-3">
                     Low-maintenance and durable. Black aluminum panels in cedar frame; no staining, built for busy Bow Lake households and SeaTac weather.
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system →
                   </Link>
                 </Card>

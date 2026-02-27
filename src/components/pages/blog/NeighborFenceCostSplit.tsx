@@ -36,7 +36,7 @@ const NeighborFenceCostSplit = () => {
       <Seo 
         title="Should My Neighbor Split Our Fence Cost? Washington State RCW Law Guide 2024"
         description="Learn Washington State RCW 16.60.020 fence cost sharing laws. Get professional Fence Genius proposals to help neighbors split fence costs fairly and legally."
-        canonical="https://myfence.com/blog/fence-cost-shared-with-neighbor"
+        canonical="https://myfence.com/blog/neighbor-fence-cost-split"
         structuredData={structuredData}
       />
       

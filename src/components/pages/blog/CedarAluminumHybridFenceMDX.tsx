@@ -179,7 +179,7 @@ const CedarAluminumHybridFenceMDX = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Cedar Frame Construction</h3>
                   <p className="text-muted-foreground">
-                    The structural frame uses a <Link href="/fence-styles/picture-frame-fence" className="text-primary hover:underline">picture frame design</Link> with premium cedar posts, top rail, and bottom rail. This natural wood provides warmth and integrates beautifully with Pacific Northwest landscapes. The cedar can be left natural, <Link href="/pre-staining" className="text-primary hover:underline">pre-stained</Link>, or finished to match your property aesthetic.
+                    The structural frame uses a <Link href="/fence-styles/picture-frame-fence" className="text-primary hover:underline">picture frame design</Link> with premium cedar posts, top rail, and bottom rail. This natural wood provides warmth and integrates beautifully with Pacific Northwest landscapes. The cedar can be left natural, <Link href="/pre-staining-cedar-fence" className="text-primary hover:underline">pre-stained</Link>, or finished to match your property aesthetic.
                   </p>
                 </div>
                 <div>
@@ -569,7 +569,7 @@ const CedarAluminumHybridFenceMDX = () => {
               </Card>
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <Link href="/blog/seattle-fence-cost-2025">
+                  <Link href="/blog/wooden-fence-cost2025">
                     <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
                       <img 
                         src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png" 

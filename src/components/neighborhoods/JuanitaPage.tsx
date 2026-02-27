@@ -437,7 +437,7 @@ const JuanitaPage = () => {
                   <p className="text-muted-foreground text-sm mb-3">
                     Low-maintenance option for busy Juanita homeowners. Black aluminum panels in a cedar frame; no staining, and it stands up to lakefront moisture.
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system →
                   </Link>
                 </Card>

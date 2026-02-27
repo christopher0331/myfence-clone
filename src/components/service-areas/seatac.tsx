@@ -353,7 +353,7 @@ const SeaTacArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need to involve my neighbors?</h4>
           <p className="text-muted-foreground">
-            <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a> establishes rules for shared fence costs. If your fence is on the property line and serves as a partition, your neighbor may be required to pay half. We recommend discussing plans early and providing professional documentation. Learn more about <Link href="/blog/fence-cost-shared-with-neighbor" className="text-primary underline decoration-2 underline-offset-2">splitting fence costs with neighbors</Link>.
+            <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a> establishes rules for shared fence costs. If your fence is on the property line and serves as a partition, your neighbor may be required to pay half. We recommend discussing plans early and providing professional documentation. Learn more about <Link href="/blog/neighbor-fence-cost-split" className="text-primary underline decoration-2 underline-offset-2">splitting fence costs with neighbors</Link>.
           </p>
         </div>
       </Card>

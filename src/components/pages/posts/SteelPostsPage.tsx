@@ -85,7 +85,7 @@ const SteelPostsPage = () => {
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button size="lg" asChild>
-                  <Link href="/quote-tool">Get Free Quote</Link>
+                  <Link href="/quote">Get Free Quote</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <a href="tel:2534551885">Call (253) 455-1885</a>
@@ -432,7 +432,7 @@ const SteelPostsPage = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link href="/quote-tool">Get Free Quote</Link>
+                <Link href="/quote">Get Free Quote</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="tel:2534551885">Call (253) 455-1885</a>

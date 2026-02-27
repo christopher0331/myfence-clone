@@ -445,7 +445,7 @@ const DowntownBonneyLakePage = ({
                   <p className="text-muted-foreground text-sm mb-3">
                     Pairs wood warmth with metal stability and lower maintenance. Ideal for updated Downtown Bonney Lake homes and remodels; holds up to daily gate use and Pacific Northwest weather.
                   </p>
-                  <Link href="/fence-styles/cedar-aluminum-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
+                  <Link href="/fence-styles/cedar-steel-hybrid-fence" className="text-primary text-sm font-medium hover:underline">
                     View hybrid system →
                   </Link>
                 </Card>
