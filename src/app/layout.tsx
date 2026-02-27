@@ -32,6 +32,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={`min-h-screen flex flex-col ${inter.className}`}>
         <DeferredGTM />
+        <Script id="smartlook-init" strategy="afterInteractive">
+          {`
+            window.smartlook || (function (d) {
+              var o = (window.smartlook = function () { o.api.push(arguments); });
+              var h = d.getElementsByTagName("head")[0];
+              var c = d.createElement("script");
+              o.api = new Array();
+              c.async = true;
+              c.type = "text/javascript";
+              c.charset = "utf-8";
+              c.src = "https://web-sdk.smartlook.com/recorder.js";
+              h.appendChild(c);
+            })(document);
+            window.smartlook("init", "96d5d4b768684eadbd4ef7c17d4310fb2e7cc980", { region: "eu" });
+          `}
+        </Script>
         <Header />
         {/* Add top padding so content clears the fixed header */}
         <main className="flex-1 pt-24 md:pt-32">
