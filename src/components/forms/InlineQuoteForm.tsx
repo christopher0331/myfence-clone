@@ -184,29 +184,31 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           />
         </div>
         {formData.phone.trim() ? (
-          <div
-            id="inline-quote-text-consent-row"
-            className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-          >
-            <Checkbox
-              id="inline-quote-text-consent"
-              checked={formData.textConsent}
-              onCheckedChange={(checked) => {
-                const consentGiven = checked === true;
-                setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                if (consentGiven) setTextConsentError(false);
-              }}
-            />
-            <Label
-              htmlFor="inline-quote-text-consent"
-              className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+          <>
+            <div
+              id="inline-quote-text-consent-row"
+              className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
             >
-              {TEXT_CONSENT_MESSAGE}
-            </Label>
-          </div>
-          {textConsentError ? (
-            <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
-          ) : null}
+              <Checkbox
+                id="inline-quote-text-consent"
+                checked={formData.textConsent}
+                onCheckedChange={(checked) => {
+                  const consentGiven = checked === true;
+                  setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
+                  if (consentGiven) setTextConsentError(false);
+                }}
+              />
+              <Label
+                htmlFor="inline-quote-text-consent"
+                className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+              >
+                {TEXT_CONSENT_MESSAGE}
+              </Label>
+            </div>
+            {textConsentError ? (
+              <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+            ) : null}
+          </>
         ) : null}
 
         <div className="space-y-2">

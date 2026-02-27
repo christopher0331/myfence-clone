@@ -694,29 +694,31 @@ const DiscountsPage = () => {
                     />
                   </div>
                   {formPhone.trim() ? (
-                    <div
-                      id="discounts-text-consent-row"
-                      className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                    >
-                      <Checkbox
-                        id="discounts-text-consent"
-                        checked={formTextConsent}
-                        onCheckedChange={(checked) => {
-                          const consentGiven = checked === true;
-                          setFormTextConsent(consentGiven);
-                          if (consentGiven) setTextConsentError(false);
-                        }}
-                      />
-                      <Label
-                        htmlFor="discounts-text-consent"
-                        className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                    <>
+                      <div
+                        id="discounts-text-consent-row"
+                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
                       >
-                        {TEXT_CONSENT_MESSAGE}
-                      </Label>
-                    </div>
-                    {textConsentError ? (
-                      <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
-                    ) : null}
+                        <Checkbox
+                          id="discounts-text-consent"
+                          checked={formTextConsent}
+                          onCheckedChange={(checked) => {
+                            const consentGiven = checked === true;
+                            setFormTextConsent(consentGiven);
+                            if (consentGiven) setTextConsentError(false);
+                          }}
+                        />
+                        <Label
+                          htmlFor="discounts-text-consent"
+                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                        >
+                          {TEXT_CONSENT_MESSAGE}
+                        </Label>
+                      </div>
+                      {textConsentError ? (
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                      ) : null}
+                    </>
                   ) : null}
 
                   <div className="space-y-2">
@@ -807,29 +809,31 @@ const DiscountsPage = () => {
                     />
                   </div>
                   {formPhone.trim() ? (
-                    <div
-                      id="already-played-text-consent-row"
-                      className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                    >
-                      <Checkbox
-                        id="already-played-text-consent"
-                        checked={formTextConsent}
-                        onCheckedChange={(checked) => {
-                          const consentGiven = checked === true;
-                          setFormTextConsent(consentGiven);
-                          if (consentGiven) setTextConsentError(false);
-                        }}
-                      />
-                      <Label
-                        htmlFor="already-played-text-consent"
-                        className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                    <>
+                      <div
+                        id="already-played-text-consent-row"
+                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
                       >
-                        {TEXT_CONSENT_MESSAGE}
-                      </Label>
-                    </div>
-                    {textConsentError ? (
-                      <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
-                    ) : null}
+                        <Checkbox
+                          id="already-played-text-consent"
+                          checked={formTextConsent}
+                          onCheckedChange={(checked) => {
+                            const consentGiven = checked === true;
+                            setFormTextConsent(consentGiven);
+                            if (consentGiven) setTextConsentError(false);
+                          }}
+                        />
+                        <Label
+                          htmlFor="already-played-text-consent"
+                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                        >
+                          {TEXT_CONSENT_MESSAGE}
+                        </Label>
+                      </div>
+                      {textConsentError ? (
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                      ) : null}
+                    </>
                   ) : null}
 
                   <div className="space-y-2">
