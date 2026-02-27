@@ -35,6 +35,14 @@ export function buildNeighborhoodStructuredData({
     description,
     url: "https://myfence.com",
     telephone: "+12534551885",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "22927 257th Ave SE",
+      addressLocality: "Maple Valley",
+      addressRegion: "WA",
+      postalCode: "98038",
+      addressCountry: "US",
+    },
     areaServed: {
       "@type": "City",
       name: neighborhoodName,
@@ -60,7 +68,7 @@ export function buildNeighborhoodStructuredData({
       },
     },
     provider: {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       name: "MyFence.com",
       url: "https://myfence.com",
       telephone: "+12534551885",

@@ -50,23 +50,6 @@ const SteelPostsPage = () => {
       ratingValue: "4.9",
       reviewCount: "89"
     },
-    shippingDetails: {
-      "@type": "OfferShippingDetails",
-      shippingDestination: {
-        "@type": "DefinedRegion",
-        addressCountry: "US",
-        addressRegion: "WA"
-      },
-      deliveryTime: {
-        "@type": "ShippingDeliveryTime",
-        handlingTime: {
-          "@type": "QuantitativeValue",
-          minValue: 1,
-          maxValue: 14,
-          unitCode: "DAY"
-        }
-      }
-    },
     hasMerchantReturnPolicy: {
       "@type": "MerchantReturnPolicy",
       applicableCountry: "US",

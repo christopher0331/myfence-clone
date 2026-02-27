@@ -121,7 +121,7 @@ const CedarAluminumHybridFence = () => {
       "worstRating": "1"
     },
     "manufacturer": {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       "name": "MyFence.com",
       "address": {
         "@type": "PostalAddress",

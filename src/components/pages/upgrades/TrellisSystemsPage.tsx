@@ -14,6 +14,8 @@ const TrellisSystemsPage = () => {
     name: "Cedar Trellis Systems",
     description:
       "Custom cedar trellis systems with 6x6 posts, 2x8 runners, and decorative 2x2 slats. Features black hardware upgrades and chamfered or artisan edge options.",
+    image: "https://myfence.com/lovable-uploads/trellis-system-hero.jpg",
+    url: "https://myfence.com/fence-upgrades/trellis-systems",
     brand: {
       "@type": "Organization",
       name: "MyFence.com",
@@ -22,6 +24,9 @@ const TrellisSystemsPage = () => {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
       priceCurrency: "USD",
+      price: "1500",
+      priceValidUntil: "2026-12-31",
+      url: "https://myfence.com/fence-upgrades/trellis-systems",
     },
     aggregateRating: {
       "@type": "AggregateRating",

@@ -80,8 +80,13 @@ const CedarPostOnPipe = () => {
             "@type": "QuantitativeValue",
             "minValue": 7,
             "maxValue": 14,
-            "unitCode": "d"
+            "unitCode": "DAY"
           }
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
         }
       },
       "hasMerchantReturnPolicy": {

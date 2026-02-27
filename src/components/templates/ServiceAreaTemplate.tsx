@@ -42,6 +42,46 @@ interface ServiceAreaTemplateProps {
   videoTags?: VideoTag[];
 }
 
+const DEFAULT_BUSINESS_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "22927 257th Ave SE",
+  addressLocality: "Maple Valley",
+  addressRegion: "WA",
+  postalCode: "98038",
+  addressCountry: "US",
+} as const;
+
+function sanitizeLocalBusinessNodes(value: any, isRoot = false): any {
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeLocalBusinessNodes(item, false));
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  const result: Record<string, any> = {};
+  for (const [key, child] of Object.entries(value)) {
+    result[key] = sanitizeLocalBusinessNodes(child, false);
+  }
+
+  const typeField = result["@type"];
+  const includesLocalBusiness = Array.isArray(typeField)
+    ? typeField.includes("LocalBusiness")
+    : typeField === "LocalBusiness";
+
+  if (includesLocalBusiness && !result.address) {
+    if (isRoot) {
+      result.address = DEFAULT_BUSINESS_ADDRESS;
+    } else {
+      // Nested providers without an address should be Organization to avoid invalid LocalBusiness warnings.
+      result["@type"] = "Organization";
+    }
+  }
+
+  return result;
+}
+
 const ServiceAreaTemplate = ({ 
   city, 
   state,
@@ -233,7 +273,7 @@ const ServiceAreaTemplate = ({
     if (!enhancedBusinessData) return structuredData;
     
     // Ensure reviews from Trustindex are included in enhanced data if not present
-    const data = { ...enhancedBusinessData };
+    const data = sanitizeLocalBusinessNodes(enhancedBusinessData, true);
     if (!data.review && reviews.length > 0) {
       data.review = reviews.map(review => ({
         "@type": "Review",
