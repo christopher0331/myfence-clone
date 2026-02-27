@@ -23,8 +23,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 const CANONICAL = "https://myfence.com/service-areas/kirkland/juanita";
-const META_TITLE =
-  "Juanita Kirkland Fence Installation | Lake Washington Waterfront | MyFence.com";
+const META_TITLE = "Juanita Fence Installation | MyFence.com";
 const META_DESCRIPTION =
   "Waterfront fence installation in Juanita, Kirkland. Marine-grade cedar, hogwire & hybrid fencing for Lake Washington properties. View-preserving designs. Free quotes. (253) 455-1885.";
 

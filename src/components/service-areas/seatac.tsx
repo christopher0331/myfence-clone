@@ -319,7 +319,7 @@ const SeaTacArticle = () => (
         Under <a href="https://www.codepublishing.com/WA/SeaTac/html/SeaTac15/SeaTac15435.html" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">SeaTac Municipal Code Chapter 15.435 (Fences)</a>, residential fence height limits are: <strong>front yard 4 feet maximum</strong>; <strong>side yards within the first 20 feet from the front property line 4 feet maximum</strong>; and <strong>side and rear yards beyond that 6 feet maximum</strong>. Fences not exceeding 6 feet in height do not require a building permit, but must comply with setback and sight-distance rules. Special rules apply for clear-visibility fences, arterial frontage, and sloped terrain—see the code for details. Height is measured from the lowest grade at the property boundary.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Washington State law requires building on your side of the property line. We recommend a professional survey before installation. For current rules and permit questions, contact the <a href="https://www.seatacwa.gov/government/city-departments/community-and-economic-development/building-services-division/questions-answers" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Building Services / Community & Economic Development</a> or visit <a href="https://www.seatacwa.gov/departments/community-economic-development/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">SeaTac Community Development</a>.
+        Washington State law requires building on your side of the property line. We recommend a professional survey before installation. For current rules and permit questions, contact the <a href="https://www.seatacwa.gov/government/city-departments/community-and-economic-development/building-services-division/questions-answers" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Building Services / Community & Economic Development</a> or visit <a href="https://www.seatacwa.gov/services/community-and-economic-development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">SeaTac Community Development</a>.
       </p>
     </section>
 
@@ -329,7 +329,7 @@ const SeaTacArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need a permit for a fence in SeaTac?</h4>
           <p className="text-muted-foreground">
-            Residential fences up to 6 feet in height in side and rear yards typically do not require a building permit in SeaTac, but must comply with <a href="https://www.codepublishing.com/WA/SeaTac/html/SeaTac15/SeaTac15435.html" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Chapter 15.435</a> (setback and sight-distance). Front yard fences are limited to 4 feet. Verify current rules with the <a href="https://www.seatacwa.gov/departments/community-economic-development/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Community Development</a> before starting.
+            Residential fences up to 6 feet in height in side and rear yards typically do not require a building permit in SeaTac, but must comply with <a href="https://www.codepublishing.com/WA/SeaTac/html/SeaTac15/SeaTac15435.html" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Chapter 15.435</a> (setback and sight-distance). Front yard fences are limited to 4 feet. Verify current rules with the <a href="https://www.seatacwa.gov/services/community-and-economic-development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Community Development</a> before starting.
           </p>
         </div>
         <div>
@@ -361,7 +361,7 @@ const SeaTacArticle = () => (
 
     <section className="bg-muted/50 p-6 rounded-lg border">
       <p className="text-sm text-muted-foreground">
-        <strong>Note:</strong> Building codes and HOA regulations are subject to change. Always verify current requirements with the <a href="https://www.seatacwa.gov/departments/community-economic-development/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Community Development</a> and your homeowners association before beginning any fence project.
+        <strong>Note:</strong> Building codes and HOA regulations are subject to change. Always verify current requirements with the <a href="https://www.seatacwa.gov/services/community-and-economic-development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of SeaTac Community Development</a> and your homeowners association before beginning any fence project.
       </p>
     </section>
 

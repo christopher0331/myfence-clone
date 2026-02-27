@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const fm = mod.frontmatter || {};
     if (fm.title) {
       return {
-        title: `${fm.title} | MyFence.com Blog`,
+        title: fm.metaTitle || `${fm.title} | MyFence.com`,
         description: fm.description || "",
         alternates: { canonical: `https://myfence.com/blog/${slug}` },
       };
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   const article = blogArticles.find((a) => a.id === slug);
   if (!article) return { title: "Blog Post Not Found | MyFence.com" };
   return {
-    title: `${article.title} | MyFence.com Blog`,
+    title: article.metaTitle || `${article.title} | MyFence.com`,
     description: article.description,
     alternates: { canonical: `https://myfence.com/blog/${slug}` },
   };
@@ -79,6 +79,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const Post = mod.default;
     const fm = mod.frontmatter || {};
     const title = fm.title || "Untitled";
+    const seoTitle = fm.metaTitle || `${title} | MyFence.com`;
     const description = fm.description || "";
     const image = fm.image || fm.featured_image || "";
     const structuredData = {
@@ -97,7 +98,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return (
       <>
         <Seo
-          title={`${title} | MyFence.com Blog`}
+          title={seoTitle}
           description={description}
           canonical={`https://myfence.com/blog/${slug}`}
           image={imageUrl ?? undefined}
@@ -223,7 +224,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       <Seo
-        title={`${article.title} | MyFence.com Blog`}
+        title={article.metaTitle || `${article.title} | MyFence.com`}
         description={article.description}
         canonical={`https://myfence.com/blog/${slug}`}
         image={article.image}

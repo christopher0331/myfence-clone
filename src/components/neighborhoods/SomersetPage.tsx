@@ -18,7 +18,7 @@ interface SomersetPageProps {
 
 const SomersetPage = ({
   canonical = "https://myfence.com/service-areas/bellevue/somerset",
-  metaTitle = "Somerset Bellevue Fence Installation | Hillside Fencing Experts | MyFence.com",
+  metaTitle = "Somerset Fence Installation | MyFence.com",
   metaDescription = "Specialized fence installation for Somerset, Bellevue. Hillside slope experts with HOA-compliant cedar, hogwire & hybrid fencing. Panoramic view-friendly designs. Free quotes.",
 }: SomersetPageProps) => {
   const structuredData = buildNeighborhoodStructuredData({

@@ -330,7 +330,7 @@ const LakeTapps = () => {
         <p className="text-lg mb-4">
           For official permit information, visit the{" "}
           <a 
-            href="https://www.piercecountywa.gov/1308/Building-Permits" 
+            href="https://www.piercecountywa.gov/903/Development-Center"
             target="_blank" 
             rel="noopener noreferrer"
             className="text-primary hover:underline font-semibold"

@@ -47,7 +47,7 @@ const McMickenHeightsPage = ({
   return (
     <>
       <Seo
-        title="McMicken Heights SeaTac Fence Installation | Noise Reduction & Privacy | MyFence.com"
+        title="McMicken Heights Fence Installation | MyFence.com"
         description="Fence installation in McMicken Heights, SeaTac. Sound-dampening privacy fences and durable cedar, hogwire & hybrid systems for airport-adjacent lots. Free quotes. (253) 455-1885."
         canonical={canonical}
         structuredData={structuredData}

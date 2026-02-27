@@ -23,8 +23,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 const CANONICAL = "https://myfence.com/service-areas/bellevue/newport-hills";
-const META_TITLE =
-  "Newport Hills Bellevue Fence Installation | Wooded Hillside Fencing | MyFence.com";
+const META_TITLE = "Newport Hills Fence Installation | MyFence.com";
 const META_DESCRIPTION =
   "Fence installation in Newport Hills, Bellevue. Steep-slope experts for wooded lots. Cedar, hogwire & hybrid fencing with reinforced posts and drainage. Free quotes. (253) 455-1885.";
 

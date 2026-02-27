@@ -1,9 +1,21 @@
 import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 
-export const blogArticles = [
+export interface BlogArticle {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string | { src: string };
+  readTime: string;
+  publishDate: string;
+  metaTitle?: string;
+}
+
+export const blogArticles: BlogArticle[] = [
   {
     id: "steel-vs-wood-posts",
     title: "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
+    metaTitle: "Steel vs Wood Fence Posts | Seattle Guide | MyFence.com",
     category: "Fence Posts",
     description: "Compare 4x4 black steel fence posts with traditional wood posts. 40-year warranty vs 10-15 year lifespan. Learn why steel posts are ideal for wet Seattle soil.",
     image: "/lovable-uploads/barrier-boss-4x4-steel-post.webp",
@@ -13,6 +25,7 @@ export const blogArticles = [
   {
     id: "cedar-steel-hybrid-fence",
     title: "Cedar/Steel Hybrid Fence: The Ultimate Guide to Modern Privacy Fencing",
+    metaTitle: "Cedar/Steel Hybrid Fence Guide | MyFence.com",
     category: "Premium Fencing",
     description: "Discover the cedar/steel hybrid fence system - 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Learn about pricing ($80/LF), 30-year warranty options, and why this is the ultimate privacy fence investment.",
     image: "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
@@ -31,6 +44,7 @@ export const blogArticles = [
   {
     id: "virtual-quote-tool",
     title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
+    metaTitle: "Instant Fence Quote Tool Guide | MyFence.com",
     category: "Pricing",
     description: "Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing.",
     image: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
@@ -122,6 +136,7 @@ export const blogArticles = [
   {
     id: "onsite-staining-vs-pre-staining",
     title: "Onsite Fence Staining Problems vs Pre Staining Components",
+    metaTitle: "Onsite vs Pre-Staining Fences | MyFence.com",
     category: "Maintenance",
     description: "Why MyFence.com dries every board, stains all sides, and avoids onsite staining risks like hidden surfaces, rain, and cold snaps.",
     image: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4369.webp?tr=w-960,q-70",
