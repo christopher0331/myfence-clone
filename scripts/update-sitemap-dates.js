@@ -42,7 +42,7 @@ const fileToUrlMap = {
   'src/components/pages/fence-styles/GalvanizedHogwireFence.tsx': 'https://myfence.com/fence-styles/galvanized-hogwire-fence',
   'src/components/pages/fence-styles/ThreeFtBlackHogwireFence.tsx': 'https://myfence.com/fence-styles/three-ft-black-hogwire-fence',
   'src/components/pages/fence-styles/PicketFence.tsx': 'https://myfence.com/fence-styles/picket-fence',
-  'src/components/pages/fence-styles/CedarAluminumHybridFence.tsx': 'https://myfence.com/fence-styles/cedar-aluminum-hybrid-fence',
+  'src/components/pages/fence-styles/CedarAluminumHybridFence.tsx': 'https://myfence.com/fence-styles/cedar-steel-hybrid-fence',
 
   // Fence upgrades
   'src/components/pages/upgrades/ExteriorScrewsPage.tsx': 'https://myfence.com/fence-upgrades/exterior-screws',
@@ -63,15 +63,15 @@ const fileToUrlMap = {
   'src/components/service-areas/gigharbor.tsx': 'https://myfence.com/service-areas/gig-harbor',
 
   // Blog components
-  'src/components/pages/blog/WoodenFenceCost2025.tsx': 'https://myfence.com/blog/seattle-fence-cost-2025',
+  'src/components/pages/blog/WoodenFenceCost2025.tsx': 'https://myfence.com/blog/wooden-fence-cost2025',
   'src/components/pages/blog/SixFtFenceCost.tsx': 'https://myfence.com/blog/fence-cost-seattle',
-  'src/components/pages/blog/NeighborFenceCostSplit.tsx': 'https://myfence.com/blog/fence-cost-shared-with-neighbor',
+  'src/components/pages/blog/NeighborFenceCostSplit.tsx': 'https://myfence.com/blog/neighbor-fence-cost-split',
   'src/components/pages/blog/HowToStainFence.tsx': 'https://myfence.com/blog/how-to-stain-fence',
   'src/components/pages/blog/FenceCleaningStaining.tsx': 'https://myfence.com/blog/fence-cleaning-staining',
   'src/components/pages/blog/VirtualQuoteTool.tsx': 'https://myfence.com/blog/virtual-quote-tool',
   'src/components/pages/blog/SteelVsWoodPosts.tsx': 'https://myfence.com/blog/steel-vs-wood-posts',
   'src/components/pages/blog/CedarBoardGrade.tsx': 'https://myfence.com/blog/cedar-board-grade',
-  'src/components/pages/blog/CedarAluminumHybridFenceMDX.tsx': 'https://myfence.com/blog/cedar-aluminum-hybrid-fence',
+  'src/components/pages/blog/CedarAluminumHybridFenceMDX.tsx': 'https://myfence.com/blog/cedar-steel-hybrid-fence',
 };
 
 const currentDate = new Date().toISOString().split('T')[0];

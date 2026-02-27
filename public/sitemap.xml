@@ -140,12 +140,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://myfence.com/fence-styles/cedar-aluminum-hybrid-fence</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://myfence.com/fence-styles/cedar-steel-hybrid-fence</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -416,7 +410,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://myfence.com/blog/cedar-aluminum-hybrid-fence</loc>
+    <loc>https://myfence.com/blog/cedar-steel-hybrid-fence</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -434,7 +428,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://myfence.com/blog/fence-cost-shared-with-neighbor</loc>
+    <loc>https://myfence.com/blog/neighbor-fence-cost-split</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -452,7 +446,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://myfence.com/blog/seattle-fence-cost-2025</loc>
+    <loc>https://myfence.com/blog/wooden-fence-cost2025</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
