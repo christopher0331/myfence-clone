@@ -227,7 +227,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         title={article.metaTitle || `${article.title} | MyFence.com`}
         description={article.description}
         canonical={`https://myfence.com/blog/${slug}`}
-        image={article.image}
+        image={typeof article.image === "string" ? article.image : article.image.src}
         structuredData={structuredData}
       />
       <Component />
