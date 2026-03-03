@@ -14,14 +14,14 @@ export default function PrivacyPolicyPage() {
       <div className="min-h-screen bg-background pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Privacy Policy for Text Messaging – MyFence.com</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Privacy Policy for Website and Text Messaging – MyFence.com</h1>
             <p className="text-lg text-muted-foreground">Effective Date: August 7, 2025</p>
           </header>
 
           <div className="prose prose-lg max-w-none">
             <div className="mb-8">
               <p className="text-muted-foreground mb-6">
-                MyFence.com, a family-owned fence contractor based in Maple Valley, Washington, is committed to protecting the privacy of our customers. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you interact with us via text messaging. We do not share your personal information with third parties for marketing or other purposes, except as required by law or as necessary to provide our services.
+                MyFence.com, a family-owned fence contractor based in Maple Valley, Washington, is committed to protecting the privacy of our customers. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you interact with our website and by text messaging. We do not sell your personal information to third parties. We may share information with trusted service providers that help us operate our website and communications, as described below.
               </p>
             </div>
 
@@ -33,11 +33,18 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Message Content:</strong> Information you share in text messages, such as inquiries about fence installation, project details, or scheduling preferences.</li>
                 <li><strong>Communication Metadata:</strong> Details like the date, time, and frequency of text messages.</li>
               </ul>
+              <p className="text-muted-foreground mb-4">When you visit our website, we or our service providers may also collect:</p>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
+                <li><strong>Device and Browser Data:</strong> Information such as browser type, device type, operating system, and screen size.</li>
+                <li><strong>Usage Data:</strong> Information about pages viewed, clicks, scroll behavior, and session duration.</li>
+                <li><strong>Technical Data:</strong> Information like IP address, approximate location derived from IP, referral URL, and timestamps.</li>
+              </ul>
               <p className="text-muted-foreground mb-4">We collect this information when you:</p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                 <li>Opt-in to receive text messages from us (e.g., for appointment reminders, project updates, or promotional offers).</li>
                 <li>Send us a text message directly to our contact number, (253) 455-1885.</li>
                 <li>Submit a virtual bid request that includes your phone number for follow-up communication.</li>
+                <li>Browse our website or interact with page elements and forms.</li>
               </ul>
             </section>
 
@@ -49,17 +56,18 @@ export default function PrivacyPolicyPage() {
                 <li>Send appointment confirmations, reminders, or updates about your fence project.</li>
                 <li>Provide occasional promotional offers related to our services, such as discounts on fence replacements or storm damage repairs, if you have opted in to receive such messages.</li>
                 <li>Improve our customer service and communication processes.</li>
+                <li>Understand website performance and user behavior so we can improve the site experience and resolve usability issues.</li>
               </ul>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-foreground mb-4">3. Our Commitment to Not Sharing Your Information</h2>
               <p className="text-muted-foreground mb-4">
-                MyFence.com does not sell, trade, or share your personal information, including your phone number and text message content, with any third parties for marketing or commercial purposes. Your information is used exclusively by MyFence.com to provide and improve our fencing services. Exceptions to this policy occur only when:
+                MyFence.com does not sell, trade, or share your personal information, including your phone number and text message content, with any third parties for marketing or commercial purposes. Your information is used by MyFence.com to provide and improve our fencing services. Exceptions to this policy occur only when:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                 <li><strong>Required by Law:</strong> We may disclose your information to comply with legal obligations, such as responding to a court order or subpoena.</li>
-                <li><strong>Service Providers:</strong> We may share your phone number with trusted service providers who assist with our text messaging operations (e.g., SMS platform providers). These providers are contractually obligated to protect your information and use it only for the purpose of delivering our messages.</li>
+                <li><strong>Service Providers:</strong> We may share information with trusted service providers who assist with our text messaging and website operations (e.g., SMS and analytics/session-recording platform providers). These providers are contractually obligated to protect your information and use it only for the services they perform for us.</li>
                 <li><strong>Business Transitions:</strong> In the unlikely event of a merger, acquisition, or sale of MyFence.com, your information may be transferred as part of the business assets, but it will remain subject to this Privacy Policy unless you are notified otherwise.</li>
               </ul>
             </section>
@@ -111,14 +119,27 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">9. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-4">9. Website Analytics and Session Recording</h2>
+              <p className="text-muted-foreground mb-4">
+                We use third-party tools to help us understand how visitors use our website and to improve site performance. These tools may use cookies or similar technologies to collect usage and technical information.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                One of the tools we use is <strong>Smartlook</strong>, which may record website sessions and interactions such as clicks, scrolling, navigation, and form interactions (excluding sensitive fields where configured). This helps us identify technical issues and improve user experience.
+              </p>
+              <p className="text-muted-foreground">
+                If you prefer that this type of analytics tracking not occur, you can limit cookies in your browser settings or contact us using the details below, and we will do our best to honor reasonable requests consistent with our technical capabilities and legal obligations.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-foreground mb-4">10. Changes to This Privacy Policy</h2>
               <p className="text-muted-foreground">
                 We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The updated policy will be posted on our website, and the effective date will be revised accordingly. If significant changes are made, we may notify you via text message or email.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">10. Contact Us</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-4">11. Contact Us</h2>
               <p className="text-muted-foreground mb-4">If you have questions or concerns about this Privacy Policy or our text messaging practices, please contact us at:</p>
               <div className="mt-4 p-4 bg-muted rounded-lg">
                 <p className="text-muted-foreground">Email: info@myfence.com</p>
