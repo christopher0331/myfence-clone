@@ -47,29 +47,27 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // TEMP: Turnstile/webhook path disabled to restore form delivery immediately.
-      // Re-enable once Turnstile token flow is fixed end-to-end.
-      // let leadError: string | null = null;
-      // try {
-      //   const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-      //     body: {
-      //       firstName: data.firstName,
-      //       lastName: data.lastName,
-      //       email: data.email,
-      //       phone: data.phone,
-      //       propertyAddress: data.address,
-      //       fenceType: "Contact Form",
-      //       message: data.description,
-      //       textConsent: data.textConsent,
-      //     },
-      //   });
-      //   if (lead.error) leadError = lead.error.message;
-      // } catch (e) {
-      //   // Network/CORS failures throw; treat as webhook failure and fall back.
-      //   leadError = e instanceof Error ? e.message : String(e);
-      // }
+      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            propertyAddress: data.address,
+            fenceType: "Contact Form",
+            message: data.description,
+            textConsent: data.textConsent,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        // Network/CORS failures throw; keep fallback path alive.
+        leadError = e instanceof Error ? e.message : String(e);
+      }
 
-      // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", { body: data });
@@ -78,9 +76,9 @@ export function ContactForm() {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // With webhook disabled, only fail if legacy email fails.
-      if (emailError) {
-        throw new Error(emailError || "Failed to send message");
+      // Only fail if BOTH webhook + email fail.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       toast({

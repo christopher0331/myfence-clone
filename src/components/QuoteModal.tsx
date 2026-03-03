@@ -64,8 +64,28 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setIsSubmitting(true);
 
     try {
-      // TEMP: Turnstile/webhook path disabled to route all sends via Resend.
-      // Send via Resend-backed legacy function only.
+      const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
+
+      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: first || "",
+            lastName: rest.join(" "),
+            email: formData.email,
+            phone: formData.phone,
+            propertyAddress: formData.address,
+            fenceType: "Quote Modal",
+            message: formData.projectDescription,
+            textConsent: formData.textConsent,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        leadError = e instanceof Error ? e.message : String(e);
+      }
+
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-quote-request", {
@@ -76,8 +96,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      if (emailError) {
-        throw new Error(emailError || "Failed to send quote request");
+      // Only fail if BOTH webhook + email fail.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send quote request");
       }
       
       // Trigger fireworks animation

@@ -9,7 +9,9 @@ const corsHeaders = {
 
 interface LeadData {
   firstName?: string;
+  first_name?: string;
   lastName?: string;
+  last_name?: string;
   email?: string;
   phone?: string;
   propertyAddress?: string;
@@ -18,6 +20,7 @@ interface LeadData {
   state?: string;
   zip?: string;
   fenceType?: string;
+  fence_type?: string;
   fenceStyle?: string;
   fencePost?: string;
   totalLinearFeet?: number;
@@ -25,7 +28,6 @@ interface LeadData {
   additionalNotes?: string;
   projectTimeline?: string;
   message?: string;
-  turnstileToken?: string;
 }
 
 function toStr(v: unknown): string {
@@ -67,10 +69,20 @@ serve(async (req) => {
 
     const leadData: LeadData = await req.json();
 
-    const firstName = toStr(leadData.firstName);
-    const lastName = toStr(leadData.lastName);
-    const email = toStr(leadData.email) || null;
-    const phone = toStr(leadData.phone) || null;
+    const firstName = toStr(leadData.firstName ?? leadData.first_name).trim();
+    const lastName = toStr(leadData.lastName ?? leadData.last_name).trim();
+    const email = toStr(leadData.email).trim() || null;
+    const phone = toStr(leadData.phone).trim() || null;
+
+    // CRM contract requires first + last name and at least one contact method.
+    if (!firstName || !lastName || (!email && !phone)) {
+      return new Response(
+        JSON.stringify({
+          error: "Invalid payload: first_name, last_name, and email or phone are required",
+        }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
 
     const address =
       toStr(leadData.propertyAddress) ||
@@ -87,19 +99,18 @@ serve(async (req) => {
     if (typeof leadData.totalCost === "number") noteParts.push(`Estimated Cost: $${leadData.totalCost.toLocaleString()}`);
     if (leadData.projectTimeline) noteParts.push(`Timeline: ${toStr(leadData.projectTimeline)}`);
 
-    // Send BOTH `message` and `notes` for compatibility with either receiver format.
+    // Keep payload aligned with CRM webhook contract.
     const webhookPayload: Record<string, unknown> = {
       first_name: firstName,
       last_name: lastName,
       email,
       phone,
       address: address || null,
-      city: leadData.city || null,
-      state: leadData.state || null,
-      zip: leadData.zip || null,
-      fence_type: leadData.fenceType || null,
+      city: toStr(leadData.city).trim() || null,
+      state: toStr(leadData.state).trim() || null,
+      zip: toStr(leadData.zip).trim() || null,
+      fence_type: toStr(leadData.fenceType ?? leadData.fence_type).trim() || null,
       message: noteParts.length > 0 ? noteParts.join("\n") : null,
-      notes: noteParts.length > 0 ? noteParts.join("\n") : null,
     };
 
     const response = await fetch(webhookUrl, {

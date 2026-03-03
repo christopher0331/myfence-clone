@@ -58,9 +58,28 @@ export const InlineContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // TEMP: Turnstile/webhook path disabled to route all sends via Resend.
+      const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
 
-      // Send via Resend-backed legacy function only.
+      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: first || "",
+            lastName: rest.join(" "),
+            email: formData.email,
+            phone: formData.phone,
+            propertyAddress: formData.address,
+            fenceType: "Inline Contact",
+            message: formData.message,
+            textConsent: formData.textConsent,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        leadError = e instanceof Error ? e.message : String(e);
+      }
+
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
@@ -71,8 +90,9 @@ export const InlineContactSection = () => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      if (emailError) {
-        throw new Error(emailError || "Failed to send message");
+      // Only fail if BOTH webhook + email fail.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       const formElement = document.querySelector('#inline-contact-form');

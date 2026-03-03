@@ -340,8 +340,26 @@ const DiscountsPage = () => {
         description: formDescription || "General inquiry from discount page",
       };
 
-      // TEMP: Turnstile/webhook path disabled to route all sends via Resend.
-      // Send via Resend-backed legacy function only.
+      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
+      let leadError: string | null = null;
+      try {
+        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+          body: {
+            firstName: emailData.firstName,
+            lastName: emailData.lastName,
+            email: emailData.email,
+            phone: emailData.phone,
+            propertyAddress: emailData.address || "",
+            fenceType: "Discounts Page",
+            message: emailData.description || "General inquiry from discount page",
+            textConsent: emailData.textConsent,
+          },
+        });
+        if (lead.error) leadError = lead.error.message;
+      } catch (e) {
+        leadError = e instanceof Error ? e.message : String(e);
+      }
+
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
@@ -352,8 +370,9 @@ const DiscountsPage = () => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      if (emailError) {
-        throw new Error(emailError || "Failed to send message");
+      // Only fail if BOTH webhook + email fail.
+      if (leadError && emailError) {
+        throw new Error(leadError || emailError || "Failed to send message");
       }
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");
