@@ -6,10 +6,11 @@ import { blogArticles } from "@/data/blogArticles";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import type { ComponentType } from "react";
-import { getMdxBlogPosts } from "@/lib/blog";
+import { getMdxBlogPost, getMdxBlogPosts } from "@/lib/blog";
 import OptimizedImage from "@/components/OptimizedImage";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
+import BlogShareButtons from "@/components/blog/BlogShareButtons";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
@@ -43,25 +44,53 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  try {
-    const mod = await import(`@/content/blog/${slug}.mdx`);
-    const fm = mod.frontmatter || {};
-    if (fm.title) {
-      return {
-        title: fm.metaTitle || `${fm.title} | MyFence.com`,
-        description: fm.description || "",
-        alternates: { canonical: `https://myfence.com/blog/${slug}` },
-      };
-    }
-  } catch {
-    // Not an MDX post, try legacy
+  const mdxPost = getMdxBlogPost(slug);
+  if (mdxPost) {
+    const ogImage = mdxPost.firstBodyImage || mdxPost.image;
+    const absoluteOgImage = ogImage ? (ogImage.startsWith("http") ? ogImage : `${SITE_CONFIG.url}${ogImage}`) : undefined;
+
+    return {
+      title: `${mdxPost.title} | MyFence.com`,
+      description: mdxPost.description || "",
+      alternates: { canonical: `https://myfence.com/blog/${slug}` },
+      openGraph: {
+        title: mdxPost.title,
+        description: mdxPost.description || "",
+        url: `https://myfence.com/blog/${slug}`,
+        type: "article",
+        images: absoluteOgImage ? [{ url: absoluteOgImage, width: 1200, height: 630 }] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: mdxPost.title,
+        description: mdxPost.description || "",
+        images: absoluteOgImage ? [absoluteOgImage] : undefined,
+      },
+    };
   }
+
   const article = blogArticles.find((a) => a.id === slug);
   if (!article) return { title: "Blog Post Not Found | MyFence.com" };
+  const legacyImage = typeof article.image === "string" ? article.image : article.image.src;
+  const absoluteLegacyImage = legacyImage.startsWith("http") ? legacyImage : `${SITE_CONFIG.url}${legacyImage}`;
+
   return {
     title: article.metaTitle || `${article.title} | MyFence.com`,
     description: article.description,
     alternates: { canonical: `https://myfence.com/blog/${slug}` },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url: `https://myfence.com/blog/${slug}`,
+      type: "article",
+      images: [{ url: absoluteLegacyImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      images: [absoluteLegacyImage],
+    },
   };
 }
 
@@ -82,16 +111,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const seoTitle = fm.metaTitle || `${title} | MyFence.com`;
     const description = fm.description || "";
     const image = fm.image || fm.featured_image || "";
+    const mdxPost = getMdxBlogPost(slug);
+    const ogImage = mdxPost?.firstBodyImage || image;
+    const imageUrl = image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : null;
+    const ogImageUrl = ogImage ? (ogImage.startsWith("http") ? ogImage : `${SITE_CONFIG.url}${ogImage}`) : null;
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: title,
       description,
-      image: image ? { "@type": "ImageObject", url: image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}` } : undefined,
+      image: ogImageUrl ? { "@type": "ImageObject", url: ogImageUrl } : undefined,
       author: { "@type": "Organization", name: SITE_CONFIG.fullName },
       publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
     };
-    const imageUrl = image ? (image.startsWith("http") ? image : `${SITE_CONFIG.url}${image}`) : null;
     const layout = fm.layout || "two-column";
     const showArticleSummary = fm.showArticleSummary === true || fm.showArticleSummary === "true";
 
@@ -101,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           title={seoTitle}
           description={description}
           canonical={`https://myfence.com/blog/${slug}`}
-          image={imageUrl ?? undefined}
+          image={ogImageUrl ?? imageUrl ?? undefined}
           structuredData={structuredData}
         />
         <main className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
@@ -112,6 +144,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   ← Back to Blog
                 </Link>
               </div>
+
+              <BlogShareButtons title={title} url={`${SITE_CONFIG.url}/blog/${slug}`} />
 
               {layout === "centered" ? (
                 <>
@@ -230,8 +264,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         image={typeof article.image === "string" ? article.image : article.image.src}
         structuredData={structuredData}
       />
+      <main className="container mx-auto px-4 pt-8">
+        <BlogShareButtons title={article.title} url={`${SITE_CONFIG.url}/blog/${slug}`} />
+      </main>
       <Component />
     </>
   );
 }
-
