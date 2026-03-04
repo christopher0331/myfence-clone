@@ -40,29 +40,35 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
   };
 
   return (
-    <div className="border rounded-lg p-4 bg-card mb-8">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm font-medium mr-2 inline-flex items-center gap-1">
-          <Share2 className="h-4 w-4" /> Share this article:
+    <div className="mb-8 rounded-lg border bg-card px-3 py-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground sm:text-sm">
+          <Share2 className="h-3.5 w-3.5" />
+          Share
         </span>
-        {shareLinks.map(({ label, href, icon: Icon }) => (
-          <Button key={label} variant="outline" size="sm" asChild>
-            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${label}`}>
-              <Icon className="h-4 w-4 mr-1" />
-              {label}
-            </a>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {shareLinks.map(({ label, href, icon: Icon }) => (
+            <Button key={label} variant="outline" size="icon" asChild className="h-8 w-8">
+              <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${label}`}>
+                <Icon className="h-3.5 w-3.5" />
+              </a>
+            </Button>
+          ))}
+          <Button variant="outline" size="icon" onClick={copyLink} aria-label="Copy article link" className="h-8 w-8">
+            <Link2 className="h-3.5 w-3.5" />
           </Button>
-        ))}
-        <Button variant="outline" size="sm" onClick={copyLink} aria-label="Copy article link">
-          <Link2 className="h-4 w-4 mr-1" />
-          Copy link
-        </Button>
-        {typeof navigator !== "undefined" && navigator.share && (
-          <Button variant="outline" size="sm" onClick={nativeShare} aria-label="Open device share dialog">
-            <Share2 className="h-4 w-4 mr-1" />
-            More
-          </Button>
-        )}
+          {typeof navigator !== "undefined" && navigator.share && (
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nativeShare}
+              aria-label="Open device share dialog"
+              className="h-8 w-8"
+            >
+              <Share2 className="h-3.5 w-3.5" />
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );
