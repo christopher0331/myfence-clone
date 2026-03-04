@@ -5,6 +5,16 @@ import { blogArticles } from "@/data/blogArticles";
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content/blog");
 
+function extractFirstImageFromMdx(content: string): string {
+  const markdownImageMatch = content.match(/!\[[^\]]*\]\(([^)\s]+)[^)]*\)/);
+  if (markdownImageMatch?.[1]) return markdownImageMatch[1];
+
+  const jsxImageMatch = content.match(/<img[^>]*src=["']([^"']+)["']/i);
+  if (jsxImageMatch?.[1]) return jsxImageMatch[1];
+
+  return "";
+}
+
 /** Unified blog post shape for listing */
 export interface BlogPostListItem {
   id: string;
@@ -60,6 +70,7 @@ export interface BlogPostMeta {
 
 export interface MdxBlogPost extends BlogPostMeta {
   body: string;
+  firstBodyImage: string;
 }
 
 /** Get all MDX blog posts from src/content/blog/ (for listing) */
@@ -112,5 +123,6 @@ export function getMdxBlogPost(slug: string): MdxBlogPost | null {
     readTime: data.readTime ?? "5 min read",
     publishDate: data.publishDate ?? data.datePublished ?? "",
     body: content,
+    firstBodyImage: extractFirstImageFromMdx(content),
   };
 }
