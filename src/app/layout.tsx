@@ -19,6 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="VhAG-XnVtDAVBO4PlEpdeDFCTvfHVMlSxY_6GaYPTFk"
+        />
         {/* Preload the LCP Hero Image for faster production loading */}
         <link 
           rel="preload" 
