@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 
 const TukwilaArticle = () => (
   <article className="space-y-12">
