@@ -1,8 +1,50 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 
 const Covington = () => {
+  
+  const covingtonAttractions: LocalAttraction[] = [
+    {
+      name: "Covington Community Park",
+      description: "A premier local destination featuring an amphitheater, sports courts, expansive playgrounds, and scenic walking trails.",
+      url: "https://www.covingtonwa.gov/city_departments/parks_and_recreation/covington_community_park.php"
+    },
+    {
+      name: "Jenkins Creek Park",
+      description: "A tranquil natural space offering beautiful forested trails and peaceful spots for observing local wildlife along the creek.",
+      url: "https://www.covingtonwa.gov/city_departments/parks_and_recreation/jenkins_creek_park.php"
+    },
+    {
+      name: "Covington Aquatic Center",
+      description: "A state-of-the-art facility providing year-round swimming lessons, water aerobics, and family swim sessions.",
+      url: "https://www.covingtonwa.gov/city_departments/parks_and_recreation/aquatic_center.php"
+    },
+    {
+      name: "Soaring Eagle Regional Park",
+      description: "A massive 600-acre natural area nearby, perfect for horseback riding, mountain biking, and exploring diverse ecosystems.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/soaring-eagle"
+    },
+    {
+      name: "Covington Farmers Market",
+      description: "A bustling summer gathering place connecting residents with local farmers, artisans, and fresh Pacific Northwest produce.",
+      url: "https://www.covingtonfarmersmarket.org/"
+    }
+  ];
+
+  const covingtonLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Covington is a rapidly expanding city that has successfully transitioned from a rural crossroad into a thriving suburban center. The community places a strong emphasis on family and education, served by the highly regarded <a href="https://www.kent.k12.wa.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Kent School District</a>. The city's dedication to quality of life is evident in the impressive <a href="https://www.covingtonwa.gov/city_departments/parks_and_recreation/covington_community_park.php" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Covington Community Park</a>, a central gathering place that hosts seasonal events, outdoor concerts, and provides exceptional recreational facilities for residents of all ages.
+      </p>
+      <p>
+        Despite its substantial commercial growth—anchored by a <a href="https://covingtonchamber.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">bustling retail core</a> that draws shoppers from surrounding towns—Covington retains its connection to the beautiful Pacific Northwest landscape. Residents easily access the extensive <a href="https://www.kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">King County regional trail network</a> for walking and cycling. The local <a href="https://www.covingtonwa.gov/city_departments/parks_and_recreation/aquatic_center.php" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Aquatic Center</a> and organized sports leagues foster a tight-knit community feel, making Covington an ideal place for those seeking modern amenities within a relaxed, suburban environment.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Covington" 
       state="WA"
       heroTitle="Hillside Fence Installation Experts in Covington"
@@ -29,11 +71,17 @@ const Covington = () => {
         },
         {
           name: "Covington Woods",
-          description: "Mature tree-lined streets where installations must work around established root systems while maintaining property boundaries"
+          description: "Mature tree-lined streets where installations must work around established root systems while maintaining property boundaries. Click to learn more →",
+          link: "/service-areas/covington/covington-woods"
         },
         {
           name: "Shadow Lake",
           description: "Residential area with mix of property sizes needing flexible fence designs from compact yards to larger lots"
+        },
+        {
+          name: "Timberlane",
+          description: "Family-friendly neighborhood with well-maintained properties requiring durable fencing solutions for active households. Click to learn more →",
+          link: "/service-areas/covington/timberlane"
         }
       ]}
       landmarks={[
@@ -60,6 +108,12 @@ const Covington = () => {
         "Flexible solutions for diverse property types and ages"
       ]}
     />
+      <AboutTheArea 
+        cityName="Covington"
+        attractions={covingtonAttractions}
+        localLivingContent={covingtonLivingContent}
+      />
+    </>
   );
 };
 

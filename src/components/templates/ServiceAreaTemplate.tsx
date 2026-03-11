@@ -11,6 +11,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import FenceStylesPreview from "@/components/FenceStylesPreview";
 import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
+import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
+import FeaturedProject from "@/components/service-areas/FeaturedProject";
 
 export interface Neighborhood {
   name: string;
@@ -940,6 +942,10 @@ const ServiceAreaTemplate = ({
             </div>
           </div>
         </section>
+
+        <ServiceAreaPhotoGallery city={city} />
+
+        <FeaturedProject city={city} />
 
         {/* Fence Styles Preview */}
         <FenceStylesPreview city={city} />

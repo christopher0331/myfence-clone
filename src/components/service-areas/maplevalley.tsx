@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
@@ -7,12 +8,12 @@ const MapleValleyArticle = () => (
   <article className="space-y-8">
     <header>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Building a Fence in Maple Valley: A Complete Guide to Permits, Materials, and Installation
+        Building a Fence: A Complete Guide to Permits, Materials, and Installation
       </h2>
     </header>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Understanding Maple Valley's Unique Fencing Challenges</h3>
+      <h3 className="text-2xl font-semibold">Understanding Local Fencing Challenges</h3>
       <p className="text-muted-foreground leading-relaxed">
         Maple Valley's location in the Cascade foothills creates distinctive challenges for fence installation. The area's rolling terrain, mature forests, and proximity to natural waterways like the Cedar River mean your fence needs to work with nature, not against it. Heavy winter rainfall - often exceeding 50 inches annually - combined with occasional snowfall demands materials and installation techniques that can withstand the Pacific Northwest's most challenging conditions. The abundance of wildlife, including deer and smaller animals, also influences fence design choices for properties backing onto wooded areas or greenbelts.
       </p>
@@ -22,7 +23,7 @@ const MapleValleyArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Permits and Regulations in Maple Valley</h3>
+      <h3 className="text-2xl font-semibold">Permits and Local Regulations</h3>
       <p className="text-muted-foreground leading-relaxed">
         Maple Valley operates under King County regulations for unincorporated areas. According to <a href="https://kingcounty.gov/depts/local-services/permits.aspx" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">King County Permitting</a>, residential fences under 8 feet in height typically do not require a building permit. However, you must still comply with zoning requirements regarding setbacks, height limitations, and sight-distance restrictions at street corners.
       </p>
@@ -35,7 +36,7 @@ const MapleValleyArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Maple Valley</h3>
+      <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com specializes in three fencing systems engineered for Maple Valley's forested environment: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver installations specifically designed for the area's wet climate, sloped terrain, and wildlife challenges.
       </p>
@@ -149,8 +150,49 @@ const MapleValley = () => {
     ]
   };
 
+  
+  const maplevalleyAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Wilderness Park",
+      description: "A breathtaking 117-acre park featuring a swimming beach, walking trails, and spectacular views of Mount Rainier.",
+      url: "https://www.maplevalleywa.gov/departments-services/parks-recreation/parks-and-trails/lake-wilderness-park"
+    },
+    {
+      name: "Lake Wilderness Arboretum",
+      description: "A serene 42-acre sanctuary dedicated to the conservation and display of diverse plant life in a beautiful natural setting.",
+      url: "https://lakewildernessarboretum.org/"
+    },
+    {
+      name: "Cedar River Trail",
+      description: "A scenic paved pathway stretching for miles alongside the Cedar River, popular with cyclists, runners, and nature lovers.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/cedar-river-trail"
+    },
+    {
+      name: "Gnome Trail",
+      description: "A whimsical, family-friendly hiking trail where visitors can spot dozens of hidden gnomes tucked among the trees.",
+      url: "https://www.wta.org/go-hiking/hikes/gnome-trail"
+    },
+    {
+      name: "Maple Valley Farmers Market",
+      description: "A vibrant seasonal market showcasing local agriculture, artisan crafts, and live music from the surrounding community.",
+      url: "https://maplevalleyfarmersmarket.org/"
+    }
+  ];
+
+  const maplevalleyLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Maple Valley offers an idyllic blend of rural charm and modern convenience, making it a highly sought-after destination for families and outdoor enthusiasts. The community takes pride in the award-winning <a href="https://www.tahomasd.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tahoma School District</a>, which frequently ranks among the top in the state. Local life often centers around the <a href="https://www.maplevalleywa.gov/departments-services/parks-recreation/parks-and-trails/lake-wilderness-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Park</a>, a massive recreational hub that hosts community events like the annual Maple Valley Days and provides stunning backdrops for everyday activities.
+      </p>
+      <p>
+        Residents of Maple Valley enjoy a lifestyle deeply connected to nature without sacrificing accessibility. The area is interwoven with miles of trails, including the <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/green-to-cedar-rivers-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Green to Cedar Rivers Trail</a>, encouraging an active, outdoor-focused way of life. The growing <a href="https://maplevalleychamber.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Four Corners commercial district</a> provides convenient shopping and dining options. With its commitment to preserving green spaces through organizations like the <a href="https://lakewildernessarboretum.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Arboretum</a>, Maple Valley maintains its distinctly forested, peaceful character while accommodating thoughtful community growth.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Maple Valley" 
       state="WA"
       heroTitle="Rural & Suburban Fencing for Maple Valley's Forested Communities"
@@ -182,6 +224,31 @@ const MapleValley = () => {
         {
           name: "Maple Valley Highlands",
           description: "Elevated residential area with views and varied terrain demanding slope-adapted installations and drainage-conscious design"
+        },
+        {
+          name: "Barklay Woods",
+          description: "Wooded residential neighborhood in southeast Maple Valley with established trees and gentle slopes. Click to learn more →",
+          link: "/service-areas/maple-valley/barklay-woods"
+        },
+        {
+          name: "Cherokee Bay Park",
+          description: "Lakeside neighborhood near Lake Wilderness with water-adjacent properties requiring moisture-resistant fencing. Click to learn more →",
+          link: "/service-areas/maple-valley/cherokee-bay-park"
+        },
+        {
+          name: "Highlands at Cedar Downs",
+          description: "Planned residential community with newer homes and HOA guidelines requiring compliant fence designs. Click to learn more →",
+          link: "/service-areas/maple-valley/highlands-at-cedar-downs"
+        },
+        {
+          name: "Lake Park",
+          description: "Small residential area near Lake Wilderness with lake-adjacent properties and recreation access. Click to learn more →",
+          link: "/service-areas/maple-valley/lake-park"
+        },
+        {
+          name: "Patrick's Faire",
+          description: "Family-friendly north Maple Valley neighborhood with well-maintained yards and suburban character. Click to learn more →",
+          link: "/service-areas/maple-valley/patricks-faire"
         }
       ]}
       landmarks={[
@@ -193,21 +260,17 @@ const MapleValley = () => {
         "Rock Creek Park"
       ]}
       climateDescription="Maple Valley sits in the foothills of the Cascade Mountains, experiencing slightly cooler temperatures and more precipitation than neighboring lowland areas. The abundance of mature trees and rolling terrain creates unique microclimates that affect fence installation and maintenance."
-      localChallenges={[
-        "Heavy winter rainfall and occasional snow requiring durable materials",
-        "Tree root systems near property lines affecting post placement",
-        "Sloped terrain in many properties requiring specialized installation",
-        "Deer population necessitating taller fencing for gardens"
-      ]}
-      localSolutions={[
-        "Slope-adapted fence designs maintaining level appearance",
-        "Reinforced posts for areas with challenging root systems",
-        "6-foot fences with lattice toppers for wildlife deterrence",
-        "Drainage-conscious installation preventing water pooling"
-      ]}
+      
+      
       articleContent={<MapleValleyArticle />}
       faqStructuredData={faqStructuredData}
     />
+      <AboutTheArea 
+        cityName="Maple Valley"
+        attractions={maplevalleyAttractions}
+        localLivingContent={maplevalleyLivingContent}
+      />
+    </>
   );
 };
 

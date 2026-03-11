@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -7,26 +8,12 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import AboutCityModal from "@/components/AboutCityModal";
 
-const ABOUT_REDMOND_CONTENT = `Redmond, Washington sits at the heart of the Pacific Northwest's technology corridor, a city of approximately 75,000 residents that has transformed from a quiet logging and farming community into one of America's most innovative urban centers. Located 15 miles east of Seattle on the Eastside of Lake Washington, Redmond occupies 17.2 square miles of rolling terrain where the Sammamish River flows northward toward Lake Washington.
-
-The area's first settlers arrived in the 1870s, drawn by rich timber resources and fertile farmland. Luke McRedmond, the city's namesake, established a trading post in 1871 that would grow into the downtown core. The arrival of the railroad in 1888 accelerated growth, but Redmond remained primarily agricultural through the mid-20th century, known especially for its bicycle racing traditions that continue today at Marymoor Park's velodrome.
-
-The transformation began in 1979 when Microsoft relocated from Albuquerque to Redmond, eventually establishing its sprawling corporate campus that now houses over 50,000 employees. Nintendo of America followed in 1982, cementing Redmond's identity as a global technology hub. Today, the city hosts numerous tech companies, startups, and research facilities, earning it the nickname "Bicycle Capital of the Northwest" for its extensive trail system and cycling culture that coexists with its tech identity.
-
-Redmond's geography shapes daily life profoundly. The city sits in a valley surrounded by forested hills, with Marymoor Park's 640 acres providing a green centerpiece along the Sammamish River. Bridle Trails State Park on the western edge preserves old-growth forest and maintains the city's equestrian heritage. The Sammamish River Trail connects Redmond to surrounding communities, while numerous neighborhood parks and green spaces give the city a distinctly less urban feel than Seattle.
-
-The climate mirrors the greater Puget Sound region but with notable Eastside variations. Redmond receives approximately 35 inches of annual rainfall, roughly 10 inches less than Seattle, thanks to the rain shadow effect of the Olympic Mountains. Summers are pleasantly warm and dry, with temperatures averaging 75-80°F from June through September. Winters bring temperatures hovering around 40°F with occasional snow that can paralyze the hilly neighborhoods. The area experiences roughly 150 days of measurable precipitation annually, primarily between October and May.
-
-Redmond's neighborhoods reflect its evolution from rural community to tech hub. Education Hill, named for the schools that anchor it, attracts families seeking top-rated public education. Overlake has transformed into a dense urban village near the Microsoft campus and new light rail stations. Grass Lawn and Willows/Rose Hill maintain more traditional suburban character, while Idylwood and areas near Bridle Trails offer larger lots and forest proximity. This diversity means fence installations must account for everything from tight urban lots to expansive properties bordering protected forestland.
-
-The economic vitality brings both opportunity and challenge. Median household income exceeds $130,000, driving demand for premium home improvements including fencing. Property values in desirable neighborhoods often exceed $1 million, justifying investments in quality materials and craftsmanship. The highly educated population tends to research thoroughly before purchasing, expecting clear communication and technical competence from contractors.`;
-
 const RedmondArticle = () => (
   <article className="space-y-12">
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Redmond Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -51,10 +38,10 @@ const RedmondArticle = () => (
       </p>
     </section>
 
-    {/* Redmond Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Redmond Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com approaches every Redmond fence installation with precision and professionalism. We arrive on schedule with all materials and professional-grade equipment, ready to complete your project efficiently. Our 98%+ on-time installation rate reflects our respect for your busy schedule and organized project management. We maintain comprehensive material inventory, eliminating delays that frustrate homeowners and extend timelines unnecessarily.
@@ -64,61 +51,10 @@ const RedmondArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com in Redmond?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Modern Design Excellence</h3>
-              <p className="text-muted-foreground">
-                Contemporary horizontal designs and innovative materials that match Redmond's tech-forward aesthetic and architectural trends.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and manufacturing system ensuring precision accuracy and 30-50% faster installation times.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
-              <p className="text-muted-foreground">
-                Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty for long-term protection.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">HOA & Wildlife Expertise</h3>
-              <p className="text-muted-foreground">
-                Deep understanding of Redmond's HOA requirements and wildlife deterrence solutions for greenbelt-adjacent properties.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Redmond's Distinctive Fencing Landscape</h3>
+      <h3 className="text-2xl font-semibold">Distinctive Local Fencing Landscape</h3>
       <p className="text-muted-foreground leading-relaxed">
         Redmond's identity as the home of Microsoft and a major tech hub shapes its fencing needs in unique ways. The city's professionals expect modern aesthetics, quality craftsmanship, and low-maintenance solutions that align with their busy lifestyles. Neighborhoods like Overlake, Education Hill, and Grass Lawn feature newer developments with homeowners associations that mandate specific fence styles, colors, and materials - requiring installers who understand both design requirements and architectural review processes.
       </p>
@@ -128,7 +64,7 @@ const RedmondArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Redmond Building Codes and Permit Requirements</h3>
+      <h3 className="text-2xl font-semibold">Permits, Materials, and Local Tips</h3>
       <p className="text-muted-foreground leading-relaxed">
         The City of Redmond follows specific requirements outlined in the <a href="https://www.redmond.gov/823/Building-Division" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Redmond Development Services</a> regulations. Residential fences under 8 feet in height typically do not require a building permit, but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
       </p>
@@ -143,12 +79,12 @@ const RedmondArticle = () => (
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Redmond Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Cedar Fence Installation in Redmond</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com uses premium Western Red Cedar for all Redmond installations, nature's most naturally rot-resistant wood species. Our cedar contains natural oils that repel insects and resist decay even in the Pacific Northwest's challenging climate. For Redmond's premium neighborhoods like Overlake and Education Hill, we offer clear-grade cedar (zero knots) providing superior appearance and 15+ years of longevity with proper maintenance. Every fence uses heavy-duty lumber exceeding industry standards for structural integrity during windstorms.
         </p>
@@ -159,7 +95,7 @@ const RedmondArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Redmond</h3>
+        <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com specializes in three fencing systems for Redmond's tech-savvy homeowners: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver the contemporary aesthetics and superior craftsmanship Redmond properties demand. For premium neighborhoods like Overlake and Education Hill, clear-grade cedar provides the refined appearance that matches the area's high property values.
         </p>
@@ -184,7 +120,7 @@ const RedmondArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System in Redmond</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
           For Redmond's busy tech professionals seeking low-maintenance solutions, our hybrid aluminum fence system delivers exceptional value. Black aluminum panels combined with cedar framing and pressure-treated posts create a sleek, modern appearance while dramatically reducing maintenance requirements compared to traditional wood fencing.
         </p>
@@ -197,7 +133,7 @@ const RedmondArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Fence Financing Options in Redmond
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -291,7 +227,7 @@ const RedmondArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Redmond-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Redmond's unique geography, HOA requirements, and wildlife challenges require specialized knowledge. Here's how we address the specific characteristics of your Redmond property:
@@ -339,7 +275,7 @@ const RedmondArticle = () => (
     {/* Permit Information */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Redmond Fence Permits & Building Codes
+        Local Code Compliance
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         The City of Redmond follows specific requirements outlined in <a href="https://www.redmond.gov/823/Building-Division" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Redmond Development Services</a> regulations. Residential fences under 8 feet typically do not require building permits but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
@@ -397,7 +333,7 @@ const RedmondArticle = () => (
       </p>
     </section>
 
-    <AboutCityModal cityName="Redmond" content={ABOUT_REDMOND_CONTENT} />
+    
   </article>
 );
 
@@ -488,13 +424,54 @@ const Redmond = () => {
     }
   };
 
+  
+  const redmondAttractions: LocalAttraction[] = [
+    {
+      name: "Marymoor Park",
+      description: "King County's most popular park, offering 640 acres of recreational activities, a velodrome, and a famous off-leash dog area.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/marymoor"
+    },
+    {
+      name: "Microsoft Visitor Center",
+      description: "Explore the history of personal computing and get a glimpse into the future at the headquarters of this global tech giant.",
+      url: "https://www.microsoft.com/en-us/visitorcenter"
+    },
+    {
+      name: "Redmond Town Center",
+      description: "An open-air lifestyle center featuring upscale retail stores, diverse dining options, and community entertainment events.",
+      url: "https://redmondtowncenter.com/"
+    },
+    {
+      name: "Bridle Trails State Park",
+      description: "A heavily forested 482-acre park renowned for its extensive network of equestrian and pedestrian trails.",
+      url: "https://parks.wa.gov/find-parks/state-parks/bridle-trails-state-park"
+    },
+    {
+      name: "Idylwood Beach Park",
+      description: "A beautiful lakeside park offering a sandy swimming beach on Lake Sammamish, plus picnic shelters and a playground.",
+      url: "https://www.redmond.gov/Facilities/Facility/Details/Idylwood-Beach-Park-18"
+    }
+  ];
+
+  const redmondLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Often referred to as the "Bicycle Capital of the Northwest," Redmond offers a dynamic blend of high-tech industry and lush natural surroundings. Families prioritize the area for its exceptional education, served primarily by the highly acclaimed <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>. The city's <a href="https://www.redmond.gov/Parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Parks and Recreation Department</a> ensures residents have access to numerous community centers, arts programs, and sports leagues, fostering a strong sense of community.
+      </p>
+      <p>
+        Redmond's commitment to outdoor living is evident in its extensive trail network, including the popular <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/sammamish-river-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish River Trail</a>, which connects cyclists and walkers to nearby cities. The downtown core has evolved into a vibrant urban center, with residents frequenting local spots like <a href="https://www.redmondtowncenter.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Town Center</a> for shopping and dining. Community events, such as the summer <a href="https://www.redmond.gov/905/Derby-Days" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Derby Days</a>, highlight the city's rich heritage and welcoming atmosphere, making it a premier destination for modern professionals and families alike.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Redmond" 
       state="WA"
       heroTitle="Tech-Savvy Fence Installation for Redmond's Innovation District"
       heroDescription="Modern fencing solutions for Microsoft employees and tech families in Redmond. From Education Hill to Overlake, we combine contemporary designs with practical functionality for your active lifestyle and property needs."
-      metaTitle="Redmond Fence Installation | Modern Tech-Family Designs"
+      metaTitle="Expert Installation in Your Area | Modern Tech-Family Designs"
       metaDescription="Tech-savvy fence installation in Redmond. Modern designs for Microsoft employees & tech families. Education Hill to Overlake. Contemporary solutions for active lifestyles. Call (253) 455-1885."
       zipCodes={["98052", "98053", "98073"]}
       neighborhoods={[
@@ -537,22 +514,18 @@ const Redmond = () => {
         "Idylwood Park"
       ]}
       climateDescription="Redmond enjoys a temperate climate typical of the Eastside, with drier summers than Seattle proper but still significant winter rainfall. The city's many parks and green spaces mean properties often border natural areas, and the tech-hub community values both aesthetics and functionality."
-      localChallenges={[
-        "Proximity to forested areas attracting deer and wildlife",
-        "HOA requirements in newer developments requiring specific styles",
-        "Tech-savvy homeowners expecting modern, low-maintenance solutions",
-        "Property values demanding premium materials and craftsmanship"
-      ]}
-      localSolutions={[
-        "Contemporary horizontal cedar and hogwire designs popular with tech professionals",
-        "HOA-compliant custom designs with architectural appeal",
-        "Low-maintenance hybrid aluminum/cedar system for busy professionals",
-        "Wildlife-deterrent height options without sacrificing aesthetics"
-      ]}
+      
+      
       articleContent={<RedmondArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
     />
+      <AboutTheArea 
+        cityName="Redmond"
+        attractions={redmondAttractions}
+        localLivingContent={redmondLivingContent}
+      />
+    </>
   );
 };
 

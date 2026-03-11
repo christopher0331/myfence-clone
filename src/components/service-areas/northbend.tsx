@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -10,7 +11,7 @@ const NorthBendArticle = () => (
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        North Bend Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -35,10 +36,10 @@ const NorthBendArticle = () => (
       </p>
     </section>
 
-    {/* North Bend Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        North Bend Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Installing fences in North Bend requires specialized knowledge of mountain construction techniques. We don't just build fences - we engineer them for North Bend's extreme conditions. Our crews arrive equipped with specialized equipment for navigating rocky soil, steep grades, and forested properties common throughout the Snoqualmie Valley. Every installation accounts for the substantial snowfall that blankets North Bend each winter, with reinforced posts and bracing designed to handle snow accumulation without collapsing or warping.
@@ -48,68 +49,17 @@ const NorthBendArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your North Bend Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Mountain Construction Expertise</h3>
-              <p className="text-muted-foreground">
-                Three decades building in challenging mountain environments with proven techniques for steep terrain, rocky soil, and harsh weather conditions.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Wildlife-Resistant Designs</h3>
-              <p className="text-muted-foreground">
-                Purpose-built solutions to deter deer, bears, and other mountain wildlife while maintaining aesthetic appeal for your property.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-            <h3 className="text-xl font-semibold mb-2">Heavy-Duty Construction</h3>
-            <p className="text-muted-foreground">
-              {WARRANTY_CONSTANTS.YEARS}-year warranty on installations engineered for snow loads up to 90 PSF - exceeding North Bend's building requirements.
-            </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Forest Fire Safety Integration</h3>
-              <p className="text-muted-foreground">
-                Defensible space planning and fire-resistant material options meeting wildfire safety standards for mountain communities.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        North Bend Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">North Bend Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           Western Red Cedar proves ideal for North Bend's mountain climate, offering natural resistance to the moisture cycling between heavy winter precipitation and dry summer months. Unlike the coastal lowlands, North Bend experiences dramatic temperature swings that can stress fence materials - cedar's cellular structure handles these fluctuations better than any alternative. We source premium grades specifically selected for mountain applications, with tighter grain patterns that provide enhanced structural stability during freeze-thaw cycles common from November through March.
         </p>
@@ -131,7 +81,7 @@ const NorthBendArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">North Bend Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
           Our hybrid aluminum fence system offers North Bend residents a low-maintenance solution engineered for mountain conditions. This system combines black aluminum panels with a cedar frame and pressure-treated posts, delivering contemporary aesthetics without premium pricing. The aluminum panels never require staining or sealing - valuable when you'd rather spend weekends on Mount Si trails than maintaining your property. Unlike traditional wood fencing that demands annual maintenance in North Bend's climate, the hybrid system provides decades of reliable service with minimal upkeep.
         </p>
@@ -142,7 +92,7 @@ const NorthBendArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in North Bend</h3>
+        <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com specializes in three fencing systems engineered for North Bend's mountain conditions: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. Mountain environments demand specialized expertise - by focusing on these three systems, we deliver installations that handle North Bend's unique challenges including elevation, wildlife, and extreme weather.
         </p>
@@ -166,7 +116,7 @@ const NorthBendArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        North Bend Fence Financing Options
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -273,7 +223,7 @@ const NorthBendArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        North Bend-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Building fences in North Bend requires understanding mountain construction challenges that lowland contractors haven't encountered. Here's how we solve the specific problems your property faces:
@@ -345,11 +295,11 @@ const NorthBendArticle = () => (
     </section>
 
     {/* Permits Section */}
-    <header>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        What to Know Before Building a Fence in North Bend: Permits, Materials, and Mountain Tips
+    <section className="space-y-4">
+      <h2 className="text-3xl md:text-4xl font-bold">
+        Permits and Local Regulations
       </h2>
-    </header>
+    </section>
 
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Why North Bend Fence Planning is Unique</h3>
@@ -379,7 +329,7 @@ const NorthBendArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
+      <h3 className="text-2xl font-semibold">Installation FAQs</h3>
       <Card className="p-6 space-y-4">
         <div>
           <h4 className="font-semibold mb-2">How long does fence installation take in North Bend?</h4>
@@ -543,7 +493,7 @@ const NorthBend = () => {
           "itemOffered": {
             "@type": "Service",
             "serviceType": "Cedar Fence Installation",
-            "name": "North Bend Cedar Fence Installation",
+            "name": "Cedar Fence Installation",
             "description": "Premium Western Red Cedar fence installation engineered for mountain conditions with reinforced posts and snow-load rated construction. Natural rot resistance perfect for North Bend's forest interface properties.",
             "provider": {
               "@type": "LocalBusiness",
@@ -557,7 +507,7 @@ const NorthBend = () => {
           "itemOffered": {
             "@type": "Service",
             "serviceType": "Hybrid Aluminum Fence Installation",
-            "name": "North Bend Hybrid Aluminum Fence System",
+            "name": "Hybrid Aluminum Fence System",
             "description": "Low-maintenance hybrid system with black aluminum panels, cedar frame, and pressure-treated posts. Engineered for mountain conditions with competitive pricing.",
             "provider": {
               "@type": "LocalBusiness",
@@ -625,8 +575,49 @@ const NorthBend = () => {
     ]
   };
 
+  
+  const northbendAttractions: LocalAttraction[] = [
+    {
+      name: "Mount Si",
+      description: "One of Washington's most popular hiking destinations, offering a challenging climb with spectacular sweeping views of the Snoqualmie Valley.",
+      url: "https://www.dnr.wa.gov/MountSi"
+    },
+    {
+      name: "Rattlesnake Ledge & Lake",
+      description: "A breathtaking recreation area featuring a stunning emerald lake perfect for swimming and a highly popular, scenic hiking trail.",
+      url: "https://www.seattle.gov/utilities/protecting-our-environment/education-and-conservation/cedar-river-watershed/rattlesnake-ledge"
+    },
+    {
+      name: "North Bend Premium Outlets",
+      description: "A major retail destination nestled against the mountains, offering dozens of brand-name stores and significant shopping discounts.",
+      url: "https://www.premiumoutlets.com/outlet/north-bend"
+    },
+    {
+      name: "Snoqualmie Valley Trail",
+      description: "A flat, 31-mile packed gravel trail tracing an old railroad route, perfect for long-distance cycling, running, and equestrian use.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/snoqualmie-valley-trail"
+    },
+    {
+      name: "Downtown Historic District",
+      description: "A charming, walkable downtown made famous by the TV show 'Twin Peaks', full of local cafes, bakeries, and boutique shops.",
+      url: "https://discovernorthbend.com/"
+    }
+  ];
+
+  const northbendLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        North Bend sits at the foothills of the Cascade Mountains and offers an unparalleled, ruggedly beautiful Pacific Northwest lifestyle. Known globally for its iconic backdrop of Mount Si and its role in pop culture, the city attracts residents who prioritize nature and outdoor adventure above all else. Families benefit from the highly-rated <a href="https://www.svsd410.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Snoqualmie Valley School District</a>, while the <a href="https://discovernorthbend.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">historic downtown corridor</a> provides a cozy, small-town atmosphere with beloved local spots like Twede's Cafe and the North Bend Theatre.
+      </p>
+      <p>
+        Living in North Bend means having world-class recreation literally in your backyard. Whether it's hiking <a href="https://www.dnr.wa.gov/MountSi" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Si</a>, mountain biking the extensive local trails, or skiing at nearby <a href="https://summitatsnoqualmie.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">The Summit at Snoqualmie</a>, the area is an outdoor enthusiast's dream. Despite its remote, alpine feel, the city remains conveniently connected to the greater Seattle area via Interstate 90, making it a viable, albeit scenic, commute. Between the <a href="https://si-view.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Si View Metro Parks</a> community events and the seasonal farmers markets, North Bend fosters a fiercely proud, active, and deeply connected community.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate
+    <>
+      <ServiceAreaTemplate
       city="North Bend"
       state="Washington"
       heroTitle="Mountain Fence Installation for North Bend's Cascades Gateway"
@@ -670,28 +661,18 @@ const NorthBend = () => {
         "Little Si"
       ]}
       climateDescription="North Bend's mountain climate at 520 feet elevation creates unique fencing challenges. Annual snowfall of 40-60 inches requires snow-load engineering exceeding lowland standards. Temperature swings from sub-freezing winters to 85°F+ summers stress fence materials through expansion-contraction cycles. The town's position in the Snoqualmie River valley creates moisture retention patterns, while proximity to old-growth forests means shaded properties remain damp year-round. Wildlife pressure from deer, elk, and bears demands reinforced construction that lowland fences don't need."
-      localChallenges={[
-        "Rocky glacial till soil throughout area requiring specialized augering equipment and reinforced concrete footings",
-        "Steep terrain with many properties on 15-20%+ slopes demanding stepped installations and engineering",
-        "Heavy snowfall creating 90+ PSF loads requiring reinforced posts and rails beyond standard construction",
-        "Active wildlife including deer, elk, and black bears requiring taller heights and impact-resistant materials",
-        "Wildfire risk zones in forest interface areas requiring defensible space planning and material selection",
-        "Forested properties with constant shade and moisture accelerating wood rot without proper material choice",
-        "Rocky soil and root networks making post-hole digging extremely challenging on established lots"
-      ]}
-      localSolutions={[
-        "Rock augering equipment and reinforced concrete footings with rebar cages anchoring posts in glacial till",
-        "Stepped panel installations engineered for lateral soil pressure on downhill posts with proper drainage integration",
-        "Snow-load rated construction with 6x6 posts on 6-foot centers and reinforced rails engineered for 90+ PSF loading",
-        "Wildlife-resistant designs with 7-8 foot heights, reinforced lower sections, and buried barrier extensions",
-        "Fire-resistant material recommendations and defensible space integration meeting King County Fire Marshal standards",
-        "Premium wood sealers and composite materials engineered for constant moisture without rot or degradation",
-        "Specialized installation techniques including hand-digging near trees and root-zone protection protocols"
-      ]}
+      
+      
       articleContent={<NorthBendArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
     />
+      <AboutTheArea 
+        cityName="North Bend"
+        attractions={northbendAttractions}
+        localLivingContent={northbendLivingContent}
+      />
+    </>
   );
 };
 

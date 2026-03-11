@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -38,7 +39,7 @@ const KirklandArticle = () => (
     {/* Kirkland Fence Installation */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Kirkland Fence Installation
+        Installation Expertise for Lakefront Properties
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com takes Kirkland fence installation seriously. When we install your lakefront fence, we arrive fully prepared with marine-grade materials and professional-grade tools. Our 98%+ on-time installation rate is industry-leading because your time is valuable. We maintain a comprehensive stock of premium fence materials specifically selected for waterfront conditions, ensuring we complete your Kirkland fence installation on schedule without delays.
@@ -48,63 +49,10 @@ const KirklandArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Kirkland Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Lakefront Specialists</h3>
-              <p className="text-muted-foreground">
-                Over 30 years of experience with Lake Washington properties. We understand marine-grade requirements, moisture patterns, and how to preserve your valuable lake views while adding privacy.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and manufacturing system that ensures precision accuracy and 30-50% faster installation times, minimizing disruption to your waterfront lifestyle.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
-              <p className="text-muted-foreground">
-                {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty - far exceeding industry standards for waterfront installations.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Landscaping Protection</h3>
-              <p className="text-muted-foreground">
-                Expert installation around mature trees and landscaping common in Kirkland's established neighborhoods. We protect your property investments as if they were our own.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Kirkland Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
@@ -247,7 +195,7 @@ const KirklandArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Kirkland-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Kirkland's lakefront location, mature neighborhoods, and premium property values require specialized knowledge that general contractors often lack. Here's how we address the specific challenges your Kirkland property faces:
@@ -282,7 +230,7 @@ const KirklandArticle = () => (
 
     {/* Original Kirkland Specific Content */}
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Understanding Kirkland's Unique Environment</h3>
+      <h3 className="text-2xl font-semibold">Understanding the Local Environment</h3>
       <p className="text-muted-foreground leading-relaxed">
         Kirkland's position along Lake Washington creates a distinctive environment for fence installation. Lakefront properties face increased moisture exposure from lake effect weather patterns, with waterfront neighborhoods experiencing 10-15% more humidity than inland areas. Salt spray from the lake, while minimal compared to ocean exposure, still necessitates corrosion-resistant hardware for properties within a half-mile of the water. The city's reputation as one of the most desirable communities on the Eastside means property values are high, and homeowners expect installations that match the premium architecture and landscaping investments they've made.
       </p>
@@ -305,7 +253,7 @@ const KirklandArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Kirkland</h3>
+      <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
       <p className="text-muted-foreground leading-relaxed">
         For Kirkland's upscale market, MyFence.com specializes in three premium fencing systems: <strong>Western Red Cedar fencing</strong>, <strong>Hogwire fencing</strong>, and our custom <strong>Hybrid Aluminum/Cedar system</strong>. By focusing our expertise on these systems, we deliver superior installation quality backed by industry-leading warranties. Clear-grade cedar is particularly popular in neighborhoods like Bridle Trails and waterfront areas, where the investment in premium materials aligns with overall property values.
       </p>
@@ -486,8 +434,48 @@ const Kirkland = () => {
     }
   };
 
+  const kirklandAttractions: LocalAttraction[] = [
+    {
+      name: "Marina Park",
+      description: "Enjoy stunning sunsets and waterfront strolls at this beloved downtown pavilion offering boat moorage and sandy beaches.",
+      url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Marina-Park"
+    },
+    {
+      name: "Totem Lake Park",
+      description: "A recently revitalized urban oasis featuring an inclusive playground, boardwalks over the wetlands, and scenic walking trails.",
+      url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Totem-Lake-Park"
+    },
+    {
+      name: "Peter Kirk Park",
+      description: "Located right next to the downtown shopping district, this bustling park boasts a seasonal outdoor pool, baseball fields, and a popular skate park.",
+      url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Peter-Kirk-Park"
+    },
+    {
+      name: "Cross Kirkland Corridor",
+      description: "A scenic, 5.75-mile crushed-gravel trail perfect for cycling, jogging, and walking that connects several key neighborhoods.",
+      url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Parks-and-Trails/Cross-Kirkland-Corridor"
+    },
+    {
+      name: "Juanita Beach Park",
+      description: "A family favorite featuring a sandy shoreline on Lake Washington, plus beach volleyball courts, a playground, and picnic areas.",
+      url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Juanita-Beach-Park"
+    }
+  ];
+
+  const kirklandLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Living in Kirkland means enjoying unparalleled access to Lake Washington and vibrant waterfront communities. Families appreciate the highly rated <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>, with top-tier schools ensuring excellent educational opportunities. Outdoor enthusiasts spend weekends traversing the <a href="https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Parks-and-Trails/Cross-Kirkland-Corridor" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Cross Kirkland Corridor</a> or unwinding at <a href="https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Juanita-Bay-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Juanita Bay Park</a>, an ideal spot for wildlife viewing. The thriving <a href="https://shopkirkland.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Downtown Kirkland shopping district</a> boasts boutique stores, art galleries, and acclaimed bistros right on the water.
+      </p>
+      <p>
+        The city expertly blends its natural beauty with modern conveniences. Residents enjoy the upscale shopping and dining at <a href="https://www.thevillageattotemlake.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">The Village at Totem Lake</a>, a premier lifestyle center. Kirkland is also home to a robust arts scene, celebrated through events hosted by the <a href="https://kirklandartscenter.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Kirkland Arts Center</a>. Public amenities like the <a href="https://kcls.org/locations/1518" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Kirkland Library</a> support lifelong learning, while seasonal festivities at <a href="https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Marina-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Marina Park</a> bring neighbors together. From its serene parks to its dynamic cultural core, Kirkland offers an exceptional Pacific Northwest lifestyle.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Kirkland" 
       state="WA"
       heroTitle="Expert Waterfront Fencing for Lake Washington's East Shore"
@@ -536,24 +524,16 @@ const Kirkland = () => {
         "Totem Lake"
       ]}
       climateDescription="Kirkland's waterfront location on Lake Washington creates a beautiful setting but also unique challenges for fence installations. The lakeside properties experience more moisture and wind exposure, while inland neighborhoods benefit from the moderating effects of the lake on temperature extremes."
-      localChallenges={[
-        "Waterfront properties requiring corrosion-resistant materials",
-        "Upscale neighborhoods demanding designer-quality aesthetics",
-        "Mature landscaping requiring careful installation planning",
-        "Lake views that homeowners want to preserve while adding privacy",
-        "Strict city codes and neighborhood standards"
-      ]}
-      localSolutions={[
-        "View-preserving horizontal designs and partial privacy solutions",
-        "Marine-grade hardware for lakefront installations",
-        "Custom designs complementing high-end architecture",
-        "Precision installation protecting established landscaping",
-        "Code-compliant solutions exceeding aesthetic expectations"
-      ]}
       articleContent={<KirklandArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
     />
+      <AboutTheArea 
+        cityName="Kirkland"
+        attractions={kirklandAttractions}
+        localLivingContent={kirklandLivingContent}
+      />
+    </>
   );
 };
 

@@ -1,31 +1,18 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import AboutCityModal from "@/components/AboutCityModal";
 
-const ABOUT_MOUNTLAKE_TERRACE_CONTENT = `Mountlake Terrace, Washington occupies 4.3 square miles of south Snohomish County, a city of approximately 21,000 residents that has evolved from a planned postwar community into a diverse, transit-connected suburb with its own distinct character. Situated 15 miles north of Seattle, Mountlake Terrace offers affordability and livability that nearby cities have priced out of reach for many families.
-
-The city's origins trace to the 1950s when developers transformed farmland into what they marketed as a complete planned community—among the first such developments in the Pacific Northwest. The name combines "Mount" (acknowledging distant views of Mount Rainier and the Cascades), "Lake" (referencing Lake Ballinger at its heart), and "Terrace" (describing the gently terraced topography). Unlike organic cities that grew over centuries, Mountlake Terrace was designed from scratch with curving streets, neighborhood parks, and a town center concept ahead of its time.
-
-Lake Ballinger defines the city's geography and character. This 100-acre natural lake sits at the junction of Mountlake Terrace, Edmonds, and Shoreline, with most of its shoreline within city limits. The lake feeds Ballinger Creek, which flows south toward Lake Washington through a green corridor that provides wildlife habitat and walking trails. The terrain rises gently from the lake's 300-foot elevation to higher ground in neighborhoods like Melody Hill, creating the "terrace" effect that inspired the city's name.
-
-The city's climate mirrors the broader Puget Sound region but with microclimatic variations worth noting. Lake Ballinger's presence increases humidity in surrounding neighborhoods, particularly during summer evenings when cooler air settles over the water. Annual rainfall averages about 37 inches, concentrated between October and May. Summers bring reliably pleasant weather with temperatures reaching the mid-70s. Winters are mild by national standards, with temperatures rarely dropping below freezing for extended periods.
-
-The original neighborhoods—Gateway, Cedar Terrace, Cedar Way—feature mid-century ramblers and split-levels on generous lots with mature landscaping. These homes attract families seeking affordable entry into homeownership in a strong school district. The Town Center area has seen significant redevelopment since light rail planning began, with new apartment buildings and condominiums bringing younger residents and urban energy. The Recreation Pavilion and Nile Golf Course provide community gathering spaces uncommon in cities this size.
-
-Light rail transformed Mountlake Terrace's trajectory. The 2024 opening of the Lynnwood Link Extension placed a station directly in the city's Town Center, connecting residents to downtown Seattle in under 30 minutes. Property values near the station have increased substantially, and development pressure has intensified. Long-time residents watch this transformation with mixed emotions—appreciating improved transit access while mourning the loss of affordable neighborhood character that defined the community.
-
-The population reflects the city's accessibility and diversity. Mountlake Terrace has become notably more diverse over the past two decades, with significant Asian, Hispanic, and immigrant communities finding affordable housing near employment centers. The school district serves this diversity well, and community events like the Tour de Terrace summer festival bring neighbors together across demographic lines. This isn't a wealthy enclave or a struggling suburb—it's a working middle-class community where families invest in their homes and take pride in their neighborhoods.`;
 const MountlakeTerraceArticle = () => (
   <article className="space-y-12">
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Mountlake Terrace Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -53,7 +40,7 @@ const MountlakeTerraceArticle = () => (
     {/* Mountlake Terrace Fence Installation */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        How We Work in Mountlake Terrace
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Most Mountlake Terrace lots were developed in the 1950s-70s, which means narrow side yards, mature landscaping, and neighbors close enough to wave at from your kitchen window. We've learned to work efficiently in tight spaces — staging materials in driveways rather than lawns, hand-carrying panels through gates when trucks can't fit, and finishing before your neighbors lose patience with the noise.
@@ -63,68 +50,17 @@ const MountlakeTerraceArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com in Mountlake Terrace?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Value Without Compromise</h3>
-              <p className="text-muted-foreground">
-                Budget-friendly pricing that never sacrifices quality materials or craftsmanship. We deliver exceptional value through efficient processes and direct sourcing.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Efficient Installation</h3>
-              <p className="text-muted-foreground">
-                Fence Genius technology reduces installation time by up to 50%, lowering labor costs while maintaining precision and quality standards.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
-              <p className="text-muted-foreground">
-                Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty protects your investment long-term.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Local Experience</h3>
-              <p className="text-muted-foreground">
-                Deep knowledge of Mountlake Terrace's mature neighborhoods, property types, and installation challenges ensures smooth project completion.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Mountlake Terrace Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Cedar Built for Lake Ballinger's Microclimate</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           Lake Ballinger sits at the heart of Mountlake Terrace, and properties within a mile of its shores experience noticeably higher humidity than surrounding areas. We source Western Red Cedar with tight grain patterns and concentrated natural oils — the kind that handles constant dampness without checking or warping. Homeowners in Cedar Way and Gateway neighborhoods often replace fences that failed prematurely because contractors used lumber graded for drier climates. We've learned which mills produce cedar that actually performs here.
         </p>
@@ -135,7 +71,7 @@ const MountlakeTerraceArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Focused on What Works — Not Everything</h3>
+        <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
         <p className="text-muted-foreground leading-relaxed">
           Some contractors list fifteen fence types on their website and install whichever sells. We took the opposite approach — three systems we know inside out. Every crew member has built hundreds of cedar, hogwire, and hybrid aluminum fences. When something unexpected happens on-site (and something always does), they've seen it before.
         </p>
@@ -157,7 +93,7 @@ const MountlakeTerraceArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Set-and-Forget Fencing for Busy Households</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
           Between commuting to Seattle, managing kids' schedules, and actually enjoying the lake on weekends, most Mountlake Terrace families have zero interest in annual fence maintenance. Our hybrid system solves that problem — powder-coated aluminum panels that look identical in year ten as they did on installation day. No staining, no sealing, no pressure washing.
         </p>
@@ -170,7 +106,7 @@ const MountlakeTerraceArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Spread the Cost Without Waiting
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -260,7 +196,7 @@ const MountlakeTerraceArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Mountlake Terrace Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Mountlake Terrace's mature neighborhoods and varied property types present specific challenges requiring specialized knowledge. Here's how we address the unique characteristics of your Mountlake Terrace property:
@@ -308,7 +244,7 @@ const MountlakeTerraceArticle = () => (
     {/* Permit Information */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Mountlake Terrace Fence Permits & Regulations
+        Permits and Local Regulations
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         The City of Mountlake Terrace follows standard Washington State regulations for residential fencing. Fences under 8 feet in height typically do not require building permits, but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
@@ -324,7 +260,7 @@ const MountlakeTerraceArticle = () => (
     {/* FAQ Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Frequently Asked Questions
+        Installation FAQs
       </h2>
       <Card className="p-6 space-y-4">
         <div>
@@ -360,7 +296,7 @@ const MountlakeTerraceArticle = () => (
       </p>
     </section>
 
-    <AboutCityModal cityName="Mountlake Terrace" content={ABOUT_MOUNTLAKE_TERRACE_CONTENT} />
+    
   </article>
 );
 
@@ -443,8 +379,49 @@ const MountlakeTerrace = () => {
     }
   };
 
+  
+  const mltAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Ballinger Park",
+      description: "A beautiful 55-acre waterfront park offering fishing, boating, walking trails, and a recently renovated fishing pier.",
+      url: "https://www.cityofmlt.com/181/Ballinger-Park"
+    },
+    {
+      name: "Recreation Pavilion",
+      description: "The heart of community activities featuring an indoor pool, lazy river, fitness center, and expansive indoor recreation spaces.",
+      url: "https://www.cityofmlt.com/185/Recreation-Pavilion"
+    },
+    {
+      name: "Terrace Creek Park (Candy Cane Park)",
+      description: "A 60-acre natural oasis nicknamed for its striped play equipment, featuring an 18-hole disc golf course and extensive trails.",
+      url: "https://www.cityofmlt.com/190/Terrace-Creek-Park-Candy-Cane-Park"
+    },
+    {
+      name: "Veterans Memorial Park",
+      description: "A peaceful, centrally located park adjacent to the civic center, hosting community memorials and surrounded by towering evergreens.",
+      url: "https://www.cityofmlt.com/192/Veterans-Memorial-Park"
+    },
+    {
+      name: "Hemlock State Park",
+      description: "A small, heavily wooded natural area offering quiet walking paths and important wetland preservation within the city limits.",
+      url: "https://www.cityofmlt.com/184/Parks-Facilities"
+    }
+  ];
+
+  const mltLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Mountlake Terrace (often referred to locally as MLT) is a thriving, transit-connected community located perfectly between Seattle and Everett. The city has experienced a revitalization, largely driven by the arrival of the <a href="https://www.soundtransit.org/system-expansion/lynnwood-link-extension" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lynnwood Link light rail extension</a>, which provides residents with incredibly fast, reliable access to downtown Seattle and beyond. Families are particularly drawn to the area for its quiet, established neighborhoods and its inclusion in the highly regarded <a href="https://www.edmonds.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Edmonds School District</a>.
+      </p>
+      <p>
+        Life in Mountlake Terrace is defined by its exceptional access to both urban amenities and outdoor recreation. The city boasts over 260 acres of parks and open spaces, anchored by the stunning <a href="https://www.cityofmlt.com/181/Ballinger-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Ballinger</a>. The community is tight-knit, gathering annually for events like <a href="https://tourdeterrace.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tour de Terrace</a>, a massive summer festival with parades, live music, and a car show. With its ongoing <a href="https://www.cityofmlt.com/1990/Town-Center" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Town Center development</a> bringing new dining and retail options, Mountlake Terrace offers an increasingly walkable, vibrant lifestyle while maintaining its welcoming, suburban charm.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate
+    <>
+      <ServiceAreaTemplate
       city="Mountlake Terrace" 
       state="WA"
       heroTitle="Affordable Quality Fencing for Mountlake Terrace Families"
@@ -487,24 +464,18 @@ const MountlakeTerrace = () => {
         "Ballinger Park Playfields"
       ]}
       climateDescription="Mountlake Terrace experiences typical Puget Sound weather with consistent rainfall throughout the cooler months. The community features a mix of mid-century homes and newer construction, with many properties benefiting from mature trees that provide character but can complicate fence installations."
-      localChallenges={[
-        "Older properties with existing fence footprints needing updates",
-        "Mature tree roots affecting post placement and alignment",
-        "Mix of property sizes requiring flexible design approaches",
-        "Budget-conscious homeowners seeking value and quality",
-        "Neighborhood cohesion encouraging compatible fence styles"
-      ]}
-      localSolutions={[
-        "Cost-effective solutions without compromising quality",
-        "Flexible installation methods working around established trees",
-        "Repair and replacement options for aging fences",
-        "Classic designs that complement neighborhood character",
-        "Efficient project timelines respecting community values"
-      ]}
+      
+      
       articleContent={<MountlakeTerraceArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
     />
+      <AboutTheArea 
+        cityName="Mountlake Terrace"
+        attractions={mltAttractions}
+        localLivingContent={mltLivingContent}
+      />
+    </>
   );
 };
 

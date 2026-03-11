@@ -2,30 +2,49 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
+import { Shield, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
-import AboutCityModal from "@/components/AboutCityModal";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 
-const ABOUT_BELLEVUE_CONTENT = `Bellevue, Washington stands as the Pacific Northwest's premier Eastside city, a thriving metropolis of approximately 155,000 residents that has evolved from a quiet strawberry farming community into one of America's most affluent and innovative urban centers. Situated directly across Lake Washington from Seattle, Bellevue occupies 36 square miles of rolling terrain where downtown skyscrapers rise above forested neighborhoods and waterfront estates.
-
-The area's recorded history begins with Native American settlements along the lake shores, followed by European American pioneers who arrived in the 1860s seeking farmland. The name "Bellevue," French for "beautiful view," was coined in 1882 by Postmaster Bert Marett's wife, inspired by the panoramic vistas of Lake Washington and the Cascade Mountains. The community remained agricultural through the mid-20th century, known particularly for its Japanese-American strawberry farms that were tragically disrupted by World War II internment.
-
-The transformation from bedroom community to economic powerhouse began with the construction of the first Lake Washington floating bridge in 1940, followed by the opening of Bellevue Square shopping center in 1946. By the 1990s, technology companies discovered Bellevue's advantages: proximity to Seattle without its urban congestion, excellent schools, and a business-friendly environment. Today, Bellevue hosts headquarters and major offices for Amazon, Meta, Microsoft, T-Mobile, and countless startups, earning its reputation as Seattle's corporate sibling.
-
-The city's geography creates distinct neighborhoods with varying character. Downtown Bellevue has transformed into an urban village with high-rises, luxury retail, and world-class dining. Medina and Clyde Hill represent old-money estates where tech billionaires now neighbor legacy families. West Bellevue neighborhoods like Enatai and Beaux Arts enjoy waterfront access and historic character. The Crossroads area provides diverse, affordable options, while Somerset and Newport Hills offer hillside living with Cascade Mountain views.
-
-Bellevue's climate reflects its position in the Puget Sound Lowland but with notable differences from Seattle. The city receives approximately 37 inches of annual rainfall, similar to Seattle but distributed differently across the year. The "dual-lake effect" from Lake Washington and Lake Sammamish creates a distinct microclimate with 15-20% more humidity than areas further from water. Summers are gloriously dry and warm, with temperatures averaging 75-80°F from July through September. Winters remain mild by national standards, hovering around 40°F with occasional snow that rarely lingers in lower elevations.
-
-The city's prosperity brings unique considerations for property improvements. Median home values exceed $1.5 million in many neighborhoods, with waterfront properties and prestigious areas like Medina commanding prices in the tens of millions. This real estate landscape means homeowners invest significantly in quality improvements that enhance rather than diminish property values. Homeowners associations in newer developments and architectural review boards in established neighborhoods enforce strict standards for exterior modifications.
-
-Bellevue's diverse population includes families attracted by the Bellevue School District's nationally-ranked schools, executives drawn by corporate headquarters, international residents (approximately 40% of residents speak a language other than English at home), and retirees enjoying the city's amenities. This demographic mix creates demand for varying fence styles: modern horizontal designs in contemporary developments, traditional cedar privacy fences in family neighborhoods, and estate-style fencing with automated gates in luxury enclaves.`;
+const BELLEVUE_ATTRACTIONS: LocalAttraction[] = [
+  {
+    name: "Bellevue Botanical Garden",
+    url: "https://bellevuebotanical.org/",
+    description:
+      "A 53-acre public garden tucked between residential neighborhoods on Main Street. The grounds include a native plant loop, a rock garden, and a suspension bridge walkway through the upper canopy. Every December the Garden d'Lights event turns the pathways into a half-million-bulb light display.",
+  },
+  {
+    name: "Bellevue Arts Museum",
+    url: "https://www.bellevuearts.org/",
+    description:
+      "Housed in a Steven Holl-designed building on Bellevue Way, BAM focuses on craft, design, and regional art. The rotating gallery program spotlights everything from blown glass to mixed-media sculpture, and the annual summertime arts fair fills the surrounding blocks with vendor booths and live demonstrations.",
+  },
+  {
+    name: "Mercer Slough Nature Park",
+    url: "https://parks.bellevuewa.gov/parks-open-spaces/parks/mercer-slough-nature-park/",
+    description:
+      "The largest remaining wetland on Lake Washington — 320 acres of peat bog, blueberry farms, and boardwalk trails right off Bellevue Way SE. Canoe and kayak rentals are available at the Sweyolocken boat launch from spring through fall.",
+  },
+  {
+    name: "The Bellevue Collection",
+    url: "https://www.thebellevuecollection.com/",
+    description:
+      "Three connected properties — Bellevue Square, Lincoln Square, and Bellevue Place — that make up the Eastside's largest retail and dining destination. The complex also hosts the Hyatt Regency, a 16-screen cinema, and the winter holiday Snowflake Lane parade along Bellevue Way each evening in December.",
+  },
+  {
+    name: "Meydenbauer Beach Park",
+    url: "https://parks.bellevuewa.gov/parks-open-spaces/parks/meydenbauer-beach-park/",
+    description:
+      "One of Bellevue's few public Lake Washington beach access points, rebuilt in 2019 with a new swimming dock, waterfront promenade, and covered picnic pavilion. It sits at the foot of 100th Avenue NE, a short walk from the downtown core.",
+  },
+];
 
 const BellevueArticle = () => (
   <article className="space-y-12">
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bellevue Fence Company - MyFence.com
+        Your Local Bellevue Fence Company
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -53,7 +72,7 @@ const BellevueArticle = () => (
     {/* Bellevue Fence Installation */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bellevue Fence Installation
+        How We Install Fences on the Eastside
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com takes Bellevue fence installation seriously. When we install your fence, we arrive fully prepared with all materials and professional-grade tools. Our 98%+ on-time installation rate is industry-leading because your time is valuable. We maintain a comprehensive stock of premium fence materials, ensuring we complete your Bellevue fence installation on schedule without delays. On installation day, our experienced team works efficiently while maintaining meticulous attention to detail. Once complete, we perform a thorough quality review with you to ensure complete satisfaction.
@@ -63,68 +82,15 @@ const BellevueArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Bellevue Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Father-Son Excellence</h3>
-              <p className="text-muted-foreground">
-                Over 30 years of combined experience and a family commitment to craftsmanship you won't find with corporate fence companies.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and manufacturing system that ensures precision accuracy and 30-50% faster installation times.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-            <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
-            <p className="text-muted-foreground">
-              {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty - far exceeding industry standards.
-            </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">HOA & Permit Expertise</h3>
-              <p className="text-muted-foreground">
-                Deep knowledge of Bellevue's strict HOA requirements and municipal codes, with architectural design packages for board approvals.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bellevue Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bellevue Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fencing for the Eastside</h3>
         <p className="text-muted-foreground leading-relaxed">
           At MyFence.com, we provide Bellevue cedar fence products that are engineered to last in the Pacific Northwest's challenging climate. We use premium Western Red Cedar, nature's most naturally rot-resistant wood species with oils that repel insects and resist decay. For Bellevue's luxury properties in neighborhoods like Medina and Clyde Hill, we offer clear-grade cedar (zero knots) that provides superior appearance and 15+ years of longevity with proper maintenance. Our cedar fences are built using heavy-duty lumber that exceeds industry standards, ensuring structural integrity even during windstorms.
         </p>
@@ -135,7 +101,7 @@ const BellevueArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Bellevue</h3>
+        <h3 className="text-2xl font-semibold">What We Specialize In</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. We've focused our expertise on these options to deliver superior installation quality and industry-leading warranties. While many contractors offer numerous fence types, our specialized approach ensures every fence we install meets our exacting standards.
         </p>
@@ -157,7 +123,7 @@ const BellevueArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bellevue Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum — Low Maintenance, Modern Look</h3>
         <p className="text-muted-foreground leading-relaxed">
           For Bellevue properties seeking the perfect balance of low maintenance and affordability, our hybrid aluminum fence system combines the best of both worlds. Instead of traditional all-wood construction, we use black aluminum panels with a cedar frame and pressure-treated fence posts. This innovative system delivers a modern, sleek appearance while dramatically reducing maintenance requirements compared to traditional wood fencing.
         </p>
@@ -170,7 +136,7 @@ const BellevueArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bellevue Fence Financing Options
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -265,7 +231,7 @@ const BellevueArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bellevue-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Bellevue's unique geography, climate, and regulations require specialized knowledge and solutions that general contractors often lack. Here's how we address the specific challenges your Bellevue property faces:
@@ -392,7 +358,6 @@ const BellevueArticle = () => (
       </p>
     </section>
 
-    <AboutCityModal cityName="Bellevue" content={ABOUT_BELLEVUE_CONTENT} />
   </article>
 );
 
@@ -606,6 +571,7 @@ const Bellevue = () => {
   };
 
   return (
+    <>
     <ServiceAreaTemplate 
       city="Bellevue" 
       state="WA"
@@ -641,6 +607,11 @@ const Bellevue = () => {
           description: "Mixed residential zones near commercial districts needing privacy screening and decorative fencing to complement varied home styles"
         },
         {
+          name: "Sherwood Forest",
+          description: "Wooded residential neighborhood near Phantom Lake with mature evergreen canopy requiring tree-friendly fence installation and root-conscious post placement. Click to learn more →",
+          link: "/service-areas/bellevue/sherwood-forest"
+        },
+        {
           name: "West Bellevue",
           description: "Waterfront luxury estates along Lake Washington requiring marine-grade corrosion-resistant installations and architectural elegance"
         },
@@ -664,26 +635,57 @@ const Bellevue = () => {
         "Bellevue Collection"
       ]}
       climateDescription="Bellevue's position between two major lakes creates a unique microclimate with consistently elevated humidity (averaging 75-80%) and morning fog patterns that accelerate wood decay. The city's tech-sector wealth has driven demand for architecturally distinctive homes requiring fence solutions that complement modern, Northwest Contemporary, and traditional Craftsman designs while withstanding moisture-rich conditions."
-      localChallenges={[
-        "Architectural review boards in neighborhoods like Medina and Clyde Hill requiring detailed design submissions and approval processes",
-        "High-end properties demanding contemporary horizontal slat and cable rail systems",
-        "Heritage tree preservation zones requiring hand-digging and specialized installation near 100+ year old specimens",
-        "Downtown proximity driving demand for sound-dampening fence solutions for traffic noise reduction",
-        "Dual-lake effect creating 15-20% more moisture exposure than Seattle, accelerating untreated wood failure within 3-5 years",
-        "Property values averaging $1.2M+ requiring installations that enhance rather than diminish home valuations"
-      ]}
-      localSolutions={[
-        "Architectural design packages with 3D renderings for HOA and review board submissions, ensuring first-time approval",
-        "Contemporary aluminum and composite systems with powder-coated finishes matching luxury home palettes",
-        "Root-zone protection protocols using air excavation techniques near heritage trees per arborist specifications",
-        "Sound-dampening fence construction using mass-loaded vinyl barriers and offset board designs reducing noise by 8-12 decibels",
-        "Marine-grade stainless steel fasteners and triple-sealed joinery systems engineered for high-humidity microclimates",
-        "Premium Western Red Cedar clear-grade (zero knots) matching Bellevue's luxury market expectations and lasting 15+ years with proper maintenance"
-      ]}
       articleContent={<BellevueArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
     />
+    <AboutTheArea
+      cityName="Bellevue"
+      attractions={BELLEVUE_ATTRACTIONS}
+      localLivingContent={
+        <>
+          <p>
+            Families moving to Bellevue usually start with the{" "}
+            <a href="https://bsd405.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Bellevue School District
+            </a>
+            , which consistently places in the state's top five and anchors neighborhoods like Somerset, Newport Hills, and Crossroads.{" "}
+            <a href="https://www.bellevuecollege.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Bellevue College
+            </a>
+            {" "}draws students from across the Eastside, and the{" "}
+            <a href="https://kcls.org/locations/1502/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Bellevue Library
+            </a>
+            {" "}on 110th Ave NE is one of King County's busiest branches. The city's{" "}
+            <a href="https://bellevuewa.gov/city-government/departments/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Parks & Community Services department
+            </a>
+            {" "}maintains over 100 parks and 80+ miles of trails connecting neighborhoods across town.
+          </p>
+          <p>
+            The dining scene on the Eastside has come into its own — spots like{" "}
+            <a href="https://www.bisOnmain.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Bis on Main
+            </a>
+            {" "}and{" "}
+            <a href="https://www.wildginger.net/bellevue" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Wild Ginger Bellevue
+            </a>
+            {" "}have been Eastside staples for years, and newer arrivals in the Spring District keep the options growing. For outdoor access close to home, the{" "}
+            <a href="https://www.wta.org/go-hiking/hikes/coal-creek-falls" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Coal Creek Trail
+            </a>
+            {" "}runs through a forested ravine between Factoria and Newcastle, and the{" "}
+            <a href="https://bellevuefarmersmarket.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+              Bellevue Farmers Market
+            </a>
+            {" "}sets up every Thursday from spring through fall with local produce, baked goods, and flower vendors.
+          </p>
+        </>
+      }
+    />
+    </>
   );
 };
 

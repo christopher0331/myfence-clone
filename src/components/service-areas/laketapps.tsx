@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -74,7 +75,7 @@ const LakeTapps = () => {
     <div className="prose prose-lg max-w-none">
       {/* Company Introduction */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Lake Tapps Waterfront Fence Specialists</h2>
+        <h2 className="text-3xl font-bold mb-6">Your Local Waterfront Fence Specialists</h2>
         <p className="text-lg mb-4">
           MyFence.com brings over three decades of fencing expertise to Lake Tapps' unique waterfront community. 
           Surrounding the 2,500-acre reservoir, Lake Tapps properties face distinct challenges from constant humidity, 
@@ -142,32 +143,11 @@ const LakeTapps = () => {
         </ul>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Why Choose MyFence.com in Lake Tapps</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">Waterfront Expertise</h3>
-            <p>Specialized knowledge of lakeside conditions, marine-grade materials, and installations that preserve your water views and recreational access.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">Humidity-Resistant Construction</h3>
-            <p>Advanced moisture barriers and corrosion-resistant hardware designed specifically for Lake Tapps' high-humidity reservoir environment.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">View-Friendly Designs</h3>
-            <p>Custom horizontal slat patterns and strategic panel placement that maintain privacy while preserving your valuable lake views.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">{WARRANTY_CONSTANTS.TITLE}</h3>
-            <p>Comprehensive warranty covering all workmanship, backed by three decades of fencing excellence and waterfront installation experience.</p>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Fence Types Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Fence Types & Materials for Lake Tapps</h2>
+        <h2 className="text-3xl font-bold mb-6">Fence Types & Materials We Install</h2>
         
         <h3 className="text-2xl font-semibold mb-4">Premium Western Red Cedar</h3>
         <p className="text-lg mb-6">
@@ -177,7 +157,7 @@ const LakeTapps = () => {
           marine-grade treatments for maximum longevity in lakeside conditions.
         </p>
 
-        <h3 className="text-2xl font-semibold mb-4">What We Install in Lake Tapps</h3>
+        <h3 className="text-2xl font-semibold mb-4">What We Install in This Area</h3>
         <ul className="space-y-2 mb-6">
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
@@ -240,7 +220,7 @@ const LakeTapps = () => {
 
       {/* Financing Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Flexible Fence Financing for Lake Tapps</h2>
+        <h2 className="text-3xl font-bold mb-6">Flexible Fence Financing</h2>
         <p className="text-lg mb-4">
           Quality waterfront fencing is an investment in your Lake Tapps property. We partner with Wisetack to offer 
           flexible financing options that make premium lakeside fence installation accessible. Get approved in minutes 
@@ -270,7 +250,7 @@ const LakeTapps = () => {
 
       {/* Local Challenges Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Lake Tapps Waterfront Fencing Challenges</h2>
+        <h2 className="text-3xl font-bold mb-6">Waterfront Fencing Challenges</h2>
         <p className="text-lg mb-4">
           Lake Tapps' 2,500-acre reservoir creates unique environmental conditions that significantly impact fence 
           installation and longevity. Understanding these lakeside challenges is essential for proper fence design:
@@ -317,7 +297,7 @@ const LakeTapps = () => {
 
       {/* Permits Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Lake Tapps Fence Permits & Regulations</h2>
+        <h2 className="text-3xl font-bold mb-6">Permits & Regulations</h2>
         <p className="text-lg mb-4">
           Lake Tapps falls under Pierce County jurisdiction for building permits and regulations. Most residential fences 
           require permits, particularly those near waterfront setback areas or exceeding standard height limits.
@@ -342,7 +322,7 @@ const LakeTapps = () => {
 
       {/* FAQ Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Lake Tapps Fence Installation FAQs</h2>
+        <h2 className="text-3xl font-bold mb-6">Installation FAQs</h2>
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold mb-2">Do I need a permit for a fence in Lake Tapps?</h3>
@@ -381,8 +361,49 @@ const LakeTapps = () => {
     </div>
   );
 
+  
+  const laketappsAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Tapps Park",
+      description: "A popular 135-acre park situated on a peninsula, offering pristine swimming beaches, boat ramps, and breathtaking views of Mount Rainier.",
+      url: "https://www.piercecountywa.gov/1325/Lake-Tapps-Park"
+    },
+    {
+      name: "Allan Yorke Park",
+      description: "The area's premier recreation hub featuring sports courts, a skate park, and a busy boat launch on the lake's southern end.",
+      url: "https://www.cityofbonneylake.org/government/departments/public_services/parks/allan_yorke_park"
+    },
+    {
+      name: "Tapps Island",
+      description: "A private, upscale residential island featuring a meticulously maintained 9-hole golf course and exclusive community amenities.",
+      url: "https://www.tappsisland.net/"
+    },
+    {
+      name: "Printz Basin",
+      description: "A serene, protected area of the reservoir perfect for quiet kayaking, paddleboarding, and observing local wildlife.",
+      url: "https://www.cascadewater.org/lake-tapps/"
+    },
+    {
+      name: "White River Amphitheatre",
+      description: "Located just a short drive away, this massive outdoor concert venue hosts major touring artists throughout the summer.",
+      url: "https://www.livenation.com/venues/14577/white-river-amphitheatre"
+    }
+  ];
+
+  const laketappsLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Life in Lake Tapps revolves around the stunning 2,500-acre reservoir that shares its name, offering an unparalleled waterfront lifestyle in Pierce County. Families in the area are served by the highly regarded <a href="https://www.dieringer.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Dieringer School District</a> and the <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>. The community is tight-knit, often coming together through the efforts of organizations like the <a href="https://www.cascadewater.org/lake-tapps/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Tapps Community Council</a>, which works to preserve the area's natural beauty and recreational quality.
+      </p>
+      <p>
+        During the warmer months, the lake becomes a bustling hub of activity. Residents enjoy unparalleled access to water sports, from wakeboarding to fishing, often launching from <a href="https://www.piercecountywa.gov/1325/Lake-Tapps-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">North Lake Tapps Park</a>. The surrounding <a href="https://www.cityofbonneylake.org/government/departments/public_services/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">parks and trails</a> offer excellent hiking and cycling with constant views of Mount Rainier. While Lake Tapps provides a peaceful, resort-like atmosphere, it remains conveniently close to the shopping and dining amenities of nearby Bonney Lake and Auburn, offering residents the perfect balance of lakeside tranquility and modern convenience.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Lake Tapps" 
       state="WA"
       heroTitle="Waterfront Fence Specialists for Lake Tapps Properties"
@@ -425,23 +446,17 @@ const LakeTapps = () => {
         "North Lake Tapps Park"
       ]}
       climateDescription="Lake Tapps is a unique waterfront community surrounding a 2,500-acre reservoir. The lakeside location brings increased humidity and moisture exposure, while the residential character features many properties with water access and views to preserve."
-      localChallenges={[
-        "Waterfront properties requiring corrosion-resistant materials",
-        "Lake-view preservation while maintaining privacy",
-        "High humidity accelerating material deterioration",
-        "Waterfront regulations and setback requirements",
-        "Recreational boat access considerations"
-      ]}
-      localSolutions={[
-        "Marine-grade hardware and stainless steel fasteners",
-        "View-friendly horizontal and partial privacy designs",
-        "Moisture-resistant treatments and premium sealants",
-        "Compliant installations respecting waterfront regulations",
-        "Durable materials withstanding lakeside environment"
-      ]}
+      
+      
       articleContent={articleContent}
       faqStructuredData={lakeTappsFaqLd}
     />
+      <AboutTheArea 
+        cityName="Lake Tapps"
+        attractions={laketappsAttractions}
+        localLivingContent={laketappsLivingContent}
+      />
+    </>
   );
 };
 

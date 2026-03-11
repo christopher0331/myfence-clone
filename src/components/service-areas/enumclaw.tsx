@@ -1,8 +1,50 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 
 const Enumclaw = () => {
+  
+  const enumclawAttractions: LocalAttraction[] = [
+    {
+      name: "Enumclaw Expo Center",
+      description: "A major regional hub hosting the annual King County Fair, rodeos, trade shows, and community events throughout the year.",
+      url: "https://www.enumclawexpo.com/"
+    },
+    {
+      name: "Mud Mountain Dam",
+      description: "A remarkable engineering feat offering beautiful recreation areas, hiking trails, and picnic spots along the White River.",
+      url: "https://www.nws.usace.army.mil/Missions/Civil-Works/Recreation/Mud-Mountain-Dam/"
+    },
+    {
+      name: "Nolte State Park",
+      description: "A heavily forested 117-acre park featuring a serene trail looping around the picturesque Deep Lake, perfect for family outings.",
+      url: "https://parks.wa.gov/find-parks/state-parks/nolte-state-park"
+    },
+    {
+      name: "Pinnacle Peak Park",
+      description: "A steep, challenging hike affectionately known as 'Mount Lee,' rewarding climbers with incredible views of Mount Rainier and the valley.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/pinnacle-peak"
+    },
+    {
+      name: "Downtown Historic District",
+      description: "A charming, walkable downtown core filled with local boutiques, historic architecture, and unique Pacific Northwest dining options.",
+      url: "https://www.discoverenumclaw.com/"
+    }
+  ];
+
+  const enumclawLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Nestled at the foothills of the Cascade Mountains, Enumclaw serves as the "Gateway to Mount Rainier" and offers a rugged, authentic Pacific Northwest lifestyle. The city strikes a unique balance between a rich agricultural heritage and modern suburban growth. Families are served by the <a href="https://www.enumclaw.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Enumclaw School District</a>, which is deeply integrated into the community. The <a href="https://www.discoverenumclaw.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">historic downtown area</a> remains the vibrant heart of the city, where locals gather for seasonal parades, block parties, and a highly active summer farmers market.
+      </p>
+      <p>
+        Living in Enumclaw means having immediate access to some of the state's best outdoor recreation. Residents are just a short drive from the <a href="https://www.nps.gov/mora/index.htm" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Rainier National Park</a> corridor, offering world-class hiking, skiing, and camping. Closer to home, the <a href="https://www.enumclaw.wa.gov/173/Parks-Recreation" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks system</a> and numerous equestrian trails highlight the area's spacious, rural character. Despite its proximity to major job centers in King and Pierce counties, Enumclaw fiercely protects its small-town atmosphere, making it a perfect haven for those seeking space, nature, and community connection.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Enumclaw" 
       state="WA"
       heroTitle="Mountain-Ready Fencing at the Gateway to Mount Rainier"
@@ -60,6 +102,12 @@ const Enumclaw = () => {
         "Climate-appropriate materials resistant to freeze-thaw cycles"
       ]}
     />
+      <AboutTheArea 
+        cityName="Enumclaw"
+        attractions={enumclawAttractions}
+        localLivingContent={enumclawLivingContent}
+      />
+    </>
   );
 };
 

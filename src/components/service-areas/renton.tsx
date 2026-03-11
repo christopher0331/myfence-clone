@@ -1,27 +1,16 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import AboutCityModal from "@/components/AboutCityModal";
 
-const ABOUT_RENTON_CONTENT = `Renton, Washington sits at the southern tip of Lake Washington, a city of approximately 107,000 residents that has transformed from an industrial coal and lumber town into one of the Puget Sound region's most diverse and dynamic communities. Located 11 miles southeast of Seattle, Renton occupies the Cedar River valley where it meets the lake, creating a geography that ranges from waterfront to hillside within city limits.
 
-The Duwamish people inhabited this valley for millennia before European American settlers arrived in the 1850s, drawn by the confluence of rivers and proximity to coal deposits. The city takes its name from Captain William Renton, who established lumber mills along the waterfront in the 1870s. Coal mining dominated the early economy, but Boeing's arrival in 1941 permanently altered Renton's trajectory. The company's massive assembly plant—still producing 737 aircraft—made Renton synonymous with aerospace manufacturing and brought waves of workers seeking nearby housing.
-
-The city's geography creates distinct living environments within a compact area. Downtown Renton sits in the valley floor where the Cedar River enters Lake Washington, an area prone to moisture and historically subject to flooding before modern engineering. The Renton Highlands rise dramatically to the east, offering views of Mount Rainier and the Cascades from properties perched hundreds of feet above the valley. Kennydale hugs the Lake Washington shoreline with waterfront homes and parks. Fairwood and East Renton Plateau spread across the elevated terrain to the east, featuring newer suburban development.
-
-Lake Washington and the Cedar River dominate Renton's climate and character. The valley's low elevation creates a bowl effect that traps moisture and fog, particularly during fall and winter months. Properties near the water experience higher humidity than hillside locations just a mile away. Annual rainfall averages about 38 inches, similar to Seattle, but the valley floor retains moisture longer due to limited air circulation. Summers bring welcome relief with warm, dry conditions and temperatures reaching the mid-70s.
-
-Renton's transformation over the past two decades reflects broader regional trends. What was once a blue-collar aerospace town has become remarkably diverse—the city's population is now majority-minority, with large Vietnamese, East African, and Hispanic communities reshaping the cultural landscape. Restaurants along Rainier Avenue serve cuisine from dozens of countries. This diversity extends to housing: lakefront mansions in Kennydale contrast sharply with modest valley homes and new apartment complexes near the transit center.
-
-The economic base has diversified beyond Boeing. IKEA's only Pacific Northwest store anchors The Landing shopping development. Healthcare, logistics, and technology companies have established presences. The city's affordability relative to Seattle and the Eastside continues attracting families and businesses seeking value. Light rail extension plans promise to strengthen connections to Seattle and Bellevue, likely accelerating development pressure in transit-accessible neighborhoods.
-
-Gene Coulon Memorial Beach Park represents Renton's relationship with its waterfront—a beloved public space where residents gather for swimming, picnicking, and evening walks along Lake Washington. The Cedar River Trail provides a green corridor through the valley, connecting to a regional trail network. These amenities, combined with proximity to major employers and relative affordability, make Renton an increasingly attractive option for families seeking the benefits of urban access without Seattle's costs.`;
 
 const RentonArticle = () => (
   <div className="space-y-8">
     <section>
-      <h2 className="text-3xl font-bold mb-6">Professional Fence Installation in Renton</h2>
+      <h2 className="text-3xl font-bold mb-6">Professional Fence Installation</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           Renton's unique geography—from Lake Washington's waterfront properties to the elevated Renton Highlands—demands versatile fencing expertise. At {SITE_CONFIG.fullName}, we specialize in installations that adapt to Renton's diverse terrain, climate variations, and neighborhood requirements.
@@ -32,29 +21,10 @@ const RentonArticle = () => (
       </div>
     </section>
 
-    <section>
-      <h2 className="text-3xl font-bold mb-6">Why Renton Homeowners Choose {SITE_CONFIG.shortName}</h2>
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">12+</div>
-          <div className="text-lg font-semibold mb-2">Years Experience</div>
-          <p className="text-muted-foreground">Serving Renton and the Greater Seattle area with expert craftsmanship</p>
-        </div>
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">98%</div>
-          <div className="text-lg font-semibold mb-2">Customer Satisfaction</div>
-          <p className="text-muted-foreground">Backed by hundreds of 5-star reviews from Renton neighbors</p>
-        </div>
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">{WARRANTY_CONSTANTS.YEARS}-Year</div>
-          <div className="text-lg font-semibold mb-2">Workmanship Warranty</div>
-          <p className="text-muted-foreground">Comprehensive coverage on all installations for your peace of mind</p>
-        </div>
-      </div>
-    </section>
+    
 
     <section>
-      <h2 className="text-3xl font-bold mb-6">Flexible Financing Options in Renton</h2>
+      <h2 className="text-3xl font-bold mb-6">Flexible Financing Options</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           We understand that a quality fence is an investment in your property. That's why we partner with Wisetack to offer flexible financing solutions for Renton homeowners. Get approved in minutes with no impact to your credit score during the application process.
@@ -84,7 +54,7 @@ const RentonArticle = () => (
     </section>
 
     <section>
-      <h2 className="text-3xl font-bold mb-6">Renton's Climate and Your Fence</h2>
+      <h2 className="text-3xl font-bold mb-6">Local Climate Considerations</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           Renton's valley location creates a unique microclimate with increased moisture retention in low-lying areas near the Cedar River and Lake Washington. Our installations account for these conditions with enhanced drainage systems and moisture-resistant treatments.
@@ -131,7 +101,7 @@ const RentonArticle = () => (
       </div>
     </section>
 
-    <AboutCityModal cityName="Renton" content={ABOUT_RENTON_CONTENT} />
+    
   </div>
 );
 
@@ -222,6 +192,46 @@ const rentonLocalBusinessLd = {
 const Renton = () => {
   const structuredData = [rentonFaqLd, rentonLocalBusinessLd];
   
+  
+  const rentonAttractions: LocalAttraction[] = [
+    {
+      name: "Gene Coulon Memorial Beach Park",
+      description: "A beloved 57-acre park offering swimming, a boat launch, and scenic walking trails along the shores of Lake Washington.",
+      url: "https://www.rentonwa.gov/city_hall/community_services/parks_and_trails/gene_coulon_memorial_beach_park"
+    },
+    {
+      name: "The Landing",
+      description: "A vibrant outdoor shopping and dining destination featuring a wide variety of restaurants, retail stores, and a movie theater.",
+      url: "https://www.shopthelandinginrenton.com/"
+    },
+    {
+      name: "Cedar River Trail",
+      description: "A picturesque paved trail following the Cedar River, perfect for cycling, jogging, and connecting with regional trail networks.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/cedar-river-trail"
+    },
+    {
+      name: "Renton History Museum",
+      description: "Housed in an Art Deco firehouse, this museum preserves and shares the rich industrial and cultural history of the Renton community.",
+      url: "https://www.rentonwa.gov/city_hall/community_services/renton_history_museum"
+    },
+    {
+      name: "Philip Arnold Park",
+      description: "A popular hilltop park providing excellent sports facilities, playgrounds, and sweeping views of the Cedar River Valley.",
+      url: "https://www.rentonwa.gov/city_hall/community_services/parks_and_trails/philip_arnold_park"
+    }
+  ];
+
+  const rentonLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Renton's strategic location at the southern tip of Lake Washington makes it a highly desirable community that bridges the gap between Seattle and the Eastside. Families are drawn to the <a href="https://www.rentonschools.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Renton School District</a>, which serves the city with diverse educational programs. The community's heartbeat can be felt at places like the <a href="https://www.rentonwa.gov/city_hall/community_services/recreation_neighborhoods" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Renton Community Center</a>, offering robust fitness and recreation programs for all ages.
+      </p>
+      <p>
+        Outdoor and cultural life in Renton is rich and varied. Residents spend weekends exploring the expansive <a href="https://www.rentonwa.gov/city_hall/community_services/parks_and_trails" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks system</a>, from lakeside picnics to forested hikes. The city boasts a thriving dining scene in <a href="https://rentondowntown.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Downtown Renton</a>, featuring diverse international cuisine reflecting the area's multicultural population. Additionally, convenient access to the <a href="https://kcls.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">King County Library System</a> and numerous community events ensures residents always have engaging activities right in their backyard.
+      </p>
+    </div>
+  );
+
   return (
     <>
       <Seo
@@ -266,6 +276,21 @@ const Renton = () => {
         {
           name: "Downtown Renton",
           description: "Urban core with mixed housing types needing compact installations and solutions for smaller city lots"
+        },
+        {
+          name: "Maple Ridge Estates",
+          description: "East Plateau residential community with hillside grades and forested surroundings requiring terrain-adapted fencing. Click to learn more →",
+          link: "/service-areas/renton/maple-ridge-estates"
+        },
+        {
+          name: "Maple Valley Heights",
+          description: "Elevated hillside properties on the Renton-Maple Valley border with significant slopes and panoramic views. Click to learn more →",
+          link: "/service-areas/renton/maple-valley-heights"
+        },
+        {
+          name: "The Grove at Spring Lake",
+          description: "Newer planned community near Spring Lake with HOA guidelines and family-friendly fencing needs. Click to learn more →",
+          link: "/service-areas/renton/the-grove-at-spring-lake"
         }
       ]}
       landmarks={[
@@ -300,6 +325,11 @@ const Renton = () => {
         { label: "2x6 Rot Board", link: "/fence-upgrades/rot-board" }
       ]}
     />
+      <AboutTheArea 
+        cityName="Renton"
+        attractions={rentonAttractions}
+        localLivingContent={rentonLivingContent}
+      />
     </>
   );
 };

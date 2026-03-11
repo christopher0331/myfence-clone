@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -12,7 +13,7 @@ const FederalWayArticle = () => (
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -37,10 +38,10 @@ const FederalWayArticle = () => (
       </p>
     </section>
 
-    {/* Federal Way Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         At MyFence.com, Federal Way fence installation means showing up fully equipped with marine-grade materials and professional tools. Our 98%+ on-time completion rate isn't accidental—we maintain extensive stock of coastal-weather resistant materials, eliminating delays. From Dash Point waterfront estates to Steel Lake residential properties, our crews work efficiently while focusing on installation precision. Every project concludes with a detailed walkthrough to guarantee your complete satisfaction.
@@ -50,68 +51,17 @@ const FederalWayArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Federal Way Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Family-Owned Commitment</h3>
-              <p className="text-muted-foreground">
-                Three decades of father-son expertise delivering craftsmanship and accountability that corporate fence companies simply can't match.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and panel manufacturing system delivering precision accuracy with 30-50% faster installation timelines.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Superior Warranty Protection</h3>
-              <p className="text-muted-foreground">
-                {WARRANTY_CONSTANTS.YEARS}-year installation warranty - dramatically exceeding industry norms.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Coastal Climate Expertise</h3>
-              <p className="text-muted-foreground">
-                Specialized knowledge of Federal Way's marine air exposure and high rainfall, with materials and techniques engineered for coastal durability.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Federal Way Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com installs Federal Way cedar fences using premium Western Red Cedar, nature's most naturally rot-resistant wood species. The natural oils in cedar provide inherent protection against moisture damage and insect infestation—critical for Federal Way's coastal climate. For waterfront properties near Dash Point and Twin Lakes, we offer clear-grade cedar (knot-free) delivering superior aesthetics and 15+ year longevity with proper maintenance. Our cedar fence construction uses heavy-duty lumber exceeding standard specifications, ensuring structural stability during Pacific Northwest windstorms.
         </p>
@@ -122,7 +72,7 @@ const FederalWayArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Federal Way</h3>
+        <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com concentrates on three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. This focused expertise enables superior installation quality and industry-leading warranty coverage. While other contractors spread across numerous fence types, our specialized approach guarantees every Federal Way fence meets our rigorous coastal-weather standards.
         </p>
@@ -144,7 +94,7 @@ const FederalWayArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Federal Way Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
           For Federal Way properties seeking optimal low-maintenance and cost balance, our hybrid aluminum fence system merges the best attributes of multiple materials. Rather than all-wood construction, we integrate black aluminum panels with cedar framing and pressure-treated posts. This innovative design creates a sleek, contemporary appearance while dramatically reducing maintenance versus traditional wood fencing.
         </p>
@@ -157,7 +107,7 @@ const FederalWayArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Financing Options
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -251,7 +201,7 @@ const FederalWayArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Federal Way's coastal location, climate patterns, and municipal requirements demand specialized knowledge general contractors frequently lack. Here's how we address the specific challenges your Federal Way property presents:
@@ -297,7 +247,7 @@ const FederalWayArticle = () => (
     {/* Permits & Regulations */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Permits & Regulations
+        Permits and Local Regulations
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Most residential fences under 6 feet don't require permits in Federal Way, but regulations vary by location and property type. Waterfront properties near Dash Point may have additional restrictions. We handle permit research and applications when needed, ensuring your installation meets all city codes and HOA requirements. Visit the <a href="https://www.cityoffederalway.com/departments/community-development/building" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Federal Way Community Development Department</a> for official permit information.
@@ -310,7 +260,7 @@ const FederalWayArticle = () => (
     {/* FAQ Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Federal Way Fence Installation FAQs
+        Expert Installation in Your Area FAQs
       </h2>
       <div className="space-y-6">
         <div>
@@ -407,6 +357,46 @@ const federalWayBusinessLd = {
 };
 
 const FederalWay = () => {
+  
+  const federalwayAttractions: LocalAttraction[] = [
+    {
+      name: "Wild Waves Theme & Water Park",
+      description: "Washington's largest amusement park featuring thrilling roller coasters and a massive summer water park.",
+      url: "https://www.wildwaves.com/"
+    },
+    {
+      name: "Dash Point State Park",
+      description: "A 398-acre marine park offering unimpeded Puget Sound views, excellent beachcombing, and extensive forested hiking trails.",
+      url: "https://parks.wa.gov/find-parks/state-parks/dash-point-state-park"
+    },
+    {
+      name: "Rhododendron Species Botanical Garden",
+      description: "Home to one of the largest collections of species rhododendrons in the world, spread across 22 beautiful acres.",
+      url: "https://rhodygarden.org/"
+    },
+    {
+      name: "The Commons at Federal Way",
+      description: "A major retail and entertainment destination serving as a central hub for shopping, dining, and community events.",
+      url: "https://tcafw.com/"
+    },
+    {
+      name: "Celebration Park",
+      description: "A premier sports and recreation complex offering multi-use turf fields, batting cages, and scenic walking paths.",
+      url: "https://www.cityoffederalway.com/facilities/celebration-park"
+    }
+  ];
+
+  const federalwayLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Federal Way is a vibrant, diverse city ideally situated between Seattle and Tacoma, offering residents a dynamic coastal lifestyle with robust urban amenities. The community places a high value on education, with the <a href="https://www.fwps.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Federal Way Public Schools</a> district celebrating one of the most diverse student populations in the state. Local life is active and engaged, supported by excellent facilities like the <a href="https://www.cityoffederalway.com/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Federal Way Community Center</a>, which provides comprehensive fitness and recreation programs for families and individuals.
+      </p>
+      <p>
+        The city's geography offers an incredible blend of commercial convenience and natural beauty. Residents can easily access major retail hubs like <a href="https://tcafw.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">The Commons</a>, while still being just minutes away from the serene shoreline of <a href="https://parks.wa.gov/find-parks/state-parks/dash-point-state-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Dash Point State Park</a> on the Puget Sound. The city also boasts unique cultural and botanical treasures, such as the <a href="https://rhodygarden.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Rhododendron Species Botanical Garden</a>. With its expanding transit options, including the upcoming light rail extension, Federal Way continues to grow as a highly accessible, culturally rich, and recreationally abundant place to call home.
+      </p>
+    </div>
+  );
+
   return (
     <>
       <Seo
@@ -458,22 +448,17 @@ const FederalWay = () => {
         "Dumas Bay Centre"
       ]}
       climateDescription="Federal Way experiences the Pacific Northwest's signature mild, wet winters and dry summers. The proximity to Puget Sound moderates temperatures but brings increased moisture, which significantly impacts fence longevity and maintenance requirements."
-      localChallenges={[
-        "High annual rainfall (38+ inches) accelerating wood rot",
-        "Marine air causing faster weathering of untreated materials",
-        "Wind exposure near Dash Point requiring stronger installations",
-        "Clay-heavy soil in many neighborhoods affecting post stability"
-      ]}
-      localSolutions={[
-        "Premium pressure-treated posts for moisture resistance",
-        "Concrete post anchoring in high-wind coastal areas",
-        "Regular maintenance schedules adapted to wet climate",
-        "Specialized staining with UV and moisture protection"
-      ]}
+      
+      
       articleContent={<FederalWayArticle />}
       faqStructuredData={federalWayFaqLd}
       enhancedBusinessData={federalWayBusinessLd}
     />
+      <AboutTheArea 
+        cityName="Federal Way"
+        attractions={federalwayAttractions}
+        localLivingContent={federalwayLivingContent}
+      />
     </>
   );
 };

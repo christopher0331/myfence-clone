@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ const BlackDiamondArticle = () => (
   <article className="space-y-8">
     <header>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Building a Fence in Black Diamond: A Complete Guide to Ten Trails and Historic Properties
+        Building a Fence: A Complete Guide to Ten Trails and Historic Properties
       </h2>
     </header>
 
@@ -22,7 +23,7 @@ const BlackDiamondArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">Permits and Regulations in Black Diamond</h3>
+      <h3 className="text-2xl font-semibold">Permits and Local Regulations</h3>
       <p className="text-muted-foreground leading-relaxed">
         The City of Black Diamond has specific requirements for residential fencing. In most residential zones, fences up to 6 feet in height are permitted in side and rear yards without a building permit. However, front yard fences are typically limited to 42 inches (3.5 feet) to maintain visibility and neighborhood character.
       </p>
@@ -32,7 +33,7 @@ const BlackDiamondArticle = () => (
     </section>
 
     <section className="space-y-4">
-      <h3 className="text-2xl font-semibold">What MyFence.com Installs in Black Diamond</h3>
+      <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
       <p className="text-muted-foreground leading-relaxed">
         We specialize in fencing systems designed for the Pacific Northwest climate: <strong>Western Red Cedar</strong>, <strong>Hogwire</strong>, and our <strong>Hybrid Aluminum/Cedar system</strong>.
       </p>
@@ -109,8 +110,49 @@ const BlackDiamond = () => {
     ]
   };
 
+  
+  const blackdiamondAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Sawyer Regional Park",
+      description: "A beautiful, natural park offering dense forest trails, wildlife viewing, and peaceful access to King County's fourth-largest natural lake.",
+      url: "https://www.blackdiamondwa.gov/departments/parks-recreation/lake-sawyer-regional-park"
+    },
+    {
+      name: "Black Diamond Museum",
+      description: "Operated by the historical society, this museum preserves the rich coal mining heritage and early pioneer history of the community.",
+      url: "https://blackdiamondmuseum.org/"
+    },
+    {
+      name: "Green River Gorge",
+      description: "A spectacular natural wonder featuring steep sandstone cliffs, old-growth forests, and thrilling whitewater rapids just outside of town.",
+      url: "https://parks.wa.gov/find-parks/state-parks/green-river-gorge-state-park-area"
+    },
+    {
+      name: "Black Diamond Bakery",
+      description: "A legendary local institution that has been baking fresh bread in its historic brick wood-fired oven since 1902.",
+      url: "https://www.blackdiamondbakery.com/"
+    },
+    {
+      name: "Ten Trails Civic Park",
+      description: "The modern heart of the new Ten Trails community, featuring open green spaces, community fire pits, and seasonal outdoor events.",
+      url: "https://tentrails.com/parks/"
+    }
+  ];
+
+  const blackdiamondLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Black Diamond perfectly blends its rich historic roots with exciting new growth, offering a unique lifestyle at the foothills of the Cascade Mountains. The community is served by the <a href="https://www.enumclaw.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Enumclaw School District</a>, known for its dedication to student success. The city's landscape has been revitalized by the <a href="https://tentrails.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Ten Trails master-planned community</a>, which brought a surge of new amenities, parks, and high-speed internet to the area while maintaining a strong commitment to outdoor living and modern conveniences.
+      </p>
+      <p>
+        Outdoor adventure is woven into the fabric of life in Black Diamond. Residents enjoy exceptional access to <a href="https://www.wta.org/go-hiking/hikes/green-river-gorge" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local hiking and biking trails</a> that connect the historic downtown to the surrounding wilderness. The community's heritage is celebrated annually during the <a href="https://www.blackdiamondwa.gov/community/page/miners-day" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Black Diamond Miners Day</a> festival. For everyday recreation, locals take to the water at <a href="https://www.blackdiamondwa.gov/departments/parks-recreation/lake-sawyer-regional-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Sawyer</a> for boating and fishing, or gather at local eateries that serve as community hubs, making Black Diamond a vibrant and tightly-knit place to call home.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Black Diamond" 
       state="WA"
       heroTitle="Expert Fence Installation for Black Diamond's Historic & Modern Properties"
@@ -138,6 +180,11 @@ const BlackDiamond = () => {
         {
           name: "Ridge at Black Diamond",
           description: "Elevated properties with significant wind exposure requiring reinforced post systems and durable construction"
+        },
+        {
+          name: "Lawson Hill Estates",
+          description: "Newer residential development with larger lots and Cascade views requiring foothills-grade fencing and HOA-compliant designs. Click to learn more →",
+          link: "/service-areas/black-diamond/lawson-hill-estates"
         }
       ]}
       landmarks={[
@@ -149,21 +196,17 @@ const BlackDiamond = () => {
         "Green River Gorge"
       ]}
       climateDescription="Black Diamond experiences the classic foothills climate with higher rainfall and more frequent wind than the valley floor. The proximity to the Cascades means your fence needs to be built for moisture and durability."
-      localChallenges={[
-        "Strict HOA requirements in newer developments like Ten Trails",
-        "Rocky soil conditions requiring specialized digging equipment",
-        "Wind exposure on elevated properties and ridges",
-        "High moisture levels near Lake Sawyer and forested areas"
-      ]}
-      localSolutions={[
-        "HOA-compliant designs and material specifications",
-        "Heavy-duty power augering for rocky terrain",
-        "Reinforced 4.125\" posts for superior wind resistance",
-        "Hybrid aluminum and cedar systems for maximum longevity"
-      ]}
+      
+      
       articleContent={<BlackDiamondArticle />}
       faqStructuredData={faqStructuredData}
     />
+      <AboutTheArea 
+        cityName="Black Diamond"
+        attractions={blackdiamondAttractions}
+        localLivingContent={blackdiamondLivingContent}
+      />
+    </>
   );
 };
 

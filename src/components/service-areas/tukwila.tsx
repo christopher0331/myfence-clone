@@ -1,25 +1,12 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import AboutCityModal from "@/components/AboutCityModal";
-
-const ABOUT_TUKWILA_CONTENT = `Tukwila, Washington occupies a strategic position at the confluence of the Green and Duwamish Rivers, a city of approximately 21,000 residents that punches far above its weight economically. Located 12 miles south of Seattle, Tukwila encompasses just 9.6 square miles but generates more retail sales than any other city in Washington State, thanks to Westfield Southcenter—the largest shopping mall in the Pacific Northwest.
-
-The Duwamish people inhabited this river valley for thousands of years before European American settlers arrived in the 1850s. The name "Tukwila" derives from the Duwamish word for hazelnut, reflecting the native vegetation that once dominated the landscape. Early settlers established farms along the fertile river bottomlands, but the city's destiny changed dramatically with the arrival of the railroad and later, Interstate 5 and Interstate 405, which intersect within city limits.
-
-The city's geography is defined by its river valleys and the transportation corridors that follow them. The Green River curves through the southern portion, while the Duwamish River (which the Green becomes) flows north toward Elliott Bay. This low-lying terrain historically flooded regularly until the Howard Hanson Dam brought control in 1962. Today, the valley floor hosts warehouses, retail centers, and light industrial facilities, while residential neighborhoods climb the surrounding hillsides.
-
-Tukwila's climate mirrors the greater Puget Sound region with annual rainfall around 37 inches concentrated between October and May. The river valley location creates slightly higher humidity than surrounding hillside areas, and fog can settle in the lowlands during fall and winter mornings. Summers bring reliably pleasant conditions with temperatures reaching the mid-70s. The relatively flat commercial areas contrast with hillside neighborhoods that can experience different microclimates.
-
-The economic landscape makes Tukwila unique in the region. Westfield Southcenter anchors a retail corridor that attracts shoppers from throughout the Pacific Northwest. The city's tax base means municipal services remain robust despite a modest residential population. Boeing maintains significant facilities nearby, and the commercial/industrial zones provide employment for far more people than actually live within city limits. This creates an interesting dynamic where the daytime population vastly exceeds residents.
-
-Residential Tukwila spreads across several distinct areas. The Riverton Heights and Cascade View neighborhoods occupy hillsides with views toward Mount Rainier and the Cascades. McMicken Heights near the airport handles more jet noise but offers lower housing costs. Foster, near the light rail station, is experiencing redevelopment pressure. Thorndyke and Allentown provide more established suburban character. This variety means fence installations must account for everything from busy commercial-adjacent lots to quiet hillside properties.
-
-The city's diversity reflects its accessibility and affordability. Tukwila has become one of the most ethnically diverse cities in Washington, with large Somali, Vietnamese, and Hispanic communities reshaping the cultural landscape. Multiple languages fill the hallways of Tukwila schools, and restaurants along International Boulevard serve cuisine from around the world. This diversity extends to housing stock, from modest mid-century homes to newer apartment complexes near transit stations.`;
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 
 const TukwilaArticle = () => (
   <article className="space-y-12">
@@ -54,7 +41,7 @@ const TukwilaArticle = () => (
     {/* Tukwila Fence Installation */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        How We Approach Tukwila Installations
+        Our Local Installation Approach
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Tukwila's mix of commercial adjacency, highway proximity, and river valley terrain creates installation scenarios unlike anywhere else in the region. Properties backing onto busy corridors need sound-dampening height and density. Lots near the Green River require moisture-conscious construction. Hillside homes in Cascade View demand slope-specific engineering. We've installed fences throughout every Tukwila neighborhood and understand what each area demands.
@@ -64,63 +51,10 @@ const TukwilaArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com in Tukwila?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Commercial-Adjacent Expertise</h3>
-              <p className="text-muted-foreground">
-                Many Tukwila homes border busy commercial areas. We design fences that provide privacy, noise reduction, and security without sacrificing aesthetics.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Efficient Installation</h3>
-              <p className="text-muted-foreground">
-                Fence Genius technology reduces installation time by up to 50%, minimizing disruption in Tukwila's compact neighborhoods.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{WARRANTY_CONSTANTS.YEARS}-Year Warranty</h3>
-              <p className="text-muted-foreground">
-                Industry-leading {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty protects your investment through Tukwila's varied conditions.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">River Valley Knowledge</h3>
-              <p className="text-muted-foreground">
-                Deep understanding of moisture challenges near the Green and Duwamish Rivers, with materials and techniques that prevent premature rot.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Tukwila Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
@@ -171,7 +105,7 @@ const TukwilaArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Affordable Financing for Tukwila Homeowners
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -217,7 +151,7 @@ const TukwilaArticle = () => (
     {/* Warranty Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Our Commitment to Tukwila Homeowners
+        Our Commitment to the Local Community
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Our {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty means if something we installed fails, we come back and fix it. Posts leaning? Gates binding? Hardware pulling loose? Call us and we'll handle it—no arguing about causes or conditions.
@@ -261,7 +195,7 @@ const TukwilaArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Tukwila-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Tukwila's unique position between major highways, rivers, and commercial centers creates installation challenges that general contractors often misunderstand. Here's how we address Tukwila's specific conditions:
@@ -343,7 +277,6 @@ const TukwilaArticle = () => (
       </p>
     </section>
 
-    <AboutCityModal cityName="Tukwila" content={ABOUT_TUKWILA_CONTENT} />
   </article>
 );
 
@@ -427,8 +360,48 @@ const Tukwila = () => {
     }
   };
 
+  const tukwilaAttractions: LocalAttraction[] = [
+    {
+      name: "Bullwinkle's Family Fun Center",
+      description: "A major entertainment destination offering go-karts, miniature golf, bumper boats, and an extensive arcade for family-friendly fun.",
+      url: "https://bullwinkles.com/tukwila/"
+    },
+    {
+      name: "Westfield Southcenter",
+      description: "The largest shopping mall in the Pacific Northwest, featuring hundreds of retail stores, dining options, and entertainment venues.",
+      url: "https://www.westfield.com/southcenter"
+    },
+    {
+      name: "The Museum of Flight",
+      description: "Located nearby, this world-class aviation museum showcases historic aircraft, interactive exhibits, and space exploration artifacts.",
+      url: "https://www.museumofflight.org/"
+    },
+    {
+      name: "Tukwila Community Center",
+      description: "A modern recreational hub situated along the Duwamish River, offering fitness programs, a spray park, and sports fields.",
+      url: "https://www.tukwilawa.gov/departments/parks-and-recreation/parks-and-trails/tukwila-community-center/"
+    },
+    {
+      name: "Crystal Springs Park",
+      description: "An 11-acre wooded park boasting peaceful walking trails, tennis courts, and historic natural springs used by early pioneers.",
+      url: "https://www.tukwilawa.gov/departments/parks-and-recreation/parks-and-trails/crystal-springs-park/"
+    }
+  ];
+
+  const tukwilaLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Located just south of Seattle, Tukwila is a vibrant city known for its unparalleled retail and entertainment options. It is home to <a href="https://www.westfield.com/southcenter" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Westfield Southcenter</a>, the largest shopping mall in the Pacific Northwest, drawing visitors from across the region. The city offers excellent connectivity via the <a href="https://www.soundtransit.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sound Transit</a> network, making commuting and exploring a breeze. Families appreciate the active programs available at the <a href="https://www.tukwilawa.gov/departments/parks-and-recreation/parks-and-trails/tukwila-community-center/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tukwila Community Center</a>, as well as the educational resources provided by the <a href="https://www.tukwilaschools.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tukwila School District</a>.
+      </p>
+      <p>
+        Beyond its commercial hubs, Tukwila boasts plenty of natural beauty and outdoor recreation. The scenic <a href="https://www.kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/green-river-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Green River Trail</a> winds through the city, offering miles of paved pathways for cycling and walking. Residents can relax under the trees at <a href="https://www.tukwilawa.gov/departments/parks-and-recreation/parks-and-trails/crystal-springs-park/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Crystal Springs Park</a>, or enjoy sports and picnics at <a href="https://www.tukwilawa.gov/departments/parks-and-recreation/parks-and-trails/fort-dent-park/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Fort Dent Park</a>, the largest park in the city. The dynamic blend of expansive commercial centers, diverse dining along International Boulevard, and beautiful riverfront parks makes Tukwila a unique and thriving place to call home.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Tukwila" 
       state="WA"
       heroTitle="Professional Fence Installation Where Commerce Meets Community"
@@ -471,20 +444,6 @@ const Tukwila = () => {
         "Tukwila Light Rail Station"
       ]}
       climateDescription="Tukwila's river valley position creates higher humidity than surrounding areas, especially near the Green and Duwamish Rivers. Low-lying neighborhoods experience morning fog and persistent moisture during fall and winter. Hillside properties face different drainage patterns."
-      localChallenges={[
-        "River valley humidity accelerating wood decay",
-        "Commercial adjacency requiring privacy and noise solutions",
-        "Varied terrain from valley floor to hillside",
-        "Airport noise in certain neighborhoods",
-        "Compact lots with limited access in older areas"
-      ]}
-      localSolutions={[
-        "Premium moisture protection for river-adjacent properties",
-        "Sound-dampening solid fence designs for commercial borders",
-        "Slope-engineered installations for hillside homes",
-        "Efficient pre-fabrication for limited-access lots",
-        "Low-maintenance hybrid systems for busy households"
-      ]}
       articleContent={<TukwilaArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
@@ -495,6 +454,12 @@ const Tukwila = () => {
         { label: "Rot Board", link: "/fence-upgrades/rot-board" }
       ]}
     />
+      <AboutTheArea 
+        cityName="Tukwila"
+        attractions={tukwilaAttractions}
+        localLivingContent={tukwilaLivingContent}
+      />
+    </>
   );
 };
 

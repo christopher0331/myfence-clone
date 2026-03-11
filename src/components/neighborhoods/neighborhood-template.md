@@ -15,7 +15,7 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 
 ---
 
-## Page Sections (14 total)
+## Page Sections (15 total)
 
 ### 1. Hero Section
 - Back link to parent city (`← Back to {City}`)
@@ -33,7 +33,7 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 - Keeps trust signals visible before user scrolls
 
 ### 3. Introduction
-- H2: neighborhood-specific heading (e.g., "Fencing for Somerset's Hillside Properties")
+- H2: neighborhood-specific heading (e.g., "Fencing for Somerset's Hillside Properties") — vary headings, don't always start with neighborhood name
 - 2 paragraphs:
   - First (text-lg): What makes this neighborhood unique and why fencing is different here
   - Second: MyFence.com's specific experience in this neighborhood + Fence Genius mention
@@ -46,6 +46,7 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
   - H3 title
   - Description paragraph
 - Common cards: HOA Compliance, Warranty, one neighborhood-specific challenge, one neighborhood-specific benefit
+- **NOTE:** If the parent city template already renders a "Why Choose Us" section, do NOT duplicate it here with identical content. Neighborhood pages are standalone, so their own version is fine — but make the content unique to the neighborhood.
 
 ### 5. Local Reviews / Testimonials ⭐ HIGH PRIORITY
 - H2: "What {Neighborhood} Homeowners Say"
@@ -121,14 +122,59 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
   4. {Neighborhood} Installation (mention neighborhood-specific equipment/techniques)
   5. Walkthrough & {WARRANTY_YEARS}-Year Warranty
 
-### 13. Adjacent Neighborhoods / Internal Links
+### 13. About the Area (Discover {Neighborhood}) ⭐ REQUIRED
+- Uses the `AboutTheArea` component (`@/components/AboutTheArea`)
+- **Two-column layout** with content about the neighborhood and surrounding area
+- **Render OUTSIDE the main article/page sections** so it gets full container width — not nested inside a `max-w-*` wrapper.
+- **Column 1 — Attractions:** 3-5 local attractions near the neighborhood with real external links
+  - Parks, trails, restaurants, schools, community centers, shopping within/near the neighborhood
+  - Each attraction: `name` (linked), `url` (real working link), `description` (1-2 sentences, **100% original — NEVER copied from competitor sites**)
+- **Column 2 — Local Living:** Paragraphs with inline external links about:
+  - Schools serving the neighborhood, nearby amenities, community organizations, dining
+  - Neighborhood character, walkability, proximity to highways/transit
+  - **Every `<a>` tag MUST include** `className="font-semibold text-primary underline decoration-2 underline-offset-4"` — do NOT rely on Tailwind arbitrary child selectors like `[&_a]`, they don't work with JIT
+  - Aim for 6-8 external links across 2 paragraphs — links to similar but not identical places as competitors (different restaurants, different trails, etc.)
+- **Images:** Optional. Only use images you own (ImageKit). Do NOT hotlink from other websites or Wikimedia.
+
+```tsx
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
+
+const NEIGHBORHOOD_ATTRACTIONS: LocalAttraction[] = [
+  {
+    name: "Phantom Lake Park",
+    url: "https://parks.bellevuewa.gov/parks-open-spaces/parks/phantom-lake",
+    description: "Original description with neighborhood-specific details.",
+  },
+  // ... 2-4 more
+];
+
+// Render at the page level, not nested inside a max-w container
+<AboutTheArea
+  cityName="Bellevue"
+  neighborhoodName="Sherwood Forest"
+  attractions={NEIGHBORHOOD_ATTRACTIONS}
+  localLivingContent={
+    <>
+      <p>
+        Sherwood Forest families are served by the{" "}
+        <a href="https://bsd405.org/" target="_blank" rel="noopener noreferrer"
+           className="font-semibold text-primary underline decoration-2 underline-offset-4">
+          Bellevue School District
+        </a>, with Phantom Lake Elementary just a short walk away...
+      </p>
+    </>
+  }
+/>
+```
+
+### 14. Adjacent Neighborhoods / Internal Links
 - H2: "Also Serving Nearby {City} Neighborhoods"
 - List 3-5 adjacent neighborhoods with brief descriptions
 - Link to their pages if they exist, otherwise link to parent city page
 - Creates hub-and-spoke internal linking structure for topical authority
 - Example: "We also serve nearby Factoria, Newport Hills, and Eastgate"
 
-### 14. CTA Section
+### 15. CTA Section
 - H2: "Ready to Enhance Your {Neighborhood} Property?"
 - Description paragraph with response time: "Same-day estimates available in {Neighborhood}"
 - "Get Free Quote" button → `/quote`
@@ -188,7 +234,8 @@ import {Name}Page from "@/components/neighborhoods/{Name}Page";
 
 export const metadata: Metadata = {
   title: "{Neighborhood} {City} Fence Installation | {Specialty} | MyFence.com",
-  description: "...",
+  // ⚠ Capitalize city and neighborhood names! "Bellevue" not "bellevue"
+  description: "Professional fence installation in {Neighborhood}, {City}, WA. ...",
   alternates: {
     canonical: "https://myfence.com/service-areas/{city}/{neighborhood}",
   },
@@ -226,9 +273,22 @@ In the parent city's component (e.g., `bellevue.tsx`), update the neighborhood e
 | `GoogleBusinessMap` | `@/components/GoogleBusinessMap` | Map embed |
 | `WARRANTY_CONSTANTS` | `@/constants/warranty` | Warranty years |
 | `buildNeighborhoodStructuredData` | `@/components/neighborhoods/structuredData` | JSON-LD |
+| `AboutTheArea` | `@/components/AboutTheArea` | Discover {Neighborhood} section with attractions + local living |
+| `ServiceAreaPhotoGallery` | `@/components/service-areas/ServiceAreaPhotoGallery` | Geo-tagged project photo carousel (auto-filtered) |
+| `FeaturedProject` | `@/components/service-areas/FeaturedProject` | Featured project spotlight with photo + description |
 | `AspectRatio` | `@/components/ui/aspect-ratio` | Video embed ratio |
 | Lucide icons | `lucide-react` | Section icons |
 | `Link` | `next/link` | Internal navigation |
+
+### ServiceAreaPhotoGallery Notes
+- **3 or fewer photos**: centered grid, no carousel
+- **4+ photos**: scrolling marquee carousel with speed controls
+- Uses ImageKit CDN; photos auto-filtered by neighborhood
+
+### FeaturedProject Notes
+- Use **generic fence style language** ("Cedar Privacy Fence") — no unverified construction claims
+- Each description MUST be unique per neighborhood (avoid doorway page penalties)
+- Includes `ImageObject` structured data
 
 ---
 
@@ -252,10 +312,14 @@ These rules are based on 2025/2026 local SEO best practices for contractor neigh
 - Mention **specific streets, landmarks, HOA names, and local details** to prove local knowledge
 - Include **real project photos** from the neighborhood (or nearest available)
 - Use the **neighborhood name in H2/H3 subheadings** naturally (not keyword-stuffed)
+- **Vary H2/H3 headings** — NOT every heading should start with the neighborhood name. Mix in variations. Over-optimized headings trigger Google penalties.
 - Add **local testimonials** with customer first name + neighborhood
 - Provide **visible pricing ranges** — converts 23% better
 - Link to **adjacent neighborhood pages** for hub-and-spoke internal linking
 - Include **3+ FAQs** in both visible content and structured data
+- **Capitalize neighborhood and city names** properly in title and meta description
+- Include **"| MyFence.com"** in the page title
+- Use **generic fence style language** ("cedar privacy fence") unless you have verified project-specific construction details
 
 ### DON'T:
 - Don't use stock photos — real local work photos only
@@ -265,3 +329,7 @@ These rules are based on 2025/2026 local SEO best practices for contractor neigh
 - Don't skip structured data — it's non-negotiable for local SEO
 - Don't forget mobile optimization — 78% of local searches are mobile
 - Don't launch more than 3-5 neighborhood pages at once without unique content for each
+- **DO NOT** copy content from competitor websites — all descriptions must be 100% original (see `.cursor/rules/no-copied-content.mdc`)
+- **DO NOT** hotlink images from external websites or Wikimedia — only use images hosted on ImageKit that you own
+- **DO NOT** make unverified claims about fence construction methods (e.g., "board-on-board", "post-on-pipe") unless confirmed from actual project data
+- **DO NOT** use Tailwind arbitrary child selectors like `[&_a]` for link styling — they don't work reliably with JIT. Instead, add explicit `className` to every `<a>` tag

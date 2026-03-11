@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -12,7 +13,7 @@ const GigHarborArticle = () => (
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -37,10 +38,10 @@ const GigHarborArticle = () => (
       </p>
     </section>
 
-    {/* Gig Harbor Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com approaches Gig Harbor fence installation with maritime precision. We arrive fully equipped with salt-resistant materials and professional-grade tools. Our 98%+ on-time completion rate reflects our commitment to your schedule—we stock comprehensive inventories of marine-resistant materials to eliminate installation delays. From downtown's historic waterfront to Canterwood's luxury estates, our experienced crews work efficiently while maintaining meticulous attention to coastal installation details. Every project concludes with a thorough quality inspection to ensure your complete satisfaction.
@@ -50,68 +51,17 @@ const GigHarborArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Gig Harbor Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Father-Son Maritime Expertise</h3>
-              <p className="text-muted-foreground">
-                Over 30 years of combined coastal experience delivering craftsmanship and personal accountability that corporate fence companies cannot replicate.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and manufacturing system ensuring precision accuracy with 30-50% faster installation times.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Superior Warranty Protection</h3>
-              <p className="text-muted-foreground">
-                {WARRANTY_CONSTANTS.YEARS}-year installation warranty - far exceeding industry standards for coastal environments.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Maritime & HOA Expertise</h3>
-              <p className="text-muted-foreground">
-                Deep knowledge of Gig Harbor's saltwater challenges and strict HOA requirements, with architectural design packages for committee approvals.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Gig Harbor Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com installs Gig Harbor cedar fences using premium Western Red Cedar, nature's most naturally rot-resistant wood species. Cedar's natural oils provide inherent protection against moisture damage and insect infestation—essential for Gig Harbor's saltwater environment. For waterfront properties in Downtown and Harbor Hill, we offer clear-grade cedar (completely knot-free) delivering superior aesthetics and 15+ year longevity with proper maintenance. Our cedar construction uses heavy-duty lumber exceeding standard specifications, ensuring structural stability during Puget Sound coastal storms.
         </p>
@@ -122,7 +72,7 @@ const GigHarborArticle = () => (
 
       {/* Materials We Install */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">What We Install in Gig Harbor</h3>
+        <h3 className="text-2xl font-semibold">What We Install in This Area</h3>
         <p className="text-muted-foreground leading-relaxed">
           MyFence.com specializes in three premium fencing systems: Western Red Cedar fencing, Hogwire fencing, and our custom Hybrid Aluminum/Cedar system. Our focused expertise delivers superior installation quality and industry-leading warranties. While many contractors offer numerous fence types, our specialized maritime approach ensures every Gig Harbor fence meets our exacting saltwater-environment standards.
         </p>
@@ -144,7 +94,7 @@ const GigHarborArticle = () => (
 
       {/* Hybrid Aluminum System */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Gig Harbor Hybrid Aluminum Fence System</h3>
+        <h3 className="text-2xl font-semibold">Hybrid Aluminum Fence System</h3>
         <p className="text-muted-foreground leading-relaxed">
           For Gig Harbor properties seeking optimal low-maintenance and cost balance, our hybrid aluminum fence system combines the best of multiple materials. Instead of traditional all-wood construction, we integrate black aluminum panels with cedar framing and pressure-treated posts. This innovative design creates a sleek, modern appearance while dramatically reducing maintenance requirements compared to traditional wood fencing.
         </p>
@@ -157,7 +107,7 @@ const GigHarborArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Financing Options
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -251,7 +201,7 @@ const GigHarborArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Gig Harbor's maritime location, saltwater exposure, and community standards demand specialized knowledge general contractors often lack. Here's how we address the specific challenges your Gig Harbor property presents:
@@ -297,7 +247,7 @@ const GigHarborArticle = () => (
     {/* Permits & Regulations */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Permits & Regulations
+        Permits and Local Regulations
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Fence regulations in Gig Harbor vary by neighborhood and property type. Canterwood and many Harbor Hill properties require HOA architectural committee approval before installation. Waterfront properties may have additional restrictions. We handle all permit research and applications when needed, ensuring your installation meets city codes and community standards. Visit the <a href="https://www.gigharborwa.gov/35/Departments" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Gig Harbor Community Development Department</a> for official permit information.
@@ -310,7 +260,7 @@ const GigHarborArticle = () => (
     {/* FAQ Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Gig Harbor Fence Installation FAQs
+        Expert Installation in Your Area FAQs
       </h2>
       <div className="space-y-6">
         <div>
@@ -406,6 +356,46 @@ const gigHarborBusinessLd = {
 };
 
 const GigHarbor = () => {
+  
+  const gigharborAttractions: LocalAttraction[] = [
+    {
+      name: "Gig Harbor Waterfront",
+      description: "The historic heart of the city offering boutique shopping, excellent dining, and scenic views of the active fishing fleet.",
+      url: "https://gigharborwaterfront.org/"
+    },
+    {
+      name: "Cushman Trail",
+      description: "A popular, 6.2-mile paved trail perfect for cycling, walking, and running that runs through beautiful wooded areas.",
+      url: "https://www.gigharborwa.gov/Facilities/Facility/Details/Cushman-Trail-16"
+    },
+    {
+      name: "Skansie Brothers Park",
+      description: "A waterfront park right in downtown where the community gathers for summer concerts, festivals, and farmers markets.",
+      url: "https://www.gigharborwa.gov/Facilities/Facility/Details/Skansie-Brothers-Park-and-Netshed-25"
+    },
+    {
+      name: "Kopachuck State Park",
+      description: "A gorgeous 109-acre marine park on Henderson Bay featuring shaded trails and sandy beaches with stunning sunset views.",
+      url: "https://parks.wa.gov/find-parks/state-parks/kopachuck-state-park"
+    },
+    {
+      name: "Harbor History Museum",
+      description: "Discover the region's rich maritime, logging, and pioneering history through interactive exhibits and a restored one-room schoolhouse.",
+      url: "https://harborhistorymuseum.org/"
+    }
+  ];
+
+  const gigharborLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Often referred to as the "Maritime City," Gig Harbor offers a uniquely picturesque lifestyle defined by its beautiful waterfront and strong sense of community. The city is highly sought after by families drawn to the <a href="https://www.psd401.net/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Peninsula School District</a>, renowned for its strong academic performance. The community maintains its historic charm through careful preservation of the downtown core, where locals frequent <a href="https://gigharborwaterfront.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">locally-owned shops and renowned restaurants</a>. 
+      </p>
+      <p>
+        Gig Harbor's location across the Tacoma Narrows Bridge provides a feeling of retreat while remaining accessible to major urban centers. The lifestyle here is deeply intertwined with the outdoors; residents enjoy easy access to boating, kayaking, and paddleboarding right from the harbor. The <a href="https://www.penmetparks.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">PenMet Parks system</a> provides exceptional recreational facilities, including the expansive Sehmel Homestead Park. Between the summer <a href="https://gigharborwaterfront.org/gig-harbor-farmers-market/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">farmers markets</a> and vibrant maritime festivals, Gig Harbor fosters an active, engaging, and highly desirable Pacific Northwest living experience.
+      </p>
+    </div>
+  );
+
   return (
     <>
       <Seo
@@ -462,24 +452,17 @@ const GigHarbor = () => {
         "Finholm Market District"
       ]}
       climateDescription="Gig Harbor's picturesque location on Puget Sound brings a marine climate with mild temperatures but persistent moisture. The saltwater environment, combined with the area's coastal winds, creates unique challenges for fence installations that require specialized materials and techniques."
-      localChallenges={[
-        "Saltwater air causing accelerated corrosion and weathering",
-        "Coastal winds requiring reinforced installations",
-        "Waterfront properties with strict aesthetic requirements",
-        "Marine moisture penetration affecting wood longevity",
-        "Upscale community standards demanding premium quality"
-      ]}
-      localSolutions={[
-        "Marine-grade stainless steel hardware throughout",
-        "Wind-rated installations for coastal exposure",
-        "Premium rot-resistant materials and advanced sealants",
-        "Custom designs complementing maritime architecture",
-        "Regular maintenance programs for saltwater environments"
-      ]}
+      
+      
       articleContent={<GigHarborArticle />}
       faqStructuredData={gigHarborFaqLd}
       enhancedBusinessData={gigHarborBusinessLd}
     />
+      <AboutTheArea 
+        cityName="Gig Harbor"
+        attractions={gigharborAttractions}
+        localLivingContent={gigharborLivingContent}
+      />
     </>
   );
 };

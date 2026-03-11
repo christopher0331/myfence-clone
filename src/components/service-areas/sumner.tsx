@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -74,7 +75,7 @@ const Sumner = () => {
     <div className="prose prose-lg max-w-none">
       {/* Company Introduction */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Historic Sumner Fence Installation Specialists</h2>
+        <h2 className="text-3xl font-bold mb-6">Your Local Fence Installation Experts</h2>
         <p className="text-lg mb-4">
           MyFence.com proudly serves Sumner with over three decades of fencing expertise tailored to this historic valley 
           community. From Main Street's preserved 1890s architecture to rural properties along the Puyallup River, we understand 
@@ -112,7 +113,7 @@ const Sumner = () => {
 
       {/* Installation Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Professional Fence Installation for Sumner Properties</h2>
+        <h2 className="text-3xl font-bold mb-6">Professional Fence Installation</h2>
         <p className="text-lg mb-4">
           Sumner's Puyallup River valley location creates unique installation requirements. Heavy clay soils with poor drainage, 
           high water tables near the river, and persistent morning fog demand specialized techniques that prevent the post 
@@ -142,32 +143,11 @@ const Sumner = () => {
         </ul>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Why Choose MyFence.com in Sumner</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">Clay Soil Specialists</h3>
-            <p>Expert knowledge of Sumner's challenging valley clay soils with proven techniques preventing frost heaving and post movement.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">Historic District Experience</h3>
-            <p>Period-appropriate fence designs that complement Sumner's preserved 1890s architecture while meeting modern durability standards.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">Valley Environment Expertise</h3>
-            <p>Specialized treatments and materials designed for Sumner's elevated humidity, morning fog retention, and seasonal moisture challenges.</p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-3">{WARRANTY_CONSTANTS.TITLE}</h3>
-            <p>Comprehensive warranty covering all workmanship, backed by three decades of fencing excellence and valley-specific installation expertise.</p>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Fence Types Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Fence Types & Materials for Sumner</h2>
+        <h2 className="text-3xl font-bold mb-6">Fence Types & Materials We Install</h2>
         
         <h3 className="text-2xl font-semibold mb-4">Premium Western Red Cedar</h3>
         <p className="text-lg mb-6">
@@ -177,7 +157,7 @@ const Sumner = () => {
           moisture-resistant treatments for extended lifespan in valley conditions.
         </p>
 
-        <h3 className="text-2xl font-semibold mb-4">What We Install in Sumner</h3>
+        <h3 className="text-2xl font-semibold mb-4">What We Install in This Area</h3>
         <ul className="space-y-2 mb-6">
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-1" />
@@ -244,7 +224,7 @@ const Sumner = () => {
 
       {/* Financing Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Flexible Fence Financing for Sumner</h2>
+        <h2 className="text-3xl font-bold mb-6">Flexible Fence Financing</h2>
         <p className="text-lg mb-4">
           Quality fencing is an investment in your Sumner property. We partner with Wisetack to offer flexible financing 
           options that make premium fence installation accessible for residential and agricultural properties. Get approved 
@@ -274,7 +254,7 @@ const Sumner = () => {
 
       {/* Local Challenges Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Sumner Valley Fencing Challenges</h2>
+        <h2 className="text-3xl font-bold mb-6">Valley Fencing Challenges</h2>
         <p className="text-lg mb-4">
           Sumner's Puyallup River valley location creates unique environmental conditions that significantly impact fence 
           installation and longevity. Understanding these valley-specific challenges is essential for proper fence design:
@@ -329,7 +309,7 @@ const Sumner = () => {
 
       {/* Permits Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Sumner Fence Permits & Regulations</h2>
+        <h2 className="text-3xl font-bold mb-6">Permits & Regulations</h2>
         <p className="text-lg mb-4">
           Sumner falls under Pierce County jurisdiction for building permits and regulations. Most residential fences require 
           permits, particularly those in the historic downtown district or exceeding standard height limits. Properties in the 
@@ -363,7 +343,7 @@ const Sumner = () => {
 
       {/* FAQ Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Sumner Fence Installation FAQs</h2>
+        <h2 className="text-3xl font-bold mb-6">Installation FAQs</h2>
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold mb-2">Do I need a permit for a fence in Sumner?</h3>
@@ -402,8 +382,49 @@ const Sumner = () => {
     </div>
   );
 
+  
+  const sumnerAttractions: LocalAttraction[] = [
+    {
+      name: "Historic Downtown Sumner",
+      description: "A charming, walkable main street filled with preserved 1890s architecture, boutique shops, and local cafes.",
+      url: "https://sumnerdowntown.com/"
+    },
+    {
+      name: "Sumner Link Trail",
+      description: "A beautiful paved pathway that connects the city to the regional Interurban Trail, perfect for cycling and walking.",
+      url: "https://sumnerwa.gov/departments/parks-and-recreation/sumner-link-trail/"
+    },
+    {
+      name: "Ryan House Museum",
+      description: "A beautifully restored 19th-century home that serves as the headquarters for the Sumner Historical Society.",
+      url: "https://sumnerhistoricalsociety.com/"
+    },
+    {
+      name: "Windmill Gardens",
+      description: "A renowned local destination featuring stunning display gardens, a premium nursery, and seasonal events.",
+      url: "https://windmillgardens.com/"
+    },
+    {
+      name: "Daffodil Festival",
+      description: "Sumner is deeply tied to this historic annual parade and festival that celebrates the region's rich agricultural heritage.",
+      url: "https://thedaffodilfestival.org/"
+    }
+  ];
+
+  const sumnerLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Known affectionately as the "Rhubarb Pie Capital of the World," Sumner retains a strong, small-town charm while offering easy access to larger metropolitan areas. The community is tight-knit, with families benefiting from the highly rated <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>. Community life centers around the historic downtown, where the <a href="https://sumnerdowntown.com/events/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Downtown Association</a> hosts vibrant events like the annual Street of Treats and classic car shows.
+      </p>
+      <p>
+        Outdoor recreation is heavily tied to the city's agricultural roots and its location along the Puyallup River. The <a href="https://sumnerwa.gov/departments/parks-and-recreation/sumner-link-trail/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Link Trail</a> offers miles of scenic pathways right at residents' doorsteps. During the summer, the community gathers at the <a href="https://www.sumnerwa.gov/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks</a> or enjoys fresh produce from the numerous surrounding valley farms. With its unique blend of historic preservation, active agricultural surroundings, and modern community amenities, Sumner provides a uniquely Pacific Northwest lifestyle that honors its past while looking to the future.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate 
+    <>
+      <ServiceAreaTemplate 
       city="Sumner" 
       state="WA"
       heroTitle="Historic Sumner Fence Installation with Small-Town Service"
@@ -446,25 +467,17 @@ const Sumner = () => {
         "Puyallup River Trail"
       ]}
       climateDescription="Sumner sits in the Puyallup River valley, creating unique conditions where cool air settles and morning fog persists longer than surrounding areas. The valley location traps moisture, with humidity often 10-15% higher than nearby hillside communities. Heavy clay soils dominate the area, presenting drainage challenges and requiring specialized post installation techniques to prevent frost heaving and post movement."
-      localChallenges={[
-        "Heavy clay valley soils with poor drainage requiring modified post setting techniques",
-        "High water tables near Puyallup River affecting post depth and foundation stability",
-        "Seasonal fog retention increasing wood moisture content and accelerating decay",
-        "Historic district requirements for architecturally-compatible fence designs downtown",
-        "Agricultural properties needing farm-grade gates and extended perimeter fencing",
-        "Valley wind patterns creating uplift pressure on solid fence panels"
-      ]}
-      localSolutions={[
-        "Deep concrete footings (36+ inches) with gravel drainage collars for clay soil stability",
-        "Elevated post bases in flood-prone areas using above-grade concrete piers",
-        "Premium pressure-treated posts rated for ground contact in high-moisture environments",
-        "Historic-style picket and board designs approved for downtown preservation district",
-        "Agricultural gate systems with heavy-duty hinges rated for frequent use and livestock pressure",
-        "Board-on-board and horizontal designs allowing airflow to reduce wind load while maintaining privacy"
-      ]}
+      
+      
       articleContent={articleContent}
       faqStructuredData={sumnerFaqLd}
     />
+      <AboutTheArea 
+        cityName="Sumner"
+        attractions={sumnerAttractions}
+        localLivingContent={sumnerLivingContent}
+      />
+    </>
   );
 };
 
