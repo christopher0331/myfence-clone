@@ -13,6 +13,7 @@ import FenceStylesPreview from "@/components/FenceStylesPreview";
 import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 export interface Neighborhood {
   name: string;
@@ -82,6 +83,137 @@ function sanitizeLocalBusinessNodes(value: any, isRoot = false): any {
   }
 
   return result;
+}
+
+const DISALLOWED_SERVICE_KEYWORDS = ["vinyl", "composite"];
+const SERVICE_RADIUS_METERS = "6437"; // 4 miles
+
+function toNumber(value: unknown): number | null {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string") {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+}
+
+function isLocalBusinessType(typeValue: unknown): boolean {
+  if (Array.isArray(typeValue)) return typeValue.includes("LocalBusiness");
+  return typeValue === "LocalBusiness";
+}
+
+function normalizeBusinessTypes(typeValue: unknown): string[] {
+  const asArray = Array.isArray(typeValue)
+    ? typeValue.filter((t): t is string => typeof t === "string")
+    : typeof typeValue === "string"
+      ? [typeValue]
+      : [];
+
+  const withLocalBusiness = asArray.includes("LocalBusiness")
+    ? asArray
+    : ["LocalBusiness", ...asArray];
+
+  return withLocalBusiness.includes("HomeAndConstructionBusiness")
+    ? withLocalBusiness
+    : [...withLocalBusiness, "HomeAndConstructionBusiness"];
+}
+
+function filterUnsupportedOfferCatalogServices(data: any) {
+  const offerCatalog = data?.hasOfferCatalog;
+  const itemList = offerCatalog?.itemListElement;
+  if (!Array.isArray(itemList)) return;
+
+  data.hasOfferCatalog.itemListElement = itemList.filter((offer: any) => {
+    const service = offer?.itemOffered ?? {};
+    const haystack = `${service?.name ?? ""} ${service?.serviceType ?? ""} ${service?.description ?? ""}`.toLowerCase();
+    return !DISALLOWED_SERVICE_KEYWORDS.some((keyword) => haystack.includes(keyword));
+  });
+}
+
+function ensureAreaServedShape(data: any, city: string) {
+  const cityServed = { "@type": "City", name: city };
+  const lat = toNumber(data?.geo?.latitude);
+  const lng = toNumber(data?.geo?.longitude);
+  const geoCircle =
+    lat !== null && lng !== null
+      ? {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: lat,
+            longitude: lng,
+          },
+          geoRadius: SERVICE_RADIUS_METERS,
+        }
+      : null;
+
+  if (!data.areaServed) {
+    data.areaServed = geoCircle ? [cityServed, geoCircle] : cityServed;
+    return;
+  }
+
+  if (Array.isArray(data.areaServed)) {
+    const hasCity = data.areaServed.some(
+      (item: any) => item?.["@type"] === "City" && typeof item?.name === "string",
+    );
+    if (!hasCity) data.areaServed.unshift(cityServed);
+
+    if (geoCircle) {
+      const hasGeoCircle = data.areaServed.some(
+        (item: any) => item?.["@type"] === "GeoCircle",
+      );
+      if (!hasGeoCircle) data.areaServed.push(geoCircle);
+    }
+    return;
+  }
+
+  if (data.areaServed?.["@type"] === "City") return;
+  data.areaServed = geoCircle ? [cityServed, geoCircle] : cityServed;
+}
+
+function normalizeEnhancedBusinessData(
+  rawData: any,
+  city: string,
+  citySlug: string,
+  reviews: Array<{ rating: number; author_name: string; review_date: string; review_text: string }>,
+) {
+  const data = sanitizeLocalBusinessNodes(rawData, true);
+  const canonicalUrl = `${SITE_CONFIG.url}/service-areas/${citySlug}`;
+
+  // Keep this object anchored to the actual service-area page URL.
+  data["@context"] = "https://schema.org";
+  data["@type"] = normalizeBusinessTypes(data["@type"]);
+  data["@id"] = canonicalUrl;
+  data.url = canonicalUrl;
+  data.name = `MyFence.com - ${city} Fence Installation`;
+  data.image = SITE_CONFIG.logoUrl;
+  data.logo = data.logo ?? { "@type": "ImageObject", url: SITE_CONFIG.logoUrl };
+
+  if (!data.address) {
+    data.address = DEFAULT_BUSINESS_ADDRESS;
+  }
+
+  // Prevent structured-data/content mismatch by removing unsupported service claims.
+  filterUnsupportedOfferCatalogServices(data);
+
+  // Keep areaServed consistent across all service-area pages.
+  ensureAreaServedShape(data, city);
+
+  if (reviews.length > 0) {
+    const averageRating = (
+      reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
+    ).toFixed(1);
+
+    data.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: averageRating,
+      reviewCount: reviews.length.toString(),
+      ...(data.aggregateRating?.bestRating ? { bestRating: data.aggregateRating.bestRating } : {}),
+      ...(data.aggregateRating?.worstRating ? { worstRating: data.aggregateRating.worstRating } : {}),
+    };
+  }
+
+  return data;
 }
 
 const ServiceAreaTemplate = ({ 
@@ -272,10 +404,16 @@ const ServiceAreaTemplate = ({
 
   // Merge enhanced business data with reviews and other dynamic fields if provided
   const finalBusinessData = useMemo(() => {
-    if (!enhancedBusinessData) return structuredData;
-    
-    // Ensure reviews from Trustindex are included in enhanced data if not present
-    const data = sanitizeLocalBusinessNodes(enhancedBusinessData, true);
+    // Normalize both enhanced and fallback schemas so every service-area page
+    // follows the same structured-data standard.
+    const data = normalizeEnhancedBusinessData(
+      enhancedBusinessData ?? structuredData,
+      city,
+      citySlug,
+      reviews,
+    );
+
+    // Ensure reviews from Trustindex are included in normalized data if not present.
     if (!data.review && reviews.length > 0) {
       data.review = reviews.map(review => ({
         "@type": "Review",
@@ -293,13 +431,8 @@ const ServiceAreaTemplate = ({
       }));
     }
     
-    // Ensure aggregateRating uses the dynamic count if not set
-    if (data.aggregateRating && !data.aggregateRating.reviewCount && reviews.length > 0) {
-      data.aggregateRating.reviewCount = reviews.length.toString();
-    }
-    
     return data;
-  }, [enhancedBusinessData, structuredData, reviews]);
+  }, [enhancedBusinessData, structuredData, reviews, city, citySlug]);
 
   return (
     <>
