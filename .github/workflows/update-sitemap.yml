@@ -1,15 +1,14 @@
-name: Update Sitemap Last Modified Dates
+name: Validate Sitemap Generation
 
 on:
   push:
     branches:
       - main
     paths-ignore:
-      - 'public/sitemap.xml'
       - '.github/workflows/update-sitemap.yml'
 
 jobs:
-  update-sitemap:
+  validate-sitemap:
     runs-on: ubuntu-latest
     
     steps:
@@ -24,19 +23,8 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Update sitemap lastmod dates for changed pages
-        run: node scripts/update-sitemap-dates.js
-      
-      - name: Check for changes
-        id: git-check
-        run: |
-          git diff --exit-code public/sitemap.xml || echo "changed=true" >> $GITHUB_OUTPUT
-      
-      - name: Commit and push if changed
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add public/sitemap.xml
-          git commit -m "chore: update sitemap lastmod dates [skip ci]"
-          git push
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (includes sitemap route)
+        run: npm run build
