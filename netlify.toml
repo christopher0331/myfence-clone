@@ -19,3 +19,784 @@
   [headers.values]
     Content-Type = "text/css"
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "https://www.myfence.com/*"
+  to = "https://myfence.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gig-harbor-wood-fence-company-near-me/"
+  to = "/service-areas/gig-harbor"
+  status = 301
+
+[[redirects]]
+  from = "/gig-harbor-home-fencing/"
+  to = "/service-areas/gig-harbor"
+  status = 301
+
+[[redirects]]
+  from = "/gig-harbor-wood-fence-installation/"
+  to = "/service-areas/gig-harbor"
+  status = 301
+
+[[redirects]]
+  from = "/mountlake-terrace-wood-fence-company-near-me/"
+  to = "/service-areas/mountlake-terrace"
+  status = 301
+
+[[redirects]]
+  from = "/mountlake-terrace-local-fencing-contractors/"
+  to = "/service-areas/mountlake-terrace"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-fence-installation/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-wood-fence-installation/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-home-fencing/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-wood-fence-company-near-me/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-best-fence-company/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/tukwila-wood-fence-contractors/"
+  to = "/service-areas/tukwila"
+  status = 301
+
+[[redirects]]
+  from = "/north-bend-fence-builders/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/north-bend-wood-fence-company-near-me/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/sumner-wood-fence-installation/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/sumner-fence-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/sumner-home-fencing/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/seatac-fence-company-near-me/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/seatac-wood-fence-company-near-me/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/seatac-wood-fence-installation/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/seatac-fence-contractors/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/bellevue-home-fencing/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/bellevue-local-fencing-contractors/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/redmond-local-fencing-contractors/"
+  to = "/service-areas/redmond"
+  status = 301
+
+[[redirects]]
+  from = "/fence-redmond-wa"
+  to = "/service-areas/redmond"
+  status = 301
+
+[[redirects]]
+  from = "/renton-local-fencing-contractors/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/renton-local-fence-companies/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/renton-wood-fence-installation/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/fence-renton-wa"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/kirkland-local-fence-companies/"
+  to = "/service-areas/kirkland"
+  status = 301
+
+[[redirects]]
+  from = "/kirkland-best-fence-company/"
+  to = "/service-areas/kirkland"
+  status = 301
+
+[[redirects]]
+  from = "/enumclaw-local-fencing-contractors/"
+  to = "/service-areas/enumclaw"
+  status = 301
+
+[[redirects]]
+  from = "/enumclaw-home-fencing/"
+  to = "/service-areas/enumclaw"
+  status = 301
+
+[[redirects]]
+  from = "/bonney-lake-local-fence-companies/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/lake-tapps-best-fence-company/"
+  to = "/service-areas/lake-tapps"
+  status = 301
+
+[[redirects]]
+  from = "/lake-tapps-wood-fence-company-near-me/"
+  to = "/service-areas/lake-tapps"
+  status = 301
+
+[[redirects]]
+  from = "/black-diamond-home-fencing/"
+  to = "/service-areas/black-diamond"
+  status = 301
+
+[[redirects]]
+  from = "/black-diamond-wood-fence-installation/"
+  to = "/service-areas/black-diamond"
+  status = 301
+
+[[redirects]]
+  from = "/black-diamond-wood-fence-contractors/"
+  to = "/service-areas/black-diamond"
+  status = 301
+
+[[redirects]]
+  from = "/black-diamond-best-fence-company/"
+  to = "/service-areas/black-diamond"
+  status = 301
+
+[[redirects]]
+  from = "/black-diamond-local-fencing-contractors/"
+  to = "/service-areas/black-diamond"
+  status = 301
+
+[[redirects]]
+  from = "/university-place-fence-company/"
+  to = "/service-areas/university-place/devonshire-townhomes"
+  status = 301
+
+[[redirects]]
+  from = "/university-place-local-fencing-contractors/"
+  to = "/service-areas/university-place/devonshire-townhomes"
+  status = 301
+
+[[redirects]]
+  from = "/medina-fence-contractors/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/medina-fence-builders/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/medina-local-fencing-contractors/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/medina-local-fence-companies/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-wood-fence-company-near-me/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-home-fencing/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-wood-fence-contractors/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-best-fence-company/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-fence-builders/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/clyde-hill-fence-installation/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/mercer-island-local-fencing-contractors/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/mercer-island-best-fence-company/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/mercer-island-fence-builders/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/newcastle-wood-fence-installation/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/newcastle-fence-installation/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/newcastle-local-fence-companies/"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/hobart-fence-contractors/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/hobart-best-fence-company/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/hobart-fence-company/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/ravensdale-fence-company-near-me/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/ravensdale-local-fencing-contractors/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/ravensdale-wood-fence-company-near-me/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/ravensdale-local-fence-companies/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/ravensdale-fence-contractors/"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-fence-contractors/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-fence-installation/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-local-fencing-contractors/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-home-fencing/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-wood-fence-company-near-me/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-fence-builders/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/snoqualmie-wood-fence-installation/"
+  to = "/service-areas/north-bend"
+  status = 301
+
+[[redirects]]
+  from = "/des-moines-fence-installation/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/des-moines-home-fencing/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/des-moines-wood-fence-company-near-me/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/des-moines-fence-company/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/burien-fence-company/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/burien-local-fence-companies/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/burien-wood-fence-contractors/"
+  to = "/service-areas/seatac"
+  status = 301
+
+[[redirects]]
+  from = "/edgewood-best-fence-company/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/edgewood-fence-builders/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/edgewood-local-fence-companies/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/orting-wood-fence-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/parkland-fence-installation/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/parkland-wood-fence-installation/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/parkland-fence-company-near-me/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/lakewood-fence-installation/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/lakewood-local-fence-companies/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/lakewood-wood-fence-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/lakewood-fence-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/lakewood-local-fencing-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/puyallup-fence-company/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/puyallup-wood-fence-company-near-me/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/puyallup-fence-contractors/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/puyallup-fence-company-near-me/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/puyallup-local-fence-companies/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/tacoma-fence-company-near-me/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/tacoma-fence-company/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/tacoma-local-fence-companies/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/tacoma-wood-fence-installation/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/tacoma-fence-builders/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/south-hill-fence-company/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/south-hill-fence-company-near-me/"
+  to = "/service-areas/sumner"
+  status = 301
+
+[[redirects]]
+  from = "/auburn-fence-company-near-me/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/auburn-fence-company/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/auburn-wood-fence-installation/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/kent-best-fence-company/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/kent-fence-builders/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/kent-fence-installation/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-fence-company-near-me/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-fence-company/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-home-fencing/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-wood-fence-contractors/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-wood-fence-company-near-me/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-local-fence-companies/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/pacific-local-fencing-contractors/"
+  to = "/service-areas/renton"
+  status = 301
+
+[[redirects]]
+  from = "/shoreline-fence-company-near-me/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/shoreline-fence-builders/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/shoreline-fence-company/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/shoreline-wood-fence-contractors/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/shoreline-best-fence-company/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/seattle-home-fencing/"
+  to = "/service-areas/seattle"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-wood-fence-company-near-me/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-fence-installation/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-fence-company-near-me/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-fence-company/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-wood-fence-contractors/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/buckley-fence-builders/"
+  to = "/service-areas/bonney-lake"
+  status = 301
+
+[[redirects]]
+  from = "/projects/"
+  to = "/gallery"
+  status = 301
+
+[[redirects]]
+  from = "/projects"
+  to = "/gallery"
+  status = 301
+
+[[redirects]]
+  from = "/pastprojects"
+  to = "/gallery"
+  status = 301
+
+[[redirects]]
+  from = "/past-projects/"
+  to = "/gallery"
+  status = 301
+
+[[redirects]]
+  from = "/schedule-now/"
+  to = "/quote"
+  status = 301
+
+[[redirects]]
+  from = "/quote-tool"
+  to = "/quote"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/map/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/maple-valley"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
+  from = "/bellevue"
+  to = "/service-areas/bellevue"
+  status = 301
+
+[[redirects]]
+  from = "/fence-gate-styles/"
+  to = "/fence-styles"
+  status = 301
+
+[[redirects]]
+  from = "/gates-faq"
+  to = "/fence-styles"
+  status = 301
+
+[[redirects]]
+  from = "/gates-faq/"
+  to = "/fence-styles"
+  status = 301
+
+[[redirects]]
+  from = "/myfence-com-diy-estimate-tool/"
+  to = "/quote"
+  status = 301
+
+[[redirects]]
+  from = "/should-i-stain-my-fence"
+  to = "/fence-staining"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cedar-aluminum-hybrid-fence-mdx"
+  to = "/blog/cedar-steel-hybrid-fence"
+  status = 301
+
+[[redirects]]
+  from = "/blog/material-cost-2025"
+  to = "/blog/wooden-fence-cost2025"
+  status = 301
+
+[[redirects]]
+  from = "/blog/fence-cost-shared-with-neighbor"
+  to = "/blog/neighbor-fence-cost-split"
+  status = 301
+
+[[redirects]]
+  from = "/blog/neighbor-split"
+  to = "/blog/neighbor-fence-cost-split"
+  status = 301
+
+[[redirects]]
+  from = "/fence-contractor-issaquah-wa-98027/"
+  to = "/service-areas/issaquah"
+  status = 301
+
+[[redirects]]
+  from = "/fence-contractor-issaquah-wa-98027"
+  to = "/service-areas/issaquah"
+  status = 301
+
+[[redirects]]
+  from = "/issaquah-local-fence-companies/"
+  to = "/service-areas/issaquah"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/02/Fence-Genius.pdf"
+  to = "/fence-genius"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/02/Download-Convex-Sheet.pdf"
+  to = "/fence-styles"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/02/Download-Convave-Sheet.pdf"
+  to = "/fence-styles"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/02/Download-Flat-Gate-Sheet.pdf"
+  to = "/fence-styles"
+  status = 301
