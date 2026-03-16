@@ -431,9 +431,6 @@ const CherokeeBayParkPage = () => {
                   <Link href="/service-areas/maple-valley/highlands-at-cedar-downs">Highlands at Cedar Downs</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/maple-valley/tahoma">Tahoma</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>

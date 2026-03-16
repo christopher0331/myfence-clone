@@ -27,6 +27,11 @@
   force = true
 
 [[redirects]]
+  from = "/service-areas/maple-valley/tahoma"
+  to = "/service-areas/maple-valley"
+  status = 301
+
+[[redirects]]
   from = "/gig-harbor-wood-fence-company-near-me/"
   to = "/service-areas/gig-harbor"
   status = 301
