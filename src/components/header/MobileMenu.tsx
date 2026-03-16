@@ -35,6 +35,7 @@ const serviceAreasByRegion = [
     areas: [
       { to: "/service-areas/bellevue", label: "Bellevue" },
       { to: "/service-areas/issaquah", label: "Issaquah" },
+      { to: "/service-areas/issaquah-highlands", label: "Issaquah Highlands" },
       { to: "/service-areas/kirkland", label: "Kirkland" },
       { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace" },
       { to: "/service-areas/redmond", label: "Redmond" },
@@ -49,10 +50,18 @@ const serviceAreasByRegion = [
     region: "Pierce County",
     areas: [
       { to: "/service-areas/bonney-lake", label: "Bonney Lake" },
+      { to: "/service-areas/downtown-bonney-lake", label: "Downtown Bonney Lake" },
+      { to: "/service-areas/falling-water", label: "Falling Water" },
       { to: "/service-areas/federal-way", label: "Federal Way" },
       { to: "/service-areas/gig-harbor", label: "Gig Harbor" },
       { to: "/service-areas/lake-tapps", label: "Lake Tapps" },
+      { to: "/service-areas/lower-tehaleh", label: "Lower Tehaleh" },
+      { to: "/service-areas/mountain-creek", label: "Mountain Creek" },
+      { to: "/service-areas/orting", label: "Orting" },
+      { to: "/service-areas/riverpoint", label: "Riverpoint" },
       { to: "/service-areas/sumner", label: "Sumner" },
+      { to: "/service-areas/university-place", label: "University Place" },
+      { to: "/service-areas/upper-tehaleh", label: "Upper Tehaleh" },
     ],
   },
   {
@@ -63,6 +72,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/enumclaw", label: "Enumclaw" },
       { to: "/service-areas/maple-valley", label: "Maple Valley" },
       { to: "/service-areas/north-bend", label: "North Bend" },
+      { to: "/service-areas/snoqualmie", label: "Snoqualmie" },
     ],
   },
 ];
