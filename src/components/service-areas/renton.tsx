@@ -181,12 +181,7 @@ const rentonLocalBusinessLd = {
       "name": "Washington"
     }
   },
-  "url": `${SITE_CONFIG.url}/service-areas/renton`,
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247"
-  }
+  "url": `${SITE_CONFIG.url}/service-areas/renton`
 };
 
 const Renton = () => {

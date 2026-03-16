@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { SITE_CONFIG } from "@/constants/siteConfig";
+import { SITE_CONFIG, SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { generateFaqSchema } from "@/data/faqData";
 import { HeroVideoSection } from "@/components/home/HeroVideoSection";
 import { AboutUsSection } from "@/components/home/AboutUsSection";
@@ -37,14 +37,7 @@ export default async function HomePage() {
     },
     url: SITE_CONFIG.url,
     telephone: `+1-253-455-1885`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "22927 257th Ave SE",
-      addressLocality: SITE_CONFIG.address.city,
-      addressRegion: SITE_CONFIG.address.state,
-      postalCode: SITE_CONFIG.address.zip,
-      addressCountry: SITE_CONFIG.address.country,
-    },
+    address: SCHEMA_ADDRESS,
     geo: {
       "@type": "GeoCoordinates",
       latitude: SITE_CONFIG.coordinates.latitude,
@@ -58,11 +51,6 @@ export default async function HomePage() {
         closes: "23:59",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "150",
-    },
   };
 
   return (

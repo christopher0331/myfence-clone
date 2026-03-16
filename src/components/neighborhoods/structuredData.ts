@@ -1,3 +1,5 @@
+import { SITE_CONFIG, SCHEMA_ADDRESS } from "@/constants/siteConfig";
+
 function buildBreadcrumbItems(canonical: string, neighborhoodName: string) {
   // Derive parent city from canonical URL: /service-areas/{city}/{neighborhood}
   const parts = canonical.replace("https://myfence.com/", "").split("/");
@@ -33,16 +35,9 @@ export function buildNeighborhoodStructuredData({
     "@id": canonical,
     name: `MyFence.com - ${neighborhoodName} Fence Installation`,
     description,
-    url: "https://myfence.com",
-    telephone: "+12534551885",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "22927 257th Ave SE",
-      addressLocality: "Maple Valley",
-      addressRegion: "WA",
-      postalCode: "98038",
-      addressCountry: "US",
-    },
+    url: SITE_CONFIG.url,
+    telephone: `+1${SITE_CONFIG.phoneLink}`,
+    address: SCHEMA_ADDRESS,
     areaServed: {
       "@type": "City",
       name: neighborhoodName,
@@ -69,9 +64,9 @@ export function buildNeighborhoodStructuredData({
     },
     provider: {
       "@type": "Organization",
-      name: "MyFence.com",
-      url: "https://myfence.com",
-      telephone: "+12534551885",
+      name: SITE_CONFIG.fullName,
+      url: SITE_CONFIG.url,
+      telephone: `+1${SITE_CONFIG.phoneLink}`,
     },
     offers: {
       "@type": "Offer",

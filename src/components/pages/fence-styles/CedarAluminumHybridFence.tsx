@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Shield, Sparkles, DollarSign, Clock, Palette, Lock } from "lucide-react";
 import Link from "next/link";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
@@ -113,21 +114,10 @@ const CedarAluminumHybridFence = () => {
         "returnFees": "https://schema.org/FreeReturn"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "247",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "manufacturer": {
       "@type": "Organization",
       "name": "MyFence.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Seattle",
-        "addressRegion": "WA"
-      },
+      "address": SCHEMA_ADDRESS,
       "telephone": "+1-253-455-1885"
     }
   };

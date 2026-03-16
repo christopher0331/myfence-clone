@@ -1,6 +1,7 @@
 "use client";
 
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -16,7 +17,7 @@ const RotBoardPage = () => {
     provider: {
       "@type": "LocalBusiness",
       name: "MyFence.com",
-      address: { "@type": "PostalAddress", addressLocality: "Seattle", addressRegion: "WA", addressCountry: "US" },
+      address: SCHEMA_ADDRESS,
       telephone: "+1-253-455-1885",
     },
     areaServed: { "@type": "City", name: "Seattle", containedInPlace: { "@type": "State", name: "Washington" } },

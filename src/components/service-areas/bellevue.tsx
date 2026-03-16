@@ -473,13 +473,6 @@ const Bellevue = () => {
         "closes": "17:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": "150"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Fence Products and Services",

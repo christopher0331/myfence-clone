@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -143,12 +144,7 @@ const ContactPage = () => {
     },
     image: "https://myfence.com/myfence-logo.png",
     telephone: "+1-253-455-1885",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Seattle",
-      addressRegion: "WA",
-      addressCountry: "US",
-    },
+    address: SCHEMA_ADDRESS,
     areaServed: "Seattle-Tacoma, WA",
   };
 

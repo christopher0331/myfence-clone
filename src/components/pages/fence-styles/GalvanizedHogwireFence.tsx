@@ -7,6 +7,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import { ArrowLeft, Shield, Eye, Wrench } from "lucide-react";
 import Link from "next/link";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
@@ -54,19 +55,10 @@ const GalvanizedHogwireFence = () => {
               "returnFees": "https://schema.org/FreeReturn"
             }
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "reviewCount": "95"
-          },
           "manufacturer": {
             "@type": "Organization",
             "name": "MyFence.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Seattle",
-              "addressRegion": "WA"
-            },
+            "address": SCHEMA_ADDRESS,
             "telephone": "+1-253-455-1885"
           }
         }}

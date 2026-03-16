@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-foreground mb-4">8. Third-Party Links</h2>
               <p className="text-muted-foreground">
-                Our text messages may occasionally include links to our website (https://www.myfence.com/) or social media platforms (e.g., Facebook, Instagram). This Privacy Policy applies only to text messaging interactions with MyFence.com. Please review the privacy policies of any linked sites for information on their practices.
+                Our text messages may occasionally include links to our website (https://myfence.com/) or social media platforms (e.g., Facebook, Instagram). This Privacy Policy applies only to text messaging interactions with MyFence.com. Please review the privacy policies of any linked sites for information on their practices.
               </p>
             </section>
 

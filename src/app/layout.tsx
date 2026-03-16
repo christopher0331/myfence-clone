@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "../index.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DeferredGTM from "@/components/DeferredGTM";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 // Optimize font loading with Next.js font optimization
 // This automatically handles font-display: swap and preloading
@@ -14,6 +16,10 @@ const inter = Inter({
   variable: "--font-inter",
   preload: true,
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.url),
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

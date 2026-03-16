@@ -349,13 +349,6 @@ const Tukwila = () => {
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "07:00",
       "closes": "18:00"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 

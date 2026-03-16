@@ -28,11 +28,6 @@ const TrellisSystemsPage = () => {
       priceValidUntil: "2026-12-31",
       url: "https://myfence.com/fence-upgrades/trellis-systems",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "247",
-    },
   };
 
   return (

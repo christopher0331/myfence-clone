@@ -2,10 +2,40 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import serviceAreaPhotos from "@/data/serviceAreaPhotos.json";
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "src", "content", "blog");
 const PAGE_FILE_PATTERN = /^page\.(tsx|ts|jsx|js|mdx|md)$/;
+
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
+/**
+ * Extracts all valid service-area routes from the photo manifest.
+ * This catches cities/neighborhoods served by the [city] and [neighborhood]
+ * dynamic routes that don't have their own static directories.
+ */
+function collectDynamicServiceAreaRoutes(): string[] {
+  const citySet = new Set<string>();
+  const neighborhoodSet = new Set<string>();
+
+  for (const photo of serviceAreaPhotos) {
+    const citySlug = slugify(photo.city);
+    citySet.add(`/service-areas/${citySlug}`);
+
+    if (photo.neighborhood) {
+      const nbSlug = slugify(photo.neighborhood);
+      neighborhoodSet.add(`/service-areas/${citySlug}/${nbSlug}`);
+    }
+  }
+
+  return Array.from(citySet).concat(Array.from(neighborhoodSet));
+}
 
 async function collectAppRoutes(dir: string, routePath = ""): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -16,7 +46,6 @@ async function collectAppRoutes(dir: string, routePath = ""): Promise<string[]> 
 
   const routes: string[] = [];
 
-  // Add the current route if this directory has a page file.
   if (hasPageFile && !routePath.startsWith("/api")) {
     routes.push(routePath || "/");
   }
@@ -26,13 +55,11 @@ async function collectAppRoutes(dir: string, routePath = ""): Promise<string[]> 
 
     const name = entry.name;
 
-    // Skip api and framework-internal folders.
     if (name === "api" || name.startsWith("_")) continue;
 
-    // Skip dynamic segments; include explicit static routes only.
+    // Skip dynamic segments — their URLs are collected separately.
     if (name.startsWith("[") && name.endsWith("]")) continue;
 
-    // Route groups do not appear in URLs.
     const nextRoutePath =
       name.startsWith("(") && name.endsWith(")")
         ? routePath
@@ -62,7 +89,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     collectBlogRoutes(),
   ]);
 
-  const allRoutes = Array.from(new Set([...appRoutes, ...blogRoutes])).sort();
+  const dynamicServiceAreaRoutes = collectDynamicServiceAreaRoutes();
+
+  const allRoutes = Array.from(
+    new Set([...appRoutes, ...blogRoutes, ...dynamicServiceAreaRoutes]),
+  ).sort();
   const now = new Date();
 
   return allRoutes.map((route) => {

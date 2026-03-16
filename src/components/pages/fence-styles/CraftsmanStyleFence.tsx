@@ -121,8 +121,7 @@ const CraftsmanStyleFence = () => {
         "returnMethod": "https://schema.org/ReturnByMail",
         "returnFees": "https://schema.org/FreeReturn"
       }
-    },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "134" }
+    }
   };
 
   const structuredData = [

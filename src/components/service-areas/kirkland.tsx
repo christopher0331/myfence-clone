@@ -426,12 +426,7 @@ const Kirkland = () => {
     },
     "sameAs": [
       "https://www.facebook.com/people/MyFencecom/61554605109118/"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "150"
-    }
+    ]
   };
 
   const kirklandAttractions: LocalAttraction[] = [

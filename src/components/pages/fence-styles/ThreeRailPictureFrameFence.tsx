@@ -118,8 +118,7 @@ const ThreeRailPictureFrameFence = () => {
         "returnMethod": "https://schema.org/ReturnByMail",
         "returnFees": "https://schema.org/FreeReturn"
       }
-    },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "156" }
+    }
   };
 
   const structuredData = [

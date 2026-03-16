@@ -32,7 +32,7 @@ export const SITE_CONFIG = {
    * Business address
    */
   address: {
-    street: "",
+    street: "22927 257th Ave SE",
     city: "Maple Valley",
     state: "WA",
     zip: "98038",
@@ -74,3 +74,16 @@ export const SITE_CONFIG = {
  * Uses fullName for consistency
  */
 export const DEFAULT_SITE_NAME = SITE_CONFIG.fullName;
+
+/**
+ * Canonical PostalAddress for Schema.org structured data.
+ * Import this instead of hardcoding address blocks.
+ */
+export const SCHEMA_ADDRESS = {
+  "@type": "PostalAddress" as const,
+  streetAddress: SITE_CONFIG.address.street,
+  addressLocality: SITE_CONFIG.address.city,
+  addressRegion: SITE_CONFIG.address.state,
+  postalCode: SITE_CONFIG.address.zip,
+  addressCountry: SITE_CONFIG.address.country,
+};

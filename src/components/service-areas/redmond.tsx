@@ -414,13 +414,6 @@ const Redmond = () => {
       "@type": "GeoCoordinates",
       "latitude": SITE_CONFIG.coordinates.latitude,
       "longitude": SITE_CONFIG.coordinates.longitude
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 

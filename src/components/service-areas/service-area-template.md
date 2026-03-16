@@ -290,7 +290,7 @@ interface Neighborhood {
 - **Normalization Standard (applied automatically):**
   - Canonical identity enforced: `@context`, `@id`, and `url` are pinned to `https://myfence.com/service-areas/{city-slug}`.
   - Type safety enforced: root `@type` always includes both `LocalBusiness` and `HomeAndConstructionBusiness`.
-  - Review consistency enforced: `aggregateRating.reviewCount` is derived from live Trustindex reviews.
+  - Self-served `aggregateRating` is stripped (Google ignores it for LocalBusiness; individual `review` objects from Trustindex are kept).
   - Offer consistency enforced: unsupported services (e.g. **vinyl**/**composite**) are removed from `hasOfferCatalog` to prevent content/schema mismatch.
   - Coverage consistency enforced: `areaServed` includes the city and a `GeoCircle` when coordinates are available.
 

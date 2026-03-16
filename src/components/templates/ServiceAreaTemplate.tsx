@@ -47,11 +47,11 @@ interface ServiceAreaTemplateProps {
 
 const DEFAULT_BUSINESS_ADDRESS = {
   "@type": "PostalAddress",
-  streetAddress: "22927 257th Ave SE",
-  addressLocality: "Maple Valley",
-  addressRegion: "WA",
-  postalCode: "98038",
-  addressCountry: "US",
+  streetAddress: SITE_CONFIG.address.street,
+  addressLocality: SITE_CONFIG.address.city,
+  addressRegion: SITE_CONFIG.address.state,
+  postalCode: SITE_CONFIG.address.zip,
+  addressCountry: SITE_CONFIG.address.country,
 } as const;
 
 function sanitizeLocalBusinessNodes(value: any, isRoot = false): any {
@@ -189,9 +189,7 @@ function normalizeEnhancedBusinessData(
   data.image = SITE_CONFIG.logoUrl;
   data.logo = data.logo ?? { "@type": "ImageObject", url: SITE_CONFIG.logoUrl };
 
-  if (!data.address) {
-    data.address = DEFAULT_BUSINESS_ADDRESS;
-  }
+  data.address = DEFAULT_BUSINESS_ADDRESS;
 
   // Prevent structured-data/content mismatch by removing unsupported service claims.
   filterUnsupportedOfferCatalogServices(data);
@@ -199,19 +197,7 @@ function normalizeEnhancedBusinessData(
   // Keep areaServed consistent across all service-area pages.
   ensureAreaServedShape(data, city);
 
-  if (reviews.length > 0) {
-    const averageRating = (
-      reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
-    ).toFixed(1);
-
-    data.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: averageRating,
-      reviewCount: reviews.length.toString(),
-      ...(data.aggregateRating?.bestRating ? { bestRating: data.aggregateRating.bestRating } : {}),
-      ...(data.aggregateRating?.worstRating ? { worstRating: data.aggregateRating.worstRating } : {}),
-    };
-  }
+  delete data.aggregateRating;
 
   return data;
 }
@@ -301,11 +287,6 @@ const ServiceAreaTemplate = ({
       ],
       "opens": "00:00",
       "closes": "23:59"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": reviews.length > 0 ? reviews.length.toString() : "150"
     },
     "review": reviews.map(review => ({
       "@type": "Review",

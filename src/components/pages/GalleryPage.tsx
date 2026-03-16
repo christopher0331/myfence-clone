@@ -1,6 +1,7 @@
 "use client";
 
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import Link from "next/link";
 
 const images = [
@@ -53,11 +54,7 @@ const GalleryPage = () => {
             creator: {
               "@type": "LocalBusiness",
               name: "MyFence.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Seattle",
-                addressRegion: "WA",
-              },
+              address: SCHEMA_ADDRESS,
               telephone: "+1-253-455-1885",
             },
           },

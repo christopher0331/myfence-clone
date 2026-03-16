@@ -94,11 +94,6 @@ const CedarPostOnPipe = () => {
         "applicableCountry": "US",
         "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "89"
     }
   };
 

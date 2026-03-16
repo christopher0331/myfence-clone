@@ -45,11 +45,6 @@ const SteelPostsPage = () => {
       priceValidUntil: "2026-12-31",
       url: "https://myfence.com/fence-posts/steel-posts"
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "89"
-    },
     hasMerchantReturnPolicy: {
       "@type": "MerchantReturnPolicy",
       applicableCountry: "US",
