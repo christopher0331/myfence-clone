@@ -192,32 +192,32 @@ const Sammamish = () => {
     {
       name: "Pine Lake Park",
       description: "A peaceful community park nestled under tall evergreens, featuring a swimming beach, fishing dock, and summer concert series.",
-      url: "https://www.sammamish.us/parks-recreation-and-facilities/parks-trails/pine-lake-park/"
+      url: "https://www.sammamish.us/our-community/recreation/parks-trails/pine-lake-park/"
     },
     {
       name: "Soaring Eagle Regional Park",
       description: "A sprawling 600-acre natural area with a vast network of trails popular among mountain bikers, trail runners, and equestrians.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/soaring-eagle"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle"
     },
     {
       name: "Beaver Lake Park",
       description: "A tranquil 54-acre park offering forested walking trails, a lodge for events, and access to the serene Beaver Lake.",
-      url: "https://www.sammamish.us/parks-recreation-and-facilities/parks-trails/beaver-lake-park/"
+      url: "https://www.sammamish.us/our-community/recreation/parks-trails/beaver-lake-park/"
     },
     {
       name: "East Lake Sammamish Trail",
       description: "An 11-mile paved trail following a historic railroad route, providing a safe and scenic path for cyclists and pedestrians.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/east-lake-sammamish-trail"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/east-lake-sammamish"
     }
   ];
 
   const sammamishLivingContent = (
     <div className="space-y-4 text-muted-foreground leading-relaxed">
       <p>
-        Consistently ranked as one of the best places to live in the United States, Sammamish is a family-centric city characterized by its excellent education system and stunning natural environment. The community is served by two top-tier districts: the <a href="https://www.isd411.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah School District</a> and the <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>, drawing families who prioritize academic excellence. Community life often revolves around the <a href="https://www.sammamish.us/parks-recreation-and-facilities/parks-trails/sammamish-commons/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish Commons</a>, a central civic campus that hosts the local library, city hall, and popular seasonal events like the Farmers Market.
+        Consistently ranked as one of the best places to live in the United States, Sammamish is a family-centric city characterized by its excellent education system and stunning natural environment. The community is served by two top-tier districts: the <a href="https://www.isd411.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah School District</a> and the <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>, drawing families who prioritize academic excellence. Community life often revolves around the <a href="https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-commons/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish Commons</a>, a central civic campus that hosts the local library, city hall, and popular seasonal events like the Farmers Market.
       </p>
       <p>
-        The lifestyle in Sammamish is deeply connected to the outdoors, with the city offering an impressive array of recreational opportunities right at residents' doorsteps. Whether it's boating on <a href="https://parks.wa.gov/find-parks/state-parks/lake-sammamish-state-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Sammamish</a> during the summer, or exploring the dense forests of <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/soaring-eagle" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Soaring Eagle Park</a>, the area caters to nature lovers. The active <a href="https://www.sammamish.us/parks-recreation-and-facilities/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Parks and Recreation department</a> ensures well-maintained facilities and programs for all ages, creating a tight-knit, upscale suburban community that feels miles away from the bustle of the city, yet remains conveniently close to major Eastside employment hubs.
+        The lifestyle in Sammamish is deeply connected to the outdoors, with the city offering an impressive array of recreational opportunities right at residents' doorsteps. Whether it's boating on <a href="https://parks.wa.gov/find-parks/state-parks/lake-sammamish-state-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Sammamish</a> during the summer, or exploring the dense forests of <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Soaring Eagle Park</a>, the area caters to nature lovers. The active <a href="https://www.sammamish.us/our-community/recreation/parks-trails/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Parks and Recreation department</a> ensures well-maintained facilities and programs for all ages, creating a tight-knit, upscale suburban community that feels miles away from the bustle of the city, yet remains conveniently close to major Eastside employment hubs.
       </p>
     </div>
   );

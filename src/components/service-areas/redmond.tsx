@@ -427,7 +427,7 @@ const Redmond = () => {
     {
       name: "Microsoft Visitor Center",
       description: "Explore the history of personal computing and get a glimpse into the future at the headquarters of this global tech giant.",
-      url: "https://www.microsoft.com/en-us/visitorcenter"
+      url: "https://www.microsoft.com/en-us/about"
     },
     {
       name: "Redmond Town Center",
@@ -442,7 +442,7 @@ const Redmond = () => {
     {
       name: "Idylwood Beach Park",
       description: "A beautiful lakeside park offering a sandy swimming beach on Lake Sammamish, plus picnic shelters and a playground.",
-      url: "https://www.redmond.gov/Facilities/Facility/Details/Idylwood-Beach-Park-18"
+      url: "https://www.redmond.gov/Facilities/Facility/Details/Idylwood-Beach-Park-64"
     }
   ];
 
@@ -452,7 +452,7 @@ const Redmond = () => {
         Often referred to as the "Bicycle Capital of the Northwest," Redmond offers a dynamic blend of high-tech industry and lush natural surroundings. Families prioritize the area for its exceptional education, served primarily by the highly acclaimed <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>. The city's <a href="https://www.redmond.gov/Parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Parks and Recreation Department</a> ensures residents have access to numerous community centers, arts programs, and sports leagues, fostering a strong sense of community.
       </p>
       <p>
-        Redmond's commitment to outdoor living is evident in its extensive trail network, including the popular <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/sammamish-river-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish River Trail</a>, which connects cyclists and walkers to nearby cities. The downtown core has evolved into a vibrant urban center, with residents frequenting local spots like <a href="https://www.redmondtowncenter.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Town Center</a> for shopping and dining. Community events, such as the summer <a href="https://www.redmond.gov/905/Derby-Days" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Derby Days</a>, highlight the city's rich heritage and welcoming atmosphere, making it a premier destination for modern professionals and families alike.
+        Redmond's commitment to outdoor living is evident in its extensive trail network, including the popular <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/sammamish-river-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish River Trail</a>, which connects cyclists and walkers to nearby cities. The downtown core has evolved into a vibrant urban center, with residents frequenting local spots like <a href="https://www.redmondtowncenter.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Town Center</a> for shopping and dining. Community events, such as the summer <a href="https://www.redmond.gov/905/Derby-Days" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Redmond Derby Days</a>, highlight the city's rich heritage and welcoming atmosphere, making it a premier destination for modern professionals and families alike.
       </p>
     </div>
   );

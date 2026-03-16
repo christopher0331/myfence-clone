@@ -521,17 +521,17 @@ const BonneyLake = () => {
     {
       name: "Victor Falls",
       description: "A stunning 70-foot waterfall tucked away in a quiet neighborhood park, perfect for quick hikes and photography.",
-      url: "https://www.cityofbonneylake.org/government/departments/public_services/parks/victor_falls_park"
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
     },
     {
       name: "Allan Yorke Park",
       description: "The city's premier park featuring sports fields, a skate park, boat launch, and the popular summer concert series.",
-      url: "https://www.cityofbonneylake.org/government/departments/public_services/parks/allan_yorke_park"
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
     },
     {
       name: "Fennel Creek Trail",
       description: "A peaceful, wooded trail system connecting neighborhoods and offering a tranquil escape into nature.",
-      url: "https://www.cityofbonneylake.org/government/departments/public_services/parks/fennel_creek_trail"
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
     },
     {
       name: "Tehaleh Trails",
@@ -546,7 +546,7 @@ const BonneyLake = () => {
         Bonney Lake is a rapidly growing community that perfectly balances outdoor recreation with modern suburban living. Families are drawn to the highly regarded <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>, known for its strong academic programs and community involvement. The city's landscape is dominated by the beautiful <a href="https://www.piercecountywa.gov/1325/Lake-Tapps-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Tapps</a>, where residents spend summers boating, swimming, and enjoying the shadow of Mount Rainier. 
       </p>
       <p>
-        New developments like <a href="https://tehaleh.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tehaleh</a> have brought expanded amenities, including new schools, coffee shops, and an extensive trail network. Residents can shop and dine at the <a href="https://www.cityofbonneylake.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Midtown commercial district</a>, or enjoy local favorites like <a href="https://www.gloverparkbrewery.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local dining spots</a>. The active <a href="https://www.cityofbonneylake.org/government/departments/recreation" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Bonney Lake Recreation department</a> keeps the community engaged year-round with sports leagues, events, and the much-loved Bonney Lake Days festival.
+        New developments like <a href="https://tehaleh.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tehaleh</a> have brought expanded amenities, including new schools, coffee shops, and an extensive trail network. Residents can shop and dine at the <a href="https://www.ci.bonney-lake.wa.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Midtown commercial district</a>, or enjoy local favorites like <a href="https://www.gloverparkbrewery.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local dining spots</a>. The active <a href="https://www.ci.bonney-lake.wa.us/government/executive_department/recreation_program" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Bonney Lake Recreation department</a> keeps the community engaged year-round with sports leagues, events, and the much-loved Bonney Lake Days festival.
       </p>
     </div>
   );

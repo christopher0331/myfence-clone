@@ -460,7 +460,7 @@ const SeaTac = () => {
     {
       name: "Angle Lake Park",
       description: "A popular 10-acre lakefront park featuring a swimming beach, spray park, fishing pier, and beautiful picnic areas.",
-      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs/parks-and-trails/angle-lake-park"
+      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs-services/parks-facilities"
     },
     {
       name: "Highline SeaTac Botanical Garden",
@@ -470,12 +470,12 @@ const SeaTac = () => {
     {
       name: "North SeaTac Park",
       description: "A massive community hub providing excellent sports facilities, a BMX track, disc golf, and miles of walking trails.",
-      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs/parks-and-trails/north-seatac-park"
+      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs-services/parks-facilities"
     },
     {
       name: "Valley Ridge Park",
       description: "A dynamic recreation complex boasting synthetic turf sports fields, tennis courts, and a vibrant community center.",
-      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs/parks-and-trails/valley-ridge-park"
+      url: "https://www.seatacwa.gov/government/city-departments/parks-community-programs-services/parks-facilities"
     },
     {
       name: "Seattle-Tacoma International Airport",
@@ -487,10 +487,10 @@ const SeaTac = () => {
   const seatacLivingContent = (
     <div className="space-y-4 text-muted-foreground leading-relaxed">
       <p>
-        SeaTac is a unique and bustling community defined by its unparalleled connectivity and diverse neighborhoods. Families benefit from the strong educational foundation provided by the <a href="https://www.highlineschools.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Highline Public Schools</a> district. The city's beating heart for community engagement is the <a href="https://www.seatacwa.gov/government/city-departments/parks-community-programs/sea-tac-community-center" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">SeaTac Community Center</a>, which hosts a variety of youth programs, fitness classes, and senior activities year-round.
+        SeaTac is a unique and bustling community defined by its unparalleled connectivity and diverse neighborhoods. Families benefit from the strong educational foundation provided by the <a href="https://www.highlineschools.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Highline Public Schools</a> district. The city's beating heart for community engagement is the <a href="https://www.seatacwa.gov/government/city-departments/parks-community-programs-services/seatac-community-center" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">SeaTac Community Center</a>, which hosts a variety of youth programs, fitness classes, and senior activities year-round.
       </p>
       <p>
-        Despite its urban and industrial center, SeaTac offers surprising natural retreats and vibrant local culture. Residents often gather at the scenic <a href="https://www.seatacwa.gov/government/city-departments/parks-community-programs/parks-and-trails/angle-lake-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Angle Lake</a> during the summer for swimming and community events. The city's diverse population has fostered an incredible culinary scene along International Boulevard, featuring authentic restaurants representing cultures from around the globe. With easy access to the <a href="https://www.soundtransit.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Link Light Rail</a>, SeaTac residents enjoy the perfect balance of immediate local amenities and effortless connection to the broader Seattle metropolitan area.
+        Despite its urban and industrial center, SeaTac offers surprising natural retreats and vibrant local culture. Residents often gather at the scenic <a href="https://www.seatacwa.gov/government/city-departments/parks-community-programs-services/parks-facilities" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Angle Lake</a> during the summer for swimming and community events. The city's diverse population has fostered an incredible culinary scene along International Boulevard, featuring authentic restaurants representing cultures from around the globe. With easy access to the <a href="https://www.soundtransit.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Link Light Rail</a>, SeaTac residents enjoy the perfect balance of immediate local amenities and effortless connection to the broader Seattle metropolitan area.
       </p>
     </div>
   );

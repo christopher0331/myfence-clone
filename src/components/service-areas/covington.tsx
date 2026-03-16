@@ -22,7 +22,7 @@ const Covington = () => {
     {
       name: "Soaring Eagle Regional Park",
       description: "A massive 600-acre natural area nearby, perfect for horseback riding, mountain biking, and exploring diverse ecosystems.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/soaring-eagle"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle"
     },
     {
       name: "Covington Farmers Market",

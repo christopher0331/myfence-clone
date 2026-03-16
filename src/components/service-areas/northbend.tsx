@@ -578,7 +578,7 @@ const NorthBend = () => {
     {
       name: "Rattlesnake Ledge & Lake",
       description: "A breathtaking recreation area featuring a stunning emerald lake perfect for swimming and a highly popular, scenic hiking trail.",
-      url: "https://www.seattle.gov/utilities/protecting-our-environment/education-and-conservation/cedar-river-watershed/rattlesnake-ledge"
+      url: "https://www.seattle.gov/utilities/protecting-our-environment/our-water-sources/cedar-river-watershed/recreation-areas-and-trails"
     },
     {
       name: "North Bend Premium Outlets",
@@ -588,7 +588,7 @@ const NorthBend = () => {
     {
       name: "Snoqualmie Valley Trail",
       description: "A flat, 31-mile packed gravel trail tracing an old railroad route, perfect for long-distance cycling, running, and equestrian use.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/snoqualmie-valley-trail"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/snoqualmie-valley-trail"
     },
     {
       name: "Downtown Historic District",
@@ -603,7 +603,7 @@ const NorthBend = () => {
         North Bend sits at the foothills of the Cascade Mountains and offers an unparalleled, ruggedly beautiful Pacific Northwest lifestyle. Known globally for its iconic backdrop of Mount Si and its role in pop culture, the city attracts residents who prioritize nature and outdoor adventure above all else. Families benefit from the highly-rated <a href="https://www.svsd410.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Snoqualmie Valley School District</a>, while the <a href="https://discovernorthbend.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">historic downtown corridor</a> provides a cozy, small-town atmosphere with beloved local spots like Twede's Cafe and the North Bend Theatre.
       </p>
       <p>
-        Living in North Bend means having world-class recreation literally in your backyard. Whether it's hiking <a href="https://www.dnr.wa.gov/MountSi" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Si</a>, mountain biking the extensive local trails, or skiing at nearby <a href="https://summitatsnoqualmie.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">The Summit at Snoqualmie</a>, the area is an outdoor enthusiast's dream. Despite its remote, alpine feel, the city remains conveniently connected to the greater Seattle area via Interstate 90, making it a viable, albeit scenic, commute. Between the <a href="https://si-view.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Si View Metro Parks</a> community events and the seasonal farmers markets, North Bend fosters a fiercely proud, active, and deeply connected community.
+        Living in North Bend means having world-class recreation literally in your backyard. Whether it's hiking <a href="https://www.dnr.wa.gov/MountSi" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Si</a>, mountain biking the extensive local trails, or skiing at nearby <a href="https://summitatsnoqualmie.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">The Summit at Snoqualmie</a>, the area is an outdoor enthusiast's dream. Despite its remote, alpine feel, the city remains conveniently connected to the greater Seattle area via Interstate 90, making it a viable, albeit scenic, commute. Between the <a href="https://www.siviewpark.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Si View Metro Parks</a> community events and the seasonal farmers markets, North Bend fosters a fiercely proud, active, and deeply connected community.
       </p>
     </div>
   );

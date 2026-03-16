@@ -22,7 +22,7 @@ const Enumclaw = () => {
     {
       name: "Pinnacle Peak Park",
       description: "A steep, challenging hike affectionately known as 'Mount Lee,' rewarding climbers with incredible views of Mount Rainier and the valley.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/pinnacle-peak"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/pinnacle-peak"
     },
     {
       name: "Downtown Historic District",
@@ -37,7 +37,7 @@ const Enumclaw = () => {
         Nestled at the foothills of the Cascade Mountains, Enumclaw serves as the "Gateway to Mount Rainier" and offers a rugged, authentic Pacific Northwest lifestyle. The city strikes a unique balance between a rich agricultural heritage and modern suburban growth. Families are served by the <a href="https://www.enumclaw.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Enumclaw School District</a>, which is deeply integrated into the community. The <a href="https://www.discoverenumclaw.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">historic downtown area</a> remains the vibrant heart of the city, where locals gather for seasonal parades, block parties, and a highly active summer farmers market.
       </p>
       <p>
-        Living in Enumclaw means having immediate access to some of the state's best outdoor recreation. Residents are just a short drive from the <a href="https://www.nps.gov/mora/index.htm" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Rainier National Park</a> corridor, offering world-class hiking, skiing, and camping. Closer to home, the <a href="https://www.enumclaw.wa.gov/173/Parks-Recreation" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks system</a> and numerous equestrian trails highlight the area's spacious, rural character. Despite its proximity to major job centers in King and Pierce counties, Enumclaw fiercely protects its small-town atmosphere, making it a perfect haven for those seeking space, nature, and community connection.
+        Living in Enumclaw means having immediate access to some of the state's best outdoor recreation. Residents are just a short drive from the <a href="https://www.nps.gov/mora/index.htm" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Mount Rainier National Park</a> corridor, offering world-class hiking, skiing, and camping. Closer to home, the <a href="https://www.cityofenumclaw.net/229/Parks-Recreation-Cultural-Services" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks system</a> and numerous equestrian trails highlight the area's spacious, rural character. Despite its proximity to major job centers in King and Pierce counties, Enumclaw fiercely protects its small-town atmosphere, making it a perfect haven for those seeking space, nature, and community connection.
       </p>
     </div>
   );

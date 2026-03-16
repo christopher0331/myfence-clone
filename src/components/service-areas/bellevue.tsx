@@ -662,7 +662,7 @@ const Bellevue = () => {
               Bis on Main
             </a>
             {" "}and{" "}
-            <a href="https://www.wildginger.net/bellevue" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
+            <a href="https://www.wildginger.net/bellevue-1" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">
               Wild Ginger Bellevue
             </a>
             {" "}have been Eastside staples for years, and newer arrivals in the Spring District keep the options growing. For outdoor access close to home, the{" "}

@@ -387,12 +387,12 @@ const Sumner = () => {
     {
       name: "Historic Downtown Sumner",
       description: "A charming, walkable main street filled with preserved 1890s architecture, boutique shops, and local cafes.",
-      url: "https://sumnerdowntown.com/"
+      url: "https://www.sumnermainstreet.com/"
     },
     {
       name: "Sumner Link Trail",
       description: "A beautiful paved pathway that connects the city to the regional Interurban Trail, perfect for cycling and walking.",
-      url: "https://sumnerwa.gov/departments/parks-and-recreation/sumner-link-trail/"
+      url: "https://sumnerwa.gov/trails/"
     },
     {
       name: "Ryan House Museum",
@@ -414,10 +414,10 @@ const Sumner = () => {
   const sumnerLivingContent = (
     <div className="space-y-4 text-muted-foreground leading-relaxed">
       <p>
-        Known affectionately as the "Rhubarb Pie Capital of the World," Sumner retains a strong, small-town charm while offering easy access to larger metropolitan areas. The community is tight-knit, with families benefiting from the highly rated <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>. Community life centers around the historic downtown, where the <a href="https://sumnerdowntown.com/events/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Downtown Association</a> hosts vibrant events like the annual Street of Treats and classic car shows.
+        Known affectionately as the "Rhubarb Pie Capital of the World," Sumner retains a strong, small-town charm while offering easy access to larger metropolitan areas. The community is tight-knit, with families benefiting from the highly rated <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>. Community life centers around the historic downtown, where the <a href="https://www.sumnermainstreet.com/events/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Downtown Association</a> hosts vibrant events like the annual Street of Treats and classic car shows.
       </p>
       <p>
-        Outdoor recreation is heavily tied to the city's agricultural roots and its location along the Puyallup River. The <a href="https://sumnerwa.gov/departments/parks-and-recreation/sumner-link-trail/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Link Trail</a> offers miles of scenic pathways right at residents' doorsteps. During the summer, the community gathers at the <a href="https://www.sumnerwa.gov/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks</a> or enjoys fresh produce from the numerous surrounding valley farms. With its unique blend of historic preservation, active agricultural surroundings, and modern community amenities, Sumner provides a uniquely Pacific Northwest lifestyle that honors its past while looking to the future.
+        Outdoor recreation is heavily tied to the city's agricultural roots and its location along the Puyallup River. The <a href="https://sumnerwa.gov/trails/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner Link Trail</a> offers miles of scenic pathways right at residents' doorsteps. During the summer, the community gathers at the <a href="https://www.sumnerwa.gov/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local parks</a> or enjoys fresh produce from the numerous surrounding valley farms. With its unique blend of historic preservation, active agricultural surroundings, and modern community amenities, Sumner provides a uniquely Pacific Northwest lifestyle that honors its past while looking to the future.
       </p>
     </div>
   );

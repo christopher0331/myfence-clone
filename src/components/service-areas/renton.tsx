@@ -202,7 +202,7 @@ const Renton = () => {
     {
       name: "Cedar River Trail",
       description: "A picturesque paved trail following the Cedar River, perfect for cycling, jogging, and connecting with regional trail networks.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/cedar-river-trail"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/cedar-river"
     },
     {
       name: "Renton History Museum",

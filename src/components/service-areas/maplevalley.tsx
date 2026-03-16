@@ -155,7 +155,7 @@ const MapleValley = () => {
     {
       name: "Lake Wilderness Park",
       description: "A breathtaking 117-acre park featuring a swimming beach, walking trails, and spectacular views of Mount Rainier.",
-      url: "https://www.maplevalleywa.gov/departments-services/parks-recreation/parks-and-trails/lake-wilderness-park"
+      url: "https://www.maplevalleywa.gov/government/departments/parks_and_recreation/lake_wilderness_park.php"
     },
     {
       name: "Lake Wilderness Arboretum",
@@ -165,27 +165,27 @@ const MapleValley = () => {
     {
       name: "Cedar River Trail",
       description: "A scenic paved pathway stretching for miles alongside the Cedar River, popular with cyclists, runners, and nature lovers.",
-      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/cedar-river-trail"
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/cedar-river"
     },
     {
       name: "Gnome Trail",
       description: "A whimsical, family-friendly hiking trail where visitors can spot dozens of hidden gnomes tucked among the trees.",
-      url: "https://www.wta.org/go-hiking/hikes/gnome-trail"
+      url: "https://www.wta.org/go-hiking/hikes/green-to-cedar-river-trail"
     },
     {
       name: "Maple Valley Farmers Market",
       description: "A vibrant seasonal market showcasing local agriculture, artisan crafts, and live music from the surrounding community.",
-      url: "https://maplevalleyfarmersmarket.org/"
+      url: "https://www.maplevalleywa.gov/government/departments/parks_and_recreation/parks_and_trails.php"
     }
   ];
 
   const maplevalleyLivingContent = (
     <div className="space-y-4 text-muted-foreground leading-relaxed">
       <p>
-        Maple Valley offers an idyllic blend of rural charm and modern convenience, making it a highly sought-after destination for families and outdoor enthusiasts. The community takes pride in the award-winning <a href="https://www.tahomasd.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tahoma School District</a>, which frequently ranks among the top in the state. Local life often centers around the <a href="https://www.maplevalleywa.gov/departments-services/parks-recreation/parks-and-trails/lake-wilderness-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Park</a>, a massive recreational hub that hosts community events like the annual Maple Valley Days and provides stunning backdrops for everyday activities.
+        Maple Valley offers an idyllic blend of rural charm and modern convenience, making it a highly sought-after destination for families and outdoor enthusiasts. The community takes pride in the award-winning <a href="https://www.tahomasd.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tahoma School District</a>, which frequently ranks among the top in the state. Local life often centers around the <a href="https://www.maplevalleywa.gov/government/departments/parks_and_recreation/lake_wilderness_park.php" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Park</a>, a massive recreational hub that hosts community events like the annual Maple Valley Days and provides stunning backdrops for everyday activities.
       </p>
       <p>
-        Residents of Maple Valley enjoy a lifestyle deeply connected to nature without sacrificing accessibility. The area is interwoven with miles of trails, including the <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/green-to-cedar-rivers-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Green to Cedar Rivers Trail</a>, encouraging an active, outdoor-focused way of life. The growing <a href="https://maplevalleychamber.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Four Corners commercial district</a> provides convenient shopping and dining options. With its commitment to preserving green spaces through organizations like the <a href="https://lakewildernessarboretum.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Arboretum</a>, Maple Valley maintains its distinctly forested, peaceful character while accommodating thoughtful community growth.
+        Residents of Maple Valley enjoy a lifestyle deeply connected to nature without sacrificing accessibility. The area is interwoven with miles of trails, including the <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/green-to-cedar-rivers-trail" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Green to Cedar Rivers Trail</a>, encouraging an active, outdoor-focused way of life. The growing <a href="https://maplevalleychamber.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Four Corners commercial district</a> provides convenient shopping and dining options. With its commitment to preserving green spaces through organizations like the <a href="https://lakewildernessarboretum.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Wilderness Arboretum</a>, Maple Valley maintains its distinctly forested, peaceful character while accommodating thoughtful community growth.
       </p>
     </div>
   );

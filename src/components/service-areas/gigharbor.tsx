@@ -361,7 +361,7 @@ const GigHarbor = () => {
     {
       name: "Gig Harbor Waterfront",
       description: "The historic heart of the city offering boutique shopping, excellent dining, and scenic views of the active fishing fleet.",
-      url: "https://gigharborwaterfront.org/"
+      url: "https://www.ghdwa.org/"
     },
     {
       name: "Cushman Trail",
@@ -388,10 +388,10 @@ const GigHarbor = () => {
   const gigharborLivingContent = (
     <div className="space-y-4 text-muted-foreground leading-relaxed">
       <p>
-        Often referred to as the "Maritime City," Gig Harbor offers a uniquely picturesque lifestyle defined by its beautiful waterfront and strong sense of community. The city is highly sought after by families drawn to the <a href="https://www.psd401.net/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Peninsula School District</a>, renowned for its strong academic performance. The community maintains its historic charm through careful preservation of the downtown core, where locals frequent <a href="https://gigharborwaterfront.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">locally-owned shops and renowned restaurants</a>. 
+        Often referred to as the "Maritime City," Gig Harbor offers a uniquely picturesque lifestyle defined by its beautiful waterfront and strong sense of community. The city is highly sought after by families drawn to the <a href="https://www.psd401.net/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Peninsula School District</a>, renowned for its strong academic performance. The community maintains its historic charm through careful preservation of the downtown core, where locals frequent <a href="https://www.ghdwa.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">locally-owned shops and renowned restaurants</a>. 
       </p>
       <p>
-        Gig Harbor's location across the Tacoma Narrows Bridge provides a feeling of retreat while remaining accessible to major urban centers. The lifestyle here is deeply intertwined with the outdoors; residents enjoy easy access to boating, kayaking, and paddleboarding right from the harbor. The <a href="https://www.penmetparks.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">PenMet Parks system</a> provides exceptional recreational facilities, including the expansive Sehmel Homestead Park. Between the summer <a href="https://gigharborwaterfront.org/gig-harbor-farmers-market/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">farmers markets</a> and vibrant maritime festivals, Gig Harbor fosters an active, engaging, and highly desirable Pacific Northwest living experience.
+        Gig Harbor's location across the Tacoma Narrows Bridge provides a feeling of retreat while remaining accessible to major urban centers. The lifestyle here is deeply intertwined with the outdoors; residents enjoy easy access to boating, kayaking, and paddleboarding right from the harbor. The <a href="https://www.penmetparks.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">PenMet Parks system</a> provides exceptional recreational facilities, including the expansive Sehmel Homestead Park. Between the summer <a href="https://www.waterfrontfarmersmarket.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">farmers markets</a> and vibrant maritime festivals, Gig Harbor fosters an active, engaging, and highly desirable Pacific Northwest living experience.
       </p>
     </div>
   );

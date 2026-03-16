@@ -382,22 +382,22 @@ const MountlakeTerrace = () => {
     {
       name: "Recreation Pavilion",
       description: "The heart of community activities featuring an indoor pool, lazy river, fitness center, and expansive indoor recreation spaces.",
-      url: "https://www.cityofmlt.com/185/Recreation-Pavilion"
+      url: "https://www.cityofmlt.com/385/Recreation-Pavilion"
     },
     {
       name: "Terrace Creek Park (Candy Cane Park)",
       description: "A 60-acre natural oasis nicknamed for its striped play equipment, featuring an 18-hole disc golf course and extensive trails.",
-      url: "https://www.cityofmlt.com/190/Terrace-Creek-Park-Candy-Cane-Park"
+      url: "https://www.cityofmlt.com/1986/Terrace-Creek-Park"
     },
     {
       name: "Veterans Memorial Park",
       description: "A peaceful, centrally located park adjacent to the civic center, hosting community memorials and surrounded by towering evergreens.",
-      url: "https://www.cityofmlt.com/192/Veterans-Memorial-Park"
+      url: "https://www.cityofmlt.com/1988/Veterans-Memorial-Park"
     },
     {
       name: "Hemlock State Park",
       description: "A small, heavily wooded natural area offering quiet walking paths and important wetland preservation within the city limits.",
-      url: "https://www.cityofmlt.com/184/Parks-Facilities"
+      url: "https://www.cityofmlt.com/389/Parks-and-Trails"
     }
   ];
 

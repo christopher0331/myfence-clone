@@ -371,7 +371,7 @@ const LakeTapps = () => {
     {
       name: "Allan Yorke Park",
       description: "The area's premier recreation hub featuring sports courts, a skate park, and a busy boat launch on the lake's southern end.",
-      url: "https://www.cityofbonneylake.org/government/departments/public_services/parks/allan_yorke_park"
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
     },
     {
       name: "Tapps Island",
@@ -386,7 +386,7 @@ const LakeTapps = () => {
     {
       name: "White River Amphitheatre",
       description: "Located just a short drive away, this massive outdoor concert venue hosts major touring artists throughout the summer.",
-      url: "https://www.livenation.com/venues/14577/white-river-amphitheatre"
+      url: "https://www.whiteriveramphitheatre.com/"
     }
   ];
 
@@ -396,7 +396,7 @@ const LakeTapps = () => {
         Life in Lake Tapps revolves around the stunning 2,500-acre reservoir that shares its name, offering an unparalleled waterfront lifestyle in Pierce County. Families in the area are served by the highly regarded <a href="https://www.dieringer.wednet.edu/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Dieringer School District</a> and the <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>. The community is tight-knit, often coming together through the efforts of organizations like the <a href="https://www.cascadewater.org/lake-tapps/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Tapps Community Council</a>, which works to preserve the area's natural beauty and recreational quality.
       </p>
       <p>
-        During the warmer months, the lake becomes a bustling hub of activity. Residents enjoy unparalleled access to water sports, from wakeboarding to fishing, often launching from <a href="https://www.piercecountywa.gov/1325/Lake-Tapps-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">North Lake Tapps Park</a>. The surrounding <a href="https://www.cityofbonneylake.org/government/departments/public_services/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">parks and trails</a> offer excellent hiking and cycling with constant views of Mount Rainier. While Lake Tapps provides a peaceful, resort-like atmosphere, it remains conveniently close to the shopping and dining amenities of nearby Bonney Lake and Auburn, offering residents the perfect balance of lakeside tranquility and modern convenience.
+        During the warmer months, the lake becomes a bustling hub of activity. Residents enjoy unparalleled access to water sports, from wakeboarding to fishing, often launching from <a href="https://www.piercecountywa.gov/1325/Lake-Tapps-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">North Lake Tapps Park</a>. The surrounding <a href="https://www.ci.bonney-lake.wa.us/residents/community/parks___trails" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">parks and trails</a> offer excellent hiking and cycling with constant views of Mount Rainier. While Lake Tapps provides a peaceful, resort-like atmosphere, it remains conveniently close to the shopping and dining amenities of nearby Bonney Lake and Auburn, offering residents the perfect balance of lakeside tranquility and modern convenience.
       </p>
     </div>
   );
