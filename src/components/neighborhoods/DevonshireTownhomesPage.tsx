@@ -414,20 +414,20 @@ const DevonshireTownhomesPage = () => {
                 Also Serving Nearby University Place Communities
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout University Place and Pierce County. If you're near Devonshire Townhomes, we also serve Chambers Bay, Sunset Terrace, Fircrest, and surrounding neighborhoods.
+                We install fences throughout University Place and greater Pierce County, including Federal Way, Gig Harbor, Bonney Lake, and Sumner.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/university-place">University Place overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/university-place/chambers-bay">Chambers Bay</Link>
+                  <Link href="/service-areas/federal-way">Federal Way</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/university-place/sunset-terrace">Sunset Terrace</Link>
+                  <Link href="/service-areas/gig-harbor">Gig Harbor</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/fircrest">Fircrest</Link>
+                  <Link href="/service-areas/bonney-lake">Bonney Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
