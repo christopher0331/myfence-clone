@@ -46,11 +46,11 @@ const serviceAreasByRegion = [
   {
     region: "Bonney Lake Communities",
     areas: [
-      { to: "/service-areas/downtown-bonney-lake", label: "Downtown Bonney Lake" },
-      { to: "/service-areas/falling-water", label: "Falling Water" },
-      { to: "/service-areas/lower-tehaleh", label: "Lower Tehaleh" },
-      { to: "/service-areas/mountain-creek", label: "Mountain Creek" },
-      { to: "/service-areas/upper-tehaleh", label: "Upper Tehaleh" },
+      { to: "/service-areas/bonney-lake/downtown-bonney-lake", label: "Downtown Bonney Lake" },
+      { to: "/service-areas/bonney-lake/falling-water", label: "Falling Water" },
+      { to: "/service-areas/bonney-lake/lower-tehaleh", label: "Lower Tehaleh" },
+      { to: "/service-areas/bonney-lake/mountain-creek", label: "Mountain Creek" },
+      { to: "/service-areas/bonney-lake/upper-tehaleh", label: "Upper Tehaleh" },
     ],
   },
   {

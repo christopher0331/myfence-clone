@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Professional cedar fence staining guide for Seattle's wet climate. Protect your investment with expert tips. 30+ years experience. Call (253) 455-1885.",
   alternates: {
-    canonical: "https://myfence.com/should-i-stain-my-fence",
+    canonical: "https://myfence.com/fence-staining",
   },
 };
 
