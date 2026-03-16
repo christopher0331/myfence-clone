@@ -441,6 +441,12 @@ const AngleLakePage = ({
                   <Link href="/service-areas/seatac">SeaTac overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seatac/bow-lake">Bow Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seatac/mcmicken-heights">McMicken Heights</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>

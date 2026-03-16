@@ -443,6 +443,9 @@ const McMickenHeightsPage = ({
                   <Link href="/service-areas/seatac/angle-lake">Angle Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seatac/bow-lake">Bow Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>

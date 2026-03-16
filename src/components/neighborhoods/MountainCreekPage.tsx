@@ -478,6 +478,9 @@ const MountainCreekPage = ({
                   <Link href="/service-areas/bonney-lake/lake-tapps">Lake Tapps</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/upper-tehaleh">Upper Tehaleh</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>

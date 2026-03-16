@@ -295,6 +295,34 @@ const SomersetPage = ({
           </div>
         </section>
 
+        {/* Adjacent Neighborhoods */}
+        <section className="py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+                Also Serving Nearby Bellevue Neighborhoods
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We install fences throughout Bellevue. Near Somerset, we also serve Sherwood Forest, Newport Hills, Eastgate, and the broader Bellevue area.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bellevue">Bellevue overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bellevue/sherwood-forest">Sherwood Forest</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bellevue/newport-hills">Newport Hills</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas">All service areas</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-16 bg-primary/5">
           <div className="container">

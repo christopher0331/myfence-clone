@@ -314,6 +314,18 @@ const SoilHaulAwayPage = () => {
         </div>
       </section>
 
+      {/* Related Upgrades */}
+      <section className="container py-10 border-t">
+        <h2 className="text-xl font-semibold mb-4">Explore Related Upgrades</h2>
+        <div className="flex flex-wrap gap-4">
+          <Link href="/fence-upgrades/trellis-systems" className="text-primary hover:underline font-medium">Trellis Systems →</Link>
+          <Link href="/fence-upgrades/clear-cedar" className="text-primary hover:underline font-medium">Clear Cedar Boards →</Link>
+          <Link href="/fence-upgrades/exterior-screws" className="text-primary hover:underline font-medium">Exterior Screws Upgrade →</Link>
+          <Link href="/fence-posts/cedar-post-on-pipe" className="text-primary hover:underline font-medium">Cedar Post on Pipe →</Link>
+          <Link href="/fence-styles" className="text-primary hover:underline font-medium">View All Fence Styles →</Link>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="container py-12 md:py-16">
         <div className="max-w-2xl mx-auto text-center space-y-6">

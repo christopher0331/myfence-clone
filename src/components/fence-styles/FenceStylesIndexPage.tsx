@@ -286,6 +286,27 @@ const FenceStylesIndexPage = () => {
         </div>
       </section>
 
+      <section className="container py-10 border-t">
+        <h2 className="text-2xl font-semibold tracking-tight mb-2">Helpful Resources</h2>
+        <p className="text-muted-foreground mt-1 mb-6 max-w-2xl">
+          Guides to help you plan and budget your fence project.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <Link href="/blog/six-ft-fence-cost" className="text-primary hover:underline font-medium">
+            What Does a 6-Foot Fence Cost in Seattle? →
+          </Link>
+          <Link href="/blog/virtual-quote-tool" className="text-primary hover:underline font-medium">
+            How Our Virtual Quote Tool Works →
+          </Link>
+          <Link href="/blog/cedar-steel-hybrid-fence" className="text-primary hover:underline font-medium">
+            Cedar/Steel Hybrid Fence: Full Guide →
+          </Link>
+          <Link href="/fence-staining" className="text-primary hover:underline font-medium">
+            Should You Stain Your Cedar Fence? →
+          </Link>
+        </div>
+      </section>
+
       <section className="container py-10">
         <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight">
           Optional Fence Upgrades

@@ -509,6 +509,32 @@ const CedarAluminumHybridFence = () => {
         {/* Virtual Quote Tool */}
         <VirtualQuoteTool fenceStyleName="Cedar/Steel Hybrid Fence" />
 
+        {/* Further Reading */}
+        <section className="py-12 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl font-bold mb-4">Further Reading</h2>
+              <p className="text-muted-foreground mb-6">
+                Learn more about this fence style and how it compares to traditional options.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link
+                  href="/blog/cedar-steel-hybrid-fence"
+                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                >
+                  Deep Dive: Cedar/Steel Hybrid Fence Guide →
+                </Link>
+                <Link
+                  href="/blog/six-ft-fence-cost"
+                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                >
+                  What Does a 6-Foot Fence Cost? →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Form */}
         <section className="py-16">
           <div className="container mx-auto px-4">
