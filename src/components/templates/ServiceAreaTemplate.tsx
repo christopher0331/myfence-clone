@@ -175,7 +175,6 @@ function normalizeEnhancedBusinessData(
   rawData: any,
   city: string,
   citySlug: string,
-  reviews: Array<{ rating: number; author_name: string; review_date: string; review_text: string }>,
 ) {
   const data = sanitizeLocalBusinessNodes(rawData, true);
   const canonicalUrl = `${SITE_CONFIG.url}/service-areas/${citySlug}`;
@@ -197,6 +196,8 @@ function normalizeEnhancedBusinessData(
   // Keep areaServed consistent across all service-area pages.
   ensureAreaServedShape(data, city);
 
+  // Self-serving review markup is intentionally excluded from LocalBusiness schema.
+  delete data.review;
   delete data.aggregateRating;
 
   return data;
@@ -288,20 +289,6 @@ const ServiceAreaTemplate = ({
       "opens": "00:00",
       "closes": "23:59"
     },
-    "review": reviews.map(review => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.author_name
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": review.rating.toString(),
-        "bestRating": "5"
-      },
-      "datePublished": review.review_date,
-      "reviewBody": review.review_text
-    })),
     "founder": {
       "@type": "Person",
       "name": "Andrew Knudsen"
@@ -381,7 +368,7 @@ const ServiceAreaTemplate = ({
       "https://www.pinterest.com/MyFenceDotCom/",
       "https://www.tiktok.com/@myfence.com"
     ]
-  }), [city, citySlug, state, reviews]);
+  }), [city, citySlug, state]);
 
   // Merge enhanced business data with reviews and other dynamic fields if provided
   const finalBusinessData = useMemo(() => {
@@ -391,29 +378,10 @@ const ServiceAreaTemplate = ({
       enhancedBusinessData ?? structuredData,
       city,
       citySlug,
-      reviews,
     );
-
-    // Ensure reviews from Trustindex are included in normalized data if not present.
-    if (!data.review && reviews.length > 0) {
-      data.review = reviews.map(review => ({
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": review.author_name
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": review.rating.toString(),
-          "bestRating": "5"
-        },
-        "datePublished": review.review_date,
-        "reviewBody": review.review_text
-      }));
-    }
     
     return data;
-  }, [enhancedBusinessData, structuredData, reviews, city, citySlug]);
+  }, [enhancedBusinessData, structuredData, city, citySlug]);
 
   return (
     <>
