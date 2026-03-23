@@ -1,3 +1,6 @@
+# Image staging directories (upload to ImageKit, not git)
+3.23/
+
 # Logs
 logs
 *.log
