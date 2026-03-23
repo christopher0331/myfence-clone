@@ -43,6 +43,7 @@ interface ServiceAreaTemplateProps {
   faqStructuredData?: any;
   enhancedBusinessData?: any;
   videoTags?: VideoTag[];
+  galleryForceGrid?: boolean;
 }
 
 const DEFAULT_BUSINESS_ADDRESS = {
@@ -219,7 +220,8 @@ const ServiceAreaTemplate = ({
   articleContent,
   faqStructuredData,
   enhancedBusinessData,
-  videoTags = []
+  videoTags = [],
+  galleryForceGrid = false,
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
   const { reviews, reviewsRef } = useTrustindexReviews();
@@ -1025,7 +1027,7 @@ const ServiceAreaTemplate = ({
           </div>
         </section>
 
-        <ServiceAreaPhotoGallery city={city} />
+        <ServiceAreaPhotoGallery city={city} forceGrid={galleryForceGrid} />
 
         <FeaturedProject city={city} />
 

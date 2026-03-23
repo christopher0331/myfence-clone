@@ -15,6 +15,7 @@ interface ServiceAreaPhotoGalleryProps {
   neighborhood?: string;
   title?: string;
   description?: string;
+  forceGrid?: boolean;
 }
 
 export default function ServiceAreaPhotoGallery({
@@ -22,6 +23,7 @@ export default function ServiceAreaPhotoGallery({
   neighborhood,
   title,
   description,
+  forceGrid = false,
 }: ServiceAreaPhotoGalleryProps) {
   const speedOptions = [1, 2, 3, 4, 5];
   const [speedIndex, setSpeedIndex] = useState(0);
@@ -66,7 +68,7 @@ export default function ServiceAreaPhotoGallery({
     return null;
   }
 
-  const useCarousel = photos.length > 3;
+  const useCarousel = !forceGrid && photos.length > 3;
 
   const heading =
     title ??
