@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink, Droplets } from "lucide-react";
+import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink, Droplets, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import Seo from "@/components/Seo";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -17,6 +18,23 @@ const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap")
 });
 
 const SteelPostsPage = () => {
+  const [lightbox, setLightbox] = useState<{ images: string[]; captions: string[]; index: number } | null>(null);
+
+  const openLightbox = (images: string[], captions: string[], index: number) =>
+    setLightbox({ images, captions, index });
+  const closeLightbox = () => setLightbox(null);
+  const lightboxPrev = () => setLightbox((lb) => lb ? { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length } : null);
+  const lightboxNext = () => setLightbox((lb) => lb ? { ...lb, index: (lb.index + 1) % lb.images.length } : null);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -54,8 +72,8 @@ const SteelPostsPage = () => {
 
   const galleryImages = [
     "/lovable-uploads/4x4-steel-posts-fence.webp",
-    "/lovable-uploads/barrier-boss-4x4-steel-post.webp",
-    "/lovable-uploads/barrier-boss-steel-post-closeup.webp",
+    "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-2.webp?tr=w-800",
+    "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-4.webp?tr=w-800",
   ];
 
   return (
@@ -349,13 +367,32 @@ const SteelPostsPage = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
-                <div key={index} className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <button
+                  key={index}
+                  onClick={() => openLightbox(
+                    galleryImages,
+                    [
+                      "Cedar/steel hybrid fence with black steel posts",
+                      "Wynaco, Kent — pre-stained cedar with steel posts",
+                      "Wynaco, Kent — board-on-board picture frame with steel posts",
+                    ],
+                    index
+                  )}
+                  className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group cursor-zoom-in"
+                  aria-label={`View gallery photo ${index + 1} of ${galleryImages.length}`}
+                >
                   <OptimizedImage
                     src={image}
                     alt={`4x4 steel fence post installation example ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 flex items-center justify-center">
+                    <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 w-8 h-8 drop-shadow-lg" />
+                  </div>
+                  <div className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    {index + 1} / {galleryImages.length}
+                  </div>
+                </button>
               ))}
             </div>
           </div>
@@ -397,22 +434,42 @@ const SteelPostsPage = () => {
             </div>
 
             {/* 5-photo grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <div
-                  key={n}
-                  className={`relative rounded-lg overflow-hidden shadow-lg bg-muted/50 ${
-                    n === 5 ? "col-span-2 md:col-span-1" : ""
-                  }`}
-                >
-                  <OptimizedImage
-                    src={`https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-${n}.webp?tr=w-800`}
-                    alt={`4x4 galvanized steel post fence installation in Wynaco, Kent WA — photo ${n} of 5`}
-                    className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-300"
-                  />
+            {(() => {
+              const wynacoImages = [1,2,3,4,5].map(n => `https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-${n}.webp?tr=w-1600`);
+              const wynacoCaptions = [
+                "Wynaco, Kent — 4\"×4\"×9' galvanized steel posts, powder coated black",
+                "Wynaco, Kent — pre-stained picture frame cedar with board-on-board",
+                "Wynaco, Kent — rot board at base keeps cedar off the ground",
+                "Wynaco, Kent — steel post installation in concrete, no wood-to-soil contact",
+                "Wynaco, Kent — completed fence line overview",
+              ];
+              return (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                  {[1,2,3,4,5].map((n, i) => (
+                    <button
+                      key={n}
+                      onClick={() => openLightbox(wynacoImages, wynacoCaptions, i)}
+                      className={`relative rounded-lg overflow-hidden shadow-lg bg-muted/50 group cursor-zoom-in ${
+                        n === 5 ? "col-span-2 md:col-span-1" : ""
+                      }`}
+                      aria-label={`View Wynaco job photo ${n} of 5`}
+                    >
+                      <OptimizedImage
+                        src={`https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-${n}.webp?tr=w-800`}
+                        alt={wynacoCaptions[i]}
+                        className="w-full h-64 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 flex items-center justify-center">
+                        <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 w-8 h-8 drop-shadow-lg" />
+                      </div>
+                      <div className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        {n} / 5
+                      </div>
+                    </button>
+                  ))}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
 
             {/* Job details breakdown */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -446,6 +503,59 @@ const SteelPostsPage = () => {
             </div>
           </div>
         </section>
+
+      {/* Gallery Lightbox Modal */}
+      {lightbox && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm" onClick={closeLightbox}>
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl w-[90vw] max-w-3xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close + counter */}
+            <div className="flex items-center justify-between px-5 py-3 border-b">
+              <span className="text-sm font-medium text-gray-500">
+                {lightbox.index + 1} of {lightbox.images.length}
+              </span>
+              <button
+                onClick={closeLightbox}
+                className="text-gray-400 hover:text-gray-700 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Image area */}
+            <div className="relative bg-gray-100 overflow-hidden flex items-center justify-center" style={{ height: "min(70vh, 600px)" }}>
+              <img
+                src={lightbox.images[lightbox.index]}
+                alt={lightbox.captions[lightbox.index]}
+                className="max-w-full max-h-full object-contain"
+              />
+
+            </div>
+
+            {/* Footer: prev / caption / next */}
+            <div className="flex items-center gap-4 px-5 py-4 border-t">
+              <button
+                onClick={lightboxPrev}
+                className="flex-shrink-0 bg-primary text-white hover:bg-primary/80 rounded-full p-3 transition-colors shadow-sm"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <p className="text-sm text-gray-600 text-center flex-1">{lightbox.captions[lightbox.index]}</p>
+              <button
+                onClick={lightboxNext}
+                className="flex-shrink-0 bg-primary text-white hover:bg-primary/80 rounded-full p-3 transition-colors shadow-sm"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
         {/* Comparison Section */}
         <section className="py-16 px-4">
