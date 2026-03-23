@@ -361,6 +361,92 @@ const SteelPostsPage = () => {
           </div>
         </section>
 
+        {/* Real Job Spotlight: Wynaco, Kent */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-10">
+              <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+                From the Field — Wynaco, Kent WA
+              </span>
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Real Job: 4"×4"×9' Galvanized Steel Posts, Powder Coated Black
+              </h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+                This Kent installation combined every premium upgrade into one build. Pre-stained cedar panels, picture frame style with board-on-board for full privacy, a rot board at the base to keep cedar off the ground, and 4"×4"×9' galvanized steel posts powder coated black throughout.
+              </p>
+            </div>
+
+            {/* Job spec badges */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {[
+                "4\"×4\"×9' Galvanized Steel Posts",
+                "Powder Coated Black",
+                "Picture Frame Style",
+                "Board-on-Board Upgrade",
+                "Pre-Stained Cedar",
+                "Rot Board at Base",
+              ].map((spec) => (
+                <span
+                  key={spec}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-card border rounded-full text-sm font-medium text-foreground"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                  {spec}
+                </span>
+              ))}
+            </div>
+
+            {/* 5-photo grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <div
+                  key={n}
+                  className={`relative rounded-lg overflow-hidden shadow-lg bg-muted/50 ${
+                    n === 5 ? "col-span-2 md:col-span-1" : ""
+                  }`}
+                >
+                  <OptimizedImage
+                    src={`https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-${n}.webp?tr=w-800`}
+                    alt={`4x4 galvanized steel post fence installation in Wynaco, Kent WA — photo ${n} of 5`}
+                    className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Job details breakdown */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-2 text-foreground">Steel Posts</h3>
+                <p className="text-muted-foreground text-sm">
+                  4"×4"×9' galvanized steel posts, powder coated black. Set approximately 24" deep in concrete—no wood-to-soil contact anywhere on the fence line. 40-year Barrier Boss warranty.
+                </p>
+              </div>
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-2 text-foreground">Picture Frame + Board-on-Board</h3>
+                <p className="text-muted-foreground text-sm">
+                  Picture frame cedar panels with board-on-board boards for zero gaps and full privacy. Pre-stained before installation for consistent coverage on all sides of each board.
+                </p>
+              </div>
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-2 text-foreground">Rot Board at Base</h3>
+                <p className="text-muted-foreground text-sm">
+                  A 2×4 rot board raises the cedar fence panels off the ground. The sacrificial board protects the cedar from soil contact and moisture wicking—the leading cause of early fence failure.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Link href="/service-areas/kent/wynaco" className="inline-flex items-center gap-2 text-primary hover:underline font-medium mr-6">
+                View all photos from this Wynaco job →
+              </Link>
+              <Link href="/quote" className="inline-flex items-center gap-2 text-primary hover:underline font-medium">
+                Get a quote with steel posts →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Comparison Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
