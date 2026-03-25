@@ -21,36 +21,17 @@ import {
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
+import {
+  getCityPhotosBySlug,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+} from "@/lib/serviceAreaPhotoUtils";
 
-// Hero image — replace with a dedicated Modified Picture Frame photo once available
-const heroImg = "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
-
-const gallery = [
-  {
-    src: "/lovable-uploads/ad4ca7a4-6910-4508-a789-c7a367954f3e.png",
-    alt: "Modified picture frame cedar fence on rock retaining wall in Bothell",
-  },
-  {
-    src: "/lovable-uploads/90a2b7d3-4ef7-402b-bc96-3ef1639df02c.png",
-    alt: "Modified picture frame cedar fence long run with top cap",
-  },
-  {
-    src: "/lovable-uploads/2ac212df-4601-45ef-8adf-5332eab86f75.png",
-    alt: "Modified picture frame fence panel showing top and side trim without bottom board",
-  },
-  {
-    src: "/lovable-uploads/7586a395-5060-4524-a596-fd70bb61c275.png",
-    alt: "Corner lot modified picture frame cedar fence with gate",
-  },
-  {
-    src: "/lovable-uploads/c13a6e02-2011-4437-a7cb-5de49f6f62b9.png",
-    alt: "Modified picture frame fence on wooded property with cap and side trim detail",
-  },
-  {
-    src: "/lovable-uploads/200fbe25-bf04-4245-812e-ab3d518b830d.png",
-    alt: "Long run of modified picture frame fence along lawn",
-  },
-];
+const bothellPhotos = getCityPhotosBySlug("bothell");
+const heroPhoto = bothellPhotos[0];
+const heroImg = heroPhoto
+  ? buildImageUrl(heroPhoto.file, 1200)
+  : "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -271,7 +252,9 @@ const ModifiedPictureFrameFence = () => {
                 <AspectRatio ratio={16 / 9}>
                   <img
                     src={heroImg}
-                    alt="Modified picture frame cedar fence in Bothell by MyFence.com"
+                    srcSet={heroPhoto ? buildResponsiveSrcSet(heroPhoto.file, 1200) : undefined}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    alt={heroPhoto?.cityAlt ?? "Modified picture frame cedar fence in Bothell by MyFence.com"}
                     loading="eager"
                     className="h-full w-full rounded-md object-cover"
                   />
@@ -371,11 +354,13 @@ const ModifiedPictureFrameFence = () => {
 
                 {/* First 2 gallery images */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {gallery.slice(0, 2).map((img) => (
-                    <AspectRatio key={img.src} ratio={4 / 3}>
+                  {bothellPhotos.slice(1, 3).map((photo) => (
+                    <AspectRatio key={photo.file} ratio={4 / 3}>
                       <img
-                        src={img.src}
-                        alt={img.alt}
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        alt={photo.cityAlt ?? "Modified picture frame fence installation in Bothell"}
                         loading="lazy"
                         className="h-full w-full rounded-md object-cover"
                       />
@@ -497,21 +482,23 @@ const ModifiedPictureFrameFence = () => {
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {gallery.map((image, index) => (
+                    {bothellPhotos.map((photo, index) => (
                       <div
-                        key={index}
+                        key={photo.file}
                         className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                       >
                         <img
-                          src={image.src}
-                          alt={image.alt}
+                          src={buildImageUrl(photo.file, 800)}
+                          srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          alt={photo.cityAlt ?? `Modified picture frame fence installation in Bothell ${index + 1}`}
                           className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="absolute bottom-4 left-4 right-4">
                             <p className="text-white text-sm font-medium">
-                              {image.alt}
+                              {photo.cityAlt ?? "Modified picture frame fence in Bothell"}
                             </p>
                           </div>
                         </div>

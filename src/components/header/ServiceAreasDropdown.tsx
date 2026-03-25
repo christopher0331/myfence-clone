@@ -14,6 +14,7 @@ const serviceAreasByRegion = [
     region: "King County",
     areas: [
       { to: "/service-areas/bellevue", label: "Bellevue" },
+      { to: "/service-areas/bothell", label: "Bothell" },
       { to: "/service-areas/issaquah", label: "Issaquah" },
       { to: "/service-areas/issaquah-highlands", label: "Issaquah Highlands" },
       { to: "/service-areas/kirkland", label: "Kirkland" },

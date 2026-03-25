@@ -1202,5 +1202,65 @@
     "neighborhoodAlt": "Wynaco Steel Fence Posts 11",
     "lat": 47.3239555555556,
     "lng": -122.139919444444
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-1.webp",
+    "originalFile": "Bothell/IMG_1277.jpeg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 1",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-2.webp",
+    "originalFile": "Bothell/IMG_9673.jpg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 2",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-3.webp",
+    "originalFile": "Bothell/IMG_9674.jpg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 3",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-4.webp",
+    "originalFile": "Bothell/IMG_9675.jpg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 4",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-5.webp",
+    "originalFile": "Bothell/IMG_9676.jpg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 5",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "file": "Bothell/Bothell-Modified-Picture-Frame-6.webp",
+    "originalFile": "Bothell/IMG_9677.jpg",
+    "city": "Bothell",
+    "neighborhood": null,
+    "cityAlt": "Bothell Modified Picture Frame 6",
+    "neighborhoodAlt": null,
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
   }
 ]
