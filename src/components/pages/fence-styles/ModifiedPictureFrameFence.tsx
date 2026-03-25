@@ -739,26 +739,52 @@ const ModifiedPictureFrameFence = () => {
                 </section>
 
                 {/* Related styles */}
-                <section className="space-y-3">
+                <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
                     Related fence styles
                   </h2>
-                  <div className="flex flex-wrap gap-3">
-                    <Button asChild variant="outline">
-                      <Link href="/fence-styles/picture-frame-fence">
-                        Picture Frame Fence (full trim)
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
+                    {[
+                      {
+                        title: "Picture Frame Fence",
+                        desc: "Full trim on all four sides for a completely framed panel.",
+                        img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png",
+                        link: "/fence-styles/picture-frame-fence",
+                        badge: "Most Popular",
+                      },
+                      {
+                        title: "3-Rail Picture Frame",
+                        desc: "Three rails add extra strength and architectural detail.",
+                        img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
+                        link: "/fence-styles/3-rail-picture-frame-fence",
+                        badge: null,
+                      },
+                      {
+                        title: "Solid Board Fence",
+                        desc: "Most economical — 2 rails, no trim.",
+                        img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png",
+                        link: "/fence-styles/solid-board-fence",
+                        badge: "Budget Option",
+                      },
+                    ].map((style) => (
+                      <Link key={style.link} href={style.link} className="group block">
+                        <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow">
+                          <img
+                            src={style.img}
+                            alt={`${style.title} fence by MyFence.com`}
+                            loading="lazy"
+                            style={{ width: "100%", objectFit: "contain" }}
+                          />
+                          <div className="p-3">
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="font-semibold text-sm group-hover:text-primary transition-colors">{style.title}</span>
+                              {style.badge && <Badge variant="secondary" className="text-[10px] shrink-0">{style.badge}</Badge>}
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-1">{style.desc}</p>
+                          </div>
+                        </div>
                       </Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <Link href="/fence-styles/3-rail-picture-frame-fence">
-                        3-Rail Picture Frame Fence
-                      </Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <Link href="/fence-styles/solid-board-fence">
-                        Solid Board Fence
-                      </Link>
-                    </Button>
+                    ))}
                   </div>
                 </section>
 
