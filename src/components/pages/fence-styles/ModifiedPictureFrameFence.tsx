@@ -661,20 +661,22 @@ const ModifiedPictureFrameFence = () => {
                   <div className="rounded-lg border bg-card p-4">
                     <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                       <li>
-                        Set posts first, then measure post-to-post for precise
-                        trim and rail cuts.
+                        Fence Genius software models the entire fence run before
+                        a single board is cut — post spacing, rail lengths, trim,
+                        and gate openings are all calculated upfront.
                       </li>
                       <li>
-                        Model the top cap line to follow the terrain consistently
-                        across the full run.
+                        Materials arrive on-site prefabricated to spec, so
+                        installation is clean and fast with no guesswork in
+                        the field.
                       </li>
                       <li>
-                        Calculate picket spacing before cutting so every panel
-                        is balanced.
+                        The top cap line is modeled to follow your terrain
+                        consistently, so every panel tracks the grade the same way.
                       </li>
                       <li>
-                        Gate openings are planned in advance to ensure hardware
-                        and clearance are correct.
+                        Gate hardware and clearances are confirmed in the plan
+                        before anything is ordered or installed.
                       </li>
                     </ul>
                   </div>
