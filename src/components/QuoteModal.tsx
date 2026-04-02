@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,6 +23,7 @@ interface QuoteModalProps {
 const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [textConsentError, setTextConsentError] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -46,6 +48,15 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.address.trim() || !addressValid) {
+      toast({
+        title: !formData.address.trim() ? "Address required" : "Invalid address",
+        description: "Please select your project address from the dropdown suggestions.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (formData.phone.trim() && !formData.textConsent) {
       setTextConsentError(true);
@@ -215,14 +226,14 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
           <div className="space-y-2">
             <Label htmlFor="address">Project Address *</Label>
-            <Input
+            <AddressAutocomplete
               id="address"
               name="address"
               value={formData.address}
-              onChange={handleInputChange}
-              required
+              onChange={(val) => setFormData((prev) => ({ ...prev, address: val }))}
+              onValidChange={setAddressValid}
               placeholder="Street address, City, State, ZIP"
-              autoComplete="street-address"
+              required
             />
           </div>
 

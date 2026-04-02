@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -151,7 +152,11 @@ export function ReferralForm() {
                 <FormItem className="md:col-span-2">
                   <FormLabel>Your Address (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="123 Main St, Seattle, WA" {...field} />
+                    <AddressAutocomplete
+                      value={field.value ?? ""}
+                      onChange={field.onChange}
+                      placeholder="123 Main St, Seattle, WA"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -240,7 +245,11 @@ export function ReferralForm() {
                 <FormItem className="md:col-span-2">
                   <FormLabel>Their Address/City (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="456 Oak Ave, Bellevue, WA" {...field} />
+                    <AddressAutocomplete
+                      value={field.value ?? ""}
+                      onChange={field.onChange}
+                      placeholder="456 Oak Ave, Bellevue, WA"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

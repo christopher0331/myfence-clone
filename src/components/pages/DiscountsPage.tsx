@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -135,6 +136,7 @@ const DiscountsPage = () => {
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
   const [formAddress, setFormAddress] = useState("");
+  const [formAddressValid, setFormAddressValid] = useState(false);
   const [formEmail, setFormEmail] = useState("");
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
@@ -315,6 +317,10 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
+      if (!formAddress.trim() || !formAddressValid) {
+        toast.error("Please select your project address from the dropdown suggestions.");
+        return;
+      }
       if (formPhone.trim() && !formTextConsent) {
         setTextConsentError(true);
         document.getElementById("already-played-text-consent-row")?.scrollIntoView({
@@ -394,6 +400,10 @@ const DiscountsPage = () => {
     try {
       if (!formFirstName.trim() || !formLastName.trim() || !formEmail.trim() || !formPhone.trim()) {
         toast.error("Please fill in all required fields.");
+        return;
+      }
+      if (!formAddress.trim() || !formAddressValid) {
+        toast.error("Please select your project address from the dropdown suggestions.");
         return;
       }
       if (formPhone.trim() && !formTextConsent) {
@@ -677,10 +687,12 @@ const DiscountsPage = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="address">Address</Label>
-                    <Input
+                    <AddressAutocomplete
                       id="address"
                       value={formAddress}
-                      onChange={(e) => setFormAddress(e.target.value)}
+                      onChange={setFormAddress}
+                      onValidChange={setFormAddressValid}
+                      placeholder="Street address, City, State, ZIP"
                       required
                     />
                   </div>
@@ -792,10 +804,12 @@ const DiscountsPage = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="alreadyPlayedAddress">Address</Label>
-                    <Input
+                    <AddressAutocomplete
                       id="alreadyPlayedAddress"
                       value={formAddress}
-                      onChange={(e) => setFormAddress(e.target.value)}
+                      onChange={setFormAddress}
+                      onValidChange={setFormAddressValid}
+                      placeholder="Street address, City, State, ZIP"
                       required
                     />
                   </div>

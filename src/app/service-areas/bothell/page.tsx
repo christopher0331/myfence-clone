@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
-import {
-  getNeighborhoodsForCity,
-  slugifyLocation,
-} from "@/lib/serviceAreaPhotoUtils";
 
 export const metadata: Metadata = {
   title: "Bothell Fence Installation & Repair | MyFence.com",
@@ -15,17 +11,32 @@ export const metadata: Metadata = {
 };
 
 export default function BothellPage() {
-  const neighborhoods = getNeighborhoodsForCity("bothell").map((name) => ({
-    name,
-    description: `Fence installation and replacement projects completed in ${name}.`,
-    link: `/service-areas/bothell/${slugifyLocation(name)}`,
-  }));
-
   return (
     <ServiceAreaTemplate
       city="Bothell"
       state="WA"
-      neighborhoods={neighborhoods}
+      neighborhoods={[
+        {
+          name: "Canyon Park",
+          description: "Newer developments and HOA communities near I-405 that often specify modified picture frame fencing.",
+        },
+        {
+          name: "North Creek",
+          description: "Family-oriented area with established homes near the North Creek Trail requiring privacy and boundary fencing.",
+        },
+        {
+          name: "Norway Hill",
+          description: "Hillside neighborhood with larger lots and terrain changes — slope-following installations are common here.",
+        },
+        {
+          name: "Downtown Bothell",
+          description: "Walkable downtown core with smaller lots and tighter setbacks where space-efficient fence designs matter.",
+        },
+        {
+          name: "Thrashers Corner",
+          description: "Growing area on the Snohomish County border with newer construction and active HOA fence requirements.",
+        },
+      ]}
       heroTitle="Professional Fence Services in Bothell"
       heroDescription="See recent fence installations and neighborhood projects in Bothell, WA. From modified picture frame to hogwire and hybrid styles — get a free quote from MyFence.com today."
       galleryForceGrid={true}
