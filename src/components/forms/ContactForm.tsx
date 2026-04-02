@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -29,6 +30,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<FormData>({
@@ -45,6 +47,10 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: FormData) => {
+    if (!addressValid) {
+      form.setError("address", { message: "Please select an address from the dropdown suggestions." });
+      return;
+    }
     setIsSubmitting(true);
     try {
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -179,7 +185,12 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Address</FormLabel>
                 <FormControl>
-                  <Input placeholder="123 Main St, Seattle, WA" {...field} />
+                  <AddressAutocomplete
+                    value={field.value}
+                    onChange={field.onChange}
+                    onValidChange={setAddressValid}
+                    placeholder="123 Main St, Seattle, WA"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

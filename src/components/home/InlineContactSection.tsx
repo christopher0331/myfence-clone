@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,7 @@ import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 
 export const InlineContactSection = () => {
   const [textConsentError, setTextConsentError] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,6 +42,15 @@ export const InlineContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (formData.address.trim() && !addressValid) {
+      toast({
+        title: "Invalid address",
+        description: "Please select an address from the dropdown suggestions.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (formData.phone.trim() && !formData.textConsent) {
       setTextConsentError(true);
@@ -211,15 +222,15 @@ export const InlineContactSection = () => {
                 ) : null}
                 <div>
                   <Label htmlFor="inline-address" className="text-sm font-medium">Property Address</Label>
-                  <Input
-                    id="inline-address"
-                    name="address"
-                    type="text"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    className="mt-1"
-                    placeholder="Seattle, WA"
-                  />
+                  <div className="mt-1">
+                    <AddressAutocomplete
+                      id="inline-address"
+                      value={formData.address}
+                      onChange={(val) => setFormData((prev) => ({ ...prev, address: val }))}
+                      onValidChange={setAddressValid}
+                      placeholder="Seattle, WA"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="space-y-4">
