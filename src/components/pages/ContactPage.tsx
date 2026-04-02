@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import Seo from "@/components/Seo";
 import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,7 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [textConsentError, setTextConsentError] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,6 +44,17 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.address.trim() || !addressValid) {
+      toast({
+        title: !formData.address.trim() ? "Address required" : "Invalid address",
+        description: !formData.address.trim()
+          ? "Please enter your property address."
+          : "Please select an address from the dropdown suggestions.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (formData.phone.trim() && !formData.textConsent) {
       setTextConsentError(true);
@@ -279,14 +292,13 @@ const ContactPage = () => {
                   ) : null}
                   <div>
                     <Label htmlFor="address">Address</Label>
-                    <Input
+                    <AddressAutocomplete
                       id="address"
-                      name="address"
                       value={formData.address}
-                      onChange={handleInputChange}
+                      onChange={(val) => setFormData((prev) => ({ ...prev, address: val }))}
+                      onValidChange={setAddressValid}
                       required
-                      autoComplete="street-address"
-                      maxLength={200}
+                      placeholder="123 Main St, Seattle, WA"
                     />
                   </div>
                 </div>
