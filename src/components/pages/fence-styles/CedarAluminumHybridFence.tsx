@@ -18,6 +18,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 const heroImg = "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png";
@@ -289,6 +294,74 @@ const CedarAluminumHybridFence = () => {
                     We use Barrier Boss panels specifically because they come in taller sheets. When cut to follow grade on sloped terrain, you still maintain a full 6' fence height.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ColorMax Night Sky Gallery — Daybreak at River Ridge, Maple Valley */}
+        {(() => {
+          const photos = getNeighborhoodPhotosBySlugs("maple-valley", "daybreak-at-river-ridge");
+          if (!photos.length) return null;
+          return (
+            <section className="py-16">
+              <div className="container mx-auto px-4">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold mb-4">Steel Cedar Hybrid — ColorMax Night Sky</h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Shown in <span className="font-semibold text-foreground">ColorMax Night Sky</span> — a deep, rich black finish that contrasts beautifully with natural cedar framing. Installed in Daybreak at River Ridge, Maple Valley.
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {photos.map((photo, i) => (
+                    <div key={photo.file} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        alt={photo.neighborhoodAlt ?? `Steel cedar hybrid fence ColorMax Night Sky ${i + 1}`}
+                        width={photo.width}
+                        height={photo.height}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <p className="text-white text-sm font-medium">{photo.neighborhoodAlt}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground text-center mt-6">
+                  ColorMax Night Sky is one of many HDP NoFade™ paint options available. Contact us for the full color selection.
+                </p>
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Installation Video */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+              <div className="w-full md:w-56 shrink-0">
+                <AspectRatio ratio={9 / 16}>
+                  <iframe
+                    className="rounded-lg shadow-2xl w-full h-full"
+                    src="https://www.youtube-nocookie.com/embed/Z3kSNBDkHck?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
+                    title="Steel Cedar Hybrid Fence Gate — Maple Valley"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Completed Project — Maple Valley</h2>
+                <p className="text-muted-foreground">
+                  A finished steel cedar hybrid fence installed in Maple Valley. This clip shows the completed gate — smooth operation, matching corrugated steel panels, and the same cedar framing as the fence line.
+                </p>
               </div>
             </div>
           </div>
