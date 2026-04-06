@@ -32,17 +32,15 @@ export const AboutUsSection = () => {
             <span className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-40 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
           </div>
         </div>
-        <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
-          <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow w-full max-w-[432px] aspect-[4/3] shrink-0">
+        <div className="bg-card text-foreground p-3 md:p-6 flex items-center justify-center order-first md:order-last">
+          <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow w-full" style={{ maxWidth: 520, height: 360 }}>
             <img
               src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
               alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-              width="432"
-              height="324"
               fetchPriority="high"
               loading="eager"
               decoding="async"
-              className="w-full h-full object-cover object-[center_55%]"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}
             />
           </div>
         </div>

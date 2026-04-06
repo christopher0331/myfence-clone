@@ -44,7 +44,7 @@ export const QuoteToolSection = () => {
             <div className="relative min-h-[220px] lg:min-h-[320px] bg-gradient-primary p-4 md:p-6 flex items-center justify-center">
               <div className="w-full h-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
                 <img
-                  src="/lovable-uploads/4550d98a-3dde-41e9-91e6-cabd0672d6ed.png"
+                  src="https://seattlefencequote.com/lovable-uploads/4550d98a-3dde-41e9-91e6-cabd0672d6ed.png"
                   alt="Interactive design tool preview showing a house with blue fence drawings"
                   loading="lazy"
                   className="w-full h-full object-cover"
