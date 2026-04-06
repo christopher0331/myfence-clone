@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useRef, useState, useEffect, ReactNode, useMemo } from "react";
+import { SteelSystemsAnnouncementSection } from "@/components/home/SteelSystemsAnnouncementSection";
 
 // Eagerly loaded versions (ssr: true so they render in server HTML for crawlers)
 const EagerScrollingCarousel = dynamic(() => import("@/components/home/ScrollingCarousel").then((m) => m.ScrollingCarousel));
@@ -63,6 +64,7 @@ export default function HomeDeferredSections({ eager = false }: { eager?: boolea
   if (eager) {
     return (
       <>
+        <SteelSystemsAnnouncementSection />
         <EagerScrollingCarousel />
         <EagerPopularStyles />
         <EagerReviews />
@@ -78,12 +80,7 @@ export default function HomeDeferredSections({ eager = false }: { eager?: boolea
   }
   return (
     <>
-      <section className="container py-12 md:py-16">
-        <DeferredSection
-          importFn={() => import("@/components/ArticleSummary").then((m) => m.ArticleSummary)}
-          placeholder={<div className="h-48 w-full animate-pulse rounded-lg bg-muted/20" />}
-        />
-      </section>
+      <SteelSystemsAnnouncementSection />
 
       <DeferredSection
         importFn={() => import("@/components/home/ScrollingCarousel").then((m) => m.ScrollingCarousel)}

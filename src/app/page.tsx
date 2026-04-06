@@ -66,7 +66,7 @@ export default async function HomePage() {
       <ValuePropsSection />
 
       {/* Contact Form Section - Stays near top so we hydrate it */}
-      <section className="py-16 bg-muted/30">
+      <section id="contact-form" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
