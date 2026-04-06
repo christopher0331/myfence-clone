@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://myfence.com/fence-styles/cedar-steel-hybrid-fence",
     images: [
       {
-        url: "https://myfence.com/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
+        url: "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp",
         width: 1200,
         height: 630,
         alt: "Cedar and steel hybrid fence in Seattle by MyFence.com",

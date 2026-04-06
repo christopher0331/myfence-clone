@@ -25,7 +25,7 @@ import {
 } from "@/lib/serviceAreaPhotoUtils";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
-const heroImg = "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png";
+const heroImg = "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp";
 const diagramImg = "/lovable-uploads/cedar-aluminum-hybrid-diagram.png";
 const panelSingleImg = "/lovable-uploads/barrier-boss-panel-single.png";
 const panelsCloseupImg = "/lovable-uploads/barrier-boss-panels-closeup.png";
@@ -75,7 +75,7 @@ const CedarAluminumHybridFence = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cedar/Steel Hybrid Fence",
-    "image": "https://myfence.com/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
+    "image": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp",
     "description": "Modern industrial fence combining 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Ultimate privacy with zero maintenance on panels. Starting at $80/LF.",
     "brand": {
       "@type": "Brand",
@@ -133,7 +133,7 @@ const CedarAluminumHybridFence = () => {
         title="Cedar/Steel Hybrid Fence Seattle | Modern Privacy Fence"
         description="Premium cedar/steel hybrid fence in Seattle. 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
-        image="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
+        image="https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp"
         structuredData={[productStructuredData, faqStructuredData]}
       />
       
@@ -189,7 +189,7 @@ const CedarAluminumHybridFence = () => {
                 <img
                   src={heroImg}
                   alt="Cedar/Steel Hybrid Fence with black corrugated steel panels and natural cedar framing installed in backyard"
-                  className="rounded-lg shadow-2xl w-full"
+                  className="rounded-lg shadow-2xl w-3/4 mx-auto block"
                   loading="eager"
                 />
               </div>
