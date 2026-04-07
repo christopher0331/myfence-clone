@@ -16,7 +16,7 @@ export const SteelSystemsAnnouncementSection = () => {
           display: "flex",
           flexDirection: "row",
           alignItems: "stretch",
-          minHeight: 280,
+          minHeight: 460,
         }}
       >
         {/* Left image */}
@@ -75,25 +75,45 @@ export const SteelSystemsAnnouncementSection = () => {
             MyFence.com Now Offering Steel Fence Posts &amp; Steel Fence Systems
           </h2>
 
-          <Link
-            href="/#contact-form"
-            style={{
-              marginTop: 20,
-              display: "inline-block",
-              padding: "12px 32px",
-              backgroundColor: "#f97316",
-              color: "#fff",
-              fontWeight: 700,
-              fontSize: 15,
-              borderRadius: 8,
-              textDecoration: "none",
-              transition: "background-color 0.15s",
-            }}
-            onMouseEnter={(e) => ((e.target as HTMLElement).style.backgroundColor = "#ea580c")}
-            onMouseLeave={(e) => ((e.target as HTMLElement).style.backgroundColor = "#f97316")}
-          >
-            Contact Us
-          </Link>
+          <div style={{ marginTop: 20, display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+            <Link
+              href="/#contact-form"
+              style={{
+                display: "inline-block",
+                padding: "12px 32px",
+                backgroundColor: "#f97316",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: 15,
+                borderRadius: 8,
+                textDecoration: "none",
+                transition: "background-color 0.15s",
+              }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.backgroundColor = "#ea580c")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.backgroundColor = "#f97316")}
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/fence-styles/cedar-steel-hybrid-fence"
+              style={{
+                display: "inline-block",
+                padding: "12px 32px",
+                backgroundColor: "transparent",
+                color: "hsl(var(--foreground))",
+                fontWeight: 600,
+                fontSize: 15,
+                borderRadius: 8,
+                textDecoration: "none",
+                border: "2px solid hsl(var(--border))",
+                transition: "background-color 0.15s",
+              }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.backgroundColor = "hsl(var(--muted))")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.backgroundColor = "transparent")}
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
 
         {/* Right image */}
