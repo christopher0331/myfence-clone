@@ -148,7 +148,7 @@ const Header = () => {
               <Link
                 key={item.to}
                 href={item.to}
-                className={`px-2 text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold' : ''}`}
+                className={`px-2 text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold text-orange-500 hover:text-orange-600' : ''}`}
               >
                 {item.label}
               </Link>
