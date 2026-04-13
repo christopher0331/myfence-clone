@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -143,15 +144,23 @@ export const InlineContactSection = () => {
       <Card className="mt-6">
         <CardContent className="p-6">
           {isFormSubmitted ? (
-            <div className="text-center py-12">
-              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-700 mb-2">Form Successfully Sent!</h3>
-              <p className="text-muted-foreground mb-6">
-                Thank you for your message. We'll get back to you within 24 hours.
-              </p>
-              <Button variant="secondary" asChild>
-                <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
-              </Button>
+            <div>
+              <div className="text-center py-12">
+                <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-green-700 mb-2">Form Successfully Sent!</h3>
+                <p className="text-muted-foreground mb-6">
+                  Thank you for your message. We'll get back to you within 24 hours.
+                </p>
+                <Button variant="secondary" asChild>
+                  <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
+                </Button>
+              </div>
+              <ServiceProviderRecommendations
+                customerName={formData.name}
+                customerEmail={formData.email}
+                customerPhone={formData.phone}
+                customerAddress={formData.address}
+              />
             </div>
           ) : (
             <form

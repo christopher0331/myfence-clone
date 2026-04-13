@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import Seo from "@/components/Seo";
 import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Input } from "@/components/ui/input";
@@ -180,23 +181,31 @@ const ContactPage = () => {
         </p>
 
         {isSubmitted ? (
-          <div className="mt-8 text-center py-12 bg-card rounded-lg border shadow-sm">
-            <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-2xl font-semibold mb-2">Message Sent Successfully!</h2>
-            <p className="text-muted-foreground mb-6">
-              Thank you for contacting us! We'll get back to you within 24 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button onClick={() => setIsSubmitted(false)} variant="outline">
-                Send Another Message
-              </Button>
-              <Button
-                onClick={() => (window.location.href = "tel:12534551885")}
-                variant="hero"
-              >
-                Call Us Now
-              </Button>
+          <div>
+            <div className="mt-8 text-center py-12 bg-card rounded-lg border shadow-sm">
+              <div className="text-6xl mb-4">🎉</div>
+              <h2 className="text-2xl font-semibold mb-2">Message Sent Successfully!</h2>
+              <p className="text-muted-foreground mb-6">
+                Thank you for contacting us! We'll get back to you within 24 hours.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button onClick={() => setIsSubmitted(false)} variant="outline">
+                  Send Another Message
+                </Button>
+                <Button
+                  onClick={() => (window.location.href = "tel:12534551885")}
+                  variant="hero"
+                >
+                  Call Us Now
+                </Button>
+              </div>
             </div>
+            <ServiceProviderRecommendations
+              customerName={`${formData.firstName} ${formData.lastName}`.trim()}
+              customerEmail={formData.email}
+              customerPhone={formData.phone}
+              customerAddress={formData.address}
+            />
           </div>
         ) : (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">

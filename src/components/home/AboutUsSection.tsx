@@ -35,7 +35,7 @@ export const AboutUsSection = () => {
         <div className="bg-card text-foreground p-3 md:p-6 flex items-center justify-center order-first md:order-last">
           <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow w-full" style={{ maxWidth: 520, height: 360 }}>
             <img
-              src="/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png"
+              src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?tr=w-520,q-80"
               alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
               fetchPriority="high"
               loading="eager"

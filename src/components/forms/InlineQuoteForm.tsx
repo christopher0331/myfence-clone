@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +19,8 @@ interface InlineQuoteFormProps {
 
 const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [textConsentError, setTextConsentError] = useState(false);
   const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
@@ -125,6 +128,14 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         description: "We'll get back to you within 24 hours with a detailed quote.",
       });
 
+      setSubmittedData({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+      });
+      setIsSubmitted(true);
+
       setFormData({
         fullName: "",
         email: "",
@@ -145,6 +156,24 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       setIsSubmitting(false);
     }
   };
+
+  if (isSubmitted && submittedData) {
+    return (
+      <div className="rounded-lg border bg-card p-6 shadow-sm">
+        <div className="text-center py-6">
+          <div className="text-5xl mb-3">🎉</div>
+          <h3 className="text-xl font-semibold text-green-700 mb-1">Quote Request Sent!</h3>
+          <p className="text-sm text-muted-foreground">We'll get back to you within 24 hours.</p>
+        </div>
+        <ServiceProviderRecommendations
+          customerName={submittedData.name}
+          customerEmail={submittedData.email}
+          customerPhone={submittedData.phone}
+          customerAddress={submittedData.address}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-lg border bg-card p-6 shadow-sm">

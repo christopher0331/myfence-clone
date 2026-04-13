@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+import { CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -30,6 +32,8 @@ type FormData = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
   const { toast } = useToast();
 
@@ -91,6 +95,14 @@ export function ContactForm() {
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
+
+      setSubmittedData({
+        name: `${data.firstName} ${data.lastName}`.trim(),
+        email: data.email,
+        phone: data.phone,
+        address: data.address,
+      });
+      setIsSubmitted(true);
       form.reset();
     } catch (error) {
       console.error("Error sending message:", error);
@@ -117,6 +129,24 @@ export function ContactForm() {
       });
     }
   };
+
+  if (isSubmitted && submittedData) {
+    return (
+      <div>
+        <div className="text-center py-8">
+          <CheckCircle2 className="mx-auto h-14 w-14 text-green-600 mb-3" />
+          <h3 className="text-2xl font-semibold text-green-700 mb-1">Message Sent!</h3>
+          <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+        </div>
+        <ServiceProviderRecommendations
+          customerName={submittedData.name}
+          customerEmail={submittedData.email}
+          customerPhone={submittedData.phone}
+          customerAddress={submittedData.address}
+        />
+      </div>
+    );
+  }
 
   return (
     <Form {...form}>

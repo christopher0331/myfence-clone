@@ -97,7 +97,7 @@ const QuoteToolPage = () => {
             <div className="mt-8 space-y-6">
               <Button size="lg" className="w-full" asChild>
                 <a
-                  href="https://seattlefencequote.com/"
+                  href="https://seattlefencequote.com/?source=myfence"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
@@ -119,7 +119,7 @@ const QuoteToolPage = () => {
               <Card className="mt-8">
                 <CardContent className="p-0">
                   <iframe
-                    src="https://seattlefencequote.com/"
+                    src="https://seattlefencequote.com/?source=myfence"
                     width="100%"
                     height={750}
                     frameBorder={0}

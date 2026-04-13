@@ -15,14 +15,11 @@ interface PopularStylesSectionProps {
 const pictureFrameHeroUrl =
   "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Pictrue%20Frame%20Fence%20Hero.webp?updatedAt=1762037742056";
 
-// Heavier compression + clamp width for mobile; leave desktop quality unchanged.
-const mobileCompressedPictureFrameLoader: ImageLoader = ({ src, width, quality }) => {
-  const targetW = width <= 640 ? 328 : width;
-  const q = width <= 640 ? 32 : quality ?? 80;
-  const url = new URL(src);
-  url.searchParams.set("tr", `w-${targetW},q-${q}`);
-  return url.toString();
-};
+const threeRailHeroUrl =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699";
+
+const horizontalLatticeHeroUrl =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271";
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
   const EstimateButton = ({ label }: { label: string }) => {
@@ -54,12 +51,11 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                 <AspectRatio ratio={1}>
                   <div className="relative h-full w-full">
                     <Image
-                      loader={mobileCompressedPictureFrameLoader}
+                      loader={imageKitLoader}
                       src={pictureFrameHeroUrl}
                       alt="Picture frame cedar fence by MyFence.com in Seattle"
                       fill
-                      // Keep slot size accurate; DPR may still request a larger width for crispness.
-                      sizes="(max-width: 640px) 328px, (max-width: 1024px) 300px, 360px"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
                       className="object-cover"
                     />
                   </div>
@@ -78,7 +74,16 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <Link href="/fence-styles/3-rail-picture-frame-fence" className="block">
               <div className="glass-frame hover:opacity-90 transition-opacity">
                 <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  <div className="relative h-full w-full">
+                    <Image
+                      loader={imageKitLoader}
+                      src={threeRailHeroUrl}
+                      alt="3 rail picture frame cedar fence installation in Seattle"
+                      fill
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                      className="object-cover"
+                    />
+                  </div>
                 </AspectRatio>
               </div>
             </Link>
@@ -94,7 +99,16 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <Link href="/fence-styles/horizontal-lattice-fence" className="block">
               <div className="glass-frame hover:opacity-90 transition-opacity">
                 <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  <div className="relative h-full w-full">
+                    <Image
+                      loader={imageKitLoader}
+                      src={horizontalLatticeHeroUrl}
+                      alt="Horizontal lattice top cedar fence by MyFence.com"
+                      fill
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                      className="object-cover"
+                    />
+                  </div>
                 </AspectRatio>
               </div>
             </Link>

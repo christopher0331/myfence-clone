@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,6 +23,8 @@ interface QuoteModalProps {
 
 const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [textConsentError, setTextConsentError] = useState(false);
   const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
@@ -121,18 +124,14 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours with a detailed quote.",
       });
-      
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        address: "",
-        projectDescription: "",
-        textConsent: false,
+
+      setSubmittedData({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
       });
-      
-      onClose();
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Quote request submission error:', error);
       toast({
@@ -145,9 +144,38 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     }
   };
 
+  const handleClose = () => {
+    if (isSubmitted) {
+      setIsSubmitted(false);
+      setSubmittedData(null);
+      setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "", textConsent: false });
+    }
+    onClose();
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+    <Dialog open={isOpen} onOpenChange={handleClose}>
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+        {isSubmitted && submittedData ? (
+          <>
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-center">Quote Request Sent! 🎉</DialogTitle>
+              <p className="text-muted-foreground text-center">
+                We'll get back to you within 24 hours with a detailed quote.
+              </p>
+            </DialogHeader>
+            <ServiceProviderRecommendations
+              customerName={submittedData.name}
+              customerEmail={submittedData.email}
+              customerPhone={submittedData.phone}
+              customerAddress={submittedData.address}
+            />
+            <Button variant="outline" onClick={handleClose} className="w-full mt-2">
+              Close
+            </Button>
+          </>
+        ) : (
+          <>
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">Get Your Free Quote</DialogTitle>
           <p className="text-muted-foreground text-center">
@@ -256,7 +284,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             <Button
               type="button"
               variant="outline"
-              onClick={onClose}
+              onClick={handleClose}
               className="w-full sm:flex-1"
               disabled={isSubmitting}
             >
@@ -283,6 +311,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
           <p>✓ <strong>{WARRANTY_CONSTANTS.TITLE}</strong> on all installations</p>
           <p>Questions? Call us directly at <strong>(253) 455-1885</strong></p>
         </div>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );

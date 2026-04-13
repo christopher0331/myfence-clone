@@ -60,7 +60,10 @@ function AutocompleteInner({
       <Input
         id={id}
         value={value}
-        onChange={handleInputChange}
+        onChange={(e) => {
+          onChange(e.target.value);
+          onValidChange?.(e.target.value.trim().length > 0);
+        }}
         placeholder={placeholder}
         className={className}
         required={required}
@@ -109,7 +112,10 @@ export function AddressAutocomplete(props: AddressAutocompleteProps) {
       <Input
         id={props.id}
         value={props.value}
-        onChange={(e) => props.onChange(e.target.value)}
+        onChange={(e) => {
+          props.onChange(e.target.value);
+          props.onValidChange?.(e.target.value.trim().length > 0);
+        }}
         placeholder={props.placeholder}
         className={props.className}
         required={props.required}
