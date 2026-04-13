@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
-// import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -164,12 +164,12 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                 We'll get back to you within 24 hours with a detailed quote.
               </p>
             </DialogHeader>
-            {/* <ServiceProviderRecommendations
+            <ServiceProviderRecommendations
               customerName={submittedData.name}
               customerEmail={submittedData.email}
               customerPhone={submittedData.phone}
               customerAddress={submittedData.address}
-            /> */}
+            />
             <Button variant="outline" onClick={handleClose} className="w-full mt-2">
               Close
             </Button>

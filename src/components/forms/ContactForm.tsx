@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
-// import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -138,12 +138,12 @@ export function ContactForm() {
           <h3 className="text-2xl font-semibold text-green-700 mb-1">Message Sent!</h3>
           <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
         </div>
-        {/* <ServiceProviderRecommendations
+        <ServiceProviderRecommendations
           customerName={submittedData.name}
           customerEmail={submittedData.email}
           customerPhone={submittedData.phone}
           customerAddress={submittedData.address}
-        /> */}
+        />
       </div>
     );
   }

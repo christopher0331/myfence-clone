@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
-// import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import Seo from "@/components/Seo";
 import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Input } from "@/components/ui/input";
@@ -200,12 +200,12 @@ const ContactPage = () => {
                 </Button>
               </div>
             </div>
-            {/* <ServiceProviderRecommendations
+            <ServiceProviderRecommendations
               customerName={`${formData.firstName} ${formData.lastName}`.trim()}
               customerEmail={formData.email}
               customerPhone={formData.phone}
               customerAddress={formData.address}
-            /> */}
+            />
           </div>
         ) : (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
