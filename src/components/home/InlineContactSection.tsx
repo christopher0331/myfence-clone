@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
-import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+// import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -155,12 +155,12 @@ export const InlineContactSection = () => {
                   <a href="tel:+12534551885" aria-label="Call (253) 455-1885">(253) 455-1885</a>
                 </Button>
               </div>
-              <ServiceProviderRecommendations
+              {/* <ServiceProviderRecommendations
                 customerName={formData.name}
                 customerEmail={formData.email}
                 customerPhone={formData.phone}
                 customerAddress={formData.address}
-              />
+              /> */}
             </div>
           ) : (
             <form

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
-import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
+// import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -165,12 +165,12 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           <h3 className="text-xl font-semibold text-green-700 mb-1">Quote Request Sent!</h3>
           <p className="text-sm text-muted-foreground">We'll get back to you within 24 hours.</p>
         </div>
-        <ServiceProviderRecommendations
+        {/* <ServiceProviderRecommendations
           customerName={submittedData.name}
           customerEmail={submittedData.email}
           customerPhone={submittedData.phone}
           customerAddress={submittedData.address}
-        />
+        /> */}
       </div>
     );
   }
