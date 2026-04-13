@@ -185,11 +185,16 @@ serve(async (req) => {
     const resend = new Resend(apiKey)
     const results: string[] = []
 
+    const serviceList = services.map((s) => `• ${s.category}: ${s.providers.map((p) => p.name).join(", ")}`).join("\n")
+    const categories = services.map((s) => s.category).join(", ")
+
+    const FROM_EMAIL = "MyFence.com <noreply@myfence.com>"
+
     if (contactPreference === "self") {
       /* ---- "I'll Reach Out To Them" ---- */
-      // Send one email to the customer with all selected provider info
+      // Send provider info directly to customer
       const { data, error } = await resend.emails.send({
-        from: "MyFence.com <onboarding@resend.dev>",
+        from: FROM_EMAIL,
         to: [customerEmail],
         subject: "Your Requested Service Provider Info — MyFence.com",
         html: buildCustomerEmail(services),
@@ -197,17 +202,19 @@ serve(async (req) => {
 
       if (error) {
         console.error("Customer email error:", error)
-        throw new Error("Failed to send customer email")
+      } else {
+        results.push(`customer-email:${data?.id}`)
+        console.log("Customer email sent:", data?.id)
       }
-      results.push(`customer-email:${data?.id}`)
-      console.log("Customer email sent:", data?.id)
 
-      // SMS confirmation to customer
+      // SMS to customer with provider details
       if (customerPhone) {
-        const categories = services.map((s) => s.category).join(", ")
+        const providerSummary = services.flatMap((s) =>
+          s.providers.map((p) => `${s.category}: ${p.name} ${p.phone}`)
+        ).join("\n")
         await sendSms(
           customerPhone,
-          `Hi ${customerName.split(" ")[0]}! MyFence.com here — we just sent the contact info for ${categories} to your email (${customerEmail}). Mention MyFence when you reach out!`
+          `Hi ${customerName.split(" ")[0]}! Here are your requested providers from MyFence.com:\n\n${providerSummary}\n\nMention MyFence when you reach out!`
         )
       }
     } else {
@@ -221,7 +228,7 @@ serve(async (req) => {
           }
 
           const { data, error } = await resend.emails.send({
-            from: "MyFence.com <onboarding@resend.dev>",
+            from: FROM_EMAIL,
             to: [provider.email],
             reply_to: customerEmail,
             subject: `New ${service.category} Lead from MyFence.com — ${customerName}`,
@@ -239,18 +246,17 @@ serve(async (req) => {
 
       // SMS confirmation to customer
       if (customerPhone) {
-        const categories = services.map((s) => s.category).join(", ")
         await sendSms(
           customerPhone,
           `Hi ${customerName.split(" ")[0]}! MyFence.com here — our partners for ${categories} will be reaching out to you shortly. Questions? Call us at (253) 455-1885.`
         )
       }
 
-      // Also notify MyFence admin
-      const serviceList = services.map((s) => `• ${s.category}: ${s.providers.map((p) => p.name).join(", ")}`).join("\n")
+      // Notify admin
       await resend.emails.send({
-        from: "MyFence.com <onboarding@resend.dev>",
+        from: FROM_EMAIL,
         to: ["info@myfence.com"],
+        reply_to: customerEmail,
         subject: `Partner Referral: ${customerName} requested ${services.length} service(s)`,
         text: `Customer ${customerName} (${customerEmail}, ${customerPhone}) requested "Please Contact Me" for:\n\n${serviceList}\n\nAddress: ${customerAddress || "Not provided"}\n\nProvider emails have been sent automatically.`,
       })

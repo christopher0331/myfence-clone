@@ -159,6 +159,21 @@ const SERVICES: ServiceCategory[] = [
     ],
     featured: false,
   },
+  {
+    id: "web-tech",
+    category: "Web & Technology",
+    icon: <Building2 className="w-5 h-5" />,
+    description: "Web development, technology consulting & digital services.",
+    providers: [
+      {
+        name: "Reactiv Labs — Christopher Hancock",
+        website: "https://reactivlabs.com",
+        email: "admin@reactivlabs.com",
+        phone: "(206) 247-4308",
+      },
+    ],
+    featured: false,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
