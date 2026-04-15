@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -159,21 +159,21 @@ const SERVICES: ServiceCategory[] = [
     ],
     featured: false,
   },
-  {
-    id: "web-tech",
-    category: "Web & Technology",
-    icon: <Building2 className="w-5 h-5" />,
-    description: "Web development, technology consulting & digital services.",
-    providers: [
-      {
-        name: "Reactiv Labs — Christopher Hancock",
-        website: "https://reactivlabs.com",
-        email: "admin@reactivlabs.com",
-        phone: "(206) 247-4308",
-      },
-    ],
-    featured: false,
-  },
+  // {
+  //   id: "web-tech",
+  //   category: "Web & Technology",
+  //   icon: <Building2 className="w-5 h-5" />,
+  //   description: "Web development, technology consulting & digital services.",
+  //   providers: [
+  //     {
+  //       name: "Reactiv Labs — Christopher Hancock",
+  //       website: "https://reactivlabs.com",
+  //       email: "admin@reactivlabs.com",
+  //       phone: "(206) 247-4308",
+  //     },
+  //   ],
+  //   featured: false,
+  // },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -193,12 +193,18 @@ export default function ServiceProviderRecommendations({
   customerPhone,
   customerAddress,
 }: ServiceProviderRecommendationsProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [showAll, setShowAll] = useState(false);
   const [contactPref, setContactPref] = useState<"self" | "provider">("self");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsOpen(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleService = (id: string) => {
     setSelected((prev) => {
@@ -262,188 +268,205 @@ export default function ServiceProviderRecommendations({
     }
   };
 
-  /* ---- Success state ---- */
-  if (isSubmitted) {
-    return (
-      <div className="mt-8 rounded-2xl border bg-gradient-to-br from-green-50 to-emerald-50 p-8 text-center">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-green-600 mb-4" />
-        <h3 className="text-xl font-semibold text-green-900 mb-2">You're All Set!</h3>
-        <p className="text-green-700 max-w-md mx-auto">
-          {contactPref === "self"
-            ? "We've sent the contact details for your selected providers to your email. Reach out at your convenience!"
-            : "Our vetted partners will be reaching out to you shortly. Keep an eye on your phone and inbox!"}
-        </p>
-      </div>
-    );
-  }
-
-  /* ---- Main UI ---- */
   return (
-    <div className="mt-8">
-      {/* Header */}
-      <div className="rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-primary/5 p-6 md:p-8">
-        <div className="flex items-start gap-3 mb-1">
-          <Handshake className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-          <div>
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight">
-              Explore Our Trusted Local Partners
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1 max-w-lg">
-              Interested in additional services? Select any you'd like and we'll connect you with our
-              vetted partners.
-            </p>
-          </div>
-        </div>
-
-        {/* Provider Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
-          {visibleServices.map((service) => {
-            const isChecked = selected.has(service.id);
-            return (
-              <button
-                key={service.id}
-                type="button"
-                onClick={() => toggleService(service.id)}
-                className={`group relative text-left rounded-xl border-2 p-4 transition-all duration-200 cursor-pointer ${
-                  isChecked
-                    ? "border-primary bg-primary/5 shadow-md ring-1 ring-primary/20"
-                    : "border-border bg-card hover:border-primary/40 hover:shadow-sm"
-                }`}
-              >
-                {/* Checkbox + Icon row */}
-                <div className="flex items-center justify-between mb-3">
-                  <div
-                    className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors ${
-                      isChecked
-                        ? "bg-primary/15 text-primary"
-                        : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
-                    }`}
-                  >
-                    {service.icon}
-                  </div>
-                  <Checkbox
-                    checked={isChecked}
-                    className="pointer-events-none h-5 w-5"
-                    tabIndex={-1}
-                  />
-                </div>
-
-                {/* Category */}
-                <p className="font-semibold text-sm leading-tight mb-1">{service.category}</p>
-
-                {/* Provider name(s) */}
-                <div className="space-y-0.5">
-                  {service.providers.map((p) => (
-                    <p key={p.name} className="text-xs text-muted-foreground leading-snug">
-                      {p.name}
-                    </p>
-                  ))}
-                </div>
-
-                {/* Description */}
-                <p className="text-xs text-muted-foreground/70 mt-2 leading-relaxed hidden sm:block">
-                  {service.description}
-                </p>
-
-                {/* Selected badge */}
-                {isChecked && (
-                  <Badge
-                    variant="default"
-                    className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 shadow-sm"
-                  >
-                    Selected
-                  </Badge>
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Show more / Show less */}
-        {hiddenCount > 0 && (
-          <button
-            type="button"
-            onClick={() => setShowAll((prev) => !prev)}
-            className="flex items-center gap-1.5 mx-auto mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          >
-            {showAll ? (
-              <>
-                Show Less <ChevronUp className="w-4 h-4" />
-              </>
-            ) : (
-              <>
-                Show {hiddenCount} More Services <ChevronDown className="w-4 h-4" />
-              </>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent
+        className="sm:max-w-[700px] max-h-[90vh] overflow-hidden p-0 gap-0 border-0"
+        style={{ background: "rgba(234, 88, 12, 0.80)" }}
+      >
+        {/* Header */}
+        <div className="px-6 pt-6 pb-2">
+          <DialogHeader>
+            <DialogTitle className="!text-white text-xl md:text-2xl font-bold flex items-center gap-2.5">
+              <Handshake className="w-6 h-6 text-orange-200 flex-shrink-0" />
+              {isSubmitted ? "You're All Set!" : "Explore Our Trusted Local Partners"}
+            </DialogTitle>
+            {!isSubmitted && (
+              <p className="text-orange-100 text-sm mt-1.5 ml-[34px]">
+                Need more work done? Select any services below and we'll connect you with our vetted partners.
+              </p>
             )}
-          </button>
-        )}
+          </DialogHeader>
+        </div>
 
-        {/* Contact preference + submit */}
-        {selected.size > 0 && (
-          <div className="mt-6 pt-6 border-t space-y-5">
-            <div>
-              <p className="text-sm font-medium mb-3">How would you like to connect?</p>
-              <RadioGroup
-                value={contactPref}
-                onValueChange={(v) => setContactPref(v as "self" | "provider")}
-                className="flex flex-col sm:flex-row gap-3"
+        {/* Content area */}
+        <div className="px-6 pb-6 pt-4 overflow-y-auto max-h-[calc(90vh-100px)]">
+          {isSubmitted ? (
+            <div className="text-center py-6 bg-white/15 rounded-2xl p-8">
+              <CheckCircle2 className="mx-auto h-14 w-14 text-white mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">Request Sent!</h3>
+              <p className="text-orange-100 max-w-md mx-auto mb-6">
+                {contactPref === "self"
+                  ? "We've sent the contact details for your selected providers to your email. Reach out at your convenience!"
+                  : "Our vetted partners will be reaching out to you shortly. Keep an eye on your phone and inbox!"}
+              </p>
+              <Button
+                onClick={() => setIsOpen(false)}
+                className="bg-white text-orange-700 hover:bg-orange-50 font-semibold"
               >
-                <label
-                  className={`flex items-center gap-3 rounded-lg border-2 px-4 py-3 cursor-pointer transition-all ${
-                    contactPref === "self"
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/30"
-                  }`}
-                >
-                  <RadioGroupItem value="self" id="pref-self" />
-                  <div>
-                    <p className="text-sm font-medium flex items-center gap-1.5">
-                      <ExternalLink className="w-3.5 h-3.5" /> I'll Reach Out To Them
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      We'll send you their contact info
-                    </p>
-                  </div>
-                </label>
-                <label
-                  className={`flex items-center gap-3 rounded-lg border-2 px-4 py-3 cursor-pointer transition-all ${
-                    contactPref === "provider"
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/30"
-                  }`}
-                >
-                  <RadioGroupItem value="provider" id="pref-provider" />
-                  <div>
-                    <p className="text-sm font-medium flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5" /> Please Contact Me
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      Our partners will reach out directly
-                    </p>
-                  </div>
-                </label>
-              </RadioGroup>
+                Close
+              </Button>
             </div>
+          ) : (
+            <>
+              {/* Provider Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {visibleServices.map((service) => {
+                  const isChecked = selected.has(service.id);
+                  return (
+                    <button
+                      key={service.id}
+                      type="button"
+                      onClick={() => toggleService(service.id)}
+                      className={`group relative text-left rounded-xl border-2 p-4 transition-all duration-200 cursor-pointer ${
+                        isChecked
+                          ? "border-white bg-white shadow-lg ring-2 ring-white/50"
+                          : "border-white/30 bg-white/90 hover:bg-white hover:border-white/60 hover:shadow-md"
+                      }`}
+                    >
+                      {/* Checkbox + Icon row */}
+                      <div className="flex items-center justify-between mb-3">
+                        <div
+                          className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors ${
+                            isChecked
+                              ? "bg-orange-100 text-orange-700"
+                              : "bg-orange-50 text-orange-400 group-hover:bg-orange-100 group-hover:text-orange-600"
+                          }`}
+                        >
+                          {service.icon}
+                        </div>
+                        <Checkbox
+                          checked={isChecked}
+                          className="pointer-events-none h-5 w-5 border-gray-300 data-[state=checked]:bg-orange-600 data-[state=checked]:border-orange-600"
+                          tabIndex={-1}
+                        />
+                      </div>
 
-            <Button
-              onClick={handleSubmit}
-              disabled={isSubmitting}
-              className="w-full sm:w-auto"
-              size="lg"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…
-                </>
-              ) : (
-                <>
-                  <Send className="mr-2 h-4 w-4" /> Request Provider Info
-                </>
+                      {/* Category */}
+                      <p className="font-semibold text-sm leading-tight mb-1 text-gray-900">{service.category}</p>
+
+                      {/* Provider name(s) */}
+                      <div className="space-y-0.5">
+                        {service.providers.map((p) => (
+                          <p key={p.name} className="text-xs text-gray-500 leading-snug">
+                            {p.name}
+                          </p>
+                        ))}
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-xs text-gray-400 mt-2 leading-relaxed hidden sm:block">
+                        {service.description}
+                      </p>
+
+                      {/* Selected badge */}
+                      {isChecked && (
+                        <Badge className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 shadow-sm bg-orange-600 hover:bg-orange-700">
+                          Selected
+                        </Badge>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Show more / Show less */}
+              {hiddenCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setShowAll((prev) => !prev)}
+                  className="flex items-center gap-1.5 mx-auto mt-4 text-sm font-medium text-white hover:text-orange-100 transition-colors"
+                >
+                  {showAll ? (
+                    <>
+                      Show Less <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      Show {hiddenCount} More Services <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
               )}
-            </Button>
-          </div>
-        )}
-      </div>
-    </div>
+
+              {/* Contact preference + submit */}
+              {selected.size > 0 && (
+                <div className="mt-5 pt-5 border-t border-white/20 space-y-5">
+                  <div>
+                    <p className="text-sm font-medium mb-3 text-white">How would you like to connect?</p>
+                    <RadioGroup
+                      value={contactPref}
+                      onValueChange={(v) => setContactPref(v as "self" | "provider")}
+                      className="flex flex-col sm:flex-row gap-3"
+                    >
+                      <label
+                        className={`flex items-center gap-3 rounded-lg border-2 px-4 py-3 cursor-pointer transition-all ${
+                          contactPref === "self"
+                            ? "border-white bg-white shadow-md"
+                            : "border-white/30 bg-white/90 hover:bg-white hover:border-white/60"
+                        }`}
+                      >
+                        <RadioGroupItem value="self" id="pref-self" className="text-orange-600" />
+                        <div>
+                          <p className="text-sm font-medium flex items-center gap-1.5 text-gray-900">
+                            <ExternalLink className="w-3.5 h-3.5" /> I'll Reach Out To Them
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            We'll send you their contact info
+                          </p>
+                        </div>
+                      </label>
+                      <label
+                        className={`flex items-center gap-3 rounded-lg border-2 px-4 py-3 cursor-pointer transition-all ${
+                          contactPref === "provider"
+                            ? "border-white bg-white shadow-md"
+                            : "border-white/30 bg-white/90 hover:bg-white hover:border-white/60"
+                        }`}
+                      >
+                        <RadioGroupItem value="provider" id="pref-provider" className="text-orange-600" />
+                        <div>
+                          <p className="text-sm font-medium flex items-center gap-1.5 text-gray-900">
+                            <Phone className="w-3.5 h-3.5" /> Please Contact Me
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            Our partners will reach out directly
+                          </p>
+                        </div>
+                      </label>
+                    </RadioGroup>
+                  </div>
+
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto bg-white text-orange-700 hover:bg-orange-50 font-semibold shadow-md"
+                    size="lg"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending…
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-4 w-4" /> Request Provider Info
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
+
+              {/* No thanks link */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="block mx-auto mt-4 text-xs text-white/70 hover:text-white transition-colors underline underline-offset-2"
+              >
+                No thanks, I'm all set
+              </button>
+            </>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
