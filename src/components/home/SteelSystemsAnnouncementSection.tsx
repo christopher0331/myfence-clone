@@ -11,16 +11,12 @@ export const SteelSystemsAnnouncementSection = () => {
   return (
     <section className="container py-8 md:py-12">
       <div
-        className="rounded-xl overflow-hidden shadow-elevated border"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "stretch",
-          minHeight: 460,
-        }}
+        className="rounded-xl overflow-hidden shadow-elevated border flex flex-col md:flex-row md:items-stretch md:min-h-[460px]"
       >
         {/* Left image */}
-        <div style={{ flex: "0 0 30%", position: "relative", overflow: "hidden" }}>
+        <div
+          className="relative overflow-hidden min-h-[220px] md:min-h-0 md:basis-[30%] md:shrink-0"
+        >
           <img
             src={LEFT_IMAGE_URL}
             alt="Steel and cedar hybrid fence installed in Maple Valley"
@@ -39,8 +35,8 @@ export const SteelSystemsAnnouncementSection = () => {
 
         {/* Center content */}
         <div
+          className="md:basis-[40%]"
           style={{
-            flex: "1 1 40%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -117,7 +113,9 @@ export const SteelSystemsAnnouncementSection = () => {
         </div>
 
         {/* Right image */}
-        <div style={{ flex: "0 0 30%", position: "relative", overflow: "hidden" }}>
+        <div
+          className="relative overflow-hidden min-h-[220px] md:min-h-0 md:basis-[30%] md:shrink-0"
+        >
           <img
             src={RIGHT_IMAGE_URL}
             alt="Steel and cedar hybrid fence installed in Kent"
