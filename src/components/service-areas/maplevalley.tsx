@@ -231,6 +231,11 @@ const MapleValley = () => {
           link: "/service-areas/maple-valley/barklay-woods"
         },
         {
+          name: "Elk Run",
+          description: "HOA-governed community built around the former Elk Run Golf Course, featuring mature lots and open green space along the old fairways. Click to learn more →",
+          link: "/service-areas/maple-valley/elk-run"
+        },
+        {
           name: "Cherokee Bay Park",
           description: "Lakeside neighborhood near Lake Wilderness with water-adjacent properties requiring moisture-resistant fencing. Click to learn more →",
           link: "/service-areas/maple-valley/cherokee-bay-park"
