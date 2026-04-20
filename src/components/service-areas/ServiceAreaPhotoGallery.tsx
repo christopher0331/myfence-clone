@@ -106,7 +106,7 @@ export default function ServiceAreaPhotoGallery({
               return (
                 <div
                   key={photo.file}
-                  className="rounded-lg overflow-hidden shadow-lg bg-muted/50 w-[280px] md:w-[320px]"
+                  className="rounded-lg overflow-hidden shadow-lg bg-muted/50 w-[280px] md:w-[320px] aspect-[4/3]"
                 >
                   <picture>
                     <source media="(max-width: 767px)" srcSet={buildImageUrl(photo.file, 400)} />
@@ -114,7 +114,7 @@ export default function ServiceAreaPhotoGallery({
                     <img
                       src={buildImageUrl(photo.file, 600)}
                       alt={alt}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
                     />
