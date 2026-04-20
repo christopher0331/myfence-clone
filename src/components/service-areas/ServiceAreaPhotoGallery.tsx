@@ -68,7 +68,7 @@ export default function ServiceAreaPhotoGallery({
     return null;
   }
 
-  const useCarousel = !forceGrid && photos.length > 3;
+  const useCarousel = !forceGrid && photos.length >= 6;
 
   const heading =
     title ??
