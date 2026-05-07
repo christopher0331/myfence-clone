@@ -62,6 +62,11 @@ const Enumclaw = () => {
           description: "Elevated residential area with mountain exposure demanding heavy-duty installations engineered for wind and snow loads"
         },
         {
+          name: "Buckley",
+          description: "White River corridor community with rural acreage, mountain weather exposure, and wildlife pressure — built for serious terrain. Click to learn more →",
+          link: "/service-areas/enumclaw/buckley"
+        },
+        {
           name: "Black Diamond",
           description: "Rural mining town heritage with larger lots needing extensive fencing solutions and cost-effective approaches for acreage"
         },
