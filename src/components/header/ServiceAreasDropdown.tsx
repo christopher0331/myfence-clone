@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DismissableLayer } from "@radix-ui/react-dismissable-layer";
+import { FocusScope } from "@radix-ui/react-focus-scope";
 
 const serviceAreasByRegion = [
   {
@@ -54,58 +52,57 @@ const serviceAreasByRegion = [
   },
 ];
 
-function viewportCenterAlignOffset(trigger: HTMLElement | null): number {
-  if (!trigger) return 0;
-  const r = trigger.getBoundingClientRect();
-  const triggerCenterX = r.left + r.width / 2;
-  const viewportCenterX = window.innerWidth / 2;
-  return viewportCenterX - triggerCenterX;
-}
-
 export default function ServiceAreasDropdown() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
-  const [alignOffset, setAlignOffset] = useState(0);
+  const [topPx, setTopPx] = useState(0);
 
-  const syncAlignToViewport = useCallback(() => {
-    setAlignOffset(viewportCenterAlignOffset(triggerRef.current));
+  const syncPanelTop = useCallback(() => {
+    const el = triggerRef.current;
+    if (!el) return;
+    setTopPx(el.getBoundingClientRect().bottom + 8);
   }, []);
 
   useLayoutEffect(() => {
     if (!open) return;
-    syncAlignToViewport();
-    window.addEventListener("resize", syncAlignToViewport);
-    window.addEventListener("scroll", syncAlignToViewport, true);
+    syncPanelTop();
+    window.addEventListener("resize", syncPanelTop);
+    window.addEventListener("scroll", syncPanelTop, true);
     return () => {
-      window.removeEventListener("resize", syncAlignToViewport);
-      window.removeEventListener("scroll", syncAlignToViewport, true);
+      window.removeEventListener("resize", syncPanelTop);
+      window.removeEventListener("scroll", syncPanelTop, true);
     };
-  }, [open, syncAlignToViewport]);
+  }, [open, syncPanelTop]);
 
-  return (
-    <DropdownMenu
-      open={open}
-      onOpenChange={(next) => {
-        setOpen(next);
-        if (next) {
-          requestAnimationFrame(() => {
-            setAlignOffset(viewportCenterAlignOffset(triggerRef.current));
-          });
+  useEffect(() => {
+    if (!open) return;
+    const id = requestAnimationFrame(syncPanelTop);
+    return () => cancelAnimationFrame(id);
+  }, [open, syncPanelTop]);
+
+  const close = useCallback(() => setOpen(false), []);
+
+  const panel = open ? (
+    <DismissableLayer
+      role="dialog"
+      aria-label="Service areas"
+      className="fixed left-1/2 z-[100] w-[min(96vw,960px)] max-w-[960px] -translate-x-1/2 rounded-md border bg-background p-5 text-popover-foreground shadow-md outline-none max-h-[min(70vh,calc(100vh-6rem))] overflow-y-auto overscroll-contain"
+      style={{ top: Math.max(8, topPx) }}
+      onPointerDownOutside={(event) => {
+        const target = event.detail.originalEvent.target as Node | null;
+        if (target && triggerRef.current?.contains(target)) {
+          event.preventDefault();
         }
       }}
+      onDismiss={close}
     >
-      <DropdownMenuTrigger
-        ref={triggerRef}
-        className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1"
-      >
-        Service Areas
-        <ChevronDown className="h-4 w-4" />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="center"
-        alignOffset={alignOffset}
-        sideOffset={8}
-        className="bg-background border z-50 w-[min(96vw,960px)] max-w-[960px] p-5 mt-0"
+      <FocusScope
+        trapped
+        loop
+        onUnmountAutoFocus={(event) => {
+          event.preventDefault();
+          triggerRef.current?.focus();
+        }}
       >
         <div className="grid grid-cols-3 gap-8">
           {serviceAreasByRegion.map((region) => {
@@ -131,6 +128,7 @@ export default function ServiceAreasDropdown() {
                           <Link
                             key={area.to}
                             href={area.to}
+                            onClick={close}
                             className="text-sm text-muted-foreground hover:text-primary transition-colors py-1 text-center"
                           >
                             {area.label}
@@ -142,6 +140,7 @@ export default function ServiceAreasDropdown() {
                           <Link
                             key={area.to}
                             href={area.to}
+                            onClick={close}
                             className="text-sm text-muted-foreground hover:text-primary transition-colors py-1 text-center"
                           >
                             {area.label}
@@ -154,6 +153,7 @@ export default function ServiceAreasDropdown() {
                       <Link
                         key={area.to}
                         href={area.to}
+                        onClick={close}
                         className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                       >
                         {area.label}
@@ -165,7 +165,24 @@ export default function ServiceAreasDropdown() {
             );
           })}
         </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </FocusScope>
+    </DismissableLayer>
+  ) : null;
+
+  return (
+    <>
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        onClick={() => setOpen((v) => !v)}
+        className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1"
+      >
+        Service Areas
+        <ChevronDown className="h-4 w-4" />
+      </button>
+      {typeof document !== "undefined" && panel ? createPortal(panel, document.body) : null}
+    </>
   );
 }
