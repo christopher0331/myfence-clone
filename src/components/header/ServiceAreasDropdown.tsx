@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
@@ -53,15 +54,56 @@ const serviceAreasByRegion = [
   },
 ];
 
+function viewportCenterAlignOffset(trigger: HTMLElement | null): number {
+  if (!trigger) return 0;
+  const r = trigger.getBoundingClientRect();
+  const triggerCenterX = r.left + r.width / 2;
+  const viewportCenterX = window.innerWidth / 2;
+  return viewportCenterX - triggerCenterX;
+}
+
 export default function ServiceAreasDropdown() {
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const [alignOffset, setAlignOffset] = useState(0);
+
+  const syncAlignToViewport = useCallback(() => {
+    setAlignOffset(viewportCenterAlignOffset(triggerRef.current));
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    syncAlignToViewport();
+    window.addEventListener("resize", syncAlignToViewport);
+    window.addEventListener("scroll", syncAlignToViewport, true);
+    return () => {
+      window.removeEventListener("resize", syncAlignToViewport);
+      window.removeEventListener("scroll", syncAlignToViewport, true);
+    };
+  }, [open, syncAlignToViewport]);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
+    <DropdownMenu
+      open={open}
+      onOpenChange={(next) => {
+        setOpen(next);
+        if (next) {
+          requestAnimationFrame(() => {
+            setAlignOffset(viewportCenterAlignOffset(triggerRef.current));
+          });
+        }
+      }}
+    >
+      <DropdownMenuTrigger
+        ref={triggerRef}
+        className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1"
+      >
         Service Areas
         <ChevronDown className="h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="center"
+        alignOffset={alignOffset}
         sideOffset={8}
         className="bg-background border z-50 w-[min(96vw,960px)] max-w-[960px] p-5 mt-0"
       >
