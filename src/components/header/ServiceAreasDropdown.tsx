@@ -61,7 +61,7 @@ export default function ServiceAreasDropdown() {
         <ChevronDown className="h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align="end"
+        align="center"
         sideOffset={8}
         className="bg-background border z-50 w-[min(96vw,960px)] max-w-[960px] p-5 mt-0"
       >

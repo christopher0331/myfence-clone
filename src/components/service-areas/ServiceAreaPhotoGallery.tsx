@@ -132,6 +132,8 @@ export default function ServiceAreaPhotoGallery({
 
   const tripled = [...photos, ...photos, ...photos];
   const allImages = [...tripled, ...tripled];
+  // Wider strips (more photos) need longer duration or motion feels rushed; 55s was tuned for ~6 slides.
+  const marqueeDurationSec = ((55 * photos.length) / 6) / currentSpeed;
 
   return (
     <section id="service-area-carousel" className="py-16 overflow-hidden bg-muted/50">
@@ -170,7 +172,7 @@ export default function ServiceAreaPhotoGallery({
           ].join(" ")}
           style={
             {
-              ["--marquee-duration" as string]: `${55 / currentSpeed}s`,
+              ["--marquee-duration" as string]: `${marqueeDurationSec}s`,
             } as React.CSSProperties
           }
         >
