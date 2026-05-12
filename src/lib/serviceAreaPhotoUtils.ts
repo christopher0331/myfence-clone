@@ -13,9 +13,24 @@ export interface ServiceAreaPhoto {
   neighborhoodAlt: string | null;
   lat: number;
   lng: number;
+  /** Optional full ImageKit URL (same asset as `file`); gallery still uses `file` + transforms. */
+  url?: string;
 }
 
-const photos = serviceAreaPhotos as ServiceAreaPhoto[];
+/** Section labels in serviceAreaPhotos.json — use `{ "__manifestSection": "..." }` (JSON does not allow // comments). */
+function isManifestPhotoRow(entry: unknown): entry is ServiceAreaPhoto {
+  if (!entry || typeof entry !== "object") return false;
+  const row = entry as Record<string, unknown>;
+  if ("__manifestSection" in row) return false;
+  if (typeof row.file !== "string" || !row.file.trim()) return false;
+  if (typeof row.city !== "string" || !row.city.trim()) return false;
+  if (typeof row.lat !== "number" || typeof row.lng !== "number") return false;
+  if (typeof row.width !== "number" || typeof row.height !== "number") return false;
+  if (typeof row.cityAlt !== "string") return false;
+  return true;
+}
+
+const photos = (serviceAreaPhotos as unknown[]).filter(isManifestPhotoRow);
 
 export function slugifyLocation(value: string): string {
   return value

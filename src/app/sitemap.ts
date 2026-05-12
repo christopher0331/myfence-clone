@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-import serviceAreaPhotos from "@/data/serviceAreaPhotos.json";
+import { getAllServiceAreaPhotos } from "@/lib/serviceAreaPhotoUtils";
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const BLOG_CONTENT_DIR = path.join(process.cwd(), "src", "content", "blog");
@@ -24,7 +24,7 @@ function collectDynamicServiceAreaRoutes(): string[] {
   const citySet = new Set<string>();
   const neighborhoodSet = new Set<string>();
 
-  for (const photo of serviceAreaPhotos) {
+  for (const photo of getAllServiceAreaPhotos()) {
     const citySlug = slugify(photo.city);
     citySet.add(`/service-areas/${citySlug}`);
 

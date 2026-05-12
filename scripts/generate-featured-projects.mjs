@@ -43,8 +43,17 @@ const FENCE_STYLES = [
 
 // ---------------------------------------------------------------------------
 
-const photos = JSON.parse(
+const rawPhotos = JSON.parse(
   readFileSync(resolve(ROOT, "src/data/serviceAreaPhotos.json"), "utf-8")
+);
+const photos = rawPhotos.filter(
+  (p) =>
+    p &&
+    typeof p.file === "string" &&
+    p.file.trim() &&
+    typeof p.city === "string" &&
+    p.city.trim() &&
+    !("__manifestSection" in p)
 );
 
 function groupByLocation(photos) {
