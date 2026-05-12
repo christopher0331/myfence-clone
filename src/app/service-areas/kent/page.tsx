@@ -28,7 +28,6 @@ export default function KentPage() {
       neighborhoods={neighborhoods}
       heroTitle="Professional Fence Services in Kent"
       heroDescription="See recent fence installations and neighborhood projects in Kent. Get a free quote from MyFence.com today."
-      galleryForceGrid={true}
     />
   );
 }

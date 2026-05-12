@@ -112,7 +112,6 @@ export default function WynacoKentPage() {
       <ServiceAreaPhotoGallery
         city="Kent"
         neighborhood="Wynaco"
-        forceGrid={true}
         title="Recent Steel Post Fence Installations in Wynaco"
         description="Photos from recent fence projects completed in the Wynaco neighborhood of Kent, WA."
       />
