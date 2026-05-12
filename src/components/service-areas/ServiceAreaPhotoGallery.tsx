@@ -5,6 +5,7 @@ import { Play, Pause, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   buildImageUrl,
+  cssAspectRatioFromPhoto,
   getCityPhotosBySlug,
   getNeighborhoodPhotosBySlugs,
   slugifyLocation,
@@ -106,7 +107,8 @@ export default function ServiceAreaPhotoGallery({
               return (
                 <div
                   key={photo.file}
-                  className="rounded-lg overflow-hidden shadow-lg bg-muted/50 w-[280px] md:w-[320px] aspect-[4/3]"
+                  className="rounded-lg overflow-hidden shadow-lg bg-muted/50 w-[280px] md:w-[320px] max-w-[min(100vw-2rem,320px)]"
+                  style={{ aspectRatio: cssAspectRatioFromPhoto(photo) }}
                 >
                   <picture>
                     <source media="(max-width: 767px)" srcSet={buildImageUrl(photo.file, 400)} />
@@ -182,7 +184,8 @@ export default function ServiceAreaPhotoGallery({
               <div
                 key={`img-${index}`}
                 aria-hidden={isDuplicateSet ? "true" : undefined}
-                className="relative flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 w-[180px] h-[240px] md:w-[220px] md:h-[293px]"
+                className="relative flex-shrink-0 mx-4 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-muted/50 w-[min(42vw,200px)] sm:w-[200px] md:w-[240px]"
+                style={{ aspectRatio: cssAspectRatioFromPhoto(photo) }}
               >
                 <picture>
                   <source media="(max-width: 767px)" srcSet={buildImageUrl(photo.file, 220)} />

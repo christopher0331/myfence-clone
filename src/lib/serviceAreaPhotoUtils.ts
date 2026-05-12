@@ -93,6 +93,13 @@ export function buildImageUrl(file: string, width?: number): string {
   return `${base}?tr=w-${width}`;
 }
 
+/** CSS `aspect-ratio` from manifest pixels so portrait vs landscape frames match the photo. */
+export function cssAspectRatioFromPhoto(photo: ServiceAreaPhoto): string {
+  const { width, height } = photo;
+  if (width > 0 && height > 0) return `${width} / ${height}`;
+  return "4 / 3";
+}
+
 export function buildResponsiveSrcSet(
   file: string,
   maxWidth: number
