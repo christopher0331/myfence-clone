@@ -55,9 +55,8 @@ const postOptions = [
   },
   {
     title: '4x4 Steel Posts',
-    badge: '40-Year Warranty',
-    img: '/lovable-uploads/barrier-boss-4x4-steel-post.webp',
-    desc: "Barrier Boss black steel posts—won't rot like wood. Available in 9' and 12' heights for lattice toppers.",
+    img: 'https://ik.imagekit.io/xft9mcl5v/IMG_0369.heic?tr=w-900,f-auto,q-85',
+    desc: 'Metal fence posts are powder coated with Polyester or Super Durable Polyester (SDP), often meeting AAMA 2604 or 2605 standards for high UV resistance and durability [5.4, 5.6].',
   },
   {
     title: 'Post on Pipe',
@@ -239,7 +238,7 @@ const FenceStylesIndexPage = () => {
               <CardHeader>
                 <CardTitle className="flex items-start justify-between gap-2 flex-wrap">
                   <span className="leading-tight">{p.title}</span>
-                  <Badge variant="secondary">{p.badge}</Badge>
+                  {p.badge ? <Badge variant="secondary">{p.badge}</Badge> : null}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">

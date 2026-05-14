@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, ExternalLink, Droplets, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
+import { Shield, Ruler, Hammer, CheckCircle2, DollarSign, Clock, Droplets, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import Seo from "@/components/Seo";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -16,6 +16,12 @@ const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap")
   ssr: false,
   loading: () => null,
 });
+
+const STEEL_POST_FINISH_DESCRIPTION =
+  "Metal fence posts are powder coated with Polyester or Super Durable Polyester (SDP), often meeting AAMA 2604 or 2605 standards for high UV resistance and durability [5.4, 5.6].";
+
+const STEEL_POST_HERO_IMAGE =
+  "https://ik.imagekit.io/xft9mcl5v/image.jpeg?tr=w-1600,q-85";
 
 const SteelPostsPage = () => {
   const [lightbox, setLightbox] = useState<{ images: string[]; captions: string[]; index: number } | null>(null);
@@ -49,9 +55,8 @@ const SteelPostsPage = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "4x4 Black Steel Fence Posts",
-    description:
-      "Premium black powder-coated 4x4 steel fence posts from Barrier Boss with 40-year warranty. Available in 9' and 12' heights for 6' fences or 6' fences with 2' lattice toppers.",
-    image: "https://myfence.com/lovable-uploads/barrier-boss-4x4-steel-post.webp",
+    description: `${STEEL_POST_FINISH_DESCRIPTION} Black powder-coated 4x4 steel posts from Barrier Boss, available in 9' and 12' heights for 6' fences or 6' fences with 2' lattice toppers.`,
+    image: STEEL_POST_HERO_IMAGE,
     url: "https://myfence.com/fence-posts/steel-posts",
     brand: { "@type": "Brand", name: "Barrier Boss" },
     offers: {
@@ -71,7 +76,6 @@ const SteelPostsPage = () => {
   } as const;
 
   const galleryImages = [
-    "/lovable-uploads/4x4-steel-posts-fence.webp",
     "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-2.webp?tr=w-800",
     "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-4.webp?tr=w-800",
   ];
@@ -79,8 +83,8 @@ const SteelPostsPage = () => {
   return (
     <>
       <Seo
-        title="4x4 Steel Fence Posts Seattle: 40-Year Warranty | MyFence"
-        description="Premium 4x4 black steel fence posts from Barrier Boss with 40-year warranty. Never rot, never fail. Available in 9' ($225) and 12' ($250) heights. Professional Seattle installation."
+        title="4x4 Steel Fence Posts Seattle | MyFence"
+        description={`${STEEL_POST_FINISH_DESCRIPTION} Barrier Boss 4x4 black steel posts—won't rot like wood. 9' ($225) and 12' ($250) heights. Professional Seattle installation.`}
         canonical="https://myfence.com/fence-posts/steel-posts"
         structuredData={[breadcrumbData, productSchema]}
       />
@@ -90,12 +94,16 @@ const SteelPostsPage = () => {
         <section className="pt-8 pb-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
                 4x4 Black Steel Fence Posts
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                The ultimate long-term investment. <a href="https://barrierbossusa.com/products/metal-fence-posts-for-wood-fence?variant=47959096557787" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">Barrier Boss steel posts<ExternalLink className="w-4 h-4" /></a> backed by a robust 40-year warranty—won't rot like wood.
-              </p>
+              <div className="max-w-4xl mx-auto mb-10 rounded-lg overflow-hidden shadow-lg border bg-muted/30">
+                <OptimizedImage
+                  src={STEEL_POST_HERO_IMAGE}
+                  alt="Cedar picture-frame privacy fence with black steel posts on a residential lot, installed by MyFence.com"
+                  className="w-full aspect-[21/9] md:aspect-[2/1] object-cover"
+                />
+              </div>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button size="lg" asChild>
                   <Link href="/quote">Get Free Quote</Link>
@@ -117,10 +125,8 @@ const SteelPostsPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-card p-6 rounded-lg shadow-sm border">
                 <Shield className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-foreground">40-Year Warranty</h3>
-                <p className="text-muted-foreground">
-                  Barrier Boss backs these posts with a robust 40-year warranty. This is a true long-term investment that outlasts any wood post on the market.
-                </p>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Powder coating & UV durability</h3>
+                <p className="text-muted-foreground">{STEEL_POST_FINISH_DESCRIPTION}</p>
               </div>
 
               <div className="bg-card p-6 rounded-lg shadow-sm border">
@@ -365,14 +371,13 @@ const SteelPostsPage = () => {
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
               Steel Posts in Action
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {galleryImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => openLightbox(
                     galleryImages,
                     [
-                      "Cedar/steel hybrid fence with black steel posts",
                       "Wynaco, Kent — pre-stained cedar with steel posts",
                       "Wynaco, Kent — board-on-board picture frame with steel posts",
                     ],
@@ -476,7 +481,7 @@ const SteelPostsPage = () => {
               <div className="bg-card border rounded-lg p-6">
                 <h3 className="font-semibold text-lg mb-2 text-foreground">Steel Posts</h3>
                 <p className="text-muted-foreground text-sm">
-                  4"×4"×9' galvanized steel posts, powder coated black. Set approximately 24" deep in concrete—no wood-to-soil contact anywhere on the fence line. 40-year Barrier Boss warranty.
+                  4"×4"×9' galvanized steel posts, powder coated black. Set approximately 24" deep in concrete—no wood-to-soil contact anywhere on the fence line. Coatings are chosen for UV resistance and long-term finish durability in the PNW climate.
                 </p>
               </div>
               <div className="bg-card border rounded-lg p-6">
