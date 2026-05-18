@@ -26,6 +26,24 @@ const heroImg = heroPhoto
   ? buildImageUrl(heroPhoto.file, 1200)
   : "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
 
+// Hand-picked pair for the top gallery row so the two shots aren't visually
+// redundant. Both files are confirmed landscape (1920x1440) in the manifest.
+const FEATURED_GALLERY_FILE_SUFFIXES = [
+  "Maple-Woods-Shadow-Box-Fence-2.webp",
+  "Maple-Woods-Shadow-Box-Fence-5.webp",
+] as const;
+
+const featuredGalleryPair = FEATURED_GALLERY_FILE_SUFFIXES.map((suffix) =>
+  shadowBoxPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is (typeof shadowBoxPhotos)[number] => Boolean(photo));
+
+const featuredGalleryFileSet = new Set(featuredGalleryPair.map((p) => p.file));
+
+const remainingShadowBoxPhotos = shadowBoxPhotos.filter(
+  (photo) =>
+    photo.file !== heroPhoto?.file && !featuredGalleryFileSet.has(photo.file)
+);
+
 const ShadowBoxFence = () => {
   const canonical = "https://myfence.com/fence-styles/shadow-box-fence";
 
@@ -388,10 +406,10 @@ const ShadowBoxFence = () => {
                 </p>
               </Card>
 
-              {/* Gallery (first 2 images) */}
-              {shadowBoxPhotos.length > 1 && (
+              {/* Gallery (featured pair) */}
+              {featuredGalleryPair.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {shadowBoxPhotos.slice(1, 3).map((photo) => (
+                  {featuredGalleryPair.map((photo) => (
                     <AspectRatio key={photo.file} ratio={4 / 3}>
                       <img
                         src={buildImageUrl(photo.file, 800)}
@@ -484,6 +502,48 @@ const ShadowBoxFence = () => {
                 </p>
               </Card>
 
+              {/* Video: shadow box style up close */}
+              <Card className="p-6 md:p-8 glass-card">
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-semibold tracking-tight">
+                      See the shadow box style up close
+                    </h3>
+                    <p className="text-muted-foreground mt-3 max-w-prose">
+                      A quick look at the alternating cedar boards that
+                      give the shadow box fence its name. Notice how
+                      each board overlaps the gap on the opposite side
+                      — that staggered layout is what creates the
+                      identical, finished appearance from either yard
+                      while still letting a hint of light and airflow
+                      pass through the panels.
+                    </p>
+                    <p className="text-muted-foreground mt-3 max-w-prose text-sm">
+                      Want this same look along your property line?{" "}
+                      <Link
+                        href="/quote"
+                        className="text-primary hover:underline"
+                      >
+                        Get a free shadow box quote
+                      </Link>
+                      .
+                    </p>
+                  </div>
+                  <div className="w-full max-w-xs md:w-64 md:flex-shrink-0 md:self-center mx-auto md:mx-0">
+                    <AspectRatio ratio={9 / 16}>
+                      <iframe
+                        src="https://www.youtube.com/embed/r__y1k-bHUc"
+                        title="Shadow box cedar fence — close-up look at the alternating board pattern"
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="h-full w-full rounded-md border-0"
+                      />
+                    </AspectRatio>
+                  </div>
+                </div>
+              </Card>
+
               {/* Pricing */}
               <Card className="p-6 md:p-8 glass-card">
                 <h3 className="text-xl font-semibold tracking-tight">
@@ -509,13 +569,13 @@ const ShadowBoxFence = () => {
               </Card>
 
               {/* Gallery (rest) */}
-              {shadowBoxPhotos.length > 3 && (
+              {remainingShadowBoxPhotos.length > 0 && (
                 <section>
                   <h3 className="text-xl font-semibold tracking-tight mb-4">
                     Recent shadow box installations
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {shadowBoxPhotos.slice(3).map((photo) => (
+                    {remainingShadowBoxPhotos.map((photo) => (
                       <AspectRatio key={photo.file} ratio={4 / 3}>
                         <img
                           src={buildImageUrl(photo.file, 800)}
