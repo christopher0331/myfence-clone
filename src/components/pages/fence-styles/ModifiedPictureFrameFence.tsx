@@ -27,11 +27,14 @@ import {
   buildResponsiveSrcSet,
 } from "@/lib/serviceAreaPhotoUtils";
 
+const MODIFIED_FULL_PANEL_GATE_IMG =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/Modified%20Full%20Panel%20Fence%20Gate.webp?updatedAt=1762037649533";
+
 const bothellPhotos = getCityPhotosBySlug("bothell");
 const heroPhoto = bothellPhotos[0];
 const heroImg = heroPhoto
   ? buildImageUrl(heroPhoto.file, 1200)
-  : "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
+  : MODIFIED_FULL_PANEL_GATE_IMG;
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -42,7 +45,7 @@ const ModifiedPictureFrameFence = () => {
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Modified Picture Frame Fence Installation",
+    name: "Modified Full Panel Fence Installation",
     serviceType: "Fence Installation",
     provider: {
       "@type": "Organization",
@@ -71,18 +74,18 @@ const ModifiedPictureFrameFence = () => {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is a modified picture frame fence?",
+        name: "What is a modified full panel fence?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A modified picture frame fence uses top trim and side trim to frame each panel but omits the bottom trim board. This leaves the bottom picket ends exposed and fasteners visible at the base, reducing material cost while keeping a polished top and sides.",
+          text: "A modified full panel fence uses top trim and side trim to frame each panel but omits the bottom trim board. This leaves the bottom picket ends exposed and fasteners visible at the base, reducing material cost while keeping a polished top and sides.",
         },
       },
       {
         "@type": "Question",
-        name: "Why do HOAs sometimes require modified picture frame?",
+        name: "Why do HOAs sometimes require modified full panel?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Some HOAs specify a modified picture frame style because it provides a neat, framed appearance at eye level and from the street while keeping costs down. Associations that manage large numbers of homes often standardize on this look as a balance between aesthetics and affordability.",
+          text: "Some HOAs specify a modified full panel style because it provides a neat, framed appearance at eye level and from the street while keeping costs down. Associations that manage large numbers of homes often standardize on this look as a balance between aesthetics and affordability.",
         },
       },
       {
@@ -95,7 +98,7 @@ const ModifiedPictureFrameFence = () => {
       },
       {
         "@type": "Question",
-        name: "Is modified picture frame cheaper than standard picture frame?",
+        name: "Is modified full panel cheaper than standard picture frame?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Yes. Removing the bottom trim board reduces material and labor, making it a more economical choice while still delivering a framed look at the top and sides where visual impact matters most.",
@@ -107,9 +110,9 @@ const ModifiedPictureFrameFence = () => {
   const productStructuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Modified Picture Frame Fence",
+    name: "Modified Full Panel Fence",
     description:
-      "Cedar modified picture frame fence with top and side trim but no bottom board. HOA-friendly, economical, stainless steel fasteners required.",
+      "Cedar modified full panel fence with top and side trim but no bottom board. HOA-friendly, economical, stainless steel fasteners required.",
     image: `https://myfence.com${heroImg}`,
     brand: { "@type": "Brand", name: "MyFence.com" },
     offers: {
@@ -176,7 +179,7 @@ const ModifiedPictureFrameFence = () => {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Modified Picture Frame Fence",
+          name: "Modified Full Panel Fence",
           item: canonical,
         },
       ],
@@ -186,8 +189,8 @@ const ModifiedPictureFrameFence = () => {
   return (
     <>
       <Seo
-        title="Modified Picture Frame Fence | HOA-Approved | MyFence.com"
-        description="Cedar modified picture frame fence — top and side trim, no bottom board. HOA-approved, more economical than full picture frame. Stainless steel fasteners standard. Free quotes."
+        title="Modified Full Panel Fence | HOA-Approved | MyFence.com"
+        description="Cedar modified full panel fence — top and side trim, no bottom board. HOA-approved, more economical than full picture frame. Stainless steel fasteners standard. Free quotes."
         canonical={canonical}
         image={heroImg}
         structuredData={structuredData}
@@ -213,7 +216,7 @@ const ModifiedPictureFrameFence = () => {
               </Link>
               <span className="text-muted-foreground">/</span>
               <span className="text-foreground font-medium">
-                Modified Picture Frame Fence
+                Modified Full Panel Fence
               </span>
             </div>
           </div>
@@ -232,10 +235,10 @@ const ModifiedPictureFrameFence = () => {
             <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
               <div>
                 <h1 className="text-4xl font-bold tracking-tight">
-                  Modified Picture Frame Fence
+                  Modified Full Panel Fence
                 </h1>
                 <p className="mt-3 text-muted-foreground max-w-prose">
-                  The modified picture frame fence keeps the framed look where
+                  The modified full panel fence keeps the framed look where
                   it counts — top cap and side trim — while omitting the bottom
                   trim board. Less material means a lower price point, and the
                   clean top profile satisfies most HOA requirements. Because the
@@ -249,12 +252,12 @@ const ModifiedPictureFrameFence = () => {
                 </div>
               </div>
               <div>
-                <AspectRatio ratio={16 / 9}>
+                <AspectRatio ratio={4 / 3}>
                   <img
                     src={heroImg}
                     srcSet={heroPhoto ? buildResponsiveSrcSet(heroPhoto.file, 1200) : undefined}
                     sizes="(max-width: 768px) 100vw, 600px"
-                    alt={heroPhoto?.cityAlt ?? "Modified picture frame cedar fence in Bothell by MyFence.com"}
+                    alt={heroPhoto?.cityAlt ?? "Modified full panel cedar fence in Bothell by MyFence.com"}
                     loading="eager"
                     className="h-full w-full rounded-md object-cover"
                   />
@@ -282,7 +285,7 @@ const ModifiedPictureFrameFence = () => {
                 {/* Why homeowners and HOAs choose it */}
                 <Card className="p-6 md:p-8 glass-card">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    Why homeowners and HOAs choose modified picture frame
+                    Why homeowners and HOAs choose modified full panel
                   </h2>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground mt-3">
                     <li>
@@ -314,7 +317,7 @@ const ModifiedPictureFrameFence = () => {
                 {/* How we build it */}
                 <Card className="p-6 md:p-8 glass-card">
                   <h3 className="text-xl font-semibold tracking-tight">
-                    How we build modified picture frame fence (our standard)
+                    How we build modified full panel fence (our standard)
                   </h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground mt-3">
                     <li>
@@ -352,6 +355,64 @@ const ModifiedPictureFrameFence = () => {
                   </p>
                 </Card>
 
+                {/* Featured Modified Full Panel images — style up close */}
+                <section
+                  aria-labelledby="modified-full-panel-up-close-heading"
+                  className="space-y-4"
+                >
+                  <div>
+                    <h2
+                      id="modified-full-panel-up-close-heading"
+                      className="text-2xl font-semibold tracking-tight"
+                    >
+                      See the Modified Full Panel Fence up close
+                    </h2>
+                    <p className="text-muted-foreground max-w-prose mt-2">
+                      A closer look at the style as we build it — finished
+                      runs showing the top cap and side trim from a couple
+                      of vantages, a corner revealing how the rail-side of
+                      the panels lands at the post, and a matching gate
+                      framed into the same construction.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <AspectRatio ratio={3 / 4}>
+                      <img
+                        src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/Modified%20Full%20Panel%20Fence.webp?updatedAt=1762037624023"
+                        alt="Modified full panel cedar fence run showing top cap and side trim by MyFence.com"
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                    <AspectRatio ratio={3 / 4}>
+                      <img
+                        src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/Modified%20Full%20Panel%20Fence%203.webp?updatedAt=1762037623713"
+                        alt="Modified full panel cedar fence run from an alternate vantage with backyard context by MyFence.com"
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                    <AspectRatio ratio={3 / 4}>
+                      <img
+                        src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/modifed-full-panel-railside.webp"
+                        alt="Modified full panel cedar fence corner showing the rail-side construction at the post by MyFence.com"
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                    <div className="md:col-span-3">
+                      <AspectRatio ratio={4 / 3}>
+                        <img
+                          src={MODIFIED_FULL_PANEL_GATE_IMG}
+                          alt="Modified full panel cedar fence with matching gate and stainless steel hardware by MyFence.com"
+                          loading="lazy"
+                          className="h-full w-full rounded-md object-cover"
+                        />
+                      </AspectRatio>
+                    </div>
+                  </div>
+                </section>
+
                 {/* First 2 gallery images */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {bothellPhotos.slice(1, 3).map((photo) => (
@@ -360,7 +421,7 @@ const ModifiedPictureFrameFence = () => {
                         src={buildImageUrl(photo.file, 800)}
                         srcSet={buildResponsiveSrcSet(photo.file, 800)}
                         sizes="(max-width: 640px) 100vw, 50vw"
-                        alt={photo.cityAlt ?? "Modified picture frame fence installation in Bothell"}
+                        alt={photo.cityAlt ?? "Modified full panel fence installation in Bothell"}
                         loading="lazy"
                         className="h-full w-full rounded-md object-cover"
                       />
@@ -379,14 +440,14 @@ const ModifiedPictureFrameFence = () => {
                       <iframe
                         className="rounded-lg shadow-2xl w-full h-full"
                         src="https://www.youtube-nocookie.com/embed/-j5ghYESllU?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
-                        title="Modified Picture Frame Fence Installation in Bothell"
+                        title="Modified Full Panel Fence Installation in Bothell"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         loading="lazy"
                       />
                     </AspectRatio>
                     <p className="text-sm text-muted-foreground mt-2">
-                      A recent modified picture frame install in Bothell, WA —
+                      A recent modified full panel install in Bothell, WA —
                       no bottom trim, exposed fasteners at the base, stainless
                       steel hardware throughout.
                     </p>
@@ -472,7 +533,7 @@ const ModifiedPictureFrameFence = () => {
                 <section className="mb-12">
                   <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold mb-4">
-                      Modified Picture Frame Fence Gallery
+                      Modified Full Panel Fence Gallery
                     </h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                       Recent installations showing the clean cap-and-side-trim
@@ -491,14 +552,14 @@ const ModifiedPictureFrameFence = () => {
                           src={buildImageUrl(photo.file, 800)}
                           srcSet={buildResponsiveSrcSet(photo.file, 800)}
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          alt={photo.cityAlt ?? `Modified picture frame fence installation in Bothell ${index + 1}`}
+                          alt={photo.cityAlt ?? `Modified full panel fence installation in Bothell ${index + 1}`}
                           className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="absolute bottom-4 left-4 right-4">
                             <p className="text-white text-sm font-medium">
-                              {photo.cityAlt ?? "Modified picture frame fence in Bothell"}
+                              {photo.cityAlt ?? "Modified full panel fence in Bothell"}
                             </p>
                           </div>
                         </div>
@@ -656,7 +717,7 @@ const ModifiedPictureFrameFence = () => {
                     id="fence-genius-heading"
                     className="text-xl font-semibold tracking-tight"
                   >
-                    Fence Genius planning for modified picture frame
+                    Fence Genius planning for modified full panel
                   </h3>
                   <div className="rounded-lg border bg-card p-4">
                     <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
@@ -691,7 +752,7 @@ const ModifiedPictureFrameFence = () => {
                     id="faq-heading"
                     className="text-2xl font-semibold tracking-tight"
                   >
-                    Modified Picture Frame Fence FAQs
+                    Modified Full Panel Fence FAQs
                   </h2>
                   <div className="rounded-lg border bg-card p-4">
                     <details>
@@ -789,10 +850,10 @@ const ModifiedPictureFrameFence = () => {
                 </section>
 
                 {/* Virtual Quote Tool */}
-                <VirtualQuoteTool fenceStyleName="Modified Picture Frame Fence" />
+                <VirtualQuoteTool fenceStyleName="Modified Full Panel Fence" />
 
                 <section className="mt-6">
-                  <InlineQuoteForm context="Modified Picture Frame Fence page" />
+                  <InlineQuoteForm context="Modified Full Panel Fence page" />
                 </section>
               </div>
             </section>
@@ -819,7 +880,7 @@ const ModifiedPictureFrameFence = () => {
                         <Button asChild>
                           <Link
                             href="/quote"
-                            aria-label="Start your modified picture frame fence quote"
+                            aria-label="Start your modified full panel fence quote"
                           >
                             Start Your Quote
                           </Link>
@@ -857,7 +918,7 @@ const ModifiedPictureFrameFence = () => {
                     Flexible Financing Options
                   </h2>
                   <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Make your Modified Picture Frame Fence project more
+                    Make your Modified Full Panel Fence project more
                     affordable with our financing options.
                   </p>
                 </div>
