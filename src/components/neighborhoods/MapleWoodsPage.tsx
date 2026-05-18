@@ -511,10 +511,10 @@ const MapleWoodsPage = () => {
                     neighbor-friendly privacy option we offer.
                   </p>
                   <Link
-                    href="/fence-styles/picture-frame-fence"
+                    href="/fence-styles/shadow-box-fence"
                     className="text-primary text-sm font-medium hover:underline"
                   >
-                    View cedar styles &rarr;
+                    View shadow box style &rarr;
                   </Link>
                 </Card>
                 <Card className="p-6">
