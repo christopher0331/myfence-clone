@@ -21,7 +21,11 @@ const shadowBoxPhotos = getNeighborhoodPhotosBySlugs(
   "maple-valley",
   "maple-woods"
 );
-const heroPhoto = shadowBoxPhotos[0];
+// Hand-picked hero so the top-of-page image is independent of JSON ordering.
+const HERO_FILE_SUFFIX = "Maple-Woods-Shadow-Box-Fence-8.webp";
+const heroPhoto =
+  shadowBoxPhotos.find((photo) => photo.file.endsWith(HERO_FILE_SUFFIX)) ??
+  shadowBoxPhotos[0];
 const heroImg = heroPhoto
   ? buildImageUrl(heroPhoto.file, 1200)
   : "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
