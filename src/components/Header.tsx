@@ -130,7 +130,7 @@ const Header = () => {
                 { label: "Upgrade Options", hash: "#add-on-options" },
               ].map((section) => (
                 <DropdownMenuItem key={section.hash} asChild>
-                  <Link href={`/fence-styles${section.hash}`}>
+                  <Link href={`/fence-styles${section.hash}`} scroll={false}>
                     {section.label}
                   </Link>
                 </DropdownMenuItem>

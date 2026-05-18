@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Seo from "@/components/Seo";
 import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,10 +85,44 @@ const addOns = [
 ];
 
 const FenceStylesIndexPage = () => {
-  // Ensure page loads at the top (mobile menu link was leaving us offset)
+  const pathname = usePathname();
+
+  // Hash links (e.g. /fence-styles#post-options) must win over "scroll to top" on load.
+  // Same-route hash nav often does not remount this page, so we also listen for hashchange/popstate.
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+    if (pathname !== "/fence-styles") return;
+
+    let cancelled = false;
+
+    const scrollFromLocation = () => {
+      if (cancelled) return;
+      const id = window.location.hash.replace(/^#/, "");
+      const target = id ? document.getElementById(id) : null;
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      // Preserve prior behavior: plain /fence-styles visits start at the top (fixes odd mobile offsets).
+      if (!window.location.hash) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+    };
+
+    scrollFromLocation();
+    const t1 = window.setTimeout(scrollFromLocation, 50);
+    const t2 = window.setTimeout(scrollFromLocation, 300);
+
+    window.addEventListener("hashchange", scrollFromLocation);
+    window.addEventListener("popstate", scrollFromLocation);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.removeEventListener("hashchange", scrollFromLocation);
+      window.removeEventListener("popstate", scrollFromLocation);
+    };
+  }, [pathname]);
 
   const breadcrumbData = {
     "@context": "https://schema.org",
@@ -138,7 +173,7 @@ const FenceStylesIndexPage = () => {
         ]}
       />
 
-      <section id="fence-styles" className="container pt-8 pb-10">
+      <section id="fence-styles" className="container scroll-mt-24 md:scroll-mt-32 pt-8 pb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
           <h1 className="text-4xl font-bold tracking-tight">Fence Styles for Every Seattle Home</h1>
           <DropdownMenu>
@@ -225,7 +260,7 @@ const FenceStylesIndexPage = () => {
       </section>
 
       <section className="container py-10">
-        <h2 id="post-options" className="text-2xl font-semibold tracking-tight">
+        <h2 id="post-options" className="text-2xl font-semibold tracking-tight scroll-mt-24 md:scroll-mt-32">
           Fence Post Options
         </h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">
@@ -308,7 +343,7 @@ const FenceStylesIndexPage = () => {
       </section>
 
       <section className="container py-10">
-        <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight">
+        <h2 id="add-on-options" className="text-2xl font-semibold tracking-tight scroll-mt-24 md:scroll-mt-32">
           Optional Fence Upgrades
         </h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">

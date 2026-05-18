@@ -254,6 +254,11 @@ const MapleValley = () => {
           name: "Patrick's Faire",
           description: "Family-friendly north Maple Valley neighborhood with well-maintained yards and suburban character. Click to learn more →",
           link: "/service-areas/maple-valley/patricks-faire"
+        },
+        {
+          name: "Maple Woods",
+          description: "Quiet residential pocket with closely-spaced lots and shared property lines — a popular setting for cedar shadow box fencing that looks finished from both yards. Click to learn more →",
+          link: "/service-areas/maple-valley/maple-woods"
         }
       ]}
       landmarks={[

@@ -3,275 +3,556 @@
     "city": "Bellevue",
     "neighborhood": null,
     "photoFile": "Bellevue/Bellevue-Fence-Installation-2.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Bellevue, WA",
-    "description": "MyFence.com completed this cedar privacy fence for a Bellevue homeowner looking to create a fully enclosed backyard. The western red cedar provides natural weather resistance suited to the Eastside's year-round moisture, and the height delivers complete privacy from the adjacent greenway. Bellevue residents regularly choose cedar fencing for its combination of durability and curb appeal — this installation is a great example of how a well-built fence transforms a property's usable outdoor space.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a residential property in Bellevue WA",
-    "lat": 47.6358,
-    "lng": -122.1221
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Stepped for Slope",
+      "Pre-Stained Cedar"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Solid Board Fence Installation in Bellevue, WA",
+    "description": "MyFence.com recently completed a solid board fence installation in Bellevue, WA, showcasing their expertise in handling diverse terrains. This project featured a beautifully constructed, pre-stained cedar fence that seamlessly adapts to the sloping landscape. The craftsmanship is evident in the precise stepping, ensuring a consistent height throughout. MyFence.com overcame the challenge of the surrounding trees, integrating the fence naturally into the existing environment, further enhancing the property's privacy and aesthetic appeal. This installation highlights their proficiency in delivering top-quality fence installation in Bellevue.",
+    "altText": "Solid board fence installation by MyFence.com in Bellevue, WA, featuring pre-stained cedar and stepped design.",
+    "lat": 47.6357666666667,
+    "lng": -122.122072222222
   },
   {
     "city": "Bellevue",
     "neighborhood": "Sherwood Forest",
     "photoFile": "Bellevue/Sherwood-Forest-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in Sherwood Forest, Bellevue",
-    "description": "This Sherwood Forest fence installation sits on a wooded lot near Phantom Lake where mature evergreen trees line the property boundaries. MyFence.com worked around the existing landscaping and root systems to place this cedar privacy fence without disturbing the established trees that give this Bellevue neighborhood its character. The finished fence provides full backyard privacy under the dense canopy that Sherwood Forest residents value.",
-    "altText": "Cedar privacy fence in Sherwood Forest Bellevue installed on a wooded lot near Phantom Lake",
-    "lat": 47.6357,
-    "lng": -122.1209
+    "fenceStyle": "Galvanized Hogwire Fence",
+    "fenceStyleSlug": "galvanized-hogwire-fence",
+    "features": [
+      "Custom Gate",
+      "Galvanized Hogwire",
+      "Cedar Frame",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Galvanized Hogwire Fence Installation in Sherwood Forest, Bellevue, WA",
+    "description": "This project by MyFence.com in Sherwood Forest, Bellevue, WA, showcases a beautiful Galvanized Hogwire Fence. The design features a sturdy cedar frame with galvanized hogwire, providing a modern and durable solution. The fence is expertly stepped to accommodate the natural slope of the terrain, and a custom gate ensures easy access while maintaining security. This fence installation in Sherwood Forest harmonizes with the lush surroundings, highlighting the quality craftsmanship MyFence.com is known for.",
+    "altText": "Galvanized Hogwire Fence with cedar frame in Sherwood Forest, Bellevue, WA, featuring custom gate and stepped design.",
+    "lat": 47.6357416666667,
+    "lng": -122.120888888889
   },
   {
     "city": "Black Diamond",
     "neighborhood": "Lawson Hill Estates",
     "photoFile": "Black-Diamond/Lawson-Hill-Estates-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Lawson Hill Estates, Black Diamond",
-    "description": "Black Diamond's rocky soil near the Cascade foothills adds complexity to any fence project, and this Lawson Hill Estates installation was no different. MyFence.com secured every post to proper depth despite the challenging ground conditions, delivering a cedar privacy fence that follows the property's natural terrain. This fence gives the homeowners full backyard enclosure in a growing community where new families are putting down roots.",
-    "altText": "Cedar privacy fence installed in Lawson Hill Estates Black Diamond WA on Cascade foothills terrain",
-    "lat": 47.306,
-    "lng": -122.008
+    "fenceStyle": "Galvanized Hogwire Fence",
+    "fenceStyleSlug": "galvanized-hogwire-fence",
+    "features": [
+      "Cedar Frame",
+      "Stepped for Slope",
+      "Pre-Stained Cedar"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Galvanized Hogwire Fence Installation in Lawson Hill Estates, Black Diamond, WA",
+    "description": "In the picturesque Lawson Hill Estates of Black Diamond, WA, MyFence.com expertly installed a Galvanized Hogwire Fence. The fence features a durable cedar frame and is thoughtfully stepped to accommodate the natural slope of the terrain, ensuring both functionality and aesthetic appeal. This installation demonstrates MyFence.com's commitment to quality craftsmanship in challenging landscapes. With its pre-stained cedar providing a warm contrast to the galvanized wire, this project showcases a perfect blend of strength and style, ideal for homeowners seeking both security and beauty. This is a prime example of expert fence installation in Lawson Hill Estates.",
+    "altText": "Galvanized hogwire fence with cedar frame in Lawson Hill Estates, Black Diamond, WA, showcasing craftsmanship and slope adaptation.",
+    "lat": 47.3060083333333,
+    "lng": -122.008016666667
   },
   {
     "city": "Bonney Lake",
     "neighborhood": null,
     "photoFile": "Bonney-Lake/Bonney-Lake-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Bonney Lake, WA",
-    "description": "This Bonney Lake property sits on an exposed plateau lot where steady foothill winds are a daily reality. MyFence.com installed a cedar privacy fence around the full backyard perimeter, giving the homeowners enclosed outdoor space for their family. The Bonney Lake plateau's wind exposure makes solid fence construction essential — this installation stands up to the conditions while defining the property boundary.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a plateau lot in Bonney Lake WA",
-    "lat": 47.1133,
-    "lng": -122.1559
+    "fenceStyle": "Craftsman Style Fence",
+    "fenceStyleSlug": "craftsman-style-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Decorative Topper",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": null,
+    "seoTitle": "Craftsman Style Fence Installation in Bonney Lake, WA",
+    "description": "MyFence.com completed a Craftsman Style Fence installation in Bonney Lake, WA, showcasing precision and quality craftsmanship. The use of pre-stained cedar and a decorative topper adds elegance to the residential setting. This project demonstrates MyFence.com's expertise in adapting to various terrains, as the fence is thoughtfully stepped to accommodate the natural slope. As a leader in fence installation in Bonney Lake, MyFence.com ensures every project is tailored to the specific needs of the site.",
+    "altText": "Craftsman style cedar fence with decorative topper in Bonney Lake, WA, installed by MyFence.com",
+    "lat": 47.1133388888889,
+    "lng": -122.155872222222
   },
   {
     "city": "Covington",
     "neighborhood": null,
     "photoFile": "Covington/Covington-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Covington, WA",
-    "description": "Covington's clay-heavy soil and heavy annual rainfall make fence longevity a real concern for homeowners in the area. MyFence.com installed this cedar privacy fence with proper drainage considerations at every post to prevent the premature rot that Covington's ground conditions can cause. The result is a clean, private backyard that the homeowner can enjoy for years without worrying about the fence deteriorating from below.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a residential property in Covington WA",
-    "lat": 47.3639,
-    "lng": -122.128
+    "fenceStyle": "Craftsman Style Fence",
+    "fenceStyleSlug": "craftsman-style-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Pergola Topper",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Craftsman Style Fence Installation in Covington, WA",
+    "description": "This Craftsman Style Fence in Covington, WA showcases the expert craftsmanship of MyFence.com. The pre-stained cedar provides a rich, natural finish, while the pergola topper adds an elegant touch. The installation was carefully stepped to accommodate the sloped terrain, demonstrating attention to detail and skill in fence installation in Covington. This project enhances privacy and adds aesthetic appeal to the homeowner's property.",
+    "altText": "Craftsman Style Fence with pergola topper and pre-stained cedar in Covington, WA installed by MyFence.com",
+    "lat": 47.3639027777778,
+    "lng": -122.128030555556
   },
   {
     "city": "Covington",
     "neighborhood": "Covington Woods",
     "photoFile": "Covington/Covington-Woods-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in Covington Woods, Covington",
-    "description": "Covington Woods' tree-lined lots mean fence installations need to account for existing root systems and established landscaping. MyFence.com placed this cedar privacy fence along the property boundary while working around several large trees that define the neighborhood's wooded character. The finished fence follows the natural contour of the lot and delivers the privacy this Covington Woods homeowner was looking for.",
-    "altText": "Cedar privacy fence in Covington Woods Covington installed on a wooded residential lot",
-    "lat": 47.3694,
-    "lng": -122.0932
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Solid Board Fence Installation in Covington Woods, Covington, WA",
+    "description": "MyFence.com recently completed a solid board fence installation in Covington Woods, Covington, WA. The project involved constructing a pre-stained cedar fence that seamlessly blends with the lush greenery of the area. Despite the gentle slope of the terrain, the fence was expertly stepped to maintain a uniform height, showcasing the quality craftsmanship of MyFence.com. This installation highlights their expertise in handling the challenges of varied landscapes, providing a perfect solution for privacy and aesthetics in this charming neighborhood. This is another example of exceptional fence installation in Covington Woods.",
+    "altText": "Solid board fence installation in Covington Woods, Covington, WA, featuring pre-stained cedar and stepped design for slope.",
+    "lat": 47.3693833333333,
+    "lng": -122.093169444444
   },
   {
     "city": "Covington",
     "neighborhood": "Timberlane",
     "photoFile": "Covington/Timberlane-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Timberlane, Covington",
-    "description": "This Timberlane homeowner needed a fully enclosed backyard for their family. MyFence.com installed a cedar privacy fence that wraps the property and provides a safe, contained outdoor area. The fence blends with Timberlane's well-maintained suburban streetscape while giving the family the private yard they needed in this popular Covington neighborhood.",
-    "altText": "Cedar privacy fence installed in Timberlane Covington for a family backyard enclosure",
-    "lat": 47.3659,
-    "lng": -122.0755
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Cedar Solid Board Fence Installation in Timberlane, Covington, WA",
+    "description": "MyFence.com recently completed a stunning solid board fence installation in Timberlane, Covington, WA. The project features pre-stained cedar boards, providing both privacy and aesthetic appeal. The fence is expertly stepped to accommodate the terrain's gentle slope, ensuring a seamless fit along the property line. This installation highlights MyFence.com's commitment to quality craftsmanship and attention to detail, showcasing their expertise in fence installation in Timberlane.",
+    "altText": "Solid board cedar fence installation in Timberlane, Covington, WA with pre-stained wood and stepped design for slope.",
+    "lat": 47.3658694444444,
+    "lng": -122.075530555556
   },
   {
     "city": "Federal Way",
     "neighborhood": null,
     "photoFile": "Federal-Way/Federal-Way-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Privacy Design"
+    ],
+    "estimatedFootage": "~100 linear feet",
     "seoTitle": "Cedar Privacy Fence Installation in Federal Way, WA",
-    "description": "Located near a busy Federal Way arterial, this homeowner wanted a fence that would create visual separation from road traffic and give them a usable backyard. MyFence.com installed a cedar privacy fence that shields the outdoor space from the street, making it feel like a private retreat. Federal Way properties near arterials benefit especially from a solid fence — this installation made the difference between an exposed yard and one the homeowner actually uses.",
-    "altText": "Cedar privacy fence installed by MyFence.com near an arterial road in Federal Way WA",
-    "lat": 47.3124,
-    "lng": -122.3394
+    "description": "MyFence.com recently completed a cedar privacy fence installation in Federal Way, WA. The solid board fence, crafted from pre-stained cedar, provides excellent privacy and durability. The installation showcases careful attention to detail as the fence is stepped to accommodate the sloped terrain, ensuring a seamless fit along the tree-lined boundary. This project highlights MyFence.com's expertise in handling challenging landscapes, making them a top choice for fence installation in Federal Way.",
+    "altText": "Solid cedar privacy fence installation on a slope in Federal Way, WA, surrounded by trees.",
+    "lat": 47.31235,
+    "lng": -122.339394444444
   },
   {
     "city": "Issaquah",
     "neighborhood": "Mirrormont",
     "photoFile": "Issaquah/Mirrormont-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Mirrormont, Issaquah",
-    "description": "Mirrormont sits on the slopes of Squak Mountain, and this installation navigated some of the steepest residential terrain in the Issaquah area. MyFence.com followed the mountain grade to deliver a cedar privacy fence that maintains consistent height despite the slope. In Mirrormont, where deer and other wildlife are regular visitors, a solid perimeter fence serves double duty — privacy for the homeowner and a deterrent for animals.",
-    "altText": "Cedar privacy fence on a steep Squak Mountain lot in Mirrormont Issaquah WA",
+    "fenceStyle": "Black Hogwire Fence",
+    "fenceStyleSlug": "black-hogwire-fence",
+    "features": [
+      "Stepped for Slope",
+      "Post-on-Pipe",
+      "Pre-Stained Cedar"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Black Hogwire Fence Installation in Mirrormont, Issaquah, WA",
+    "description": "MyFence.com recently completed a stunning Black Hogwire Fence installation in the scenic Mirrormont area of Issaquah, WA. The fence seamlessly integrates with the natural surroundings, utilizing a stepped design to accommodate the hilly terrain. The use of pre-stained cedar posts enhances durability and aesthetic appeal. Despite the challenging slope and dense forest setting, MyFence.com delivered exceptional craftsmanship, making this project a standout example of quality fence installation in Mirrormont.",
+    "altText": "Black Hogwire Fence in wooded area of Mirrormont, Issaquah, WA, showcasing cedar posts and slope adaptation.",
     "lat": 47.4726,
-    "lng": -121.9974
+    "lng": -121.997388888889
   },
   {
     "city": "Kirkland",
     "neighborhood": null,
     "photoFile": "Kirkland/Kirkland-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Kirkland, WA",
-    "description": "This Kirkland homeowner shared a property line with multiple neighbors and wanted a fence that provided full privacy without creating an eyesore for anyone. MyFence.com installed a cedar privacy fence that presents a clean appearance from every angle — important on Kirkland lots where neighbors are close. The natural cedar complements the home's existing architecture and the surrounding landscaping in this established Kirkland neighborhood.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a residential lot in Kirkland WA",
-    "lat": 47.6734,
-    "lng": -122.2004
+    "fenceStyle": "3-Rail Picture Frame Fence",
+    "fenceStyleSlug": "3-rail-picture-frame-fence",
+    "features": [
+      "Lattice Topper",
+      "Pre-Stained Cedar",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "3-Rail Picture Frame Fence Installation in Kirkland, WA",
+    "description": "In Kirkland, WA, MyFence.com expertly installed a 3-Rail Picture Frame Fence, showcasing their craftsmanship. The fence features a lattice topper and pre-stained cedar, enhancing both privacy and aesthetics. The terrain's gentle slope required precise stepping, which was expertly handled by their team. This project highlights MyFence.com's dedication to quality fence installation in Kirkland, providing both functional and visual appeal.",
+    "altText": "3-Rail Picture Frame Fence with lattice topper in Kirkland, WA, installed by MyFence.com",
+    "lat": 47.6734305555556,
+    "lng": -122.200411111111
+  },
+  {
+    "city": "Maple Valley",
+    "neighborhood": "Daybreak at River Ridge",
+    "photoFile": "Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-1.webp",
+    "fenceStyle": "Cedar & Steel Hybrid Fence",
+    "fenceStyleSlug": "cedar-steel-hybrid-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Steel Frame",
+      "Custom Fit"
+    ],
+    "estimatedFootage": "~200 linear feet",
+    "seoTitle": "Cedar & Steel Hybrid Fence Installation in Daybreak at River Ridge, Maple Valley, WA",
+    "description": "At Daybreak at River Ridge in Maple Valley, WA, MyFence.com expertly installed a Cedar & Steel Hybrid Fence. This project showcased the blend of natural cedar and durable steel, offering both aesthetics and strength. The pre-stained cedar panels add warmth and character, while the steel frame ensures long-lasting durability. The installation navigated the neighborhood's modern aesthetic, enhancing property value with precision and care. This fence installation in Daybreak at River Ridge exemplifies MyFence.com's commitment to quality and craftsmanship.",
+    "altText": "Cedar & Steel Hybrid Fence panels ready for installation in Daybreak at River Ridge, Maple Valley, WA",
+    "lat": 47.3902,
+    "lng": -122.0312
   },
   {
     "city": "Maple Valley",
     "neighborhood": "Barklay Woods",
     "photoFile": "Maple-Valley/Barklay-Woods-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in Barklay Woods, Maple Valley",
-    "description": "Barklay Woods sits in a heavily wooded area of southeast Maple Valley where large fir and cedar trees line most property boundaries. MyFence.com installed this cedar privacy fence while navigating the root networks and tight spacing between established trees. The constant shade and moisture drip from Barklay Woods' dense canopy make western red cedar an ideal material choice — its natural decay resistance is critical in these conditions.",
-    "altText": "Cedar privacy fence in Barklay Woods Maple Valley installed between mature trees on a wooded lot",
-    "lat": 47.3528,
-    "lng": -122.0247
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Decorative Topper",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Cedar Picture Frame Fence Installation in Barklay Woods, Maple Valley, WA",
+    "description": "This cedar picture frame fence installed by MyFence.com in Barklay Woods, Maple Valley, WA showcases expert craftsmanship. The fence features pre-stained cedar with a decorative topper, offering both privacy and aesthetic appeal. The terrain required a stepped design to accommodate the gentle slope, demonstrating MyFence.com's adaptability in fence installation in Barklay Woods.",
+    "altText": "Cedar picture frame fence with decorative topper in Barklay Woods, Maple Valley, WA, installed on sloped terrain.",
+    "lat": 47.3527527777778,
+    "lng": -122.024658333333
   },
   {
     "city": "Maple Valley",
     "neighborhood": "Cherokee Bay Park",
     "photoFile": "Maple-Valley/Cherokee-Bay-Park-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in Cherokee Bay Park, Maple Valley",
-    "description": "Cherokee Bay Park's proximity to Lake Wilderness means elevated soil moisture that fence foundations need to account for. MyFence.com installed this cedar privacy fence on a property with a gentle grade toward the lake, ensuring proper post depth for the saturated ground conditions. The finished fence provides full backyard privacy on this lakeside lot while working with the property's natural slope.",
-    "altText": "Cedar privacy fence in Cherokee Bay Park Maple Valley on a sloped lot near Lake Wilderness",
-    "lat": 47.3607,
-    "lng": -122.0438
+    "fenceStyle": "Horizontal Lattice Fence",
+    "fenceStyleSlug": "horizontal-lattice-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Lattice Topper",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Horizontal Lattice Fence Installation in Cherokee Bay Park, Maple Valley, WA",
+    "description": "MyFence.com completed a stunning horizontal lattice fence installation in Cherokee Bay Park, Maple Valley, WA. The project showcases pre-stained cedar with a lattice topper, beautifully integrating with the natural surroundings. The fence is carefully stepped to accommodate the gentle slope of the terrain, highlighting the craftsmanship and attention to detail. This project exemplifies MyFence.com's expertise in delivering high-quality fence installation in Cherokee Bay Park.",
+    "altText": "Horizontal lattice fence with pre-stained cedar in Cherokee Bay Park, Maple Valley, WA, showcasing quality installation.",
+    "lat": 47.3607444444444,
+    "lng": -122.043794444444
   },
   {
     "city": "Maple Valley",
     "neighborhood": "Highlands at Cedar Downs",
     "photoFile": "Maple-Valley/Highlands-at-Cedar-Downs-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence in Highlands at Cedar Downs, Maple Valley",
-    "description": "Highlands at Cedar Downs has community guidelines that govern fence design, and MyFence.com worked within those requirements for this installation. The cedar privacy fence meets the neighborhood's standards while providing the full backyard enclosure this homeowner needed. Clean lines and consistent height give this fence a polished appearance that fits right into the Highlands at Cedar Downs streetscape.",
-    "altText": "Cedar privacy fence in Highlands at Cedar Downs Maple Valley meeting community design guidelines",
-    "lat": 47.369,
-    "lng": -122.0566
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~60 linear feet",
+    "seoTitle": "Solid Board Fence Installation in Highlands at Cedar Downs, Maple Valley, WA",
+    "description": "MyFence.com recently completed a fence installation in Highlands at Cedar Downs, Maple Valley, WA, featuring a beautifully crafted Solid Board Fence. The project showcases pre-stained cedar boards that provide both privacy and elegance. The fence is expertly stepped to accommodate the terrain, ensuring a seamless fit along the property line. This installation exemplifies MyFence.com's commitment to quality and attention to detail, creating a durable and aesthetically pleasing boundary for the client.",
+    "altText": "Solid Board Fence in a backyard setting at Highlands at Cedar Downs, Maple Valley, WA, showcasing pre-stained cedar and precise installation.",
+    "lat": 47.3689583333333,
+    "lng": -122.056588888889
   },
   {
     "city": "Maple Valley",
     "neighborhood": "Lake Park",
     "photoFile": "Maple-Valley/Lake-Park-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Lake Park, Maple Valley",
-    "description": "Lake Park's compact lots near Lake Wilderness demand precise fence placement where every inch of yard space matters. MyFence.com installed this cedar privacy fence right on the property boundary to maximize the homeowner's usable outdoor area. Western red cedar was the right call for Lake Park's low-lying, lake-adjacent terrain where persistent ground moisture is a factor in fence material longevity.",
-    "altText": "Cedar privacy fence on a compact lot in Lake Park Maple Valley near Lake Wilderness",
-    "lat": 47.3841,
-    "lng": -122.036
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Custom Height"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Cedar Solid Board Fence Installation in Lake Park, Maple Valley, WA",
+    "description": "MyFence.com completed a solid board fence installation in Lake Park, Maple Valley, WA. The project featured a beautifully pre-stained cedar fence, expertly stepped to accommodate the slight slope between properties. This installation enhances privacy while blending seamlessly with the residential setting. MyFence.com addressed the tight space with precision, showcasing their commitment to quality craftsmanship in fence installation in Lake Park.",
+    "altText": "Solid board cedar fence installation in Lake Park, Maple Valley, WA, showing pre-stained wood and stepped design.",
+    "lat": 47.3840861111111,
+    "lng": -122.035977777778
   },
   {
     "city": "Maple Valley",
     "neighborhood": "Patrick's Faire",
     "photoFile": "Maple-Valley/Patricks-Faire-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Patrick's Faire, Maple Valley",
-    "description": "This Patrick's Faire homeowner wanted a complete backyard enclosure — a safe outdoor area for the family and a clear property boundary. MyFence.com installed a cedar privacy fence that wraps the yard and blends with the neighborhood's well-maintained suburban character. Patrick's Faire is the kind of established Maple Valley community where a quality fence adds both function and property value.",
-    "altText": "Cedar privacy fence installed in Patrick's Faire Maple Valley for backyard enclosure",
-    "lat": 47.3866,
-    "lng": -122.0283
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Solid Cedar Fence Installation in Patrick's Faire, Maple Valley, WA",
+    "description": "This solid board fence installation by MyFence.com in Patrick's Faire, Maple Valley, WA, showcases expert craftsmanship and premium materials. The fence is constructed with pre-stained cedar, ensuring durability and aesthetic appeal. It is carefully stepped to accommodate the gentle slope of the terrain, maintaining both privacy and a seamless appearance. The installation navigates the proximity of landscaping and existing structures with precision, reflecting the company's commitment to quality in every fence installation in Patrick's Faire.",
+    "altText": "Solid cedar fence installation in Patrick's Faire, Maple Valley, WA, featuring pre-stained boards and stepped design for slope.",
+    "lat": 47.3865527777778,
+    "lng": -122.028288888889
+  },
+  {
+    "city": "Maple Valley",
+    "neighborhood": "Elk Run",
+    "photoFile": "Maple-Valley/Elk-Run-Picture-Frame-Fence-1.webp",
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Stepped for Slope",
+      "Custom Gate",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~40 linear feet",
+    "seoTitle": "Solid Board Fence Installation in Elk Run, Maple Valley, WA",
+    "description": "In the picturesque neighborhood of Elk Run, Maple Valley, WA, MyFence.com expertly installed a solid board fence. This installation features a custom gate and is thoughtfully stepped to accommodate the natural slope of the terrain. The high-quality craftsmanship is evident in the seamless integration with the surrounding landscape. This project highlights MyFence.com's expertise in fence installation in Elk Run, ensuring both privacy and aesthetic appeal.",
+    "altText": "Solid board fence with custom gate in Elk Run, Maple Valley, WA, showcasing expert installation by MyFence.com.",
+    "lat": 47.3556638888889,
+    "lng": -122.040227777778
   },
   {
     "city": "Orting",
     "neighborhood": null,
     "photoFile": "Orting/Orting-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Orting, WA",
-    "description": "Orting's location in the Carbon River valley means many residential properties border open fields and agricultural land. MyFence.com installed a cedar privacy fence that gives this homeowner a clearly defined private yard within the broader rural landscape. The open-air wind exposure common in Orting makes a solidly built fence especially important — this installation provides both boundary definition and shelter from the elements.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a property in Orting WA near the Carbon River valley",
-    "lat": 47.09,
-    "lng": -122.2083
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Post-on-Pipe",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Picture Frame Fence Installation in Orting, WA",
+    "description": "MyFence.com recently completed a high-quality Picture Frame Fence installation in Orting, WA. The project showcases a beautifully pre-stained cedar fence with a post-on-pipe design, ensuring durability and elegance. The installation was expertly stepped to accommodate the slight slope of the terrain, demonstrating MyFence.com's attention to detail and adaptability. This fence installation in Orting not only enhances privacy but also complements the surrounding landscape.",
+    "altText": "Picture Frame Fence installation in Orting, WA featuring pre-stained cedar on a sloped terrain.",
+    "lat": 47.0900166666667,
+    "lng": -122.208333333333
   },
   {
     "city": "Renton",
     "neighborhood": "Maple Ridge Estates",
     "photoFile": "Renton/Maple-Ridge-Estates-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Maple Ridge Estates, Renton",
-    "description": "Maple Ridge Estates sits on the East Renton Plateau where sloped lots require fence installations that follow the grade. MyFence.com installed this cedar privacy fence along the property's natural contour, maintaining consistent fence height despite the hillside terrain. Plateau properties like this one in Maple Ridge Estates benefit from proper post depth to account for the soil movement common on slopes during Renton's rainy season.",
-    "altText": "Cedar privacy fence on a sloped lot in Maple Ridge Estates on the East Renton Plateau",
-    "lat": 47.4599,
-    "lng": -122.1546
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Stepped for Slope",
+      "Post-on-Pipe",
+      "Pre-Stained Cedar"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Cedar Picture Frame Fence Installation in Maple Ridge Estates, Renton, WA",
+    "description": "MyFence.com recently completed a beautiful Picture Frame Fence installation in Maple Ridge Estates, Renton, WA. The project showcases high-quality craftsmanship, with the fence expertly stepped to accommodate the sloped terrain. Made from pre-stained cedar, the fence blends seamlessly with the natural surroundings, ensuring both privacy and aesthetic appeal. This fence installation in Maple Ridge Estates demonstrates MyFence.com's ability to tackle challenging landscapes while maintaining superior design and durability.",
+    "altText": "Cedar Picture Frame Fence in Maple Ridge Estates, Renton, WA, expertly installed on a sloped terrain.",
+    "lat": 47.4598555555556,
+    "lng": -122.154563888889
   },
   {
     "city": "Renton",
     "neighborhood": "Maple Valley Heights",
     "photoFile": "Renton/Maple-Valley-Heights-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence in Maple Valley Heights, Renton",
-    "description": "Maple Valley Heights properties sit at elevation on the Renton-Maple Valley border, and this lot's steep backyard grade made the fence installation more involved than a flat-lot project. MyFence.com followed the grade to keep the fence structurally sound on the slope while delivering the privacy the homeowner needed. The elevated position gives these lots territorial views that a well-placed fence preserves rather than blocks.",
-    "altText": "Cedar privacy fence on an elevated sloped lot in Maple Valley Heights Renton WA",
-    "lat": 47.44,
-    "lng": -122.0803
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Custom Post Caps"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Cedar Privacy Fence Installation in Maple Valley Heights, Renton, WA",
+    "description": "This fence installation by MyFence.com in Maple Valley Heights, Renton, WA showcases a beautifully crafted Solid Board Fence. The project features pre-stained cedar panels and custom post caps, seamlessly installed along a gently sloping terrain. The attention to detail and quality craftsmanship highlight the stunning privacy solution MyFence.com provides for challenging landscapes. This successful fence installation in Maple Valley Heights exemplifies the company's commitment to excellence.",
+    "altText": "Solid Board Fence installation in Maple Valley Heights, Renton, WA with pre-stained cedar and custom post caps.",
+    "lat": 47.4400472222222,
+    "lng": -122.080311111111
   },
   {
     "city": "Renton",
     "neighborhood": "The Grove at Spring Lake",
     "photoFile": "Renton/The-Grove-at-Spring-Lake-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in The Grove at Spring Lake, Renton",
-    "description": "The Grove at Spring Lake is a planned community where fence installations go through an architectural review process. MyFence.com handled the approval and installed a cedar privacy fence that meets the community's design standards. The property backs up to a greenbelt trail, so the fence needed to look good from both sides — the finished result completes the backyard enclosure while fitting the neighborhood's aesthetic.",
-    "altText": "Cedar privacy fence in The Grove at Spring Lake Renton adjacent to a community greenbelt trail",
-    "lat": 47.4223,
-    "lng": -122.0887
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Stepped for Slope",
+      "Natural Cedar",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Solid Board Fence Installation in The Grove at Spring Lake, Renton, WA",
+    "description": "MyFence.com completed a high-quality Solid Board Fence installation in The Grove at Spring Lake, Renton, WA. The project involved constructing a sturdy fence with a natural cedar finish, seamlessly integrated into the sloping terrain. The fence was meticulously stepped to accommodate the slope and featured robust post-on-pipe construction. This project highlights MyFence.com's expertise in delivering tailored fence installation in The Grove at Spring Lake, ensuring both functionality and aesthetic appeal.",
+    "altText": "Solid board fence installation in a wooded area of The Grove at Spring Lake, Renton, WA, showcasing natural cedar finish.",
+    "lat": 47.422325,
+    "lng": -122.088744444444
   },
   {
     "city": "Riverpoint",
     "neighborhood": null,
     "photoFile": "Riverpoint/Riverpoint-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Riverpoint, WA",
-    "description": "Riverpoint's location in the Snoqualmie River valley means elevated ground moisture and softer soil that fence posts need to account for. MyFence.com installed this cedar privacy fence with proper post depth and drainage for the valley-floor conditions. Western red cedar's natural decay resistance makes it the right material for a river-adjacent environment where ground moisture is a year-round factor.",
-    "altText": "Cedar privacy fence installed by MyFence.com in Riverpoint WA in the Snoqualmie River valley",
-    "lat": 47.4762,
-    "lng": -121.7528
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Stepped for Slope",
+      "Natural Cedar",
+      "Vertical Panels"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Solid Board Fence Installation in Riverpoint, WA",
+    "description": "MyFence.com recently completed a solid board fence installation in Riverpoint, WA, showcasing their expertise in adapting to natural landscapes. The project featured a solid board fence design, ideal for privacy, running along a slightly sloped terrain. The team skillfully stepped the fence to accommodate the natural incline and integrated the structure with the surrounding trees. This fence installation in Riverpoint highlights MyFence.com's commitment to quality craftsmanship and environmental harmony.",
+    "altText": "Solid board fence installation in a wooded area of Riverpoint, WA, showing expert adaptation to sloped terrain.",
+    "lat": 47.476225,
+    "lng": -121.752772222222
   },
   {
     "city": "Sammamish",
     "neighborhood": "Klahanie",
     "photoFile": "Sammamish/Klahanie-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence Installation in Klahanie, Sammamish",
-    "description": "Klahanie's Architectural Review Committee has specific requirements for fence materials, height, and appearance that every installation must meet. MyFence.com submitted design plans and received ARC approval before starting this project. The cedar privacy fence borders a community walking trail, so the exterior face needed to match the neighborhood's established look. The finished fence delivers full backyard privacy while fitting Klahanie's manicured community standard.",
-    "altText": "Cedar privacy fence in Klahanie Sammamish installed along a community walking trail",
-    "lat": 47.573,
-    "lng": -121.9923
+    "fenceStyle": "Black Hogwire Fence",
+    "fenceStyleSlug": "black-hogwire-fence",
+    "features": [
+      "Pre-Assembled Panels",
+      "Black Hogwire",
+      "Cedar Frame"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Black Hogwire Fence Installation in Klahanie, Sammamish, WA",
+    "description": "MyFence.com completed a stunning Black Hogwire Fence installation in Klahanie, Sammamish, WA. The project features pre-assembled panels with durable black hogwire, framed in high-quality cedar. This fence complements the residential setting beautifully, providing both security and aesthetic appeal. Despite the challenge of working in a tight suburban area, the team delivered flawless results, showcasing their expertise in fence installation in Klahanie.",
+    "altText": "Stacked cedar and black hogwire fence panels in Klahanie, Sammamish, WA, ready for installation by MyFence.com.",
+    "lat": 47.5730027777778,
+    "lng": -121.992286111111
   },
   {
     "city": "SeaTac",
     "neighborhood": null,
     "photoFile": "SeaTac/SeaTac-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
+    "fenceStyle": "Solid Board Fence",
+    "fenceStyleSlug": "solid-board-fence",
+    "features": [
+      "Post-on-Pipe",
+      "Stepped for Slope",
+      "Cedar Construction"
+    ],
+    "estimatedFootage": "~100 linear feet",
     "seoTitle": "Cedar Privacy Fence Installation in SeaTac, WA",
-    "description": "Living near Sea-Tac International Airport means ambient noise is a constant, and this homeowner wanted a fence that would help create a more sheltered backyard. MyFence.com installed a cedar privacy fence that provides visual separation and helps reduce the feel of the nearby flight path. This SeaTac fence installation turned an exposed yard into an outdoor space the homeowners actually want to spend time in.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a residential property near Sea-Tac Airport",
-    "lat": 47.422,
-    "lng": -122.2899
+    "description": "MyFence.com completed a beautiful solid board fence installation in SeaTac, WA, offering both privacy and aesthetic appeal. The cedar construction is expertly stepped to accommodate the gentle slope of the terrain, showcasing meticulous craftsmanship. This project enhances the property's perimeter while blending seamlessly with the surrounding natural elements. For homeowners considering a fence installation in SeaTac, this project exemplifies quality and attention to detail.",
+    "altText": "Solid board cedar fence installation in SeaTac, WA, showcasing stepped design and post-on-pipe construction.",
+    "lat": 47.4219888888889,
+    "lng": -122.289855555556
   },
   {
     "city": "Snoqualmie",
     "neighborhood": null,
     "photoFile": "Snoqualmie/Snoqualmie-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Snoqualmie, WA",
-    "description": "Snoqualmie's position at the base of the Cascade Range means wildlife is a regular presence — deer, coyotes, and the occasional bear. MyFence.com installed a cedar privacy fence around this property's full perimeter, providing both homeowner privacy and a barrier that discourages wildlife from entering the yard. Cedar holds up well in Snoqualmie's higher rainfall and cooler temperatures compared to other fence materials.",
-    "altText": "Cedar privacy fence installed by MyFence.com on a residential property in Snoqualmie WA near the Cascades",
-    "lat": 47.5237,
-    "lng": -121.8241
+    "fenceStyle": "Horizontal Fence",
+    "fenceStyleSlug": "horizontal-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Custom Posts"
+    ],
+    "estimatedFootage": "~60 linear feet",
+    "seoTitle": "Horizontal Cedar Fence Installation in Snoqualmie, WA",
+    "description": "In Snoqualmie, WA, MyFence.com expertly installed a horizontal cedar fence, showcasing a sleek and modern design. The pre-stained cedar offers both beauty and durability, while the stepped installation accommodates the natural slope of the land. Custom posts add a touch of elegance, perfectly complementing the lush surroundings. This project highlights MyFence.com's commitment to quality fence installation in Snoqualmie, tailored to fit the unique landscape.",
+    "altText": "Horizontal cedar fence installation by MyFence.com in Snoqualmie, WA, with custom posts and stepped design.",
+    "lat": 47.5237166666667,
+    "lng": -121.824147222222
   },
   {
     "city": "Tukwila",
     "neighborhood": null,
     "photoFile": "Tukwila/Tukwila-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Privacy Fence Installation in Tukwila, WA",
-    "description": "Tukwila's denser urban lots leave little room for error in fence placement. MyFence.com installed this cedar privacy fence precisely on the property boundary to maximize the homeowner's usable yard space. On compact Tukwila lots where neighbors are close, a solid privacy fence makes the difference between feeling like you're sharing a yard and having your own outdoor space.",
-    "altText": "Cedar privacy fence installed on a compact urban lot in Tukwila WA",
-    "lat": 47.4604,
-    "lng": -122.2763
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Lattice Topper",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~80 linear feet",
+    "seoTitle": "Picture Frame Fence Installation in Tukwila, WA",
+    "description": "This project by MyFence.com showcases a beautiful Picture Frame Fence in Tukwila, WA. The fence is constructed with high-quality pre-stained cedar, featuring a lattice topper that adds elegance and privacy. The installation expertly navigates the gentle slope of the terrain, ensuring a seamless look throughout the property. This fence installation in Tukwila exemplifies MyFence.com's commitment to craftsmanship and attention to detail.",
+    "altText": "Picture Frame Fence with lattice topper in a residential setting in Tukwila, WA",
+    "lat": 47.4603833333333,
+    "lng": -122.276347222222
   },
   {
     "city": "University Place",
     "neighborhood": "Devonshire Townhomes",
     "photoFile": "University-Place/Devonshire-Townhomes-Fence-Installation-1.webp",
-    "fenceStyle": "Cedar Privacy Fence",
-    "seoTitle": "Cedar Fence at Devonshire Townhomes, University Place",
-    "description": "Townhome fencing presents unique constraints — shared walls, narrow side yards, and community standards that limit what's allowed. MyFence.com installed a cedar privacy fence in this compact Devonshire Townhomes outdoor space, maximizing the usable patio area within the approved dimensions. Even the smallest townhome yards can feel like a private retreat with the right fence — this installation proves it.",
-    "altText": "Cedar privacy fence at Devonshire Townhomes University Place installed in a compact townhome patio area",
-    "lat": 47.2392,
-    "lng": -122.5415
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Lattice Topper",
+      "Custom Gate",
+      "Cedar Material",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Picture Frame Fence Installation in Devonshire Townhomes, University Place, WA",
+    "description": "MyFence.com recently completed a stunning Picture Frame Fence installation in Devonshire Townhomes, University Place, WA. This project features a cedar fence with a lattice topper and custom gate, providing both privacy and aesthetic appeal. The installation was expertly stepped to accommodate the sloped terrain, showcasing the craftsmanship and attention to detail MyFence.com is known for. This fence installation in Devonshire Townhomes enhances the property's curb appeal while ensuring durability and style.",
+    "altText": "Picture Frame Fence with lattice topper at Devonshire Townhomes, University Place, WA, showcasing cedar craftsmanship and custom gate design.",
+    "lat": 47.2392305555556,
+    "lng": -122.541494444444
+  },
+  {
+    "city": "Kent",
+    "neighborhood": "Wynaco",
+    "photoFile": "Kent/Wynaco-Fence-Installation-1.webp",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Post-on-Pipe",
+      "Pre-Stained Cedar",
+      "Stepped for Slope"
+    ],
+    "estimatedFootage": "~60 linear feet",
+    "seoTitle": "Picture Frame Fence Installation in Wynaco, Kent, WA",
+    "description": "This project by MyFence.com features a Picture Frame Fence installation in Wynaco, Kent, WA. The fence is expertly crafted with pre-stained cedar panels, showcasing robust post-on-pipe construction. Situated on a sloped terrain, the fence is carefully stepped to ensure a seamless fit, highlighting the precision and quality of MyFence.com's work. This installation demonstrates their expertise in delivering top-notch fence installation in Wynaco, even in challenging landscapes.",
+    "altText": "Picture Frame Fence installation by MyFence.com on a slope in Wynaco, Kent, WA with pre-stained cedar panels.",
+    "lat": 47.3239555555556,
+    "lng": -122.139919444444
+  },
+  {
+    "city": "Bothell",
+    "neighborhood": null,
+    "photoFile": "Bothell/Bothell-Modified-Picture-Frame-1.webp",
+    "fenceStyle": "Horizontal Fence",
+    "fenceStyleSlug": "horizontal-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Flat Terrain"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "Horizontal Fence Installation in Bothell, WA",
+    "description": "In Bothell, WA, MyFence.com completed a premium horizontal fence installation. The project features pre-stained cedar, enhancing both durability and aesthetics. The flat terrain of the suburban neighborhood allowed for a smooth installation process, showcasing the meticulous craftsmanship of MyFence.com. This fence installation in Bothell demonstrates our commitment to quality and style, perfectly complementing the residential setting.",
+    "altText": "Horizontal fence installation with pre-stained cedar in Bothell, WA, showcasing quality craftsmanship and design.",
+    "lat": 47.7941333333333,
+    "lng": -122.240030555556
+  },
+  {
+    "city": "Kent",
+    "neighborhood": null,
+    "photoFile": "Kent/Kent-3-Rail-Fence-1.webp",
+    "fenceStyle": "3-Rail Picture Frame Fence",
+    "fenceStyleSlug": "3-rail-picture-frame-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Stepped for Slope",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~150 linear feet",
+    "seoTitle": "3-Rail Picture Frame Fence Installation in Kent, WA",
+    "description": "MyFence.com recently completed a stunning 3-rail picture frame fence installation in Kent, WA. This fence showcases pre-stained cedar, offering both durability and aesthetic appeal. The installation was expertly stepped to accommodate the gentle slope of the terrain, ensuring a uniform and polished look. The project highlights MyFence.com's commitment to quality craftsmanship, making it a standout example of professional fence installation in Kent.",
+    "altText": "3-rail picture frame fence installation on a sloped terrain in Kent, WA by MyFence.com",
+    "lat": 47.3433833333333,
+    "lng": -122.0636
+  },
+  {
+    "city": "Maple Valley",
+    "neighborhood": "Maple Woods",
+    "photoFile": "Maple-Valley/Maple-Woods-Shadow-Box-Fence-1.webp",
+    "fenceStyle": "Shadow Box Fence",
+    "fenceStyleSlug": "shadow-box-fence",
+    "features": [
+      "Alternating Board-on-Board",
+      "Custom Gate",
+      "Pre-Stained Cedar"
+    ],
+    "estimatedFootage": null,
+    "seoTitle": "Shadow Box Fence Installation in Maple Woods, Maple Valley, WA",
+    "description": "MyFence.com completed a cedar shadow box fence installation in the Maple Woods neighborhood of Maple Valley, WA. The alternating board-on-board layout gives both sides of the fence a finished look while still allowing airflow between the panels — a popular choice on tighter Maple Valley lots where neighbor relations matter. The project includes a custom gate and pre-stained cedar throughout, showcasing the quality of fence installation in Maple Woods that MyFence.com is known for.",
+    "altText": "Cedar shadow box fence with custom gate in Maple Woods, Maple Valley, WA, showing the alternating board-on-board pattern.",
+    "lat": 47.3521444444444,
+    "lng": -122.008361111111
   }
 ]

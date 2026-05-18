@@ -104,6 +104,7 @@ export default function MobileMenu({ onClose, pathname }: MobileMenuProps) {
             <Link
               key={section.hash}
               href={`/fence-styles${section.hash}`}
+              scroll={false}
               onClick={onClose}
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
