@@ -30,11 +30,14 @@ import {
 const MODIFIED_FULL_PANEL_GATE_IMG =
   "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/Modified%20Full%20Panel%20Fence%20Gate.webp?updatedAt=1762037649533";
 
+// Branded square hero (1080x1080) — overrides bothellPhotos so the page hero
+// stays consistent with the fence-styles index card.
+const MODIFIED_FULL_PANEL_HERO_IMG =
+  "https://ik.imagekit.io/xft9mcl5v/hero-images/Modified-Full-Panel-Hero.webp";
+
 const bothellPhotos = getCityPhotosBySlug("bothell");
 const heroPhoto = bothellPhotos[0];
-const heroImg = heroPhoto
-  ? buildImageUrl(heroPhoto.file, 1200)
-  : MODIFIED_FULL_PANEL_GATE_IMG;
+const heroImg = MODIFIED_FULL_PANEL_HERO_IMG;
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -251,13 +254,12 @@ const ModifiedPictureFrameFence = () => {
                   <Badge variant="secondary">Stainless Steel Fasteners</Badge>
                 </div>
               </div>
-              <div>
-                <AspectRatio ratio={4 / 3}>
+              <div className="w-full max-w-[220px] md:max-w-[260px] mx-auto md:ml-auto md:mr-0">
+                <AspectRatio ratio={1}>
                   <img
                     src={heroImg}
-                    srcSet={heroPhoto ? buildResponsiveSrcSet(heroPhoto.file, 1200) : undefined}
-                    sizes="(max-width: 768px) 100vw, 600px"
-                    alt={heroPhoto?.cityAlt ?? "Modified full panel cedar fence in Bothell by MyFence.com"}
+                    sizes="(max-width: 768px) 220px, 260px"
+                    alt="Modified Full Panel cedar fence by MyFence.com — powered by Fence Genius"
                     loading="eager"
                     className="h-full w-full rounded-md object-cover"
                   />

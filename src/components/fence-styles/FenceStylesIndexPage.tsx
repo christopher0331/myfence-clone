@@ -24,7 +24,7 @@ const styles = [
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look.", link: "/fence-styles/picture-frame-fence", badge: "Most Popular" },
   { img: "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png", title: "3 Rail Picture Frame Fence", desc: "Three horizontal rails add strength and architectural detail.", link: "/fence-styles/3-rail-picture-frame-fence" },
   { img: "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Kent-3-Rail-Fence-2.webp", title: "3-Rail Ranch Fence", desc: "Heavy cedar posts with three open horizontal rails — classic post-and-rail boundary fencing for driveways, property lines, and large lots.", badge: "Open Style", link: "/fence-styles/3-rail-ranch-fence" },
-  { img: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Modified%20Full%20Panel/Modified%20Full%20Panel%20Fence%20Gate.webp?updatedAt=1762037649533", title: "Modified Full Panel Fence", desc: "Similar components to our popular picture frame fence but missing the bottom trim.", badge: "HOA Friendly", link: "/fence-styles/modified-picture-frame-fence" },
+  { img: "https://ik.imagekit.io/xft9mcl5v/hero-images/Modified-Full-Panel-Hero.webp", title: "Modified Full Panel Fence", desc: "Similar components to our popular picture frame fence but missing the bottom trim.", badge: "HOA Friendly", link: "/fence-styles/modified-picture-frame-fence" },
   { img: "/lovable-uploads/7f3fe64f-1dd1-4d94-b585-bf9cb4ae1bd6.png", title: "Craftsman Style Fence", desc: "Distinctive craftsman accents with open top detailing.", link: "/fence-styles/craftsman-style-fence" },
   { img: "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png", title: "Horizontal Lattice Fence", desc: "Horizontal lattice with craftsman foundation, 5/8 inch thick strips, and stainless steel fasteners.", link: "/fence-styles/horizontal-lattice-fence" },
   { img: "/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png", title: "Solid Board Fence", desc: "Budget-friendly option with 2 rails and stainless steel fasteners. Most economical choice.", badge: "Budget Option", link: "/fence-styles/solid-board-fence" },
@@ -58,7 +58,7 @@ const postOptions = [
   },
   {
     title: '4x4 Steel Posts',
-    img: 'https://ik.imagekit.io/xft9mcl5v/IMG_0369.heic?tr=w-900,f-auto,q-85',
+    img: 'https://ik.imagekit.io/xft9mcl5v/hero-images/Board-On-Board-Black-Posts-Hero.webp',
     desc: 'Metal fence posts are powder coated with Polyester or Super Durable Polyester (SDP), often meeting AAMA 2604 or 2605 standards for high UV resistance and durability [5.4, 5.6].',
   },
   {

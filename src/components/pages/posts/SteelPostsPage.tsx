@@ -21,7 +21,7 @@ const STEEL_POST_FINISH_DESCRIPTION =
   "Metal fence posts are powder coated with Polyester or Super Durable Polyester (SDP), often meeting AAMA 2604 or 2605 standards for high UV resistance and durability [5.4, 5.6].";
 
 const STEEL_POST_HERO_IMAGE =
-  "https://ik.imagekit.io/xft9mcl5v/image.jpeg?tr=w-1600,q-85";
+  "https://ik.imagekit.io/xft9mcl5v/hero-images/Board-On-Board-Black-Posts-Hero.webp";
 
 const SteelPostsPage = () => {
   const [lightbox, setLightbox] = useState<{ images: string[]; captions: string[]; index: number } | null>(null);
@@ -97,11 +97,11 @@ const SteelPostsPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
                 4x4 Black Steel Fence Posts
               </h1>
-              <div className="max-w-4xl mx-auto mb-10 rounded-lg overflow-hidden shadow-lg border bg-muted/30">
+              <div className="max-w-3xl mx-auto mb-10 rounded-lg overflow-hidden shadow-lg border bg-muted/30">
                 <OptimizedImage
                   src={STEEL_POST_HERO_IMAGE}
-                  alt="Cedar picture-frame privacy fence with black steel posts on a residential lot, installed by MyFence.com"
-                  className="w-full aspect-[21/9] md:aspect-[2/1] object-cover"
+                  alt="Cedar board-on-board fence with black 4x4 steel posts on a residential lot, installed by MyFence.com"
+                  className="w-full aspect-[4/3] object-cover"
                 />
               </div>
               <div className="flex flex-wrap gap-4 justify-center">
