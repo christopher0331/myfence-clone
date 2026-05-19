@@ -317,7 +317,7 @@ const ShadowBoxFence = () => {
                 className="shadow-lg"
               />
               <p className="mt-2 text-xs text-muted-foreground text-center">
-                Tap the player to enable sound.
+                Plays muted — use the player controls to enable sound.
               </p>
             </section>
 
