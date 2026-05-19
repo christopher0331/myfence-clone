@@ -303,8 +303,9 @@ const ShadowBoxFence = () => {
               </div>
             </header>
 
-            {/* B-roll — autoplay-on-view, lazy-loaded facade so this doesn't
-                drag in ~1.3 MB of YouTube player JS on initial page load. */}
+            {/* Ambient B-roll — autoplays muted and loops as a non-interactive
+                moving picture. Lazy-loaded facade keeps the iframe (~1.3 MB of
+                YouTube player JS) out of the initial page load. */}
             <section
               aria-label="Shadow box fence in motion"
               className="mt-8 max-w-6xl mx-auto"
@@ -312,13 +313,9 @@ const ShadowBoxFence = () => {
               <LiteYouTubeEmbed
                 videoId="V5wDdtIWEX0"
                 title="Shadow box cedar fence — B-roll showing the alternating board pattern in motion"
-                autoplayOnView
-                loop
+                ambient
                 className="shadow-lg"
               />
-              <p className="mt-2 text-xs text-muted-foreground text-center">
-                Plays muted — use the player controls to enable sound.
-              </p>
             </section>
 
             <section className="mt-10 space-y-8 max-w-6xl mx-auto">

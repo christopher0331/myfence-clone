@@ -17,6 +17,18 @@ interface LiteYouTubeEmbedProps {
   /** Loop playback. Only meaningful alongside autoplayOnView. */
   loop?: boolean;
   /**
+   * "Ambient" mode — the strictest non-interactive B-roll behavior:
+   *
+   *   - hides all YouTube UI (controls, title, related videos, fullscreen, keyboard)
+   *   - places an invisible overlay on top of the iframe so the user can't
+   *     click, hover, or pause the video
+   *   - removes the play-button affordance on the poster
+   *   - removes the iframe from the keyboard tab order
+   *
+   * Implies `autoplayOnView` and `loop`. Use for decorative cinematic video.
+   */
+  ambient?: boolean;
+  /**
    * Tailwind aspect-ratio class for the outer wrapper.
    * Defaults to 16:9 (`aspect-video`) for horizontal video.
    */
@@ -41,6 +53,7 @@ export default function LiteYouTubeEmbed({
   title,
   autoplayOnView = false,
   loop = false,
+  ambient = false,
   aspect = "aspect-video",
   posterSrc,
   className = "",
@@ -48,11 +61,15 @@ export default function LiteYouTubeEmbed({
   const [loaded, setLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  // Ambient mode is always autoplay-on-view + loop. Treat it as a superset.
+  const effectiveAutoplayOnView = autoplayOnView || ambient;
+  const effectiveLoop = loop || ambient;
+
   // When autoplayOnView is on, swap to the real iframe the first time the
   // container scrolls into view. We disconnect immediately so we don't toggle
   // back-and-forth on scroll.
   useEffect(() => {
-    if (!autoplayOnView || loaded) return;
+    if (!effectiveAutoplayOnView || loaded) return;
     const node = containerRef.current;
     if (!node) return;
 
@@ -76,21 +93,30 @@ export default function LiteYouTubeEmbed({
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [autoplayOnView, loaded]);
+  }, [effectiveAutoplayOnView, loaded]);
 
   const params = new URLSearchParams();
   params.set("autoplay", "1");
   params.set("rel", "0");
   params.set("modestbranding", "1");
-  if (autoplayOnView) {
+  if (effectiveAutoplayOnView) {
     // Browser autoplay policies require muted + playsinline for unattended starts.
     params.set("mute", "1");
     params.set("playsinline", "1");
-    if (loop) {
+    if (effectiveLoop) {
       params.set("loop", "1");
       // YouTube quirk: loop=1 only works when playlist is set to the same ID.
       params.set("playlist", videoId);
     }
+  }
+  if (ambient) {
+    // Strip every piece of YouTube chrome we can — controls, keyboard handlers,
+    // fullscreen button, info-card overlays, related videos. The invisible
+    // overlay below handles the rest (hover-revealed title bar, logo, etc.).
+    params.set("controls", "0");
+    params.set("disablekb", "1");
+    params.set("fs", "0");
+    params.set("iv_load_policy", "3");
   }
 
   const iframeSrc = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
@@ -103,13 +129,38 @@ export default function LiteYouTubeEmbed({
       className={`relative ${aspect} w-full overflow-hidden rounded-md bg-black ${className}`}
     >
       {loaded ? (
-        <iframe
-          src={iframeSrc}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
+        <>
+          <iframe
+            src={iframeSrc}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen={!ambient}
+            loading="lazy"
+            tabIndex={ambient ? -1 : 0}
+            aria-hidden={ambient || undefined}
+            className="absolute inset-0 h-full w-full border-0"
+          />
+          {ambient && (
+            // Transparent overlay sits above the iframe and swallows every
+            // pointer event, so the user can't click to pause, can't hover to
+            // surface the title bar, and can't right-click to copy the URL.
+            // Result: looks and feels like a non-interactive moving picture.
+            <div
+              aria-hidden
+              className="absolute inset-0 z-10 cursor-default"
+            />
+          )}
+        </>
+      ) : ambient ? (
+        // Ambient placeholder is a plain poster — no play button, no click
+        // affordance. The intersection observer swaps it for the iframe.
+        <img
+          src={poster}
+          alt=""
+          aria-hidden
           loading="lazy"
-          className="absolute inset-0 h-full w-full border-0"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       ) : (
         <button
