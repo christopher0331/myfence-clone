@@ -123,6 +123,15 @@ export default function LiteYouTubeEmbed({
   const poster =
     posterSrc ?? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
+  // YouTube does not expose a parameter to fully hide its branding (the small
+  // bottom-right logo and the brief title flash on load both stay no matter
+  // what you do with modestbranding/controls/showinfo). The only reliable way
+  // to suppress them inside an embed is to scale the iframe up and let the
+  // overflow-hidden container crop the branding off the edges. Scale ~1.35
+  // pushes the bottom-right logo and any top title strip outside the visible
+  // area while keeping the center of the shot intact for B-roll.
+  const ambientCropClass = ambient ? "scale-[1.35]" : "";
+
   return (
     <div
       ref={containerRef}
@@ -138,7 +147,7 @@ export default function LiteYouTubeEmbed({
             loading="lazy"
             tabIndex={ambient ? -1 : 0}
             aria-hidden={ambient || undefined}
-            className="absolute inset-0 h-full w-full border-0"
+            className={`absolute inset-0 h-full w-full border-0 ${ambientCropClass}`}
           />
           {ambient && (
             // Transparent overlay sits above the iframe and swallows every
@@ -154,13 +163,14 @@ export default function LiteYouTubeEmbed({
       ) : ambient ? (
         // Ambient placeholder is a plain poster — no play button, no click
         // affordance. The intersection observer swaps it for the iframe.
+        // Scaled to match the iframe so the swap is visually seamless.
         <img
           src={poster}
           alt=""
           aria-hidden
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
+          className={`absolute inset-0 h-full w-full object-cover ${ambientCropClass}`}
         />
       ) : (
         <button

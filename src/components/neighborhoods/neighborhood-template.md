@@ -2,14 +2,130 @@
 
 Reference for creating new neighborhood pages under a parent city (e.g., `/service-areas/bellevue/somerset`).
 
+> **For the agent reading this:** Read the entire "Architecture & Wire-Up" section below **before** writing any code. The most common mistake on this codebase is dumping all 400+ lines of implementation directly into `src/app/.../page.tsx`. That breaks the project's convention — every other page in this app uses a thin route wrapper + a separate implementation component. Do not be the agent that creates the next outlier.
+
 ---
 
-## File Structure
+## Architecture & Wire-Up
+
+### The Universal Pattern (applies to every page on this site)
+
+Every page on this site is composed of **two files**:
+
+| File | Lives in | Role | Length |
+|------|----------|------|--------|
+| **Route wrapper** | `src/app/.../page.tsx` | Exports `metadata`, imports the component, renders it. Nothing else. | ~8–12 lines |
+| **Implementation component** | `src/components/<section>/<Name>.tsx` | All JSX, data arrays, structured data, helpers, hooks. | Whatever it takes |
+
+This same split applies to **fence-style pages**, **service-area pages**, **upgrade pages**, **blog pages**, and **neighborhood pages**. If you are creating a new page of any kind, look at a sibling page first and match the pattern. Examples of the convention in action:
+
+- `src/app/service-areas/maple-valley/cherokee-bay-park/page.tsx` (9 lines) → `src/components/neighborhoods/CherokeeBayParkPage.tsx` (full impl)
+- `src/app/fence-styles/shadow-box-fence/page.tsx` → `src/components/pages/fence-styles/ShadowBoxFence.tsx`
+- `src/app/service-areas/bellevue/page.tsx` → `src/components/service-areas/bellevue.tsx`
+
+### Why the split exists
+
+- **Server Component boundary**: `page.tsx` is a Server Component by default. Keeping it thin makes the `metadata` export and routing logic obvious at a glance. If the implementation later needs `"use client"`, you can flip the component without touching routing.
+- **Discoverability**: All neighborhood implementations colocated in `src/components/neighborhoods/` is easy to scan, grep, and edit.
+- **Refactor safety**: Moving a route (e.g., changing the URL slug) doesn't require touching 400 lines of JSX.
+- **Build performance**: Smaller `page.tsx` files mean Next.js bundles the route boundary more efficiently.
+
+### ⛔ Anti-pattern (do not do this)
+
+Do not paste all of your hero, trust badges, data arrays, structured data, and JSX directly into `src/app/.../page.tsx`. There is exactly one neighborhood page in the codebase that did this (`src/app/service-areas/maple-valley/allentown/page.tsx`, 452 lines) and it should not be used as a reference. Use any other sibling.
+
+---
+
+## Build & Wire-Up — Step by Step
+
+Follow these steps in order. Each step has a verification check before moving on.
+
+### Step 1 — Pick the names
+
+You need three name forms. Decide all three before creating files:
+
+| Form | Example | Used for |
+|------|---------|----------|
+| **URL slug** (`kebab-case`) | `cherokee-bay-park` | Folder name under `src/app/service-areas/{city}/` and the canonical URL |
+| **Component name** (`PascalCase` + `Page`) | `CherokeeBayParkPage` | File name and default export of the implementation file |
+| **Route function name** (`PascalCase` + `{City}Page`) | `CherokeeBayParkMapleValleyPage` | Default export of the route wrapper. Must differ from the component name to avoid an import collision. |
+
+### Step 2 — Create the implementation component
+
+Path: `src/components/neighborhoods/{Name}Page.tsx`
+
+Start from a sibling like `CherokeeBayParkPage.tsx` or `SomersetPage.tsx`, then customize. Build out the 15 page sections described later in this document. This file holds **everything** — JSX, data arrays (`trustBadges`, `reasons`, `considerations`, `styles`, `processSteps`, `faqs`), the `StructuredData()` helper, and any neighborhood-specific imports.
+
+**Verification:** the file default-exports a single React component named `{Name}Page`.
+
+### Step 3 — Create the thin route wrapper
+
+Path: `src/app/service-areas/{city}/{slug}/page.tsx`
+
+Copy this exact pattern (replace the four `{...}` placeholders only):
+
+```tsx
+import type { Metadata } from "next";
+import {Name}Page from "@/components/neighborhoods/{Name}Page";
+
+export const metadata: Metadata = {
+  title: "{Neighborhood} {City} Fence Installation | {Specialty} | MyFence.com",
+  description:
+    "Professional fence installation in {Neighborhood}, {City}, WA. Cedar, hogwire & hybrid options with free quotes from MyFence.com.",
+  alternates: {
+    canonical: "https://myfence.com/service-areas/{city-slug}/{neighborhood-slug}",
+  },
+};
+
+export default function {Name}{City}Page() {
+  return <{Name}Page />;
+}
+```
+
+Hard rules for this file:
+
+- **No more than ~12 lines.** If it grows beyond that, you are doing it wrong — move logic to the component.
+- **No JSX besides `<{Name}Page />`.** No inline hero sections, no data arrays, no `StructuredData()` helper, no `<main>` wrapper. All of that belongs in the component.
+- **Capitalize properly in the title and description.** `"Bellevue"`, not `"bellevue"`. `"Cherokee Bay Park"`, not `"cherokee bay park"`.
+- **Always include `alternates.canonical`** pointing at the live URL.
+
+**Verification:** open `src/app/service-areas/maple-valley/cherokee-bay-park/page.tsx` — your file should structurally match it line-for-line.
+
+### Step 4 — Wire it into the parent city
+
+Open the parent city's component (e.g., `src/components/service-areas/bellevue.tsx`, `src/components/service-areas/maplevalley.tsx`) and find its neighborhood list/array. Add an entry — or update an existing one — to include the new page's `link`:
+
+```ts
+{
+  name: "{Neighborhood}",
+  description: "{1-2 sentence pitch}. Click to learn more →",
+  link: "/service-areas/{city-slug}/{neighborhood-slug}",
+}
+```
+
+**Verification:** loading the parent city page should now show a clickable card linking to your new neighborhood.
+
+### Step 5 — Verify routes locally
+
+Run the dev server (`npm run dev`) and load:
+
+- `http://localhost:3000/service-areas/{city-slug}/{neighborhood-slug}` — your new page renders
+- `http://localhost:3000/service-areas/{city-slug}` — parent city links to your new page
+
+Then check the rendered HTML `<head>` for the canonical tag and JSON-LD `<script type="application/ld+json">` — these come from the component's `Seo`/`StructuredData()` helper, not the route file.
+
+### Step 6 — Sitemap (only if not auto-generated)
+
+This project auto-discovers App Router routes. **You do not need to manually edit a sitemap file** unless the project's sitemap config explicitly excludes new neighborhood paths — check `next-sitemap.config.js` / `src/app/sitemap.ts` (whichever exists) only if you want to confirm.
+
+---
+
+## File Structure Summary
 
 Each neighborhood needs **2 files**:
 
-1. **Component**: `src/components/neighborhoods/{Name}Page.tsx`
-2. **Route**: `src/app/service-areas/{city}/{neighborhood}/page.tsx`
+1. **Component**: `src/components/neighborhoods/{Name}Page.tsx` — all the implementation
+2. **Route**: `src/app/service-areas/{city}/{neighborhood}/page.tsx` — thin wrapper, ~8–12 lines
 
 Plus update the **parent city** component to add a `link` to the neighborhood card.
 
@@ -226,39 +342,11 @@ Add these to `buildNeighborhoodStructuredData` or inline in the component:
 
 ---
 
-## Route Page Pattern
+## Route Page Pattern & Parent City Update
 
-```tsx
-import type { Metadata } from "next";
-import {Name}Page from "@/components/neighborhoods/{Name}Page";
+The route wrapper template and the parent city update steps live in the **Build & Wire-Up — Step by Step** section at the top of this document (Steps 3 and 4). Do not duplicate that pattern here — the canonical version is up top so it's read before any code is written.
 
-export const metadata: Metadata = {
-  title: "{Neighborhood} {City} Fence Installation | {Specialty} | MyFence.com",
-  // ⚠ Capitalize city and neighborhood names! "Bellevue" not "bellevue"
-  description: "Professional fence installation in {Neighborhood}, {City}, WA. ...",
-  alternates: {
-    canonical: "https://myfence.com/service-areas/{city}/{neighborhood}",
-  },
-};
-
-export default function {Name}Page() {
-  return <{Name}Page />;
-}
-```
-
----
-
-## Parent City Update
-
-In the parent city's component (e.g., `bellevue.tsx`), update the neighborhood entry:
-
-```ts
-{
-  name: "{Neighborhood}",
-  description: "... Click to learn more →",
-  link: "/service-areas/{city}/{neighborhood}"
-}
-```
+> Common bug to avoid: do **not** name the route's default-export function the same as the imported component. They will collide. The component import is `{Name}Page`; the route's function should be `{Name}{City}Page` (e.g. import `CherokeeBayParkPage`, export `CherokeeBayParkMapleValleyPage`).
 
 ---
 
