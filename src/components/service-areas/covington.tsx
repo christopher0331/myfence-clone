@@ -68,7 +68,8 @@ const Covington = () => {
         },
         {
           name: "Lake Sawyer",
-          description: "Lakeside properties requiring moisture-resistant materials and installations that preserve water views and access"
+          description: "Lakeside properties requiring moisture-resistant materials, pet-friendly boundaries, and installations that preserve water views and access. Click to learn more →",
+          link: "/service-areas/covington/lake-sawyer"
         },
         {
           name: "Covington Woods",
