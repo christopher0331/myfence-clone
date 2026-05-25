@@ -59,7 +59,8 @@ const Covington = () => {
         },
         {
           name: "Maple Hills",
-          description: "Established hillside neighborhood with varied elevations demanding specialized slope installation techniques and drainage solutions"
+          description: "Established hillside neighborhood with varied elevations demanding specialized slope installation techniques and drainage solutions. Click to learn more →",
+          link: "/service-areas/covington/maple-hills"
         },
         {
           name: "Rock Creek",
