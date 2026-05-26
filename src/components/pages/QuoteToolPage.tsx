@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/use-mobile";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import SeattleFenceQuoteEmbed from "@/components/SeattleFenceQuoteEmbed";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
@@ -116,17 +117,9 @@ const QuoteToolPage = () => {
             </div>
           ) : (
             <>
-              <Card className="mt-8">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://seattlefencequote.com/?source=myfence"
-                    width="100%"
-                    height={750}
-                    frameBorder={0}
-                    loading="lazy"
-                    title="SeattleFenceQuote.com - Instant Online Quote"
-                    className="w-full h-[750px]"
-                  />
+              <Card className="mt-8 overflow-visible">
+                <CardContent className="p-0 overflow-visible">
+                  <SeattleFenceQuoteEmbed />
                 </CardContent>
               </Card>
               <p className="text-xs text-background/80 mt-2">
