@@ -1,6 +1,5 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
-import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import AboutCityModal from "@/components/AboutCityModal";
@@ -185,9 +184,6 @@ const rentonLocalBusinessLd = {
 };
 
 const Renton = () => {
-  const structuredData = [rentonFaqLd, rentonLocalBusinessLd];
-  
-  
   const rentonAttractions: LocalAttraction[] = [
     {
       name: "Gene Coulon Memorial Beach Park",
@@ -229,12 +225,6 @@ const Renton = () => {
 
   return (
     <>
-      <Seo
-        title="Renton Fence Installation | Waterfront & Hillside"
-        description="Versatile fence installation across Renton's growing communities. Lake Washington waterfront to Highlands hillsides. Diverse terrain & housing style experts. Quality solutions. Call (253) 478-8589."
-        canonical={`${SITE_CONFIG.url}/service-areas/renton`}
-        structuredData={structuredData}
-      />
       <ServiceAreaTemplate 
         city="Renton" 
         state="WA"

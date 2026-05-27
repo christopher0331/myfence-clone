@@ -14,29 +14,46 @@ interface SeoProps {
   description?: string;
   canonical?: string;
   image?: string | StaticImageData;
-  structuredData?: Record<string, any> | Record<string, any>[];
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
   ogTitle?: string;
 }
 
-const Seo = ({ structuredData }: SeoProps) => {
-  const structuredDataArray = structuredData
-    ? Array.isArray(structuredData)
-      ? structuredData
-      : [structuredData]
-    : [];
+function toJsonLdDocument(
+  structuredData: Record<string, unknown> | Record<string, unknown>[]
+): Record<string, unknown> | null {
+  if (Array.isArray(structuredData)) {
+    if (structuredData.length === 0) return null;
+    if (structuredData.length === 1 && structuredData[0]["@graph"]) {
+      return structuredData[0];
+    }
+    const graph = structuredData.map((node) => {
+      const { "@context": _context, ...rest } = node;
+      return rest;
+    });
+    return { "@context": "https://schema.org", "@graph": graph };
+  }
 
-  if (structuredDataArray.length === 0) return null;
+  if (structuredData["@graph"]) {
+    return structuredData;
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [structuredData],
+  };
+}
+
+const Seo = ({ structuredData }: SeoProps) => {
+  if (!structuredData) return null;
+
+  const document = toJsonLdDocument(structuredData);
+  if (!document) return null;
 
   return (
-    <>
-      {structuredDataArray.map((data, index) => (
-        <script
-          key={`schema-${index}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(document) }}
+    />
   );
 };
 

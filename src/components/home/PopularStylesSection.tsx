@@ -18,8 +18,8 @@ const pictureFrameHeroUrl =
 const threeRailHeroUrl =
   "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699";
 
-const horizontalLatticeHeroUrl =
-  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Horizontal%20Fence/Horizontal%20Style%20With%20Fence%20Genius.webp?updatedAt=1762037633271";
+/** Same asset as Horizontal Lattice Fence on /fence-styles */
+const horizontalLatticeHeroUrl = "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png";
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
   const EstimateButton = ({ label }: { label: string }) => {
@@ -101,7 +101,6 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                 <AspectRatio ratio={1}>
                   <div className="relative h-full w-full">
                     <Image
-                      loader={imageKitLoader}
                       src={horizontalLatticeHeroUrl}
                       alt="Horizontal lattice top cedar fence by MyFence.com"
                       fill

@@ -1,6 +1,5 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
-import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
@@ -180,9 +179,6 @@ const sammamishLocalBusinessLd = {
 };
 
 const Sammamish = () => {
-  const structuredData = [sammamishFaqLd, sammamishLocalBusinessLd];
-  
-  
   const sammamishAttractions: LocalAttraction[] = [
     {
       name: "Lake Sammamish State Park",
@@ -224,12 +220,6 @@ const Sammamish = () => {
 
   return (
     <>
-      <Seo
-        title="Sammamish Fence Installation | Safe Family Neighborhoods"
-        description="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 478-8589."
-        canonical={`${SITE_CONFIG.url}/service-areas/sammamish`}
-        structuredData={structuredData}
-      />
       <ServiceAreaTemplate 
         city="Sammamish" 
         state="WA"

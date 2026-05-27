@@ -18,7 +18,11 @@ import {
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
-import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
+import {
+  buildNeighborhoodStructuredData,
+  type NeighborhoodFaqItem,
+} from "@/components/neighborhoods/structuredData";
+import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
 
@@ -27,29 +31,31 @@ const META_TITLE = "Sherwood Forest Fence Installation | MyFence.com";
 const META_DESCRIPTION =
   "Fence installation in Sherwood Forest, Bellevue. Cedar, hogwire & hybrid fencing for wooded properties. Tree-friendly installation. Free quotes. (253) 455-1885.";
 
+const SHERWOOD_FOREST_FAQS: NeighborhoodFaqItem[] = [
+  {
+    question: "Do I need a permit to build a fence in Sherwood Forest, Bellevue?",
+    answer:
+      "Bellevue requires a building permit for fences over 6 feet in height or those located in critical areas. Sherwood Forest properties near Phantom Lake may fall under additional shoreline or wetland buffer regulations. MyFence.com researches the specific requirements for your Sherwood Forest address and handles all permitting paperwork.",
+  },
+  {
+    question: "What fence styles work best on Sherwood Forest's wooded lots?",
+    answer:
+      "Cedar privacy fences are the most popular choice, as the natural wood complements the wooded setting. Hogwire with a cedar frame works well for homeowners who want to maintain an open, natural feel. Our hybrid aluminum/cedar system is ideal for low-maintenance fencing under tree canopy. We use Fence Genius to plan post placement around root systems and canopy drip lines.",
+  },
+  {
+    question: "How much does fence installation cost in Sherwood Forest, Bellevue?",
+    answer:
+      "Sherwood Forest fence installation typically ranges from $38–$75 per linear foot depending on style and the extent of root work required. Cedar privacy runs $45–$65/ft, hogwire $38–$55/ft, and hybrid aluminum/cedar $55–$75/ft. Root navigation and hand-digging near trees may add 10–15%. Contact us for a free on-site estimate for your specific lot.",
+  },
+];
+
 const SherwoodForestPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
     neighborhoodName: "Sherwood Forest, Bellevue",
     pageTitle: "Sherwood Forest Bellevue Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: [
-      {
-        question: "Do I need a permit to build a fence in Sherwood Forest, Bellevue?",
-        answer:
-          "Bellevue requires a building permit for fences over 6 feet in height or those located in critical areas. Sherwood Forest properties near Phantom Lake may fall under additional shoreline or wetland buffer regulations. MyFence.com researches the specific requirements for your Sherwood Forest address and handles all permitting paperwork.",
-      },
-      {
-        question: "What fence styles work best on Sherwood Forest's wooded lots?",
-        answer:
-          "Cedar privacy fences are the most popular choice, as the natural wood complements the wooded setting. Hogwire with a cedar frame works well for homeowners who want to maintain an open, natural feel. Our hybrid aluminum/cedar system is ideal for low-maintenance fencing under tree canopy. We use Fence Genius to plan post placement around root systems and canopy drip lines.",
-      },
-      {
-        question: "How much does fence installation cost in Sherwood Forest, Bellevue?",
-        answer:
-          "Sherwood Forest fence installation typically ranges from $38–$75 per linear foot depending on style and the extent of root work required. Cedar privacy runs $45–$65/ft, hogwire $38–$55/ft, and hybrid aluminum/cedar $55–$75/ft. Root navigation and hand-digging near trees may add 10–15%. Contact us for a free on-site estimate for your specific lot.",
-      },
-    ],
+    faqItems: SHERWOOD_FOREST_FAQS,
   });
 
   return (
@@ -406,7 +412,13 @@ const SherwoodForestPage = () => {
           </div>
         </section>
 
-        {/* 13. Adjacent Neighborhoods */}
+        {/* 13. FAQ — visible content must match FAQPage JSON-LD */}
+        <NeighborhoodFaqSection
+          title="Sherwood Forest Fence Installation FAQs"
+          items={SHERWOOD_FOREST_FAQS}
+        />
+
+        {/* 14. Adjacent Neighborhoods */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto">
@@ -434,7 +446,7 @@ const SherwoodForestPage = () => {
           </div>
         </section>
 
-        {/* 14. CTA */}
+        {/* 15. CTA */}
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">

@@ -1,7 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
-import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { Card } from "@/components/ui/card";
@@ -399,12 +398,6 @@ const FederalWay = () => {
 
   return (
     <>
-      <Seo
-        title="Federal Way Fence Installation | Marine-Resistant"
-        description="Coastal-tough fence installation for Federal Way. Moisture-resistant solutions for marine air & heavy rainfall. Serving Dash Point waterfront to Steel Lake. Expert craftsmanship. Call (253) 455-1885."
-        canonical={`${SITE_CONFIG.url}/service-areas/federal-way`}
-        structuredData={[federalWayBusinessLd, federalWayFaqLd]}
-      />
       <ServiceAreaTemplate
       city="Federal Way" 
       state="WA"

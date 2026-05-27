@@ -1,7 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
-import Seo from "@/components/Seo";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { Card } from "@/components/ui/card";
@@ -398,12 +397,6 @@ const GigHarbor = () => {
 
   return (
     <>
-      <Seo
-        title="Gig Harbor Waterfront Fences | Salt-Resistant"
-        description="Harbor-side fence installation in Gig Harbor. Salt-resistant materials for Puget Sound maritime climate. Waterfront charm protected from Uptown to harbor-view homes. Call (253) 455-1885."
-        canonical={`${SITE_CONFIG.url}/service-areas/gig-harbor`}
-        structuredData={[gigHarborBusinessLd, gigHarborFaqLd]}
-      />
       <ServiceAreaTemplate
       city="Gig Harbor" 
       state="WA"
