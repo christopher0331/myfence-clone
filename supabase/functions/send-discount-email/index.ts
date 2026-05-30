@@ -18,6 +18,7 @@ interface DiscountEmailRequest {
   discount: string;
   description?: string;
   textConsent?: boolean;
+  sourcePage?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -27,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, address, email, phone, riddle, answer, discount, description, textConsent }: DiscountEmailRequest = await req.json();
+    const { firstName, lastName, address, email, phone, riddle, answer, discount, description, textConsent, sourcePage }: DiscountEmailRequest = await req.json();
 
     // Validate required fields
     if (!firstName || !lastName || !email || !riddle || !answer || !discount) {
@@ -46,6 +47,11 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const resend = new Resend(resendApiKey);
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : "";
+    const submissionPageHtml = submissionPage
+      ? `<p style="color: #6b7280; margin-top: 8px;"><strong>Submitted from page:</strong> <a href="${submissionPage}">${submissionPage}</a></p>`
+      : "";
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : "";
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -76,6 +82,7 @@ const handler = async (req: Request): Promise<Response> => {
 
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
           <p style="color: #6b7280;">This email was generated from the MyFence.com discount wheel challenge.</p>
+          ${submissionPageHtml}
         </div>
       </div>
     `;
@@ -97,7 +104,7 @@ Won Discount: ${discount}
 
 ${description ? `Project Description: ${description}` : ''}
 
-This email was generated from the MyFence.com discount wheel challenge.
+This email was generated from the MyFence.com discount wheel challenge.${submissionPageLine}
     `;
 
     const adminEmailResponse = await resend.emails.send({

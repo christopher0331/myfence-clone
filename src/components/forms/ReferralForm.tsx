@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 const formSchema = z.object({
   // Referrer information
@@ -57,7 +58,7 @@ export function ReferralForm() {
     setIsSubmitting(true);
     try {
       const { error } = await supabase.functions.invoke("send-referral-email", {
-        body: data,
+        body: { ...data, sourcePage: getFormSubmissionPage() },
       });
 
       if (error) throw error;

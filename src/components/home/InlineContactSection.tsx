@@ -13,6 +13,7 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 export const InlineContactSection = () => {
   const [textConsentError, setTextConsentError] = useState(false);
@@ -70,6 +71,7 @@ export const InlineContactSection = () => {
     setIsSubmitting(true);
 
     try {
+      const sourcePage = getFormSubmissionPage();
       const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -85,6 +87,7 @@ export const InlineContactSection = () => {
             fenceType: "Inline Contact",
             message: formData.message,
             textConsent: formData.textConsent,
+            sourcePage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -95,7 +98,7 @@ export const InlineContactSection = () => {
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: formData,
+          body: { ...formData, sourcePage },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {

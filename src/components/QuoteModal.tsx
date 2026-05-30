@@ -15,6 +15,7 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -80,6 +81,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setIsSubmitting(true);
 
     try {
+      const sourcePage = getFormSubmissionPage();
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -95,6 +97,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             fenceType: "Quote Modal",
             message: formData.projectDescription,
             textConsent: formData.textConsent,
+            sourcePage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -105,7 +108,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-quote-request", {
-          body: formData,
+          body: { ...formData, sourcePage },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {

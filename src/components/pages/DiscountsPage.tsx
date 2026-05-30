@@ -13,6 +13,7 @@ import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 const riddles = [
   {
@@ -330,6 +331,7 @@ const DiscountsPage = () => {
         return;
       }
 
+      const sourcePage = getFormSubmissionPage();
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -338,6 +340,7 @@ const DiscountsPage = () => {
         phone: formPhone,
         textConsent: formTextConsent,
         description: formDescription || "General inquiry from discount page",
+        sourcePage,
       };
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -353,6 +356,7 @@ const DiscountsPage = () => {
             fenceType: "Discounts Page",
             message: emailData.description || "General inquiry from discount page",
             textConsent: emailData.textConsent,
+            sourcePage: emailData.sourcePage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -411,6 +415,7 @@ const DiscountsPage = () => {
         return;
       }
 
+      const sourcePage = getFormSubmissionPage();
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -422,6 +427,7 @@ const DiscountsPage = () => {
         discount: selectedDiscount,
         textConsent: formTextConsent,
         description: formDescription || "Discount wheel submission",
+        sourcePage,
       };
 
       const { error } = await supabase.functions.invoke("send-discount-email", {

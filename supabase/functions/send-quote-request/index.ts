@@ -18,7 +18,7 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Quote request body parsed:', requestBody)
     
-    const { fullName, email, phone, address, projectDescription, textConsent } = requestBody
+    const { fullName, email, phone, address, projectDescription, textConsent, sourcePage } = requestBody
 
     console.log('Validating quote fields...')
     // Validate required fields
@@ -44,6 +44,8 @@ serve(async (req) => {
 
     const consentValue = textConsent === true || textConsent === 'true';
     const consentLabel = consentValue ? 'Yes' : 'No';
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : "";
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : "";
 
     const emailBody = `
 New Quote Request from MyFence.com
@@ -58,7 +60,7 @@ Text message consent: ${consentLabel}
 Project Description:
 ${projectDescription}
 
-This request was submitted through the MyFence.com website.
+This request was submitted through the MyFence.com website.${submissionPageLine}
     `.trim()
 
     console.log('Creating admin quote email data...')
@@ -84,7 +86,7 @@ This request was submitted through the MyFence.com website.
         <p>${projectDescription.replace(/\n/g, '<br>')}</p>
         
         <hr>
-        <p><em>This request was submitted through the MyFence.com website.</em></p>
+        <p><em>This request was submitted through the MyFence.com website.</em>${submissionPage ? `<br><strong>Submitted from page:</strong> <a href="${submissionPage}">${submissionPage}</a>` : ""}</p>
       `
     }
 

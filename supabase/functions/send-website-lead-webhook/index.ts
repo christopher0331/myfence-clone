@@ -28,6 +28,7 @@ interface LeadData {
   additionalNotes?: string;
   projectTimeline?: string;
   message?: string;
+  sourcePage?: string;
 }
 
 function toStr(v: unknown): string {
@@ -98,6 +99,8 @@ serve(async (req) => {
     if (typeof leadData.totalLinearFeet === "number") noteParts.push(`Total Linear Feet: ${leadData.totalLinearFeet}`);
     if (typeof leadData.totalCost === "number") noteParts.push(`Estimated Cost: $${leadData.totalCost.toLocaleString()}`);
     if (leadData.projectTimeline) noteParts.push(`Timeline: ${toStr(leadData.projectTimeline)}`);
+    const sourcePage = toStr(leadData.sourcePage).trim();
+    if (sourcePage) noteParts.push(`Submitted from page: ${sourcePage}`);
 
     // Keep payload aligned with CRM webhook contract.
     const webhookPayload: Record<string, unknown> = {

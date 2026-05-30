@@ -12,6 +12,7 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -76,6 +77,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     setIsSubmitting(true);
 
     try {
+      const sourcePage = getFormSubmissionPage();
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
       const message = context
         ? `[Source: ${context}]\n${formData.projectDescription}`
@@ -94,6 +96,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             fenceType: "Quote Request",
             message,
             textConsent: formData.textConsent,
+            sourcePage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -108,6 +111,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           body: JSON.stringify({
             ...formData,
             projectDescription: message,
+            sourcePage,
           }),
         });
         if (legacy.error) emailError = legacy.error.message;

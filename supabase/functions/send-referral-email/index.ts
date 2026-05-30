@@ -29,7 +29,8 @@ serve(async (req) => {
       referredEmail,
       referredAddress,
       relationship,
-      notes
+      notes,
+      sourcePage
     } = requestBody
 
     // Validate required fields
@@ -55,6 +56,8 @@ serve(async (req) => {
 
     const referrerName = `${referrerFirstName} ${referrerLastName}`
     const relationshipText = relationship ? relationship.charAt(0).toUpperCase() + relationship.slice(1) : 'Not specified'
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : ""
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : ""
 
     const emailBody = `
 🎁 NEW REFERRAL SUBMISSION from MyFence.com
@@ -88,7 +91,7 @@ ACTION REQUIRED
 2. Mention they were referred by ${referrerName}
 3. After project completion, send $150 Amazon Gift Card to BOTH parties
 
-Submission Date: ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })}
+Submission Date: ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })}${submissionPageLine}
     `.trim()
 
     console.log('Creating email data...')
@@ -141,6 +144,7 @@ Submission Date: ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_A
           <div style="background: #374151; color: #9ca3af; padding: 15px; text-align: center; font-size: 12px; border-radius: 0 0 8px 8px;">
             Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })} PT<br>
             MyFence.com Referral Program
+            ${submissionPage ? `<br><strong style="color: #d1d5db;">Submitted from page:</strong> <a href="${submissionPage}" style="color: #93c5fd;">${submissionPage}</a>` : ""}
           </div>
         </div>
       `

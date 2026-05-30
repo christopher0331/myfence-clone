@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { getFormSubmissionPage } from "@/lib/formSubmission";
 
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,6 +75,7 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
+      const sourcePage = getFormSubmissionPage();
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
       let leadError: string | null = null;
       try {
@@ -87,6 +89,7 @@ const ContactPage = () => {
             fenceType: "Contact Page",
             message: formData.message,
             textConsent: formData.textConsent,
+            sourcePage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -97,7 +100,7 @@ const ContactPage = () => {
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, sourcePage }),
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {

@@ -18,7 +18,7 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Request body parsed:', requestBody)
     
-    const { name, email, phone, message, firstName, lastName, address, description, textConsent } = requestBody
+    const { name, email, phone, message, firstName, lastName, address, description, textConsent, sourcePage } = requestBody
 
     console.log('Validating fields...')
     
@@ -60,6 +60,8 @@ serve(async (req) => {
 
     const consentValue = textConsent === true || textConsent === 'true';
     const consentLabel = consentValue ? 'Yes' : 'No';
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : "";
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : "";
 
     const emailBody = `
 New Contact Form Submission from MyFence.com
@@ -74,7 +76,7 @@ Text message consent: ${consentLabel}
 Message:
 ${normalizedMessage}
 
-This message was submitted through the MyFence.com contact form.
+This message was submitted through the MyFence.com contact form.${submissionPageLine}
     `.trim()
 
     console.log('Creating admin email data...')
@@ -100,7 +102,7 @@ This message was submitted through the MyFence.com contact form.
         <p>${normalizedMessage.replace(/\n/g, '<br>')}</p>
         
         <hr>
-        <p><em>This message was submitted through the MyFence.com contact form.</em></p>
+        <p><em>This message was submitted through the MyFence.com contact form.</em>${submissionPage ? `<br><strong>Submitted from page:</strong> <a href="${submissionPage}">${submissionPage}</a>` : ""}</p>
       `
     }
 
