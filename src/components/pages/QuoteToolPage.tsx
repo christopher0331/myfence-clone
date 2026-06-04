@@ -75,7 +75,7 @@ const QuoteToolPage = () => {
           },
         ]}
       />
-      <section className="relative py-10">
+      <section className="relative py-10 md:py-14">
         <div
           className="absolute inset-0 bg-center bg-cover bg-fixed"
           style={{ backgroundImage: "url('/lovable-uploads/28e8e878-729d-417b-ad3f-53643cf19710.png')" }}
@@ -85,7 +85,7 @@ const QuoteToolPage = () => {
         <div className="container relative z-10">
           <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Instant Online Quote</h1>
           <p className="max-w-2xl text-background/90">
-            Use our online tool to get real-time pricing for your fence project. After your quote, we'll use
+            Use our online tool to get real-time pricing for your fence project. After your quote, we&apos;ll use
             {" "}
             <Link href="/fence-genius" className="underline hover:no-underline text-background">
               Fence Genius technology
@@ -94,15 +94,15 @@ const QuoteToolPage = () => {
             to ensure perfect installation.
           </p>
 
-          {isMobile ? (
+          {isMobile && (
             <div className="mt-8 space-y-6">
               <Button size="lg" className="w-full" asChild>
                 <a
-                  href="https://seattlefencequote.com/?source=myfence"
+                  href="https://seattlefencequote.com/?source=myfence&embed=1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
-               >
+                >
                   Click here to build your own estimate
                   <ExternalLink className="h-4 w-4" />
                 </a>
@@ -115,28 +115,28 @@ const QuoteToolPage = () => {
                 </CardContent>
               </Card>
             </div>
-          ) : (
-            <>
-              <Card className="mt-8 overflow-visible">
-                <CardContent className="p-0 overflow-visible">
-                  <SeattleFenceQuoteEmbed />
-                </CardContent>
-              </Card>
-              <p className="text-xs text-background/80 mt-2">
-                If the tool doesn't load, open it in a new tab:
-                <a
-                  href="https://seattlefencequote.com/"
-                  className="underline text-background ml-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  seattlefencequote.com
-                </a>
-              </p>
-            </>
           )}
         </div>
       </section>
+
+      {!isMobile && (
+        <section className="bg-background w-full">
+          <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <SeattleFenceQuoteEmbed />
+          </div>
+          <p className="text-xs text-muted-foreground pb-8 text-center px-4">
+            If the tool doesn&apos;t load, open it in a new tab:{" "}
+            <a
+              href="https://seattlefencequote.com/?source=myfence"
+              className="underline text-primary hover:text-primary/80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              seattlefencequote.com
+            </a>
+          </p>
+        </section>
+      )}
     </main>
   );
 };

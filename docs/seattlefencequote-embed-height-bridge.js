@@ -4,10 +4,11 @@
  *
  * Parent listens in: src/components/SeattleFenceQuoteEmbed.tsx
  *
- * Also required on seattlefencequote.com when ?source=myfence (or in iframe):
+ * Also required on seattlefencequote.com when ?source=myfence&embed=1 (or in iframe):
  * - Do NOT lock the app in a fixed-height box with overflow:auto on the root.
  * - Let the page grow naturally (min-height: 100vh, overflow: visible) so
  *   scrollHeight reflects the full wizard, not a small inner viewport.
+ * - When embed=1, hide site chrome (header/footer/nav) so the tool matches the parent page.
  */
 (function () {
   if (window.self === window.top) return;
