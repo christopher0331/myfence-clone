@@ -769,7 +769,7 @@ const ServiceAreaTemplate = ({
                 <div className="w-full">
                   <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.youtube-nocookie.com/embed/pN0wqFY3g9s?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      src="https://www.youtube-nocookie.com/embed/2nysklK-lZ0?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
