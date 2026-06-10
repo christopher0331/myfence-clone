@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
 import { cn } from "@/lib/utils";
 
 const QUOTE_ORIGIN = "https://seattlefencequote.com";
 const QUOTE_URL = `${QUOTE_ORIGIN}/?source=myfence&embed=1`;
-const INITIAL_EMBED_HEIGHT = 720;
+const FIXED_EMBED_HEIGHT = "clamp(640px, 85vh, 900px)";
 
 interface SeattleFenceQuoteEmbedProps {
   className?: string;
@@ -16,36 +14,14 @@ interface SeattleFenceQuoteEmbedProps {
 }
 
 /**
- * Embeds seattlefencequote.com and auto-resizes the iframe to match the child
- * page's content height via the `fence-builder:resize` postMessage protocol,
- * so the tool grows/shrinks with the host page instead of scrolling internally.
+ * Embeds seattlefencequote.com in a fixed viewport-height window.
+ * The child page scrolls internally so the map/tool does not stretch the host page.
  */
 export default function SeattleFenceQuoteEmbed({
   className = "",
   title = "SeattleFenceQuote.com - Instant Online Quote",
   seamless = true,
 }: SeattleFenceQuoteEmbedProps) {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [height, setHeight] = useState(INITIAL_EMBED_HEIGHT);
-
-  useEffect(() => {
-    function handleMessage(event: MessageEvent) {
-      if (event.origin !== QUOTE_ORIGIN) return;
-
-      const data = event.data;
-      if (
-        data &&
-        data.type === "fence-builder:resize" &&
-        typeof data.height === "number"
-      ) {
-        setHeight(data.height);
-      }
-    }
-
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
-
   return (
     <div
       className={cn(
@@ -55,17 +31,15 @@ export default function SeattleFenceQuoteEmbed({
       )}
     >
       <iframe
-        ref={iframeRef}
-        id="fence-builder"
         src={QUOTE_URL}
         width="100%"
-        height={height}
+        height="720"
         style={{
-          height: `${height}px`,
+          height: FIXED_EMBED_HEIGHT,
           display: "block",
         }}
         frameBorder={0}
-        scrolling="no"
+        scrolling="yes"
         loading="lazy"
         title={title}
         className={cn(
