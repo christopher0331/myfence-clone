@@ -1,4 +1,4 @@
-import FenceQuoteEmbed from "@/components/FenceQuoteEmbed";
+import SeattleFenceQuoteEmbed from "@/components/SeattleFenceQuoteEmbed";
 
 interface VirtualQuoteToolProps {
   fenceStyleName: string;
@@ -17,7 +17,7 @@ const VirtualQuoteTool = ({ fenceStyleName }: VirtualQuoteToolProps) => {
           </p>
         </div>
 
-        <FenceQuoteEmbed />
+        <SeattleFenceQuoteEmbed />
       </div>
     </section>
   );
