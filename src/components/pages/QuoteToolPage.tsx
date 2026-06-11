@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/use-mobile";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import SeattleFenceQuoteEmbed from "@/components/SeattleFenceQuoteEmbed";
+import FenceQuoteEmbed from "@/components/FenceQuoteEmbed";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
@@ -122,7 +122,7 @@ const QuoteToolPage = () => {
       {!isMobile && (
         <section className="bg-background w-full">
           <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-            <SeattleFenceQuoteEmbed />
+            <FenceQuoteEmbed />
           </div>
           <p className="text-xs text-muted-foreground pb-8 text-center px-4">
             If the tool doesn&apos;t load, open it in a new tab:{" "}
