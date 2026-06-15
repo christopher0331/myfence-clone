@@ -29,6 +29,13 @@ interface LeadData {
   projectTimeline?: string;
   message?: string;
   sourcePage?: string;
+  site?: string;
+  formId?: string;
+  form_id?: string;
+  formSku?: string;
+  form_sku?: string;
+  originPage?: string;
+  origin_page?: string;
 }
 
 function toStr(v: unknown): string {
@@ -101,6 +108,17 @@ serve(async (req) => {
     if (leadData.projectTimeline) noteParts.push(`Timeline: ${toStr(leadData.projectTimeline)}`);
     const sourcePage = toStr(leadData.sourcePage).trim();
     if (sourcePage) noteParts.push(`Submitted from page: ${sourcePage}`);
+
+    // Multi-site attribution: which website + form produced this lead, and (when the lead
+    // started on a different page, e.g. a neighborhood page) the originating page.
+    const site = toStr(leadData.site).trim();
+    const formId = toStr(leadData.formId ?? leadData.form_id).trim();
+    const formSku = toStr(leadData.formSku ?? leadData.form_sku).trim();
+    const originPage = toStr(leadData.originPage ?? leadData.origin_page).trim();
+    if (site) noteParts.push(`Site: ${site}`);
+    if (formSku) noteParts.push(`Form SKU: ${formSku}`);
+    if (formId) noteParts.push(`Form ID: ${formId}`);
+    if (originPage) noteParts.push(`Origin page: ${originPage}`);
 
     // Keep payload aligned with CRM webhook contract.
     const webhookPayload: Record<string, unknown> = {

@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -194,8 +194,8 @@ const IssaquahHighlandsPage = ({
           </div>
         </section>
 
-        {/* Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Issaquah Highlands fence" />
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Issaquah Highlands fence" />
 
         {/* Issaquah Highlands Fencing Video Section */}
         <section className="py-12 md:py-16 bg-muted/50">

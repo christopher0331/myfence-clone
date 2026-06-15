@@ -17,7 +17,7 @@ import {
   Ruler,
   Layers,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -287,6 +287,9 @@ const ElkRunPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Elk Run Maple Valley fence" />
+
         {/* 6. Photo Gallery */}
         <ServiceAreaPhotoGallery city="Maple Valley" neighborhood="Elk Run" />
 
@@ -405,9 +408,6 @@ const ElkRunPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Elk Run Maple Valley fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

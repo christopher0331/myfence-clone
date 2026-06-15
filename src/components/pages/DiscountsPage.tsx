@@ -13,7 +13,10 @@ import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+
+const WHEEL_FORM_KEY = "discount-wheel";
+const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
 
 const riddles = [
   {
@@ -331,7 +334,8 @@ const DiscountsPage = () => {
         return;
       }
 
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(ALREADY_PLAYED_FORM_KEY);
+      const attribution = getLeadAttribution(ALREADY_PLAYED_FORM_KEY);
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -357,6 +361,9 @@ const DiscountsPage = () => {
             message: emailData.description || "General inquiry from discount page",
             textConsent: emailData.textConsent,
             sourcePage: emailData.sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -378,6 +385,8 @@ const DiscountsPage = () => {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(ALREADY_PLAYED_FORM_KEY, { formType: "quote" });
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");
       setShowAlreadyPlayedForm(false);
@@ -415,7 +424,8 @@ const DiscountsPage = () => {
         return;
       }
 
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(WHEEL_FORM_KEY);
+      const attribution = getLeadAttribution(WHEEL_FORM_KEY);
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -428,6 +438,9 @@ const DiscountsPage = () => {
         textConsent: formTextConsent,
         description: formDescription || "Discount wheel submission",
         sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        originPage: attribution.originPage,
       };
 
       const { error } = await supabase.functions.invoke("send-discount-email", {
@@ -437,6 +450,8 @@ const DiscountsPage = () => {
       if (error) {
         throw error;
       }
+
+      trackFormSubmit(WHEEL_FORM_KEY, { formType: "discount" });
 
       toast.success("Congratulations! Your discount has been submitted. We'll contact you soon!");
       setShowContactForm(false);

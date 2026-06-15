@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { useMemo, useState } from "react";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -565,6 +566,9 @@ const ServiceAreaTemplate = ({
             />
           </div>
         </section>
+
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs />
 
         {/* North Bend Fencing Video Section */}
         {city === "North Bend" && (

@@ -18,7 +18,7 @@ import {
   Wind,
   Fence,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
@@ -321,6 +321,9 @@ const BuckleyPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Buckley WA fence" />
+
         {/* 6. Project Gallery */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -518,9 +521,6 @@ const BuckleyPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Buckley WA fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

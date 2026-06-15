@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Mountain } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -251,8 +251,8 @@ const SomersetPage = ({
           </div>
         </section>
 
-        {/* Virtual Quote */}
-        <VirtualQuoteTool fenceStyleName="Somerset Bellevue fence" />
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Somerset Bellevue fence" />
 
         {/* Installation Process */}
         <section className="py-16">

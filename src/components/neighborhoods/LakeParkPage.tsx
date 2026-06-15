@@ -15,7 +15,7 @@ import {
   Waves,
   TreePine,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -246,6 +246,9 @@ const LakeParkPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Lake Park Maple Valley fence" />
+
         {/* 6. Project Gallery */}
         <ServiceAreaPhotoGallery city="Maple Valley" neighborhood="Lake Park" />
 
@@ -361,9 +364,6 @@ const LakeParkPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Lake Park Maple Valley fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

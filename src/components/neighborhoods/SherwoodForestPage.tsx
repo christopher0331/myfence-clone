@@ -15,7 +15,7 @@ import {
   TreePine,
   Clock,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import {
@@ -252,6 +252,9 @@ const SherwoodForestPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Sherwood Forest Bellevue fence" />
+
         {/* 6. Photo Gallery */}
         <ServiceAreaPhotoGallery city="Bellevue" neighborhood="Sherwood Forest" />
 
@@ -367,9 +370,6 @@ const SherwoodForestPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Sherwood Forest Bellevue fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

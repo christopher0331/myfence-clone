@@ -13,7 +13,9 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+
+const FORM_KEY = "inline-contact";
 
 export const InlineContactSection = () => {
   const [textConsentError, setTextConsentError] = useState(false);
@@ -71,7 +73,8 @@ export const InlineContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -88,6 +91,9 @@ export const InlineContactSection = () => {
             message: formData.message,
             textConsent: formData.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -109,6 +115,8 @@ export const InlineContactSection = () => {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(FORM_KEY, { formType: "contact" });
 
       const formElement = document.querySelector('#inline-contact-form');
       if (formElement) {

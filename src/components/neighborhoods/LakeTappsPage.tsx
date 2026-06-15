@@ -16,7 +16,7 @@ import {
   Mountain,
   HardHat,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -252,6 +252,9 @@ const LakeTappsPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Lake Tapps Bonney Lake fence" />
+
         {/* 6. Project Gallery */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -445,9 +448,6 @@ const LakeTappsPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Lake Tapps Bonney Lake fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

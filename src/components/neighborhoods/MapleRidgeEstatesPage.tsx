@@ -15,7 +15,7 @@ import {
   Mountain,
   TreePine,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -246,6 +246,9 @@ const MapleRidgeEstatesPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Maple Ridge Estates Renton fence" />
+
         {/* 6. Project Gallery */}
         <ServiceAreaPhotoGallery city="Renton" neighborhood="Maple Ridge Estates" />
 
@@ -361,9 +364,6 @@ const MapleRidgeEstatesPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Maple Ridge Estates Renton fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

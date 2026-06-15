@@ -15,7 +15,7 @@ import {
   Home,
   Lock,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -246,6 +246,9 @@ const DevonshireTownhomesPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Devonshire Townhomes University Place fence" />
+
         {/* 6. Project Gallery */}
         <ServiceAreaPhotoGallery city="University Place" neighborhood="Devonshire Townhomes" />
 
@@ -361,9 +364,6 @@ const DevonshireTownhomesPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Devonshire Townhomes University Place fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

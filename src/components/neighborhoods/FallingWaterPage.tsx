@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -215,6 +215,9 @@ const FallingWaterPage = ({
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Falling Water Bonney Lake fence" />
+
         {/* Project Gallery */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -393,8 +396,6 @@ const FallingWaterPage = ({
             </div>
           </div>
         </section>
-
-        <VirtualQuoteTool fenceStyleName="Falling Water Bonney Lake fence" />
 
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container">

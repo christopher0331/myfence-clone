@@ -16,7 +16,7 @@ import {
   Eye,
   TreePine,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -251,6 +251,9 @@ const JuanitaPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Juanita Kirkland fence" />
+
         {/* 6. Project Gallery placeholder */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -444,9 +447,6 @@ const JuanitaPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Juanita Kirkland fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

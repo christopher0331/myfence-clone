@@ -16,7 +16,7 @@ import {
   Waves,
   Clock,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -247,6 +247,9 @@ const CherokeeBayParkPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Cherokee Bay Park Maple Valley fence" />
+
         {/* 6. Photo Gallery */}
         <ServiceAreaPhotoGallery city="Maple Valley" neighborhood="Cherokee Bay Park" />
 
@@ -362,9 +365,6 @@ const CherokeeBayParkPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Cherokee Bay Park Maple Valley fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

@@ -14,7 +14,7 @@ import {
   Phone,
   Star,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -256,6 +256,9 @@ const DowntownBonneyLakePage = ({
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Downtown Bonney Lake Bonney Lake fence" />
+
         {/* Project Gallery */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -453,8 +456,6 @@ const DowntownBonneyLakePage = ({
             </div>
           </div>
         </section>
-
-        <VirtualQuoteTool fenceStyleName="Downtown Bonney Lake Bonney Lake fence" />
 
         <section className="py-12 md:py-16 bg-muted/50">
           <div className="container">

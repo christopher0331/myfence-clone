@@ -16,7 +16,7 @@ import {
   Droplets,
   Clock,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -247,6 +247,9 @@ const BarklayWoodsPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Barklay Woods Maple Valley fence" />
+
         {/* 6. Photo Gallery */}
         <ServiceAreaPhotoGallery city="Maple Valley" neighborhood="Barklay Woods" />
 
@@ -362,9 +365,6 @@ const BarklayWoodsPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Barklay Woods Maple Valley fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

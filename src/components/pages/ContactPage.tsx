@@ -15,7 +15,9 @@ import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+
+const FORM_KEY = "contact-page";
 
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -75,7 +77,8 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
       let leadError: string | null = null;
       try {
@@ -90,6 +93,9 @@ const ContactPage = () => {
             message: formData.message,
             textConsent: formData.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -111,6 +117,8 @@ const ContactPage = () => {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(FORM_KEY, { formType: "contact" });
 
       await import("@/lib/effects").then((m) =>
         m.burstFirework(window.innerWidth / 2, window.innerHeight / 2),

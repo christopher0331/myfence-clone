@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Award, ArrowLeft, MapPin, Phone, Star, Mountain, TreePine } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -237,6 +237,9 @@ const LawsonHillEstatesPage = ({
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Lawson Hill Estates Black Diamond fence" />
+
         {/* 6. Gallery */}
         <ServiceAreaPhotoGallery city="Black Diamond" neighborhood="Lawson Hill Estates" />
 
@@ -350,9 +353,6 @@ const LawsonHillEstatesPage = ({
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Lawson Hill Estates Black Diamond fence" />
 
         {/* 12. Process */}
         <section className="py-16">

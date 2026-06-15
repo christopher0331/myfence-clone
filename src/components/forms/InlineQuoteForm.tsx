@@ -12,7 +12,9 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+
+const FORM_KEY = "inline-quote";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
@@ -77,7 +79,8 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     setIsSubmitting(true);
 
     try {
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
       const message = context
         ? `[Source: ${context}]\n${formData.projectDescription}`
@@ -97,6 +100,9 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             message,
             textConsent: formData.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -123,7 +129,9 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send quote request");
       }
-      
+
+      trackFormSubmit(FORM_KEY, { formType: "quote" });
+
       // Trigger fireworks animation
       burstFirework();
 

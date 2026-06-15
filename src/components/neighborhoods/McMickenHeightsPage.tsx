@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -214,6 +214,9 @@ const McMickenHeightsPage = ({
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="McMicken Heights SeaTac fence" />
+
         {/* Project Gallery */}
         <section className="py-16 bg-muted/50">
           <div className="container">
@@ -392,8 +395,6 @@ const McMickenHeightsPage = ({
             </div>
           </div>
         </section>
-
-        <VirtualQuoteTool fenceStyleName="McMicken Heights SeaTac fence" />
 
         <section className="py-16">
           <div className="container">

@@ -15,7 +15,7 @@ import {
   Home,
   Fence,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -246,6 +246,9 @@ const TimberlanePage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Timberlane Covington fence" />
+
         {/* 6. Photo Gallery */}
         <ServiceAreaPhotoGallery city="Covington" neighborhood="Timberlane" />
 
@@ -361,9 +364,6 @@ const TimberlanePage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Timberlane Covington fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

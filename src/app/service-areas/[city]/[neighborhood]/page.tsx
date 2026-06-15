@@ -8,7 +8,7 @@ import {
   getNeighborhoodNameBySlugs,
   getNeighborhoodPhotosBySlugs,
 } from "@/lib/serviceAreaPhotoUtils";
-import NeighborhoodQuoteSection from "./NeighborhoodQuoteSection";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
 
 type NeighborhoodPageProps = {
@@ -123,11 +123,8 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
 
       <FeaturedProject city={cityName} neighborhood={neighborhoodName} />
 
-      {/* Quote Form (client component) */}
-      <NeighborhoodQuoteSection
-        neighborhoodName={neighborhoodName}
-        cityName={cityName}
-      />
+      {/* Contact + Virtual Quote Tool */}
+      <LeadCaptureTabs fenceStyleName={`${neighborhoodName} ${cityName} fence`} />
 
       {/* Adjacent links */}
       <section className="py-12">

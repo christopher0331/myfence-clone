@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -15,7 +15,9 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+
+const FORM_KEY = "quote-modal";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -37,6 +39,11 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     textConsent: false,
   });
   const { toast } = useToast();
+
+  // Record the modal open as a quote CTA (the open buttons live on multiple fence-style pages).
+  useEffect(() => {
+    if (isOpen) trackCtaClick({ ctaType: "quote", ctaDestination: "quote-modal" });
+  }, [isOpen]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -81,7 +88,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setIsSubmitting(true);
 
     try {
-      const sourcePage = getFormSubmissionPage();
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
@@ -98,6 +106,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             message: formData.projectDescription,
             textConsent: formData.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -119,7 +130,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send quote request");
       }
-      
+
+      trackFormSubmit(FORM_KEY, { formType: "quote" });
+
       // Trigger fireworks animation
       burstFirework();
 

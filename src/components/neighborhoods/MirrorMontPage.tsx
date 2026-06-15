@@ -15,7 +15,7 @@ import {
   TreePine,
   Mountain,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -246,6 +246,9 @@ const MirrorMontPage = () => {
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Mirrormont Issaquah fence" />
+
         {/* 6. Project Gallery */}
         <ServiceAreaPhotoGallery city="Issaquah" neighborhood="Mirrormont" />
 
@@ -361,9 +364,6 @@ const MirrorMontPage = () => {
             </div>
           </div>
         </section>
-
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Mirrormont Issaquah fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">

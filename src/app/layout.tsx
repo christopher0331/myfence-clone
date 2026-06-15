@@ -6,6 +6,7 @@ import "../index.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DeferredGTM from "@/components/DeferredGTM";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 // Optimize font loading with Next.js font optimization
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={`min-h-screen flex flex-col ${inter.className}`}>
         <DeferredGTM />
+        <AnalyticsTracker />
         <Script id="smartlook-init" strategy="afterInteractive">
           {`
             window.smartlook || (function (d) {

@@ -16,8 +16,10 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import type { FieldErrors } from "react-hook-form";
+
+const FORM_KEY = "home-contact";
 
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -57,7 +59,8 @@ export function ContactForm() {
       return;
     }
     setIsSubmitting(true);
-    const sourcePage = getFormSubmissionPage();
+    const sourcePage = buildSourcePage(FORM_KEY);
+    const attribution = getLeadAttribution(FORM_KEY);
     try {
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
       let leadError: string | null = null;
@@ -73,6 +76,9 @@ export function ContactForm() {
             message: data.description,
             textConsent: data.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            originPage: attribution.originPage,
           },
         });
         if (lead.error) leadError = lead.error.message;
@@ -93,6 +99,8 @@ export function ContactForm() {
       if (leadError && emailError) {
         throw new Error(leadError || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(FORM_KEY, { formType: "contact" });
 
       toast({
         title: "Message sent!",

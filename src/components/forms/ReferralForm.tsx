@@ -10,7 +10,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
-import { getFormSubmissionPage } from "@/lib/formSubmission";
+import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+
+const FORM_KEY = "referral";
 
 const formSchema = z.object({
   // Referrer information
@@ -57,11 +59,20 @@ export function ReferralForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
+      const attribution = getLeadAttribution(FORM_KEY);
       const { error } = await supabase.functions.invoke("send-referral-email", {
-        body: { ...data, sourcePage: getFormSubmissionPage() },
+        body: {
+          ...data,
+          sourcePage: buildSourcePage(FORM_KEY),
+          site: attribution.site,
+          formId: attribution.formId,
+          originPage: attribution.originPage,
+        },
       });
 
       if (error) throw error;
+
+      trackFormSubmit(FORM_KEY, { formType: "referral" });
 
       toast({
         title: "Referral submitted!",
