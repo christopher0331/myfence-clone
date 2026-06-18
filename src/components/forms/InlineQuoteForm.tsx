@@ -1,4 +1,7 @@
-import { useState } from "react";
+"use client";
+
+import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
 import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Button } from "@/components/ui/button";
@@ -12,15 +15,21 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
-
-const FORM_KEY = "inline-quote";
+import {
+  buildSourcePageById,
+  deriveFormSku,
+  getLeadAttributionById,
+  trackFormSubmit,
+} from "@/lib/analytics";
 
 interface InlineQuoteFormProps {
   context?: string; // e.g., "Picture Frame Fence page"
 }
 
 const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
+  const pathname = usePathname() || "";
+  const sku = useMemo(() => deriveFormSku(pathname), [pathname]);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
@@ -79,8 +88,8 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     setIsSubmitting(true);
 
     try {
-      const sourcePage = buildSourcePage(FORM_KEY);
-      const attribution = getLeadAttribution(FORM_KEY);
+      const sourcePage = buildSourcePageById(sku);
+      const attribution = getLeadAttributionById(sku);
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
       const message = context
         ? `[Source: ${context}]\n${formData.projectDescription}`
@@ -102,6 +111,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             sourcePage,
             site: attribution.site,
             formId: attribution.formId,
+            formSku: sku,
             originPage: attribution.originPage,
           },
         });
@@ -130,7 +140,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         throw new Error(leadError || emailError || "Failed to send quote request");
       }
 
-      trackFormSubmit(FORM_KEY, { formType: "quote" });
+      trackFormSubmit(sku, { formType: "quote", formId: sku });
 
       // Trigger fireworks animation
       burstFirework();
