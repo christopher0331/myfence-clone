@@ -19,7 +19,7 @@ import {
   Eye,
   PawPrint,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -393,7 +393,7 @@ const LakeSawyerPage = () => {
           </div>
         </section>
 
-        <VirtualQuoteTool fenceStyleName="Lake Sawyer Covington fence" />
+        <LeadCaptureTabs fenceStyleName="Lake Sawyer Covington fence" />
 
         <section className="py-16">
           <div className="container">

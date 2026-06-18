@@ -4,7 +4,7 @@ import { ArrowLeft, MapPin, Phone, Shield, Star, Award, CheckCircle2 } from "luc
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
@@ -153,8 +153,8 @@ export default function WynacoKentPage() {
         </div>
       </section>
 
-      {/* Quote Tool */}
-      <VirtualQuoteTool fenceStyleName="Wynaco Kent fence" />
+      {/* Contact + Quote Tool */}
+      <LeadCaptureTabs fenceStyleName="Wynaco Kent fence" />
 
       {/* Nearby Areas */}
       <section className="py-16 bg-muted/50">

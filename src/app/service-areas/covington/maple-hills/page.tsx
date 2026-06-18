@@ -17,7 +17,7 @@ import {
   Mountain,
   Ruler,
 } from "lucide-react";
-import VirtualQuoteTool from "@/components/VirtualQuoteTool";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
@@ -412,8 +412,8 @@ const MapleHillsPage = () => {
           </div>
         </section>
 
-        {/* 11. Virtual Quote Tool */}
-        <VirtualQuoteTool fenceStyleName="Maple Hills Covington fence" />
+        {/* 11. Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Maple Hills Covington fence" />
 
         {/* 12. Installation Process */}
         <section className="py-16">
