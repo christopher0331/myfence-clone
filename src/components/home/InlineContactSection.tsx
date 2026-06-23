@@ -13,7 +13,7 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 
 const FORM_KEY = "inline-contact";
 
@@ -104,7 +104,20 @@ export const InlineContactSection = () => {
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: { ...formData, sourcePage },
+          body: {
+            firstName: first || "",
+            lastName: rest.join(" "),
+            email: formData.email,
+            phone: formData.phone,
+            address: formData.address,
+            description: formData.message,
+            textConsent: formData.textConsent,
+            sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            formSku: deriveFormSku(),
+            originPage: attribution.originPage,
+          },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {

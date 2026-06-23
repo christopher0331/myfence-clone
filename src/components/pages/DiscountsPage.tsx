@@ -13,7 +13,7 @@ import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 
 const WHEEL_FORM_KEY = "discount-wheel";
 const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
@@ -345,6 +345,10 @@ const DiscountsPage = () => {
         textConsent: formTextConsent,
         description: formDescription || "General inquiry from discount page",
         sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
       };
 
       // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.

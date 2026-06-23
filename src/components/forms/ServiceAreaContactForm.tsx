@@ -134,6 +134,10 @@ const ServiceAreaContactForm = () => {
             description: message,
             textConsent: formData.textConsent,
             sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            formSku: sku,
+            originPage: attribution.originPage,
           },
         });
         if (legacy.error) emailError = legacy.error.message;

@@ -16,7 +16,7 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import type { FieldErrors } from "react-hook-form";
 
 const FORM_KEY = "home-contact";
@@ -89,7 +89,16 @@ export function ContactForm() {
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", { body: { ...data, sourcePage } });
+        const legacy = await supabase.functions.invoke("send-contact-form", {
+          body: {
+            ...data,
+            sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            formSku: deriveFormSku(),
+            originPage: attribution.originPage,
+          },
+        });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
