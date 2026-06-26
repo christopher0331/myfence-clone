@@ -259,6 +259,11 @@ const MapleValley = () => {
           name: "Maple Woods",
           description: "Quiet residential pocket with closely-spaced lots and shared property lines — a popular setting for cedar shadow box fencing that looks finished from both yards. Click to learn more →",
           link: "/service-areas/maple-valley/maple-woods"
+        },
+        {
+          name: "Ravensdale",
+          description: "Wooded rural-residential area east of Maple Valley with larger lots, gentle slopes, and a quiet foothills setting. Click to learn more →",
+          link: "/service-areas/maple-valley/ravensdale"
         }
       ]}
       landmarks={[

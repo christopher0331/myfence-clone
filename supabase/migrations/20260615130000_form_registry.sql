@@ -74,6 +74,7 @@ values
   ('MF-NB-MAPLE-VALLEY-LAKE-PARK', 'myfence', 'contact', 'neighborhood', '/service-areas/maple-valley/lake-park', 'https://myfence.com/service-areas/maple-valley/lake-park', 'Lake Park, Maple Valley (neighborhood) contact form'),
   ('MF-NB-MAPLE-VALLEY-MAPLE-WOODS', 'myfence', 'contact', 'neighborhood', '/service-areas/maple-valley/maple-woods', 'https://myfence.com/service-areas/maple-valley/maple-woods', 'Maple Woods, Maple Valley (neighborhood) contact form'),
   ('MF-NB-MAPLE-VALLEY-PATRICKS-FAIRE', 'myfence', 'contact', 'neighborhood', '/service-areas/maple-valley/patricks-faire', 'https://myfence.com/service-areas/maple-valley/patricks-faire', 'Patricks Faire, Maple Valley (neighborhood) contact form'),
+  ('MF-NB-MAPLE-VALLEY-RAVENSDALE', 'myfence', 'contact', 'neighborhood', '/service-areas/maple-valley/ravensdale', 'https://myfence.com/service-areas/maple-valley/ravensdale', 'Ravensdale, Maple Valley (neighborhood) contact form'),
   ('MF-SA-MOUNTLAKE-TERRACE', 'myfence', 'contact', 'service_area_city', '/service-areas/mountlake-terrace', 'https://myfence.com/service-areas/mountlake-terrace', 'Mountlake Terrace (service area) contact form'),
   ('MF-SA-NORTH-BEND', 'myfence', 'contact', 'service_area_city', '/service-areas/north-bend', 'https://myfence.com/service-areas/north-bend', 'North Bend (service area) contact form'),
   ('MF-SA-REDMOND', 'myfence', 'contact', 'service_area_city', '/service-areas/redmond', 'https://myfence.com/service-areas/redmond', 'Redmond (service area) contact form'),

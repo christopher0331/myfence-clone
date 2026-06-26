@@ -554,5 +554,23 @@
     "altText": "Cedar shadow box fence with custom gate in Maple Woods, Maple Valley, WA, showing the alternating board-on-board pattern.",
     "lat": 47.3521444444444,
     "lng": -122.008361111111
+  },
+  {
+    "city": "Maple Valley",
+    "neighborhood": "Ravensdale",
+    "photoFile": "Maple-Valley/Ravensdale-Picture-Frame-Fence-1.webp",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Trim Cap Detail",
+      "Post-on-Pipe"
+    ],
+    "estimatedFootage": "~120 linear feet",
+    "seoTitle": "Picture Frame Fence Installation in Ravensdale, Maple Valley, WA",
+    "description": "MyFence.com installed a cedar picture frame fence on a wooded Ravensdale property near Maple Valley, WA. The trim-cap panels give the yard a finished look from both sides while standing up to the damp soil and shade common along Ravensdale's forested lots. Steel Post-on-Pipe footings keep posts out of ground-contact rot, and Fence Genius measurements helped the crew follow grade changes without leaving gaps at the base. The result is a clean, durable boundary that fits the rural character of fence installation in Ravensdale.",
+    "altText": "Cedar picture frame fence with trim cap detail on a wooded Ravensdale property near Maple Valley, WA, installed by MyFence.com.",
+    "lat": 47.3555333333333,
+    "lng": -121.988055555556
   }
 ]
