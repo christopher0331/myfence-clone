@@ -79,7 +79,7 @@ const ThreeRailRanchFence = () => {
         name: "What is a 3-rail ranch fence?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A 3-rail ranch fence — sometimes called a post-and-rail or split-rail fence — is an open-style fence built from heavy cedar posts with three horizontal cedar rails running between them. There are no pickets or vertical boards, so the fence reads as a clean boundary line without blocking sightlines, light, or wind.",
+          text: "A 3-rail ranch fence — sometimes called a post-and-rail or split-rail fence — is an open-style fence built from 6x6 pressure treated posts with three pressure treated 2x8 horizontal rails running between them. There are no pickets or vertical boards, so the fence reads as a clean boundary line without blocking sightlines, light, or wind.",
         },
       },
       {
@@ -108,10 +108,10 @@ const ThreeRailRanchFence = () => {
       },
       {
         "@type": "Question",
-        name: "How long does a cedar 3-rail fence last in the Pacific Northwest?",
+        name: "How long does a pressure treated 3-rail fence last in the Pacific Northwest?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A properly built cedar ranch fence typically lasts 15–25 years in Pacific Northwest conditions, with the posts being the limiting factor. Because the rails sit above grade with airflow on both sides, they dry quickly after rain and avoid the rot patterns that shorten the life of solid-wall fences.",
+          text: "A properly built pressure treated ranch fence typically lasts 15–25 years in Pacific Northwest conditions, with the posts being the limiting factor. Because the 2x8 rails sit above grade with airflow on both sides, they dry quickly after rain and avoid the rot patterns that shorten the life of solid-wall fences.",
         },
       },
     ],
@@ -120,9 +120,9 @@ const ThreeRailRanchFence = () => {
   const productStructuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "3-Rail Ranch Cedar Fence",
+    name: "3-Rail Ranch Fence",
     description:
-      "Cedar 3-rail ranch fence — heavy cedar posts with three horizontal cedar rails. Open, post-and-rail style for property lines, driveways, and large lots. No pickets.",
+      "3-rail ranch fence — 6x6 pressure treated posts with three pressure treated 2x8 horizontal rails. Open, post-and-rail style for property lines, driveways, and large lots. No pickets.",
     image: heroImg,
     brand: { "@type": "Brand", name: "MyFence.com" },
     offers: {
@@ -201,8 +201,8 @@ const ThreeRailRanchFence = () => {
   return (
     <>
       <Seo
-        title="3-Rail Ranch Fence Installation | Cedar Post-and-Rail | MyFence.com"
-        description="Cedar 3-rail ranch fence installation in the Seattle area. Heavy cedar posts with three horizontal rails — clean, open boundary fencing for driveways, property lines, and large lots. Free quotes. (253) 455-1885."
+        title="3-Rail Ranch Fence Installation | Pressure Treated Post-and-Rail | MyFence.com"
+        description="3-rail ranch fence installation in the Seattle area. 6x6 pressure treated posts with three pressure treated 2x8 horizontal rails — clean, open boundary fencing for driveways, property lines, and large lots. Free quotes. (253) 455-1885."
         canonical={canonical}
         image={heroImg}
         structuredData={structuredData}
@@ -251,15 +251,16 @@ const ThreeRailRanchFence = () => {
                 </h1>
                 <p className="mt-3 text-muted-foreground max-w-prose">
                   The 3-rail ranch fence — also known as post-and-rail or
-                  split-rail — uses heavy cedar posts with three horizontal
-                  cedar rails between them. It&apos;s an open, intentional
-                  boundary that frames a driveway or property line without
-                  blocking views, light, or wind. A classic Northwest look
-                  with very little material between you and the landscape.
+                  split-rail — uses 6x6 pressure treated posts with three
+                  pressure treated 2x8 horizontal rails between them.
+                  It&apos;s an open, intentional boundary that frames a
+                  driveway or property line without blocking views, light,
+                  or wind. A classic Northwest look with very little
+                  material between you and the landscape.
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   <Badge variant="secondary">Open Style</Badge>
-                  <Badge variant="secondary">Heavy Cedar Posts</Badge>
+                  <Badge variant="secondary">6x6 Pressure Treated Posts</Badge>
                   <Badge variant="secondary">Driveways &amp; Perimeters</Badge>
                   <Badge variant="secondary">Add Wire Mesh Optional</Badge>
                 </div>
@@ -284,7 +285,7 @@ const ThreeRailRanchFence = () => {
                     sizes="(max-width: 768px) 100vw, 600px"
                     alt={
                       heroPhoto?.cityAlt ??
-                      "Cedar 3-rail ranch fence installation in Kent, WA by MyFence.com"
+                      "3-rail ranch fence with pressure treated posts and 2x8 rails in Kent, WA by MyFence.com"
                     }
                     loading="eager"
                     className="h-full w-full rounded-md object-cover"
@@ -350,9 +351,10 @@ const ThreeRailRanchFence = () => {
                       </h3>
                       <p className="text-muted-foreground text-sm">
                         Less material means less surface area to fail.
-                        Cedar posts and rails with proper footings and
-                        stainless steel hardware routinely deliver 15–25
-                        years of service in Pacific Northwest weather.
+                        Pressure treated 6x6 posts and 2x8 rails with
+                        proper footings and stainless steel hardware
+                        routinely deliver 15–25 years of service in
+                        Pacific Northwest weather.
                       </p>
                     </div>
                   </div>
@@ -368,19 +370,18 @@ const ThreeRailRanchFence = () => {
                 </h3>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mt-3">
                   <li>
-                    Heavy cedar posts — typically 4&quot; x 6&quot; or
-                    6&quot; x 6&quot; — set ~2&apos; deep with ~180 lbs of
-                    properly mixed concrete and gravel drainage beneath
-                    each footing.
+                    6x6 pressure treated fence posts set ~2&apos; deep with
+                    ~180 lbs of properly mixed concrete and gravel
+                    drainage beneath each footing.
                   </li>
                   <li>
-                    Rounded cedar post caps standard for a clean finished
-                    top that sheds water.
+                    Rounded post caps standard for a clean finished top
+                    that sheds water.
                   </li>
                   <li>
-                    Three 2x6 cedar rails (rough sawn or surfaced) attached
-                    to the inside face of the posts with structural screws
-                    or lag bolts — no nails.
+                    Three pressure treated 2x8 horizontal rails attached to
+                    the inside face of the posts with structural screws or
+                    lag bolts — no nails.
                   </li>
                   <li>
                     Even rail spacing top-to-bottom so the fence reads as
@@ -388,7 +389,7 @@ const ThreeRailRanchFence = () => {
                   </li>
                   <li>
                     Stainless steel or hot-dipped galvanized fasteners
-                    throughout to prevent rust streaking down the cedar.
+                    throughout to prevent rust streaking down the lumber.
                   </li>
                   <li>
                     Rails racked or stepped across slopes so the fence
@@ -401,8 +402,8 @@ const ThreeRailRanchFence = () => {
                     poultry containment.
                   </li>
                   <li>
-                    Pre-stained cedar where requested so the finish is
-                    sealed before the rails are installed.
+                    Optional stain or sealant where requested so the finish
+                    is protected before the rails are installed.
                   </li>
                 </ul>
                 <p className="text-muted-foreground max-w-prose mt-3">
@@ -419,8 +420,9 @@ const ThreeRailRanchFence = () => {
                   </h3>
                   <p className="text-muted-foreground max-w-prose mb-4">
                     A recent ranch-fence installation in Kent, WA — three
-                    cedar rails between heavy posts with rounded caps,
-                    framing a driveway and property edge.
+                    pressure treated 2x8 rails between 6x6 pressure treated
+                    posts with rounded caps, framing a driveway and
+                    property edge.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {galleryPhotos.map((photo) => (
@@ -431,7 +433,7 @@ const ThreeRailRanchFence = () => {
                           sizes="(max-width: 640px) 100vw, 50vw"
                           alt={
                             photo.cityAlt ??
-                            "Cedar 3-rail ranch fence by MyFence.com"
+                            "3-rail ranch fence with pressure treated posts and 2x8 rails by MyFence.com"
                           }
                           loading="lazy"
                           className="h-full w-full rounded-md object-cover"
@@ -468,7 +470,8 @@ const ThreeRailRanchFence = () => {
                       </li>
                       <li>
                         You want a classic Northwest / ranch aesthetic
-                        with heavy cedar timbers and rounded caps.
+                        with pressure treated posts, 2x8 rails, and
+                        rounded caps.
                       </li>
                       <li>
                         You need optional pet or livestock containment
@@ -530,7 +533,7 @@ const ThreeRailRanchFence = () => {
                   3-rail ranch fence pricing
                 </h3>
                 <p className="text-muted-foreground mt-3">
-                  Cedar 3-rail ranch installations typically range from{" "}
+                  3-rail ranch installations typically range from{" "}
                   <strong className="text-foreground">
                     $28–$45 per linear foot
                   </strong>
@@ -559,10 +562,11 @@ const ThreeRailRanchFence = () => {
                       What is a 3-rail ranch fence?
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      An open-style fence built from heavy cedar posts with
-                      three horizontal cedar rails between them. No
-                      pickets — the fence reads as a clean boundary
-                      without blocking sightlines, light, or wind.
+                      An open-style fence built from 6x6 pressure treated
+                      posts with three pressure treated 2x8 horizontal
+                      rails between them. No pickets — the fence reads as
+                      a clean boundary without blocking sightlines, light,
+                      or wind.
                     </p>
                   </div>
                   <div>
@@ -604,10 +608,11 @@ const ThreeRailRanchFence = () => {
                       How long does it last in the Pacific Northwest?
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      A properly built cedar ranch fence typically lasts
-                      15–25 years, with the posts being the limiting
-                      factor. Rails sit above grade with airflow on both
-                      sides, so they dry quickly after rain.
+                      A properly built pressure treated ranch fence
+                      typically lasts 15–25 years, with the posts being
+                      the limiting factor. Rails sit above grade with
+                      airflow on both sides, so they dry quickly after
+                      rain.
                     </p>
                   </div>
                 </div>
