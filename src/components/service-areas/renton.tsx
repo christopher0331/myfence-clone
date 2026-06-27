@@ -240,7 +240,8 @@ const Renton = () => {
         },
         {
           name: "Kennydale",
-          description: "Lakefront neighborhood on Lake Washington requiring marine-resistant installations and designs that preserve water access"
+          description: "Lakefront neighborhood on Lake Washington requiring marine-resistant installations and designs that preserve water access. Click to learn more →",
+          link: "/service-areas/renton/kennydale"
         },
         {
           name: "Fairwood",

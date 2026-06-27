@@ -107,7 +107,8 @@ const Seattle = () => {
         },
         {
           name: "Ravenna",
-          description: "Tree-lined residential area near university district needing installations that preserve mature trees while providing student-area security"
+          description: "Tree-lined residential area near university district needing installations that preserve mature trees while providing student-area security. Click to learn more →",
+          link: "/service-areas/seattle/ravenna"
         },
         {
           name: "University District",

@@ -572,5 +572,40 @@
     "altText": "Cedar picture frame fence with trim cap detail on a wooded Ravensdale property near Maple Valley, WA, installed by MyFence.com.",
     "lat": 47.3555333333333,
     "lng": -121.988055555556
+  },
+  {
+    "city": "Renton",
+    "neighborhood": "Kennydale",
+    "photoFile": "Renton/Kennydale-Spindle-Top-Privacy-Fence-1.webp",
+    "fenceStyle": "Craftsman Style Fence",
+    "fenceStyleSlug": "craftsman-style-fence",
+    "features": [
+      "Post-on-Pipe",
+      "Pre-Stained Cedar",
+      "Custom Gate"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Craftsman Style Fence Installation in Kennydale, Renton, WA",
+    "description": "MyFence.com completed a stunning Craftsman Style fence installation in Kennydale, Renton, WA, featuring pre-stained cedar for a rich, natural look. The project includes a custom gate and is supported by durable post-on-pipe construction, ensuring longevity and style. This installation enhances privacy and adds a touch of elegance to the property.",
+    "altText": "Craftsman Style fence with pre-stained cedar and custom gate in Kennydale, Renton, WA",
+    "lat": 47.5216222222222,
+    "lng": -122.199875
+  },
+  {
+    "city": "Seattle",
+    "neighborhood": "Ravenna",
+    "photoFile": "Seattle/Ravenna-Horizontal-Slat-Cedar-Fence-1.webp",
+    "fenceStyle": "Horizontal Fence",
+    "fenceStyleSlug": "horizontal-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Custom Gate"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "Horizontal Cedar Fence Installation in Ravenna, Seattle, WA",
+    "description": "MyFence.com recently completed a stunning horizontal cedar fence installation in Ravenna, Seattle, WA. The project features pre-stained cedar for a polished look and includes a custom gate to enhance accessibility. This fence not only provides privacy but also complements the aesthetic of the neighborhood. The team at MyFence.com ensured precise execution and attention to detail throughout the installation process.",
+    "altText": "Horizontal cedar fence installation in Ravenna, Seattle, WA, featuring pre-stained wood and a custom gate.",
+    "lat": 47.663025,
+    "lng": -122.292175
   }
 ]
