@@ -592,6 +592,10 @@ const Issaquah = () => {
       articleContent={<IssaquahArticle />}
       faqStructuredData={faqStructuredData}
       enhancedBusinessData={enhancedBusinessData}
+      videoTags={[
+        { label: "Black Hogwire", link: "/fence-styles/black-hogwire-fence" },
+        { label: "Galvanized Hogwire", link: "/fence-styles/galvanized-hogwire-fence" },
+      ]}
     />
       <AboutTheArea 
         cityName="Issaquah"

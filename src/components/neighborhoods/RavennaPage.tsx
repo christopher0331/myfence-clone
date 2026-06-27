@@ -19,6 +19,7 @@ import {
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
@@ -237,6 +238,43 @@ const RavennaPage = () => {
                   <p className="text-sm font-medium">— Tom in Ravenna</p>
                   <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Horizontal Cedar Gate Walkthrough
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    See how we finish a horizontal slat cedar gate on a Ravenna side yard — sized for alley access between the house and garage, with hardware and post detail built for daily use on a tree-lined Seattle lot.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Horizontal slat layouts are a popular choice in Ravenna where homeowners want privacy without a fully closed-in feel. Matching gate panels keep the run consistent from fence line to entry point.
+                  </p>
+                  <Link
+                    href="/fence-styles/horizontal-fence"
+                    className="inline-flex px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                  >
+                    View horizontal fence styles &rarr;
+                  </Link>
+                </div>
+                <div className="w-full max-w-[340px] mx-auto md:mx-0 md:ml-auto">
+                  <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/qrEgcvQkbCw?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                      title="Horizontal cedar gate walkthrough on a Ravenna fence installation by MyFence.com"
+                    />
+                  </AspectRatio>
+                </div>
               </div>
             </div>
           </div>

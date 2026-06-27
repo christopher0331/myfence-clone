@@ -297,13 +297,13 @@ const BlackHogwireFence = () => {
                 
                 {/* Right 1/3 - Video */}
                 <div className="lg:col-span-1">
-                  <h3 className="text-xl font-semibold mb-4 text-center">See It In Action</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-center">Hog Wire in Issaquah, WA</h3>
                   <div className="w-full">
                     <AspectRatio ratio={9/16}>
                       <iframe
                         className="rounded-lg shadow-2xl w-full h-full"
-                        src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
-                        title="Black Hogwire Fence Installation"
+                        src="https://www.youtube-nocookie.com/embed/9Wm8SnTomK0?playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                        title="Hog wire fence installation in Issaquah, WA by MyFence.com"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         loading="lazy"

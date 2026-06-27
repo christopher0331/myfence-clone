@@ -142,6 +142,10 @@ const Seattle = () => {
         "Sound-dampening fence configurations for urban settings",
         "Premium cedar, hogwire, and hybrid aluminum systems for moisture resistance"
       ]}
+      videoTags={[
+        { label: "Horizontal Slat Cedar", link: "/fence-styles/horizontal-fence" },
+        { label: "Craftsman Style", link: "/fence-styles/craftsman-style-fence" },
+      ]}
     />
       <AboutTheArea 
         cityName="Seattle"

@@ -701,17 +701,36 @@ const ServiceAreaTemplate = ({
                   <p className="text-muted-foreground leading-relaxed">
                     Every Issaquah fence balances privacy with your property's natural beauty—protecting your outdoor living spaces while preserving the mountain views that make this community special.
                   </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link
+                          key={tag.label}
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <div className="w-full">
-                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080&mute=1"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                      title="Issaquah Fencing"
-                    />
-                  </AspectRatio>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(["4Ls-aTAtQsw", "9Wm8SnTomK0"] as const).map((videoId) => (
+                    <AspectRatio key={videoId} ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080${videoId === "4Ls-aTAtQsw" ? "&mute=1" : ""}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                        title={
+                          videoId === "9Wm8SnTomK0"
+                            ? "Hog wire fence installation in Issaquah, WA by MyFence.com"
+                            : "Issaquah fence installation by MyFence.com"
+                        }
+                      />
+                    </AspectRatio>
+                  ))}
                 </div>
               </div>
             </div>
@@ -908,6 +927,55 @@ const ServiceAreaTemplate = ({
                       title="Black Diamond Fencing"
                     />
                   </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Seattle Fencing Video Section */}
+        {city === "Seattle" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Seattle Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Seattle. We build city-smart cedar and hybrid systems for tight urban lots, hillside grades, and the year-round moisture that defines the Emerald City.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Capitol Hill townhomes to Ravenna side yards and West Seattle slopes, every Seattle fence we install is measured with Fence Genius and built for privacy, durability, and neighborhood character.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(["vQOFuZl-WfA", "vDRIC7VGrz8"] as const).map((videoId) => (
+                    <AspectRatio key={videoId} ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                        title={`Seattle fence installation — ${videoId}`}
+                      />
+                    </AspectRatio>
+                  ))}
                 </div>
               </div>
             </div>
