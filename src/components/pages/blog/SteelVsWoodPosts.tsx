@@ -542,7 +542,7 @@ const SteelVsWoodPosts = () => {
                   { name: "Enumclaw", path: "/service-areas/enumclaw", desc: "Foothills clay soil" },
                   { name: "West Seattle", path: "/service-areas/seattle", desc: "Marine moisture" },
                   { name: "Kirkland", path: "/service-areas/kirkland", desc: "Lakefront conditions" },
-                  { name: "Newcastle", path: "/service-areas/renton", desc: "Hillside drainage" },
+                  { name: "Newcastle", path: "/service-areas/bellevue/newcastle", desc: "Hillside drainage" },
                   { name: "Issaquah", path: "/service-areas/issaquah", desc: "Mountain runoff" },
                   { name: "North Bend", path: "/service-areas/north-bend", desc: "Valley moisture" },
                   { name: "Maple Valley", path: "/service-areas/maple-valley", desc: "Wooded soil conditions" },

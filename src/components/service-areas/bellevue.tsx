@@ -596,6 +596,11 @@ const Bellevue = () => {
           description: "Family-oriented neighborhoods with active HOAs requiring committee-approved designs and durable materials for high child/pet activity"
         },
         {
+          name: "Newcastle",
+          description: "Wooded hillside community between Cougar Mountain and Lake Boren with drainage-aware fencing for tree-lined lots. Click to learn more →",
+          link: "/service-areas/bellevue/newcastle"
+        },
+        {
           name: "Eastgate",
           description: "Mixed residential zones near commercial districts needing privacy screening and decorative fencing to complement varied home styles"
         },

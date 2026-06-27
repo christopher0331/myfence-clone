@@ -178,10 +178,10 @@
 /lake-tapps-best-fence-company* /service-areas/lake-tapps 301
 /lake-tapps-wood-fence-company-near-me* /service-areas/lake-tapps 301
 
-# Newcastle area redirects (nearest: Bellevue)
-/newcastle-wood-fence-installation* /service-areas/bellevue 301
-/newcastle-fence-installation* /service-areas/bellevue 301
-/newcastle-local-fence-companies* /service-areas/bellevue 301
+# Newcastle area redirects (dedicated neighborhood page under Bellevue)
+/newcastle-wood-fence-installation* /service-areas/bellevue/newcastle 301
+/newcastle-fence-installation* /service-areas/bellevue/newcastle 301
+/newcastle-local-fence-companies* /service-areas/bellevue/newcastle 301
 
 # Pacific area redirects (nearest: Renton)
 /pacific-fence-company-near-me* /service-areas/renton 301

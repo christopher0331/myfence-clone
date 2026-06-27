@@ -36,6 +36,7 @@ insert into public.form_registry
   (form_id, site, form_type, page_category, page_path, page_url, description)
 values
   ('MF-SA-BELLEVUE', 'myfence', 'contact', 'service_area_city', '/service-areas/bellevue', 'https://myfence.com/service-areas/bellevue', 'Bellevue (service area) contact form'),
+  ('MF-NB-BELLEVUE-NEWCASTLE', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/newcastle', 'https://myfence.com/service-areas/bellevue/newcastle', 'Newcastle, Bellevue (neighborhood) contact form'),
   ('MF-NB-BELLEVUE-NEWPORT-HILLS', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/newport-hills', 'https://myfence.com/service-areas/bellevue/newport-hills', 'Newport Hills, Bellevue (neighborhood) contact form'),
   ('MF-NB-BELLEVUE-SHERWOOD-FOREST', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/sherwood-forest', 'https://myfence.com/service-areas/bellevue/sherwood-forest', 'Sherwood Forest, Bellevue (neighborhood) contact form'),
   ('MF-NB-BELLEVUE-SOMERSET', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/somerset', 'https://myfence.com/service-areas/bellevue/somerset', 'Somerset, Bellevue (neighborhood) contact form'),
