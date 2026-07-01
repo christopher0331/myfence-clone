@@ -12,8 +12,25 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
+
+const klahanieHogwirePhotos = getNeighborhoodPhotosBySlugs("sammamish", "klahanie").filter(
+  (photo) => photo.file.includes("Fence-Installation")
+);
+const KLAHANIE_HOGWIRE_SUFFIXES = [
+  "Klahanie-Fence-Installation-1.webp",
+  "Klahanie-Fence-Installation-3.webp",
+] as const;
+
+const klahanieHogwireGallery = KLAHANIE_HOGWIRE_SUFFIXES.map((suffix) =>
+  klahanieHogwirePhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const BlackHogwireFence = () => {
   return (
@@ -161,6 +178,36 @@ const BlackHogwireFence = () => {
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Black Hogwire Fence Gallery</h2>
+
+            {klahanieHogwireGallery.length > 0 && (
+              <div className="max-w-4xl mx-auto mb-12">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Black hogwire with a cedar frame on a{" "}
+                    <Link href="/service-areas/sammamish/klahanie" className="text-primary font-medium hover:underline">
+                      Klahanie, Sammamish
+                    </Link>{" "}
+                    lot — pet containment and a clean boundary without blocking light through the neighborhood tree canopy.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {klahanieHogwireGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={4 / 3}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Black hogwire fence with cedar frame in Klahanie, Sammamish"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-lg object-cover shadow-md"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <img
                 src="/lovable-uploads/7f467c89-d3c2-4358-8880-019c3b17581a.png"

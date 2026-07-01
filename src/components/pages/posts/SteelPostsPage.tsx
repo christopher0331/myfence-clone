@@ -9,6 +9,11 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import OptimizedImage from "@/components/OptimizedImage";
 import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 import dynamic from "next/dynamic";
 
 // Lazy-load Google Maps to keep it off the initial critical path
@@ -79,6 +84,16 @@ const SteelPostsPage = () => {
     "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-2.webp?tr=w-800",
     "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Kent/Wynaco-Steel-Fence-Posts-4.webp?tr=w-800",
   ];
+
+  const ravennaSteelPostPhotos = getNeighborhoodPhotosBySlugs("seattle", "ravenna");
+
+  const ravennaSteelGallery = [3, 4]
+    .map((n) =>
+      ravennaSteelPostPhotos.find(
+        (photo) => photo.neighborhoodAlt === `Ravenna Horizontal Slat Cedar Fence ${n}`
+      )
+    )
+    .filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
   return (
     <>
@@ -402,6 +417,51 @@ const SteelPostsPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Ravenna horizontal + steel posts */}
+        {ravennaSteelGallery.length > 0 && (
+          <section className="py-10 px-4">
+            <div className="container mx-auto max-w-4xl">
+              <p className="text-center text-muted-foreground mb-6">
+                Horizontal slat cedar on 4×4 steel posts — see the full{" "}
+                <Link href="/service-areas/seattle/ravenna" className="text-primary font-medium hover:underline">
+                  project in Ravenna
+                </Link>
+                .
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                {ravennaSteelGallery.map((photo, index) => (
+                  <button
+                    key={photo.file}
+                    type="button"
+                    onClick={() =>
+                      openLightbox(
+                        ravennaSteelGallery.map((p) => buildImageUrl(p.file, 1200)),
+                        ravennaSteelGallery.map(
+                          (p) =>
+                            p.neighborhoodAlt ??
+                            "Horizontal slat cedar fence with 4x4 steel posts in Ravenna, Seattle"
+                        ),
+                        index
+                      )
+                    }
+                    className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md group cursor-zoom-in"
+                    aria-label={`View Ravenna photo ${index + 1}`}
+                  >
+                    <OptimizedImage
+                      src={buildImageUrl(photo.file, 800)}
+                      alt={
+                        photo.neighborhoodAlt ??
+                        "Horizontal slat cedar fence with steel posts in Ravenna, Seattle"
+                      }
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Real Job Spotlight: Wynaco, Kent */}
         <section className="py-16 px-4">

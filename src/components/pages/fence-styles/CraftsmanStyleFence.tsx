@@ -14,6 +14,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArrowLeft } from "lucide-react";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
 const heroImg = "/lovable-uploads/1ab1a228-3d1d-4b69-8561-371fabba22e1.png"; // Angled craftsman fence with Fence Genius planning
@@ -27,6 +33,17 @@ const gallery = [
   { src: "/lovable-uploads/152a9d59-7c85-4105-b186-08092819fb4d.png", alt: "Straight run of craftsman fence showing alternating board pattern" },
   { src: "/lovable-uploads/f77a4cb6-6689-40e1-ae50-3546ae7a98f1.png", alt: "Craftsman fence with pergola and Fence Genius design overlay" },
 ];
+
+const kennydaleCraftsmanPhotos = getNeighborhoodPhotosBySlugs("renton", "kennydale");
+const KENNYDALE_FIELD_SUFFIXES = [
+  "Kennydale-Spindle-Top-Privacy-Fence-1.webp",
+  "Kennydale-Spindle-Top-Privacy-Fence-6.webp",
+  "Kennydale-Spindle-Top-Privacy-Fence-11.webp",
+] as const;
+
+const kennydaleFieldGallery = KENNYDALE_FIELD_SUFFIXES.map((suffix) =>
+  kennydaleCraftsmanPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -250,6 +267,41 @@ const CraftsmanStyleFence = () => {
                 See the unique alternating board pattern and craftsmanship of our craftsman style fences.
               </p>
             </div>
+
+            {kennydaleFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    See our craftsman spindle-top privacy fence on a{" "}
+                    <Link href="/service-areas/renton/kennydale" className="text-primary font-medium hover:underline">
+                      Kennydale, Renton
+                    </Link>{" "}
+                    lakefront lot — pre-stained cedar with{" "}
+                    <Link href="/fence-upgrades/post-on-pipe" className="text-primary font-medium hover:underline">
+                      Post-on-Pipe
+                    </Link>{" "}
+                    footings for long life near Lake Washington.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {kennydaleFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Craftsman spindle top privacy fence in Kennydale, Renton"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map((image, index) => (

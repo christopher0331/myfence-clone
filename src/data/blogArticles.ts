@@ -13,6 +13,17 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    id: "wood-fence-post-warping",
+    title: "Why Wood Fence Posts Warp, Crack, and Twist — and How Steel Posts Solve It",
+    metaTitle: "Wood Fence Post Warping & Twisting | Steel Post Fix | MyFence.com",
+    category: "Fence Posts",
+    description:
+      "Pressure-treated and cedar posts twist as they dry—it's a material trait, not contractor error. Learn why it happens and how 4x4x9 steel posts keep fences straight.",
+    image: "https://ik.imagekit.io/xft9mcl5v/hero-images/Board-On-Board-Black-Posts-Hero.webp?tr=w-1200,q-80",
+    readTime: "7 min read",
+    publishDate: "June 2026",
+  },
+  {
     id: "steel-vs-wood-posts",
     title: "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
     metaTitle: "Steel vs Wood Fence Posts | Seattle Guide | MyFence.com",

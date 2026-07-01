@@ -14,6 +14,7 @@ import BlogShareButtons from "@/components/blog/BlogShareButtons";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
+  "wood-fence-post-warping": () => import("@/components/pages/blog/WoodFencePostWarping"),
   "steel-vs-wood-posts": () => import("@/components/pages/blog/SteelVsWoodPosts"),
   "cedar-steel-hybrid-fence": () => import("@/components/pages/blog/CedarAluminumHybridFenceMDX"),
   "cedar-board-grade": () => import("@/components/pages/blog/CedarBoardGrade"),

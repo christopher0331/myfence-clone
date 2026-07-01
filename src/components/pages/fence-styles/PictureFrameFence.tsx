@@ -15,11 +15,39 @@ import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { getFenceStyleImages } from "@/data/fenceImages";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const images = getFenceStyleImages("picture-frame");
 const heroImg = images.hero.src;
 const altHero = images.hero.alt;
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
+
+const klahaniePictureFramePhotos = getNeighborhoodPhotosBySlugs("sammamish", "klahanie").filter(
+  (photo) => photo.file.includes("Picture-Frame")
+);
+const ravensdalePictureFramePhotos = getNeighborhoodPhotosBySlugs(
+  "maple-valley",
+  "ravensdale"
+).filter((photo) => photo.file.includes("Picture-Frame"));
+
+const PICTURE_FRAME_FIELD_SUFFIXES = [
+  "Klahanie-Picture-Frame-Fence-1.webp",
+  "Klahanie-Picture-Frame-Fence-4.webp",
+  "Ravensdale-Picture-Frame-Fence-1.webp",
+  "Ravensdale-Picture-Frame-Fence-4.webp",
+] as const;
+
+const pictureFrameFieldGallery = PICTURE_FRAME_FIELD_SUFFIXES.map((suffix) =>
+  [...klahaniePictureFramePhotos, ...ravensdalePictureFramePhotos].find((photo) =>
+    photo.file.endsWith(suffix)
+  )
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const PictureFrameFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -312,6 +340,42 @@ const PictureFrameFence = () => {
               </p>
             </div>
             
+            {pictureFrameFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Recent picture frame installs in{" "}
+                    <Link href="/service-areas/sammamish/klahanie" className="text-primary font-medium hover:underline">
+                      Klahanie, Sammamish
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/service-areas/maple-valley/ravensdale" className="text-primary font-medium hover:underline">
+                      Ravensdale, Maple Valley
+                    </Link>
+                    {" "}— trim-cap cedar with{" "}
+                    <Link href="/fence-upgrades/post-on-pipe" className="text-primary font-medium hover:underline">
+                      Post-on-Pipe
+                    </Link>{" "}
+                    footings on damp, wooded lots.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {pictureFrameFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <OptimizedImage
+                        src={buildImageUrl(photo.file, 800)}
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Cedar picture frame fence installation by MyFence.com"
+                        }
+                        className="h-full w-full rounded-lg object-cover shadow-md"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {images.gallery.slice(0, 4).map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 block md:block">
