@@ -9,6 +9,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/bellevue", label: "Bellevue" },
       { to: "/service-areas/issaquah", label: "Issaquah" },
       { to: "/service-areas/issaquah-highlands", label: "Issaquah Highlands" },
+      { to: "/service-areas/auburn", label: "Auburn" },
       { to: "/service-areas/kirkland", label: "Kirkland" },
       { to: "/service-areas/mountlake-terrace", label: "Mountlake Terrace" },
       { to: "/service-areas/redmond", label: "Redmond" },

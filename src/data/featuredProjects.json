@@ -607,5 +607,23 @@
     "altText": "Horizontal cedar fence installation in Ravenna, Seattle, WA, featuring pre-stained wood and a custom gate.",
     "lat": 47.663025,
     "lng": -122.292175
+  },
+  {
+    "city": "Auburn",
+    "neighborhood": "Christopher",
+    "photoFile": "Auburn/Christopher-Spindle-Top-Privacy-Fence-1.webp",
+    "fenceStyle": "Craftsman Style Fence",
+    "fenceStyleSlug": "craftsman-style-fence",
+    "features": [
+      "Pre-Stained Cedar",
+      "Spindle Top Detail",
+      "Custom Gate"
+    ],
+    "estimatedFootage": "~90 linear feet",
+    "seoTitle": "Craftsman Spindle Top Privacy Fence in Christopher, Auburn, WA",
+    "description": "MyFence.com installed a craftsman spindle-top privacy fence in the Christopher area of Auburn, WA. Pre-stained western red cedar panels provide solid backyard screening while the open spindle detail adds street-facing character on a typical suburban lot. Fence Genius measurements kept the run plumb along a gentle grade, and the finished fence complements the established homes in this south Auburn neighborhood.",
+    "altText": "Craftsman spindle top privacy fence with pre-stained cedar in Christopher, Auburn, WA, installed by MyFence.com",
+    "lat": 47.333575,
+    "lng": -122.213647222222
   }
 ]

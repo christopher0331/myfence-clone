@@ -45,6 +45,17 @@ const kennydaleFieldGallery = KENNYDALE_FIELD_SUFFIXES.map((suffix) =>
   kennydaleCraftsmanPhotos.find((photo) => photo.file.endsWith(suffix))
 ).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
+const christopherCraftsmanPhotos = getNeighborhoodPhotosBySlugs("auburn", "christopher");
+const CHRISTOPHER_FIELD_SUFFIXES = [
+  "Christopher-Spindle-Top-Privacy-Fence-1.webp",
+  "Christopher-Spindle-Top-Privacy-Fence-3.webp",
+  "Christopher-Spindle-Top-Privacy-Fence-5.webp",
+] as const;
+
+const christopherFieldGallery = CHRISTOPHER_FIELD_SUFFIXES.map((suffix) =>
+  christopherCraftsmanPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
+
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const CraftsmanStyleFence = () => {
@@ -71,6 +82,7 @@ const CraftsmanStyleFence = () => {
       { "@type": "Place", name: "Bothell, WA" },
       { "@type": "Place", name: "Shoreline, WA" },
       { "@type": "Place", name: "Renton, WA" },
+      { "@type": "Place", name: "Auburn, WA" },
     ],
     image: [heroImg],
     brand: { "@type": "Brand", name: "Fence Genius" },
@@ -293,6 +305,37 @@ const CraftsmanStyleFence = () => {
                         alt={
                           photo.neighborhoodAlt ??
                           "Craftsman spindle top privacy fence in Kennydale, Renton"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {christopherFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Craftsman spindle-top privacy on an{" "}
+                    <Link href="/service-areas/auburn/christopher" className="text-primary font-medium hover:underline">
+                      Christopher, Auburn
+                    </Link>{" "}
+                    suburban lot — pre-stained cedar with street-facing spindle detail and solid backyard screening.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {christopherFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Craftsman spindle top privacy fence in Christopher, Auburn"
                         }
                         loading="lazy"
                         className="h-full w-full rounded-md object-cover"

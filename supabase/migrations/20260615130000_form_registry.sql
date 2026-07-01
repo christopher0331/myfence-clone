@@ -35,6 +35,8 @@ create policy "form_registry public read"
 insert into public.form_registry
   (form_id, site, form_type, page_category, page_path, page_url, description)
 values
+  ('MF-SA-AUBURN', 'myfence', 'contact', 'service_area_city', '/service-areas/auburn', 'https://myfence.com/service-areas/auburn', 'Auburn (service area) contact form'),
+  ('MF-NB-AUBURN-CHRISTOPHER', 'myfence', 'contact', 'neighborhood', '/service-areas/auburn/christopher', 'https://myfence.com/service-areas/auburn/christopher', 'Christopher, Auburn (neighborhood) contact form'),
   ('MF-SA-BELLEVUE', 'myfence', 'contact', 'service_area_city', '/service-areas/bellevue', 'https://myfence.com/service-areas/bellevue', 'Bellevue (service area) contact form'),
   ('MF-NB-BELLEVUE-NEWCASTLE', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/newcastle', 'https://myfence.com/service-areas/bellevue/newcastle', 'Newcastle, Bellevue (neighborhood) contact form'),
   ('MF-NB-BELLEVUE-NEWPORT-HILLS', 'myfence', 'contact', 'neighborhood', '/service-areas/bellevue/newport-hills', 'https://myfence.com/service-areas/bellevue/newport-hills', 'Newport Hills, Bellevue (neighborhood) contact form'),
