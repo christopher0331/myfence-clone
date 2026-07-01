@@ -2,6 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import { blogArticles } from "@/data/blogArticles";
 import { getAllServiceAreaPhotos } from "@/lib/serviceAreaPhotoUtils";
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
@@ -72,7 +73,7 @@ async function collectAppRoutes(dir: string, routePath = ""): Promise<string[]> 
   return routes;
 }
 
-async function collectBlogRoutes(): Promise<string[]> {
+async function collectMdxBlogRoutes(): Promise<string[]> {
   try {
     const entries = await fs.readdir(BLOG_CONTENT_DIR, { withFileTypes: true });
     return entries
@@ -83,16 +84,24 @@ async function collectBlogRoutes(): Promise<string[]> {
   }
 }
 
+function collectLegacyBlogRoutes(mdxSlugs: Set<string>): string[] {
+  return blogArticles
+    .map((article) => `/blog/${article.id}`)
+    .filter((route) => !mdxSlugs.has(route.replace("/blog/", "")));
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [appRoutes, blogRoutes] = await Promise.all([
+  const [appRoutes, mdxBlogRoutes] = await Promise.all([
     collectAppRoutes(APP_DIR),
-    collectBlogRoutes(),
+    collectMdxBlogRoutes(),
   ]);
 
+  const mdxSlugSet = new Set(mdxBlogRoutes.map((route) => route.replace("/blog/", "")));
+  const legacyBlogRoutes = collectLegacyBlogRoutes(mdxSlugSet);
   const dynamicServiceAreaRoutes = collectDynamicServiceAreaRoutes();
 
   const allRoutes = Array.from(
-    new Set([...appRoutes, ...blogRoutes, ...dynamicServiceAreaRoutes]),
+    new Set([...appRoutes, ...mdxBlogRoutes, ...legacyBlogRoutes, ...dynamicServiceAreaRoutes]),
   ).sort();
   const now = new Date();
 

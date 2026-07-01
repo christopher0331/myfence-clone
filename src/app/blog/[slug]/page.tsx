@@ -75,12 +75,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   const legacyImage = typeof article.image === "string" ? article.image : article.image.src;
   const absoluteLegacyImage = legacyImage.startsWith("http") ? legacyImage : `${SITE_CONFIG.url}${legacyImage}`;
 
+  const socialTitle = article.metaTitle || article.title;
+
   return {
     title: article.metaTitle || `${article.title} | MyFence.com`,
     description: article.description,
     alternates: { canonical: `https://myfence.com/blog/${slug}` },
     openGraph: {
-      title: article.title,
+      title: socialTitle,
       description: article.description,
       url: `https://myfence.com/blog/${slug}`,
       type: "article",
@@ -88,7 +90,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
+      title: socialTitle,
       description: article.description,
       images: [absoluteLegacyImage],
     },
@@ -246,25 +248,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!BlogPostComponent) notFound();
 
   const Component = (await BlogPostComponent()).default;
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.description,
-    image: { "@type": "ImageObject", url: getImageUrl(article.image) },
-    author: { "@type": "Organization", name: SITE_CONFIG.fullName },
-    publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
-  };
+
+  // Only PreStainingDryPanels lacks component-level JSON-LD; others define their own @graph.
+  const wrapperStructuredData =
+    slug === "onsite-staining-vs-pre-staining"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.description,
+          image: { "@type": "ImageObject", url: getImageUrl(article.image) },
+          author: { "@type": "Organization", name: SITE_CONFIG.fullName },
+          publisher: {
+            "@type": "Organization",
+            name: SITE_CONFIG.fullName,
+            logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` },
+          },
+        }
+      : undefined;
 
   return (
     <>
-      <Seo
-        title={article.metaTitle || `${article.title} | MyFence.com`}
-        description={article.description}
-        canonical={`https://myfence.com/blog/${slug}`}
-        image={typeof article.image === "string" ? article.image : article.image.src}
-        structuredData={structuredData}
-      />
+      {wrapperStructuredData && <Seo structuredData={wrapperStructuredData} />}
       <main className="container mx-auto px-4 pt-8">
         <BlogShareButtons title={article.title} url={`${SITE_CONFIG.url}/blog/${slug}`} />
       </main>

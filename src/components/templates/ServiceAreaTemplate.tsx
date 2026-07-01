@@ -652,7 +652,7 @@ const ServiceAreaTemplate = ({
                     Watch our professional fence installation process in Renton. We specialize in durable cedar systems engineered for the unique terrain and climate of the South End.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    From Highlands neighborhoods to Fairwood estates, we build quality fences that provide privacy, security, and lasting value for your Renton property.
+                    From Highlands neighborhoods to Kennydale lakefront craftsman spindle-top privacy fences, we build quality fences that provide privacy, security, and lasting value for your Renton property.
                   </p>
                   {videoTags.length > 0 && (
                     <div className="flex flex-wrap gap-2 pt-2">
@@ -668,14 +668,23 @@ const ServiceAreaTemplate = ({
                     </div>
                   )}
                 </div>
-                <div className="w-full">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
                     <iframe
                       src="https://www.youtube-nocookie.com/embed/iUUnbPpWYvo?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
-                      title="Renton Fencing"
+                      title="Renton fence installation by MyFence.com"
+                    />
+                  </AspectRatio>
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Craftsman style cedar fence walkthrough in Kennydale, Renton by MyFence.com"
                     />
                   </AspectRatio>
                 </div>

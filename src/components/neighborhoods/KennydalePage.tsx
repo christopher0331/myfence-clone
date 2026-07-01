@@ -17,6 +17,7 @@ import {
   Ruler,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
@@ -237,6 +238,43 @@ const KennydalePage = () => {
                   <p className="text-sm font-medium">— Marcus in Kennydale</p>
                   <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 bg-muted/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Craftsman Spindle Top Walkthrough
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    See a finished craftsman spindle-top privacy fence on a Kennydale lakefront lot — street-facing spindle detail, solid cedar screening in the backyard, and hardware built for daily gate use near Lake Washington.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Craftsman spindle top designs are a strong fit in Kennydale where homeowners want architectural curb appeal without giving up privacy below the top rail.
+                  </p>
+                  <Link
+                    href="/fence-styles/craftsman-style-fence"
+                    className="inline-flex px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                  >
+                    View craftsman style fence &rarr;
+                  </Link>
+                </div>
+                <div className="w-full max-w-[340px] mx-auto md:mx-0 md:ml-auto">
+                  <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                      title="Craftsman style cedar fence walkthrough on a Kennydale installation by MyFence.com"
+                    />
+                  </AspectRatio>
+                </div>
               </div>
             </div>
           </div>

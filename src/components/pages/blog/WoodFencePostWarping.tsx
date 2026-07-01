@@ -59,8 +59,26 @@ const WoodFencePostWarping = () => {
     dateModified: "2026-06-26",
     mainEntityOfPage: { "@type": "WebPage", "@id": CANONICAL },
     articleSection: "Fence Posts",
+    wordCount: 1800,
     keywords:
       "wood fence post warping, cedar post twisting, pressure treated post cracking, steel fence posts Seattle, 4x4 steel posts, fence post movement",
+  };
+
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Wood fence post warping compared to steel posts",
+    description:
+      "Field clip showing uneven wood post drying and how powder-coated 4x4 steel posts stay plumb on the same fence line.",
+    thumbnailUrl: "https://i.ytimg.com/vi/ps7G6vGqeKI/hqdefault.jpg",
+    uploadDate: "2026-06-26",
+    embedUrl: "https://www.youtube-nocookie.com/embed/ps7G6vGqeKI",
+    contentUrl: "https://www.youtube.com/shorts/ps7G6vGqeKI",
+    publisher: {
+      "@type": "Organization",
+      name: SITE_CONFIG.fullName,
+      url: "https://myfence.com",
+    },
   };
 
   const faqSchema = {
@@ -69,34 +87,34 @@ const WoodFencePostWarping = () => {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Why do wood fence posts warp after installation?",
+        name: "Can I stop a wood post from twisting after it is installed?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Wood is an organic material that continues to lose moisture after it is set in the ground. As different faces of a post dry at different rates, the wood shrinks unevenly—causing cupping, bowing, twisting, and surface checking. Knots and mixed grain make the movement more pronounced.",
+          text: "You can slow moisture exchange with end-grain sealers and proper drainage at the base, but you cannot eliminate internal drying stress in a post already in the ground. Once significant twist is present, replacement is usually the only structural fix.",
         },
       },
       {
         "@type": "Question",
-        name: "Is a twisted fence post the contractor's fault?",
+        name: "Should I use cedar or pressure-treated posts if I stay with wood?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "In most cases, no. If the post was set plumb and secured correctly, twisting and warping are natural reactions to drying wood—not evidence of poor workmanship. This is considered a material characteristic of lumber, not an installation defect.",
+          text: "Cedar generally moves less and looks better above grade, while pressure-treated pine is the budget choice for below-grade rot resistance. Neither option delivers the long-term straightness of steel. If post movement is a top concern, upgrade at the outset rather than replacing later.",
         },
       },
       {
         "@type": "Question",
-        name: "Do cedar posts warp less than pressure-treated posts?",
+        name: "Will steel posts look out of place on a cedar fence?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Cedar generally moves less dramatically than pressure-treated pine because of more consistent grain and natural oils, but cedar posts still absorb and release moisture. Neither wood species is dimensionally stable the way engineered steel is.",
+          text: "Black powder-coated posts are deliberately slim and matte—they read as a modern accent rather than industrial hardware. Many Seattle-area homeowners choose them specifically for the contrast against natural cedar tones.",
         },
       },
       {
         "@type": "Question",
-        name: "How do steel 4x4x9 fence posts prevent warping?",
+        name: "How does this compare to your steel vs. wood post article?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Steel does not absorb water, shrink, or swell with humidity changes. A powder-coated 4x4x9 steel post holds its shape through rain, sun, and freeze-thaw cycles—eliminating the twisting and cracking common with wood posts in the Pacific Northwest.",
+          text: "Our steel vs. wood post comparison focuses on long-term cost and rot in wet soil. This article focuses on dimensional movement—why wood twists and how steel removes that variable entirely.",
         },
       },
     ],
@@ -109,7 +127,7 @@ const WoodFencePostWarping = () => {
         description="Cedar and pressure-treated wood posts twist as they dry—it's a material trait, not contractor error. See how 4x4x9 steel posts keep Pacific Northwest fences straight."
         canonical={CANONICAL}
         image={HERO_IMAGE}
-        structuredData={[breadcrumbData, articleSchema, faqSchema]}
+        structuredData={[breadcrumbData, articleSchema, videoSchema, faqSchema]}
       />
 
       <main className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
