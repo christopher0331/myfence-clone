@@ -150,6 +150,123 @@ function buildProviderEmail(
     </div>`
 }
 
+function buildAdminEmail(
+  customerName: string,
+  customerEmail: string,
+  customerPhone: string,
+  customerAddress: string,
+  contactPreference: "self" | "provider",
+  services: ServiceSelection[]
+): string {
+  const prefLabel =
+    contactPreference === "self"
+      ? "Customer will reach out to providers themselves"
+      : "Customer asked providers to contact them — provider emails sent automatically"
+
+  const providerRows = services
+    .flatMap((s) =>
+      s.providers.map(
+        (p) => `
+        <tr>
+          <td style="padding:12px 16px; border-bottom:1px solid #e5e7eb;">
+            <strong style="color:#1a1a1a;">${s.category}</strong><br>
+            <span style="color:#4b5563;">${p.name}</span>
+          </td>
+          <td style="padding:12px 16px; border-bottom:1px solid #e5e7eb;">
+            ${p.phone ? `<a href="tel:${p.phone.replace(/\D/g, "")}" style="color:#2563eb; text-decoration:none;">${p.phone}</a><br>` : ""}
+            ${p.email ? `<a href="mailto:${p.email}" style="color:#2563eb; text-decoration:none; font-size:13px;">${p.email}</a><br>` : ""}
+            ${p.website ? `<a href="${p.website}" target="_blank" style="color:#2563eb; text-decoration:none; font-size:13px;">Website →</a>` : ""}
+          </td>
+        </tr>`
+      )
+    )
+    .join("")
+
+  const providerNames = services
+    .flatMap((s) => s.providers.map((p) => p.name))
+    .join(", ")
+
+  return `
+    <div style="font-family:Arial,sans-serif; max-width:600px; margin:0 auto;">
+      <div style="background:linear-gradient(135deg,#ea580c 0%,#c2410c 100%); color:white; padding:24px; text-align:center; border-radius:8px 8px 0 0;">
+        <h1 style="margin:0; font-size:22px;">Partner Referral Request</h1>
+        <p style="margin:8px 0 0; opacity:0.9; font-size:14px;">Post–fence-form provider selection</p>
+      </div>
+      <div style="padding:24px; background:#f9fafb; border:1px solid #e5e7eb;">
+        <p style="color:#374151; margin-top:0;"><strong>${prefLabel}</strong></p>
+
+        <div style="background:white; border:1px solid #e5e7eb; border-radius:8px; padding:20px; margin:16px 0;">
+          <h3 style="color:#1a1a1a; margin-top:0; border-bottom:2px solid #ea580c; padding-bottom:8px;">Customer Details</h3>
+          <table style="width:100%;">
+            <tr><td style="padding:6px 0; color:#6b7280; width:100px;"><strong>Name:</strong></td><td style="padding:6px 0; color:#1a1a1a;">${customerName}</td></tr>
+            <tr><td style="padding:6px 0; color:#6b7280;"><strong>Phone:</strong></td><td style="padding:6px 0;"><a href="tel:${customerPhone.replace(/\D/g, "")}" style="color:#2563eb; font-weight:bold;">${customerPhone}</a></td></tr>
+            <tr><td style="padding:6px 0; color:#6b7280;"><strong>Email:</strong></td><td style="padding:6px 0;"><a href="mailto:${customerEmail}" style="color:#2563eb;">${customerEmail}</a></td></tr>
+            ${customerAddress ? `<tr><td style="padding:6px 0; color:#6b7280;"><strong>Address:</strong></td><td style="padding:6px 0; color:#1a1a1a;">${customerAddress}</td></tr>` : ""}
+          </table>
+        </div>
+
+        <h3 style="color:#1a1a1a; margin:20px 0 12px;">Requested Providers</h3>
+        <table style="width:100%; border-collapse:collapse; background:white; border-radius:6px; overflow:hidden; border:1px solid #e5e7eb;">
+          ${providerRows}
+        </table>
+
+        <div style="background:#fef3c7; border:1px solid #f59e0b; border-radius:8px; padding:16px; margin-top:20px;">
+          <p style="color:#92400e; margin:0 0 8px; font-weight:bold;">Suggested follow-up</p>
+          <p style="color:#78350f; margin:0; font-size:14px;">
+            Text or call <strong>${providerNames}</strong> and let them know this customer came through MyFence.com so they know the outreach is legitimate — not spam.
+            ${contactPreference === "self" ? " The customer received provider contact info and may reach out on their own." : " Provider lead emails were sent automatically."}
+          </p>
+        </div>
+      </div>
+      <div style="background:#374151; color:#9ca3af; padding:14px; text-align:center; font-size:12px; border-radius:0 0 8px 8px;">
+        Submitted: ${new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} PT &bull; MyFence.com Partner Referrals
+      </div>
+    </div>`
+}
+
+function buildAdminEmailText(
+  customerName: string,
+  customerEmail: string,
+  customerPhone: string,
+  customerAddress: string,
+  contactPreference: "self" | "provider",
+  services: ServiceSelection[]
+): string {
+  const prefLabel =
+    contactPreference === "self"
+      ? "Customer will reach out to providers themselves"
+      : "Customer asked providers to contact them — provider emails sent automatically"
+
+  const serviceList = services
+    .map((s) =>
+      s.providers
+        .map(
+          (p) =>
+            `• ${s.category} — ${p.name}\n  Phone: ${p.phone || "N/A"}\n  Email: ${p.email || "N/A"}\n  Website: ${p.website || "N/A"}`
+        )
+        .join("\n")
+    )
+    .join("\n")
+
+  return `
+PARTNER REFERRAL REQUEST — MyFence.com
+${prefLabel}
+
+CUSTOMER
+Name: ${customerName}
+Phone: ${customerPhone}
+Email: ${customerEmail}
+Address: ${customerAddress || "Not provided"}
+
+REQUESTED PROVIDERS
+${serviceList}
+
+FOLLOW-UP: Text or call the providers above and let them know this customer came through MyFence.com so they know it's legitimate — not spam.
+
+Submitted: ${new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" })} PT
+  `.trim()
+}
+
 /* ------------------------------------------------------------------ */
 /*  Main handler                                                       */
 /* ------------------------------------------------------------------ */
@@ -185,7 +302,6 @@ serve(async (req) => {
     const resend = new Resend(apiKey)
     const results: string[] = []
 
-    const serviceList = services.map((s) => `• ${s.category}: ${s.providers.map((p) => p.name).join(", ")}`).join("\n")
     const categories = services.map((s) => s.category).join(", ")
 
     const FROM_EMAIL = "MyFence.com <noreply@myfence.com>"
@@ -251,15 +367,42 @@ serve(async (req) => {
           `Hi ${customerName.split(" ")[0]}! MyFence.com here — our partners for ${categories} will be reaching out to you shortly. Questions? Call us at (253) 455-1885.`
         )
       }
+    }
 
-      // Notify admin
-      await resend.emails.send({
-        from: FROM_EMAIL,
-        to: ["info@myfence.com"],
-        reply_to: customerEmail,
-        subject: `Partner Referral: ${customerName} requested ${services.length} service(s)`,
-        text: `Customer ${customerName} (${customerEmail}, ${customerPhone}) requested "Please Contact Me" for:\n\n${serviceList}\n\nAddress: ${customerAddress || "Not provided"}\n\nProvider emails have been sent automatically.`,
-      })
+    // Always notify admin — both paths — so you can warn providers the lead is legitimate
+    const adminSubject =
+      contactPreference === "self"
+        ? `Partner Referral (customer self-contact): ${customerName}`
+        : `Partner Referral (providers contacted): ${customerName}`
+
+    const { data: adminData, error: adminError } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: ["info@myfence.com"],
+      reply_to: customerEmail,
+      subject: adminSubject,
+      text: buildAdminEmailText(
+        customerName,
+        customerEmail,
+        customerPhone,
+        customerAddress,
+        contactPreference,
+        services
+      ),
+      html: buildAdminEmail(
+        customerName,
+        customerEmail,
+        customerPhone,
+        customerAddress,
+        contactPreference,
+        services
+      ),
+    })
+
+    if (adminError) {
+      console.error("Admin notification error:", adminError)
+    } else {
+      results.push(`admin-email:${adminData?.id}`)
+      console.log("Admin notification sent:", adminData?.id)
     }
 
     return new Response(
