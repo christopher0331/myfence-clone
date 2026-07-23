@@ -145,6 +145,16 @@ export const blogArticles: BlogArticle[] = [
   //   publishDate: "January 2025"
   // },
   {
+    id: "how-myfence-builds-gates-that-outlast-every-other-contractor",
+    title: "How MyFence Builds Gates That Outlast Every Other Contractor",
+    metaTitle: "Cedar Gate Construction Guide | MyFence.com",
+    category: "Installation",
+    description: "Discover how MyFence builds superior cedar gates with kiln-dried 2x4 frames, compression-fit diagonal braces, 6-8 inch lag screws, and self-closing hardware for Pacific Northwest homes.",
+    image: "https://ik.imagekit.io/xft9mcl5v/blog/gate-construction/double-driveway-gate-cedar-cross-bracing.jpg",
+    readTime: "7 min read",
+    publishDate: "July 2026",
+  },
+  {
     id: "onsite-staining-vs-pre-staining",
     title: "Onsite Fence Staining Problems vs Pre Staining Components",
     metaTitle: "Onsite vs Pre-Staining Fences | MyFence.com",

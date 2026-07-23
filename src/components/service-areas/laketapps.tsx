@@ -64,7 +64,7 @@ const LakeTapps = () => {
       "latitude": 47.2384,
       "longitude": -122.1951
     },
-    "telephone": "(253) 478-8589",
+    "telephone": "(253) 455-1885",
     "areaServed": {
       "@type": "City",
       "name": "Lake Tapps"

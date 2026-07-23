@@ -64,7 +64,7 @@ const Sumner = () => {
       "latitude": 47.2034,
       "longitude": -122.2401
     },
-    "telephone": "(253) 478-8589",
+    "telephone": "(253) 455-1885",
     "areaServed": {
       "@type": "City",
       "name": "Sumner"

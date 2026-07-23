@@ -56,7 +56,7 @@ const SixBySixPostsPage = () => {
                   <Link href="/quote">Get Free Quote</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="tel:2534788589">Call (253) 478-8589</a>
+                  <a href="tel:2534551885">Call (253) 455-1885</a>
                 </Button>
               </div>
             </div>
@@ -246,7 +246,7 @@ const SixBySixPostsPage = () => {
                 <Link href="/quote">Get Free Quote</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="tel:2534788589">Call (253) 478-8589</a>
+                <a href="tel:2534551885">Call (253) 455-1885</a>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">{WARRANTY_CONSTANTS.FULL_DESCRIPTION}</p>
