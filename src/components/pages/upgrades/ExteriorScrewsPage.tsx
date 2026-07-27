@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
 import { Check } from "lucide-react";
 
@@ -207,60 +206,54 @@ const ExteriorScrews = () => {
       </section>
 
       <section className="container py-12 border-t">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-3 text-center">
-            Stainless steel fasteners we actually use
-          </h2>
-          <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-            Beyond the 4&quot; screw upgrade for rails, MyFence.com specifies stainless steel ring-shank
-            nails and staples for picket and mesh work — so hardware doesn&apos;t rust and streak cedar
-            in Pacific Northwest weather.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {stainlessPhotos.map((photo) => (
-              <figure key={photo.src} className="w-full space-y-2">
-                <AspectRatio ratio={1} className="w-full overflow-hidden rounded-lg shadow-md">
-                  <img
-                    src={`${photo.src}?tr=w-900,q-80`}
-                    alt={photo.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </AspectRatio>
-                <figcaption className="text-sm text-muted-foreground text-center">
-                  {photo.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+        <h2 className="text-3xl font-semibold mb-3 text-center">
+          Stainless steel fasteners we actually use
+        </h2>
+        <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-8">
+          Beyond the 4&quot; screw upgrade for rails, MyFence.com specifies stainless steel ring-shank
+          nails and staples for picket and mesh work — so hardware doesn&apos;t rust and streak cedar
+          in Pacific Northwest weather.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          {stainlessPhotos.map((photo) => (
+            <figure key={photo.src} className="w-full min-w-0 space-y-2">
+              <div className="relative aspect-square w-full overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={`${photo.src}?tr=w-1100,q-80`}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <figcaption className="text-sm text-muted-foreground text-center">
+                {photo.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
       <section className="bg-muted/50 py-12">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-3 text-center">
-              What galvanized fasteners do to cedar
-            </h2>
-            <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-              These field photos are from fences built with galvanized fasteners instead of stainless.
-              The black streaks are galvanized hardware corroding against cedar — permanent staining
-              that stainless steel prevents.
-            </p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {corrosionPhotos.map((photo) => (
-                <figure key={photo.src} className="w-full min-w-0">
-                  <AspectRatio ratio={3 / 4} className="w-full overflow-hidden rounded-lg shadow-md">
-                    <img
-                      src={`${photo.src}?tr=w-700,q-80`}
-                      alt={photo.alt}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                    />
-                  </AspectRatio>
-                </figure>
-              ))}
-            </div>
+          <h2 className="text-3xl font-semibold mb-3 text-center">
+            What galvanized fasteners do to cedar
+          </h2>
+          <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-8">
+            These field photos are from fences built with galvanized fasteners instead of stainless.
+            The black streaks are galvanized hardware corroding against cedar — permanent staining
+            that stainless steel prevents.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {corrosionPhotos.map((photo) => (
+              <figure key={photo.src} className="relative aspect-[3/4] w-full min-w-0 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={`${photo.src}?tr=w-800,q-80`}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </figure>
+            ))}
           </div>
         </div>
       </section>
