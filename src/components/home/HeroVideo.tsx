@@ -28,7 +28,9 @@ export default function HeroVideo() {
     };
 
     const scheduleMount = () => {
-      if ("requestIdleCallback" in window) {
+      // Avoid `"requestIdleCallback" in window` — TS narrows `window` to `never`
+      // in the else branch and fails `setTimeout` under Next's typecheck.
+      if (typeof window.requestIdleCallback === "function") {
         idleId = window.requestIdleCallback(mountVideo, { timeout: 4000 });
       } else {
         timeoutId = window.setTimeout(mountVideo, 2500);
@@ -49,7 +51,7 @@ export default function HeroVideo() {
     return () => {
       cancelled = true;
       observer.disconnect();
-      if (idleId !== undefined && "cancelIdleCallback" in window) {
+      if (idleId !== undefined && typeof window.cancelIdleCallback === "function") {
         window.cancelIdleCallback(idleId);
       }
       if (timeoutId !== undefined) window.clearTimeout(timeoutId);
