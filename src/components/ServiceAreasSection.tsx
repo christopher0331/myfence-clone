@@ -28,6 +28,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/gig-harbor", label: "Gig Harbor" },
       { to: "/service-areas/lake-tapps", label: "Lake Tapps" },
       { to: "/service-areas/orting", label: "Orting" },
+      { to: "/service-areas/puyallup", label: "Puyallup" },
       { to: "/service-areas/riverpoint", label: "Riverpoint" },
       { to: "/service-areas/sumner", label: "Sumner" },
       { to: "/service-areas/university-place", label: "University Place" },

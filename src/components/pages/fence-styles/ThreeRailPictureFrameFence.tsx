@@ -13,6 +13,12 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
 const heroImg = "/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png"; // 3-rail detail
@@ -24,6 +30,19 @@ const gallery = [
   { src: "/lovable-uploads/fb1299f7-72f9-4c43-b762-a1ba637b5732.png", alt: "Long run of cedar 3-rail picture frame fence in Seattle" },
   { src: "/lovable-uploads/78133561-db65-4e96-932f-e60c0eeaf449.png", alt: "Cedar gate in matching 3-rail picture frame style" },
 ];
+
+const timberlaneThreeRailPhotos = getNeighborhoodPhotosBySlugs("covington", "timberlane").filter(
+  (photo) => photo.file.includes("3-Rail-Picture-Frame")
+);
+const TIMBERLANE_FIELD_SUFFIXES = [
+  "Timberlane-3-Rail-Picture-Frame-Fence-1.webp",
+  "Timberlane-3-Rail-Picture-Frame-Fence-2.webp",
+  "Timberlane-3-Rail-Picture-Frame-Fence-3.webp",
+  "Timberlane-3-Rail-Picture-Frame-Fence-4.webp",
+] as const;
+const timberlaneFieldGallery = TIMBERLANE_FIELD_SUFFIXES.map((suffix) =>
+  timberlaneThreeRailPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -218,6 +237,40 @@ const ThreeRailPictureFrameFence = () => {
                 See the strength and craftsmanship of our 3 rail picture frame fences with enhanced structural design.
               </p>
             </div>
+
+            {timberlaneFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Recent 3-rail picture frame install in{" "}
+                    <Link
+                      href="/service-areas/covington/timberlane"
+                      className="text-primary font-medium hover:underline"
+                    >
+                      Timberlane, Covington
+                    </Link>
+                    {" "}— three-rail cedar framing with matching trim on a family lot.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {timberlaneFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 25vw"
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "3-rail picture frame fence in Timberlane, Covington by MyFence.com"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-lg object-cover shadow-md"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map((image, index) => (

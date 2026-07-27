@@ -550,7 +550,7 @@
     ],
     "estimatedFootage": null,
     "seoTitle": "Shadow Box Fence Installation in Maple Woods, Maple Valley, WA",
-    "description": "MyFence.com completed a cedar shadow box fence installation in the Maple Woods neighborhood of Maple Valley, WA. The alternating board-on-board layout gives both sides of the fence a finished look while still allowing airflow between the panels — a popular choice on tighter Maple Valley lots where neighbor relations matter. The project includes a custom gate and pre-stained cedar throughout, showcasing the quality of fence installation in Maple Woods that MyFence.com is known for.",
+    "description": "MyFence.com completed a cedar shadow box fence installation in the Maple Woods neighborhood of Maple Valley, WA. The alternating board-on-board layout gives both sides of the fence a finished look while still allowing airflow between the panels \u2014 a popular choice on tighter Maple Valley lots where neighbor relations matter. The project includes a custom gate and pre-stained cedar throughout, showcasing the quality of fence installation in Maple Woods that MyFence.com is known for.",
     "altText": "Cedar shadow box fence with custom gate in Maple Woods, Maple Valley, WA, showing the alternating board-on-board pattern.",
     "lat": 47.3521444444444,
     "lng": -122.008361111111
@@ -625,5 +625,23 @@
     "altText": "Craftsman spindle top privacy fence with pre-stained cedar in Christopher, Auburn, WA, installed by MyFence.com",
     "lat": 47.333575,
     "lng": -122.213647222222
+  },
+  {
+    "city": "Puyallup",
+    "neighborhood": null,
+    "photoFile": "Puyallup/Puyallup-2-Rail-Fence-2.webp",
+    "fenceStyle": "2-Rail Ranch Fence",
+    "fenceStyleSlug": "3-rail-ranch-fence",
+    "features": [
+      "6x6 Pressure Treated Posts",
+      "2x10 Pressure Treated Rails",
+      "Open Ranch Style"
+    ],
+    "estimatedFootage": "~100 linear feet",
+    "seoTitle": "2-Rail Ranch Fence Installation in Puyallup, WA",
+    "description": "MyFence.com installed a 2-rail ranch fence in Puyallup, WA using 6x6 pressure treated posts and 2x10x10' pressure treated rails. The open post-and-rail design defines the property edge without blocking views, light, or wind.",
+    "altText": "2-rail ranch fence with 6x6 pressure treated posts and 2x10 rails in Puyallup, WA by MyFence.com",
+    "lat": 47.1620361111111,
+    "lng": -122.2989
   }
 ]

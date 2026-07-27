@@ -196,7 +196,7 @@
     "lng": -122.191758333333
   },
   {
-    "__manifestSection": "2026-05-12 (5.12.26) — Bonney Lake — 3 ft hogwire, clear cedar picture frame (ImageKit URLs)"
+    "__manifestSection": "2026-05-12 (5.12.26) \u2014 Bonney Lake \u2014 3 ft hogwire, clear cedar picture frame (ImageKit URLs)"
   },
   {
     "file": "Bonney-Lake/Bonney-Lake-3-Foot-Black-Hogwire-Fence-1.webp",
@@ -1098,7 +1098,7 @@
     "lng": -122.289855555556
   },
   {
-    "__manifestSection": "2026-05-26 — Seattle — horizontal slat cedar fence (ImageKit)"
+    "__manifestSection": "2026-05-26 \u2014 Seattle \u2014 horizontal slat cedar fence (ImageKit)"
   },
   {
     "file": "Seattle/Seattle-Horizontal-Slat-Cedar-Fence-1.webp",
@@ -1213,7 +1213,7 @@
     "lng": -122.541494444444
   },
   {
-    "__manifestSection": "2026-05-12 (5.12.26) — Kent Wynaco — fence installations (ImageKit URLs)"
+    "__manifestSection": "2026-05-12 (5.12.26) \u2014 Kent Wynaco \u2014 fence installations (ImageKit URLs)"
   },
   {
     "file": "Kent/Wynaco-Fence-Installation-1.webp",
@@ -2319,5 +2319,161 @@
     "lat": 47.333575,
     "lng": -122.213647222222,
     "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Auburn/Christopher-Spindle-Top-Privacy-Fence-6.webp"
+  },
+  {
+    "__manifestSection": "2026-07-27 (7.27) \u2014 Puyallup \u2014 2-rail ranch fence, 6x6 PT posts + 2x10x10' PT rails (ImageKit URLs)"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-1.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-1.jpeg",
+    "width": 1920,
+    "height": 2560,
+    "sizeBytes": 1123224,
+    "size": "1.07 MB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 1",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-1.webp"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-2.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-2.jpeg",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 744368,
+    "size": "726.9 KB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 2",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-2.webp"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-3.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-3.jpeg",
+    "width": 1920,
+    "height": 2560,
+    "sizeBytes": 1075666,
+    "size": "1.03 MB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 3",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-3.webp"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-4.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-4.jpeg",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 720864,
+    "size": "704.0 KB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 4",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-4.webp"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-5.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-5.jpeg",
+    "width": 1920,
+    "height": 2560,
+    "sizeBytes": 1259042,
+    "size": "1.20 MB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 5",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-5.webp"
+  },
+  {
+    "file": "Puyallup/Puyallup-2-Rail-Fence-6.webp",
+    "originalFile": "Puyallup/Puyallup-2-Rail-Fence-6.jpeg",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 844644,
+    "size": "824.8 KB",
+    "city": "Puyallup",
+    "neighborhood": null,
+    "cityAlt": "Puyallup 2 Rail Fence 6",
+    "neighborhoodAlt": null,
+    "lat": 47.1620361111111,
+    "lng": -122.2989,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-6.webp"
+  },
+  {
+    "__manifestSection": "2026-07-27 (7.27) \u2014 Covington Timberlane \u2014 3-rail picture frame fence (ImageKit URLs)"
+  },
+  {
+    "file": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-1.webp",
+    "originalFile": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-1.jpeg",
+    "width": 1920,
+    "height": 2560,
+    "sizeBytes": 709428,
+    "size": "692.8 KB",
+    "city": "Covington",
+    "neighborhood": "Timberlane",
+    "cityAlt": "Covington 3 Rail Picture Frame Fence 1",
+    "neighborhoodAlt": "Timberlane 3 Rail Picture Frame Fence 1",
+    "lat": 47.3683861111111,
+    "lng": -122.070772222222,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Covington/Timberlane-3-Rail-Picture-Frame-Fence-1.webp"
+  },
+  {
+    "file": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-2.webp",
+    "originalFile": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-2.jpeg",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 348440,
+    "size": "340.3 KB",
+    "city": "Covington",
+    "neighborhood": "Timberlane",
+    "cityAlt": "Covington 3 Rail Picture Frame Fence 2",
+    "neighborhoodAlt": "Timberlane 3 Rail Picture Frame Fence 2",
+    "lat": 47.3683861111111,
+    "lng": -122.070772222222,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Covington/Timberlane-3-Rail-Picture-Frame-Fence-2.webp"
+  },
+  {
+    "file": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-3.webp",
+    "originalFile": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-3.jpeg",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 598698,
+    "size": "584.7 KB",
+    "city": "Covington",
+    "neighborhood": "Timberlane",
+    "cityAlt": "Covington 3 Rail Picture Frame Fence 3",
+    "neighborhoodAlt": "Timberlane 3 Rail Picture Frame Fence 3",
+    "lat": 47.3683861111111,
+    "lng": -122.070772222222,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Covington/Timberlane-3-Rail-Picture-Frame-Fence-3.webp"
+  },
+  {
+    "file": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-4.webp",
+    "originalFile": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-4.jpeg",
+    "width": 1920,
+    "height": 2560,
+    "sizeBytes": 857178,
+    "size": "837.1 KB",
+    "city": "Covington",
+    "neighborhood": "Timberlane",
+    "cityAlt": "Covington 3 Rail Picture Frame Fence 4",
+    "neighborhoodAlt": "Timberlane 3 Rail Picture Frame Fence 4",
+    "lat": 47.3683861111111,
+    "lng": -122.070772222222,
+    "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Covington/Timberlane-3-Rail-Picture-Frame-Fence-4.webp"
   }
 ]

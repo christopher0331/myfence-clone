@@ -61,6 +61,7 @@ const serviceAreasByRegion = [
       { to: "/service-areas/bonney-lake/lower-tehaleh", label: "Lower Tehaleh" },
       { to: "/service-areas/bonney-lake/mountain-creek", label: "Mountain Creek" },
       { to: "/service-areas/orting", label: "Orting" },
+      { to: "/service-areas/puyallup", label: "Puyallup" },
       { to: "/service-areas/riverpoint", label: "Riverpoint" },
       { to: "/service-areas/sumner", label: "Sumner" },
       { to: "/service-areas/university-place", label: "University Place" },
