@@ -1,33 +1,84 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const POSTER =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?tr=w-1200,q-70";
 
 /**
- * Client component that defers mounting the YouTube iframe
- * This keeps the third-party JS off the main thread during initial load
+ * Facade pattern: show a static poster first, then mount the YouTube iframe
+ * only after the hero is visible and the browser is idle. Keeps YouTube's
+ * heavy JS off the critical path / main thread during Lighthouse.
  */
 export default function HeroVideo() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    // Defer mounting the iframe until after the first paint
-    const id = window.requestAnimationFrame(() => {
-      setShowVideo(true);
-    });
+    const el = containerRef.current;
+    if (!el) return;
 
-    return () => window.cancelAnimationFrame(id);
+    let idleId: number | undefined;
+    let timeoutId: number | undefined;
+    let cancelled = false;
+
+    const mountVideo = () => {
+      if (cancelled) return;
+      setShowVideo(true);
+    };
+
+    const scheduleMount = () => {
+      if ("requestIdleCallback" in window) {
+        idleId = window.requestIdleCallback(mountVideo, { timeout: 4000 });
+      } else {
+        timeoutId = window.setTimeout(mountVideo, 2500);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        scheduleMount();
+      },
+      { rootMargin: "100px" }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
   }, []);
 
-  if (!showVideo) return null;
-
   return (
-    <iframe
-      className="w-full h-full"
-      src="https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="MyFence.com installation montage"
-      loading="lazy"
-    />
+    <div ref={containerRef} className="relative h-full w-full bg-muted">
+      {/* Poster keeps layout + LCP stable before YouTube mounts */}
+      <img
+        src={POSTER}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+          showVideo ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      {showVideo && (
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src="https://www.youtube.com/embed/LlFKNi-35Mk?autoplay=1&mute=1&loop=1&playlist=LlFKNi-35Mk&controls=0&playsinline=1&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="MyFence.com installation montage"
+          loading="lazy"
+        />
+      )}
+    </div>
   );
 }

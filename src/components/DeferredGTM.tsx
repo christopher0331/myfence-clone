@@ -11,29 +11,30 @@ export default function DeferredGTM() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    // Wait for the first user interaction (scroll, click, or mouse move)
-    // or a long timeout (8 seconds) if no interaction happens.
     const loadGTM = () => {
-      if (shouldLoad) return;
       setShouldLoad(true);
       window.removeEventListener("scroll", loadGTM);
       window.removeEventListener("mousemove", loadGTM);
       window.removeEventListener("touchstart", loadGTM);
+      window.removeEventListener("keydown", loadGTM);
     };
 
-    const timer = setTimeout(loadGTM, 8000);
+    // Longer idle delay so GA doesn't compete with hydration / Lighthouse main-thread work.
+    const timer = setTimeout(loadGTM, 10000);
 
-    window.addEventListener("scroll", loadGTM, { passive: true });
-    window.addEventListener("mousemove", loadGTM, { passive: true });
-    window.addEventListener("touchstart", loadGTM, { passive: true });
+    window.addEventListener("scroll", loadGTM, { passive: true, once: true });
+    window.addEventListener("mousemove", loadGTM, { passive: true, once: true });
+    window.addEventListener("touchstart", loadGTM, { passive: true, once: true });
+    window.addEventListener("keydown", loadGTM, { once: true });
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener("scroll", loadGTM);
       window.removeEventListener("mousemove", loadGTM);
       window.removeEventListener("touchstart", loadGTM);
+      window.removeEventListener("keydown", loadGTM);
     };
-  }, [shouldLoad]);
+  }, []);
 
   if (!shouldLoad) return null;
 
@@ -41,9 +42,9 @@ export default function DeferredGTM() {
     <>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-DHHBT3S03P"
-        strategy="afterInteractive" // Use afterInteractive here because we handle the timing ourselves
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
