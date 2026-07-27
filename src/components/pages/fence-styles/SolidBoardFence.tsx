@@ -173,7 +173,11 @@ const SolidBoardFence = () => {
                   <h3 className="font-semibold">Stainless Steel Fasteners</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  All stainless steel fasteners prevent black streaking that occurs with traditional galvanized fasteners.
+                  All stainless steel fasteners prevent black streaking that occurs with traditional galvanized fasteners.{" "}
+                  <Link href="/fence-upgrades/exterior-screws" className="text-primary hover:underline">
+                    See why galvanized hardware stains cedar
+                  </Link>
+                  .
                 </p>
               </div>
               

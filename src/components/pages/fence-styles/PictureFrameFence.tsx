@@ -305,7 +305,11 @@ const PictureFrameFence = () => {
                   <h3 className="font-semibold">Stainless Steel Fasteners</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Standard stainless steel fasteners prevent corrosion and black streaking common with galvanized hardware.
+                  Standard stainless steel fasteners prevent corrosion and black streaking common with galvanized hardware.{" "}
+                  <Link href="/fence-upgrades/exterior-screws" className="text-primary hover:underline">
+                    See field photos of galvanized corrosion vs stainless hardware
+                  </Link>
+                  .
                 </p>
               </div>
               
