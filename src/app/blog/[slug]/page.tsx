@@ -124,8 +124,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       headline: title,
       description,
       image: ogImageUrl ? { "@type": "ImageObject", url: ogImageUrl } : undefined,
+      datePublished: fm.datePublished || undefined,
+      dateModified: fm.dateModified || fm.datePublished || undefined,
       author: { "@type": "Organization", name: SITE_CONFIG.fullName },
       publisher: { "@type": "Organization", name: SITE_CONFIG.fullName, logo: { "@type": "ImageObject", url: `${SITE_CONFIG.url}/myfence-logo.png` } },
+      mainEntityOfPage: { "@type": "WebPage", "@id": `https://myfence.com/blog/${slug}` },
     };
     const layout = fm.layout || "two-column";
     const showArticleSummary = fm.showArticleSummary === true || fm.showArticleSummary === "true";
