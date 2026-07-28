@@ -32,19 +32,19 @@ const META_DESCRIPTION =
 const BUCKLEY_ATTRACTIONS: LocalAttraction[] = [
   {
     name: "Foothills Trail",
-    url: "https://piercecountywa.gov/3018/Foothills-Trail",
+    url: "https://www.piercecountywa.gov/1384/Foothills-Trail",
     description:
       "A paved multi-use trail stretching nearly 18 miles through the White River valley, connecting Buckley to Orting and popular with cyclists, runners, and families.",
   },
   {
-    name: "White River County Park",
-    url: "https://piercecountywa.gov/facilities/Facility/Details/White-River-County-Park-89",
+    name: "Buckley Parks & Recreation",
+    url: "https://www.cityofbuckley.com/275/Parks-Recreation",
     description:
-      "A riverside park along the White River offering boat launches, fishing access, picnic areas, and sweeping views of the surrounding mountain foothills.",
+      "City parks and recreation spaces along the White River corridor — including local park acreage and Buckley's segment of the Foothills National Recreation Trail.",
   },
   {
     name: "Buckley Log Show",
-    url: "https://www.buckleylogshow.com/",
+    url: "https://www.cityofbuckley.com/220/Buckley-Log-Show",
     description:
       "A beloved annual tradition celebrating the region's timber heritage with logging competitions, chainsaw carving, and community events every summer.",
   },
@@ -55,10 +55,10 @@ const BUCKLEY_ATTRACTIONS: LocalAttraction[] = [
       "Old-growth forest preserved just east of Buckley on the Highway 410 corridor, with interpretive trails through ancient stands of Douglas fir and cedar.",
   },
   {
-    name: "Lake Tapps Regional Park",
-    url: "https://www.piercecountywa.gov/facilities/Facility/Details/Lake-Tapps-Regional-Park-82",
+    name: "North Lake Tapps Park",
+    url: "https://www.piercecountywa.gov/1326/North-Lake-Tapps-Park",
     description:
-      "A short drive west, this park provides boating, swimming, and shoreline recreation on one of Pierce County's largest freshwater lakes.",
+      "A short drive west, this Pierce County park provides boating, swimming, and shoreline recreation on one of Pierce County's largest freshwater lakes.",
   },
 ];
 
@@ -636,7 +636,7 @@ const BuckleyPage = () => {
               </a>
               , which draws students from Buckley, Enumclaw, and surrounding rural communities. The town's{" "}
               <a
-                href="https://www.buckleylogshow.com/"
+                href="https://www.cityofbuckley.com/220/Buckley-Log-Show"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
@@ -648,7 +648,7 @@ const BuckleyPage = () => {
             <p>
               Outdoor life in Buckley revolves around the{" "}
               <a
-                href="https://piercecountywa.gov/3018/Foothills-Trail"
+                href="https://www.piercecountywa.gov/1384/Foothills-Trail"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
@@ -657,12 +657,12 @@ const BuckleyPage = () => {
               </a>{" "}
               — a paved multi-use path connecting the community to Orting and the broader Pierce County trail network — as well as fishing and recreation along the{" "}
               <a
-                href="https://piercecountywa.gov/facilities/Facility/Details/White-River-County-Park-89"
+                href="https://www.cityofbuckley.com/275/Parks-Recreation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                White River
+                White River corridor
               </a>
               . Residents are also within easy reach of{" "}
               <a
