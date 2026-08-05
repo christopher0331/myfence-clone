@@ -34,8 +34,8 @@ const QuoteToolPage = () => {
   return (
     <main>
       <Seo
-        title="Free Seattle Fence Quote | Instant Online Estimate"
-        description="Get instant fence quotes for Seattle properties. Real-time pricing for cedar, horizontal, hogwire fences. Powered by Fence Genius. Call (253) 455-1885."
+        title="Free Fence Quote | Seattle Fence Builder | MyFence.com"
+        description="Get your free fence quote from a Seattle fence builder. Instant cedar, hogwire & hybrid pricing powered by Fence Genius. Call (253) 455-1885."
         canonical="https://myfence.com/quote"
         structuredData={[
           breadcrumbData,
@@ -83,9 +83,9 @@ const QuoteToolPage = () => {
         />
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
         <div className="container relative z-10">
-          <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Instant Online Quote</h1>
+          <h1 className="text-4xl font-bold tracking-tight mb-3 text-background">Free Quote from a Seattle Fence Builder</h1>
           <p className="max-w-2xl text-background/90">
-            Use our online tool to get real-time pricing for your fence project. After your quote, we&apos;ll use
+            Get real-time pricing from a Seattle fence builder in minutes. After your quote, we&apos;ll use
             {" "}
             <Link href="/fence-genius" className="underline hover:no-underline text-background">
               Fence Genius technology

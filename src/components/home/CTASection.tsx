@@ -7,7 +7,7 @@ export const CTASection = () => {
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Property?</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Get a free estimate from Seattle's most trusted fence contractor. Family-owned, engineer-built, and backed by cutting-edge technology.
+          Get a free estimate from Seattle's trusted fence builder. Family-owned, engineer-built, and backed by cutting-edge technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button size="lg" className="px-8 animate-fade-in" asChild>

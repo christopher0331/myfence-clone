@@ -189,15 +189,15 @@ const ContactPage = () => {
   return (
     <main>
       <Seo
-        title="Contact MyFence | Seattle Fence Contractor"
-        description="Request a quote or ask a question. Call (253) 455-1885 or message MyFence.com — Seattle's father & son fence pros."
+        title="Contact MyFence | Seattle Fence Builder"
+        description="Reach Seattle's fence builder for quotes and project questions. Father & son team with Fence Genius. Call (253) 455-1885 or send a message today."
         canonical="https://myfence.com/contact"
         structuredData={[breadcrumbData, orgLd]}
       />
       <section className="container py-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Us</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Seattle's Fence Builder</h1>
         <p className="text-muted-foreground max-w-2xl">
-          We're here to help. Call
+          Talk with a local Seattle fence builder about your project. Call
           <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">
             (253) 455-1885
           </a>

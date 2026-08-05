@@ -14,8 +14,9 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Seattle Fence Installation | Cedar, Hogwire & Hybrid Fences | MyFence.com",
-  description: "Father & son fence company in Seattle using Fence Genius technology. Wood styles: picture frame, 3-rail, horizontal lattice. Call (253) 455-1885.",
+  title: "Seattle Fence Builder | Cedar, Hogwire & Hybrid | MyFence.com",
+  description:
+    "Father & son Seattle fence builder using Fence Genius. Custom cedar, hogwire & hybrid fences. Free quotes. Call (253) 455-1885.",
   alternates: {
     canonical: SITE_CONFIG.url + "/",
   },
