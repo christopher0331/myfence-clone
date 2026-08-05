@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import FenceStainingPage from "@/components/pages/FenceStainingPage";
 
 export const metadata: Metadata = {
-  title: "Cedar Fence Staining Seattle | MyFence.com",
+  title: "Cedar Fence Staining Seattle: When & Why to Stain",
   description:
-    "Cedar fence staining guide from a Seattle fence builder. When and why to stain in the Pacific Northwest wet climate. Expert tips. Call (253) 455-1885.",
+    "Professional cedar fence staining guide for Seattle's wet climate. Protect your investment with expert tips. 30+ years experience. Call (253) 455-1885.",
   alternates: {
     canonical: "https://myfence.com/fence-staining",
   },

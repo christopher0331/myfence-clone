@@ -10,7 +10,7 @@ export const AboutUsSection = () => {
       <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
         <div className="bg-foreground text-background p-6 md:p-10">
           <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
-          <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Builder | Installation & Design</h1>
+          <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Contractor | Fence Installation & Design in Seattle</h1>
           <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
           <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
             MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a

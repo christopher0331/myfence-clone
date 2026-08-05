@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PreStainingPage from "@/components/pages/PreStainingPage";
 
 export const metadata: Metadata = {
-  title: "Pre-Stained Cedar Fences Seattle | MyFence.com",
+  title: "Pre-Stained Cedar Fences Seattle | Superior Protection",
   description:
-    "Professional pre-staining from Seattle's fence builder. Full cedar protection including hidden areas unreachable after install. Superior to on-site staining.",
+    "Discover our professional pre-staining process for cedar fences. Complete protection including hidden areas that can't be reached after installation. Superior to traditional on-site staining.",
   alternates: {
     canonical: "https://myfence.com/pre-staining-cedar-fence",
   },

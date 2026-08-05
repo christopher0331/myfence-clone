@@ -65,8 +65,8 @@ export const SITE_CONFIG = {
   /**
    * Business description
    */
-  tagline: "Father & Son Seattle Fence Builder",
-  description: "Seattle fence builder specializing in cedar, hogwire & hybrid fences using Fence Genius technology",
+  tagline: "Father & Son Fence Company in Seattle",
+  description: "Professional cedar fence installation in Seattle using Fence Genius technology",
 } as const;
 
 /**
