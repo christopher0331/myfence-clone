@@ -321,6 +321,16 @@ const CherokeeBayParkPage = () => {
                         </a>
                       </li>
                     </ul>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      Full process, lakeside notes, and closeout steps:{" "}
+                      <Link
+                        href="/service-areas/maple-valley/cherokee-bay-park/hoa"
+                        className="text-primary underline decoration-2 underline-offset-2"
+                      >
+                        Cherokee Bay HOA fence application guide
+                      </Link>
+                      .
+                    </p>
                   </Card>
                 </div>
               </div>

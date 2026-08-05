@@ -5,7 +5,11 @@ export interface NeighborhoodFaqItem {
   answer: string;
 }
 
-function buildBreadcrumbItems(canonical: string, neighborhoodName: string) {
+function buildBreadcrumbItems(
+  canonical: string,
+  neighborhoodName: string,
+  parent?: { name: string; url: string },
+) {
   const parts = canonical.replace("https://myfence.com/", "").split("/");
   const citySlug = parts[1] || "bonney-lake";
   const cityName = citySlug
@@ -13,7 +17,7 @@ function buildBreadcrumbItems(canonical: string, neighborhoodName: string) {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-  return [
+  const items: Array<Record<string, unknown>> = [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://myfence.com" },
     {
       "@type": "ListItem",
@@ -27,8 +31,31 @@ function buildBreadcrumbItems(canonical: string, neighborhoodName: string) {
       name: cityName,
       item: `https://myfence.com/service-areas/${citySlug}`,
     },
-    { "@type": "ListItem", position: 4, name: neighborhoodName, item: canonical },
   ];
+
+  if (parent) {
+    items.push({
+      "@type": "ListItem",
+      position: 4,
+      name: parent.name,
+      item: parent.url,
+    });
+    items.push({
+      "@type": "ListItem",
+      position: 5,
+      name: neighborhoodName,
+      item: canonical,
+    });
+  } else {
+    items.push({
+      "@type": "ListItem",
+      position: 4,
+      name: neighborhoodName,
+      item: canonical,
+    });
+  }
+
+  return items;
 }
 
 interface NeighborhoodSchemaConfig {
@@ -37,6 +64,8 @@ interface NeighborhoodSchemaConfig {
   pageTitle: string;
   description: string;
   faqItems?: NeighborhoodFaqItem[];
+  /** Optional parent crumb (e.g. neighborhood page above an HOA subpage). */
+  parent?: { name: string; url: string };
 }
 
 /**
@@ -49,6 +78,7 @@ export function buildNeighborhoodStructuredData({
   pageTitle,
   description,
   faqItems = [],
+  parent,
 }: NeighborhoodSchemaConfig): Record<string, unknown> {
   const businessId = `${canonical}#localbusiness`;
 
@@ -95,7 +125,7 @@ export function buildNeighborhoodStructuredData({
     {
       "@type": "BreadcrumbList",
       "@id": `${canonical}#breadcrumb`,
-      itemListElement: buildBreadcrumbItems(canonical, neighborhoodName),
+      itemListElement: buildBreadcrumbItems(canonical, neighborhoodName, parent),
     },
   ];
 
