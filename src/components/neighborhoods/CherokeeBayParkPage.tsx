@@ -15,6 +15,7 @@ import {
   TreePine,
   Waves,
   Clock,
+  FileDown,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -26,7 +27,7 @@ import FeaturedProject from "@/components/service-areas/FeaturedProject";
 const CANONICAL = "https://myfence.com/service-areas/maple-valley/cherokee-bay-park";
 const META_TITLE = "Cherokee Bay Park Fence Installation | Maple Valley | MyFence.com";
 const META_DESCRIPTION =
-  "Lakeside fence installation in Cherokee Bay Park, Maple Valley. View-preserving cedar, hogwire & hybrid fencing. Free quotes. (253) 455-1885.";
+  "Lakeside fence installation in Cherokee Bay Park, Maple Valley. Download the HOA fence application. View-preserving cedar & hogwire. Free quotes. (253) 455-1885.";
 
 const CherokeeBayParkPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
@@ -39,6 +40,11 @@ const CherokeeBayParkPage = () => {
         question: "Are there special permit requirements for fences near Lake Wilderness in Cherokee Bay Park?",
         answer:
           "Properties near Lake Wilderness may fall within King County's Shoreline Management area or critical-area buffers. These designations can restrict fence height, placement distance from the water, and materials. MyFence.com researches your specific parcel before quoting, determines which buffers or setbacks apply, and designs a compliant fence layout. We handle all King County permit paperwork so you don't have to navigate the process yourself.",
+      },
+      {
+        question: "Does Cherokee Bay require an HOA fence application?",
+        answer:
+          "Yes. Cherokee Bay HOA residents should complete the official fence application before installation. Download the Cherokee Bay Fence Application for HOA on this page. After the project is complete, mail the finished documents to service@agynbyte.com. MyFence.com helps prepare HOA-ready plans so approval and closeout go smoothly.",
       },
       {
         question: "What fence options preserve lake views in Cherokee Bay Park?",
@@ -287,6 +293,35 @@ const CherokeeBayParkPage = () => {
                   <p className="text-muted-foreground leading-relaxed">
                     Cherokee Bay Park properties closest to Lake Wilderness may fall within King County&apos;s Shoreline Management Program area or critical-area buffers. These designations can restrict how close a fence can be placed to the ordinary high water mark, limit fence height, and require specific materials. MyFence.com researches the environmental designations for your specific parcel before quoting, designs fence layouts that comply with all applicable regulations, and handles the permit process. We ensure your fence is both legal and practical.
                   </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Cherokee Bay HOA Fence Application</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Cherokee Bay HOA residents need to complete a fence application before installation. Download the official form below. After the project is finished, mail the completed application documents to{" "}
+                    <a
+                      href="mailto:service@agynbyte.com"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      service@agynbyte.com
+                    </a>
+                    . We help Cherokee Bay Park homeowners prepare HOA-ready plans so approval and closeout go smoothly.
+                  </p>
+                  <Card className="p-5 mt-5">
+                    <h4 className="font-semibold mb-3">Download Cherokee Bay HOA Form</h4>
+                    <ul className="space-y-3">
+                      <li>
+                        <a
+                          href="/docs/hoa/cherokee-bay-hoa-fence-application.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                        >
+                          <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                          Cherokee Bay Fence Application for HOA
+                        </a>
+                      </li>
+                    </ul>
+                  </Card>
                 </div>
               </div>
             </div>

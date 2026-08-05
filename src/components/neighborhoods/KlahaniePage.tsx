@@ -14,6 +14,7 @@ import {
   Phone,
   Home,
   TreePine,
+  FileDown,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -25,7 +26,7 @@ import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/stru
 const CANONICAL = "https://myfence.com/service-areas/sammamish/klahanie";
 const META_TITLE = "Klahanie Fence Installation | Sammamish | MyFence.com";
 const META_DESCRIPTION =
-  "Fence installation in Klahanie, Sammamish. HOA-compliant cedar, hogwire & hybrid fencing for master-planned community. Free quotes. (253) 455-1885.";
+  "Fence installation in Klahanie, Sammamish. Download HOA fence forms, ARC-ready cedar & hogwire fencing. Free quotes. (253) 455-1885.";
 
 const KlahaniePage = () => {
   const structuredData = buildNeighborhoodStructuredData({
@@ -37,7 +38,7 @@ const KlahaniePage = () => {
       {
         question: "What are the Klahanie HOA fence requirements in Sammamish?",
         answer:
-          "The Klahanie Association requires architectural review committee (ARC) approval for all fence installations. Submissions must include design drawings, material specifications, and color samples. Approved styles typically include cedar privacy, hogwire with cedar frame, and hybrid aluminum/cedar in natural tones. MyFence.com prepares complete ARC submission packages and has a track record of first-time approval in Klahanie.",
+          "The Klahanie Association requires architectural review committee (ARC) approval for all fence installations. Submissions must include design drawings, material specifications, and color samples. Download the official Klahanie HOA fence application, completion form, and design specifications on this page, then submit completed documents to architecturalcontrols@klahanie.com. Approved styles typically include cedar privacy, hogwire with cedar frame, and hybrid aluminum/cedar in natural tones. MyFence.com prepares complete ARC submission packages and has a track record of first-time approval in Klahanie.",
       },
       {
         question: "What fence styles work best for families in Klahanie?",
@@ -268,6 +269,54 @@ const KlahaniePage = () => {
                   <p className="text-muted-foreground leading-relaxed">
                     Every fence in Klahanie requires approval from the Architectural Review Committee before installation can begin. The ARC reviews design, materials, height, color, and placement. Incomplete or non-conforming submissions get rejected and add weeks to your timeline. We've navigated this process many times — our submission packages include elevation drawings, material specifications, stain/color samples, and a site plan showing fence placement relative to property lines and setbacks. First-time approval is the standard on every Klahanie project we handle.
                   </p>
+                  <p className="text-muted-foreground leading-relaxed mt-4">
+                    Residents typically need to fill out an HOA fence application before work starts and a completion form after the project is finished. Download the official Klahanie forms below, then submit completed documents to{" "}
+                    <a
+                      href="mailto:architecturalcontrols@klahanie.com"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      architecturalcontrols@klahanie.com
+                    </a>
+                    . MyFence.com can prepare your ARC package and walk you through both steps.
+                  </p>
+                  <Card className="p-5 mt-5">
+                    <h4 className="font-semibold mb-3">Download Klahanie HOA Fence Forms</h4>
+                    <ul className="space-y-3">
+                      <li>
+                        <a
+                          href="/docs/hoa/klahanie-hoa-fence-application.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                        >
+                          <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                          Klahanie HOA Fence Application (before install)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/docs/hoa/klahanie-hoa-fence-completion-form.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                        >
+                          <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                          Klahanie HOA Fence Completion Form (after install)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/docs/hoa/klahanie-fence-design-specifications.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                        >
+                          <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                          Klahanie Fence Design &amp; Specifications
+                        </a>
+                      </li>
+                    </ul>
+                  </Card>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Family Safety & Pet Containment</h3>
