@@ -269,6 +269,25 @@ const CherokeeBayParkPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold">
                 Cherokee Bay Park–Specific Fencing Considerations
               </h2>
+              <div className="grid md:grid-cols-1 gap-4">
+                <Link
+                  href="/service-areas/maple-valley/cherokee-bay-park/hoa-approved-fencing"
+                  className="block h-full"
+                >
+                  <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                    <h3 className="font-semibold text-primary text-lg mb-2">
+                      Cherokee Bay HOA Approved Fencing
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Download the HOA fence application, closeout steps to service@agynbyte.com, and
+                      lakeside plans built for association approval.
+                    </p>
+                    <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                      Learn More <span className="text-lg">→</span>
+                    </div>
+                  </Card>
+                </Link>
+              </div>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Lakeside Slopes & Grade Changes</h3>
