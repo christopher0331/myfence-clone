@@ -18,10 +18,11 @@ import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 const PARENT_URL = "https://myfence.com/service-areas/sammamish/klahanie";
-const CANONICAL = `${PARENT_URL}/hoa`;
-const META_TITLE = "Klahanie HOA Fence Forms & ARC Approval | Sammamish | MyFence.com";
+const CANONICAL = `${PARENT_URL}/hoa-approved-fencing`;
+const META_TITLE =
+  "Klahanie HOA Approved Fencing | Forms & ARC | Sammamish | MyFence.com";
 const META_DESCRIPTION =
-  "Download Klahanie HOA fence application, completion form, and design specs. ARC submission help for Sammamish homeowners. Free quotes. (253) 455-1885.";
+  "Klahanie HOA approved fencing in Sammamish. Download fence application, completion form, and design specs. ARC-ready installs. Free quotes. (253) 455-1885.";
 
 const FORMS = [
   {
@@ -66,11 +67,16 @@ const STEPS = [
 const KlahanieHoaPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Klahanie HOA Fence Forms",
-    pageTitle: "Klahanie HOA Fence Forms & ARC Approval",
+    neighborhoodName: "Klahanie HOA Approved Fencing",
+    pageTitle: "Klahanie HOA Approved Fencing",
     description: META_DESCRIPTION,
     parent: { name: "Klahanie, Sammamish", url: PARENT_URL },
     faqItems: [
+      {
+        question: "What is Klahanie HOA approved fencing?",
+        answer:
+          "Klahanie HOA approved fencing means your design, materials, height, color, and placement pass the Architectural Review Committee before install. Cedar privacy, hogwire with a cedar frame, and hybrid aluminum/cedar in natural tones are commonly approved. Download the Design & Specifications PDF on this page and submit a complete package to architecturalcontrols@klahanie.com.",
+      },
       {
         question: "What forms does the Klahanie HOA require for a new fence?",
         answer:
@@ -85,11 +91,6 @@ const KlahanieHoaPage = () => {
         question: "Do I need ARC approval before MyFence installs in Klahanie?",
         answer:
           "Yes. The Klahanie Association requires Architectural Review Committee approval before fence installation begins. We prepare the submission package and schedule install after approval so you avoid rework.",
-      },
-      {
-        question: "What fence styles usually pass Klahanie ARC review?",
-        answer:
-          "Cedar privacy, hogwire with a cedar frame, and hybrid aluminum/cedar in natural tones are the most commonly approved looks. Review the Design & Specifications PDF and we will match materials and colors to what the ARC expects.",
       },
     ],
   });
@@ -121,12 +122,12 @@ const KlahanieHoaPage = () => {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Klahanie HOA Fence Forms &amp; ARC Approval
+                Klahanie HOA Approved Fencing
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl">
-                Everything Klahanie homeowners need to get fence projects approved: official HOA
-                downloads, ARC submission steps, and a fence builder who prepares packages that pass
-                the first time.
+                Official forms, ARC steps, and fence designs that pass Klahanie Association review.
+                Download the HOA paperwork, then get an install built to the approved plan—not a
+                generic fence that fails after the fact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="#hoa-forms">
@@ -167,7 +168,9 @@ const KlahanieHoaPage = () => {
         <section id="hoa-forms" className="py-16 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Download Klahanie HOA fence forms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Download forms for Klahanie HOA approved fencing
+              </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 These are the documents residents generally need before and after a fence project.
                 After you complete them, email the packet to{" "}
@@ -231,12 +234,13 @@ const KlahanieHoaPage = () => {
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">What the Klahanie ARC reviews</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">What makes fencing HOA-approved in Klahanie</h2>
               <p className="text-muted-foreground leading-relaxed">
                 The Architectural Review Committee looks at design, materials, height, color, and
-                placement. Designs that ignore the published specifications—or leave out drawings and
-                samples—get bounced. MyFence.com builds Klahanie fences every season and prepares
-                packages that already match what the association expects.
+                placement. HOA approved fencing in Klahanie matches the published Design &amp;
+                Specifications—and arrives with drawings and samples, not a vague sketch. MyFence.com
+                builds Klahanie fences every season and prepares packages that already match what the
+                association expects.
               </p>
               <ul className="space-y-3">
                 {[
@@ -301,9 +305,13 @@ const KlahanieHoaPage = () => {
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Klahanie HOA fence FAQs</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Klahanie HOA approved fencing FAQs</h2>
               <div className="space-y-6">
                 {[
+                  {
+                    q: "What is Klahanie HOA approved fencing?",
+                    a: "It means your design, materials, height, color, and placement pass ARC review before install. Cedar privacy, hogwire with cedar frame, and hybrid aluminum/cedar in natural tones are commonly approved.",
+                  },
                   {
                     q: "What forms does the Klahanie HOA require for a new fence?",
                     a: "Most homeowners need the Klahanie HOA Fence Application before work starts and the Fence Completion Form after installation. Use the Design & Specifications PDF to confirm approved styles, heights, and materials.",
@@ -315,10 +323,6 @@ const KlahanieHoaPage = () => {
                   {
                     q: "Do I need ARC approval before installation?",
                     a: "Yes. Do not start construction until the Architectural Review Committee approves your package. We schedule install after approval.",
-                  },
-                  {
-                    q: "What styles usually pass review?",
-                    a: "Cedar privacy, hogwire with cedar frame, and hybrid aluminum/cedar in natural tones are the most common approvals in Klahanie.",
                   },
                 ].map((item) => (
                   <div key={item.q}>
@@ -335,7 +339,7 @@ const KlahanieHoaPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready for a Klahanie-approved fence?
+                Ready for Klahanie HOA approved fencing?
               </h2>
               <p className="text-muted-foreground mb-8">
                 Download the forms above, or let us handle the ARC package and build. Free on-site

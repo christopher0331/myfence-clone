@@ -319,10 +319,10 @@ const KlahaniePage = () => {
                     <p className="text-sm text-muted-foreground mt-4">
                       Want the full ARC walkthrough? See our{" "}
                       <Link
-                        href="/service-areas/sammamish/klahanie/hoa"
+                        href="/service-areas/sammamish/klahanie/hoa-approved-fencing"
                         className="text-primary underline decoration-2 underline-offset-2"
                       >
-                        Klahanie HOA fence forms &amp; approval guide
+                        Klahanie HOA approved fencing guide
                       </Link>
                       .
                     </p>

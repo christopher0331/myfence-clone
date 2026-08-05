@@ -324,10 +324,10 @@ const CherokeeBayParkPage = () => {
                     <p className="text-sm text-muted-foreground mt-4">
                       Full process, lakeside notes, and closeout steps:{" "}
                       <Link
-                        href="/service-areas/maple-valley/cherokee-bay-park/hoa"
+                        href="/service-areas/maple-valley/cherokee-bay-park/hoa-approved-fencing"
                         className="text-primary underline decoration-2 underline-offset-2"
                       >
-                        Cherokee Bay HOA fence application guide
+                        Cherokee Bay HOA approved fencing guide
                       </Link>
                       .
                     </p>

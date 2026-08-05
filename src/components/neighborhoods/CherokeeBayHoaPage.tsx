@@ -19,10 +19,11 @@ import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 const PARENT_URL = "https://myfence.com/service-areas/maple-valley/cherokee-bay-park";
-const CANONICAL = `${PARENT_URL}/hoa`;
-const META_TITLE = "Cherokee Bay HOA Fence Application | Maple Valley | MyFence.com";
+const CANONICAL = `${PARENT_URL}/hoa-approved-fencing`;
+const META_TITLE =
+  "Cherokee Bay HOA Approved Fencing | Application | Maple Valley | MyFence.com";
 const META_DESCRIPTION =
-  "Download the Cherokee Bay HOA fence application. Submit completed docs to service@agynbyte.com. Lakeside Maple Valley fence help. Free quotes. (253) 455-1885.";
+  "Cherokee Bay HOA approved fencing in Maple Valley. Download the HOA fence application and get lakeside ARC-ready installs. Free quotes. (253) 455-1885.";
 
 const STEPS = [
   {
@@ -46,11 +47,16 @@ const STEPS = [
 const CherokeeBayHoaPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Cherokee Bay HOA Fence Application",
-    pageTitle: "Cherokee Bay HOA Fence Application",
+    neighborhoodName: "Cherokee Bay HOA Approved Fencing",
+    pageTitle: "Cherokee Bay HOA Approved Fencing",
     description: META_DESCRIPTION,
     parent: { name: "Cherokee Bay Park, Maple Valley", url: PARENT_URL },
     faqItems: [
+      {
+        question: "What is Cherokee Bay HOA approved fencing?",
+        answer:
+          "Cherokee Bay HOA approved fencing means your project follows the association’s fence application and closeout process, with a design that fits neighborhood expectations and any lakeside constraints. Download the official application on this page and mail completed documents to service@agynbyte.com after install.",
+      },
       {
         question: "Where can I download the Cherokee Bay HOA fence application?",
         answer:
@@ -65,11 +71,6 @@ const CherokeeBayHoaPage = () => {
         question: "Do Cherokee Bay Park fences also need King County shoreline review?",
         answer:
           "Properties closest to Lake Wilderness may fall within shoreline or critical-area buffers that limit height, placement, or materials. MyFence.com researches your parcel before quoting and designs a plan that can satisfy both HOA paperwork and county rules.",
-      },
-      {
-        question: "What fence styles work for Cherokee Bay HOA and lake views?",
-        answer:
-          "Solid cedar privacy along neighbors and the street, with hogwire or hybrid view sections toward the lake, is a common Cherokee Bay Park solution. We tailor the mix to your lot and the HOA application requirements.",
       },
     ],
   });
@@ -101,11 +102,11 @@ const CherokeeBayHoaPage = () => {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Cherokee Bay HOA Fence Application
+                Cherokee Bay HOA Approved Fencing
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl">
                 Download the official HOA fence application, learn how closeout works after install,
-                and get a lakeside fence plan that clears association paperwork without fighting Lake
+                and get lakeside fencing designed to clear association paperwork without fighting Lake
                 Wilderness views.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -148,7 +149,7 @@ const CherokeeBayHoaPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Download the Cherokee Bay HOA fence application
+                Download the form for Cherokee Bay HOA approved fencing
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Start with the association&apos;s fence application before install. When the project
@@ -290,9 +291,15 @@ const CherokeeBayHoaPage = () => {
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Cherokee Bay HOA fence FAQs</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                Cherokee Bay HOA approved fencing FAQs
+              </h2>
               <div className="space-y-6">
                 {[
+                  {
+                    q: "What is Cherokee Bay HOA approved fencing?",
+                    a: "It means your project follows the association’s fence application and closeout process, with a design that fits neighborhood expectations and any lakeside constraints on your lot.",
+                  },
                   {
                     q: "Where can I download the Cherokee Bay HOA fence application?",
                     a: "Use the Download PDF button on this page for the official Cherokee Bay Fence Application for HOA.",
@@ -304,10 +311,6 @@ const CherokeeBayHoaPage = () => {
                   {
                     q: "Do I also need King County shoreline review?",
                     a: "Maybe—lots near Lake Wilderness can fall in shoreline or critical-area buffers. We check your parcel before quoting.",
-                  },
-                  {
-                    q: "What styles work with lake views?",
-                    a: "Privacy cedar along neighbors plus hogwire or hybrid view sections toward the lake is a common Cherokee Bay Park approach.",
                   },
                 ].map((item) => (
                   <div key={item.q}>
@@ -324,7 +327,7 @@ const CherokeeBayHoaPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready for a Cherokee Bay–approved fence?
+                Ready for Cherokee Bay HOA approved fencing?
               </h2>
               <p className="text-muted-foreground mb-8">
                 Download the application, or let us design an HOA-ready lakeside fence. Free on-site
