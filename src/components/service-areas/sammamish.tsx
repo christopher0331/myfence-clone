@@ -239,7 +239,9 @@ const Sammamish = () => {
         },
         {
           name: "Sahalee",
-          description: "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards"
+          description:
+            "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards. Download Sahalee HOA fence forms →",
+          link: "/service-areas/sammamish/sahalee/hoa-approved-fencing",
         },
         {
           name: "Trossachs",
