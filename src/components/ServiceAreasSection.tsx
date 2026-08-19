@@ -67,11 +67,22 @@ const serviceAreasByRegion = [
   },
 ];
 
-const ServiceAreasSection = () => {
+interface ServiceAreasSectionProps {
+  /**
+   * Render as the standalone /service-areas page rather than a homepage section:
+   * promotes the heading to the page h1 and clears the fixed header.
+   */
+  isPage?: boolean;
+}
+
+const ServiceAreasSection = ({ isPage = false }: ServiceAreasSectionProps) => {
+  const Heading = isPage ? "h1" : "h2";
   return (
-    <section className="container py-12 md:py-20">
+    <section
+      className={`container ${isPage ? "pt-24 md:pt-28 pb-12 md:pb-20" : "py-12 md:py-20"}`}
+    >
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Service Areas</h2>
+        <Heading className="text-3xl md:text-4xl font-bold mb-4">Service Areas</Heading>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Professional fence installation across King County, Pierce County, and East King County
         </p>
