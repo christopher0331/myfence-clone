@@ -79,7 +79,7 @@ export async function POST(req: Request) {
   let firstName = rawFirstName;
   let lastName = rawLastName;
   if (!firstName && !lastName) {
-    const [first, ...rest] = toStringOrEmpty(body.fullName ?? body.name)
+    const [first, ...rest] = toStringOrEmpty(body.fullName ?? body.full_name ?? body.name)
       .trim()
       .split(/\s+/)
       .filter(Boolean);
