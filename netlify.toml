@@ -552,18 +552,23 @@
   status = 301
 
 [[redirects]]
+  from = "/auburn-best-fence-company/"
+  to = "/service-areas/auburn"
+  status = 301
+
+[[redirects]]
   from = "/auburn-fence-company-near-me/"
-  to = "/service-areas/renton"
+  to = "/service-areas/auburn"
   status = 301
 
 [[redirects]]
   from = "/auburn-fence-company/"
-  to = "/service-areas/renton"
+  to = "/service-areas/auburn"
   status = 301
 
 [[redirects]]
   from = "/auburn-wood-fence-installation/"
-  to = "/service-areas/renton"
+  to = "/service-areas/auburn"
   status = 301
 
 [[redirects]]

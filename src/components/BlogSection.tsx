@@ -8,18 +8,20 @@ import type { BlogPostListItem } from "@/lib/blog";
 interface BlogSectionProps {
   articles: BlogPostListItem[];
   limit?: number;
+  isPage?: boolean;
 }
 
-const BlogSection = ({ articles, limit }: BlogSectionProps) => {
+const BlogSection = ({ articles, limit, isPage }: BlogSectionProps) => {
   const featuredArticles = limit ? articles.slice(0, limit) : articles;
+  const HeadingTag = (!limit || isPage) ? "h1" : "h2";
 
   return (
     <section className="bg-background pt-8 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <HeadingTag className="text-3xl md:text-4xl font-bold mb-4">
             Expert Fence Insights & Advice
-          </h2>
+          </HeadingTag>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Get professional advice on fence installation, maintenance, and costs from Seattle's trusted fencing experts
           </p>
