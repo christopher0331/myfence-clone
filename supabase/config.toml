@@ -12,5 +12,14 @@ verify_jwt = false
 [functions.send-referral-email]
 verify_jwt = false
 
+# Called from the browser on public pages. JWT verification cannot be used here:
+# the project's legacy JWT signing key was retired, so the gateway rejects every
+# key type with UNAUTHORIZED_LEGACY_JWT before the function runs.
+[functions.send-provider-referral]
+verify_jwt = false
+
+[functions.fetch-google-business]
+verify_jwt = false
+
 [functions.track-event]
 verify_jwt = false

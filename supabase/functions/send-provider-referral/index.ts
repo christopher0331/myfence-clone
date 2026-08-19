@@ -28,6 +28,120 @@ interface ReferralRequest {
   services: ServiceSelection[]
 }
 
+/**
+ * This function runs without JWT verification, so anyone can post to it.
+ *
+ * Provider details are therefore resolved here by service id instead of being
+ * taken from the request body. Trusting the body would let a caller send
+ * MyFence-branded email to any address, and put arbitrary text and phone numbers
+ * into the Twilio messages, turning this into a spam relay billed to us.
+ *
+ * Keep in sync with the provider catalog in ServiceProviderRecommendations.tsx.
+ */
+const PROVIDER_CATALOG: Record<string, { category: string; providers: Provider[] }> = {
+  "landscaping": {
+    category: "Landscaping & Hardscape",
+    providers: [{
+      name: "Cedar County Landscaping",
+      website: "https://www.cedarcountylandscaping.com/",
+      email: "office@cedarcountylandscaping.com",
+      phone: "(425) 358-2779",
+    }],
+  },
+  "minor-repairs": {
+    category: "Handyman/Repairs",
+    providers: [{
+      name: "Mike's NW Handyman Services",
+      website: "https://www.mikesnwhandymanservicesllc.com/home/work-request",
+      email: "Mpierce@MNWHS.net",
+      phone: "(253) 259-9679",
+    }],
+  },
+  "exterior-cleaning": {
+    category: "Exterior Cleaning & Pressure Washing",
+    providers: [{
+      name: "NW Pro Wash LLC",
+      website: "https://www.nwprowashllc.com/",
+      email: "office@nwprowashllc.com",
+      phone: "(253) 290-0057",
+    }],
+  },
+  "painting": {
+    category: "Painting (Interior & Exterior)",
+    providers: [{
+      name: "Black Pearl Painters",
+      website: "https://blackpearlpainters.com/",
+      email: "Justin.Schulke@blackpearlpainters.com",
+      phone: "(253) 203-5335",
+    }],
+  },
+  "roofing": {
+    category: "Roof Replacement",
+    providers: [
+      {
+        name: "Trust Worthy Roofing",
+        website: "https://trustworthy-roofing.com/",
+        email: "trustworthyroofing2@gmail.com",
+        phone: "(253) 455-4347",
+      },
+      {
+        name: "Banner Projects",
+        website: "https://sites.google.com/view/bannerprojectsllc",
+        email: "",
+        phone: "",
+      },
+    ],
+  },
+  "remodeling": {
+    category: "Home Remodeling",
+    providers: [{
+      name: "Eikon Homes — Matt Cahill",
+      website: "https://www.eikonhomes.com/",
+      email: "office@eikonhomes.com",
+      phone: "+1 (253) 300-6644",
+    }],
+  },
+  "real-estate": {
+    category: "Real Estate Agent",
+    providers: [{
+      name: "André Bohall — Timber Real Estate",
+      website: "https://www.timberrealestate.com/agents/2020221/Andre%27+Bohall",
+      email: "andre@onsiteregroup.com",
+      phone: "",
+    }],
+  },
+}
+
+/** First name for SMS greetings, stripped of anything that could carry a spam payload. */
+function greetingName(fullName: string): string {
+  const first = (fullName || "").trim().split(/\s+/)[0] ?? ""
+  return first.replace(/[^\p{L}\p{M}'-]/gu, "").slice(0, 30) || "there"
+}
+
+/** Map requested service ids onto the trusted catalog, ignoring any body-supplied provider details. */
+function resolveServices(requested: unknown): ServiceSelection[] {
+  if (!Array.isArray(requested)) return []
+
+  const seen = new Set<string>()
+  const resolved: ServiceSelection[] = []
+
+  for (const entry of requested) {
+    const id = typeof entry?.id === "string" ? entry.id.trim() : ""
+    if (!id || seen.has(id)) continue
+
+    const known = PROVIDER_CATALOG[id]
+    if (!known) {
+      console.warn(`Unknown service id "${id}" — ignoring`)
+      continue
+    }
+
+    seen.add(id)
+    resolved.push({ id, category: known.category, providers: known.providers })
+  }
+
+  return resolved
+}
+
 /* ------------------------------------------------------------------ */
 /*  Twilio SMS helper                                                  */
 /* ------------------------------------------------------------------ */
@@ -282,9 +396,11 @@ serve(async (req) => {
     const body: ReferralRequest = await req.json()
     console.log("Referral request:", JSON.stringify(body))
 
-    const { customerName, customerEmail, customerPhone, customerAddress, contactPreference, services } = body
+    const { customerName, customerEmail, customerPhone, customerAddress, contactPreference } = body
 
-    if (!customerName || !customerEmail || !services?.length) {
+    const services = resolveServices(body.services)
+
+    if (!customerName || !customerEmail || !services.length) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -330,7 +446,7 @@ serve(async (req) => {
         ).join("\n")
         await sendSms(
           customerPhone,
-          `Hi ${customerName.split(" ")[0]}! Here are your requested providers from MyFence.com:\n\n${providerSummary}\n\nMention MyFence when you reach out!`
+          `Hi ${greetingName(customerName)}! Here are your requested providers from MyFence.com:\n\n${providerSummary}\n\nMention MyFence when you reach out!`
         )
       }
     } else {
@@ -364,7 +480,7 @@ serve(async (req) => {
       if (customerPhone) {
         await sendSms(
           customerPhone,
-          `Hi ${customerName.split(" ")[0]}! MyFence.com here — our partners for ${categories} will be reaching out to you shortly. Questions? Call us at (253) 455-1885.`
+          `Hi ${greetingName(customerName)}! MyFence.com here — our partners for ${categories} will be reaching out to you shortly. Questions? Call us at (253) 455-1885.`
         )
       }
     }
