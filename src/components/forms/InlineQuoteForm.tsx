@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
@@ -95,18 +96,33 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         ? `[Source: ${context}]\n${formData.projectDescription}`
         : formData.projectDescription;
 
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: first || "",
+        lastName: rest.join(" "),
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Quote Request",
+        message,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: sku,
+        originPage: attribution.originPage,
+      });
+
+      let emailError: string | null = null;
       try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        const legacy = await supabase.functions.invoke("send-contact-form", {
           body: {
             firstName: first || "",
             lastName: rest.join(" "),
             email: formData.email,
             phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Quote Request",
-            message,
+            address: formData.address,
+            description: `${crmFailureNotice(crm)}[Quote Request]\n${message}`,
             textConsent: formData.textConsent,
             sourcePage,
             site: attribution.site,
@@ -115,29 +131,14 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             originPage: attribution.originPage,
           },
         });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
-
-      // Always send the legacy quote email notification too (info@myfence.com).
-      let emailError: string | null = null;
-      try {
-        const legacy = await supabase.functions.invoke("send-quote-request", {
-          body: JSON.stringify({
-            ...formData,
-            projectDescription: message,
-            sourcePage,
-          }),
-        });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send quote request");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send quote request");
       }
 
       trackFormSubmit(sku, { formType: "quote", formId: sku });
