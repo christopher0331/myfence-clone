@@ -31,6 +31,7 @@ Exceptions already in use:
 
 - Issaquah Highlands: `/service-areas/issaquah-highlands/hoa-approved-fencing`
 - Tehaleh (shared Upper/Lower): `/service-areas/bonney-lake/tehaleh/hoa-approved-fencing`
+- Ten Trails (no dedicated neighborhood page yet): `/service-areas/black-diamond/ten-trails/hoa-approved-fencing`
 
 ## Do not
 

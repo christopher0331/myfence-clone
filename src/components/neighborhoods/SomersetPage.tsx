@@ -4,7 +4,7 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Mountain } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Mountain, FileDown } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -180,6 +180,24 @@ const SomersetPage = ({
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">Somerset-Specific Fencing Considerations</h2>
 
+              <Link
+                href="/service-areas/bellevue/somerset/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Somerset HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Download our CRC submission checklist, learn the Covenants Review Committee
+                    process, and get view-sensitive hillside installs built for Somerset lots.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Steep Terrain Engineering</h3>
@@ -207,6 +225,28 @@ const SomersetPage = ({
                   <p className="text-muted-foreground leading-relaxed">
                     The Somerset Community Association maintains architectural review standards for all exterior modifications. We prepare comprehensive submission packages with elevation drawings, material specifications, and color samples. Our familiarity with Somerset's approved fence styles — including cedar privacy, hogwire, and the hybrid aluminum/cedar system — ensures your application moves through review efficiently.
                   </p>
+                  <Card className="p-5 mt-5">
+                    <h4 className="font-semibold mb-3">Download Somerset CRC Fence Checklist</h4>
+                    <a
+                      href="/docs/hoa/somerset-hoa-fence-submission-checklist.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                    >
+                      <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                      Somerset CRC Fence Submission Checklist
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      File official Form B at somerset98006.org, or see our{" "}
+                      <Link
+                        href="/service-areas/bellevue/somerset/hoa-approved-fencing"
+                        className="text-primary underline decoration-2 underline-offset-2"
+                      >
+                        Somerset HOA approved fencing guide
+                      </Link>
+                      .
+                    </p>
+                  </Card>
                 </div>
               </div>
             </div>

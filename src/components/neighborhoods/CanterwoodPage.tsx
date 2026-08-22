@@ -4,7 +4,7 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, FileDown } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -113,6 +113,53 @@ const CanterwoodPage = ({
               <p className="text-muted-foreground leading-relaxed">
                 MyFence.com builds premium cedar and hybrid metal fences designed specifically for Canterwood homeowners. Using Fence Genius precision design technology and Post-on-Pipe steel foundations, we ensure your fence stands straight against Pacific Northwest coastal weather while maintaining golf course sightlines and HOA compliance.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="container">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold">Canterwood HOA fence review</h2>
+              <Link
+                href="/service-areas/gig-harbor/canterwood/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Canterwood HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Download our ACC submission checklist, learn the gated-community review process,
+                    and get cedar or hybrid installs built for golf-course lots.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
+              <Card className="p-5">
+                <h4 className="font-semibold mb-3">Download Canterwood HOA Fence Checklist</h4>
+                <a
+                  href="/docs/hoa/canterwood-hoa-fence-submission-checklist.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                >
+                  <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                  Canterwood HOA Fence Submission Checklist
+                </a>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Want the full ACC walkthrough? See our{" "}
+                  <Link
+                    href="/service-areas/gig-harbor/canterwood/hoa-approved-fencing"
+                    className="text-primary underline decoration-2 underline-offset-2"
+                  >
+                    Canterwood HOA approved fencing guide
+                  </Link>
+                  .
+                </p>
+              </Card>
             </div>
           </div>
         </section>
