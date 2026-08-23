@@ -17,13 +17,15 @@
  *
  * The same events are also sent to PostHog (when the deferred snippet is ready, otherwise
  * queued) so product-analytics funnels can measure HOA / neighborhood / city conversion.
+ * PostHog is one Reactiv Labs organization with one project per client; see `posthogConfig.ts`.
  */
+
+import { posthogSuperProperties, SITE_ID } from "@/lib/posthogConfig";
+
+export { SITE_ID };
 
 const SUPABASE_URL = "https://tlsayvwmcqnmdoairbeb.supabase.co";
 const TRACK_ENDPOINT = `${SUPABASE_URL}/functions/v1/track-event`;
-
-/** Logical site identifier. Override per-deployment via NEXT_PUBLIC_SITE_ID. */
-export const SITE_ID = String(process.env.NEXT_PUBLIC_SITE_ID ?? "myfence").trim() || "myfence";
 
 const SESSION_KEY = "mf_session_id";
 const ORIGIN_KEY = "mf_origin";
@@ -61,15 +63,6 @@ const GEO_FUNNEL_CATEGORIES: ReadonlySet<PageCategory> = new Set<PageCategory>([
   "neighborhood",
   "service_area_city",
 ]);
-
-type PosthogQueueItem = { event: string; properties?: Record<string, unknown> };
-
-declare global {
-  interface Window {
-    __mfPosthogQueue?: PosthogQueueItem[];
-    posthog?: { capture: (event: string, properties?: Record<string, unknown>) => void };
-  }
-}
 
 interface TrackPayload {
   event_type: "page_view" | "cta_click" | "form_submit";
@@ -144,10 +137,10 @@ export function funnelPageType(category: PageCategory): FunnelPageType {
   return "other";
 }
 
-function getPosthogQueue(): PosthogQueueItem[] {
+function getPosthogQueue(): NonNullable<Window["__phEventQueue"]> {
   if (!isBrowser()) return [];
-  if (!window.__mfPosthogQueue) window.__mfPosthogQueue = [];
-  return window.__mfPosthogQueue;
+  if (!window.__phEventQueue) window.__phEventQueue = [];
+  return window.__phEventQueue;
 }
 
 function capturePosthog(event: string, properties?: Record<string, unknown>): void {
@@ -168,6 +161,7 @@ const leadIntentOnce = new Set<string>();
 function geoProperties(path: string, extra?: Record<string, unknown>): Record<string, unknown> {
   const category = classifyPath(path);
   return {
+    ...posthogSuperProperties(),
     page_type: funnelPageType(category),
     page_category: category,
     page_path: path,

@@ -2,19 +2,27 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
-
-const POSTHOG_KEY = "phc_ASuETBWQm9J6g2tw7vc9YBZZFigxqFr32oiRhWuFgRdx";
-const POSTHOG_HOST = "https://us.i.posthog.com";
+import {
+  POSTHOG_HOST,
+  POSTHOG_KEY,
+  posthogSuperProperties,
+} from "@/lib/posthogConfig";
 
 /**
  * Defer PostHog (session replay + heatmaps) until interaction or a long idle timeout.
  * Same load strategy as the old Smartlook snippet so the recorder does not compete
  * with first-paint / hydration.
+ *
+ * Loads only when this deployment has a project key. Other client sites copy this
+ * component and set NEXT_PUBLIC_POSTHOG_KEY + NEXT_PUBLIC_SITE_ID — never the
+ * MyFence token.
  */
 export default function DeferredPostHog() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
+    if (!POSTHOG_KEY) return;
+
     const load = () => {
       setShouldLoad(true);
       window.removeEventListener("scroll", load);
@@ -39,7 +47,9 @@ export default function DeferredPostHog() {
     };
   }, []);
 
-  if (!shouldLoad) return null;
+  if (!POSTHOG_KEY || !shouldLoad) return null;
+
+  const superProps = posthogSuperProperties();
 
   return (
     <Script id="posthog-init" strategy="lazyOnload">
@@ -52,11 +62,16 @@ export default function DeferredPostHog() {
           person_profiles: "identified_only",
           session_recording: { maskAllInputs: true },
           loaded: function (ph) {
-            var q = window.__mfPosthogQueue;
-            if (!q || !q.length) return;
+            ph.register(${JSON.stringify(superProps)});
+            var queues = [window.__phEventQueue, window.__mfPosthogQueue];
+            window.__phEventQueue = [];
             window.__mfPosthogQueue = [];
-            for (var i = 0; i < q.length; i++) {
-              ph.capture(q[i].event, q[i].properties);
+            for (var q = 0; q < queues.length; q++) {
+              var list = queues[q];
+              if (!list || !list.length) continue;
+              for (var i = 0; i < list.length; i++) {
+                ph.capture(list[i].event, list[i].properties);
+              }
             }
           }
         });
