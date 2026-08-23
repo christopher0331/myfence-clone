@@ -189,8 +189,9 @@ const SomersetPage = ({
                     Somerset HOA Approved Fencing
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Download our CRC submission checklist, learn the Covenants Review Committee
-                    process, and get view-sensitive hillside installs built for Somerset lots.
+                    Download our CRC submission checklist, or open official Form B and Fence
+                    Guidelines from Somerset Community Association. Get view-sensitive hillside
+                    installs built for Somerset lots.
                   </p>
                   <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
                     Learn More <span className="text-lg">→</span>
@@ -237,7 +238,16 @@ const SomersetPage = ({
                       Somerset CRC Fence Submission Checklist
                     </a>
                     <p className="text-sm text-muted-foreground mt-4">
-                      File official Form B at somerset98006.org, or see our{" "}
+                      Official CRC Form B and Fence Guidelines:{" "}
+                      <a
+                        href="https://www.somerset98006.org/procedures-and-forms.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline decoration-2 underline-offset-2"
+                      >
+                        somerset98006.org/procedures-and-forms
+                      </a>
+                      . Or see our{" "}
                       <Link
                         href="/service-areas/bellevue/somerset/hoa-approved-fencing"
                         className="text-primary underline decoration-2 underline-offset-2"

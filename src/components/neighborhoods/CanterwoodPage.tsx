@@ -130,8 +130,8 @@ const CanterwoodPage = ({
                     Canterwood HOA Approved Fencing
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Download our ACC submission checklist, learn the gated-community review process,
-                    and get cedar or hybrid installs built for golf-course lots.
+                    Download official CC&amp;Rs and bylaws, request the ACC packet from HOA
+                    Community Solutions, and get cedar or hybrid installs built for golf-course lots.
                   </p>
                   <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
                     Learn More <span className="text-lg">→</span>
@@ -150,7 +150,23 @@ const CanterwoodPage = ({
                   Canterwood HOA Fence Submission Checklist
                 </a>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Want the full ACC walkthrough? See our{" "}
+                  Request the current ACC application from{" "}
+                  <a
+                    href="mailto:CWHOA@hoacommunitysolutions.com"
+                    className="text-primary underline decoration-2 underline-offset-2"
+                  >
+                    CWHOA@hoacommunitysolutions.com
+                  </a>{" "}
+                  or (253) 985-3812. CC&amp;Rs:{" "}
+                  <a
+                    href="https://www.canterwood.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline decoration-2 underline-offset-2"
+                  >
+                    canterwood.org
+                  </a>
+                  . Full walkthrough:{" "}
                   <Link
                     href="/service-areas/gig-harbor/canterwood/hoa-approved-fencing"
                     className="text-primary underline decoration-2 underline-offset-2"

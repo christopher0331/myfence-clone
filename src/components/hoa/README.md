@@ -15,8 +15,8 @@ PDFs live in `/public/docs/hoa/` and are linked as `/docs/hoa/<file>.pdf`.
 
 ## Add a new HOA page
 
-1. **Downloadables** — Put official (or MyFence checklist) PDFs in `public/docs/hoa/`. Prefer association-sourced forms; if none are public, ship a clear “prep checklist” PDF and say so in copy.
-2. **Config** — Copy an existing file in `configs/` (e.g. `sahalee.ts`). Fill every field; keep FAQs aligned with `schemaFaqs`.
+1. **Downloadables** — Prefer live association URLs for official forms (Drive, association `/uploads/`, etc.). Put MyFence checklist PDFs in `public/docs/hoa/` and label them as prep guides. If no official form is public, ship only the checklist and list manager contacts in `officialLinks`.
+2. **Config** — Copy an existing file in `configs/` (e.g. `sahalee.ts`). Fill every field; keep FAQs aligned with `schemaFaqs`. Use `officialLinks` for association sites, portals, and phones.
 3. **Thin page component** (optional) — Re-export the template with your config from `src/components/neighborhoods/<Name>HoaPage.tsx`, or import the config directly in the App Router page.
 4. **Route** — Add `src/app/service-areas/<…>/hoa-approved-fencing/page.tsx` with `metadata` + the page component.
 5. **Parent link** — On the neighborhood (or city) page, add a “Learn More →” card pointing at the new HOA URL (same pattern as Klahanie / Cherokee Bay).

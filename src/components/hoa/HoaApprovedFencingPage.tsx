@@ -8,6 +8,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   ClipboardList,
+  ExternalLink,
   FileDown,
   FileText,
   Mail,
@@ -122,29 +123,67 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
                   </>
                 ) : null}
               </p>
+              {config.officialLinks?.length ? (
+                <div className="mb-8 rounded-lg border bg-muted/30 p-5">
+                  <h3 className="font-semibold mb-3">
+                    {config.officialLinksHeading ?? "Official association resources"}
+                  </h3>
+                  <ul className="space-y-2">
+                    {config.officialLinks.map((link) => {
+                      const isWeb = /^https?:\/\//i.test(link.href);
+                      return (
+                        <li key={link.href} className="text-sm leading-relaxed">
+                          <a
+                            href={link.href}
+                            {...(isWeb
+                              ? { target: "_blank", rel: "noopener noreferrer" }
+                              : {})}
+                            className="text-primary underline decoration-2 underline-offset-2 inline-flex items-center gap-1.5"
+                          >
+                            {link.label}
+                            {isWeb ? (
+                              <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                            ) : null}
+                          </a>
+                          {link.note ? (
+                            <span className="text-muted-foreground"> — {link.note}</span>
+                          ) : null}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ) : null}
               <div className="grid gap-4">
-                {config.forms.map((form) => (
-                  <Card key={form.href} className="p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div>
-                        <p className="text-xs uppercase tracking-wide text-primary font-semibold mb-1">
-                          {form.timing}
-                        </p>
-                        <h3 className="text-xl font-semibold mb-2">{form.title}</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">{form.blurb}</p>
+                {config.forms.map((form) => {
+                  const isExternal = /^https?:\/\//i.test(form.href);
+                  return (
+                    <Card key={form.href} className="p-6">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                        <div>
+                          <p className="text-xs uppercase tracking-wide text-primary font-semibold mb-1">
+                            {form.source ? `${form.source} · ${form.timing}` : form.timing}
+                          </p>
+                          <h3 className="text-xl font-semibold mb-2">{form.title}</h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed">{form.blurb}</p>
+                        </div>
+                        <a
+                          href={form.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 shrink-0 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                        >
+                          {isExternal ? (
+                            <ExternalLink className="h-4 w-4" aria-hidden />
+                          ) : (
+                            <FileDown className="h-4 w-4" aria-hidden />
+                          )}
+                          {form.ctaLabel ?? "Download PDF"}
+                        </a>
                       </div>
-                      <a
-                        href={form.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 shrink-0 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-                      >
-                        <FileDown className="h-4 w-4" aria-hidden />
-                        Download PDF
-                      </a>
-                    </div>
-                  </Card>
-                ))}
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </div>

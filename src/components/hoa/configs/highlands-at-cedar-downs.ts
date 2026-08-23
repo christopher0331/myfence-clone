@@ -11,34 +11,49 @@ export const highlandsAtCedarDownsHoaConfig: HoaApprovedFencingConfig = {
   metaTitle:
     "Highlands at Cedar Downs HOA Approved Fencing | Maple Valley | MyFence.com",
   metaDescription:
-    "Highlands at Cedar Downs HOA approved fencing in Maple Valley. Download our architectural checklist. Cedar, hogwire & hybrid installs. (253) 455-1885.",
+    "Highlands at Cedar Downs HOA approved fencing in Maple Valley. J&M Management contact, architectural checklist, cedar and hogwire installs. (253) 455-1885.",
   locationLabel: "Highlands at Cedar Downs HOA · Maple Valley, WA",
   h1: "Highlands at Cedar Downs HOA Approved Fencing",
   heroIntro:
-    "Architectural review steps, a submission checklist, and family-yard installs that match this newer Maple Valley community—without mixing it up with the older Cedar Downs HOA down the road.",
+    "Architectural review through J&M Management, a submission checklist, and family-yard installs that match this newer Maple Valley community—without mixing it up with the older Cedar Downs HOA down the road.",
   downloadCtaLabel: "Download submission checklist",
   trustItems: [
-    { icon: "clipboard", label: "Highlands HOA submission checklist" },
     { icon: "mail", label: "Request forms from J&M Management" },
+    { icon: "clipboard", label: "Highlands HOA submission checklist" },
     { icon: "shield", label: "Architectural package prep included" },
   ],
-  formsHeading: "Downloads for Highlands at Cedar Downs HOA approved fencing",
+  formsHeading: "Documents for Highlands at Cedar Downs HOA approved fencing",
   formsIntro:
-    "Official architectural applications come from Highlands at Cedar Downs association management (J&M Management)—they are not a public fence PDF. Use our checklist to assemble drawings and samples, then request the current form when you file. Contact: (253) 848-1947 · information@jandmmanagement.com.",
+    "This association does not post a public fence or architectural PDF. Official applications come from J&M Management. Use our checklist to assemble drawings and samples, then request the current form when you file. Email:",
+  formsSubmitEmail: "information@jandmmanagement.com",
+  officialLinksHeading: "Official Highlands at Cedar Downs management",
+  officialLinks: [
+    {
+      label: "J&M HOA & Property Management",
+      href: "https://jandmmanagement.com/",
+      note: "Registered agent for Highlands at Cedar Downs HOA",
+    },
+    {
+      label: "Call (253) 848-1947",
+      href: "tel:+12538481947",
+      note: "Request the current architectural application",
+    },
+  ],
   forms: [
     {
       href: "/docs/hoa/highlands-at-cedar-downs-hoa-fence-submission-checklist.pdf",
       title: "Highlands at Cedar Downs HOA Fence Checklist",
       timing: "Prep guide",
+      source: "MyFence prep guide",
       blurb:
-        "MyFence.com homeowner checklist covering the correct association, management contact, site plan, drawings, and stain samples. Not a substitute for the official architectural application.",
+        "Our homeowner checklist covering the correct association, J&M contact, site plan, drawings, and stain samples. Not a substitute for the official architectural application. Do not use Cedar Downs / Pipe Lake (cedardownsmvhoa.com) forms.",
     },
   ],
   processHeading: "Highlands at Cedar Downs architectural fence process",
   steps: [
     {
       title: "Confirm the correct association",
-      body: "Highlands at Cedar Downs is its own HOA. Cedar Downs HOA (Pipe Lake / CDHA) is a different community with different rules. File with Highlands management, not the older association.",
+      body: "Highlands at Cedar Downs is its own HOA, managed by J&M Management. Cedar Downs HOA (Pipe Lake / CDHA at cedardownsmvhoa.com) is a different community with different rules. File with Highlands management, not the older association.",
     },
     {
       title: "Match newer-home streetscape",
@@ -46,7 +61,7 @@ export const highlandsAtCedarDownsHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "Request the current application and submit",
-      body: "Contact J&M Management for the architectural form. Attach a site plan, elevations, materials, and stain samples. Do not start construction until you have written approval.",
+      body: "Contact J&M Management at (253) 848-1947 or information@jandmmanagement.com for the architectural form. Attach a site plan, elevations, materials, and stain samples. Do not start construction until you have written approval.",
     },
     {
       title: "Install to the approved plan",
@@ -91,11 +106,11 @@ export const highlandsAtCedarDownsHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Where can I get the official fence form?",
-      a: "Request the current architectural application from J&M Management at (253) 848-1947 or information@jandmmanagement.com. Use the checklist PDF on this page to prepare drawings and samples.",
+      a: "There is no public association fence PDF. Request the current architectural application from J&M Management at (253) 848-1947 or information@jandmmanagement.com. Use the checklist on this page to prepare drawings and samples.",
     },
     {
       q: "Is this the same as Cedar Downs HOA?",
-      a: "No. Cedar Downs HOA around Pipe Lake is a different association. Highlands at Cedar Downs has its own guidelines and management.",
+      a: "No. Cedar Downs HOA around Pipe Lake (cedardownsmvhoa.com) is a different association. Highlands at Cedar Downs has its own guidelines and J&M Management.",
     },
     {
       q: "Do I need approval before installation?",
@@ -111,12 +126,12 @@ export const highlandsAtCedarDownsHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "Where can I get the official Highlands at Cedar Downs fence form?",
       answer:
-        "Request the current architectural application from J&M Management at (253) 848-1947 or information@jandmmanagement.com. Download the MyFence.com checklist on this page to prepare drawings and samples.",
+        "The association does not post a public fence PDF. Request the current architectural application from J&M Management at (253) 848-1947 or information@jandmmanagement.com. Download the MyFence.com checklist on this page to prepare drawings and samples.",
     },
     {
       question: "Is Highlands at Cedar Downs the same as Cedar Downs HOA?",
       answer:
-        "No. Cedar Downs HOA (Pipe Lake / CDHA) is a different association. Highlands at Cedar Downs is a separate planned community with its own architectural process.",
+        "No. Cedar Downs HOA (Pipe Lake / CDHA at cedardownsmvhoa.com) is a different association. Highlands at Cedar Downs is a separate planned community managed by J&M Management.",
     },
     {
       question: "Do I need HOA approval before MyFence installs in Highlands at Cedar Downs?",

@@ -10,27 +10,66 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
   parentCrumbName: "Elk Run, Maple Valley",
   metaTitle: "Elk Run HOA Approved Fencing | Division CC&Rs | Maple Valley | MyFence.com",
   metaDescription:
-    "Elk Run HOA approved fencing in Maple Valley. Division-by-division checklist, picture-frame cedar installs near the former golf course. (253) 455-1885.",
+    "Elk Run HOA approved fencing in Maple Valley. Official Div. 3 & 5 CC&Rs, bylaws, and picture-frame cedar installs. (253) 455-1885.",
   locationLabel: "Elk Run Homeowners Associations · Maple Valley, WA",
   h1: "Elk Run HOA Approved Fencing",
   heroIntro:
-    "Division-specific CC&R steps, a submission checklist, and picture-frame cedar builds that clear the board for your Elk Run lot—because this neighborhood is five associations, not one.",
-  downloadCtaLabel: "Download division checklist",
+    "Division-specific CC&Rs, official governing documents for Divisions 3 and 5, and picture-frame cedar builds that clear the board for your Elk Run lot—because this neighborhood is five associations, not one.",
+  downloadCtaLabel: "Open governing docs",
   trustItems: [
-    { icon: "clipboard", label: "Elk Run division submission checklist" },
-    { icon: "file", label: "Confirm CC&Rs for your division first" },
+    { icon: "file", label: "Official Div. 3 & 5 CC&Rs, bylaws, declaration" },
+    { icon: "clipboard", label: "Confirm your division before you design" },
     { icon: "shield", label: "Board package prep included" },
   ],
-  formsHeading: "Downloads for Elk Run HOA approved fencing",
+  formsHeading: "Official documents for Elk Run HOA approved fencing",
   formsIntro:
-    "Elk Run does not share one public fence form. Five divisions keep separate governing documents. Divisions 3 and 5 publish resources at elkrunhoa3and5.com. Use our checklist to identify your division and assemble drawings, then request the current CC&Rs and any architectural form from your board.",
+    "Elk Run does not publish a dedicated fence application. Five divisions keep separate governing documents. Divisions 3 and 5 post CC&Rs, bylaws, and a declaration at elkrunhoa3and5.com. Other lots sit in Divisions 1, 4, or 6 and need those boards’ paperwork. Use the association files below if you are in 3 or 5, then assemble drawings for your board.",
+  officialLinksHeading: "Official Elk Run Divisions 3 & 5 site",
+  officialLinks: [
+    {
+      label: "Elk Run HOA Divisions 3 & 5",
+      href: "https://www.elkrunhoa3and5.com/",
+      note: "Does not cover Divisions 1, 4, or 6",
+    },
+    {
+      label: "HOA documents",
+      href: "https://www.elkrunhoa3and5.com/copy-of-hoa-documents",
+      note: "Governing docs plus meeting notes and treasurer reports",
+    },
+  ],
   forms: [
+    {
+      href: "https://www.elkrunhoa3and5.com/_files/ugd/088ccb_e5651d1f016d461f915924a2d2684a74.pdf",
+      title: "Elk Run Division 5 CC&Rs",
+      timing: "Governing doc",
+      source: "Official association",
+      ctaLabel: "Open official PDF",
+      blurb:
+        "Covenants for Elk Run Division 5, posted by the Div. 3 & 5 association. Confirm height, materials, and setbacks here before you draw.",
+    },
+    {
+      href: "https://www.elkrunhoa3and5.com/_files/ugd/088ccb_c672b35377e44f3e8f8a919965532846.pdf",
+      title: "Elk Run Divisions 3 & 5 Bylaws",
+      timing: "Governing doc",
+      source: "Official association",
+      ctaLabel: "Open official PDF",
+      blurb: "Association bylaws posted on the Div. 3 & 5 documents page.",
+    },
+    {
+      href: "https://www.elkrunhoa3and5.com/_files/ugd/088ccb_f1165347ba85483699c2ae6bc6ba76cd.pdf",
+      title: "Elk Run Divisions 3 & 5 Declaration",
+      timing: "Governing doc",
+      source: "Official association",
+      ctaLabel: "Open official PDF",
+      blurb: "Declaration posted by the Div. 3 & 5 association.",
+    },
     {
       href: "/docs/hoa/elk-run-hoa-fence-submission-checklist.pdf",
       title: "Elk Run HOA Fence Submission Checklist",
       timing: "Prep guide",
+      source: "MyFence prep guide",
       blurb:
-        "MyFence.com homeowner checklist covering the five-division structure, Div. 3 & 5 streets, site plan, and picture-frame cedar notes. Not a substitute for your division’s CC&Rs.",
+        "Our homeowner checklist covering the five-division structure, Div. 3 & 5 streets, site plan, and picture-frame cedar notes. Not a substitute for your division’s CC&Rs.",
     },
   ],
   processHeading: "Elk Run division fence process",
@@ -45,7 +84,7 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "File with your division board",
-      body: "Some divisions want a formal architectural packet; others want written notice. We assemble whatever your board asks for. Do not start construction until that written OK is in hand.",
+      body: "There is no public fence-application PDF. Some divisions want a formal architectural packet; others want written notice. We assemble whatever your board asks for. Do not start construction until that written OK is in hand.",
     },
     {
       title: "Install to the approved plan",
@@ -78,7 +117,7 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
     {
       icon: "clipboard",
       title: "Checklist + install",
-      body: "Use our checklist to prep, then we build cedar or hogwire systems to the approved plan.",
+      body: "Use the governing docs and our checklist to prep, then we build cedar or hogwire systems to the approved plan.",
     },
   ],
   leadFenceStyleName: "Elk Run HOA fence",
@@ -90,11 +129,11 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Does Elk Run have one HOA?",
-      a: "No. There are five divisions. Divisions 3 and 5 share a site at elkrunhoa3and5.com. We confirm your division before we design.",
+      a: "No. There are five divisions. Divisions 3 and 5 share elkrunhoa3and5.com and post CC&Rs, bylaws, and a declaration there. We confirm your division before we design.",
     },
     {
-      q: "What fence styles usually pass in Elk Run?",
-      a: "Picture-frame cedar is the most common street-facing choice. Hogwire with a cedar frame is popular on rear yards that open to former fairway green space.",
+      q: "Is there an official Elk Run fence application PDF?",
+      a: "Not on the public Div. 3 & 5 site. Use the CC&Rs, bylaws, and declaration linked above, then ask your board what written approval they want.",
     },
     {
       q: "Do I need approval before installation?",
@@ -110,12 +149,12 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "Does Elk Run have one HOA?",
       answer:
-        "No. Elk Run in Maple Valley has five separate homeowners associations. Divisions 3 and 5 cover SE 277th Place, SE 279th Street, 226th Court SE, and 227th Court SE and publish resources at elkrunhoa3and5.com.",
+        "No. Elk Run in Maple Valley has five separate homeowners associations. Divisions 3 and 5 cover SE 277th Place, SE 279th Street, 226th Court SE, and 227th Court SE and publish CC&Rs, bylaws, and a declaration at elkrunhoa3and5.com.",
     },
     {
-      question: "What fence styles usually pass in Elk Run?",
+      question: "Is there an official Elk Run fence application PDF?",
       answer:
-        "Picture-frame cedar is commonly accepted for street-facing runs. Hogwire with a cedar frame is often used on rear yards bordering former golf-course green space.",
+        "The Divisions 3 and 5 association site does not post a dedicated fence application. Homeowners should use the published CC&Rs, bylaws, and declaration, then confirm the written-approval path with their board.",
     },
     {
       question: "Do I need HOA approval before MyFence installs in Elk Run?",
@@ -125,5 +164,5 @@ export const elkRunHoaConfig: HoaApprovedFencingConfig = {
   ],
   ctaHeading: "Ready for Elk Run HOA approved fencing?",
   ctaBody:
-    "Download the checklist, or let us review your division CC&Rs and build. Free on-site estimates in Elk Run / Maple Valley.",
+    "Open the Div. 3 & 5 governing docs, or let us review your division CC&Rs and build. Free on-site estimates in Elk Run / Maple Valley.",
 };

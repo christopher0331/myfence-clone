@@ -7,6 +7,16 @@ export interface HoaDownloadableForm {
   title: string;
   timing: string;
   blurb: string;
+  /** Button label; defaults to "Download PDF" */
+  ctaLabel?: string;
+  /** Small badge, e.g. "Official association" or "MyFence prep guide" */
+  source?: string;
+}
+
+export interface HoaOfficialLink {
+  label: string;
+  href: string;
+  note?: string;
 }
 
 export interface HoaProcessStep {
@@ -54,6 +64,9 @@ export interface HoaApprovedFencingConfig {
   formsIntro: string;
   /** Optional mailto shown in forms intro (linked) */
   formsSubmitEmail?: string;
+  /** Association websites, portals, and contacts shown above download cards */
+  officialLinksHeading?: string;
+  officialLinks?: HoaOfficialLink[];
   forms: HoaDownloadableForm[];
   processHeading: string;
   steps: HoaProcessStep[];

@@ -10,34 +10,71 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
   parentCrumbName: "Canterwood, Gig Harbor",
   metaTitle: "Canterwood HOA Approved Fencing | ACC Review | Gig Harbor | MyFence.com",
   metaDescription:
-    "Canterwood HOA approved fencing in Gig Harbor. Download our ACC submission checklist for gated golf-course lots. Cedar and hybrid installs. (253) 455-1885.",
+    "Canterwood HOA approved fencing in Gig Harbor. Official CC&Rs and bylaws, ACC checklist, gated golf-course cedar and hybrid installs. (253) 455-1885.",
   locationLabel: "Canterwood Homeowners Association · Gig Harbor, WA",
   h1: "Canterwood HOA Approved Fencing",
   heroIntro:
-    "Architectural Control Committee steps, a submission checklist, and premium cedar or hybrid builds that fit Canterwood’s gated, golf-course lots—without chain-link shortcuts the ACC will not accept.",
-  downloadCtaLabel: "Download submission checklist",
+    "Official CC&Rs and bylaws, Architectural Control Committee steps, and premium cedar or hybrid builds that fit Canterwood’s gated, golf-course lots—without chain-link shortcuts the ACC will not accept.",
+  downloadCtaLabel: "Open HOA documents",
   trustItems: [
-    { icon: "clipboard", label: "Canterwood ACC submission checklist" },
-    { icon: "mail", label: "Request current forms from HOA management" },
+    { icon: "file", label: "Official CC&Rs and bylaws on canterwood.org" },
+    { icon: "mail", label: "ACC packet: CWHOA@hoacommunitysolutions.com" },
     { icon: "shield", label: "Golf-course sightline package prep" },
   ],
-  formsHeading: "Downloads for Canterwood HOA approved fencing",
+  formsHeading: "Documents for Canterwood HOA approved fencing",
   formsIntro:
-    "Canterwood’s official ACC application is issued by the residential homeowners association (managed with HOA Community Solutions)—it is not a single public fence PDF. Use our checklist to assemble drawings and samples, then request the current packet when you file. Contact: (253) 985-3812.",
+    "Canterwood’s ACC application is not posted as a public fence PDF. The association site publishes CC&Rs and bylaws; some member pages are geo-restricted. Request the current ACC packet from HOA Community Solutions. Email:",
+  formsSubmitEmail: "CWHOA@hoacommunitysolutions.com",
+  officialLinksHeading: "Official Canterwood association contacts",
+  officialLinks: [
+    {
+      label: "Canterwood Homeowners Association",
+      href: "https://www.canterwood.org/",
+      note: "Some pages restrict access by location; CC&Rs and bylaws still download",
+    },
+    {
+      label: "HOA Community Solutions",
+      href: "https://hoacommunitysolutions.com/",
+      note: "Management company · (253) 985-3812",
+    },
+    {
+      label: "Call (253) 985-3812",
+      href: "tel:+12539853812",
+      note: "Canterwood HOA office / manager",
+    },
+  ],
   forms: [
+    {
+      href: "https://www.canterwood.org/editor_upload/File/CC%26Rs.pdf",
+      title: "Canterwood CC&Rs",
+      timing: "Governing doc",
+      source: "Official association",
+      ctaLabel: "Open official PDF",
+      blurb:
+        "Canterwood Homeowners Association covenants posted on canterwood.org. Use these with the current ACC application from management.",
+    },
+    {
+      href: "https://www.canterwood.org/editor_upload/File/Bylaws.pdf",
+      title: "Canterwood Bylaws",
+      timing: "Governing doc",
+      source: "Official association",
+      ctaLabel: "Open official PDF",
+      blurb: "Association bylaws posted on canterwood.org.",
+    },
     {
       href: "/docs/hoa/canterwood-hoa-fence-submission-checklist.pdf",
       title: "Canterwood HOA Fence Submission Checklist",
       timing: "Prep guide",
+      source: "MyFence prep guide",
       blurb:
-        "MyFence.com homeowner checklist covering ACC vs. golf-club distinction, chain-link prohibition, site plan, drawings, and management contact steps. Not a substitute for the official ACC application.",
+        "Our homeowner checklist covering ACC vs. golf-club distinction, chain-link prohibition, site plan, drawings, and management contact steps. Not a substitute for the official ACC application.",
     },
   ],
   processHeading: "Canterwood ACC fence process",
   steps: [
     {
       title: "Confirm the residential ACC path",
-      body: "The golf club and the homeowners association are separate. Fence review runs through the residential Architectural Control Committee. Ask for the current Residential Guidelines—they are updated periodically.",
+      body: "The golf club and the homeowners association are separate. Fence review runs through the residential Architectural Control Committee. Ask for the current Residential Guidelines—they are updated periodically. Do not use the Canterwood STEP sewer association site for architectural forms.",
     },
     {
       title: "Design to estate and fairway standards",
@@ -45,7 +82,7 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "Request the current ACC packet and submit",
-      body: "Contact HOA Community Solutions / the Canterwood HOA office for the current application. File a complete package with site plan, elevations, materials, and colors. Do not start construction until you have written approval.",
+      body: "Email CWHOA@hoacommunitysolutions.com or call (253) 985-3812 for the current application. File a complete package with site plan, elevations, materials, and colors. Do not start construction until you have written approval.",
     },
     {
       title: "Install to the approved plan",
@@ -78,7 +115,7 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
     {
       icon: "clipboard",
       title: "Checklist + install",
-      body: "Use our checklist to prep, then we build cedar or hybrid systems exactly to the approved plan.",
+      body: "Use the CC&Rs and our checklist to prep, then we build cedar or hybrid systems exactly to the approved plan.",
     },
   ],
   leadFenceStyleName: "Canterwood HOA fence",
@@ -90,7 +127,7 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Where can I get the official Canterwood fence forms?",
-      a: "Request the current ACC application from the Canterwood HOA office / HOA Community Solutions at (253) 985-3812. Use the checklist PDF on this page to prepare drawings and samples while you wait for the official forms.",
+      a: "The ACC application is not a public PDF. Request it from the Canterwood HOA office / HOA Community Solutions at CWHOA@hoacommunitysolutions.com or (253) 985-3812. CC&Rs and bylaws are posted on canterwood.org.",
     },
     {
       q: "Is the golf club the same as the HOA?",
@@ -110,7 +147,7 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "Where can I get the official Canterwood fence forms?",
       answer:
-        "Request the current ACC application from the Canterwood HOA office or HOA Community Solutions at (253) 985-3812. Download the Canterwood HOA Fence Submission Checklist on this page to prepare drawings and samples.",
+        "The ACC application is issued by HOA Community Solutions and is not posted as a public fence PDF. Email CWHOA@hoacommunitysolutions.com or call (253) 985-3812. Canterwood CC&Rs and bylaws are available at canterwood.org.",
     },
     {
       question: "Is the Canterwood golf club the same as the HOA?",
@@ -125,5 +162,5 @@ export const canterwoodHoaConfig: HoaApprovedFencingConfig = {
   ],
   ctaHeading: "Ready for Canterwood HOA approved fencing?",
   ctaBody:
-    "Download the checklist, or let us handle the ACC package and build. Free on-site estimates for Canterwood / Gig Harbor properties.",
+    "Open the CC&Rs, request the ACC packet, or let us handle the drawings and build. Free on-site estimates for Canterwood / Gig Harbor properties.",
 };

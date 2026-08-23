@@ -10,27 +10,47 @@ export const tenTrailsHoaConfig: HoaApprovedFencingConfig = {
   parentCrumbName: "Black Diamond",
   metaTitle: "Ten Trails HOA Approved Fencing | ARC | Black Diamond | MyFence.com",
   metaDescription:
-    "Ten Trails HOA approved fencing in Black Diamond. ARC submission checklist, wind-ready cedar and hybrid installs. Free quotes. (253) 455-1885.",
-  locationLabel: "Ten Trails Residential Owners Association · Black Diamond, WA",
+    "Ten Trails HOA approved fencing in Black Diamond. Resident portal, hoa@tentrails.com, ARC checklist, wind-ready cedar and hybrid installs. (253) 455-1885.",
+  locationLabel: "Ten Trails Association · Black Diamond, WA",
   h1: "Ten Trails HOA Approved Fencing",
   heroIntro:
-    "Architectural Review Committee steps, a submission checklist, and foothills-grade cedar or hybrid builds that pass Ten Trails review—stricter than city code, and different by village phase.",
+    "Architectural review through the Ten Trails Association resident portal, a submission checklist, and foothills-grade cedar or hybrid builds that pass review—stricter than city code, and different by village phase.",
   downloadCtaLabel: "Download ARC checklist",
   trustItems: [
-    { icon: "clipboard", label: "Ten Trails ARC submission checklist" },
-    { icon: "mail", label: "Request current packet via hoa@tentrails.com" },
+    { icon: "mail", label: "hoa@tentrails.com · (360) 469-4043" },
+    { icon: "clipboard", label: "Resident portal for ARC forms" },
     { icon: "shield", label: "Phase-aware ARC package prep" },
   ],
-  formsHeading: "Downloads for Ten Trails HOA approved fencing",
+  formsHeading: "Documents for Ten Trails HOA approved fencing",
   formsIntro:
-    "Ten Trails’ official ARC application is issued by association management—it is not a single public fence PDF, and it can differ by village. Use our checklist to assemble drawings and samples, then request the current packet when you file. Contact: hoa@tentrails.com · (360) 469-4043 · tentrails.com.",
+    "Ten Trails does not post a public fence PDF. Official ARC forms live in the resident portal (Green Condo / My Green Condo). Use our checklist to assemble drawings and samples, then request the current packet when you file. Email:",
+  formsSubmitEmail: "hoa@tentrails.com",
+  officialLinksHeading: "Official Ten Trails Association resources",
+  officialLinks: [
+    {
+      label: "Ten Trails Association resident portal",
+      href: "https://www.mygreencondo.net/tentrails/login",
+      note: "Login required for ARC forms",
+    },
+    {
+      label: "Ten Trails community site",
+      href: "https://www.tentrails.com/",
+      note: "Welcome Center · 32607 Willow Ave SE",
+    },
+    {
+      label: "Call (360) 469-4043",
+      href: "tel:+13604694043",
+      note: "HOA manager Jodi Pannell-Kay",
+    },
+  ],
   forms: [
     {
       href: "/docs/hoa/ten-trails-hoa-fence-submission-checklist.pdf",
       title: "Ten Trails HOA Fence Submission Checklist",
       timing: "Prep guide",
+      source: "MyFence prep guide",
       blurb:
-        "MyFence.com homeowner checklist covering village/phase confirmation, CC&Rs vs. city code, site plan, drawings, and HOA contact steps. Not a substitute for the official ARC application.",
+        "Our homeowner checklist covering village/phase confirmation, CC&Rs vs. city code, site plan, drawings, and HOA contact steps. Not a substitute for the official ARC application in the resident portal.",
     },
   ],
   processHeading: "Ten Trails ARC fence process",
@@ -44,8 +64,8 @@ export const tenTrailsHoaConfig: HoaApprovedFencingConfig = {
       body: "Allowed styles, colors, and materials are often tighter than Black Diamond city rules. Hybrid cedar/aluminum and clear cedar are common on the ridge, where wind and moisture are part of the job.",
     },
     {
-      title: "Request the current ARC packet and submit",
-      body: "Email hoa@tentrails.com or call (360) 469-4043 for the current application. Attach a site plan, elevations, materials, and finish samples. File any City of Black Diamond permit separately. Do not start construction until you have written ARC approval.",
+      title: "Pull the current ARC packet from the portal and submit",
+      body: "Log in at mygreencondo.net/tentrails/login, or email hoa@tentrails.com / call (360) 469-4043. Attach a site plan, elevations, materials, and finish samples. File any City of Black Diamond permit separately. Do not start construction until you have written ARC approval.",
     },
     {
       title: "Install to the approved plan",
@@ -90,7 +110,7 @@ export const tenTrailsHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Where can I get the official Ten Trails fence forms?",
-      a: "Request the current ARC application from HOA management at hoa@tentrails.com or (360) 469-4043. Use the checklist PDF on this page to prepare drawings and samples.",
+      a: "They are not public. Log in to the Ten Trails Association portal at mygreencondo.net/tentrails/login, or request the current ARC application from hoa@tentrails.com or (360) 469-4043. Use the checklist on this page to prepare drawings and samples.",
     },
     {
       q: "Do all Ten Trails villages have the same fence rules?",
@@ -110,7 +130,7 @@ export const tenTrailsHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "Where can I get the official Ten Trails fence forms?",
       answer:
-        "Request the current ARC application from Ten Trails HOA management at hoa@tentrails.com or (360) 469-4043. Download the Ten Trails HOA Fence Submission Checklist on this page to prepare drawings and samples.",
+        "Official ARC forms are in the Ten Trails Association resident portal at mygreencondo.net/tentrails/login. You can also request the current application from hoa@tentrails.com or (360) 469-4043. Download the Ten Trails HOA Fence Submission Checklist on this page to prepare drawings and samples.",
     },
     {
       question: "Do all Ten Trails villages have the same fence rules?",
