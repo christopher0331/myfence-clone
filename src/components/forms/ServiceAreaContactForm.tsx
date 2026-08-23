@@ -19,6 +19,7 @@ import {
   deriveFormSku,
   getLeadAttributionById,
   trackFormSubmit,
+  trackLeadIntentOnce,
 } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
@@ -198,7 +199,11 @@ const ServiceAreaContactForm = () => {
       <p className="text-sm text-muted-foreground mb-4">
         Tell us about your project and we'll get back to you within 24 hours.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        onFocusCapture={() => trackLeadIntentOnce("form_start")}
+        className="space-y-4"
+      >
         <div className="space-y-2">
           <Label htmlFor={`sa-name-${sku}`}>Full Name *</Label>
           <Input

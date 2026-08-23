@@ -21,6 +21,7 @@ import {
   deriveFormSku,
   getLeadAttributionById,
   trackFormSubmit,
+  trackLeadIntentOnce,
 } from "@/lib/analytics";
 
 interface InlineQuoteFormProps {
@@ -204,7 +205,11 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       <p className="text-sm text-muted-foreground mb-4">
         Tell us about your project and we'll provide a detailed estimate.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        onFocusCapture={() => trackLeadIntentOnce("form_start")}
+        className="space-y-4"
+      >
         <div className="space-y-2">
           <Label htmlFor="fullName">Full Name *</Label>
           <Input

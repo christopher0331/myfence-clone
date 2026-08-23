@@ -10,10 +10,13 @@
  * `form_id` (e.g. "myfence:home-contact"), so overlapping neighborhood / service-area
  * slugs across company sites (myfence.com, seattlefence.com) stay correctly separated.
  *
- * Attribution: when a visitor lands on a neighborhood / service-area / fence-style page,
- * that path is remembered as the session "origin". It is then attached to later CTA clicks
- * and to the final form submission (even when the form lives on /contact or /quote), so a
- * lead can be credited back to the page that actually drove it.
+ * Attribution: when a visitor lands on a neighborhood / HOA / service-area / fence-style
+ * page, that path is remembered as the session "origin". It is then attached to later CTA
+ * clicks and to the final form submission (even when the form lives on /contact or /quote),
+ * so a lead can be credited back to the page that actually drove it.
+ *
+ * The same events are also sent to PostHog (when the deferred snippet is ready, otherwise
+ * queued) so product-analytics funnels can measure HOA / neighborhood / city conversion.
  */
 
 const SUPABASE_URL = "https://tlsayvwmcqnmdoairbeb.supabase.co";
@@ -29,12 +32,17 @@ const ORIGIN_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours
 
 export type CtaType = "contact" | "quote" | "phone";
 export type FormType = "contact" | "quote" | "referral" | "discount";
+export type LeadIntentType = "cta_contact" | "cta_quote" | "cta_phone" | "form_start" | "quote_tool";
+
+/** Coarse page type used in PostHog funnels. */
+export type FunnelPageType = "hoa" | "neighborhood" | "service_area" | "other";
 
 export type PageCategory =
   | "home"
   | "contact"
   | "quote"
   | "fence_style"
+  | "hoa"
   | "neighborhood"
   | "service_area_city"
   | "service_area_index"
@@ -42,10 +50,26 @@ export type PageCategory =
 
 // Page categories that represent a "lead source" worth attributing a downstream lead to.
 const SOURCE_CATEGORIES: ReadonlySet<PageCategory> = new Set<PageCategory>([
+  "hoa",
   "neighborhood",
   "service_area_city",
   "fence_style",
 ]);
+
+const GEO_FUNNEL_CATEGORIES: ReadonlySet<PageCategory> = new Set<PageCategory>([
+  "hoa",
+  "neighborhood",
+  "service_area_city",
+]);
+
+type PosthogQueueItem = { event: string; properties?: Record<string, unknown> };
+
+declare global {
+  interface Window {
+    __mfPosthogQueue?: PosthogQueueItem[];
+    posthog?: { capture: (event: string, properties?: Record<string, unknown>) => void };
+  }
+}
 
 interface TrackPayload {
   event_type: "page_view" | "cta_click" | "form_submit";
@@ -103,12 +127,71 @@ export function classifyPath(pathname: string): PageCategory {
   if (path === "/quote") return "quote";
   if (path.startsWith("/fence-styles")) return "fence_style";
   if (path.startsWith("/service-areas")) {
-    const segments = path.split("/").filter(Boolean); // ["service-areas", city?, neighborhood?]
+    const segments = path.split("/").filter(Boolean); // ["service-areas", city?, neighborhood?, hoa?]
+    if (segments[segments.length - 1] === "hoa-approved-fencing") return "hoa";
     if (segments.length >= 3) return "neighborhood";
     if (segments.length === 2) return "service_area_city";
     return "service_area_index";
   }
   return "other";
+}
+
+/** Map a page category to the PostHog `page_type` used by saved funnels. */
+export function funnelPageType(category: PageCategory): FunnelPageType {
+  if (category === "hoa") return "hoa";
+  if (category === "neighborhood") return "neighborhood";
+  if (category === "service_area_city" || category === "service_area_index") return "service_area";
+  return "other";
+}
+
+function getPosthogQueue(): PosthogQueueItem[] {
+  if (!isBrowser()) return [];
+  if (!window.__mfPosthogQueue) window.__mfPosthogQueue = [];
+  return window.__mfPosthogQueue;
+}
+
+function capturePosthog(event: string, properties?: Record<string, unknown>): void {
+  if (!isBrowser()) return;
+  try {
+    if (window.posthog && typeof window.posthog.capture === "function") {
+      window.posthog.capture(event, properties);
+      return;
+    }
+  } catch {
+    // fall through to the queue so a deferred snippet still gets the event
+  }
+  getPosthogQueue().push({ event, properties });
+}
+
+const leadIntentOnce = new Set<string>();
+
+function geoProperties(path: string, extra?: Record<string, unknown>): Record<string, unknown> {
+  const category = classifyPath(path);
+  return {
+    page_type: funnelPageType(category),
+    page_category: category,
+    page_path: path,
+    page_url: isBrowser() ? window.location.href : undefined,
+    origin_path: getOriginPath() || undefined,
+    ...extra,
+  };
+}
+
+/** Fire a PostHog `lead_intent` (quote / contact / phone / form start / quote tool). */
+export function trackLeadIntent(intentType: LeadIntentType, extra?: Record<string, unknown>): void {
+  if (!isBrowser()) return;
+  const path = normalizePath(window.location.pathname);
+  capturePosthog("lead_intent", geoProperties(path, { intent_type: intentType, ...extra }));
+}
+
+/** Same as trackLeadIntent, but only once per page for form-start / quote-tool. */
+export function trackLeadIntentOnce(intentType: LeadIntentType): void {
+  if (!isBrowser()) return;
+  const path = normalizePath(window.location.pathname);
+  const key = `${path}:${intentType}`;
+  if (leadIntentOnce.has(key)) return;
+  leadIntentOnce.add(key);
+  trackLeadIntent(intentType);
 }
 
 function normalizePath(pathname: string): string {
@@ -197,6 +280,9 @@ export function trackPageView(pathname: string): void {
     referrer: document.referrer || undefined,
     ...getUtmParams(),
   });
+  if (GEO_FUNNEL_CATEGORIES.has(category)) {
+    capturePosthog("geo_page_view", geoProperties(path));
+  }
 }
 
 /** Fire a cta_click (Contact / Quote / Call). */
@@ -214,6 +300,9 @@ export function trackCtaClick(args: { ctaType: CtaType; ctaDestination?: string 
     origin_path: getOriginPath() || undefined,
     session_id: getSessionId(),
   });
+  const intentType: LeadIntentType =
+    args.ctaType === "quote" ? "cta_quote" : args.ctaType === "phone" ? "cta_phone" : "cta_contact";
+  trackLeadIntent(intentType, args.ctaDestination ? { cta_destination: args.ctaDestination } : undefined);
 }
 
 /** Globally unique form identifier, namespaced by site (e.g. "myfence:home-contact"). */
@@ -272,6 +361,7 @@ export function trackFormSubmit(
 ): void {
   if (!isBrowser()) return;
   const path = normalizePath(window.location.pathname);
+  const formIdValue = args?.formId ?? formId(formKey);
   send({
     event_type: "form_submit",
     site: SITE_ID,
@@ -279,10 +369,17 @@ export function trackFormSubmit(
     page_url: window.location.href,
     page_category: classifyPath(path),
     form_type: args?.formType,
-    form_id: args?.formId ?? formId(formKey),
+    form_id: formIdValue,
     origin_path: getOriginPath() || undefined,
     session_id: getSessionId(),
   });
+  capturePosthog(
+    "lead_submitted",
+    geoProperties(path, {
+      form_type: args?.formType,
+      form_id: formIdValue,
+    }),
+  );
 }
 
 /** Structured lead attribution to forward to the CRM/webhook payload. */

@@ -16,7 +16,7 @@ export function titleizeSlug(slug: string): string {
 export function locationLabelFromPath(pathname: string): string {
   const segments = (pathname || "").split("?")[0].split("#")[0].split("/").filter(Boolean);
   if (segments[0] !== "service-areas") return "";
-  const rest = segments.slice(1);
+  const rest = segments.slice(1).filter((s) => s !== "hoa-approved-fencing");
   if (rest.length >= 2) return `${titleizeSlug(rest[1])}, ${titleizeSlug(rest[0])}`;
   if (rest.length === 1) return titleizeSlug(rest[0]);
   return "";

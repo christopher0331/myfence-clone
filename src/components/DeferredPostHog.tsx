@@ -50,7 +50,15 @@ export default function DeferredPostHog() {
           ui_host: "https://us.posthog.com",
           defaults: "2025-05-24",
           person_profiles: "identified_only",
-          session_recording: { maskAllInputs: true }
+          session_recording: { maskAllInputs: true },
+          loaded: function (ph) {
+            var q = window.__mfPosthogQueue;
+            if (!q || !q.length) return;
+            window.__mfPosthogQueue = [];
+            for (var i = 0; i < q.length; i++) {
+              ph.capture(q[i].event, q[i].properties);
+            }
+          }
         });
       `}
     </Script>
