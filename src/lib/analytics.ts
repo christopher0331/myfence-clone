@@ -20,7 +20,7 @@
  * PostHog is one Reactiv Labs organization with one project per client; see `posthogConfig.ts`.
  */
 
-import { posthogSuperProperties, SITE_ID } from "@/lib/posthogConfig";
+import { posthogSuperProperties, SITE_ID, shouldSkipPosthogCapture } from "@/lib/posthogConfig";
 
 export { SITE_ID };
 
@@ -144,7 +144,7 @@ function getPosthogQueue(): NonNullable<Window["__phEventQueue"]> {
 }
 
 function capturePosthog(event: string, properties?: Record<string, unknown>): void {
-  if (!isBrowser()) return;
+  if (!isBrowser() || shouldSkipPosthogCapture()) return;
   try {
     if (window.posthog && typeof window.posthog.capture === "function") {
       window.posthog.capture(event, properties);

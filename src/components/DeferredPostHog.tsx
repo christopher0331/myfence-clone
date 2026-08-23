@@ -6,6 +6,7 @@ import {
   POSTHOG_HOST,
   POSTHOG_KEY,
   posthogSuperProperties,
+  shouldSkipPosthogCapture,
 } from "@/lib/posthogConfig";
 
 /**
@@ -21,7 +22,7 @@ export default function DeferredPostHog() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    if (!POSTHOG_KEY) return;
+    if (!POSTHOG_KEY || shouldSkipPosthogCapture()) return;
 
     const load = () => {
       setShouldLoad(true);
@@ -47,7 +48,7 @@ export default function DeferredPostHog() {
     };
   }, []);
 
-  if (!POSTHOG_KEY || !shouldLoad) return null;
+  if (!POSTHOG_KEY || shouldSkipPosthogCapture() || !shouldLoad) return null;
 
   const superProps = posthogSuperProperties();
 
