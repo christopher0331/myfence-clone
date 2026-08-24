@@ -231,7 +231,8 @@ const Sammamish = () => {
       neighborhoods={[
         {
           name: "Pine Lake",
-          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views"
+          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views. Click to learn more →",
+          link: "/service-areas/sammamish/pine-lake"
         },
         {
           name: "Beaver Lake",
