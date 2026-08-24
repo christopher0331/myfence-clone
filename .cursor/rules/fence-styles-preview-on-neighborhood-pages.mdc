@@ -1,0 +1,10 @@
+---
+description: Neighborhood pages must use FenceStylesPreview photo cards, not custom text-only style grids
+alwaysApply: true
+---
+
+# Fence style cards on neighborhood pages
+
+For the Popular Fence Styles section, render `<FenceStylesPreview city="{Neighborhood}" />` from `@/components/FenceStylesPreview`.
+
+That is the same photo + badge card grid city service-area pages use. Do not replace it with a 3-column text-only Card grid (Picture Frame / Hogwire / Hybrid copy cards).

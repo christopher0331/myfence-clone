@@ -219,12 +219,11 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 - **Pages with visible pricing convert 23% better than those without**
 
 ### 10. Popular Fence Styles
-- H2: "Popular Fence Styles in {Neighborhood}"
-- 3-column grid of `Card` components:
-  - **Cedar Privacy Fence** → links to `/fence-styles/picture-frame-fence`
-  - **Hogwire Fence** → links to `/fence-styles/black-hogwire-fence`
-  - **Hybrid Aluminum/Cedar** → links to `/fence-styles/cedar-steel-hybrid-fence`
-- Each card: H3 title, short description tailored to the neighborhood, "View styles →" link
+- Use the shared **`FenceStylesPreview`** component — the same photo + badge cards city service-area pages use. Do **not** invent a 3-column text-only `Card` grid.
+- Import: `import FenceStylesPreview from "@/components/FenceStylesPreview";`
+- Render: `<FenceStylesPreview city="{Neighborhood}" />`
+- That component already supplies the H2 (`Popular Fence Styles in {Neighborhood}`), style photos, badges, descriptions, style links, and “View All Styles”.
+- Do not hand-write Picture Frame / Hogwire / Hybrid text cards for this section.
 
 ### 11. Virtual Quote Tool
 - `<VirtualQuoteTool fenceStyleName="{Neighborhood} {City} fence" />`
@@ -361,6 +360,7 @@ The route wrapper template and the parent city update steps live in the **Build 
 | `GoogleBusinessMap` | `@/components/GoogleBusinessMap` | Map embed |
 | `WARRANTY_CONSTANTS` | `@/constants/warranty` | Warranty years |
 | `buildNeighborhoodStructuredData` | `@/components/neighborhoods/structuredData` | JSON-LD |
+| `FenceStylesPreview` | `@/components/FenceStylesPreview` | Popular fence style photo cards (same component as city pages). Pass `city="{Neighborhood}"`. Do not replace with custom text-only cards. |
 | `AboutTheArea` | `@/components/AboutTheArea` | Discover {Neighborhood} section with attractions + local living |
 | `ServiceAreaPhotoGallery` | `@/components/service-areas/ServiceAreaPhotoGallery` | Geo-tagged project photo carousel (auto-filtered) |
 | `FeaturedProject` | `@/components/service-areas/FeaturedProject` | Featured project spotlight with photo + description |

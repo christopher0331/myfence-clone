@@ -1,5 +1,9 @@
 # Agent instructions
 
+## Neighborhood pages — popular fence styles
+
+Use `<FenceStylesPreview city="{Neighborhood}" />` (`@/components/FenceStylesPreview`) for the Popular Fence Styles section. That is the same photo-card grid city service-area pages use. Do not build a custom 3-column text-only card grid for this section.
+
 ## Testing neighborhood / service-area pages
 
 Do **not** record screen videos, browser walkthrough recordings, or “demo” videos of the page.

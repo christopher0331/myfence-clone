@@ -22,6 +22,7 @@ import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
+import FenceStylesPreview from "@/components/FenceStylesPreview";
 import {
   buildNeighborhoodStructuredData,
   type NeighborhoodFaqItem,
@@ -422,54 +423,8 @@ const PineLakePage = () => {
           </div>
         </section>
 
-        {/* 10. Popular Fence Styles */}
-        <section className="py-16 bg-muted/50">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Pine Lake
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior Pine Lake lots near the schools. Full screening for after-school play, pre-stained cedar that holds up to Sammamish winters, and a look that fits 1970s–1990s ranch and two-story homes around the lake.
-                  </p>
-                  <Link
-                    href="/fence-styles/picture-frame-fence"
-                    className="text-primary text-sm font-medium hover:underline"
-                  >
-                    View styles →
-                  </Link>
-                </Card>
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for downhill and waterfront lots. Dogs stay in, the lake stays in view, and the lighter footprint is easier around roots than a solid privacy wall.
-                  </p>
-                  <Link
-                    href="/fence-styles/black-hogwire-fence"
-                    className="text-primary text-sm font-medium hover:underline"
-                  >
-                    View styles →
-                  </Link>
-                </Card>
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when lake-side humidity makes staining a chore. Strong enough for busy family yards without looking like a commercial lot.
-                  </p>
-                  <Link
-                    href="/fence-styles/cedar-steel-hybrid-fence"
-                    className="text-primary text-sm font-medium hover:underline"
-                  >
-                    View styles →
-                  </Link>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 10. Popular Fence Styles — same photo cards as city service-area pages */}
+        <FenceStylesPreview city="Pine Lake" />
 
         {/* 12. Installation Process */}
         <section className="py-16">
