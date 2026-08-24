@@ -14,7 +14,7 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Seattle Fence Builder | Cedar, Hogwire & Hybrid | MyFence.com",
+  title: "Seattle Fence Builder | Cedar, Hogwire & Hybrid",
   description:
     "Father & son Seattle fence builder using Fence Genius. Custom cedar, hogwire & hybrid fences. Free quotes. Call (253) 455-1885.",
   alternates: {
