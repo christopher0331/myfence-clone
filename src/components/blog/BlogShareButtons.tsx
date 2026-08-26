@@ -41,17 +41,17 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
   };
 
   return (
-    <div className="mb-8 overflow-visible rounded-lg border bg-card px-3 py-3">
+    <div className="mb-8 overflow-visible rounded-lg border bg-card px-3 py-3 sm:px-4">
       <Script
         src="https://news.google.com/swg/js/v1/publisher.js"
         strategy="afterInteractive"
       />
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground sm:text-sm">
-          <Share2 className="h-3.5 w-3.5" />
-          Share
-        </span>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+          <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-muted-foreground sm:text-sm">
+            <Share2 className="h-3.5 w-3.5" />
+            Share
+          </span>
           <div
             className="inline-flex shrink-0 items-center overflow-visible leading-none"
             // Google Preferred Sources embed — domain-level eligibility confirmed for myfence.com
@@ -60,6 +60,8 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
             data-lang="en"
             aria-label="Add MyFence as a Preferred Source on Google"
           />
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
           {shareLinks.map(({ label, href, icon: Icon }) => (
             <Button key={label} variant="outline" size="icon" asChild className="h-8 w-8">
               <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${label}`}>
