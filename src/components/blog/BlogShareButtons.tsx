@@ -41,19 +41,19 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
   };
 
   return (
-    <div className="mb-8 rounded-lg border bg-card px-3 py-2">
+    <div className="mb-8 overflow-visible rounded-lg border bg-card px-3 py-3">
       <Script
         src="https://news.google.com/swg/js/v1/publisher.js"
         strategy="afterInteractive"
       />
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground sm:text-sm">
           <Share2 className="h-3.5 w-3.5" />
           Share
         </span>
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-2">
           <div
-            className="inline-flex items-center [&_*]:max-h-8"
+            className="inline-flex shrink-0 items-center overflow-visible leading-none"
             // Google Preferred Sources embed — domain-level eligibility confirmed for myfence.com
             {...{ "google-add-preferred-source-btn": "" }}
             data-theme="light"
