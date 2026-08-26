@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Facebook, Linkedin, Link2, Share2, Twitter } from "lucide-react";
 
@@ -41,12 +42,24 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
 
   return (
     <div className="mb-8 rounded-lg border bg-card px-3 py-2">
+      <Script
+        src="https://news.google.com/swg/js/v1/publisher.js"
+        strategy="afterInteractive"
+      />
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground sm:text-sm">
           <Share2 className="h-3.5 w-3.5" />
           Share
         </span>
         <div className="flex flex-wrap items-center gap-1.5">
+          <div
+            className="inline-flex items-center [&_*]:max-h-8"
+            // Google Preferred Sources embed — domain-level eligibility confirmed for myfence.com
+            {...{ "google-add-preferred-source-btn": "" }}
+            data-theme="light"
+            data-lang="en"
+            aria-label="Add MyFence as a Preferred Source on Google"
+          />
           {shareLinks.map(({ label, href, icon: Icon }) => (
             <Button key={label} variant="outline" size="icon" asChild className="h-8 w-8">
               <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${label}`}>
@@ -57,7 +70,7 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
           <Button variant="outline" size="icon" onClick={copyLink} aria-label="Copy article link" className="h-8 w-8">
             <Link2 className="h-3.5 w-3.5" />
           </Button>
-          {typeof navigator !== "undefined" && navigator.share && (
+          {typeof navigator !== "undefined" && typeof navigator.share === "function" && (
             <Button
               variant="outline"
               size="icon"
