@@ -474,7 +474,8 @@ const Redmond = () => {
         },
         {
           name: "Education Hill",
-          description: "Family-focused area near top-rated schools requiring secure fencing for children and pets with HOA-approved designs"
+          description: "Family-focused area near top-rated schools requiring secure fencing for children and pets with HOA-approved designs. Click to learn more →",
+          link: "/service-areas/redmond/education-hill"
         },
         {
           name: "Overlake",
