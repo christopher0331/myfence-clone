@@ -470,7 +470,8 @@ const Redmond = () => {
       neighborhoods={[
         {
           name: "Downtown Redmond",
-          description: "Urban mixed-use district with modern properties demanding contemporary fence styles that complement city living and walkable lifestyle"
+          description: "Urban mixed-use district with modern properties demanding contemporary fence styles that complement city living and walkable lifestyle. Click to learn more →",
+          link: "/service-areas/redmond/downtown-redmond"
         },
         {
           name: "Education Hill",
