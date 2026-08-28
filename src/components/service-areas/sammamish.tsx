@@ -246,7 +246,8 @@ const Sammamish = () => {
         },
         {
           name: "Trossachs",
-          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration"
+          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration. Click to learn more →",
+          link: "/service-areas/sammamish/trossachs"
         },
         {
           name: "Klahanie",
