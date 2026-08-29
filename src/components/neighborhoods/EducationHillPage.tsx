@@ -720,11 +720,19 @@ const EducationHillPage = () => {
               <p className="text-muted-foreground text-center mb-8">
                 We install fences throughout Redmond. From Education Hill we also
                 work in Grass Lawn just to the west, Downtown Redmond down the
-                hill, Overlake, and nearby Juanita in Kirkland.
+                hill, Overlake to the south, and nearby Juanita in Kirkland.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond">Redmond overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/downtown-redmond">
+                    Downtown Redmond
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/overlake">Overlake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/juanita">Juanita</Link>
