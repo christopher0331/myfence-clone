@@ -82,7 +82,9 @@ const ServiceAreasSection = ({ isPage = false }: ServiceAreasSectionProps) => {
       className={`container ${isPage ? "pt-24 md:pt-28 pb-12 md:pb-20" : "py-12 md:py-20"}`}
     >
       <div className="text-center mb-12">
-        <Heading className="text-3xl md:text-4xl font-bold mb-4">Service Areas</Heading>
+        <Heading className="text-3xl md:text-4xl font-bold mb-4">
+          {isPage ? "Fence Installation Across Greater Seattle" : "Service Areas"}
+        </Heading>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Professional fence installation across King County, Pierce County, and East King County
         </p>

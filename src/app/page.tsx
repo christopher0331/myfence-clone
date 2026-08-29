@@ -14,9 +14,9 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Seattle Fence Builder | Cedar, Hogwire & Hybrid | MyFence.com",
+  title: "Seattle Fence Installation | Local Fence Company | MyFence.com",
   description:
-    "Father & son Seattle fence builder using Fence Genius. Custom cedar, hogwire & hybrid fences. Free quotes. Call (253) 455-1885.",
+    "Local Seattle fence company for cedar, hogwire, and hybrid fence installation. Father & son team using Fence Genius. Free quotes. Call (253) 455-1885.",
   alternates: {
     canonical: SITE_CONFIG.url + "/",
   },
@@ -35,9 +35,11 @@ export default function HomePage() {
   const faqSchema = generateFaqSchema();
   const orgLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": SITE_CONFIG.url,
     name: SITE_CONFIG.fullName,
+    alternateName: ["Seattle Fence Company", "MyFence Seattle"],
+    description: SITE_CONFIG.description,
     image: SITE_CONFIG.logoUrl,
     logo: {
       "@type": "ImageObject",

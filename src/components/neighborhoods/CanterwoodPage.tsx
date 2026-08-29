@@ -105,7 +105,7 @@ const CanterwoodPage = ({
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Premier Fence Builders for Canterwood Properties
+                HOA-Ready Fence Installation for Canterwood Properties
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Canterwood is one of Gig Harbor's premier gated communities, surrounding a championship golf course and featuring mature evergreen timber and luxury custom homes. Building a fence in Canterwood requires careful attention to architectural review requirements, property boundary easements, and high-end aesthetic standards.
