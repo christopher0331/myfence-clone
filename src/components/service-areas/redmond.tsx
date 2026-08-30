@@ -480,7 +480,8 @@ const Redmond = () => {
         },
         {
           name: "Overlake",
-          description: "Tech hub neighborhood near Microsoft campus with professionals seeking modern horizontal designs and low-maintenance solutions"
+          description: "Tech hub neighborhood near Microsoft campus with professionals seeking modern horizontal designs and low-maintenance solutions. Click to learn more →",
+          link: "/service-areas/redmond/overlake"
         },
         {
           name: "Grass Lawn",
