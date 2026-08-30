@@ -236,7 +236,8 @@ const Sammamish = () => {
         },
         {
           name: "Beaver Lake",
-          description: "Family-oriented neighborhood with top-rated schools needing secure fencing for children and pets with high-quality materials"
+          description: "Family-oriented neighborhood around two kettle lakes, with school-area yards and forest-edge lots needing secure fencing for children and pets. Click to learn more →",
+          link: "/service-areas/sammamish/beaver-lake"
         },
         {
           name: "Sahalee",
