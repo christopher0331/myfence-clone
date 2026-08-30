@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Building2,
-  Volume2,
-  Ruler,
+  Waves,
+  TreePine,
+  Home,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,82 +28,82 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/redmond/downtown-redmond";
+const CANONICAL = "https://myfence.com/service-areas/sammamish/beaver-lake";
 const META_TITLE =
-  "Downtown Redmond Fence Installation | Townhome & Mixed-Use Lots | MyFence.com";
+  "Beaver Lake Sammamish Fence Installation | Lakeside & Forest Lots | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Downtown Redmond, WA. Cedar, hogwire & hybrid fencing for townhomes, alley lots, and mixed-use yards near Town Center and the 2 Line. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Beaver Lake, Sammamish, WA. Cedar, hogwire & hybrid fencing for lakeside lots, school-area yards, and forest-edge properties. Free quotes. (253) 455-1885.";
 
-const DOWNTOWN_REDMOND_FAQS: NeighborhoodFaqItem[] = [
+const BEAVER_LAKE_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Downtown Redmond?",
+    question: "Do I need a permit to build a fence in Beaver Lake, Sammamish?",
     answer:
-      "The City of Redmond generally does not require a building permit for fences seven feet or shorter, but zoning still controls height, materials, and placement. Downtown parcels sit in a mix of Downtown mixed-use zones and leftover residential lots, so the allowed height can be six feet on one block and eight feet on the next. Front setbacks along Cleveland Street, Redmond Way, and 164th Avenue NE also have to clear sight triangles at corners. Townhome HOAs around Redmond Town Center often want drawings even when the city does not. MyFence.com checks the parcel zone, HOA packet, and Redmond Development Services rules before we quote.",
+      "Most Beaver Lake side and rear fences six feet or shorter do not need a City of Sammamish building permit. Front-yard height is usually capped at four feet, and corner lots must keep the sight triangle clear. Anything taller than six feet requires a Type I construction permit plus a recorded agreement with the adjoining owner. Parcels that slope into Beaver Lake or Little Beaver Lake, or that sit in a mapped shoreline or critical-area buffer along West Beaver Lake Drive, can need extra review even at standard height. MyFence.com checks those overlays for your address before we quote.",
   },
   {
     question:
-      "What fence styles work best for Downtown Redmond's townhome and mixed-use lots?",
+      "What fence styles work best for Beaver Lake's lakeside and forest-edge lots?",
     answer:
-      "Six-foot cedar privacy is the usual choice on interior townhome yards that back to an alley or a neighbor's patio, where screening and dog containment matter more than a view. Along the Sammamish River and the Redmond Central Connector, hogwire in a cedar frame keeps the trail and water in sight without turning the lot into a solid wall. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a compact urban lot. Fence Genius maps the short runs and grade changes so panels fit the actual alley, not a suburban six-foot bay assumed from a catalog.",
+      "Interior streets near Beaver Lake Middle School usually choose six-foot cedar privacy so kids and dogs stay in after school. On downhill runs toward the water, hogwire in a cedar frame keeps a view corridor while still containing pets. Forest-edge lots backing toward Beaver Lake Preserve often mix solid cedar on the street sides with hogwire on the treeline so deer pressure is visible and airflow stays high. Hybrid aluminum-and-cedar is the low-maintenance pick when lake-side damp makes staining a chore. Fence Genius maps grade so panels step with the lot instead of leaving crawl gaps.",
   },
   {
-    question: "How much does fence installation cost in Downtown Redmond?",
+    question: "How much does fence installation cost in Beaver Lake, Sammamish?",
     answer:
-      "Downtown Redmond fence installation typically runs $46–$70 per linear foot for six-foot cedar privacy, $40–$58 for hogwire with a cedar frame, and $56–$78 for hybrid aluminum/cedar. Tight alley access, custom gates for shared side yards, and HOA drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Beaver Lake fence installation typically runs $45–$68 per linear foot for six-foot cedar privacy, $39–$58 for hogwire with a cedar frame, and $55–$76 for hybrid aluminum/cedar. Longer runs on larger plateau lots, hand-digging around firs on West Beaver Lake Drive, and stepped lake-side panels can move the number. Use the quote tool for a starting range, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Downtown Redmond?",
+    question: "How long does fence installation take in Beaver Lake?",
     answer:
-      "Most Downtown Redmond residential and townhome projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Short bays, hand-carrying materials down alleys off Leary Way or NE 76th Street, and parking around Town Center are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most Beaver Lake residential jobs finish in one to three working days after any city or HOA paperwork is done. Prefabricated panels keep on-site time short. Extra half-days usually come from stepped runs toward the lakes, mature roots along SE 24th Street and 244th Avenue SE, or tight side-yard access on older lakefront streets. We lock the schedule with you before the crew arrives.",
   },
   {
     question:
-      "Do I need my neighbor's permission for a fence in Downtown Redmond?",
+      "Do I need my neighbor's permission for a fence in Beaver Lake?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Redmond does not require their signature. On townhome rows, the HOA or the adjoining owner may already control the shared side yard, so we confirm who owns which stretch before digging. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which run.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Sammamish does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. MyFence.com can help confirm pins, share a simple site plan, and keep the conversation on height, style, and who pays for which stretch.",
   },
 ];
 
-const DOWNTOWN_REDMOND_ATTRACTIONS: LocalAttraction[] = [
+const BEAVER_LAKE_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Anderson Park",
-    url: "https://www.redmond.gov/facilities/facility/details/Anderson-Park-59",
+    name: "Beaver Lake Park",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/beaver-lake-park/",
     description:
-      "Redmond's oldest city park sits in the middle of downtown — lawn, evergreens, historic cabins, a brick plaza, and community garden beds a short walk from Cleveland Street townhomes.",
+      "An 83-acre city park split between the lake-side lodge on SE 24th Street and the athletic fields, playground, and off-leash dog area on 244th Avenue SE — the weekday backyard for many homes around both kettle lakes.",
   },
   {
-    name: "Redmond Town Center",
-    url: "https://www.redmondtowncenter.com/",
+    name: "Beaver Lake Middle School",
+    url: "https://beaverlake.isd411.org/",
     description:
-      "The open-air retail and residential campus south of NE 76th Street, where downtown residents walk for groceries, dinner, and the light-rail station sitting just to the north.",
+      "The Issaquah School District campus at 25025 SE 32nd Street, where local sixth-through-eighth graders spend the week. Afternoon pickup stacks along SE 32nd and sets the rhythm for nearby family yards.",
   },
   {
-    name: "Redmond Central Connector",
-    url: "https://www.redmond.gov/1717/Redmond-Central-Connector-Trail",
+    name: "Soaring Eagle Regional Park",
+    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle",
     description:
-      "A paved linear park on the old rail corridor that cuts through downtown. Morning bike commutes and evening dog walks share the same path that now sits under the Downtown Redmond Station.",
+      "King County forest just east of the neighborhood, reached from West Beaver Lake Drive through Beaver Lake Preserve. Homes that back toward this corridor deal with deer traffic and a true forest edge, not a manicured greenbelt.",
   },
   {
-    name: "Luke McRedmond Landing",
-    url: "https://www.redmond.gov/facilities/facility/details/Luke-McRedmond-Landing-65",
+    name: "Duthie Hill Mountain Bike Park",
+    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/duthie-hill",
     description:
-      "A small riverfront park on the Sammamish with a canoe launch, fishing pier, and picnic tables — the closest put-in for downtown households that want water without driving to Marymoor.",
+      "The 120-acre bike park on Issaquah-Fall City Road, a short hop from Endeavour Elementary. Beaver Lake families treat it as the weekend trailhead, and muddy bikes coming home are a real reason people want a contained side yard.",
   },
   {
-    name: "Old Redmond Schoolhouse Community Center",
-    url: "https://www.redmond.gov/facilities/facility/details/Old-Redmond-Schoolhouse-Community-Center-67",
+    name: "Endeavour Elementary School",
+    url: "https://endeavour.isd411.org/",
     description:
-      "The 1922 schoolhouse on 168th Avenue NE, now a community center and preschool campus a few blocks from the downtown core. Evening classes and weekend rentals keep the block active after shops close.",
+      "The K–5 campus on SE Issaquah-Fall City Road that feeds Beaver Lake Middle. Walking and carpool traffic from the eastern streets of the neighborhood funnels here on school mornings.",
   },
 ];
 
-const DowntownRedmondPage = () => {
+const BeaverLakePage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Downtown Redmond, Redmond",
-    pageTitle: "Downtown Redmond Fence Installation",
+    neighborhoodName: "Beaver Lake, Sammamish",
+    pageTitle: "Beaver Lake Sammamish Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: DOWNTOWN_REDMOND_FAQS,
+    faqItems: BEAVER_LAKE_FAQS,
   });
 
   return (
@@ -120,25 +120,25 @@ const DowntownRedmondPage = () => {
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
             <Link
-              href="/service-areas/redmond"
+              href="/service-areas/sammamish"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Redmond
+              Back to Sammamish
             </Link>
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Downtown Redmond, Redmond WA
+                    Serving Beaver Lake, Sammamish WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Downtown Redmond Fence Installation
+                  Beaver Lake Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Townhome, alley, and mixed-use fence work for Downtown Redmond — cedar privacy for compact yards, hogwire that keeps the river trail in view, and hybrid systems built for busy urban lots.
+                  Fence work for Beaver Lake and Little Beaver Lake homes — cedar privacy for school-area yards, hogwire that keeps the water in view, and hybrid systems built for forest-edge lots and lake-side damp.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -154,10 +154,10 @@ const DowntownRedmondPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Downtown Redmond, Redmond"
+                  city="Beaver Lake, Sammamish"
                   state="Washington"
-                  radiusMiles={4}
-                  zoom={13}
+                  radiusMiles={5}
+                  zoom={12}
                   showBusinessInfo={true}
                 />
               </div>
@@ -194,13 +194,13 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing a Walkable Core, Not a Cul-de-Sac
+                Where Two Kettle Lakes Meet the East Plateau Forest
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Downtown Redmond is a mixed-use grid, not a hillside subdivision. Lots sit on Cleveland Street, Redmond Way, Leary Way, and the numbered avenues around 164th and 166th. Many are townhomes with alley gates, shared side yards, and a patio that faces another patio. The Sammamish River and Bear Creek cut through the district, the Redmond Central Connector runs under the 2 Line station at NE 76th Street, and Redmond Town Center is the daily errand loop. A fence here has to fit a short run, a HOA packet, and a neighbor who lives six feet away — not a 150-foot suburban back line.
+                Beaver Lake is not a single cul-de-sac. It is a pair of glacial kettle lakes — Beaver Lake and Little Beaver Lake — ringed by older lakefront streets on West Beaver Lake Drive and E Beaver Lake Drive SE, then by plateau lots along 244th Avenue SE, SE 24th Street, and SE 32nd Street. Some parcels drop straight to the water. Others sit flatter and back onto firs that connect toward Beaver Lake Preserve. Trossachs sits just east with a master association; many Beaver Lake streets do not, so the design conversation starts with the lot: shoreline views, kid-and-dog yards near Beaver Lake Middle, and the extra damp that hangs over the lakes on cool mornings.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com installs cedar, hogwire, and hybrid fences across Redmond&apos;s Eastside core, including downtown townhome rows and the residential pockets that still sit between the retail blocks. We use Fence Genius to capture the actual bay lengths and any grade drop toward the river before a post goes in the ground, so panels arrive cut for the alley instead of getting ripped down on a busy street. The goal is a fence that looks like it belongs on Cleveland, not a catalog panel dropped onto a zero-lot-line yard.
+                MyFence.com has installed cedar, hogwire, and hybrid fences across south and east Sammamish, including the Beaver Lake basin and the Klahanie edge to the southwest. We use Fence Genius to capture grade before a post goes in the ground, so stepped runs on the lake side stay even and forest-edge lots get tight bottoms that deer and small dogs cannot exploit. The fence should look like it belongs on your street — not a catalog panel dropped onto a slope.
               </p>
             </div>
           </div>
@@ -211,18 +211,18 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Downtown Redmond Homeowners Trust MyFence.com
+                Why Beaver Lake Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Building2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Waves className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Townhome HOA Drawings
+                        Lake-Side View Corridors
                       </h3>
                       <p className="text-muted-foreground">
-                        Compact associations around Town Center and Cleveland Street often want a simple elevation, stain note, and height callout. We put that packet together so the board is not guessing from a photo of someone else&apos;s yard.
+                        Hogwire and mixed-height cedar keep sightlines to Beaver Lake and Little Beaver Lake while screening the neighbor&apos;s patio. Post heights are planned against the slope so the top rail stays level from the street.
                       </p>
                     </div>
                   </div>
@@ -235,33 +235,33 @@ const DowntownRedmondPage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for the extra damp that sits along the Sammamish River corridor. We stand behind the install through Redmond winters.
+                        Full coverage on materials and labor, including hardware chosen for lake-side humidity and forest-edge ground contact. We stand behind the install through Sammamish winters.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Street-Noise Screening
+                        School-Street Family Yards
                       </h3>
                       <p className="text-muted-foreground">
-                        Solid cedar on the Redmond Way and 164th sides of a lot takes the edge off traffic and light-rail ambient noise. We keep hogwire or lower runs where you still want eyes on the Connector or the river.
+                        Self-closing gates, no crawl gaps at the bottom, and latch heights that work for households walking to Beaver Lake Middle or Endeavour. Built for after-school backyard use, not just curb appeal.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Ruler className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <TreePine className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Alley-Width Installations
+                        Forest-Edge Installations
                       </h3>
                       <p className="text-muted-foreground">
-                        Compact equipment and hand-carry days for alleys that will not take a full truck. Fence Genius shortens panel bays so a 12-foot townhome run does not get a leftover gap at the gate.
+                        Hand-digging around mature firs, panels that follow the treeline toward the preserve, and bottoms tight enough that deer pressure does not open a gap. We plan post holes around roots instead of cutting through them.
                       </p>
                     </div>
                   </div>
@@ -276,7 +276,7 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Downtown Redmond Homeowners Say
+                What Beaver Lake Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -286,9 +286,9 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Townhome patio off the alley — we needed privacy from the neighbor without blocking the walkway. They built a short cedar run with a self-closing gate and it fits the HOA notes. Crew was in and out before the weekend market crowd hit Cleveland.&rdquo;
+                    &ldquo;Our lot backs toward the preserve and I did not want a solid wall hiding the trees. They ran hogwire along the treeline and cedar on the street sides. The dog stays in and the woods still feel like part of the yard.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Maya in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Marcus in Beaver Lake</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -298,9 +298,9 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot backs toward the Connector. Hogwire in a cedar frame keeps the dog in and we still see people on the trail. They measured the slope down to the river so the bottom rail does not float.&rdquo;
+                    &ldquo;We needed a real privacy fence after the kids started walking to middle school. The cedar matches the older houses on our street, the gates latch well, and they were careful around the firs along the side yard.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Jordan in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Elena in Beaver Lake</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -310,9 +310,9 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Redmond Way noise was the issue, not a giant backyard. Solid cedar on the street side, open run on the patio. The townhome board signed off on the first drawing they sent.&rdquo;
+                    &ldquo;Small HOA on our cul-de-sac, nothing like Trossachs paperwork. They still put together a drawing and material list the board signed off on the first pass. Appreciate not having to chase that ourselves.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Priya in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Jordan in Beaver Lake</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -321,56 +321,56 @@ const DowntownRedmondPage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Downtown Redmond fence" />
+        <LeadCaptureTabs fenceStyleName="Beaver Lake Sammamish fence" />
 
-        {/* 6. Photo Gallery — nearby Eastside installs until downtown-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Sammamish installs until Beaver Lake-tagged photos exist */}
         <ServiceAreaPhotoGallery
-          city="Kirkland"
-          title="Recent Fence Work Near Downtown Redmond"
-          description="These photos are from nearby Eastside jobs, including Kirkland just west of Downtown Redmond. Same crew, same materials, and the same Fence Genius process we use on downtown townhome and mixed-use lots."
+          city="Sammamish"
+          title="Recent Fence Work Near Beaver Lake"
+          description="These photos are from nearby Sammamish jobs, including Klahanie just southwest of Beaver Lake. Same crew, same materials, and the same Fence Genius process we use on Beaver Lake lots."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Redmond" neighborhood="Downtown Redmond" />
+        <FeaturedProject city="Sammamish" neighborhood="Beaver Lake" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Downtown Redmond–Specific Fencing Considerations
+                Beaver Lake–Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Lot Width and Alley Access
+                    Beaver Lake Slope and Stepped Runs
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Townhome yards off Cleveland Street and the alleys behind 164th Avenue NE are often one patio deep. A six-foot privacy panel that works on Education Hill can swallow the whole space here. We measure the usable run, place gates where trash and bikes actually move, and shorten bays so the last panel is not a leftover stub. Crews hand-carry material when a truck cannot sit in the alley through the afternoon.
+                    Streets on the downhill side of the plateau fall toward both kettle lakes, so a fence built as one long level line either buries the bottom rail or leaves a gap a small dog can use. We measure grade with Fence Genius, then step or rack panels so the top stays even and the bottom tracks the lawn. On steeper cuts toward E Beaver Lake Drive SE we shorten panel bays rather than forcing a six-foot bay across a drop.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Mixed-Use Zoning and Height
+                    Beaver Lake Moisture and Fastener Choice
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Downtown zones and remaining residential parcels sit next to each other. Mixed-use lots can allow a taller fence than a leftover R-zone lot a block north. Front setbacks on Redmond Way and 166th still have to keep sight triangles at corners near the station. We read the parcel zone before we promise a height, then match the townhome HOA if it is stricter than the city.
+                    The lakes hold cool air and overnight damp longer than the plateau toward Trossachs. Raw cedar grays fast on the water side, and cheap galvanized nails start showing rust streaks. We spec pre-stained Western Red Cedar and stainless or hot-dipped fasteners, and we talk through steel posts where the soil stays wet at the downhill corners of the lot.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond River Moisture and Trail Edges
+                    Beaver Lake Wildlife and Forest Edges
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lots that step down toward the Sammamish River or Bear Creek stay damp longer than the plateau on Education Hill. Raw cedar grays fast, and cheap fasteners streak. We spec pre-stained Western Red Cedar and stainless or hot-dipped hardware. Where a lot backs to the Central Connector, hogwire or a mixed-height run keeps eyes on the trail while still containing pets — and we flag critical-area buffers before digging rather than after.
+                    Lots that back toward Beaver Lake Preserve and Soaring Eagle see regular deer traffic. A privacy wall on that edge often fights the reason people bought the house; hogwire with a cedar frame still contains dogs without boxing in the woods. We keep bottoms tight and avoid leaving a crawl space under the last panel where the grade falls into the trees.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Noise, Neighbors, and Shared Walls
+                    Beaver Lake HOAs, Trees, and City Height Rules
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Redmond Way, the 2 Line, and Town Center parking all add ambient noise that a solid cedar run can soften on the street side of a patio. The other three sides are often another owner&apos;s wall or a shared HOA strip. We confirm who owns the line, talk through stain so two attached yards do not clash, and keep post holes off buried utilities that are denser downtown than on a suburban cul-de-sac.
+                    Some cul-de-sacs around the lakes have small architectural committees; many older lakefront streets do not. Trossachs next door is a different set of rules if your parcel sits on that edge. We still follow Sammamish height limits — six feet in most side and rear yards, four feet in the front setback — and we plan post holes around the firs along SE 24th Street and 244th Avenue SE. If your parcel sits in a shoreline or wetland buffer, we flag that before digging rather than after.
                   </p>
                 </div>
               </div>
@@ -383,39 +383,39 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Downtown Redmond
+                Fence Installation Cost in Beaver Lake
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A downtown fence is a short-run urban install: alley access, HOA notes, and river-side moisture can move the number. These are typical ranges; your on-site measurement is the real quote.
+                A Beaver Lake fence is an investment in a school-area lot and, on the downhill side, a view of the water. Slope, forest-edge hand-digging, and gates move the number. These are typical ranges; your on-site measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
                   <li>
                     <span>
                       <strong className="text-foreground">Cedar privacy (6&apos;):</strong>{" "}
-                      $46–$70 per linear foot
+                      $45–$68 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $40–$58 per linear foot
+                      $39–$58 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hybrid aluminum/cedar:</strong>{" "}
-                      $56–$78 per linear foot
+                      $55–$76 per linear foot
                     </span>
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Alley hand-carry, custom gates, and HOA drawing packages may add 10–15%. Get an exact quote for your Downtown Redmond property with a free on-site measurement.
+                  Stepped runs toward the lakes and hand-digging near mature trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Beaver Lake property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Downtown Redmond property</Link>
+                  <Link href="/quote">Get an exact quote for your Beaver Lake property</Link>
                 </Button>
               </div>
             </div>
@@ -427,13 +427,13 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Downtown Redmond
+                Popular Fence Styles in Beaver Lake
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior townhome patios and alley lots. Full screening from the neighbor, pre-stained cedar that holds up to river-corridor damp, and a look that fits mixed-use blocks around Cleveland and 164th.
+                    The workhorse on interior Beaver Lake lots near the middle school. Full screening for after-school play, pre-stained cedar that holds up to Sammamish winters, and a look that fits older lakefront houses as well as newer plateau builds.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -445,7 +445,7 @@ const DowntownRedmondPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for lots that face the Connector, the Sammamish, or a courtyard. Dogs stay in, the trail stays in view, and the lighter footprint is easier in a 20-foot yard than a solid wall.
+                    Cedar frame with black mesh for downhill, waterfront, and preserve-edge lots. Dogs stay in, the lake or woods stay in view, and the lighter footprint is easier around roots than a solid privacy wall.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -457,7 +457,7 @@ const DowntownRedmondPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a downtown calendar has no extra Saturday for staining. Clean enough for HOA review without looking like a commercial lot.
+                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when lake-side humidity makes staining a chore. Strong enough for busy family yards without looking like a commercial lot.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -476,23 +476,23 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Downtown Redmond Installation Process
+                Our Beaver Lake Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Downtown Redmond Site Assessment
+                    1. Beaver Lake Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the short run, note alley width, map utilities, and check whether the parcel sits in a Downtown mixed-use zone or a leftover residential zone. Fence Genius captures bay lengths and any drop toward the river so panels are built to the actual space.
+                    We walk the lot, measure the run, note slope toward either lake, map trees, and check whether the parcel sits in a Sammamish shoreline or critical-area overlay. Fence Genius captures grade so panels are built to the actual drop, not a flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Downtown Redmond Design & HOA Submission
+                    2. Beaver Lake Design & HOA Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. If your townhome row has an architectural committee, we prepare a simple drawing, stain note, and height callout. If it does not, we still document Redmond height and sight-triangle rules so the install is clean with the city.
+                    You pick style and height. If your street has a small HOA, we prepare a simple drawing and material list. If you sit on the Trossachs edge, we flag those rules separately. If there is no association, we still document Sammamish height and setback so the install is clean with the city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -500,15 +500,15 @@ const DowntownRedmondPage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so downtown install days are mostly setting posts and hanging finished sections instead of ripping lumber on Cleveland Street.
+                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Beaver Lake install days are mostly setting posts and hanging finished sections.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Downtown Redmond Installation
+                    4. Beaver Lake Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment and hand-carry when alleys off Leary Way or NE 76th will not take a full truck. Short bays, careful post placement near shared walls, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets off 244th Avenue SE, SE 24th Street, and SE 32nd Street. Hand-digging near mature roots, stepped posts on the downhill side, and full cleanup at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -526,95 +526,104 @@ const DowntownRedmondPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Downtown Redmond Fence Installation FAQs"
-          items={DOWNTOWN_REDMOND_FAQS}
+          title="Beaver Lake Fence Installation FAQs"
+          items={BEAVER_LAKE_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
-        cityName="Redmond"
-        neighborhoodName="Downtown Redmond"
-        attractions={DOWNTOWN_REDMOND_ATTRACTIONS}
+        cityName="Sammamish"
+        neighborhoodName="Beaver Lake"
+        attractions={BEAVER_LAKE_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Downtown Redmond households sit in the{" "}
+              Beaver Lake families are served by the{" "}
               <a
-                href="https://www.lwsd.org/"
+                href="https://www.isd411.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Lake Washington School District
+                Issaquah School District
               </a>
-              , with many elementary students at{" "}
+              , feeding{" "}
               <a
-                href="https://redmond.lwsd.org/"
+                href="https://endeavour.isd411.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Redmond Elementary
-              </a>{" "}
-              and middle-schoolers a short hop to{" "}
-              <a
-                href="https://rms.lwsd.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Redmond Middle School
+                Endeavour Elementary
               </a>
-              . After school, the{" "}
+              {" "}on Issaquah-Fall City Road, then{" "}
               <a
-                href="https://kcls.org/locations/redmond/"
+                href="https://beaverlake.isd411.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Redmond Library
-              </a>{" "}
-              on NE 85th Street is the indoor fallback when the plaza at Anderson Park is packed.
+                Beaver Lake Middle School
+              </a>
+              {" "}on SE 32nd Street, and later{" "}
+              <a
+                href="https://skyline.isd411.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Skyline High School
+              </a>
+              . Weekday life is built around that school triangle and a short hop west to the{" "}
+              <a
+                href="https://kcls.org/locations/sammamish/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Sammamish Library
+              </a>
+              {" "}at the Commons.
             </p>
             <p>
-              Weekdays are built around walking to Town Center and boarding the 2 Line at{" "}
+              Groceries and after-practice meals cluster at Klahanie Village rather than requiring a drive into downtown Issaquah — pizza and group tables at{" "}
               <a
-                href="https://www.soundtransit.org/ride-with-us/stops-stations/downtown-redmond-station"
+                href="https://2468restaurant.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Downtown Redmond Station
+                2-4-6-8 Restaurant
               </a>
-              . Weekends split between the river path at{" "}
+              {" "}and Persian-Mediterranean dinners at{" "}
               <a
-                href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/sammamish-river-trail"
+                href="https://diyarrestaurant.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Sammamish River Trail
+                Diyar
               </a>
-              , dinner and errands listed by{" "}
+              . Weekends split between the lodge lawns and dog park at Beaver Lake Park, forest miles at{" "}
               <a
-                href="https://experienceredmond.com/"
+                href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Experience Redmond
+                Soaring Eagle Regional Park
               </a>
-              , and city permits or park questions through{" "}
+              , and bike laps at Duthie Hill.{" "}
               <a
-                href="https://www.redmond.gov/"
+                href="https://www.sammamish.us/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                the City of Redmond
-              </a>
-              . SR-520 and Redmond Way still carry the car trips; a lot of downtown life never needs them.
+                The City of Sammamish
+              </a>{" "}
+              handles permits and parks; I-90 is a short run south via 228th or Issaquah-Fall City Road when you need Bellevue or Seattle.
             </p>
           </>
         }
@@ -626,31 +635,25 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Also Serving Nearby Redmond Neighborhoods
+                Also Serving Nearby Sammamish Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Redmond. From Downtown we also work in Education Hill to the north, Overlake to the south, Grass Lawn to the west, and across the city line into Kirkland and Bellevue.
+                We install fences throughout Sammamish. From Beaver Lake we also work in Pine Lake to the west, Klahanie to the southwest, Sahalee, Trossachs, and East Sammamish.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond">Redmond overview</Link>
+                  <Link href="/service-areas/sammamish">Sammamish overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/education-hill">
-                    Education Hill
+                  <Link href="/service-areas/sammamish/pine-lake">Pine Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/klahanie">Klahanie</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/sahalee/hoa-approved-fencing">
+                    Sahalee
                   </Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/overlake">Overlake</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/kirkland/juanita">Juanita</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/kirkland">Kirkland</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/bellevue">Bellevue</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
@@ -665,10 +668,10 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Downtown Redmond Property?
+                Ready to Enhance Your Beaver Lake Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Downtown Redmond. We&apos;ll walk the alley, talk through privacy vs. trail views, and quote a fence that fits your townhome or mixed-use lot.
+                Same-day estimates available in Beaver Lake. We&apos;ll walk the slope, talk through lake view versus privacy, and quote a fence that fits your Sammamish lot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -686,4 +689,4 @@ const DowntownRedmondPage = () => {
   );
 };
 
-export default DowntownRedmondPage;
+export default BeaverLakePage;

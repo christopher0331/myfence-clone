@@ -636,6 +636,9 @@ const PineLakePage = () => {
                   <Link href="/service-areas/sammamish">Sammamish overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/beaver-lake">Beaver Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish/klahanie">Klahanie</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
