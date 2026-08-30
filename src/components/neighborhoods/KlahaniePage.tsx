@@ -503,6 +503,9 @@ const KlahaniePage = () => {
                   <Link href="/service-areas/sammamish/pine-lake">Pine Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/trossachs">Trossachs</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish/beaver-lake">Beaver Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
