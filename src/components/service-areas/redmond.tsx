@@ -485,7 +485,8 @@ const Redmond = () => {
         },
         {
           name: "Grass Lawn",
-          description: "Established community with mature properties needing installations that preserve existing landscaping and complement traditional architecture"
+          description: "Established community with mature properties needing installations that preserve existing landscaping and complement traditional architecture. Click to learn more →",
+          link: "/service-areas/redmond/grass-lawn"
         },
         {
           name: "Willows/Rose Hill",
