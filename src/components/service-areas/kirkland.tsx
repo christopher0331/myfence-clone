@@ -490,7 +490,8 @@ const Kirkland = () => {
         },
         {
           name: "Finn Hill",
-          description: "Established residential area with mature properties needing installations that work around 50+ year old trees and landscaping"
+          description: "Established residential area with mature properties needing installations that work around 50+ year old trees and landscaping. Click to learn more →",
+          link: "/service-areas/kirkland/finn-hill"
         },
         {
           name: "Kingsgate",
