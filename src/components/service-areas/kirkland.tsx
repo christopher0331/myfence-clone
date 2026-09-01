@@ -494,7 +494,8 @@ const Kirkland = () => {
         },
         {
           name: "Kingsgate",
-          description: "Diverse family neighborhoods with active outdoor spaces requiring durable privacy fencing for children, pets, and entertaining"
+          description: "Diverse family neighborhoods with active outdoor spaces requiring durable privacy fencing for children, pets, and entertaining",
+          link: "/service-areas/kirkland/kingsgate"
         },
         {
           name: "Bridle Trails",
