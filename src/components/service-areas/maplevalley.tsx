@@ -261,6 +261,11 @@ const MapleValley = () => {
           link: "/service-areas/maple-valley/maple-woods"
         },
         {
+          name: "Daybreak at River Ridge",
+          description: "HOA-influenced fencing for slope-aware homes near local trail and park access. Click to learn more →",
+          link: "/service-areas/maple-valley/daybreak-at-river-ridge"
+        },
+        {
           name: "Ravensdale",
           description: "Wooded rural-residential area east of Maple Valley with larger lots, gentle slopes, and a quiet foothills setting. Click to learn more →",
           link: "/service-areas/maple-valley/ravensdale"
