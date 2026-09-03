@@ -1,0 +1,16 @@
+[
+  {
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757",
+    "completedAt": "2026-09-01T23:48:05.94342+00:00",
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "beforeFile": "Kent/Cambridge-Picture-Frame-Fence-Before-1.webp",
+    "afterFile": "Kent/Cambridge-Picture-Frame-Fence-After-1.webp",
+    "beforeAlt": "Kent fence before installation",
+    "afterAlt": "Kent Picture Frame Fence after installation"
+  }
+]
