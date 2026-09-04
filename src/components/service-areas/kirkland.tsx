@@ -507,7 +507,8 @@ const Kirkland = () => {
         },
         {
           name: "Moss Bay",
-          description: "Waterfront luxury condos and townhomes needing HOA-compliant installations and saltwater-resistant materials"
+          description: "Waterfront condos, townhomes, and hillside lots along Lake Street S and Lake Washington Blvd. Click to learn more →",
+          link: "/service-areas/kirkland/moss-bay"
         }
       ]}
       landmarks={[
