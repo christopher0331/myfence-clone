@@ -13,8 +13,9 @@ import {
   MapPin,
   Phone,
   Building2,
-  Volume2,
-  Ruler,
+  Waves,
+  Eye,
+  Mountain,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,82 +29,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/kirkland/downtown-kirkland";
+const CANONICAL = "https://myfence.com/service-areas/kirkland/moss-bay";
 const META_TITLE =
-  "Downtown Kirkland Fence Installation | Townhome & Mixed-Use Lots | MyFence.com";
+  "Moss Bay Kirkland Fence Installation | Waterfront & Hillside Lots | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Downtown Kirkland, WA. Cedar, hogwire & hybrid fencing for townhomes, alley lots, and mixed-use yards near Marina Park and Park Lane. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Moss Bay, Kirkland, WA. Cedar, hogwire & hybrid fencing for waterfront condos, townhomes, and hillside lots along Lake Street S and Lake Washington Blvd. Free quotes. (253) 455-1885.";
 
-const DOWNTOWN_KIRKLAND_FAQS: NeighborhoodFaqItem[] = [
+const MOSS_BAY_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Downtown Kirkland?",
+    question: "Do I need a permit to build a fence in Moss Bay?",
     answer:
-      "The City of Kirkland generally does not require a building permit for residential fences under eight feet, but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Downtown parcels sit in a mix of pedestrian-oriented mixed-use zones along Lake Street, Central Way, and Kirkland Avenue and leftover residential lots toward Norkirk and Houghton, so the allowed height can change from one block to the next. Townhome and condo associations around Kirkland Urban and Park Lane often want architectural drawings even when the city does not. Lots within 200 feet of Lake Washington's ordinary high water mark may also need shoreline review. MyFence.com checks the parcel zone, HOA packet, and Kirkland Planning and Building rules before we quote.",
+      "The City of Kirkland generally does not require a building permit for residential fences under eight feet, but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Moss Bay sits inside Kirkland's Greater Downtown Urban Center, so a parcel on Lake Street S or 2nd Avenue S can sit in a pedestrian-oriented mixed-use zone while the next lot up the hill toward 6th Street S is still residential. Lots within 200 feet of Lake Washington's ordinary high water mark may also need shoreline review. Condo and townhome boards along the waterfront often want a drawing packet even when the city does not. MyFence.com checks the parcel zone, any HOA rules, and Kirkland Planning and Building requirements before we quote.",
   },
   {
     question:
-      "What fence styles work best for Downtown Kirkland's townhome yards and waterfront-adjacent lots?",
+      "What fence styles work best for Moss Bay's hillside lots and waterfront condos?",
     answer:
-      "Six-foot cedar privacy is the usual choice on interior townhome patios and alley lots off 3rd Street or State Street, where screening from a neighbor and dog containment matter more than a view. Along Lake Street South and on lots that face Marina Park or David E. Brink Park, hogwire in a cedar frame keeps the water in sight without turning a short run into a solid wall. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a downtown calendar. Fence Genius maps the short bays and any grade drop toward the lake so panels fit the actual patio, not a suburban catalog length.",
+      "Six-foot cedar privacy is the usual choice on interior townhome patios and uphill lots off State Street S or 6th Street S, where screening from a neighbor matters more than a view. Along Lake Street S and Lake Washington Boulevard, hogwire in a cedar frame keeps Lake Washington in sight without turning a short waterfront run into a solid wall. Hybrid aluminum-and-cedar systems suit households that would rather skip staining in a damp lakeside climate. Fence Genius maps the grade drop toward the lake so panels step with the slope instead of floating over it.",
   },
   {
-    question: "How much does fence installation cost in Downtown Kirkland?",
+    question: "How much does fence installation cost in Moss Bay?",
     answer:
-      "Downtown Kirkland fence installation typically runs $48–$72 per linear foot for six-foot cedar privacy, $42–$60 for hogwire with a cedar frame, and $56–$80 for hybrid aluminum/cedar. Tight alley access, custom gates for shared side yards, marine-grade hardware near the water, and HOA drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Moss Bay fence installation typically runs $48–$72 per linear foot for six-foot cedar privacy, $42–$60 for hogwire with a cedar frame, and $56–$80 for hybrid aluminum/cedar. Steep lots, custom gates for shared side yards, moisture-ready hardware near the water, and HOA drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Downtown Kirkland?",
+    question: "How long does fence installation take in Moss Bay?",
     answer:
-      "Most Downtown Kirkland residential and townhome projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Short bays, hand-carrying materials down alleys off Kirkland Avenue or 5th Avenue, and parking around Marina Park event days are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most Moss Bay residential and condo projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Stepped hillside bays, hand-carrying materials down Lake Street S or 2nd Avenue S, and parking around Marina Park event days are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
   },
   {
-    question:
-      "Do I need my neighbor's permission for a fence in Downtown Kirkland?",
+    question: "Do I need my neighbor's permission for a fence in Moss Bay?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Kirkland does not require their signature. On townhome rows and condo decks, the HOA or the adjoining owner may already control the shared side yard, so we confirm who owns which stretch before digging. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which run.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Kirkland does not require their signature. On condo decks and townhome rows, the HOA or the adjoining owner may already control the shared side yard, so we confirm who owns which stretch before digging. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which run.",
   },
 ];
 
-const DOWNTOWN_KIRKLAND_ATTRACTIONS: LocalAttraction[] = [
+const MOSS_BAY_ATTRACTIONS: LocalAttraction[] = [
+  {
+    name: "David E. Brink Park",
+    url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/David-E.-Brink-Park",
+    description:
+      "A pocket waterfront at 555 Lake Street S — dock, benches, and a paved loop a short walk from Moss Bay condos. Households on this block often keep an open hogwire run so the shoreline stays in the yard instead of disappearing behind a solid wall.",
+  },
+  {
+    name: "Marsh Park",
+    url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Marsh-Park",
+    description:
+      "The next lawn south on Lake Washington Boulevard: grass, picnic tables, and a dock that Moss Bay walkers treat as the weekend extension of their own lot. Street parking is thin, which is the same constraint a fence crew hits on install day.",
+  },
   {
     name: "Marina Park",
     url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Marina-Park",
     description:
-      "The waterfront plaza at the foot of Lake Street — sandy beach, public dock, and the Al Locke Pavilion. Saturday markets and summer concerts set the crowd pattern that downtown households walk into after work.",
+      "The sandy beach and Al Locke Pavilion at the north end of the Moss Bay waterfront. Summer concerts and the Saturday crowd set the noise and parking pattern that hillside lots above Lake Street live with after work.",
+  },
+  {
+    name: "Cross Kirkland Corridor",
+    url: "https://www.kirklandwa.gov/Government/Departments/Public-Works-Department/Cross-Kirkland-Corridor",
+    description:
+      "The rail-trail that climbs the inland edge of Moss Bay toward Everest and the NE 85th corridor. Back lines that face the trail often want screening from foot traffic without boxing in a small uphill yard.",
   },
   {
     name: "Peter Kirk Park",
     url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Peter-Kirk-Park",
     description:
-      "Kirkland's civic lawn on 3rd Street: seasonal pool, pickleball, skate park, and Lee Johnson Field. Downtown patios that are one gate deep treat this park as the extra backyard.",
-  },
-  {
-    name: "Kirkland Performance Center",
-    url: "https://www.kpcenter.org/",
-    description:
-      "The 400-seat theater at 350 Kirkland Avenue, next to the library. Evening shows fill street parking on 3rd and Central Way — a real constraint when a crew needs to stage a downtown install.",
-  },
-  {
-    name: "Kirkland Urban",
-    url: "https://kirklandurban.com/",
-    description:
-      "The mixed-use campus wrapping the park — offices, apartments, splash pad, and ground-floor dining. Townhome and condo yards around the block often share HOA packets that want fencing to sit quietly next to this streetscape.",
-  },
-  {
-    name: "David E. Brink Park",
-    url: "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/David-E.-Brink-Park",
-    description:
-      "A quieter waterfront strip at 555 Lake Street S, a few blocks south of the pavilion. Dock, pocket beach, and a paved loop — lots along Lake Street S often keep an open hogwire run so this shoreline stays in view.",
+      "The civic lawn on 3rd Street — pool, pickleball, skate park, and Lee Johnson Field. Moss Bay households a few blocks east treat this as the extra backyard when a condo patio is one gate deep.",
   },
 ];
 
-const DowntownKirklandPage = () => {
+const MossBayPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Downtown Kirkland, Kirkland",
-    pageTitle: "Downtown Kirkland Fence Installation",
+    neighborhoodName: "Moss Bay, Kirkland",
+    pageTitle: "Moss Bay Kirkland Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: DOWNTOWN_KIRKLAND_FAQS,
+    faqItems: MOSS_BAY_FAQS,
   });
 
   return (
@@ -131,17 +131,17 @@ const DowntownKirklandPage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Downtown Kirkland, Kirkland WA
+                    Serving Moss Bay, Kirkland WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Downtown Kirkland Fence Installation
+                  Moss Bay Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Townhome, alley, and mixed-use fence work for Downtown
-                  Kirkland — cedar privacy for compact yards, hogwire that keeps
-                  Lake Washington in view, and hybrid systems built for busy
-                  urban lots near Marina Park and Park Lane.
+                  Waterfront condo, townhome, and hillside fence work for Moss
+                  Bay — cedar privacy for compact yards, hogwire that keeps Lake
+                  Washington in view, and hybrid systems built for the slope
+                  between Lake Street S and 6th Street S.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -157,7 +157,7 @@ const DowntownKirklandPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Downtown Kirkland, Kirkland"
+                  city="Moss Bay, Kirkland"
                   state="Washington"
                   radiusMiles={4}
                   zoom={13}
@@ -197,30 +197,29 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing a Waterfront Grid, Not a Cul-de-Sac
+                Fencing the Slope From Lake Street to the Corridor
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Downtown Kirkland is a walkable mixed-use core, not a hillside
-                subdivision. Lots sit on Lake Street, Central Way, Kirkland
-                Avenue, Park Lane, and the numbered streets around 3rd and 5th.
-                Many are townhomes or condos with alley gates, shared side
-                yards, and a patio that faces another patio. Marina Park anchors
-                the waterfront, Peter Kirk Park is the civic lawn a block inland,
-                and Kirkland Urban wraps the park with offices and apartments.
-                A fence here has to fit a short run, a condo packet, and a
-                neighbor who lives six feet away — not a 150-foot suburban back
-                line.
+                Moss Bay is Kirkland&apos;s official waterfront neighborhood — the
+                stretch that drops from the Cross Kirkland Corridor down Lake
+                Street S, 2nd Avenue S, and State Street S to Lake Washington.
+                Lots here are a mix of condo decks, townhome patios, and older
+                hillside houses, not a single cul-de-sac pattern. Marina Park
+                and David E. Brink Park sit on the water; Marsh Park is the next
+                lawn south on Lake Washington Boulevard. A fence in this grid
+                has to handle a grade change, a condo packet, and a neighbor
+                who lives one landing away.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 MyFence.com installs cedar, hogwire, and hybrid fences across
-                Kirkland&apos;s urban village, including downtown townhome rows
-                and the remaining single-family pockets toward Norkirk and
-                Houghton. We use Fence Genius to capture the actual bay lengths
-                and any grade drop toward Lake Washington before a post goes in
-                the ground, so panels arrive cut for the alley instead of getting
-                ripped down on a busy Saturday on Park Lane. The goal is a fence
-                that looks like it belongs on Lake Street, not a catalog panel
-                dropped onto a zero-lot-line yard.
+                Moss Bay, including waterfront buildings and the remaining
+                single-family pockets toward Everest and Houghton. We use Fence
+                Genius to capture the actual bay lengths and the drop toward
+                the lake before a post goes in the ground, so panels arrive
+                stepped for the hillside instead of getting ripped down on a
+                busy Saturday on Lake Street S. The goal is a fence that looks
+                like it belongs on this slope, not a catalog panel dropped onto
+                a zero-lot-line yard.
               </p>
             </div>
           </div>
@@ -231,7 +230,7 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Downtown Kirkland Homeowners Trust MyFence.com
+                Why Moss Bay Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
@@ -242,11 +241,11 @@ const DowntownKirklandPage = () => {
                         Condo and Townhome Drawing Packets
                       </h3>
                       <p className="text-muted-foreground">
-                        Associations around Kirkland Urban, Park Lane, and the
-                        Lake Street condos often want a simple elevation, stain
-                        note, and height callout. We put that packet together so
-                        the board is not guessing from a photo of someone
-                        else&apos;s suburban yard.
+                        Associations along Lake Street S and the waterfront
+                        buildings near 2nd Avenue S often want a simple
+                        elevation, stain note, and height callout. We put that
+                        packet together so the board is not guessing from a
+                        photo of someone else&apos;s suburban yard.
                       </p>
                     </div>
                   </div>
@@ -261,7 +260,7 @@ const DowntownKirklandPage = () => {
                       <p className="text-muted-foreground">
                         Full coverage on materials and labor, including hardware
                         chosen for the extra damp that sits along Lake Washington
-                        and the Marina Park shoreline. We stand behind the
+                        and the Brink Park shoreline. We stand behind the
                         install through Kirkland winters.
                       </p>
                     </div>
@@ -269,32 +268,33 @@ const DowntownKirklandPage = () => {
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Eye className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Screening for Lake Street and Event Nights
+                        View Corridors Toward the Lake
                       </h3>
                       <p className="text-muted-foreground">
-                        Solid cedar on the Central Way and Lake Street sides of a
-                        lot takes the edge off traffic and pavilion concert
-                        nights. We keep hogwire or lower runs where you still
-                        want eyes on the water or Peter Kirk Park.
+                        Lots that face Lake Washington or Marsh Park rarely want
+                        a six-foot wall on every side. We keep hogwire or a
+                        lower run on the water side and put solid cedar where
+                        you actually need screening from the neighbor or the
+                        trail.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Ruler className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Mountain className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Alley-Width Installations
+                        Stepped Panels for the Hillside
                       </h3>
                       <p className="text-muted-foreground">
-                        Compact equipment and hand-carry days for alleys that
-                        will not take a full truck. Fence Genius shortens panel
-                        bays so a 12-foot townhome run does not get a leftover
-                        gap at the gate.
+                        Fence Genius maps the drop from 6th Street S down toward
+                        Lake Street so each bay follows the grade. Compact
+                        equipment and hand-carry days cover the blocks a full
+                        truck cannot sit on through a pavilion concert night.
                       </p>
                     </div>
                   </div>
@@ -309,7 +309,7 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Downtown Kirkland Homeowners Say
+                What Moss Bay Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -319,13 +319,13 @@ const DowntownKirklandPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Townhome patio off 3rd Street — we needed privacy from
-                    the neighbor without boxing in the walkway to the garage.
-                    They built a short cedar run with a self-closing gate and it
-                    matched the HOA stain note. Crew wrapped before the Saturday
-                    market crowd hit Lake Street.&rdquo;
+                    &ldquo;Condo patio off 2nd Avenue S — we needed a short
+                    cedar run that the board would actually approve. They sent
+                    a height callout and stain note with the quote, then
+                    stepped the panels so the bottom rail follows the drop
+                    toward the lake.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Lena in Downtown Kirkland</p>
+                  <p className="text-sm font-medium">— Priya in Moss Bay</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -335,12 +335,12 @@ const DowntownKirklandPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot steps down toward Lake Street S. Hogwire in a
-                    cedar frame keeps the dog in and we still see the water past
-                    Brink Park. They measured the slope so the bottom rail does
-                    not float over the grade.&rdquo;
+                    &ldquo;Our lot faces Lake Washington Boulevard near Marsh
+                    Park. Hogwire in a cedar frame keeps the dog in and we
+                    still see the water. They measured the slope so the last
+                    bay does not hover over the grade.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Owen in Downtown Kirkland</p>
+                  <p className="text-sm font-medium">— Marcus in Moss Bay</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -350,11 +350,13 @@ const DowntownKirklandPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Central Way noise was the issue, not a giant backyard.
-                    Solid cedar on the street side, open run on the patio. The
-                    condo board signed off on the first drawing they sent.&rdquo;
+                    &ldquo;Uphill lot toward the Corridor — trail traffic was
+                    the issue, not a giant backyard. Solid cedar on the trail
+                    side, open run toward the lake. Crew hand-carried
+                    everything because Lake Street S was packed for a concert
+                    night.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Nadia in Downtown Kirkland</p>
+                  <p className="text-sm font-medium">— Elise in Moss Bay</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -363,58 +365,58 @@ const DowntownKirklandPage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Downtown Kirkland fence" />
+        <LeadCaptureTabs fenceStyleName="Moss Bay Kirkland fence" />
 
-        {/* 6. Photo Gallery — Kirkland-area installs until downtown-tagged photos exist */}
+        {/* 6. Photo Gallery — Kirkland-area installs until Moss Bay-tagged photos exist */}
         <ServiceAreaPhotoGallery
           city="Kirkland"
-          title="Recent Fence Work Near Downtown Kirkland"
-          description="These photos are from Kirkland jobs in and around the urban core. Same crew, same materials, and the same Fence Genius process we use on downtown townhome and mixed-use lots."
+          title="Recent Fence Work Near Moss Bay"
+          description="These photos are from Kirkland jobs in and around the Moss Bay waterfront and hillside. Same crew, same materials, and the same Fence Genius process we use on condo, townhome, and sloped lots here."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Kirkland" neighborhood="Downtown Kirkland" />
+        <FeaturedProject city="Kirkland" neighborhood="Moss Bay" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Downtown Kirkland–Specific Fencing Considerations
+                Moss Bay–Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Kirkland Lot Width and Alley Access
+                    Moss Bay Terrain and Stepped Runs
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Townhome yards off 3rd Street and the alleys behind Kirkland
-                    Avenue are often one patio deep. A six-foot privacy panel
-                    that works on Finn Hill can swallow the whole space here. We
-                    measure the usable run, place gates where trash and bikes
-                    actually move, and shorten bays so the last panel is not a
-                    leftover stub. Crews hand-carry material when a truck cannot
-                    sit on Park Lane through a market morning.
+                    The neighborhood falls from the Cross Kirkland Corridor
+                    toward Lake Washington. A six-foot privacy panel that sits
+                    level on a Kingsgate cul-de-sac will leave a gap at the
+                    downhill post here. We measure each bay, step panels with
+                    the grade, and place gates where bikes and trash actually
+                    move on 2nd Avenue S and State Street S. Crews hand-carry
+                    material when a truck cannot sit on Lake Street S through a
+                    market or concert morning.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Kirkland Mixed-Use Zoning and Height
+                    Mixed-Use Zoning in the Greater Downtown Center
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Pedestrian-oriented downtown zones and remaining residential
-                    parcels sit next to each other. Mixed-use lots along Central
-                    Way can read differently than a leftover residential lot a
-                    block toward Norkirk. Front setbacks on Lake Street and 5th
-                    Avenue still have to keep sight triangles at corners near the
-                    transit center. We read the parcel zone before we promise a
-                    height, then match the condo HOA if it is stricter than the
-                    city.
+                    Moss Bay is part of Kirkland&apos;s Greater Downtown Urban
+                    Center. Pedestrian-oriented parcels along Lake Street S can
+                    read differently than a leftover residential lot a block
+                    uphill toward 6th Street S. Front setbacks still have to
+                    keep sight triangles at corners near the transit center. We
+                    read the parcel zone before we promise a height, then match
+                    the condo HOA if it is stricter than the city.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Kirkland Lake Moisture and Shoreline Edges
+                    Lake Moisture and Shoreline Edges
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Lots that step down toward Lake Washington stay damp longer
@@ -422,23 +424,24 @@ const DowntownKirklandPage = () => {
                     fasteners streak. We spec pre-stained Western Red Cedar and
                     stainless or hot-dipped hardware. Properties within 200 feet
                     of the ordinary high water mark may need shoreline review
-                    before a fence goes in. Where a lot faces Marina Park or
-                    Brink Park, hogwire or a mixed-height run keeps eyes on the
+                    before a fence goes in. Where a lot faces Brink Park or
+                    Marsh Park, hogwire or a mixed-height run keeps eyes on the
                     water while still containing pets.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Kirkland Noise, Neighbors, and Shared Walls
+                    Moss Bay Views, Neighbors, and Shared Walls
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lake Street, Central Way, and pavilion concert nights add
-                    ambient noise that a solid cedar run can soften on the street
-                    side of a patio. The other three sides are often another
-                    owner&apos;s wall or a shared HOA strip. We confirm who owns
-                    the line, talk through stain so two attached yards do not
-                    clash, and keep post holes off buried utilities that are
-                    denser downtown than on a suburban cul-de-sac.
+                    Lake Street traffic and pavilion concert nights add ambient
+                    noise that a solid cedar run can soften on the street side
+                    of a patio. The water side is often a view the owner paid
+                    for. The other two sides may be another owner&apos;s wall or
+                    a shared HOA strip. We confirm who owns the line, talk
+                    through stain so two attached yards do not clash, and keep
+                    post holes off buried utilities that are denser here than
+                    on a suburban cul-de-sac.
                   </p>
                 </div>
               </div>
@@ -451,12 +454,13 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Downtown Kirkland
+                Fence Installation Cost in Moss Bay
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A downtown fence is a short-run urban install: alley access, HOA
-                notes, and lake-side moisture can move the number. These are
-                typical ranges; your on-site measurement is the real quote.
+                A Moss Bay fence is a short-run urban and hillside install:
+                slope, HOA notes, and lake-side moisture can move the number.
+                These are typical ranges; your on-site measurement is the real
+                quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
@@ -480,16 +484,16 @@ const DowntownKirklandPage = () => {
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Alley hand-carry, custom gates, marine-grade hardware near the
-                  water, and HOA drawing packages may add 10–15%. Get an exact
-                  quote for your Downtown Kirkland property with a free on-site
+                  Stepped hillside bays, custom gates, moisture-ready hardware
+                  near the water, and HOA drawing packages may add 10–15%. Get
+                  an exact quote for your Moss Bay property with a free on-site
                   measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
                   <Link href="/quote">
-                    Get an exact quote for your Downtown Kirkland property
+                    Get an exact quote for your Moss Bay property
                   </Link>
                 </Button>
               </div>
@@ -502,16 +506,16 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Downtown Kirkland
+                Popular Fence Styles in Moss Bay
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior townhome patios and alley lots.
-                    Full screening from the neighbor, pre-stained cedar that
-                    holds up to lake-corridor damp, and a look that fits mixed-use
-                    blocks around 3rd Street and Kirkland Avenue.
+                    The workhorse on interior townhome patios and uphill lots.
+                    Full screening from the neighbor or the Corridor, pre-stained
+                    cedar that holds up to lakeside damp, and a look that fits
+                    the mixed-use blocks around 2nd Avenue S and State Street S.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -523,10 +527,10 @@ const DowntownKirklandPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for lots that face Marina Park,
-                    Brink Park, or a courtyard. Dogs stay in, the water stays in
-                    view, and the lighter footprint is easier in a 20-foot yard
-                    than a solid wall.
+                    Cedar frame with black mesh for lots that face Brink Park,
+                    Marsh Park, or the boulevard. Dogs stay in, the water stays
+                    in view, and the lighter footprint is easier on a short
+                    waterfront run than a solid wall.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -539,7 +543,7 @@ const DowntownKirklandPage = () => {
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
                     Aluminum panels in a cedar frame on steel posts — the
-                    low-maintenance option when a downtown calendar has no extra
+                    low-maintenance option when a lakeside calendar has no extra
                     Saturday for staining. Clean enough for HOA review without
                     looking like a commercial lot.
                   </p>
@@ -560,31 +564,32 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Downtown Kirkland Installation Process
+                Our Moss Bay Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Downtown Kirkland Site Assessment
+                    1. Moss Bay Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the short run, note alley width, map
-                    utilities, and check whether the parcel sits in a downtown
-                    mixed-use zone or a leftover residential zone. Fence Genius
-                    captures bay lengths and any drop toward the lake so panels
-                    are built to the actual space.
+                    We walk the lot, measure the run, note the grade toward the
+                    lake, map utilities, and check whether the parcel sits in a
+                    downtown mixed-use zone or a leftover residential zone.
+                    Fence Genius captures bay lengths and the drop so panels are
+                    built to the actual hillside.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Downtown Kirkland Design & HOA Submission
+                    2. Moss Bay Design & HOA Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. If your townhome row or condo
-                    building has an architectural committee, we prepare a simple
-                    drawing, stain note, and height callout. If it does not, we
-                    still document Kirkland height, setback, and shoreline rules
-                    so the install is clean with the city.
+                    You pick style and height. If your condo building or
+                    townhome row has an architectural committee — or if the
+                    Moss Bay Neighborhood Association packet applies — we
+                    prepare a simple drawing, stain note, and height callout. If
+                    it does not, we still document Kirkland height, setback, and
+                    shoreline rules so the install is clean with the city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -594,20 +599,19 @@ const DowntownKirklandPage = () => {
                   <p className="text-muted-foreground">
                     Panels are built off-site from Fence Genius measurements —
                     pre-stained cedar, hogwire frames, or hybrid modules — so
-                    downtown install days are mostly setting posts and hanging
-                    finished sections instead of ripping lumber on Lake Street.
+                    Moss Bay install days are mostly setting posts and hanging
+                    finished sections instead of ripping lumber on Lake Street S.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Downtown Kirkland Installation
+                    4. Moss Bay Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment and hand-carry when alleys off
-                    Kirkland Avenue or 5th Avenue will not take a full truck.
-                    Short bays, careful post placement near shared walls, and
-                    full cleanup at the end of each day. Most jobs wrap in one to
-                    three days.
+                    Crews use compact equipment and hand-carry when 2nd Avenue S
+                    or Lake Street S will not take a full truck. Stepped bays,
+                    careful post placement near shared walls, and full cleanup
+                    at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -627,20 +631,20 @@ const DowntownKirklandPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Downtown Kirkland Fence Installation FAQs"
-          items={DOWNTOWN_KIRKLAND_FAQS}
+          title="Moss Bay Fence Installation FAQs"
+          items={MOSS_BAY_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Kirkland"
-        neighborhoodName="Downtown Kirkland"
-        attractions={DOWNTOWN_KIRKLAND_ATTRACTIONS}
+        neighborhoodName="Moss Bay"
+        attractions={MOSS_BAY_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Downtown Kirkland households sit in the{" "}
+              Moss Bay households sit in the{" "}
               <a
                 href="https://www.lwsd.org/"
                 target="_blank"
@@ -666,33 +670,31 @@ const DowntownKirklandPage = () => {
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
                 Kirkland Middle School
-              </a>
-              . After school, the{" "}
+              </a>{" "}
+              and{" "}
               <a
-                href="https://kcls.org/locations/1518"
+                href="https://lwhs.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Kirkland Library
-              </a>{" "}
-              on Kirkland Avenue is the indoor fallback when Peter Kirk Park is
-              packed for pickleball or a ballgame.
+                Lake Washington High School
+              </a>
+              . Civic questions and neighborhood meetings run through the{" "}
+              <a
+                href="https://www.mossbay.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Moss Bay Neighborhood Association
+              </a>
+              .
             </p>
             <p>
-              Weekdays are built around walking Park Lane and boarding buses at
-              the downtown transit center toward I-405 at NE 85th Street.
-              Weekends split between the waterfront at Marina Park, a show at
-              the{" "}
-              <a
-                href="https://www.kpcenter.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Kirkland Performance Center
-              </a>
-              , trail miles on the{" "}
+              Weekdays are built around walking Lake Street S and boarding
+              buses toward I-405 at NE 85th Street. Weekends split between the
+              dock at Brink Park, the lawn at Marsh Park, trail miles on the{" "}
               <a
                 href="https://www.kirklandwa.gov/Government/Departments/Public-Works-Department/Cross-Kirkland-Corridor"
                 target="_blank"
@@ -719,7 +721,17 @@ const DowntownKirklandPage = () => {
               >
                 Kirkland Planning and Building
               </a>
-              . A lot of downtown life never needs a car.
+              . The city&apos;s{" "}
+              <a
+                href="https://www.kirklandwa.gov/Government/Departments/Planning-and-Building/Planning-Projects/Neighborhood-Planning/Moss-Bay-Neighborhood-Plan-Update"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Moss Bay Neighborhood Plan
+              </a>{" "}
+              is the policy backdrop for how this urban-center slope keeps
+              growing.
             </p>
           </>
         }
@@ -734,25 +746,25 @@ const DowntownKirklandPage = () => {
                 Also Serving Nearby Kirkland Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Kirkland. From Downtown we also
-                work in Juanita to the north, along the Market and Moss Bay
-                waterfront, and across the city line into Redmond and Bellevue.
+                We install fences throughout Kirkland. From Moss Bay we also
+                work in the Downtown Kirkland retail core, north into Juanita,
+                along the Market waterfront, and across the city line into
+                Redmond and Bellevue.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland">Kirkland overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/kirkland/downtown-kirkland">
+                    Downtown Kirkland
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/juanita">Juanita</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/kirkland/moss-bay">Moss Bay</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond">Redmond</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/grass-lawn">Grass Lawn</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/bellevue">Bellevue</Link>
@@ -770,12 +782,12 @@ const DowntownKirklandPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Downtown Kirkland Property?
+                Ready to Enhance Your Moss Bay Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Downtown Kirkland. We&apos;ll
-                walk the alley, talk through privacy versus lake views, and quote
-                a fence that fits your townhome or mixed-use lot.
+                Same-day estimates available in Moss Bay. We&apos;ll walk the
+                slope, talk through privacy versus lake views, and quote a fence
+                that fits your condo, townhome, or hillside lot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -793,4 +805,4 @@ const DowntownKirklandPage = () => {
   );
 };
 
-export default DowntownKirklandPage;
+export default MossBayPage;
