@@ -261,7 +261,8 @@ const Sammamish = () => {
         },
         {
           name: "Inglewood",
-          description: "Growing family neighborhood with newer construction requiring modern fence designs that complement contemporary architecture"
+          description: "Hillside neighborhood along Inglewood Hill Road with lake-view lots and East Lake Sammamish Parkway yards needing stepped fencing. Click to learn more →",
+          link: "/service-areas/sammamish/inglewood"
         }
       ]}
       landmarks={[
