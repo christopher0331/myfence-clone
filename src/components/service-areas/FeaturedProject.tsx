@@ -1,5 +1,6 @@
 import { buildImageUrl, slugifyLocation } from "@/lib/serviceAreaPhotoUtils";
 import featuredProjectsData from "@/data/featuredProjects.json";
+import ProjectBeforeAfter from "@/components/service-areas/ProjectBeforeAfter";
 
 interface FeaturedProjectEntry {
   city: string;
@@ -42,7 +43,12 @@ export default function FeaturedProject({
   neighborhood,
 }: FeaturedProjectProps) {
   const project = findProject(city, neighborhood);
-  if (!project) return null;
+
+  const pair = (
+    <ProjectBeforeAfter city={city} neighborhood={neighborhood} />
+  );
+
+  if (!project) return pair;
 
   const location = project.neighborhood
     ? `${project.neighborhood}, ${project.city}`
@@ -69,6 +75,7 @@ export default function FeaturedProject({
   };
 
   return (
+    <>
     <section className="py-16">
       <div className="container">
         <div className="max-w-5xl mx-auto">
@@ -121,5 +128,7 @@ export default function FeaturedProject({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
     </section>
+    {pair}
+    </>
   );
 }

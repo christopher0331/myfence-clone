@@ -507,6 +507,11 @@ const JuanitaPage = () => {
                   <Link href="/service-areas/kirkland/kingsgate">Kingsgate</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/kirkland/downtown-kirkland">
+                    Downtown Kirkland
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/bellevue">Bellevue</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

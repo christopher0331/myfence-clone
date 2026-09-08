@@ -481,7 +481,8 @@ const Kirkland = () => {
       neighborhoods={[
         {
           name: "Downtown Kirkland",
-          description: "Urban walkable district with mixed-use properties requiring stylish boundary fencing that complements urban lifestyle while meeting city aesthetic standards"
+          description: "Urban walkable district with mixed-use properties requiring stylish boundary fencing that complements urban lifestyle while meeting city aesthetic standards",
+          link: "/service-areas/kirkland/downtown-kirkland"
         },
         {
           name: "Juanita",

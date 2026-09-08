@@ -638,7 +638,7 @@ const BeaverLakePage = () => {
                 Also Serving Nearby Sammamish Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Sammamish. From Beaver Lake we also work in Pine Lake to the west, Klahanie to the southwest, Sahalee, Trossachs, and East Sammamish.
+                We install fences throughout Sammamish. From Beaver Lake we also work in Pine Lake to the west, Klahanie to the southwest, Sahalee, Trossachs, East Sammamish, and Inglewood.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -654,6 +654,9 @@ const BeaverLakePage = () => {
                   <Link href="/service-areas/sammamish/sahalee/hoa-approved-fencing">
                     Sahalee
                   </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/inglewood">Inglewood</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>

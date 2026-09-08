@@ -36,7 +36,14 @@ Photos for a neighborhood always also surface in the parent city's gallery
 (via `getCityPhotosBySlug` in `serviceAreaPhotoUtils.ts`), so no extra
 plumbing is needed to "add neighborhood images to the parent service area
 page" — that happens automatically once the row is in
-`serviceAreaPhotos.json`.
+`serviceAreaPhotos.json`. Gallery helpers hide `phase: "before"` rows.
+Before/after pairs live in `src/data/projectBeforeAfter.json` and render
+through `ProjectBeforeAfter` (mounted from `FeaturedProject` and fence-style
+pages).
+
+Automated ingest (poll CRM `content-feed`, ImageKit, commit JSON) lives in
+`~/Desktop/dev/tools/geoDataPhotos/ingest.mjs` — run `--dry-run --limit 1`
+before a live `--limit 1 --commit`.
 
 ---
 
