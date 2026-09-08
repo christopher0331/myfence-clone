@@ -1,17 +1,6 @@
 import HeroVideo from "./HeroVideo";
 
 export const HeroVideoSection = () => {
-  const [showVideo, setShowVideo] = useState(false);
-
-  useEffect(() => {
-    // Defer mounting the iframe until after the first paint
-    const id = window.requestAnimationFrame(() => {
-      setShowVideo(true);
-    });
-
-    return () => window.cancelAnimationFrame(id);
-  }, []);
-
   return (
     <section className="relative h-64 sm:h-72 md:h-screen w-full border-b">
       <div className="relative h-full w-full">
