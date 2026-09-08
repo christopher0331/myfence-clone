@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
                 We use third-party tools to help us understand how visitors use our website and to improve site performance. These tools may use cookies or similar technologies to collect usage and technical information.
               </p>
               <p className="text-muted-foreground mb-4">
-                One of the tools we use is <strong>Smartlook</strong>, which may record website sessions and interactions such as clicks, scrolling, navigation, and form interactions (excluding sensitive fields where configured). This helps us identify technical issues and improve user experience.
+                One of the tools we use is <strong>PostHog</strong>, which may record website sessions and interactions such as clicks, scrolling, navigation, and heatmaps (form fields are masked). This helps us identify technical issues and improve user experience. We previously used Smartlook for the same purpose.
               </p>
               <p className="text-muted-foreground">
                 If you prefer that this type of analytics tracking not occur, you can limit cookies in your browser settings or contact us using the details below, and we will do our best to honor reasonable requests consistent with our technical capabilities and legal obligations.

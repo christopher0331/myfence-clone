@@ -19,7 +19,9 @@ import {
   deriveFormSku,
   getLeadAttributionById,
   trackFormSubmit,
+  trackLeadIntentOnce,
 } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
 const ServiceAreaContactForm = () => {
@@ -97,30 +99,22 @@ const ServiceAreaContactForm = () => {
         ? `[Service Area: ${location}] [SKU: ${sku}]\n${formData.message}`
         : `[SKU: ${sku}]\n${formData.message}`;
 
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Service Area Contact",
-            message,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: sku,
-            originPage: attribution.originPage,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (err) {
-        leadError = err instanceof Error ? err.message : String(err);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: first || "",
+        lastName: rest.join(" "),
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Service Area Contact",
+        message,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: sku,
+        originPage: attribution.originPage,
+      });
 
       let emailError: string | null = null;
       try {
@@ -131,7 +125,7 @@ const ServiceAreaContactForm = () => {
             email: formData.email,
             phone: formData.phone,
             address: formData.address,
-            description: message,
+            description: `${crmFailureNotice(crm)}${message}`,
             textConsent: formData.textConsent,
             sourcePage,
             site: attribution.site,
@@ -146,8 +140,8 @@ const ServiceAreaContactForm = () => {
       }
 
       // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
 
       trackFormSubmit("service-area-contact", { formType: "contact", formId: sku });
@@ -205,7 +199,11 @@ const ServiceAreaContactForm = () => {
       <p className="text-sm text-muted-foreground mb-4">
         Tell us about your project and we'll get back to you within 24 hours.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        onFocusCapture={() => trackLeadIntentOnce("form_start")}
+        className="space-y-4"
+      >
         <div className="space-y-2">
           <Label htmlFor={`sa-name-${sku}`}>Full Name *</Label>
           <Input

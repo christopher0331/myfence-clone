@@ -107,12 +107,12 @@ Open the parent city's component (e.g., `src/components/service-areas/bellevue.t
 
 ### Step 5 — Verify routes locally
 
-Run the dev server (`npm run dev`) and load:
+Run the dev server (`npm run dev`) and **fetch** the routes (curl or equivalent — do **not** record a video walkthrough of the page):
 
-- `http://localhost:3000/service-areas/{city-slug}/{neighborhood-slug}` — your new page renders
-- `http://localhost:3000/service-areas/{city-slug}` — parent city links to your new page
+- `http://localhost:3000/service-areas/{city-slug}/{neighborhood-slug}` — 200, H1 present
+- `http://localhost:3000/service-areas/{city-slug}` — parent city HTML includes a clickable link to the new neighborhood
 
-Then check the rendered HTML `<head>` for the canonical tag and JSON-LD `<script type="application/ld+json">` — these come from the component's `Seo`/`StructuredData()` helper, not the route file.
+Then check the rendered HTML `<head>` for the canonical tag and JSON-LD `<script type="application/ld+json">` — these come from the component's `Seo`/`StructuredData()` helper, not the route file. Still screenshots are optional. Video recordings are not wanted.
 
 ### Step 6 — Sitemap (only if not auto-generated)
 

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ContactPage from "@/components/pages/ContactPage";
 
 export const metadata: Metadata = {
-  title: "Contact MyFence | Seattle Fence Builder",
+  title: "Contact MyFence | Seattle Fence Contractor",
   description:
-    "Reach Seattle's fence builder for quotes and project questions. Father & son team with Fence Genius. Call (253) 455-1885 or send a message today.",
+    "Talk with a Seattle fence contractor about installation, pricing, or a site visit. Call (253) 455-1885 or send a message.",
   alternates: {
     canonical: "https://myfence.com/contact",
   },

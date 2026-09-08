@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 
 const WHEEL_FORM_KEY = "discount-wheel";
 const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
@@ -351,43 +352,39 @@ const DiscountsPage = () => {
         originPage: attribution.originPage,
       };
 
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: emailData.firstName,
-            lastName: emailData.lastName,
-            email: emailData.email,
-            phone: emailData.phone,
-            propertyAddress: emailData.address || "",
-            fenceType: "Discounts Page",
-            message: emailData.description || "General inquiry from discount page",
-            textConsent: emailData.textConsent,
-            sourcePage: emailData.sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            originPage: attribution.originPage,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: emailData.firstName,
+        lastName: emailData.lastName,
+        email: emailData.email,
+        phone: emailData.phone,
+        propertyAddress: emailData.address || "",
+        fenceType: "Discounts Page",
+        message: emailData.description || "General inquiry from discount page",
+        textConsent: emailData.textConsent,
+        sourcePage: emailData.sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
 
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: emailData,
+          body: {
+            ...emailData,
+            description: `${crmFailureNotice(crm)}${emailData.description}`,
+          },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
 
       trackFormSubmit(ALREADY_PLAYED_FORM_KEY, { formType: "quote" });

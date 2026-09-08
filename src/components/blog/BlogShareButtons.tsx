@@ -57,7 +57,7 @@ export default function BlogShareButtons({ title, url }: BlogShareButtonsProps) 
           <Button variant="outline" size="icon" onClick={copyLink} aria-label="Copy article link" className="h-8 w-8">
             <Link2 className="h-3.5 w-3.5" />
           </Button>
-          {typeof navigator !== "undefined" && navigator.share && (
+          {typeof navigator !== "undefined" && typeof navigator.share === "function" && (
             <Button
               variant="outline"
               size="icon"

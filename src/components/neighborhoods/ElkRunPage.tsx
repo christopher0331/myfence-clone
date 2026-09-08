@@ -16,6 +16,7 @@ import {
   TreePine,
   Ruler,
   Layers,
+  FileDown,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -303,12 +304,51 @@ const ElkRunPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold">
                 Elk Run–Specific Fencing Considerations
               </h2>
+              <Link
+                href="/service-areas/maple-valley/elk-run/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Elk Run HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Download our division checklist, confirm which of Elk Run&apos;s five HOAs
+                    governs your lot, and get picture-frame cedar installs built to those CC&amp;Rs.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Elk Run HOA Requirements by Division</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Elk Run is subdivided into five HOA divisions, and fence standards are not uniform across all of them. Division 3 and 5 (with homes along SE 277th Place, SE 279th Street, 226th Court SE, and 227th Court SE) have their own board and governing documents separate from the other divisions. Before any Elk Run installation, we request the CC&Rs for your specific division and confirm allowable fence heights, approved materials, setback distances from the street and property lines, and whether your design requires formal board review or simple written approval. Skipping this step is the most common reason HOA fence projects get stopped mid-installation in Maple Valley—we don&apos;t skip it.
                   </p>
+                  <Card className="p-5 mt-5">
+                    <h4 className="font-semibold mb-3">Download Elk Run HOA Fence Checklist</h4>
+                    <a
+                      href="/docs/hoa/elk-run-hoa-fence-submission-checklist.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                    >
+                      <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                      Elk Run HOA Fence Submission Checklist
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      Want the full division walkthrough? See our{" "}
+                      <Link
+                        href="/service-areas/maple-valley/elk-run/hoa-approved-fencing"
+                        className="text-primary underline decoration-2 underline-offset-2"
+                      >
+                        Elk Run HOA approved fencing guide
+                      </Link>
+                      .
+                    </p>
+                  </Card>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Golf Course Boundary Properties</h3>

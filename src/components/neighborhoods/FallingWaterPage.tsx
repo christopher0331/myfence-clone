@@ -4,7 +4,7 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star, FileDown } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -306,6 +306,23 @@ const FallingWaterPage = ({
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">Falling Water–Specific Fencing Considerations</h2>
+              <Link
+                href="/service-areas/bonney-lake/falling-water/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Falling Water HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Download our ACC submission checklist, learn the architectural review timeline,
+                    and get hillside installs built for Falling Water lots.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Falling Water Elevation Changes and Drainage Paths</h3>
@@ -314,6 +331,28 @@ const FallingWaterPage = ({
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Falling Water HOA and Neighborhood Consistency</h3>
                   <p className="text-muted-foreground leading-relaxed">If your section has design rules, we help align fence height, style, and finish before work begins. That preparation reduces approval delays and keeps your project moving.</p>
+                  <Card className="p-5 mt-5">
+                    <h4 className="font-semibold mb-3">Download Falling Water HOA Fence Checklist</h4>
+                    <a
+                      href="/docs/hoa/falling-water-hoa-fence-submission-checklist.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary underline decoration-2 underline-offset-2"
+                    >
+                      <FileDown className="h-4 w-4 shrink-0" aria-hidden />
+                      Falling Water HOA Fence Submission Checklist
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      Want the full ACC walkthrough? See our{" "}
+                      <Link
+                        href="/service-areas/bonney-lake/falling-water/hoa-approved-fencing"
+                        className="text-primary underline decoration-2 underline-offset-2"
+                      >
+                        Falling Water HOA approved fencing guide
+                      </Link>
+                      .
+                    </p>
+                  </Card>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Falling Water Family and Pet-Friendly Layouts</h3>

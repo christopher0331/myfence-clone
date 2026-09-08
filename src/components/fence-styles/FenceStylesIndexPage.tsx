@@ -84,6 +84,7 @@ const addOns = [
   { title: 'Pre-Staining', img: '/lovable-uploads/64a3d163-65f2-4ddc-a1bb-cc89381508a1.png', desc: 'Cedar components are stained prior to install for consistent coverage and early protection.' },
   { title: 'Soil Haul-Away', img: '/lovable-uploads/19760b8b-24e6-48d2-991f-f1dd5b571776.png', desc: 'We remove excess soil generated during post hole digging.' },
   { title: 'Trellis Systems', img: '/lovable-uploads/793a9940-252a-431c-bc9c-f109022e1b92.png', desc: 'Add trellis features to elevate curb appeal and support plants.' },
+  { title: 'Mounded Concrete', img: '/images/upgrades/mounded-concrete/close-1.png', desc: 'Raise post concrete above grade and dome the top so water sheds away from the wood — helping mitigate rot in PNW soil.' },
 ];
 
 const FenceStylesIndexPage = () => {
@@ -405,6 +406,11 @@ const FenceStylesIndexPage = () => {
                   {a.title === "Trellis Systems" && (
                     <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
                       <Link href="/fence-upgrades/trellis-systems">Learn More About Trellis Systems</Link>
+                    </Button>
+                  )}
+                  {a.title === "Mounded Concrete" && (
+                    <Button asChild className="w-full text-sm whitespace-normal leading-tight justify-center py-2">
+                      <Link href="/fence-upgrades/mounded-concrete">Learn More About Mounded Concrete</Link>
                     </Button>
                   )}
                 </div>

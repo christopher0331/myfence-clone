@@ -17,6 +17,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import type { FieldErrors } from "react-hook-form";
 
 const FORM_KEY = "home-contact";
@@ -62,36 +63,29 @@ export function ContactForm() {
     const sourcePage = buildSourcePage(FORM_KEY);
     const attribution = getLeadAttribution(FORM_KEY);
     try {
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: data.firstName,
-            lastName: data.lastName,
-            email: data.email,
-            phone: data.phone,
-            propertyAddress: data.address,
-            fenceType: "Contact Form",
-            message: data.description,
-            textConsent: data.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            originPage: attribution.originPage,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        // Network/CORS failures throw; keep fallback path alive.
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        propertyAddress: data.address,
+        fenceType: "Contact Form",
+        message: data.description,
+        textConsent: data.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
 
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
           body: {
             ...data,
+            description: `${crmFailureNotice(crm)}${data.description}`,
             sourcePage,
             site: attribution.site,
             formId: attribution.formId,
@@ -104,9 +98,9 @@ export function ContactForm() {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
 
       trackFormSubmit(FORM_KEY, { formType: "contact" });

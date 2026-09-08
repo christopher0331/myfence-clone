@@ -28,7 +28,11 @@ const BlackDiamondArticle = () => (
         The City of Black Diamond has specific requirements for residential fencing. In most residential zones, fences up to 6 feet in height are permitted in side and rear yards without a building permit. However, front yard fences are typically limited to 42 inches (3.5 feet) to maintain visibility and neighborhood character.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        For properties in <strong>Ten Trails</strong>, there are additional CC&Rs (Covenants, Conditions, and Restrictions) that govern fence styles, materials, and colors. These are often stricter than city code and require approval from the Architectural Review Committee (ARC). We are familiar with Ten Trails requirements and can help ensure your project meets both city and HOA standards. For the most up-to-date city information, visit the <a href="https://www.blackdiamondwa.gov/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Black Diamond website</a>.
+        For properties in <strong>Ten Trails</strong>, there are additional CC&Rs (Covenants, Conditions, and Restrictions) that govern fence styles, materials, and colors. These are often stricter than city code and require approval from the Architectural Review Committee (ARC). See our{" "}
+        <Link href="/service-areas/black-diamond/ten-trails/hoa-approved-fencing" className="text-primary underline decoration-2 underline-offset-2">
+          Ten Trails HOA approved fencing guide
+        </Link>{" "}
+        for the ARC checklist and review steps. For the most up-to-date city information, visit the <a href="https://www.blackdiamondwa.gov/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Black Diamond website</a>.
       </p>
     </section>
 
@@ -163,7 +167,8 @@ const BlackDiamond = () => {
       neighborhoods={[
         {
           name: "Ten Trails",
-          description: "New master-planned community requiring strict adherence to HOA guidelines and high-performance hybrid or cedar fencing"
+          description: "New master-planned community requiring strict adherence to HOA guidelines and high-performance hybrid or cedar fencing. Click to learn more →",
+          link: "/service-areas/black-diamond/ten-trails/hoa-approved-fencing",
         },
         {
           name: "Lake Sawyer",

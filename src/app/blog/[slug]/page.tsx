@@ -11,6 +11,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import BlogShareButtons from "@/components/blog/BlogShareButtons";
+import GooglePreferredSourceButton from "@/components/blog/GooglePreferredSourceButton";
 
 // Dynamic imports for legacy blog post components
 const blogPostComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
@@ -145,10 +146,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <main className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
           <div className="container mx-auto px-4 py-8">
             <article className="max-w-4xl mx-auto">
-              <div className="mb-6">
-                <Link href="/blog" className="text-primary hover:underline">
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-4 overflow-visible">
+                <Link href="/blog" className="shrink-0 text-primary hover:underline">
                   ← Back to Blog
                 </Link>
+                <GooglePreferredSourceButton />
               </div>
 
               <BlogShareButtons title={title} url={`${SITE_CONFIG.url}/blog/${slug}`} />
@@ -274,6 +276,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       {wrapperStructuredData && <Seo structuredData={wrapperStructuredData} />}
       <main className="container mx-auto px-4 pt-8">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4 overflow-visible">
+          <Link href="/blog" className="shrink-0 text-primary hover:underline">
+            ← Back to Blog
+          </Link>
+          <GooglePreferredSourceButton />
+        </div>
         <BlogShareButtons title={article.title} url={`${SITE_CONFIG.url}/blog/${slug}`} />
       </main>
       <Component />

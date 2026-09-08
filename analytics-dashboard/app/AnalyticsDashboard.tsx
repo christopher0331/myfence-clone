@@ -40,6 +40,7 @@ type SortKey =
 const CATEGORY_OPTIONS = [
   { value: "lead_pages", label: "Neighborhood + Service areas" },
   { value: "neighborhood", label: "Neighborhood only" },
+  { value: "hoa", label: "HOA pages only" },
   { value: "service_area_city", label: "Service-area cities only" },
   { value: "fence_style", label: "Fence-style pages" },
   { value: "all", label: "All pages" },
@@ -59,7 +60,10 @@ export default function AnalyticsDashboard({ rows, from, to, site, secretKey }: 
     let result = rows;
     if (category === "lead_pages") {
       result = rows.filter(
-        (r) => r.page_category === "neighborhood" || r.page_category === "service_area_city",
+        (r) =>
+          r.page_category === "neighborhood" ||
+          r.page_category === "service_area_city" ||
+          r.page_category === "hoa",
       );
     } else if (category !== "all") {
       result = rows.filter((r) => r.page_category === category);

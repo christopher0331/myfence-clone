@@ -15,7 +15,8 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 
 const FORM_KEY = "quote-modal";
 
@@ -92,43 +93,49 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
       const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
 
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: first || "",
+        lastName: rest.join(" "),
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Quote Modal",
+        message: formData.projectDescription,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
+
+      let emailError: string | null = null;
       try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        const legacy = await supabase.functions.invoke("send-contact-form", {
           body: {
             firstName: first || "",
             lastName: rest.join(" "),
             email: formData.email,
             phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Quote Modal",
-            message: formData.projectDescription,
+            address: formData.address,
+            description: `${crmFailureNotice(crm)}[Quote Request]\n${formData.projectDescription}`,
             textConsent: formData.textConsent,
             sourcePage,
             site: attribution.site,
             formId: attribution.formId,
+            formSku: deriveFormSku(),
             originPage: attribution.originPage,
           },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
-
-      let emailError: string | null = null;
-      try {
-        const legacy = await supabase.functions.invoke("send-quote-request", {
-          body: { ...formData, sourcePage },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send quote request");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send quote request");
       }
 
       trackFormSubmit(FORM_KEY, { formType: "quote" });

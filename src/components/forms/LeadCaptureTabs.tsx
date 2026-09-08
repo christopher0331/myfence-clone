@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ServiceAreaContactForm from "@/components/forms/ServiceAreaContactForm";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
+import { trackLeadIntentOnce } from "@/lib/analytics";
 
 interface LeadCaptureTabsProps {
   /** Optional override for the virtual quote tool heading; otherwise derived from the URL. */
@@ -24,7 +25,13 @@ export default function LeadCaptureTabs({ fenceStyleName }: LeadCaptureTabsProps
 
   return (
     <section className="py-12 md:py-16">
-      <Tabs defaultValue="contact" className="w-full">
+      <Tabs
+        defaultValue="contact"
+        className="w-full"
+        onValueChange={(value) => {
+          if (value === "quote") trackLeadIntentOnce("quote_tool");
+        }}
+      >
         <div className="container flex justify-center">
           <TabsList>
             <TabsTrigger value="contact">Contact Us</TabsTrigger>

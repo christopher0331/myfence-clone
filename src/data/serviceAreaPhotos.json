@@ -196,7 +196,7 @@
     "lng": -122.191758333333
   },
   {
-    "__manifestSection": "2026-05-12 (5.12.26) \u2014 Bonney Lake \u2014 3 ft hogwire, clear cedar picture frame (ImageKit URLs)"
+    "__manifestSection": "2026-05-12 (5.12.26) — Bonney Lake — 3 ft hogwire, clear cedar picture frame (ImageKit URLs)"
   },
   {
     "file": "Bonney-Lake/Bonney-Lake-3-Foot-Black-Hogwire-Fence-1.webp",
@@ -1098,7 +1098,7 @@
     "lng": -122.289855555556
   },
   {
-    "__manifestSection": "2026-05-26 \u2014 Seattle \u2014 horizontal slat cedar fence (ImageKit)"
+    "__manifestSection": "2026-05-26 — Seattle — horizontal slat cedar fence (ImageKit)"
   },
   {
     "file": "Seattle/Seattle-Horizontal-Slat-Cedar-Fence-1.webp",
@@ -1213,7 +1213,7 @@
     "lng": -122.541494444444
   },
   {
-    "__manifestSection": "2026-05-12 (5.12.26) \u2014 Kent Wynaco \u2014 fence installations (ImageKit URLs)"
+    "__manifestSection": "2026-05-12 (5.12.26) — Kent Wynaco — fence installations (ImageKit URLs)"
   },
   {
     "file": "Kent/Wynaco-Fence-Installation-1.webp",
@@ -2321,7 +2321,7 @@
     "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Auburn/Christopher-Spindle-Top-Privacy-Fence-6.webp"
   },
   {
-    "__manifestSection": "2026-07-27 (7.27) \u2014 Puyallup \u2014 2-rail ranch fence, 6x6 PT posts + 2x10x10' PT rails (ImageKit URLs)"
+    "__manifestSection": "2026-07-27 (7.27) — Puyallup — 2-rail ranch fence, 6x6 PT posts + 2x10x10' PT rails (ImageKit URLs)"
   },
   {
     "file": "Puyallup/Puyallup-2-Rail-Fence-1.webp",
@@ -2414,7 +2414,7 @@
     "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Puyallup/Puyallup-2-Rail-Fence-6.webp"
   },
   {
-    "__manifestSection": "2026-07-27 (7.27) \u2014 Covington Timberlane \u2014 3-rail picture frame fence (ImageKit URLs)"
+    "__manifestSection": "2026-07-27 (7.27) — Covington Timberlane — 3-rail picture frame fence (ImageKit URLs)"
   },
   {
     "file": "Covington/Timberlane-3-Rail-Picture-Frame-Fence-1.webp",
@@ -2475,5 +2475,133 @@
     "lat": 47.3683861111111,
     "lng": -122.070772222222,
     "url": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Covington/Timberlane-3-Rail-Picture-Frame-Fence-4.webp"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-1.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 584400,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 1",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 1",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-2.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 468206,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 2",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 2",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-3.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 553764,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 3",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 3",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-4.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 847722,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 4",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 4",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-5.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 565038,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 5",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 5",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-6.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 645176,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 6",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 6",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-7.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 655394,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 7",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 7",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
+  },
+  {
+    "file": "Kent/Cambridge-Picture-Frame-Fence-After-8.webp",
+    "width": 1920,
+    "height": 1440,
+    "sizeBytes": 411760,
+    "city": "Kent",
+    "neighborhood": "Cambridge",
+    "cityAlt": "Kent Picture Frame Fence after 8",
+    "neighborhoodAlt": "Cambridge Picture Frame Fence after 8",
+    "lat": 47.3644278,
+    "lng": -122.2862209,
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "51997547-8fd3-40ac-b670-a7c8aa344757"
   }
 ]

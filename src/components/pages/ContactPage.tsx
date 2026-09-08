@@ -16,6 +16,7 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 
 const FORM_KEY = "contact-page";
 
@@ -79,29 +80,22 @@ const ContactPage = () => {
     try {
       const sourcePage = buildSourcePage(FORM_KEY);
       const attribution = getLeadAttribution(FORM_KEY);
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Contact Page",
-            message: formData.message,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            originPage: attribution.originPage,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Contact Page",
+        message: formData.message,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
 
       let emailError: string | null = null;
       try {
@@ -112,7 +106,7 @@ const ContactPage = () => {
             email: formData.email,
             phone: formData.phone,
             address: formData.address,
-            description: formData.message,
+            description: `${crmFailureNotice(crm)}${formData.message}`,
             textConsent: formData.textConsent,
             sourcePage,
             site: attribution.site,
@@ -126,9 +120,9 @@ const ContactPage = () => {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
 
       trackFormSubmit(FORM_KEY, { formType: "contact" });
@@ -189,15 +183,15 @@ const ContactPage = () => {
   return (
     <main>
       <Seo
-        title="Contact MyFence | Seattle Fence Builder"
-        description="Reach Seattle's fence builder for quotes and project questions. Father & son team with Fence Genius. Call (253) 455-1885 or send a message today."
+        title="Contact MyFence | Seattle Fence Contractor"
+        description="Talk with a Seattle fence contractor about installation, pricing, or a site visit. Call (253) 455-1885 or send a message."
         canonical="https://myfence.com/contact"
         structuredData={[breadcrumbData, orgLd]}
       />
       <section className="container py-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Seattle's Fence Builder</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact a Seattle Fence Contractor</h1>
         <p className="text-muted-foreground max-w-2xl">
-          Talk with a local Seattle fence builder about your project. Call
+          We&apos;re here to help with fence installation questions or a quote. Call
           <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">
             (253) 455-1885
           </a>

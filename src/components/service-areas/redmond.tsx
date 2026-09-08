@@ -470,19 +470,23 @@ const Redmond = () => {
       neighborhoods={[
         {
           name: "Downtown Redmond",
-          description: "Urban mixed-use district with modern properties demanding contemporary fence styles that complement city living and walkable lifestyle"
+          description: "Urban mixed-use district with modern properties demanding contemporary fence styles that complement city living and walkable lifestyle. Click to learn more →",
+          link: "/service-areas/redmond/downtown-redmond"
         },
         {
           name: "Education Hill",
-          description: "Family-focused area near top-rated schools requiring secure fencing for children and pets with HOA-approved designs"
+          description: "Family-focused area near top-rated schools requiring secure fencing for children and pets with HOA-approved designs. Click to learn more →",
+          link: "/service-areas/redmond/education-hill"
         },
         {
           name: "Overlake",
-          description: "Tech hub neighborhood near Microsoft campus with professionals seeking modern horizontal designs and low-maintenance solutions"
+          description: "Tech hub neighborhood near Microsoft campus with professionals seeking modern horizontal designs and low-maintenance solutions. Click to learn more →",
+          link: "/service-areas/redmond/overlake"
         },
         {
           name: "Grass Lawn",
-          description: "Established community with mature properties needing installations that preserve existing landscaping and complement traditional architecture"
+          description: "Established community with mature properties needing installations that preserve existing landscaping and complement traditional architecture. Click to learn more →",
+          link: "/service-areas/redmond/grass-lawn"
         },
         {
           name: "Willows/Rose Hill",

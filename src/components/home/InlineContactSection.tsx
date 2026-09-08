@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 
 const FORM_KEY = "inline-contact";
 
@@ -77,29 +78,22 @@ export const InlineContactSection = () => {
       const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
 
-      // Webhook is enabled without Turnstile. Keep dual-path delivery for reliability.
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Inline Contact",
-            message: formData.message,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            originPage: attribution.originPage,
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: first || "",
+        lastName: rest.join(" "),
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Inline Contact",
+        message: formData.message,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
 
       let emailError: string | null = null;
       try {
@@ -110,7 +104,7 @@ export const InlineContactSection = () => {
             email: formData.email,
             phone: formData.phone,
             address: formData.address,
-            description: formData.message,
+            description: `${crmFailureNotice(crm)}${formData.message}`,
             textConsent: formData.textConsent,
             sourcePage,
             site: attribution.site,
@@ -125,8 +119,8 @@ export const InlineContactSection = () => {
       }
 
       // Only fail if BOTH webhook + email fail.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
 
       trackFormSubmit(FORM_KEY, { formType: "contact" });

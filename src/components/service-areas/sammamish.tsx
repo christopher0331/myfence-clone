@@ -231,19 +231,24 @@ const Sammamish = () => {
       neighborhoods={[
         {
           name: "Pine Lake",
-          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views"
+          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views. Click to learn more →",
+          link: "/service-areas/sammamish/pine-lake"
         },
         {
           name: "Beaver Lake",
-          description: "Family-oriented neighborhood with top-rated schools needing secure fencing for children and pets with high-quality materials"
+          description: "Family-oriented neighborhood around two kettle lakes, with school-area yards and forest-edge lots needing secure fencing for children and pets. Click to learn more →",
+          link: "/service-areas/sammamish/beaver-lake"
         },
         {
           name: "Sahalee",
-          description: "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards"
+          description:
+            "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards. Download Sahalee HOA fence forms →",
+          link: "/service-areas/sammamish/sahalee/hoa-approved-fencing",
         },
         {
           name: "Trossachs",
-          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration"
+          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration. Click to learn more →",
+          link: "/service-areas/sammamish/trossachs"
         },
         {
           name: "Klahanie",
@@ -256,7 +261,8 @@ const Sammamish = () => {
         },
         {
           name: "Inglewood",
-          description: "Growing family neighborhood with newer construction requiring modern fence designs that complement contemporary architecture"
+          description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
+          link: "/service-areas/sammamish/inglewood"
         }
       ]}
       landmarks={[

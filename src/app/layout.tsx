@@ -5,7 +5,7 @@ import "../index.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DeferredGTM from "@/components/DeferredGTM";
-import DeferredSmartlook from "@/components/DeferredSmartlook";
+import DeferredPostHog from "@/components/DeferredPostHog";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={`min-h-screen flex flex-col ${inter.className}`}>
         <DeferredGTM />
-        <DeferredSmartlook />
+        <DeferredPostHog />
         <AnalyticsTracker />
         <Header />
         <main className="flex-1 pt-24 md:pt-32">{children}</main>
