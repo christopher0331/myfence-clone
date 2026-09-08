@@ -15,11 +15,39 @@ import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { getFenceStyleImages } from "@/data/fenceImages";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const images = getFenceStyleImages("picture-frame");
 const heroImg = images.hero.src;
 const altHero = images.hero.alt;
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
+
+const klahaniePictureFramePhotos = getNeighborhoodPhotosBySlugs("sammamish", "klahanie").filter(
+  (photo) => photo.file.includes("Picture-Frame")
+);
+const ravensdalePictureFramePhotos = getNeighborhoodPhotosBySlugs(
+  "maple-valley",
+  "ravensdale"
+).filter((photo) => photo.file.includes("Picture-Frame"));
+
+const PICTURE_FRAME_FIELD_SUFFIXES = [
+  "Klahanie-Picture-Frame-Fence-1.webp",
+  "Klahanie-Picture-Frame-Fence-4.webp",
+  "Ravensdale-Picture-Frame-Fence-1.webp",
+  "Ravensdale-Picture-Frame-Fence-4.webp",
+] as const;
+
+const pictureFrameFieldGallery = PICTURE_FRAME_FIELD_SUFFIXES.map((suffix) =>
+  [...klahaniePictureFramePhotos, ...ravensdalePictureFramePhotos].find((photo) =>
+    photo.file.endsWith(suffix)
+  )
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const PictureFrameFence = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -96,11 +124,6 @@ const PictureFrameFence = () => {
         "returnMethod": "https://schema.org/ReturnByMail",
         "returnFees": "https://schema.org/FreeReturn"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "247"
     }
   };
 
@@ -163,7 +186,7 @@ const PictureFrameFence = () => {
       
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Navigation */}
-        <nav className="bg-background pt-8 pb-3 border-b">
+        <nav className="bg-background pt-4 pb-2 border-b">
           <div className="container mx-auto px-4">
             <div className="flex items-center space-x-2 text-sm">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
@@ -175,7 +198,7 @@ const PictureFrameFence = () => {
           </div>
         </nav>
 
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-8">
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           {/* Back Button */}
           <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -282,7 +305,11 @@ const PictureFrameFence = () => {
                   <h3 className="font-semibold">Stainless Steel Fasteners</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Standard stainless steel fasteners prevent corrosion and black streaking common with galvanized hardware.
+                  Standard stainless steel fasteners prevent corrosion and black streaking common with galvanized hardware.{" "}
+                  <Link href="/fence-upgrades/exterior-screws" className="text-primary hover:underline">
+                    See field photos of galvanized corrosion vs stainless hardware
+                  </Link>
+                  .
                 </p>
               </div>
               
@@ -317,6 +344,42 @@ const PictureFrameFence = () => {
               </p>
             </div>
             
+            {pictureFrameFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Recent picture frame installs in{" "}
+                    <Link href="/service-areas/sammamish/klahanie" className="text-primary font-medium hover:underline">
+                      Klahanie, Sammamish
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/service-areas/maple-valley/ravensdale" className="text-primary font-medium hover:underline">
+                      Ravensdale, Maple Valley
+                    </Link>
+                    {" "}— trim-cap cedar with{" "}
+                    <Link href="/fence-upgrades/post-on-pipe" className="text-primary font-medium hover:underline">
+                      Post-on-Pipe
+                    </Link>{" "}
+                    footings on damp, wooded lots.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {pictureFrameFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <OptimizedImage
+                        src={buildImageUrl(photo.file, 800)}
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Cedar picture frame fence installation by MyFence.com"
+                        }
+                        className="h-full w-full rounded-lg object-cover shadow-md"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {images.gallery.slice(0, 4).map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 block md:block">

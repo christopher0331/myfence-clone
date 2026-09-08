@@ -17,6 +17,8 @@ interface DiscountEmailRequest {
   answer: string;
   discount: string;
   description?: string;
+  textConsent?: boolean;
+  sourcePage?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -26,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, address, email, phone, riddle, answer, discount, description }: DiscountEmailRequest = await req.json();
+    const { firstName, lastName, address, email, phone, riddle, answer, discount, description, textConsent, sourcePage }: DiscountEmailRequest = await req.json();
 
     // Validate required fields
     if (!firstName || !lastName || !email || !riddle || !answer || !discount) {
@@ -45,6 +47,11 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const resend = new Resend(resendApiKey);
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : "";
+    const submissionPageHtml = submissionPage
+      ? `<p style="color: #6b7280; margin-top: 8px;"><strong>Submitted from page:</strong> <a href="${submissionPage}">${submissionPage}</a></p>`
+      : "";
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : "";
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -55,6 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Text message consent:</strong> ${textConsent === true || textConsent === 'true' ? 'Yes' : 'No'}</p>
           ${address ? `<p><strong>Address:</strong> ${address}</p>` : ''}
         </div>
 
@@ -74,6 +82,7 @@ const handler = async (req: Request): Promise<Response> => {
 
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
           <p style="color: #6b7280;">This email was generated from the MyFence.com discount wheel challenge.</p>
+          ${submissionPageHtml}
         </div>
       </div>
     `;
@@ -85,6 +94,7 @@ Customer Information:
 Name: ${firstName} ${lastName}
 Email: ${email}
 Phone: ${phone}
+Text message consent: ${textConsent === true || textConsent === 'true' ? 'Yes' : 'No'}
 ${address ? `Address: ${address}` : ''}
 
 Riddle Challenge Results:
@@ -94,10 +104,10 @@ Won Discount: ${discount}
 
 ${description ? `Project Description: ${description}` : ''}
 
-This email was generated from the MyFence.com discount wheel challenge.
+This email was generated from the MyFence.com discount wheel challenge.${submissionPageLine}
     `;
 
-    const emailResponse = await resend.emails.send({
+    const adminEmailResponse = await resend.emails.send({
       from: "MyFence Discounts <onboarding@resend.dev>",
       to: ["info@myfence.com"],
       subject: `🎉 New Discount Winner - ${discount}`,
@@ -105,9 +115,9 @@ This email was generated from the MyFence.com discount wheel challenge.
       text: plainText,
     });
 
-    console.log("Discount email sent successfully:", emailResponse);
+    console.log("Discount admin email sent successfully:", adminEmailResponse);
 
-    return new Response(JSON.stringify(emailResponse), {
+    return new Response(JSON.stringify(adminEmailResponse), {
       status: 200,
       headers: {
         "Content-Type": "application/json",

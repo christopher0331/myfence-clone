@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -10,7 +11,7 @@ const BonneyLakeArticle = () => (
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bonney Lake Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -35,10 +36,10 @@ const BonneyLakeArticle = () => (
       </p>
     </section>
 
-    {/* Bonney Lake Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bonney Lake Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         At MyFence.com, we understand that Bonney Lake homeowners value punctuality and professionalism. Our crew arrives at your property fully equipped with premium materials and specialized tools, ready to transform your vision into reality. We maintain an industry-leading 98%+ on-time installation rate because we respect your schedule and understand the importance of completing projects when promised. Every Bonney Lake fence installation begins with careful site preparation and concludes with a detailed walkthrough to ensure your complete satisfaction.
@@ -48,68 +49,17 @@ const BonneyLakeArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Bonney Lake Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Father-Son Excellence</h3>
-              <p className="text-muted-foreground">
-                Three decades of combined expertise and genuine family commitment to quality - delivering craftsmanship that corporate fence companies cannot replicate.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Revolutionary precision measurement and panel manufacturing system that guarantees accuracy while reducing installation time by up to 50%.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-            <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
-            <p className="text-muted-foreground">
-              {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty - protection that significantly exceeds industry norms.
-            </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Local Expertise</h3>
-              <p className="text-muted-foreground">
-                Deep understanding of Bonney Lake's terrain challenges, soil conditions, and municipal requirements for seamless project execution.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bonney Lake Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Bonney Lake Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           Western Red Cedar stands as the premier choice for Bonney Lake fencing projects, and for good reason. This Pacific Northwest native wood species contains natural preservatives that resist rot, decay, and insect damage - critical qualities for our region's wet climate. At MyFence.com, we exclusively source premium Western Red Cedar lumber that meets rigorous quality standards. For homeowners seeking the ultimate in appearance and longevity, we offer clear-grade cedar options with minimal knots, providing a refined aesthetic perfect for Bonney Lake's established neighborhoods.
         </p>
@@ -155,7 +105,7 @@ const BonneyLakeArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bonney Lake Fence Financing Options
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -249,7 +199,7 @@ const BonneyLakeArticle = () => (
     {/* Bonney Lake Fence Contractor */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Trusted Bonney Lake Fence Contractor
+        A Trusted Local Contractor
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com has built its reputation as a trusted Bonney Lake fence contractor through consistent delivery of exceptional results over three decades. As a father-son operation, we bring personal accountability and dedication to craftsmanship that large corporate contractors cannot replicate. We manufacture and install every fence according to your exact specifications, utilizing proven methodologies refined through thousands of successful installations. Our integration of advanced Fence Genius technology with traditional hand-craftsmanship delivers the ideal combination: precision measurements with expert finishing touches.
@@ -262,7 +212,7 @@ const BonneyLakeArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Bonney Lake-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Bonney Lake's distinctive terrain, soil composition, and weather patterns demand specialized installation approaches. Here's how we address the unique challenges your Bonney Lake property presents:
@@ -345,7 +295,7 @@ const BonneyLakeArticle = () => (
         Understanding Bonney Lake's permit requirements starts with knowing when permits are necessary. According to the <a href="https://www.ci.bonney-lake.wa.us/Government/Departments/Public_Services/Planning_Building" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Planning & Building page</a>, residential fences under 8 feet in height generally do not require building permits, but you must still comply with all zoning codes and setback requirements. Height restrictions typically limit fences to 6 feet in side and rear yards, with more restrictive limits (often 3-4 feet) in front yard setback areas.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Property line considerations are critical in Bonney Lake. Washington State law requires building on your side of the property line, and setback requirements may add additional distance from the boundary. We strongly recommend obtaining a professional property survey before installation to avoid costly disputes or required fence removal. For properties within HOA-governed communities like <a href="https://tehaleh.com/life-at-tehaleh/community/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tehaleh</a> or Falling Water, additional architectural review processes may apply, often requiring design approval before construction begins.
+        Property line considerations are critical in Bonney Lake. Washington State law requires building on your side of the property line, and setback requirements may add additional distance from the boundary. We strongly recommend obtaining a professional property survey before installation to avoid costly disputes or required fence removal. For properties within HOA-governed communities like <a href="https://tehaleh.com/life-at-tehaleh/community/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tehaleh</a> or <Link href="/service-areas/bonney-lake/falling-water" className="text-primary underline decoration-2 underline-offset-2">Falling Water</Link>, additional architectural review processes may apply, often requiring design approval before construction begins.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         For the most current information on Bonney Lake fence requirements, contact the <a href="https://www.ci.bonney-lake.wa.us/government/departments/public_services/planning_building/comprehensive_plan" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Community Development Department</a> at <a href="tel:253-447-4356" className="text-primary underline decoration-2 underline-offset-2">253-447-4356</a> or visit their offices at 9002 Main Street E. You can also access the <a href="https://www.ci.bonney-lake.wa.us/Government/Departments/Public_Services/Code_Enforcement" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Bonney Lake Code Enforcement</a> page for complete fence regulations.
@@ -461,7 +411,7 @@ const BonneyLake = () => {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": "https://myfence.com/service-areas/bonney-lake",
-    "name": "MyFence.com - Bonney Lake Fence Installation",
+    "name": "MyFence.com - Expert Installation in Your Area",
     "alternateName": ["MyFence Bonney Lake", "Bonney Lake Fence Company"],
     "description": "Premium fence installation and repair services in Bonney Lake, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for residential and commercial properties. 30+ years experience, 5.0-star rating.",
     "image": "https://myfence.com/myfence-logo.png",
@@ -471,7 +421,7 @@ const BonneyLake = () => {
       "width": 600,
       "height": 600
     },
-    "url": "https://myfence.com",
+    "url": "https://myfence.com/service-areas/bonney-lake",
     "telephone": "+12534551885",
     "email": "info@myfence.com",
     "address": {
@@ -509,13 +459,6 @@ const BonneyLake = () => {
         "closes": "15:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Fence Installation Services",
@@ -558,7 +501,7 @@ const BonneyLake = () => {
     "slogan": "Father-Son Excellence in Fence Installation Since 1990",
     "founder": {
       "@type": "Person",
-      "name": "MyFence.com Founders"
+      "name": "Andrew Knudsen"
     },
     "paymentAccepted": "Cash, Check, Credit Card, Debit Card, Financing",
     "currenciesAccepted": "USD",
@@ -568,31 +511,85 @@ const BonneyLake = () => {
     ]
   };
 
+  
+  const bonneylakeAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Tapps Park",
+      description: "A sprawling 135-acre park offering swimming, boating, and scenic views of Mount Rainier from its expansive shoreline.",
+      url: "https://www.piercecountywa.gov/1325/Lake-Tapps-Park"
+    },
+    {
+      name: "Victor Falls",
+      description: "A stunning 70-foot waterfall tucked away in a quiet neighborhood park, perfect for quick hikes and photography.",
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
+    },
+    {
+      name: "Allan Yorke Park",
+      description: "The city's premier park featuring sports fields, a skate park, boat launch, and the popular summer concert series.",
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
+    },
+    {
+      name: "Fennel Creek Trail",
+      description: "A peaceful, wooded trail system connecting neighborhoods and offering a tranquil escape into nature.",
+      url: "https://www.ci.bonney-lake.wa.us/residents/community/parks___trails"
+    },
+    {
+      name: "Tehaleh Trails",
+      description: "Over 30 miles of beautifully maintained trails winding through the master-planned Tehaleh community and surrounding forests.",
+      url: "https://tehaleh.com/life-at-tehaleh/parks-trails/"
+    }
+  ];
+
+  const bonneylakeLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Bonney Lake is a rapidly growing community that perfectly balances outdoor recreation with modern suburban living. Families are drawn to the highly regarded <a href="https://www.sumnersd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sumner-Bonney Lake School District</a>, known for its strong academic programs and community involvement. The city's landscape is dominated by the beautiful <a href="https://www.piercecountywa.gov/1325/Lake-Tapps-Park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Tapps</a>, where residents spend summers boating, swimming, and enjoying the shadow of Mount Rainier. 
+      </p>
+      <p>
+        New developments like <a href="https://tehaleh.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Tehaleh</a> have brought expanded amenities, including new schools, coffee shops, and an extensive trail network. Residents can shop and dine at the <a href="https://www.ci.bonney-lake.wa.us/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Midtown commercial district</a>, or enjoy local favorites like <a href="https://www.gloverparkbrewery.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">local dining spots</a>. The active <a href="https://www.ci.bonney-lake.wa.us/government/executive_department/recreation_program" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Bonney Lake Recreation department</a> keeps the community engaged year-round with sports leagues, events, and the much-loved Bonney Lake Days festival.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate
+    <>
+      <ServiceAreaTemplate
       city="Bonney Lake"
       state="Washington"
       heroTitle="Professional Fence Installation in Bonney Lake, WA"
-      metaTitle="Bonney Lake Fence Installation | MyFence.com"
+      metaTitle="Expert Installation in Your Area | MyFence.com"
       metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. 5.0-star rating. Free quotes. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
         {
-          name: "Tehaleh",
-          description: "Bonney Lake's premier master-planned community. We serve both Upper and Lower Tehaleh with HOA-compliant designs for all home sizes and lifestyles. Click to learn more →",
-          link: "/neighborhoods/lower-tehaleh"
+          name: "Upper Tehaleh",
+          description: "Elevated homesites and neighborhoods in the upper plateau of Tehaleh. We provide HOA-compliant fencing for premium lots with mountain views. Click to learn more →",
+          link: "/service-areas/bonney-lake/upper-tehaleh"
+        },
+        {
+          name: "Lower Tehaleh",
+          description: "Family neighborhoods and community-focused areas in the lower sections of Tehaleh. Expert installation meeting all architectural standards. Click to learn more →",
+          link: "/service-areas/bonney-lake/lower-tehaleh"
         },
         {
           name: "Falling Water",
-          description: "Established neighborhood with varied lot sizes benefiting from custom fence designs tailored to each property."
+          description: "Established neighborhood with mixed elevations and varied lot sizes. Explore our dedicated Falling Water service page for HOA-aligned fence options. Click to learn more →",
+          link: "/service-areas/bonney-lake/falling-water"
         },
         {
           name: "Mountain Creek",
-          description: "Hillside community requiring specialized slope management and engineering for fence installations."
+          description: "Hillside community with steeper grade transitions and view-oriented lots. Explore our dedicated Mountain Creek page for slope-ready fence planning. Click to learn more →",
+          link: "/service-areas/bonney-lake/mountain-creek"
         },
         {
           name: "Downtown Bonney Lake",
-          description: "Central area with mix of commercial and residential properties requiring diverse fencing solutions."
+          description: "Central Bonney Lake neighborhood with compact lots, mixed-use edges, and high-traffic access patterns. Explore our dedicated Downtown service page for durable, low-maintenance fence planning. Click to learn more →",
+          link: "/service-areas/bonney-lake/downtown-bonney-lake"
+        },
+        {
+          name: "Lake Tapps",
+          description: "Lake-adjacent and plateau neighborhoods with larger lots, volcanic soil, and Pierce County weather. Cedar, hogwire & hybrid fencing. Click to learn more →",
+          link: "/service-areas/bonney-lake/lake-tapps"
         }
       ]}
       landmarks={[
@@ -603,23 +600,18 @@ const BonneyLake = () => {
         "Bonney Lake Library"
       ]}
       articleContent={<BonneyLakeArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
       climateDescription="Bonney Lake experiences Pacific Northwest climate with wet winters and warm, dry summers. Average annual rainfall of 40-45 inches concentrates between October and April, requiring moisture-resistant fence materials and construction techniques. Summer temperatures typically reach 75-85°F, with winter lows averaging 35-40°F. Occasional freezing conditions and snow events demand proper post installation with deep footings and freeze-thaw resistant concrete. The area's rolling terrain creates varied microclimates affecting moisture exposure and sun exposure across different property locations."
-      localChallenges={[
-        "Variable soil conditions from clay-heavy to rocky terrain",
-        "Significant elevation changes requiring specialized installation",
-        "Heavy winter precipitation and freeze-thaw cycles",
-        "Wildlife pressure from deer and other animals",
-        "Growing community with active construction"
-      ]}
-      localSolutions={[
-        "Professional-grade auguring with hydraulic rock drills",
-        "Stepped and raked designs for sloped terrain",
-        "Deep post installation with freeze-thaw resistant concrete",
-        "Reinforced framework deterring wildlife damage",
-        "Flexible scheduling accommodating construction environments"
-      ]}
+      
+      
     />
+      <AboutTheArea 
+        cityName="Bonney Lake"
+        attractions={bonneylakeAttractions}
+        localLivingContent={bonneylakeLivingContent}
+      />
+    </>
   );
 };
 

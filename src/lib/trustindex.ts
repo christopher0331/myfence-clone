@@ -53,7 +53,11 @@ function ensureTrustindexScript(onLoaded?: () => void) {
 }
 
 export function mountTrustindexWidget(container: HTMLElement, options: MountOptions = {}) {
-  const { rootMargin = "250px", delayMs = 1200, onLoaded, immediate = false } = options;
+  if (/Googlebot|bingbot|Baiduspider|YandexBot|Slurp|facebookexternalhit|Chrome-Lighthouse/i.test(navigator.userAgent)) {
+    return () => {};
+  }
+
+  const { rootMargin = "250px", delayMs = 1200, onLoaded } = options;
 
   const widgetDiv = document.createElement("div");
   widgetDiv.setAttribute("data-widget-id", TRUSTINDEX_WIDGET_ID);

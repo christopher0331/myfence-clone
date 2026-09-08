@@ -1,0 +1,28 @@
+---
+description: Do not use manufacturer 40-year warranty claims for steel posts or Barrier Boss; use finish/UV and MyFence craft warranty instead
+alwaysApply: true
+---
+
+# No 40-Year (Manufacturer) Warranty Language
+
+## Annotation (intent)
+
+Marketing and product copy must **not** claim or imply a **40-year / forty-year manufacturer warranty** on steel fence posts, Barrier Boss posts, or similar third-party post products. That language has been retired sitewide in favor of **coating performance** (e.g. polyester / SDP powder coat, AAMA 2604/2605 framing where accurate) and **MyFence.com’s own workmanship warranty** where appropriate (`WARRANTY_CONSTANTS` / site warranty copy).
+
+## Do not use (examples — remove or rewrite)
+
+- Phrases like: **40-year warranty**, **40 year warranty**, **40yr warranty**, **forty-year warranty**
+- SEO/meta/alt strings built around **40-year warranty** vs wood lifespan
+- Headings or badges: **40-Year Warranty**, **40 Years** when tied to **warranty** (not when clearly a **time horizon** for cost math only — see below)
+- Barrier Boss copy that **attributes a 40-year manufacturer warranty** to their posts
+
+## Allowed (disambiguation)
+
+- **Time horizon** language for total cost of ownership (e.g. “over 40 years” as a comparison period) is acceptable **if** it is clearly **not** a warranty claim and does not pair with “warranty” or manufacturer guarantee language.
+- MyFence’s **standard craftsmanship / company warranty** copy remains OK where it reflects **your** policy, not a republished 40-year **Barrier Boss** (or other supplier) product warranty.
+
+## When editing steel posts, fence-styles, blog, or JSON-LD
+
+1. Prefer **powder coating, UV durability, rot resistance, heights/pricing**, and **Fence Genius / installation quality**.
+2. For structured data (`Product`, `FAQPage`, etc.), do not assert a **40-year manufacturer** warranty on steel posts; keep descriptions aligned with the above.
+3. After substantive edits, grep the repo for `40-year`, `40 year warranty`, `40yr`, and `40-Year Warranty` in **src/** and clean remaining marketing hits unless they fall under the allowed case above.

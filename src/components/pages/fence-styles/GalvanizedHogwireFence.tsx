@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import OptimizedImage from "@/components/OptimizedImage";
 import { ArrowLeft, Shield, Eye, Wrench } from "lucide-react";
 import Link from "next/link";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
@@ -53,27 +55,31 @@ const GalvanizedHogwireFence = () => {
               "returnFees": "https://schema.org/FreeReturn"
             }
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "reviewCount": "95"
-          },
           "manufacturer": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
             "name": "MyFence.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Seattle",
-              "addressRegion": "WA"
-            },
+            "address": SCHEMA_ADDRESS,
             "telephone": "+1-253-455-1885"
           }
         }}
       />
       
       <div className="min-h-screen bg-background">
-        {/* Navigation */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-4">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">Fence Styles</Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">5' Galvanized Hogwire Fence</span>
+            </div>
+          </div>
+        </nav>
+
+        {/* Back Button */}
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           <Button variant="ghost" asChild className="mb-2">
             <Link href="/fence-styles" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
@@ -104,11 +110,12 @@ const GalvanizedHogwireFence = () => {
                 </div>
               </div>
               <div className="relative">
-                <img
-                  src="/lovable-uploads/dbb0832a-18d2-43bd-90c3-6883046cafd1.png"
+                <OptimizedImage
+                  src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4554.webp?updatedAt=1766269883425&tr=w-960,q-70"
                   alt="5' Galvanized Hogwire Fence installed in residential backyard with cedar frame"
-                  className="rounded-lg shadow-2xl w-full"
+                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -156,6 +163,36 @@ const GalvanizedHogwireFence = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Galvanized Hogwire Fence Gallery</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <OptimizedImage
+                src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4549.webp?tr=w-420,q-60"
+                alt="Galvanized hogwire fence detail with cedar frame"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <OptimizedImage
+                src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4550.webp?tr=w-420,q-60"
+                alt="Galvanized hogwire fence with gate installation"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <OptimizedImage
+                src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4551.webp?tr=w-420,q-60"
+                alt="Galvanized hogwire fence along landscaped yard"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <OptimizedImage
+                src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4550.webp?tr=w-420,q-60"
+                alt="Galvanized hogwire fence with cedar framing and gate"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <OptimizedImage
+                src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4552.webp?tr=w-420,q-60"
+                alt="Galvanized hogwire fence on slope with cedar posts"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+                loading="lazy"
+              />
               <img
                 src="/lovable-uploads/98579841-b63d-44cb-9fa3-abff821578dd.png"
                 alt="Galvanized hogwire fence panels showing wire mesh construction detail"
@@ -241,8 +278,8 @@ const GalvanizedHogwireFence = () => {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative">
                   <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/ebc373d0-b5d1-4531-b443-fa1582e7b456.png" 
+                    <OptimizedImage 
+                      src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4549.webp?tr=w-800,q-65" 
                       alt="Galvanized hogwire fence showing wire mesh detail and cedar frame construction" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 
@@ -285,8 +322,8 @@ const GalvanizedHogwireFence = () => {
                 </CardContent>
                 <div className="order-1 md:order-2">
                   <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/dbb0832a-18d2-43bd-90c3-6883046cafd1.png" 
+                    <OptimizedImage 
+                      src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4550.webp?tr=w-800,q-65" 
                       alt="5' galvanized hogwire fence showing perfect height balance in residential setting" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 
@@ -301,8 +338,8 @@ const GalvanizedHogwireFence = () => {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative">
                   <div className="h-full w-full">
-                    <img 
-                      src="/lovable-uploads/f490fbd6-ff06-4706-bf83-5743bf1e50fb.png" 
+                    <OptimizedImage 
+                      src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4551.webp?tr=w-800,q-65" 
                       alt="Galvanized hogwire fence installation showing durability and cost-effective construction" 
                       className="h-full w-full object-cover min-h-[300px]" 
                       loading="lazy" 

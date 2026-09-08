@@ -18,7 +18,7 @@ serve(async (req) => {
     const requestBody = await req.json()
     console.log('Quote request body parsed:', requestBody)
     
-    const { fullName, email, phone, address, projectDescription } = requestBody
+    const { fullName, email, phone, address, projectDescription, textConsent, sourcePage } = requestBody
 
     console.log('Validating quote fields...')
     // Validate required fields
@@ -42,6 +42,11 @@ serve(async (req) => {
       )
     }
 
+    const consentValue = textConsent === true || textConsent === 'true';
+    const consentLabel = consentValue ? 'Yes' : 'No';
+    const submissionPage = typeof sourcePage === "string" ? sourcePage.trim() : "";
+    const submissionPageLine = submissionPage ? `\nSubmitted from page: ${submissionPage}` : "";
+
     const emailBody = `
 New Quote Request from MyFence.com
 
@@ -50,15 +55,16 @@ Name: ${fullName}
 Email: ${email}
 Phone: ${phone}
 Address: ${address}
+Text message consent: ${consentLabel}
 
 Project Description:
 ${projectDescription}
 
-This request was submitted through the MyFence.com website.
+This request was submitted through the MyFence.com website.${submissionPageLine}
     `.trim()
 
-    console.log('Creating quote email data...')
-    const emailData = {
+    console.log('Creating admin quote email data...')
+    const adminEmailData = {
       from: 'MyFence.com <onboarding@resend.dev>',
       to: ['info@myfence.com'],
       reply_to: email,
@@ -73,32 +79,36 @@ This request was submitted through the MyFence.com website.
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Phone:</strong> ${phone}</li>
           <li><strong>Address:</strong> ${address}</li>
+          <li><strong>Text message consent:</strong> ${consentLabel}</li>
         </ul>
         
         <h3>Project Description:</h3>
         <p>${projectDescription.replace(/\n/g, '<br>')}</p>
         
         <hr>
-        <p><em>This request was submitted through the MyFence.com website.</em></p>
+        <p><em>This request was submitted through the MyFence.com website.</em>${submissionPage ? `<br><strong>Submitted from page:</strong> <a href="${submissionPage}">${submissionPage}</a>` : ""}</p>
       `
     }
 
-    console.log('Sending quote email...')
+    console.log('Sending admin quote email...')
     const resendInstance = new Resend(apiKey)
-    const { data: result, error: resendError } = await resendInstance.emails.send(emailData)
+    const { data: adminResult, error: adminResendError } = await resendInstance.emails.send(adminEmailData)
 
-    if (resendError) {
-      console.error('Resend API error:', resendError)
+    if (adminResendError) {
+      console.error('Resend API error (admin quote email):', adminResendError)
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
 
-    console.log('Email sent successfully:', result)
+    console.log('Admin quote email sent successfully:', adminResult)
 
     return new Response(
-      JSON.stringify({ success: true, id: result?.id }),
+      JSON.stringify({
+        success: true,
+        id: adminResult?.id,
+      }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
 

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Award, Clock, Wrench, Star, CheckCircle } from 'lucide-react';
+import { Shield, Award, Clock, Wrench, Star, CheckCircle, ArrowLeft } from 'lucide-react';
 import QuoteModal from '@/components/QuoteModal';
 import InlineQuoteForm from '@/components/forms/InlineQuoteForm';
 import VirtualQuoteTool from '@/components/VirtualQuoteTool';
@@ -12,8 +12,28 @@ import PaymentCalculator from '@/components/PaymentCalculator';
 import Seo from '@/components/Seo';
 import Link from 'next/link';
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const heroImage = "/lovable-uploads/1d91d676-3b17-4347-9ea7-28027e05e373.png";
+
+const ravennaHorizontalPhotos = getNeighborhoodPhotosBySlugs("seattle", "ravenna");
+
+function pickRavennaPhotosByNeighborhoodIndex(...indices: number[]): ServiceAreaPhoto[] {
+  return indices
+    .map((n) =>
+      ravennaHorizontalPhotos.find(
+        (photo) => photo.neighborhoodAlt === `Ravenna Horizontal Slat Cedar Fence ${n}`
+      )
+    )
+    .filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
+}
+
+/** Neighborhood gallery #3 and #4 (skip #1 delivery / truck shots). */
+const ravennaFieldGallery = pickRavennaPhotosByNeighborhoodIndex(3, 4);
 
 const galleryImages = [
   {
@@ -77,11 +97,6 @@ const HorizontalFence = () => {
         "returnMethod": "https://schema.org/ReturnByMail",
         "returnFees": "https://schema.org/FreeReturn"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150"
     }
   };
 
@@ -97,14 +112,18 @@ const HorizontalFence = () => {
       
       <div className="min-h-screen bg-background">
         {/* Breadcrumb */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36">
-          <nav className="text-sm text-muted-foreground mb-8">
+        <div className="container mx-auto px-4 pt-4 md:pt-28">
+          <nav className="text-sm text-muted-foreground mb-4">
             <Link href="/" className="hover:text-primary">Home</Link>
             <span className="mx-2">/</span>
             <Link href="/fence-styles" className="hover:text-primary">Fence Styles</Link>
             <span className="mx-2">/</span>
             <span>Horizontal Fence</span>
           </nav>
+          <Link href="/fence-styles" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Fence Styles
+          </Link>
         </div>
 
         {/* Hero Section */}
@@ -166,8 +185,38 @@ const HorizontalFence = () => {
 
         {/* Gallery Section */}
         <section className="container mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Horizontal Fence Gallery</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">Our Horizontal Fence Gallery</h2>
+
+          {ravennaFieldGallery.length > 0 && (
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+              Check out our premium horizontal cedar fence paired with{" "}
+              <Link href="/fence-posts/steel-posts" className="text-primary font-medium hover:underline">
+                Steel 4×4 Fence Posts
+              </Link>
+              . See the full{" "}
+              <Link href="/service-areas/seattle/ravenna" className="text-primary font-medium hover:underline">
+                project in Ravenna
+              </Link>
+              .
+            </p>
+          )}
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ravennaFieldGallery.map((photo) => (
+              <Card key={photo.file} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={buildImageUrl(photo.file, 800)}
+                    alt={
+                      photo.neighborhoodAlt ??
+                      "Horizontal slat cedar fence with steel posts in Ravenna, Seattle"
+                    }
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              </Card>
+            ))}
             {galleryImages.map((image, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
                 <div className="relative overflow-hidden">

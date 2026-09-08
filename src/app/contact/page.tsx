@@ -4,7 +4,7 @@ import ContactPage from "@/components/pages/ContactPage";
 export const metadata: Metadata = {
   title: "Contact MyFence | Seattle Fence Contractor",
   description:
-    "Request a quote or ask a question. Call (253) 455-1885 or message MyFence.com — Seattle's father & son fence pros.",
+    "Talk with a Seattle fence contractor about installation, pricing, or a site visit. Call (253) 455-1885 or send a message.",
   alternates: {
     canonical: "https://myfence.com/contact",
   },

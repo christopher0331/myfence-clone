@@ -47,7 +47,7 @@ const FenceStainingPage = () => {
       <Seo
         title="Cedar Fence Staining Seattle: When & Why to Stain"
         description="Professional cedar fence staining guide for Seattle's wet climate. Protect your investment with expert tips. 30+ years experience. Call (253) 455-1885."
-        canonical="https://myfence.com/should-i-stain-my-fence"
+        canonical="https://myfence.com/fence-staining"
         structuredData={structuredData}
       />
 
@@ -452,6 +452,48 @@ const FenceStainingPage = () => {
                   </div>
                 </details>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Reading */}
+        <section className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center">Related Reading</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="border-none shadow-md">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">How to Stain a Fence</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Step-by-step guide to staining your cedar fence for maximum protection and lasting color.
+                  </p>
+                  <Link href="/blog/how-to-stain-fence" className="text-primary hover:underline text-sm font-medium">
+                    Read the guide →
+                  </Link>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-md">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">Onsite vs. Pre-Staining</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Which staining method is right for your new fence? We compare dry panel pre-staining to on-site application.
+                  </p>
+                  <Link href="/blog/onsite-staining-vs-pre-staining" className="text-primary hover:underline text-sm font-medium">
+                    Read the comparison →
+                  </Link>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-md">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">Seattle Fence Setback Rules</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Before you build or replace, know how close your fence can be to the street and property lines in Seattle.
+                  </p>
+                  <Link href="/blog/seattle-fence-setbacks-how-close-can-your-fence-be-to-the-street" className="text-primary hover:underline text-sm font-medium">
+                    Read the rules →
+                  </Link>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

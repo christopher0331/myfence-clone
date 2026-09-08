@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Issaquah from "@/components/service-areas/issaquah";
 
 export const metadata: Metadata = {
-  title: "issaquah Fence Installation | Mountain & Wildlife Aware",
+  title: "Issaquah Fence Installation | Mountain & Wildlife Aware | MyFence.com",
   description:
-    "Fence installation in issaquah, WA. Engineered for foothill terrain, wildlife pressure, and mountain weather.",
+    "Fence installation in Issaquah, WA. Engineered for foothill terrain, wildlife pressure, and mountain weather.",
   alternates: { canonical: "https://myfence.com/service-areas/issaquah" },
 };
 
