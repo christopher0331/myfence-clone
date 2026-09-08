@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Waves,
-  Eye,
-  Home,
+  Trees,
+  Volume2,
+  Bike,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,82 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/sammamish/pine-lake";
+const CANONICAL = "https://myfence.com/service-areas/sammamish/east-sammamish";
 const META_TITLE =
-  "Pine Lake Sammamish Fence Installation | Lakeside & Family Lots | MyFence.com";
+  "East Sammamish Fence Installation | Mature Lots & Trail Edges | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Pine Lake, Sammamish, WA. Cedar, hogwire & hybrid fencing for lakeside lots, school-area yards, and view-conscious properties. Free quotes. (253) 455-1885.";
+  "Professional fence installation in East Sammamish, WA. Cedar, hogwire & hybrid fencing for established lots, mature trees, and East Lake Sammamish Trail edges. Free quotes. (253) 455-1885.";
 
-const PINE_LAKE_FAQS: NeighborhoodFaqItem[] = [
+const EAST_SAMMAMISH_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Pine Lake, Sammamish?",
+    question: "Do I need a permit to build a fence in East Sammamish?",
     answer:
-      "The City of Sammamish generally does not require a building permit for residential fences six feet or shorter in side and rear yards. Front-yard fencing is typically limited to four feet, and corner lots have sight-distance triangle rules. Fences over six feet need a Type I construction permit and a recorded neighbor agreement. Lots that slope into Pine Lake, or that sit in a mapped shoreline or critical-area buffer, can trigger extra review regardless of height. MyFence.com checks the rules for your Pine Lake address before we quote.",
+      "The City of Sammamish generally does not require a building permit for residential fences six feet or shorter in side and rear yards. Front-yard fencing is typically limited to four feet, and corner lots have sight-distance triangle rules. Fences over six feet need a Type I construction permit and a recorded neighbor agreement. Lots west of East Lake Sammamish Parkway, or parcels that sit in a mapped shoreline or critical-area buffer, can trigger extra review regardless of height. MyFence.com checks the rules for your East Sammamish address before we quote.",
   },
   {
     question:
-      "What fence styles work best for Pine Lake's lakeside lots and family yards?",
+      "What fence styles work best for East Sammamish's mature lots and trail edges?",
     answer:
-      "Cedar privacy fencing is the most common choice on interior Pine Lake lots where kids, pets, and backyard screening matter. Along the lake and on downhill runs toward the water, hogwire in a cedar frame is popular because it keeps a view corridor while still containing dogs. Hybrid aluminum-and-cedar systems suit homeowners who want the cedar look without staining in the extra moisture that sits around the lake. Fence Genius maps slope and post locations so panels follow the grade instead of fighting it.",
+      "Cedar privacy fencing is the usual choice on interior streets off 212th Avenue SE and Louis Thompson Road, where established gardens and close neighbors make screening the priority. Along the East Lake Sammamish Trail and downhill runs toward the parkway, hogwire in a cedar frame is popular because it contains dogs without boxing in the lake corridor. Hybrid aluminum-and-cedar systems suit homeowners who want the cedar look without staining long runs next to decades-old firs. Fence Genius maps roots, grade, and post locations so panels follow the lot instead of fighting the trees.",
   },
   {
-    question: "How much does fence installation cost in Pine Lake, Sammamish?",
+    question: "How much does fence installation cost in East Sammamish?",
     answer:
-      "Pine Lake fence installation typically runs $44–$66 per linear foot for six-foot cedar privacy, $38–$56 for hogwire with a cedar frame, and $54–$74 for hybrid aluminum/cedar. Lakeside moisture details, stepped runs on the downhill side of Issaquah-Pine Lake Road, and custom gates can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "East Sammamish fence installation typically runs $45–$68 per linear foot for six-foot cedar privacy, $38–$57 for hogwire with a cedar frame, and $55–$76 for hybrid aluminum/cedar. Hand-digging around mature roots, stepped runs from the plateau down toward East Lake Sammamish Parkway, and extra gates on corner lots can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Pine Lake?",
+    question: "How long does fence installation take in East Sammamish?",
     answer:
-      "Most Pine Lake residential projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Stepped runs toward the lake, mature trees along 228th Avenue SE corridors, and tight side-yard access are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most East Sammamish residential projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Tight side yards between 1970s and 1990s homes, hand-digging near 20- to 40-year-old trees, and stepped posts on the downhill side of the parkway are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
   },
   {
-    question:
-      "Do I need my neighbor's permission for a fence in Pine Lake?",
+    question: "Do I need my neighbor's permission for a fence in East Sammamish?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when the city does not require their signature. If you want a fence taller than six feet, Sammamish does require a recorded agreement with the adjoining owner. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when the city does not require their signature. If you want a fence taller than six feet, Sammamish does require a recorded agreement with the adjoining owner. Many East Sammamish streets have no master HOA, but a few cul-de-sacs still have a small architectural committee. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
   },
 ];
 
-const PINE_LAKE_ATTRACTIONS: LocalAttraction[] = [
+const EAST_SAMMAMISH_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Pine Lake Park",
-    url: "https://www.sammamish.us/our-community/recreation/parks-trails/pine-lake-park/",
+    name: "Sammamish Landing Park",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-landing-park/",
     description:
-      "The neighborhood's shoreline gathering spot — a small city park with a swimming beach, fishing dock, and picnic lawns that sit a short walk from many homes on the south and east sides of the lake.",
-  },
-  {
-    name: "Pine Lake Middle School",
-    url: "https://pinelake.isd411.org/",
-    description:
-      "The Issaquah School District campus at 3095 Issaquah-Pine Lake Road, where most local sixth-through-eighth graders spend the week. After-school pickup traffic is a daily rhythm on that corridor.",
-  },
-  {
-    name: "Big Rock Park",
-    url: "https://www.sammamish.us/our-community/recreation/parks-trails/big-rock-park/",
-    description:
-      "A three-site city park system north of the lake with forested walking loops, a historic farmstead, and open meadow — a quieter alternative when Pine Lake Park is packed on summer weekends.",
-  },
-  {
-    name: "Sammamish Commons",
-    url: "https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-commons/",
-    description:
-      "The civic campus a few minutes north on 228th Avenue SE, with City Hall, the library, playfields, and the seasonal farmers market that Pine Lake families treat as their weekday errand hub.",
+      "The city's only public shoreline on Lake Sammamish, at 4607 East Lake Sammamish Parkway NE. East Sammamish households use the docks, picnic lawn, and beach access as the short hop when they want lake time without driving south to Issaquah.",
   },
   {
     name: "East Lake Sammamish Trail",
     url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/east-lake-sammamish",
     description:
-      "The paved north-south trail along the east shore of Lake Sammamish. Pine Lake residents typically reach it via 212th or 228th for bike commutes toward Issaquah and Redmond without getting on I-90.",
+      "The paved King County trail that runs the length of the neighborhood along the old rail grade. Weekend bike traffic and weekday walkers sit a few yards from many rear lots, which is why trail-edge fencing here is as much about privacy as it is about pets.",
+  },
+  {
+    name: "Ebright Creek Park",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/ebright-creek-park/",
+    description:
+      "A 12-acre city park on 212th Avenue SE with boardwalks, play fields, and a creek corridor that many East Sammamish kids treat as their after-school loop. Lots on the uphill side of the parkway often sit a few blocks from this park rather than from the lake itself.",
+  },
+  {
+    name: "East Lake Elementary",
+    url: "https://ele.lwsd.org/",
+    description:
+      "The Lake Washington School District campus that serves the northern East Sammamish streets. Morning drop-off and afternoon pickup set the daily rhythm on the 228th and Inglewood Hill corridors.",
+  },
+  {
+    name: "Sammamish Commons",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-commons/",
+    description:
+      "The civic campus a short climb east on 228th Avenue — City Hall, the library, playfields, and the seasonal farmers market. East Sammamish households treat it as the weekday errand stop between school and home.",
   },
 ];
 
-const PineLakePage = () => {
+const EastSammamishPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Pine Lake, Sammamish",
-    pageTitle: "Pine Lake Sammamish Fence Installation",
+    neighborhoodName: "East Sammamish, Sammamish",
+    pageTitle: "East Sammamish Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: PINE_LAKE_FAQS,
+    faqItems: EAST_SAMMAMISH_FAQS,
   });
 
   return (
@@ -131,14 +130,14 @@ const PineLakePage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Pine Lake, Sammamish WA
+                    Serving East Sammamish, Sammamish WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Pine Lake Fence Installation
+                  East Sammamish Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Lakeside and hillside fence work for Pine Lake homes — cedar privacy for family yards, hogwire that keeps the water in view, and hybrid systems built for the extra moisture around the lake.
+                  Fence work for East Sammamish&apos;s established lots — cedar privacy that threads around decades-old trees, hogwire along the trail, and designs that still leave a corridor toward Lake Sammamish.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -154,7 +153,7 @@ const PineLakePage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Pine Lake, Sammamish"
+                  city="East Sammamish, Sammamish"
                   state="Washington"
                   radiusMiles={5}
                   zoom={12}
@@ -194,13 +193,13 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing Around a Kettle Lake, Not a Planned Village
+                Fencing Around Established Gardens, Not a Blank Subdivision
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Pine Lake is a glacial kettle lake ringed by single-family streets off Issaquah-Pine Lake Road SE and 228th Avenue SE. Lots drop toward the water on the downhill side, sit flatter on the plateau above, and often back onto mature firs rather than a community greenbelt. Unlike Klahanie to the south, there is no single master association dictating one fence catalog — some pockets have smaller HOAs, many do not — so the design conversation starts with the lot: shoreline views, kid-and-dog yards near Creekside and Pine Lake Middle, and the extra damp that hangs over the lake on cool mornings.
+                East Sammamish is the older residential fabric along East Lake Sammamish Parkway and the streets that climb east toward 212th Avenue SE and 228th. Lots here were built out decades before Klahanie or Trossachs, so the fence conversation starts with what is already in the ground: 20- to 40-year-old Douglas firs, maple canopies, irrigation, and garden beds that homeowners do not want ripped out for a post line. Some parcels drop toward the lake west of the parkway. Others sit flatter on the plateau but still hear trail traffic along the old rail grade.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has built cedar, hogwire, and hybrid fences throughout south Sammamish, including the Pine Lake basin and the Klahanie edge just down the hill. We use Fence Genius to capture grade before a post goes in the ground, so stepped runs on the lake side stay even and interior lots get tight, pet-safe bottoms. The goal is a fence that looks like it belongs on your street — not a generic panel dropped onto a slope.
+                MyFence.com has built cedar, hogwire, and hybrid fences throughout this corridor, including trail-edge lots and the uphill streets off Louis Thompson Road and SE 8th. We use Fence Genius to map grade and root zones before a post goes in the ground, then hand-dig where an auger would tear into a tree that has been on the lot longer than the house. The goal is a fence that looks like it grew with the property — not a generic panel dropped through a garden.
               </p>
             </div>
           </div>
@@ -211,18 +210,18 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Pine Lake Homeowners Trust MyFence.com
+                Why East Sammamish Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Eye className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Trees className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        View-Conscious Lake Designs
+                        Mature-Tree Post Planning
                       </h3>
                       <p className="text-muted-foreground">
-                        Hogwire and mixed-height cedar layouts keep sightlines to the water while screening the neighbor&apos;s patio. We plan post heights against the slope so the top rail stays level from the street.
+                        We shift bay spacing and hand-dig around fir and maple roots instead of forcing a six-foot grid through a 30-year garden. Fence Genius marks conflict zones before the crew arrives.
                       </p>
                     </div>
                   </div>
@@ -235,33 +234,33 @@ const PineLakePage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for the extra humidity around Pine Lake. We stand behind the install through Sammamish winters.
+                        Full coverage on materials and labor, including hardware chosen for the extra damp that sits along the lake and trail. We stand behind the install through Sammamish winters.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Bike className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        School-Area Family Yards
+                        Trail-Edge Privacy
                       </h3>
                       <p className="text-muted-foreground">
-                        Self-closing gates, no crawl gaps at the bottom, and latch heights that work for households walking to Pine Lake Middle or Creekside. Built for after-school backyard use, not just curb appeal.
+                        Rear lots along the East Lake Sammamish Trail get screening that keeps weekend cyclists out of the kitchen window without turning the yard into a tunnel. Height and style follow the actual sightline, not a catalog default.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Waves className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Moisture-Ready Materials
+                        Parkway Noise Buffering
                       </h3>
                       <p className="text-muted-foreground">
-                        Pre-stained cedar, stainless or hot-dipped fasteners, and optional steel posts where ground contact stays wet. The lake does not get a pass on rot — neither do we.
+                        Solid cedar on the East Lake Sammamish Parkway side cuts commuter noise; open hogwire on the downhill or lake edge keeps the view. We mix styles on the same lot when that is what the street actually needs.
                       </p>
                     </div>
                   </div>
@@ -276,7 +275,7 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Pine Lake Homeowners Say
+                What East Sammamish Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -286,9 +285,9 @@ const PineLakePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our backyard drops toward the lake and I did not want a solid wall blocking the water. They stepped a hogwire run with a cedar frame and it still keeps the dog in. Clean work and they finished before the weekend.&rdquo;
+                    &ldquo;Our backyard sits a few feet from the trail and I did not want a solid wall the whole way. They ran cedar on the parkway side and hogwire toward the lake. The dog stays in and we still see the water.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Dana in Pine Lake</p>
+                  <p className="text-sm font-medium">— Mei in East Sammamish</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -298,9 +297,9 @@ const PineLakePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We needed a real privacy fence for the kids after school. The cedar looks like it belongs on the street, the gates latch well, and they were careful around the old firs along the side yard.&rdquo;
+                    &ldquo;They planned every post around the old firs along 212th and did not chew up the irrigation. The cedar matches the house, and they finished in two days without turning the garden into a mud pit.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Priya in Pine Lake</p>
+                  <p className="text-sm font-medium">— Cole in East Sammamish</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -310,9 +309,9 @@ const PineLakePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Small HOA on our street, not Klahanie-level paperwork. They still put together a simple drawing and material list that the board signed off on the first pass. Appreciate the extra step.&rdquo;
+                    &ldquo;No big HOA on our street, but they still walked Sammamish height rules and talked with the neighbor before digging. Appreciate that they treated it like a shared line, not just our project.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Evan in Pine Lake</p>
+                  <p className="text-sm font-medium">— Hannah in East Sammamish</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -321,56 +320,56 @@ const PineLakePage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Pine Lake Sammamish fence" />
+        <LeadCaptureTabs fenceStyleName="East Sammamish Sammamish fence" />
 
-        {/* 6. Photo Gallery — nearby Sammamish installs until Pine Lake-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Sammamish installs until East Sammamish-tagged photos exist */}
         <ServiceAreaPhotoGallery
           city="Sammamish"
-          title="Recent Fence Work Near Pine Lake"
-          description="These photos are from nearby Sammamish jobs, including Klahanie just south of Pine Lake. Same crew, same materials, and the same Fence Genius process we use on Pine Lake lots."
+          title="Recent Fence Work Near East Sammamish"
+          description="These photos are from nearby Sammamish jobs, including Klahanie and other plateau streets. Same crew, same materials, and the same Fence Genius process we use on East Sammamish lots."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Sammamish" neighborhood="Pine Lake" />
+        <FeaturedProject city="Sammamish" neighborhood="East Sammamish" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Pine Lake–Specific Fencing Considerations
+                East Sammamish–Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Pine Lake Slope and Stepped Runs
+                    East Sammamish Tree Roots and Garden Beds
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Streets on the downhill side of Issaquah-Pine Lake Road SE fall toward the water, so a fence that is built as one long level line either buries the bottom rail or leaves a gap a small dog can use. We measure grade with Fence Genius, then step or rack panels so the top stays even and the bottom tracks the lawn. On steeper cuts we shorten panel bays rather than forcing a six-foot bay across a drop.
+                    Established lots along 212th Avenue SE, Louis Thompson Road, and the courts off SE 8th often have firs and maples whose roots sit exactly where a standard post grid would go. We measure first, then shorten bays or shift the line a few inches rather than cutting a structural root. Hand-digging replaces the auger at those posts, and we talk through any tree we cannot work around before the crew starts.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Pine Lake Moisture and Fastener Choice
+                    Grade From the Plateau Down to the Parkway
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The kettle lake holds cool air and overnight damp longer than the plateau toward Sammamish Commons. Raw cedar grays fast on the lake side, and cheap galvanized nails start showing rust streaks. We spec pre-stained Western Red Cedar and stainless or hot-dipped fasteners, and we talk through steel posts where the soil stays wet at the downhill corners of the lot.
+                    Streets east of East Lake Sammamish Parkway climb toward the plateau. A fence built as one long level line either buries the bottom rail or leaves a gap a small dog can use. Fence Genius captures the drop, then we step or rack panels so the top stays even and the bottom tracks the lawn. On steeper cuts we shorten panel bays rather than forcing a six-foot bay across a drop.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Pine Lake View Corridors vs. Privacy
+                    Trail Traffic and Lake View Corridors
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Waterfront and view lots usually want screening from the neighbor without a solid wall across the lake. Hogwire in a cedar frame, or cedar privacy on the side yards with an open run on the downhill edge, is the typical mix. We walk the lot with you and mark where a solid panel helps and where it just blocks the reason you bought the house.
+                    The East Lake Sammamish Trail puts walkers and cyclists on the same elevation as many rear yards. Solid cedar is the right answer on the parkway-facing side; hogwire or a mixed-height run is usually better on the downhill or trail edge so the lake stays in the picture. We walk the lot with you and mark where a solid panel helps and where it just blocks the reason the house was sited here.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Pine Lake HOAs, Trees, and City Height Rules
+                    East Sammamish HOAs, Shoreline, and City Height Rules
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Some cul-de-sacs around the lake have small architectural committees; many streets do not. We still follow Sammamish height rules — six feet in most side and rear yards, four feet in the front setback — and we plan post holes around the firs and cedars that line SE 24th Street and the 228th corridor. If your parcel sits in a shoreline or wetland buffer, we flag that before digging rather than after.
+                    Most of this corridor is not a single master association. A few cul-de-sacs have small architectural committees; many streets do not. We still follow Sammamish height rules — six feet in most side and rear yards, four feet in the front setback — and we flag shoreline or wetland buffers on parcels west of the parkway before digging rather than after.
                   </p>
                 </div>
               </div>
@@ -383,39 +382,39 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Pine Lake
+                Fence Installation Cost in East Sammamish
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A Pine Lake fence is an investment in a school-area lot and, on the downhill side, a view. Slope, gates, and moisture details move the number. These are typical ranges; your on-site measurement is the real quote.
+                An East Sammamish fence is an investment in an established lot — trees, gardens, and, on the downhill side, a view. Slope, gates, and hand-digging move the number. These are typical ranges; your on-site measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
                   <li>
                     <span>
                       <strong className="text-foreground">Cedar privacy (6&apos;):</strong>{" "}
-                      $44–$66 per linear foot
+                      $45–$68 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $38–$56 per linear foot
+                      $38–$57 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hybrid aluminum/cedar:</strong>{" "}
-                      $54–$74 per linear foot
+                      $55–$76 per linear foot
                     </span>
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Stepped runs toward the lake and hand-digging near mature trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Pine Lake property with a free on-site measurement.
+                  Hand-digging near mature trees and stepped runs toward the parkway may add 10–15%. Custom gates are itemized separately. Get an exact quote for your East Sammamish property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Pine Lake property</Link>
+                  <Link href="/quote">Get an exact quote for your East Sammamish property</Link>
                 </Button>
               </div>
             </div>
@@ -427,13 +426,13 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Pine Lake
+                Popular Fence Styles in East Sammamish
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior Pine Lake lots near the schools. Full screening for after-school play, pre-stained cedar that holds up to Sammamish winters, and a look that fits 1970s–1990s ranch and two-story homes around the lake.
+                    The workhorse on interior East Sammamish lots near 212th and the school corridors. Full screening for established yards, pre-stained cedar that holds up to Sammamish winters, and a look that fits 1970s–1990s homes rather than a brand-new planned village.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -445,7 +444,7 @@ const PineLakePage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for downhill and waterfront lots. Dogs stay in, the lake stays in view, and the lighter footprint is easier around roots than a solid privacy wall.
+                    Cedar frame with black mesh for trail-edge and downhill lots. Dogs stay in, the lake corridor stays in view, and the lighter footprint is easier around roots than a solid privacy wall.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -457,7 +456,7 @@ const PineLakePage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when lake-side humidity makes staining a chore. Strong enough for busy family yards without looking like a commercial lot.
+                    Aluminum panels in a cedar frame on steel posts — the lower-maintenance option when lake-side humidity and long runs make staining a chore. Strong enough for family yards without looking like a commercial lot.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -476,23 +475,23 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Pine Lake Installation Process
+                Our East Sammamish Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Pine Lake Site Assessment
+                    1. East Sammamish Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the run, note slope toward the lake, map trees, and check whether the parcel sits in a Sammamish shoreline or critical-area overlay. Fence Genius captures grade so panels are built to the actual drop, not a flat-lot assumption.
+                    We walk the lot, measure the run, note slope toward the parkway, map trees and garden beds, and check whether the parcel sits in a Sammamish shoreline or critical-area overlay. Fence Genius captures grade so panels are built to the actual drop, not a flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Pine Lake Design & HOA Submission
+                    2. East Sammamish Design & HOA Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. If your street has a small HOA, we prepare a simple drawing and material list. If it does not, we still document Sammamish height and setback rules so the install is clean with the city.
+                    You pick style and height. If your cul-de-sac has a small architectural committee, we prepare a simple drawing and material list. If it does not, we still document Sammamish height and setback rules so the install is clean with the city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -500,15 +499,15 @@ const PineLakePage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Pine Lake install days are mostly setting posts and hanging finished sections.
+                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so East Sammamish install days are mostly setting posts and hanging finished sections.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Pine Lake Installation
+                    4. East Sammamish Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment suited to residential streets off 228th and Issaquah-Pine Lake Road. Hand-digging near mature roots, stepped posts on the downhill side, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets off East Lake Sammamish Parkway and 212th. Hand-digging near mature roots, stepped posts on the downhill side, and full cleanup at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -526,47 +525,56 @@ const PineLakePage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Pine Lake Fence Installation FAQs"
-          items={PINE_LAKE_FAQS}
+          title="East Sammamish Fence Installation FAQs"
+          items={EAST_SAMMAMISH_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Sammamish"
-        neighborhoodName="Pine Lake"
-        attractions={PINE_LAKE_ATTRACTIONS}
+        neighborhoodName="East Sammamish"
+        attractions={EAST_SAMMAMISH_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Pine Lake sits in the Issaquah School District, so most families feed{" "}
+              Northern East Sammamish streets sit in the{" "}
               <a
-                href="https://creekside.isd411.org/"
+                href="https://www.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Creekside Elementary
+                Lake Washington School District
+              </a>
+              , so most families feed{" "}
+              <a
+                href="https://ele.lwsd.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                East Lake Elementary
               </a>
               , then{" "}
               <a
-                href="https://pinelake.isd411.org/"
+                href="https://ims.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Pine Lake Middle School
-              </a>{" "}
-              on Issaquah-Pine Lake Road, and later{" "}
-              <a
-                href="https://skyline.isd411.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Skyline High School
+                Inglewood Middle School
               </a>
-              . Weekday life is built around that school triangle and the short hop north on 228th Avenue SE to the{" "}
+              , and later{" "}
+              <a
+                href="https://ehs.lwsd.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Eastlake High School
+              </a>{" "}
+              on 228th Avenue NE. Weekday life is built around that school triangle and the short climb to the{" "}
               <a
                 href="https://kcls.org/locations/sammamish/"
                 target="_blank"
@@ -578,23 +586,23 @@ const PineLakePage = () => {
               at the Commons.
             </p>
             <p>
-              Groceries and after-practice food cluster at the retail along Issaquah-Pine Lake Road rather than requiring a drive into downtown Issaquah. Weekends split between the swimming beach at{" "}
+              Groceries and after-practice food cluster along 228th rather than requiring a drive into downtown Issaquah. Weekends split between the shoreline at{" "}
               <a
-                href="https://www.sammamish.us/our-community/recreation/parks-trails/pine-lake-park/"
+                href="https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-landing-park/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Pine Lake Park
+                Sammamish Landing Park
               </a>
-              , wooded loops at{" "}
+              , boardwalk loops at{" "}
               <a
-                href="https://www.sammamish.us/our-community/recreation/parks-trails/big-rock-park/"
+                href="https://www.sammamish.us/our-community/recreation/parks-trails/ebright-creek-park/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Big Rock Park
+                Ebright Creek Park
               </a>
               , and bike miles on the{" "}
               <a
@@ -614,7 +622,7 @@ const PineLakePage = () => {
               >
                 The City of Sammamish
               </a>{" "}
-              handles permits and parks; I-90 is a short run south via 228th when you need Bellevue or Seattle.
+              handles permits and parks; SR 520 and I-90 are short runs north or south when you need Redmond, Bellevue, or Seattle.
             </p>
           </>
         }
@@ -629,11 +637,14 @@ const PineLakePage = () => {
                 Also Serving Nearby Sammamish Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Sammamish. From Pine Lake we also work in Klahanie just to the south, Sahalee, Beaver Lake, Trossachs, East Sammamish, and Inglewood.
+                From East Sammamish we also install in Pine Lake and Klahanie to the south, Beaver Lake and Trossachs farther east on the plateau, and Sahalee. Inglewood sits just north along the same parkway corridor.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish">Sammamish overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/pine-lake">Pine Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish/beaver-lake">Beaver Lake</Link>
@@ -650,13 +661,7 @@ const PineLakePage = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/sammamish/east-sammamish">East Sammamish</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/sammamish/inglewood">Inglewood</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/issaquah">Issaquah</Link>
+                  <Link href="/service-areas/redmond">Redmond</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
@@ -671,10 +676,10 @@ const PineLakePage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Pine Lake Property?
+                Ready to Enhance Your East Sammamish Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Pine Lake. We&apos;ll walk the slope, talk through view vs. privacy, and quote a fence that fits your Sammamish lot.
+                Same-day estimates available in East Sammamish. We&apos;ll walk the trees, talk through trail privacy vs. lake views, and quote a fence that fits your established lot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -692,4 +697,4 @@ const PineLakePage = () => {
   );
 };
 
-export default PineLakePage;
+export default EastSammamishPage;
