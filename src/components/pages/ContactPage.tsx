@@ -1,19 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+
+const FORM_KEY = "contact-page";
 
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [textConsentError, setTextConsentError] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,51 +32,100 @@ const ContactPage = () => {
     phone: "",
     address: "",
     message: "",
+    textConsent: false,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
+    }));
+    if (name === "phone" && value.trim() === "") {
+      setTextConsentError(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.address.trim() || !addressValid) {
+      toast({
+        title: !formData.address.trim() ? "Address required" : "Invalid address",
+        description: !formData.address.trim()
+          ? "Please enter your property address."
+          : "Please select an address from the dropdown suggestions.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      setTextConsentError(true);
+      document.getElementById("contact-page-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      let leadError: string | null = null;
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Contact Page",
+        message: formData.message,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
+
+      let emailError: string | null = null;
       try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        const legacy = await supabase.functions.invoke("send-contact-form", {
           body: {
             firstName: formData.firstName,
             lastName: formData.lastName,
             email: formData.email,
             phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Contact Page",
-            message: formData.message,
+            address: formData.address,
+            description: `${crmFailureNotice(crm)}${formData.message}`,
+            textConsent: formData.textConsent,
+            sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            formSku: deriveFormSku(),
+            originPage: attribution.originPage,
           },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
-
-      // Always send the legacy email notification too (info@myfence.com), regardless of webhook success.
-      let emailError: string | null = null;
-      try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: JSON.stringify(formData),
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(FORM_KEY, { formType: "contact" });
 
       await import("@/lib/effects").then((m) =>
         m.burstFirework(window.innerWidth / 2, window.innerHeight / 2),
@@ -116,12 +176,7 @@ const ContactPage = () => {
     },
     image: "https://myfence.com/myfence-logo.png",
     telephone: "+1-253-455-1885",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Seattle",
-      addressRegion: "WA",
-      addressCountry: "US",
-    },
+    address: SCHEMA_ADDRESS,
     areaServed: "Seattle-Tacoma, WA",
   };
 
@@ -129,14 +184,14 @@ const ContactPage = () => {
     <main>
       <Seo
         title="Contact MyFence | Seattle Fence Contractor"
-        description="Request a quote or ask a question. Call (253) 455-1885 or message MyFence.com — Seattle's father & son fence pros."
+        description="Talk with a Seattle fence contractor about installation, pricing, or a site visit. Call (253) 455-1885 or send a message."
         canonical="https://myfence.com/contact"
         structuredData={[breadcrumbData, orgLd]}
       />
       <section className="container py-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact Us</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact a Seattle Fence Contractor</h1>
         <p className="text-muted-foreground max-w-2xl">
-          We're here to help. Call
+          We&apos;re here to help with fence installation questions or a quote. Call
           <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">
             (253) 455-1885
           </a>
@@ -144,23 +199,31 @@ const ContactPage = () => {
         </p>
 
         {isSubmitted ? (
-          <div className="mt-8 text-center py-12 bg-card rounded-lg border shadow-sm">
-            <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-2xl font-semibold mb-2">Message Sent Successfully!</h2>
-            <p className="text-muted-foreground mb-6">
-              Thank you for contacting us! We'll get back to you within 24 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button onClick={() => setIsSubmitted(false)} variant="outline">
-                Send Another Message
-              </Button>
-              <Button
-                onClick={() => (window.location.href = "tel:12534551885")}
-                variant="hero"
-              >
-                Call Us Now
-              </Button>
+          <div>
+            <div className="mt-8 text-center py-12 bg-card rounded-lg border shadow-sm">
+              <div className="text-6xl mb-4">🎉</div>
+              <h2 className="text-2xl font-semibold mb-2">Message Sent Successfully!</h2>
+              <p className="text-muted-foreground mb-6">
+                Thank you for contacting us! We'll get back to you within 24 hours.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button onClick={() => setIsSubmitted(false)} variant="outline">
+                  Send Another Message
+                </Button>
+                <Button
+                  onClick={() => (window.location.href = "tel:12534551885")}
+                  variant="hero"
+                >
+                  Call Us Now
+                </Button>
+              </div>
             </div>
+            <ServiceProviderRecommendations
+              customerName={`${formData.firstName} ${formData.lastName}`.trim()}
+              customerEmail={formData.email}
+              customerPhone={formData.phone}
+              customerAddress={formData.address}
+            />
           </div>
         ) : (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-start">
@@ -229,16 +292,40 @@ const ContactPage = () => {
                       maxLength={20}
                     />
                   </div>
+                  <div
+                    id="contact-page-text-consent-row"
+                    className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                  >
+                    <Checkbox
+                      id="contact-page-text-consent"
+                      checked={formData.textConsent}
+                      onCheckedChange={(checked) => {
+                        const consentGiven = checked === true;
+                        setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
+                        if (consentGiven) setTextConsentError(false);
+                      }}
+                    />
+                    <Label
+                      htmlFor="contact-page-text-consent"
+                      className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                    >
+                      {TEXT_CONSENT_MESSAGE}
+                    </Label>
+                  </div>
+                  {textConsentError ? (
+                    <p className="text-sm font-semibold text-amber-800 mt-1">
+                      ⚠ Required: check this box to submit when a phone number is entered.
+                    </p>
+                  ) : null}
                   <div>
                     <Label htmlFor="address">Address</Label>
-                    <Input
+                    <AddressAutocomplete
                       id="address"
-                      name="address"
                       value={formData.address}
-                      onChange={handleInputChange}
+                      onChange={(val) => setFormData((prev) => ({ ...prev, address: val }))}
+                      onValidChange={setAddressValid}
                       required
-                      autoComplete="street-address"
-                      maxLength={200}
+                      placeholder="123 Main St, Seattle, WA"
                     />
                   </div>
                 </div>

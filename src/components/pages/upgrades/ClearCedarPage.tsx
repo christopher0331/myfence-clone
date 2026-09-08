@@ -1,6 +1,7 @@
 "use client";
 
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -26,12 +27,7 @@ const ClearCedar = () => {
           "provider": {
             "@type": "LocalBusiness",
             "name": "MyFence.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Seattle",
-              "addressRegion": "WA",
-              "addressCountry": "US"
-            },
+            "address": SCHEMA_ADDRESS,
             "telephone": "+1-253-455-1885"
           },
           "areaServed": {
@@ -298,6 +294,18 @@ const ClearCedar = () => {
               </p>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Related Upgrades */}
+      <section className="container py-10 border-t">
+        <h2 className="text-xl font-semibold mb-4">Explore Related Upgrades</h2>
+        <div className="flex flex-wrap gap-4">
+          <Link href="/fence-upgrades/trellis-systems" className="text-primary hover:underline font-medium">Trellis Systems →</Link>
+          <Link href="/fence-upgrades/exterior-screws" className="text-primary hover:underline font-medium">Exterior Screws Upgrade →</Link>
+          <Link href="/fence-upgrades/soil-haul-away" className="text-primary hover:underline font-medium">Soil Haul-Away →</Link>
+          <Link href="/fence-posts/cedar-post-on-pipe" className="text-primary hover:underline font-medium">Cedar Post on Pipe →</Link>
+          <Link href="/fence-styles" className="text-primary hover:underline font-medium">View All Fence Styles →</Link>
         </div>
       </section>
 

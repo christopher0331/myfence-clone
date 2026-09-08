@@ -38,8 +38,18 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/fence-staining" className="text-muted-foreground hover:text-primary transition-colors">
+                    Fence Staining
+                  </Link>
+                </li>
+                <li>
                   <Link href="/gallery" className="text-muted-foreground hover:text-primary transition-colors">
                     Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                    FAQ
                   </Link>
                 </li>
                 <li>
@@ -50,6 +60,11 @@ const Footer = () => {
                 <li>
                   <Link href="/discounts" className="text-muted-foreground hover:text-primary transition-colors">
                     Discounts
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/referrals" className="text-muted-foreground hover:text-primary transition-colors">
+                    Referrals
                   </Link>
                 </li>
                 <li>

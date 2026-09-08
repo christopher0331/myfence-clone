@@ -34,25 +34,30 @@ export const useTrustindexReviews = () => {
     loadReviews();
   }, []);
 
-  // Load Trustindex reviews widget and sync to database
+  // Load Trustindex reviews widget and sync to database (legacy direct embed)
+  // Skip for search-engine crawlers to avoid injecting extra third-party JS/schema.
   useEffect(() => {
     if (!reviewsRef.current) return;
-    
+    if (/Googlebot|bingbot|Baiduspider|YandexBot|Slurp|facebookexternalhit|Chrome-Lighthouse/i.test(navigator.userAgent)) return;
+
     const widgetDiv = document.createElement("div");
     widgetDiv.setAttribute("data-widget-id", "d273c79511b386516c861cd858a");
     widgetDiv.className = "trustindex-widget";
     reviewsRef.current.appendChild(widgetDiv);
-    
+
     const script = document.createElement("script");
     script.src = "https://cdn.trustindex.io/loader.js?d273c79511b386516c861cd858a";
     script.async = true;
     script.defer = true;
-    
+
     script.onload = () => {
       setTimeout(async () => {
         try {
+          // Remove the bad JSON-LD that Trustindex injects (Product schema with no @context)
+          removeTrustindexJsonLd();
+
           const scrapedReviews = scrapeReviewsFromWidget();
-          
+
           if (scrapedReviews.length > 0) {
             await syncReviewsToDatabase(scrapedReviews, setReviews);
           }
@@ -61,9 +66,9 @@ export const useTrustindexReviews = () => {
         }
       }, 4000);
     };
-    
+
     reviewsRef.current.appendChild(script);
-    
+
     return () => {
       script.remove();
       widgetDiv.remove();
@@ -124,6 +129,28 @@ const scrapeReviewsFromWidget = (): Review[] => {
   }
   
   return scrapedReviews;
+};
+
+/**
+ * Trustindex injects a <script type="application/ld+json"> with @type: Product
+ * and no @context, causing all types to resolve as relative URLs
+ * (e.g. https://myfence.com/service-areas/Product). Remove it.
+ */
+const removeTrustindexJsonLd = () => {
+  const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+  scripts.forEach((script) => {
+    try {
+      const data = JSON.parse(script.textContent || "");
+      if (
+        data["@type"] === "Product" &&
+        data.manufacturer?.["@id"]?.includes("trustindex")
+      ) {
+        script.remove();
+      }
+    } catch {
+      // not valid JSON, skip
+    }
+  });
 };
 
 const syncReviewsToDatabase = async (

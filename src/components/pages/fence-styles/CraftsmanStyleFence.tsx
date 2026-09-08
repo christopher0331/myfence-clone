@@ -13,6 +13,13 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { ArrowLeft } from "lucide-react";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 // Images (initial set). You can upload more and we will extend this gallery automatically.
 const heroImg = "/lovable-uploads/1ab1a228-3d1d-4b69-8561-371fabba22e1.png"; // Angled craftsman fence with Fence Genius planning
@@ -26,6 +33,28 @@ const gallery = [
   { src: "/lovable-uploads/152a9d59-7c85-4105-b186-08092819fb4d.png", alt: "Straight run of craftsman fence showing alternating board pattern" },
   { src: "/lovable-uploads/f77a4cb6-6689-40e1-ae50-3546ae7a98f1.png", alt: "Craftsman fence with pergola and Fence Genius design overlay" },
 ];
+
+const kennydaleCraftsmanPhotos = getNeighborhoodPhotosBySlugs("renton", "kennydale");
+const KENNYDALE_FIELD_SUFFIXES = [
+  "Kennydale-Spindle-Top-Privacy-Fence-1.webp",
+  "Kennydale-Spindle-Top-Privacy-Fence-6.webp",
+  "Kennydale-Spindle-Top-Privacy-Fence-11.webp",
+] as const;
+
+const kennydaleFieldGallery = KENNYDALE_FIELD_SUFFIXES.map((suffix) =>
+  kennydaleCraftsmanPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
+
+const christopherCraftsmanPhotos = getNeighborhoodPhotosBySlugs("auburn", "christopher");
+const CHRISTOPHER_FIELD_SUFFIXES = [
+  "Christopher-Spindle-Top-Privacy-Fence-1.webp",
+  "Christopher-Spindle-Top-Privacy-Fence-3.webp",
+  "Christopher-Spindle-Top-Privacy-Fence-5.webp",
+] as const;
+
+const christopherFieldGallery = CHRISTOPHER_FIELD_SUFFIXES.map((suffix) =>
+  christopherCraftsmanPhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -53,6 +82,7 @@ const CraftsmanStyleFence = () => {
       { "@type": "Place", name: "Bothell, WA" },
       { "@type": "Place", name: "Shoreline, WA" },
       { "@type": "Place", name: "Renton, WA" },
+      { "@type": "Place", name: "Auburn, WA" },
     ],
     image: [heroImg],
     brand: { "@type": "Brand", name: "Fence Genius" },
@@ -120,8 +150,7 @@ const CraftsmanStyleFence = () => {
         "returnMethod": "https://schema.org/ReturnByMail",
         "returnFees": "https://schema.org/FreeReturn"
       }
-    },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "134" }
+    }
   };
 
   const structuredData = [
@@ -149,36 +178,62 @@ const CraftsmanStyleFence = () => {
         structuredData={structuredData}
       />
 
-      <article className="container pt-24 md:pt-32 pb-10">
-        <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">Craftsman Style Fence</h1>
-            <p className="mt-3 text-muted-foreground max-w-prose">
-              The craftsman style fence features an alternating board pattern with 5' and 6' fence boards,
-              creating 12" gaps for wind flow and visibility. Built with 3 rails, 3 trim, and a top cap in
-              #1 grade cedar for a unique architectural look with Fence Genius precision.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">Unique Pattern</Badge>
-              <Badge variant="secondary">Wind Flow</Badge>
-              <Badge variant="secondary">Fence Genius Precision</Badge>
+      <div className="min-h-screen bg-background">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">
+                Fence Styles
+              </Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">Craftsman Style Fence</span>
             </div>
           </div>
-          <div>
-            <AspectRatio ratio={16 / 9}>
-              <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
-            </AspectRatio>
-          </div>
-        </header>
+        </nav>
 
-        <section className="mt-6">
-          <Alert>
-            <AlertTitle>Distinctive Craftsman Design</AlertTitle>
-            <AlertDescription>The alternating board pattern creates a unique visual appeal while providing wind flow and enhanced visibility.</AlertDescription>
-          </Alert>
-        </section>
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-8">
+          <Button variant="ghost" asChild className="mb-4">
+            <Link href="/fence-styles" className="flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Fence Styles
+            </Link>
+          </Button>
 
-        <section className="mt-10 space-y-8 max-w-6xl mx-auto">
+          <article className="pt-2 md:pt-4 pb-10">
+            <header className="grid gap-6 md:grid-cols-2 md:items-center max-w-6xl mx-auto">
+              <div>
+                <h1 className="text-4xl font-bold tracking-tight">Craftsman Style Fence</h1>
+                <p className="mt-3 text-muted-foreground max-w-prose">
+                  The craftsman style fence features an alternating board pattern with 5' and 6' fence boards,
+                  creating 12" gaps for wind flow and visibility. Built with 3 rails, 3 trim, and a top cap in
+                  #1 grade cedar for a unique architectural look with Fence Genius precision.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <Badge variant="secondary">Unique Pattern</Badge>
+                  <Badge variant="secondary">Wind Flow</Badge>
+                  <Badge variant="secondary">Fence Genius Precision</Badge>
+                </div>
+              </div>
+              <div>
+                <AspectRatio ratio={16 / 9}>
+                  <img src={heroImg} alt="Craftsman style fence with alternating board pattern in Seattle" loading="eager" className="h-full w-full rounded-md object-cover" />
+                </AspectRatio>
+              </div>
+            </header>
+
+            <section className="mt-6">
+              <Alert>
+                <AlertTitle>Distinctive Craftsman Design</AlertTitle>
+                <AlertDescription>The alternating board pattern creates a unique visual appeal while providing wind flow and enhanced visibility.</AlertDescription>
+              </Alert>
+            </section>
+
+            <section className="mt-10 space-y-8 max-w-6xl mx-auto">
           <div className="space-y-6">
             <Card className="p-6 md:p-8 glass-card">
               <h2 className="text-2xl font-semibold tracking-tight">Why homeowners choose craftsman style</h2>
@@ -223,6 +278,104 @@ const CraftsmanStyleFence = () => {
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 See the unique alternating board pattern and craftsmanship of our craftsman style fences.
               </p>
+            </div>
+
+            {kennydaleFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    See our craftsman spindle-top privacy fence on a{" "}
+                    <Link href="/service-areas/renton/kennydale" className="text-primary font-medium hover:underline">
+                      Kennydale, Renton
+                    </Link>{" "}
+                    lakefront lot — pre-stained cedar with{" "}
+                    <Link href="/fence-upgrades/post-on-pipe" className="text-primary font-medium hover:underline">
+                      Post-on-Pipe
+                    </Link>{" "}
+                    footings for long life near Lake Washington.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {kennydaleFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Craftsman spindle top privacy fence in Kennydale, Renton"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {christopherFieldGallery.length > 0 && (
+              <div className="max-w-5xl mx-auto mb-10">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Craftsman spindle-top privacy on an{" "}
+                    <Link href="/service-areas/auburn/christopher" className="text-primary font-medium hover:underline">
+                      Christopher, Auburn
+                    </Link>{" "}
+                    suburban lot — pre-stained cedar with street-facing spindle detail and solid backyard screening.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {christopherFieldGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={3 / 4}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Craftsman spindle top privacy fence in Christopher, Auburn"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-md object-cover"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="max-w-5xl mx-auto mb-10">
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-4">
+                  <h3 className="text-xl font-semibold">Craftsman style cedar fence walkthrough</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Walk a finished craftsman spindle-top privacy run on a{" "}
+                    <Link href="/service-areas/renton/kennydale" className="text-primary font-medium hover:underline">
+                      Kennydale, Renton
+                    </Link>{" "}
+                    lot — alternating board pattern, top cap detail, and street-facing spindle work built for Lake Washington exposure.
+                  </p>
+                  <Link
+                    href="/service-areas/renton/kennydale"
+                    className="inline-flex px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                  >
+                    View Kennydale project photos &rarr;
+                  </Link>
+                </div>
+                <div className="w-full max-w-[340px] mx-auto md:mx-0 md:ml-auto">
+                  <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                      title="Craftsman style cedar fence walkthrough by MyFence.com"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,8 +562,8 @@ const CraftsmanStyleFence = () => {
         </section>
 
         {/* About Craftsman Style Fencing */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
+            <section className="py-16 bg-background">
+              <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">About Craftsman Style Fencing</h2>
             
             {/* Unique Alternating Pattern */}
@@ -453,8 +606,10 @@ const CraftsmanStyleFence = () => {
             </div>
             <PaymentCalculator />
           </div>
-        </section>
-      </article>
+            </section>
+          </article>
+        </div>
+      </div>
     </>
   );
 };

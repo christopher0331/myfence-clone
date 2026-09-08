@@ -4,9 +4,6 @@
     {
       "path": "./tsconfig.app.json"
     },
-    {
-      "path": "./tsconfig.node.json"
-    }
   ],
   "compilerOptions": {
     "baseUrl": ".",
@@ -51,6 +48,7 @@
     "node_modules",
     "supabase",
     "pages-router-backup",
-    "stash"
+    "stash",
+    "analytics-dashboard"
   ]
 }

@@ -1,24 +1,20 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
-import Image from "next/image";
-import { imageKitLoader } from "@/lib/imagekit";
 
-interface AboutUsSectionProps {
-  onOpenQuoteModal: () => void;
-}
-
-export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
+export const AboutUsSection = () => {
   return (
     <section className="container relative z-10 -mt-12 md:-mt-36 lg:-mt-44 pt-10 md:pt-12 pb-0">
       <div className="grid md:grid-cols-[1fr_1fr] items-stretch rounded-xl shadow-elevated overflow-hidden">
         <div className="bg-foreground text-background p-6 md:p-10">
           <div className="text-xs uppercase tracking-wider opacity-80">About Us</div>
-          <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Contractor | Fence Installation & Design in Seattle</h1>
+          <h1 className="mt-2 text-2xl md:text-3xl font-bold leading-tight text-center md:text-left">Seattle Fence Installation | Local Fence Company</h1>
           <p className="mt-2 text-sm opacity-80 text-center md:text-left">Local Father & Son Owned</p>
           <p className="mt-4 text-sm md:text-base opacity-90 leading-relaxed hidden md:block">
-            MyFence.com is a Seattle-based startup founded by father and son duo Eric & Andrew Knudsen. We're not a
-            franchise—just a local company with a killer name! As the original company using
+            MyFence.com is a Seattle fence company founded by father and son duo Eric & Andrew Knudsen. We handle fence
+            installation across the metro. We&apos;re not a franchise—just a local company with a killer name! As the original company using
             {" "}
             <Link href="/fence-genius" className="text-primary hover:underline">
               Fence Genius
@@ -30,32 +26,26 @@ export const AboutUsSection = ({ onOpenQuoteModal }: AboutUsSectionProps) => {
             deliver exceptional, transparent results.
           </p>
           <div className="mt-5 flex justify-center relative">
-            <Button size="lg" variant="secondary" onClick={onOpenQuoteModal} className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">
-              Free Quotes
+            <Button size="lg" variant="secondary" asChild className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">
+              <Link href="/quote">Free Quotes</Link>
             </Button>
             <span className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-40 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
           </div>
         </div>
-        <div className="bg-card text-foreground p-3 md:p-8 flex items-center justify-center order-first md:order-last">
-          <div className="w-full rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow">
-            <AspectRatio ratio={16/9} className="md:aspect-[4/3]">
-              <div className="relative h-full w-full">
-                <Image
-                  loader={imageKitLoader}
-                  src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?updatedAt=1762463227152"
-                  alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  loading="eager"
-                  sizes="(max-width: 480px) 320px, (max-width: 768px) 360px, 540px"
-                  className="object-cover object-[center_55%]"
-                />
-              </div>
-            </AspectRatio>
+        <div className="bg-card text-foreground p-3 md:p-6 flex items-center justify-center order-first md:order-last">
+          <div className="rounded-xl overflow-hidden ring-2 ring-primary/60 shadow-glow w-full" style={{ maxWidth: 520, height: 360 }}>
+            <img
+              src="https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/father-son-fencing-pic.webp?tr=w-520,q-80"
+              alt="Father and son team at MyFence.com standing in front of a cedar fence in Seattle"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}
+            />
           </div>
         </div>
       </div>
     </section>
   );
 };
+

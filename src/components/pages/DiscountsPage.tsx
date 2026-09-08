@@ -7,10 +7,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+
+const WHEEL_FORM_KEY = "discount-wheel";
+const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
 
 const riddles = [
   {
@@ -136,6 +143,8 @@ const DiscountsPage = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
+  const [formTextConsent, setFormTextConsent] = useState(false);
+  const [textConsentError, setTextConsentError] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -311,54 +320,74 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
+      if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("already-played-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        toast.error("Please consent to receive text messages before submitting your phone number.");
+        return;
+      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
         return;
       }
 
+      const sourcePage = buildSourcePage(ALREADY_PLAYED_FORM_KEY);
+      const attribution = getLeadAttribution(ALREADY_PLAYED_FORM_KEY);
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
         address: formAddress,
         email: formEmail,
         phone: formPhone,
+        textConsent: formTextConsent,
         description: formDescription || "General inquiry from discount page",
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
       };
 
-      let leadError: string | null = null;
-      try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
-          body: {
-            firstName: emailData.firstName,
-            lastName: emailData.lastName,
-            email: emailData.email,
-            phone: emailData.phone,
-            propertyAddress: emailData.address || "",
-            fenceType: "Discounts Page",
-            message: emailData.description || "General inquiry from discount page",
-          },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: emailData.firstName,
+        lastName: emailData.lastName,
+        email: emailData.email,
+        phone: emailData.phone,
+        propertyAddress: emailData.address || "",
+        fenceType: "Discounts Page",
+        message: emailData.description || "General inquiry from discount page",
+        textConsent: emailData.textConsent,
+        sourcePage: emailData.sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
 
-      // Always send the legacy email notification too (info@myfence.com).
       let emailError: string | null = null;
       try {
         const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: emailData,
+          body: {
+            ...emailData,
+            description: `${crmFailureNotice(crm)}${emailData.description}`,
+          },
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send message");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send message");
       }
+
+      trackFormSubmit(ALREADY_PLAYED_FORM_KEY, { formType: "quote" });
 
       toast.success("Thank you! We'll contact you soon about your fencing project.");
       setShowAlreadyPlayedForm(false);
@@ -368,6 +397,7 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
+      setFormTextConsent(false);
     } catch {
       toast.error("There was an error submitting your information. Please try again.");
     }
@@ -380,12 +410,23 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
+      if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("discounts-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        toast.error("Please consent to receive text messages before submitting your phone number.");
+        return;
+      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
         return;
       }
 
+      const sourcePage = buildSourcePage(WHEEL_FORM_KEY);
+      const attribution = getLeadAttribution(WHEEL_FORM_KEY);
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -395,7 +436,12 @@ const DiscountsPage = () => {
         riddle: riddles[currentRiddleIndex].question,
         answer: riddles[currentRiddleIndex].answers[0],
         discount: selectedDiscount,
+        textConsent: formTextConsent,
         description: formDescription || "Discount wheel submission",
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        originPage: attribution.originPage,
       };
 
       const { error } = await supabase.functions.invoke("send-discount-email", {
@@ -405,6 +451,8 @@ const DiscountsPage = () => {
       if (error) {
         throw error;
       }
+
+      trackFormSubmit(WHEEL_FORM_KEY, { formType: "discount" });
 
       toast.success("Congratulations! Your discount has been submitted. We'll contact you soon!");
       setShowContactForm(false);
@@ -421,6 +469,7 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
+      setFormTextConsent(false);
 
       setShouldClick(false);
       if (clickTimeout) {
@@ -674,10 +723,44 @@ const DiscountsPage = () => {
                     <Input
                       id="phone"
                       value={formPhone}
-                      onChange={(e) => setFormPhone(e.target.value)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFormPhone(value);
+                        if (!value.trim()) {
+                          setFormTextConsent(false);
+                          setTextConsentError(false);
+                        }
+                      }}
                       required
                     />
                   </div>
+                  {formPhone.trim() ? (
+                    <>
+                      <div
+                        id="discounts-text-consent-row"
+                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                      >
+                        <Checkbox
+                          id="discounts-text-consent"
+                          checked={formTextConsent}
+                          onCheckedChange={(checked) => {
+                            const consentGiven = checked === true;
+                            setFormTextConsent(consentGiven);
+                            if (consentGiven) setTextConsentError(false);
+                          }}
+                        />
+                        <Label
+                          htmlFor="discounts-text-consent"
+                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                        >
+                          {TEXT_CONSENT_MESSAGE}
+                        </Label>
+                      </div>
+                      {textConsentError ? (
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                      ) : null}
+                    </>
+                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="description">Project Description</Label>
@@ -755,10 +838,44 @@ const DiscountsPage = () => {
                     <Input
                       id="alreadyPlayedPhone"
                       value={formPhone}
-                      onChange={(e) => setFormPhone(e.target.value)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFormPhone(value);
+                        if (!value.trim()) {
+                          setFormTextConsent(false);
+                          setTextConsentError(false);
+                        }
+                      }}
                       required
                     />
                   </div>
+                  {formPhone.trim() ? (
+                    <>
+                      <div
+                        id="already-played-text-consent-row"
+                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                      >
+                        <Checkbox
+                          id="already-played-text-consent"
+                          checked={formTextConsent}
+                          onCheckedChange={(checked) => {
+                            const consentGiven = checked === true;
+                            setFormTextConsent(consentGiven);
+                            if (consentGiven) setTextConsentError(false);
+                          }}
+                        />
+                        <Label
+                          htmlFor="already-played-text-consent"
+                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                        >
+                          {TEXT_CONSENT_MESSAGE}
+                        </Label>
+                      </div>
+                      {textConsentError ? (
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                      ) : null}
+                    </>
+                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="alreadyPlayedDescription">Project Description</Label>

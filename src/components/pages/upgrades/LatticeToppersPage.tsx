@@ -1,6 +1,7 @@
 "use client";
 
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -61,12 +62,7 @@ const LatticeToppersPage = () => {
     provider: {
       "@type": "LocalBusiness",
       name: "MyFence.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Seattle",
-        addressRegion: "WA",
-        addressCountry: "US",
-      },
+      address: SCHEMA_ADDRESS,
       telephone: "+1-253-455-1885",
     },
     areaServed: {

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Check, X, Shield, Wrench, DollarSign, Anchor } from "lucide-react";
 import cedarPostOnPipe from "@/assets/cedar-post-on-pipe.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import BlogSection from "@/components/BlogSection";
+import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
 
@@ -80,8 +80,13 @@ const CedarPostOnPipe = () => {
             "@type": "QuantitativeValue",
             "minValue": 7,
             "maxValue": 14,
-            "unitCode": "d"
+            "unitCode": "DAY"
           }
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
         }
       },
       "hasMerchantReturnPolicy": {
@@ -89,11 +94,6 @@ const CedarPostOnPipe = () => {
         "applicableCountry": "US",
         "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "89"
     }
   };
 
@@ -447,7 +447,7 @@ const CedarPostOnPipe = () => {
       </section>
 
       {/* Blog Articles Section */}
-      <BlogSection limit={4} />
+      <BlogSectionClient limit={4} />
 
       {/* Service Area Map Section */}
       <section className="container py-12 md:py-16">

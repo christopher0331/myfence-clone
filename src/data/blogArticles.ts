@@ -1,9 +1,32 @@
 import img1x6x6Better from "@/assets/blog/1x6x6-1-better-cedar.jpg";
 
-export const blogArticles = [
+export interface BlogArticle {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string | { src: string };
+  readTime: string;
+  publishDate: string;
+  metaTitle?: string;
+}
+
+export const blogArticles: BlogArticle[] = [
+  {
+    id: "wood-fence-post-warping",
+    title: "Why Wood Fence Posts Warp, Crack, and Twist — and How Steel Posts Solve It",
+    metaTitle: "Wood Fence Post Warping & Twisting | Steel Post Fix | MyFence.com",
+    category: "Fence Posts",
+    description:
+      "Pressure-treated and cedar posts twist as they dry—it's a material trait, not contractor error. Learn why it happens and how 4x4x9 steel posts keep fences straight.",
+    image: "https://ik.imagekit.io/xft9mcl5v/hero-images/Board-On-Board-Black-Posts-Hero.webp?tr=w-1200,q-80",
+    readTime: "7 min read",
+    publishDate: "June 2026",
+  },
   {
     id: "steel-vs-wood-posts",
     title: "Steel vs Wood Fence Posts: Which Is the Better Long-Term Investment?",
+    metaTitle: "Steel vs Wood Fence Posts | Seattle Guide | MyFence.com",
     category: "Fence Posts",
     description: "Compare 4x4 black steel fence posts with traditional wood posts. 40-year warranty vs 10-15 year lifespan. Learn why steel posts are ideal for wet Seattle soil.",
     image: "/lovable-uploads/barrier-boss-4x4-steel-post.webp",
@@ -13,6 +36,7 @@ export const blogArticles = [
   {
     id: "cedar-steel-hybrid-fence",
     title: "Cedar/Steel Hybrid Fence: The Ultimate Guide to Modern Privacy Fencing",
+    metaTitle: "Cedar/Steel Hybrid Fence Guide | MyFence.com",
     category: "Premium Fencing",
     description: "Discover the cedar/steel hybrid fence system - 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Learn about pricing ($80/LF), 30-year warranty options, and why this is the ultimate privacy fence investment.",
     image: "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
@@ -31,6 +55,7 @@ export const blogArticles = [
   {
     id: "virtual-quote-tool",
     title: "Get Your Instant Fence Quote with Our Advanced Virtual Tool",
+    metaTitle: "Instant Fence Quote Tool Guide | MyFence.com",
     category: "Pricing",
     description: "Discover how our revolutionary virtual quote tool lets you choose fence styles, customize posts, add upgrades, and draw your property for accurate instant pricing.",
     image: "/lovable-uploads/96fca880-7890-4f75-83cc-4a78693640a9.png",
@@ -82,40 +107,61 @@ export const blogArticles = [
     readTime: "10 min read",
     publishDate: "January 2025"
   },
+  // Article coming soon — replaced by MDX or to be written; commented out to avoid duplicate/placeholder in list
+  // {
+  //   id: "fence-ownership",
+  //   title: "How to Tell If a Fence Is Yours or Neighbors",
+  //   category: "Legal",
+  //   description: "Learn how to determine fence ownership, understand property boundaries, and resolve disputes with neighbors in Washington State.",
+  //   image: "/lovable-uploads/815744dc-6440-4c65-917a-afb302ed2788.png",
+  //   readTime: "6 min read",
+  //   publishDate: "January 2025"
+  // },
+  // {
+  //   id: "street-setback",
+  //   title: "How Far Does My Fence Have To Be From The Street? A Guide To Washington State Fence Laws",
+  //   category: "Legal",
+  //   description: "Understand Washington State setback requirements, municipal codes, and legal guidelines for fence placement near streets and sidewalks.",
+  //   image: "/lovable-uploads/793a9940-252a-431c-bc9c-f109022e1b92.png",
+  //   readTime: "8 min read",
+  //   publishDate: "January 2025"
+  // },
+  // {
+  //   id: "property-line",
+  //   title: "Can You Build a Fence on the Property Line?",
+  //   category: "Legal",
+  //   description: "Discover the rules and regulations for building fences on property lines, including permits, neighbor agreements, and legal considerations.",
+  //   image: "/lovable-uploads/913ab5db-5bb0-4601-b16b-cb82980c1a02.png",
+  //   readTime: "5 min read",
+  //   publishDate: "January 2025"
+  // },
+  // {
+  //   id: "material-cost-2025",
+  //   title: "What Is The Material Cost For Wood Fence in 2025?",
+  //   category: "Pricing",
+  //   description: "Get detailed pricing for wood fence materials in 2025, including cedar, pine, and composite options with current market rates.",
+  //   image: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
+  //   readTime: "7 min read",
+  //   publishDate: "January 2025"
+  // },
   {
-    id: "fence-ownership",
-    title: "How to Tell If a Fence Is Yours or Neighbors",
-    category: "Legal",
-    description: "Learn how to determine fence ownership, understand property boundaries, and resolve disputes with neighbors in Washington State.",
-    image: "/lovable-uploads/815744dc-6440-4c65-917a-afb302ed2788.png",
-    readTime: "6 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "street-setback",
-    title: "How Far Does My Fence Have To Be From The Street? A Guide To Washington State Fence Laws",
-    category: "Legal",
-    description: "Understand Washington State setback requirements, municipal codes, and legal guidelines for fence placement near streets and sidewalks.",
-    image: "/lovable-uploads/793a9940-252a-431c-bc9c-f109022e1b92.png",
-    readTime: "8 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "property-line",
-    title: "Can You Build a Fence on the Property Line?",
-    category: "Legal",
-    description: "Discover the rules and regulations for building fences on property lines, including permits, neighbor agreements, and legal considerations.",
-    image: "/lovable-uploads/913ab5db-5bb0-4601-b16b-cb82980c1a02.png",
-    readTime: "5 min read",
-    publishDate: "January 2025"
-  },
-  {
-    id: "material-cost-2025",
-    title: "What Is The Material Cost For Wood Fence in 2025?",
-    category: "Pricing",
-    description: "Get detailed pricing for wood fence materials in 2025, including cedar, pine, and composite options with current market rates.",
-    image: "/lovable-uploads/96a63d79-9269-47b1-96ef-9727feb60536.png",
+    id: "how-myfence-builds-gates-that-outlast-every-other-contractor",
+    title: "How MyFence Builds Gates That Outlast Every Other Contractor",
+    metaTitle: "Cedar Gate Construction Guide | MyFence.com",
+    category: "Installation",
+    description: "Discover how MyFence.com builds superior cedar gates with kiln-dried 2x4 frames, compression-fit diagonal braces, 6-8 inch lag screws, and self-closing hardware for Pacific Northwest homes.",
+    image: "https://ik.imagekit.io/xft9mcl5v/blog/gate-construction/double-driveway-gate-cedar-cross-bracing.jpg",
     readTime: "7 min read",
-    publishDate: "January 2025"
+    publishDate: "July 2026",
+  },
+  {
+    id: "onsite-staining-vs-pre-staining",
+    title: "Onsite Fence Staining Problems vs Pre Staining Components",
+    metaTitle: "Onsite vs Pre-Staining Fences | MyFence.com",
+    category: "Maintenance",
+    description: "Why MyFence.com dries every board, stains all sides, and avoids onsite staining risks like hidden surfaces, rain, and cold snaps.",
+    image: "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/test_input_Converted/IMG_4369.webp?tr=w-960,q-70",
+    readTime: "6 min read",
+    publishDate: "January 2026"
   }
 ];

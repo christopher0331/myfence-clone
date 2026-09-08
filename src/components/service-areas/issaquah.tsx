@@ -1,5 +1,6 @@
 "use client";
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
@@ -24,7 +25,7 @@ const IssaquahArticle = () => (
     {/* Company Introduction */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Issaquah Fence Company - MyFence.com
+        Your Local Fence Installation Experts
       </h2>
       <div className="grid md:grid-cols-4 gap-6">
         <Card className="p-6 text-center">
@@ -49,10 +50,10 @@ const IssaquahArticle = () => (
       </p>
     </section>
 
-    {/* Issaquah Fence Installation */}
+    {/* Expert Installation in Your Area */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Issaquah Fence Installation
+        Expert Installation in Your Area
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         MyFence.com understands the unique challenges of Issaquah fence installation. When we install your mountain property fence, we arrive fully prepared with all materials and specialized equipment for hillside terrain. Our 98%+ on-time installation rate is industry-leading because we respect your schedule. We maintain comprehensive stock of premium fence materials, ensuring we complete your Issaquah fence installation on schedule without weather or supply delays.
@@ -62,68 +63,17 @@ const IssaquahArticle = () => (
       </p>
     </section>
 
-    {/* Why Choose MyFence.com */}
-    <section className="space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Why Choose MyFence.com for Your Issaquah Fence?
-      </h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Mountain Terrain Specialists</h3>
-              <p className="text-muted-foreground">
-                Over 30 years of experience installing on challenging slopes and wooded properties in the Issaquah Alps. We understand wildlife patterns and drainage requirements unique to mountain communities.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Clock className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Fence Genius Technology</h3>
-              <p className="text-muted-foreground">
-                Proprietary measurement and manufacturing system that ensures precision accuracy even on steep slopes and reduces installation time by 30-50%.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <Shield className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Industry-Best Warranty</h3>
-              <p className="text-muted-foreground">
-                {WARRANTY_CONSTANTS.YEARS}-year craftsmanship warranty - far exceeding industry standards for mountain climate installations.
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="p-6">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-semibold mb-2">HOA & Wildlife Expertise</h3>
-              <p className="text-muted-foreground">
-                Deep knowledge of Issaquah Highlands HOA requirements and wildlife-smart fence designs that keep deer and other animals at bay while meeting community standards.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
+    
 
     {/* Fence Types Section */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Issaquah Fence Types & Materials
+        Fence Types & Materials We Install
       </h2>
       
       {/* Cedar Fencing */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-semibold">Issaquah Cedar Fence Installation</h3>
+        <h3 className="text-2xl font-semibold">Cedar Fence Installation</h3>
         <p className="text-muted-foreground leading-relaxed">
           Mountain properties demand fencing built for elevation. Our Issaquah cedar installations feature Western Red Cedar sourced specifically for its natural resistance to the Cascade foothills' wet winters and temperature swings. Neighborhoods like Talus and Montreux at higher elevations benefit from our clear-grade cedar option - knot-free boards that maintain structural integrity through freeze-thaw cycles and heavy snowfall common above 500 feet.
         </p>
@@ -169,7 +119,7 @@ const IssaquahArticle = () => (
     {/* Financing Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Spread the Cost of Your Mountain Fence
+        Financing Your New Fence
       </h2>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <div className="space-y-4">
@@ -215,7 +165,7 @@ const IssaquahArticle = () => (
     {/* Warranty Section */}
     <section className="space-y-4">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Our Commitment to Mountain-Grade Work
+        Industry-Leading Warranty Coverage
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Fences in Issaquah face tougher conditions than lowland installations - more rain, steeper grades, freeze-thaw cycles. Our {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty reflects confidence built from three decades of foothills projects.
@@ -259,71 +209,136 @@ const IssaquahArticle = () => (
     {/* Local Challenges & Solutions */}
     <section className="space-y-6">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Issaquah-Specific Installation Expertise
+        Installation Expertise for Local Terrain
       </h2>
       <p className="text-muted-foreground leading-relaxed">
         Issaquah's mountain geography, climate, and wildlife require specialized knowledge that lowland contractors often lack. Here's how we address the specific challenges your Issaquah property faces:
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-xl font-semibold mb-3">Steep Slopes & Drainage</h3>
-          <p className="text-muted-foreground">
-            Issaquah's hillside properties demand expert post placement and reinforced anchoring. We install deeper footings with proper drainage integration to prevent post shifting and erosion. Our specialized equipment and decades of mountain experience ensure your fence stays straight and stable on challenging terrain.
-          </p>
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <span className="text-primary">⚠</span> Local Challenges
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Mountain terrain with steep slopes requiring expert installation</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Higher rainfall totals accelerating wood weathering</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Upscale communities with strict aesthetic standards</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Wildlife corridors requiring secure, tall fencing options</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">Premium property values demanding exceptional craftsmanship</span>
+            </li>
+          </ul>
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-3">Wildlife Corridors</h3>
-          <p className="text-muted-foreground">
-            Proximity to Cougar Mountain and Tiger Mountain means wildlife encounters are common. We recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) or strategic placement to deter deer, coyotes, and bears while maintaining property security. Our designs work with natural migration patterns common in Issaquah's wooded neighborhoods.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Higher Precipitation</h3>
-          <p className="text-muted-foreground">
-            Mountain communities receive 20-30% more rainfall than Seattle. We use marine-grade hardware, enhanced drainage, and premium treatments to prevent the accelerated wood weathering common in high-moisture environments. Our installations outlast standard methods by decades.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-3">HOA Requirements</h3>
-          <p className="text-muted-foreground">
-            Issaquah Highlands and other planned communities have strict design guidelines. We provide architectural design packages with material samples for HOA approval and work within committee timelines. Our 30+ years of local experience means we know what boards approve.
-          </p>
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <span className="text-primary">✓</span> Our Solutions
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Terrain-adaptive installations for hillside properties</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Premium materials suited to wet mountain climate</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">Custom designs meeting community architectural guidelines</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">6-foot fences with lattice toppers for wildlife security</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-muted-foreground">High-end finishes and clear cedar options for luxury homes</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    {/* FAQ Section */}
+    {/* A8: Local Regulations - Permits & Property Lines */}
+    <header>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        What to Know Before Building a Fence in Issaquah: Permits, Materials, and Local Tips
+      </h2>
+    </header>
+
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Why Fence Planning Differs by City</h3>
+      <p className="text-muted-foreground leading-relaxed">
+        Building a fence in Issaquah isn't the same as in Seattle or the lowlands. The city sits at the foot of the Issaquah Alps, with higher rainfall, steep slopes, wildlife corridors, and a mix of historic neighborhoods and master-planned communities like Issaquah Highlands and Talus. Fence height limits, setback rules, and permit triggers differ here—and many properties fall under HOA design review. Understanding Issaquah's municipal codes and your neighborhood's requirements before you build avoids delays and keeps your project on track.
+      </p>
+    </section>
+
+    <section className="space-y-4">
+      <h3 className="text-2xl font-semibold">Permits and Property Line Requirements</h3>
+      <p className="text-muted-foreground leading-relaxed">
+        According to the <a href="https://www.issaquahwa.gov/182/Decks-Fences" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Decks & Fences</a> guidance, residential fences generally do not require a building permit unless the fence is in a critical area, exceeds 6 feet in height, or other land-use restrictions apply. Fence heights must comply with Issaquah's standards: <strong>front setback areas are limited to 4 feet maximum</strong>, and <strong>side and rear yards to 6 feet maximum</strong>. For single-family and duplex properties, front yard fences are also subject to <a href="https://issaquah.municipal.codes/LUC/18.700.160" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">LUC 18.700.160</a> (front yard and fence standards) and cannot block the prominent entry of the dwelling from street view. Properties in critical areas, shorelines, or steep slopes may have additional limits under the Issaquah Municipal Code.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        Washington State law requires building on your side of the property line. We recommend a professional property survey before installation so fence placement is accurate and neighbor relations stay clear. For the latest rules and any code updates, see the <a href="https://www.issaquahwa.gov/117/Issaquah-Municipal-Code-IMC" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Issaquah Municipal Code (IMC)</a> or contact <a href="https://www.issaquahwa.gov/113/Community-Planning-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Community Planning & Development</a> at (425) 837-3150.
+      </p>
+    </section>
+
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Frequently Asked Questions</h3>
       <Card className="p-6 space-y-4">
         <div>
           <h4 className="font-semibold mb-2">How long does fence installation take in Issaquah?</h4>
           <p className="text-muted-foreground">
-            Most residential fence projects take 1-3 days depending on size, terrain complexity, and slope requirements. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50% compared to traditional methods. Mountain terrain and wildlife-smart installations may add additional time for specialized engineering, and permit processing typically adds 2-4 weeks depending on HOA requirements in communities like Issaquah Highlands.
+            Most residential fence projects take 1-3 days depending on size, terrain complexity, and slope requirements. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50% compared to traditional methods. Mountain terrain and wildlife-smart installations may add additional time for specialized engineering, and permit or HOA processing typically adds 2-4 weeks in communities like Issaquah Highlands.
           </p>
         </div>
         <div>
           <h4 className="font-semibold mb-2">How much does fence installation cost in Issaquah?</h4>
           <p className="text-muted-foreground">
-            Get accurate, instant pricing with our <Link href="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>. Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Slope installations and wildlife-smart designs may add 10-25% due to specialized engineering requirements. A standard 6-foot cedar fence on level terrain averages $45-55 per foot installed. Use our online tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements.
+            Get accurate, instant pricing with our <Link href="/quote" className="text-primary underline decoration-2 underline-offset-2">Virtual Quote Tool</Link>. Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Slope installations and wildlife-smart designs may add 10-25% due to specialized engineering. A standard 6-foot cedar fence on level terrain averages $45-55 per foot installed. Use our online tool for a fast estimate, then we'll confirm exact pricing on-site with Fence Genius measurements.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Do I need to involve my neighbors?</h4>
+          <p className="text-muted-foreground">
+            <a href="https://apps.leg.wa.gov/RCW/default.aspx?cite=16.60.020" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Washington State law (RCW 16.60.020)</a> establishes rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half the cost. We recommend discussing plans early and providing professional documentation. Learn more about <Link href="/blog/neighbor-fence-cost-split" className="text-primary underline decoration-2 underline-offset-2">splitting fence costs with neighbors</Link>.
           </p>
         </div>
         <div>
           <h4 className="font-semibold mb-2">What fence materials work best for Issaquah's mountain climate?</h4>
           <p className="text-muted-foreground">
-            Western Red Cedar is ideal for Issaquah's mountain climate due to its natural rot resistance and ability to withstand moisture fluctuations. For foothills properties, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) with reinforced posts to handle wind loads from Tiger Mountain. Hogwire fencing provides excellent wildlife visibility while maintaining security. Our hybrid aluminum system (black aluminum panels with cedar frame) offers low-maintenance durability perfect for properties with snow exposure and temperature extremes.
+            Western Red Cedar is ideal for Issaquah's mountain climate due to its natural rot resistance and ability to withstand moisture fluctuations. For foothills properties, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet) with reinforced posts to handle wind loads. Hogwire and our hybrid aluminum system (black aluminum panels with cedar frame) offer low-maintenance durability for properties with snow exposure and temperature extremes.
           </p>
         </div>
         <div>
           <h4 className="font-semibold mb-2">Do I need special permits for slope installations in Issaquah?</h4>
           <p className="text-muted-foreground">
-            Slope installations may require additional engineering documentation, especially on properties with grades exceeding 15%. Issaquah Highlands and other communities near Tiger Mountain often have specific requirements for hillside construction. Contact the <a href="https://www.issaquahwa.gov/113/Community-Planning-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Development Services</a> at (425) 837-3150 to verify requirements for your specific property location and terrain.
+            Slope installations may require additional engineering documentation, especially on properties with grades exceeding 15%. Issaquah Highlands and other communities near Tiger Mountain often have specific requirements for hillside construction. Contact <a href="https://www.issaquahwa.gov/113/Community-Planning-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Community Planning & Development</a> at (425) 837-3150 to verify requirements for your specific property and terrain.
           </p>
         </div>
       </Card>
     </section>
 
-    <AboutCityModal cityName="Issaquah" content={ABOUT_ISSAQUAH_CONTENT} />
+    <section className="bg-muted/50 p-6 rounded-lg border">
+      <p className="text-sm text-muted-foreground">
+        <strong>Note:</strong> Building codes and HOA regulations are subject to change. Always verify current requirements with the <a href="https://www.issaquahwa.gov/113/Community-Planning-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Issaquah Community Planning & Development</a> and your homeowners association before beginning any fence project.
+      </p>
+    </section>
+
+    
   </article>
 );
 
@@ -334,10 +349,26 @@ const Issaquah = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do steep slopes affect fence installation in Issaquah?",
+        "name": "How long does fence installation take in Issaquah?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Steep slopes require specialized installation techniques including deeper footings, reinforced anchoring, and precise post placement. MyFence.com has over 30 years of experience installing on Issaquah's challenging mountain terrain, using specialized equipment and drainage integration to ensure your fence remains stable and straight for decades."
+          "text": "Most residential fence projects take 1-3 days depending on size, terrain complexity, and slope requirements. Our Fence Genius technology manufactures panels off-site, reducing installation time by 30-50%. Permit or HOA processing typically adds 2-4 weeks in communities like Issaquah Highlands."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does fence installation cost in Issaquah?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wood fence pricing typically ranges from $35-65 per linear foot installed depending on style, height, and materials. Slope and wildlife-smart designs may add 10-25%. A standard 6-foot cedar fence on level terrain averages $45-55 per foot. Use our Virtual Quote Tool for an estimate, then we confirm exact pricing on-site with Fence Genius measurements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to involve my neighbors for a fence in Issaquah?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Washington State law (RCW 16.60.020) establishes rules for shared fence costs. If your fence is on the property line and serves as a partition between properties, your neighbor may be required to pay half. We recommend discussing plans early and providing professional documentation."
         }
       },
       {
@@ -345,7 +376,7 @@ const Issaquah = () => {
         "name": "What fence height is best for wildlife protection in Issaquah?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For effective wildlife deterrence in Issaquah's mountain communities, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet). This height effectively discourages deer, coyotes, and other wildlife common to areas near Cougar Mountain and Tiger Mountain while providing complete privacy and security for your family and pets."
+          "text": "For effective wildlife deterrence in Issaquah's mountain communities, we recommend 6-foot cedar fences with 2-foot lattice toppers (totaling 8 feet). This height discourages deer, coyotes, and other wildlife common near Cougar Mountain and Tiger Mountain while providing privacy and security."
         }
       },
       {
@@ -353,7 +384,7 @@ const Issaquah = () => {
         "name": "How does Issaquah's climate affect fence longevity?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Issaquah receives 20-30% more rainfall than Seattle due to its mountain location. MyFence.com uses marine-grade stainless steel hardware, enhanced drainage systems, and premium treatments specifically chosen for high-moisture mountain environments. A properly installed cedar fence in Issaquah typically lasts 25-35 years with our superior materials and techniques."
+          "text": "Issaquah receives 20-30% more rainfall than Seattle due to its mountain location. We use marine-grade stainless steel hardware, enhanced drainage, and premium treatments for high-moisture mountain environments. A properly installed cedar fence in Issaquah typically lasts 25-35 years with our materials and techniques."
         }
       }
     ]
@@ -361,18 +392,20 @@ const Issaquah = () => {
 
   const enhancedBusinessData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "MyFence.com - Issaquah Fence Installation",
-    "image": "https://myfence.com/myfence-logo.png",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": "https://myfence.com/service-areas/issaquah",
-    "url": "https://myfence.com/service-areas/issaquah",
-    "telephone": "(253) 455-1885",
+    "name": "MyFence.com - Expert Installation in Your Area",
+    "alternateName": ["MyFence Issaquah", "Issaquah Fence Company"],
+    "description": "Premium fence installation in Issaquah, WA. Cedar, hogwire, and hybrid fencing for mountain terrain, wildlife-smart designs, and HOA-compliant installations. 30+ years experience, 5.0-star rating.",
+    "image": "https://myfence.com/myfence-logo.png",
+    "url": "https://myfence.com",
+    "telephone": "+12534551885",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Serving Issaquah",
-      "addressLocality": "Issaquah",
+      "streetAddress": "22927 257th Ave SE",
+      "addressLocality": "Maple Valley",
       "addressRegion": "WA",
-      "postalCode": "98027",
+      "postalCode": "98038",
       "addressCountry": "US"
     },
     "geo": {
@@ -380,28 +413,127 @@ const Issaquah = () => {
       "latitude": 47.5301,
       "longitude": -122.0326
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Issaquah"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "07:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://www.facebook.com/people/MyFencecom/61554605109118/"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Issaquah",
+        "containedInPlace": { "@type": "State", "name": "Washington" }
+      },
+      {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.5301, "longitude": -122.0326 },
+        "geoRadius": "25000"
+      }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "150"
-    }
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "08:00", "closes": "17:00" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fence Products and Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Cedar Fence Installation",
+            "name": "Cedar Fence Installation",
+            "description": "Western Red Cedar fence installation for Issaquah mountain terrain with marine-grade fasteners and slope-ready construction.",
+            "provider": { "@type": "LocalBusiness", "name": "MyFence.com" },
+            "areaServed": "Issaquah, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Hybrid Aluminum Fence Installation",
+            "name": "Issaquah Hybrid Aluminum Fence System",
+            "description": "Low-maintenance hybrid aluminum/cedar system for Issaquah foothills and second homes.",
+            "provider": { "@type": "LocalBusiness", "name": "MyFence.com" },
+            "areaServed": "Issaquah, WA"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Fence Repair and Replacement",
+            "name": "Issaquah Fence Repair Services",
+            "description": "Expert fence repair and replacement throughout Issaquah neighborhoods.",
+            "provider": { "@type": "LocalBusiness", "name": "MyFence.com" },
+            "areaServed": "Issaquah, WA"
+          }
+        }
+      ]
+    },
+    "knowsAbout": [
+      "Cedar Fence Installation",
+      "Hogwire Fence Installation",
+      "Hybrid Aluminum Fence System",
+      "HOA Compliance",
+      "Issaquah Building Codes",
+      "Mountain Terrain Fencing",
+      "Wildlife-Smart Fencing"
+    ],
+    "paymentAccepted": ["Cash", "Check", "Credit Card", "Financing"],
+    "currenciesAccepted": "USD",
+    "founder": { "@type": "Person", "name": "Andrew Knudsen" },
+    "sameAs": [
+      "https://www.facebook.com/myfence.com.official",
+      "https://www.instagram.com/myfence.com.official/",
+      "https://twitter.com/MyFenceDotCom",
+      "https://www.youtube.com/@fencegenius",
+      "https://www.linkedin.com/company/myfence-com/",
+      "https://www.pinterest.com/MyFenceDotCom/",
+      "https://www.tiktok.com/@myfence.com"
+    ]
   };
 
+  
+  const issaquahAttractions: LocalAttraction[] = [
+    {
+      name: "Cougar Mountain Regional Wildland Park",
+      description: "Over 3,000 acres of protected wilderness offering extensive hiking trails, waterfalls, and remnants of the area's historic coal mining past.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/cougar-mountain"
+    },
+    {
+      name: "Issaquah Salmon Hatchery",
+      description: "The most visited hatchery in the state, offering educational exhibits and incredible views of returning salmon each autumn.",
+      url: "https://www.issaquahfish.org/"
+    },
+    {
+      name: "Gilman Village",
+      description: "A unique shopping destination featuring boutique stores and restaurants housed in preserved historic farming and mining buildings.",
+      url: "https://www.gilmanvillage.com/"
+    },
+    {
+      name: "Lake Sammamish State Park",
+      description: "A 531-acre park with two pristine beaches, trails, and abundant wildlife viewing opportunities right at the city's edge.",
+      url: "https://parks.wa.gov/find-parks/state-parks/lake-sammamish-state-park"
+    },
+    {
+      name: "Poo Poo Point Trail",
+      description: "A popular, challenging hike on Tiger Mountain that rewards climbers with spectacular valley views and a prime paragliding launch spot.",
+      url: "https://www.wta.org/go-hiking/hikes/poo-poo-point"
+    }
+  ];
+
+  const issaquahLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Issaquah is affectionately known as the "Trailhead City," serving as the gateway to the Cascade Mountains while offering top-tier suburban amenities. Education is a major draw, with the <a href="https://www.isd411.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah School District</a> consistently ranking among the best in Washington State. The city seamlessly blends its historic downtown with modern, master-planned communities like the <a href="https://issaquahhighlands.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah Highlands</a>, which features strict architectural standards and extensive integrated green spaces.
+      </p>
+      <p>
+        Outdoor living is central to the Issaquah lifestyle. Residents have immediate access to the "Issaquah Alps" for weekend hiking, or they can enjoy community events organized by the <a href="https://www.issaquahwa.gov/parks" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah Parks & Community Services</a>. The city is famous for its annual <a href="https://www.salmondays.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Salmon Days Festival</a>, celebrating the return of the salmon. For everyday needs, locals frequent the bustling <a href="https://www.issaquahwa.gov/index.aspx?NID=335" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Front Street</a> dining scene or catch performances at the <a href="https://villagetheatre.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Village Theatre</a>, making Issaquah a rich cultural and recreational hub.
+      </p>
+    </div>
+  );
+
   return (
-    <ServiceAreaTemplate
+    <>
+      <ServiceAreaTemplate
       city="Issaquah" 
       state="WA"
       heroTitle="Foothills Fence Experts Serving Issaquah's Mountain Communities"
@@ -412,7 +544,8 @@ const Issaquah = () => {
       neighborhoods={[
         {
           name: "Issaquah Highlands",
-          description: "Master-planned community with HOA requirements demanding approved designs and premium materials for upscale properties"
+          description: "Master-planned community with HOA requirements demanding approved designs and premium materials for upscale properties",
+          link: "/service-areas/issaquah-highlands"
         },
         {
           name: "Olde Town Issaquah",
@@ -437,6 +570,11 @@ const Issaquah = () => {
         {
           name: "Montreux",
           description: "Exclusive golf course community with premium properties demanding high-end custom designs and luxury materials"
+        },
+        {
+          name: "Mirrormont",
+          description: "Secluded Squak Mountain community with heavily forested lots requiring wildlife-resistant fencing and steep-terrain installation expertise. Click to learn more →",
+          link: "/service-areas/issaquah/mirrormont"
         }
       ]}
       landmarks={[
@@ -449,23 +587,22 @@ const Issaquah = () => {
         "Issaquah Alps"
       ]}
       climateDescription="Nestled in the Issaquah Alps, this city experiences cooler temperatures and higher precipitation than nearby lowland areas. The dramatic topography and proximity to mountains create microclimates that significantly impact fence durability and installation methods."
-      localChallenges={[
-        "Mountain terrain with steep slopes requiring expert installation",
-        "Higher rainfall totals accelerating wood weathering",
-        "Upscale communities with strict aesthetic standards",
-        "Wildlife corridors requiring secure, tall fencing options",
-        "Premium property values demanding exceptional craftsmanship"
-      ]}
-      localSolutions={[
-        "Terrain-adaptive installations for hillside properties",
-        "Premium materials suited to wet mountain climate",
-        "Custom designs meeting community architectural guidelines",
-        "6-foot fences with lattice toppers for wildlife security",
-        "High-end finishes and clear cedar options for luxury homes"
-      ]}
+      
+      
       articleContent={<IssaquahArticle />}
-      faqStructuredData={[faqStructuredData, enhancedBusinessData]}
+      faqStructuredData={faqStructuredData}
+      enhancedBusinessData={enhancedBusinessData}
+      videoTags={[
+        { label: "Black Hogwire", link: "/fence-styles/black-hogwire-fence" },
+        { label: "Galvanized Hogwire", link: "/fence-styles/galvanized-hogwire-fence" },
+      ]}
     />
+      <AboutTheArea 
+        cityName="Issaquah"
+        attractions={issaquahAttractions}
+        localLivingContent={issaquahLivingContent}
+      />
+    </>
   );
 };
 

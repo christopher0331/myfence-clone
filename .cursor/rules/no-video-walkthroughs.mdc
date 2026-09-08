@@ -1,0 +1,10 @@
+---
+description: Do not record video walkthroughs of pages when testing neighborhood or service-area work
+alwaysApply: true
+---
+
+# No video walkthroughs
+
+Do not record screen videos, browser walkthrough recordings, or demo videos of neighborhood or service-area pages.
+
+Verify by fetching the local routes (`curl` / HTTP 200) and checking the HTML for the H1, canonical, JSON-LD, and the parent city neighborhood link. Optional still screenshots are fine. Video is not.
