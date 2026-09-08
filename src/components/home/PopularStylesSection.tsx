@@ -51,7 +51,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                 <AspectRatio ratio={1}>
                   <div className="relative h-full w-full">
                     <Image
-                      loader={mobileCompressedPictureFrameLoader}
+                      loader={imageKitLoader}
                       src={pictureFrameHeroUrl}
                       alt="Picture frame cedar fence by MyFence.com in Seattle"
                       fill
