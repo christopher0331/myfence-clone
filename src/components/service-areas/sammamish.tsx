@@ -262,7 +262,8 @@ const Sammamish = () => {
         },
         {
           name: "Inglewood",
-          description: "Growing family neighborhood with newer construction requiring modern fence designs that complement contemporary architecture"
+          description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
+          link: "/service-areas/sammamish/inglewood"
         }
       ]}
       landmarks={[
