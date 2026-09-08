@@ -637,7 +637,7 @@ const TrossachsPage = () => {
                 Also Serving Nearby Sammamish Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                From Trossachs we also install in Klahanie just to the west, Pine Lake, Sahalee, Beaver Lake, and East Sammamish. Issaquah Highlands sits a short drive south on Duthie Hill Road.
+                From Trossachs we also install in Klahanie just to the west, Pine Lake, Sahalee, Beaver Lake, East Sammamish, and Inglewood. Issaquah Highlands sits a short drive south on Duthie Hill Road.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -653,6 +653,9 @@ const TrossachsPage = () => {
                   <Link href="/service-areas/sammamish/sahalee/hoa-approved-fencing">
                     Sahalee
                   </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/inglewood">Inglewood</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/issaquah-highlands">Issaquah Highlands</Link>

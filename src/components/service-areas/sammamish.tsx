@@ -261,7 +261,7 @@ const Sammamish = () => {
         },
         {
           name: "Inglewood",
-          description: "Hillside neighborhood along Inglewood Hill Road with lake-view lots and East Lake Sammamish Parkway yards needing stepped fencing. Click to learn more →",
+          description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
           link: "/service-areas/sammamish/inglewood"
         }
       ]}
