@@ -494,7 +494,8 @@ const Redmond = () => {
         },
         {
           name: "Idylwood",
-          description: "Wooded neighborhood backing onto greenbelt needing wildlife-deterrent fencing and forest-edge installation expertise"
+          description: "Lake Sammamish hillside lots along West Lake Sammamish Parkway — slope-aware cedar, hogwire, and hybrid fencing that keeps pets in and the water in view. Click to learn more →",
+          link: "/service-areas/redmond/idylwood"
         },
         {
           name: "Bridle Trails",

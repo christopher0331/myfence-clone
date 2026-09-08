@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Home,
+  Eye,
   TreePine,
-  Volume2,
+  Mountain,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,82 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/redmond/grass-lawn";
+const CANONICAL = "https://myfence.com/service-areas/redmond/idylwood";
 const META_TITLE =
-  "Grass Lawn Redmond Fence Installation | Mature Lots & Park Streets | MyFence.com";
+  "Idylwood Redmond Fence Installation | Lake Sammamish Hillsides | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Grass Lawn, Redmond, WA. Cedar, hogwire & hybrid fencing for established lots near Grass Lawn Park and 148th Ave NE. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Idylwood, Redmond, WA. Cedar, hogwire & hybrid fencing for hillside lots along West Lake Sammamish Parkway and Idylwood Beach Park. Free quotes. (253) 455-1885.";
 
-const GRASS_LAWN_FAQS: NeighborhoodFaqItem[] = [
+const IDYLWOOD_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Grass Lawn, Redmond?",
+    question: "Do I need a permit to build a fence in Idylwood, Redmond?",
     answer:
-      "The City of Redmond generally does not require a building permit for residential fences under eight feet, but zoning still controls height and setbacks. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Corner lots along 148th Avenue NE, NE 70th Street, and NE 80th Street have sight-distance triangle rules that can shorten a run near the sidewalk. A few plat associations ask for drawings even when the city does not. MyFence.com checks the parcel, any CC&Rs, and Redmond Development Services rules before we quote.",
+      "The City of Redmond generally does not require a building permit for residential fences under eight feet, but zoning still controls height and setbacks. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Corner lots on West Lake Sammamish Parkway NE, NE 36th Street, and 180th Avenue NE have sight-distance triangle rules that can shorten a run near the sidewalk. Lots within 200 feet of Lake Sammamish's ordinary high water mark may also need shoreline review. A few hillside plats ask for drawings even when the city does not. MyFence.com checks the parcel, any CC&Rs, and Redmond Development Services rules before we quote.",
   },
   {
     question:
-      "What fence styles work best for Grass Lawn's mature trees and park-side lots?",
+      "What fence styles work best for Idylwood's hillside lots and lake views?",
     answer:
-      "Six-foot cedar privacy is the usual choice on interior Grass Lawn lots that sit close to a neighbor or take evening noise from 148th Avenue NE. On lots that open toward Grass Lawn Park or keep a stand of firs along the rear line, hogwire in a cedar frame screens pets without boxing in the canopy. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a weekday commute calendar. Fence Genius maps roots and the gentle roll of the lot so panels follow the grade instead of leaving a gap a dog can use.",
+      "Six-foot cedar privacy is the usual choice on the parkway side of a lot or where a neighbor sits close on 176th or 180th. On lots that drop toward Lake Sammamish or open onto Idylwood Beach Park, hogwire in a cedar frame keeps dogs in without stacking a solid wall across the water. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a lakeside moisture cycle. Fence Genius maps the grade so panels step with the slope instead of leaving a gap a pet can use.",
   },
   {
-    question: "How much does fence installation cost in Grass Lawn, Redmond?",
+    question: "How much does fence installation cost in Idylwood, Redmond?",
     answer:
-      "Grass Lawn fence installation typically runs $42–$65 per linear foot for six-foot cedar privacy, $36–$54 for hogwire with a cedar frame, and $52–$72 for hybrid aluminum/cedar. Hand-digging around mature roots, extra gates for side-yard access off 152nd or 156th, and HOA drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Idylwood fence installation typically runs $45–$70 per linear foot for six-foot cedar privacy, $38–$58 for hogwire with a cedar frame, and $54–$76 for hybrid aluminum/cedar. Stepped posts on the downhill side toward the lake, hand-digging around mature firs, extra gates for side-yard access off 180th, and shoreline or plat drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Grass Lawn?",
+    question: "How long does fence installation take in Idylwood?",
     answer:
-      "Most Grass Lawn residential projects finish in one to three working days after any city or plat paperwork is complete. Pre-fabricated panels cut on-site time. Hand-digging near older firs and cedars, stepped posts on the downhill side of a lot, and tight side yards between 1970s–1990s homes are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most Idylwood residential projects finish in one to three working days after any city, shoreline, or plat paperwork is complete. Pre-fabricated panels cut on-site time. Stepped posts on a drop toward West Lake Sammamish Parkway, hand-carrying materials down a hillside driveway, and tight side yards between 1960s–1980s homes are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
   },
   {
-    question:
-      "Do I need my neighbor's permission for a fence in Grass Lawn?",
+    question: "Do I need my neighbor's permission for a fence in Idylwood?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Redmond does not require their signature. If your street has a small plat association, the architectural contact may want both owners listed on the application. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Redmond does not require their signature. On hillside lots the pin can sit on a slope, and a shared side yard off 176th or 180th may already have landscaping both owners care about. If your street has a small plat association, the architectural contact may want both owners listed on the application. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
   },
 ];
 
-const GRASS_LAWN_ATTRACTIONS: LocalAttraction[] = [
+const IDYLWOOD_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Grass Lawn Park",
-    url: "https://www.redmond.gov/facilities/facility/details/Grass-Lawn-Park-62",
+    name: "Idylwood Beach Park",
+    url: "https://www.redmond.gov/facilities/facility/details/Idylwood-Park-64",
     description:
-      "The neighborhood's namesake at 7031 148th Avenue NE — splash pad in warm months, lighted tennis and pickleball, turf fields, a playground, and a rentable pavilion. Weeknight practices and weekend picnics set the rhythm on the streets around the park.",
+      "Redmond's swimming beach on Lake Sammamish at 3650 West Lake Sammamish Parkway NE — bathhouse, playground, picnic shelter, and a small car-top boat launch. Summer weekends fill the parkway pull-offs; weekdays the lawn is the extra backyard for lots a few doors away.",
   },
   {
     name: "Marymoor Park",
     url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/marymoor",
     description:
-      "King County's large river-valley park a short drive east of Grass Lawn. Climbing walls, velodrome, off-leash fields, and the Sammamish shoreline give households a bigger outing when the neighborhood park is booked for games.",
+      "King County's river-valley park just north of the neighborhood. Off-leash fields, the velodrome, climbing walls, and the Sammamish shoreline give Idylwood households a bigger outing when the beach parking lot is already full.",
   },
   {
-    name: "Redmond Community Center at Marymoor Village",
-    url: "https://www.redmond.gov/241/Redmond-Community-Center-at-Marymoor-Vil",
+    name: "Lake Sammamish State Park",
+    url: "https://www.parks.wa.gov/533/Lake-Sammamish",
     description:
-      "The city's recreation hub at 6505 176th Avenue NE — classes, gym time, and field-rental paperwork for Grass Lawn Park when a team needs a permit instead of a first-come lawn.",
+      "The larger state park on the south end of the same lake, a short drive down West Lake Sammamish Parkway. Boat launch, swim beach, and trail miles when Idylwood's 18-acre park feels too small for a Saturday group.",
   },
   {
     name: "Sammamish River Trail",
     url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/sammamish-river-trail",
     description:
-      "The paved King County trail along the river, a few minutes east of 148th. Morning bike commutes toward downtown Redmond and evening dog walks share the same corridor Grass Lawn households use to skip Redmond Way traffic.",
+      "The paved King County trail along the river, reachable from Marymoor without getting on SR-520. Morning bike commutes toward downtown Redmond and evening walks share the same corridor Idylwood households use to skip parkway traffic.",
   },
   {
     name: "Overlake Village Station",
     url: "https://www.soundtransit.org/ride-with-us/stops-stations/overlake-village-station",
     description:
-      "The 2 Line stop south of the neighborhood on 152nd Avenue NE. Grass Lawn commuters heading to Bellevue or Seattle often drop down 148th instead of fighting SR-520 from the hill.",
+      "The 2 Line stop west of the neighborhood on 152nd Avenue NE. Idylwood commuters heading to Bellevue or Seattle often cut across NE 40th or 36th instead of fighting the parkway all the way to downtown Redmond.",
   },
 ];
 
-const GrassLawnPage = () => {
+const IdylwoodPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Grass Lawn, Redmond",
-    pageTitle: "Grass Lawn Redmond Fence Installation",
+    neighborhoodName: "Idylwood, Redmond",
+    pageTitle: "Idylwood Redmond Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: GRASS_LAWN_FAQS,
+    faqItems: IDYLWOOD_FAQS,
   });
 
   return (
@@ -131,17 +130,17 @@ const GrassLawnPage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Grass Lawn, Redmond WA
+                    Serving Idylwood, Redmond WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Grass Lawn Fence Installation
+                  Idylwood Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Fence work for Grass Lawn&apos;s established yards — cedar,
-                  hogwire, and hybrid lines that respect mature trees, quiet the
-                  148th Avenue NE corridor, and fit the park-centered streets
-                  between downtown Redmond and Overlake.
+                  Hillside and lakeside fence work for Idylwood — cedar privacy
+                  that quiets West Lake Sammamish Parkway, hogwire that keeps
+                  Lake Sammamish in view, and hybrid systems built for the
+                  moisture that sits along Idylwood Beach Park.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -157,11 +156,11 @@ const GrassLawnPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Redmond"
-                  state="WA"
-                  radiusMiles={5}
-                  zoom={12}
-                  showBusinessInfo={false}
+                  city="Idylwood, Redmond"
+                  state="Washington"
+                  radiusMiles={4}
+                  zoom={13}
+                  showBusinessInfo={true}
                 />
               </div>
             </div>
@@ -197,31 +196,29 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing Around a Park-Centered Street Grid
+                Hillside Lots That Drop Toward the Lake
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Grass Lawn sits on the west side of Redmond, a band of
-                1970s–1990s family homes wrapped around Grass Lawn Park on 148th
-                Avenue NE. The park is the neighborhood&apos;s actual center —
-                splash pad, lighted courts, turf fields, and a pavilion that
-                books out on summer weekends — and most lots are a short walk
-                from NE 70th Street, NE 76th Street, or 152nd Avenue NE. Housing
-                is older than Overlake&apos;s newer plats and flatter than
-                Education Hill, so the work is less about a steep drop and more
-                about threading a fence past fifty-year-old firs without
-                wrecking the landscaping that already defines the yard.
+                Idylwood is Redmond&apos;s west-shore pocket on Lake Sammamish —
+                a band of 1960s–1980s homes and newer rebuilds stacked between
+                West Lake Sammamish Parkway NE and the water. Idylwood Beach
+                Park at 3650 West Lake Sammamish Parkway is the neighborhood
+                lawn: swim beach, playground, picnic shelter, and the small
+                launch that fills on warm Saturdays. Lots on 176th Avenue NE,
+                180th Avenue NE, and NE 36th Street often step downhill toward
+                the lake, so a fence here has to follow grade, leave a view
+                corridor, and still keep a dog out of the parkway.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has installed fences throughout Grass Lawn,
-                including side-yard runs between closely spaced homes off 152nd
-                and privacy lines that take the edge off traffic on 148th and
-                Redmond Way. There is no single neighborhood-wide HOA, but some
-                plats still want a drawing and a stain note before a crew shows
-                up. Our Fence Genius measurements capture the gentle roll of
-                each lot and the root zones we need to hand-dig, and we handle
-                Redmond Development Services checks so height, setbacks, and
-                sight-distance rules on 148th and 70th are settled before
-                installation day.
+                MyFence.com installs cedar, hogwire, and hybrid fences across
+                Idylwood, including parkway-side privacy runs and open hogwire
+                on the downhill edge toward the water. There is no single
+                neighborhood-wide HOA, but some hillside plats still want a
+                drawing and a stain note, and shoreline lots within 200 feet of
+                the ordinary high water mark can trigger extra review. Fence
+                Genius captures the actual drop so panels arrive stepped for
+                the slope instead of getting ripped down on a driveway that
+                already has little room to stage lumber.
               </p>
             </div>
           </div>
@@ -232,37 +229,21 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Grass Lawn Homeowners Trust MyFence.com
+                Why Idylwood Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <TreePine className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Mountain className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Installs That Keep the Existing Trees
+                        Slope-Mapped Panel Bays
                       </h3>
                       <p className="text-muted-foreground">
-                        Grass Lawn yards already have the canopy. We hand-dig
-                        near mature firs and cedars, skip a trench across a
-                        root flare, and place posts so the fence sits with the
-                        landscaping instead of cutting a new scar through it.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">
-                        Screening for 148th and Park-Night Noise
-                      </h3>
-                      <p className="text-muted-foreground">
-                        148th Avenue NE is a through street, and lighted fields
-                        at Grass Lawn Park run late. A six-foot cedar privacy
-                        line on the street or park side cuts the evening din
-                        without turning the lot into a tunnel.
+                        Fence Genius records the drop from the parkway toward
+                        the lake so each bay is built to the grade. Posts step
+                        with the hillside instead of leaving a triangular gap
+                        a raccoon — or a small dog — will find on night one.
                       </p>
                     </div>
                   </div>
@@ -276,25 +257,42 @@ const GrassLawnPage = () => {
                       </h3>
                       <p className="text-muted-foreground">
                         Full coverage on materials and labor, including
-                        hand-set posts in root-heavy soil and the Eastside
-                        wet-season cycle that stresses fasteners. Grass Lawn
-                        installs are backed for the long haul.
+                        hardware chosen for the extra damp that sits along
+                        Lake Sammamish and Idylwood Beach Park. We stand
+                        behind the install through Eastside winters.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Eye className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Plat Rules and City Height Checks
+                        Privacy Without Losing the Water
                       </h3>
                       <p className="text-muted-foreground">
-                        Some streets have a small architectural contact; most
-                        only need Redmond zoning. We prepare drawings when a
-                        plat asks, and we confirm height and setback rules so
-                        the install is clean with the city.
+                        Solid cedar on the West Lake Sammamish Parkway side
+                        takes the edge off traffic. Hogwire or a mixed-height
+                        run on the downhill side keeps eyes on the lake and
+                        the park lawn without boxing in a short hillside yard.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <TreePine className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        Forest-Edge and Root-Aware Digs
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Many Idylwood lots back onto a greenbelt or a stand of
+                        firs. We hand-dig near root flares, skip a trench
+                        across a tree that already defines the yard, and place
+                        posts so the fence sits with the canopy instead of
+                        cutting a new scar through it.
                       </p>
                     </div>
                   </div>
@@ -309,9 +307,9 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Grass Lawn Homeowners Say
+                What Idylwood Homeowners Say
               </h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <div className="flex gap-1 mb-3">
                     {[1, 2, 3, 4, 5].map((i) => (
@@ -319,13 +317,12 @@ const GrassLawnPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We sit a block off 148th and wanted privacy without
-                    losing the big firs along the rear line. They hand-dug
-                    around the roots and the panels sit tight to the grade. The
-                    street noise dropped enough that we actually use the patio
-                    after dinner.&rdquo;
+                    &ldquo;Our lot drops from the parkway toward the water. They
+                    stepped the posts so the bottom rail follows the grade, and
+                    we still see the lake past the hogwire. The crew staged off
+                    180th and did not block the driveway for three days.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Elena in Grass Lawn</p>
+                  <p className="text-sm font-medium">— Priya in Idylwood</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -335,12 +332,27 @@ const GrassLawnPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our side yard between the houses on 152nd is barely
-                    a path. The crew carried panels in by hand, left the
-                    neighbor&apos;s rhododendrons alone, and the gate latch is
-                    high enough that the dog cannot walk it open.&rdquo;
+                    &ldquo;West Lake Sammamish Parkway noise was the issue, not
+                    a giant backyard. Solid cedar on the street, open run on
+                    the park side. The dog cannot walk the latch, and the firs
+                    along the rear line are still standing.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Derek in Grass Lawn</p>
+                  <p className="text-sm font-medium">— Marcus in Idylwood</p>
+                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    &ldquo;We sit a short walk from Idylwood Beach Park and
+                    wanted screening from the weekend crowd without a solid
+                    wall. They measured the slope, sent a simple drawing, and
+                    wrapped before a Saturday swim day filled the parkway.&rdquo;
+                  </p>
+                  <p className="text-sm font-medium">— Helen in Idylwood</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -348,82 +360,88 @@ const GrassLawnPage = () => {
           </div>
         </section>
 
-        {/* Contact + Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Grass Lawn Redmond fence" />
+        {/* 11. Virtual Quote Tool */}
+        <LeadCaptureTabs fenceStyleName="Idylwood Redmond fence" />
 
-        {/* 6. Photo Gallery */}
-        <ServiceAreaPhotoGallery city="Redmond" neighborhood="Grass Lawn" />
+        {/* 6. Photo Gallery — Redmond-area installs until Idylwood-tagged photos exist */}
+        <ServiceAreaPhotoGallery
+          city="Redmond"
+          title="Recent Fence Work Near Idylwood"
+          description="These photos are from Redmond jobs in and around the Lake Sammamish shoreline. Same crew, same materials, and the same Fence Genius process we use on Idylwood hillside and park-edge lots."
+        />
 
-        {/* 7. Case Study Spotlight */}
-        <FeaturedProject city="Redmond" neighborhood="Grass Lawn" />
+        {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
+        <FeaturedProject city="Redmond" neighborhood="Idylwood" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Grass Lawn-Specific Fencing Considerations
+                Idylwood-Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Grass Lawn Tree Roots and Established Landscaping
+                    Idylwood Terrain and Stepped Posts
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Most Grass Lawn lots were planted decades ago. Firs,
-                    cedars, and maples sit on or near the property line, and a
-                    mechanical trench will tear a root flare that the tree
-                    cannot replace. We walk the line first, mark roots we will
-                    not cut, and hand-dig post holes where the canopy is
-                    oldest. Fence Genius still maps the gentle roll so panels
-                    follow the ground instead of hovering over a low spot the
-                    dog will find.
+                    Most Idylwood lots are not flat suburban rectangles. The
+                    ground falls from West Lake Sammamish Parkway toward the
+                    water, and a six-foot panel that works on Education Hill
+                    will float over the downhill side here. We walk the line
+                    first, mark where posts need to step, and let Fence Genius
+                    set bay lengths so the skirt stays tight to grade. Tight
+                    hillside driveways off 176th and 180th often mean
+                    hand-carrying material instead of parking a full truck on
+                    the parkway through a swim-day backup.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Arterial Noise Along 148th and Redmond Way
+                    Lake Moisture and Shoreline Edges
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    148th Avenue NE carries park traffic, school drop-off
-                    overflow, and the commute between Overlake and Kirkland.
-                    Redmond Way and Old Redmond Road sit on the east edge of
-                    the neighborhood. A solid six-foot cedar privacy fence on
-                    the street side does more for evening use of the yard than
-                    a decorative picket ever will. Corner lots still have to
-                    honor Redmond&apos;s sight-distance triangles at 70th and
-                    80th, so the front stretch may step down even when the
-                    rear line stays at six feet.
+                    Lots that sit close to Lake Sammamish stay damp longer
+                    than inland Grass Lawn or Downtown Redmond. Raw cedar
+                    grays fast, and cheap fasteners streak. We spec
+                    pre-stained Western Red Cedar and stainless or hot-dipped
+                    hardware. Properties within 200 feet of the ordinary high
+                    water mark may need shoreline review before a fence goes
+                    in. Where a lot faces the park lawn or the water, hogwire
+                    or a mixed-height run keeps eyes on the lake while still
+                    containing pets.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Grass Lawn Plats Versus City-Only Streets
+                    Idylwood Parkway Noise and Sight Triangles
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Grass Lawn does not sit under one master association. Some
-                    1980s–1990s plats still have an architectural contact who
-                    wants height, stain, and a simple site plan. Everyone else
-                    still follows City of Redmond zoning: typically four feet
-                    in the front yard and six feet on the sides and rear. We
-                    sort which bucket your parcel is in before we order
-                    materials so you are not rewriting a design after the
-                    lumber is on the truck.
+                    West Lake Sammamish Parkway NE is the neighborhood&apos;s
+                    only through street — beach traffic, commute overflow
+                    toward SR-520, and weekend boats on trailers. A solid
+                    six-foot cedar privacy fence on the street side does more
+                    for evening use of the yard than a decorative picket ever
+                    will. Corner lots at NE 36th Street and 180th Avenue NE
+                    still have to honor Redmond&apos;s sight-distance
+                    triangles, so the front stretch may step down even when
+                    the rear line stays at six feet.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Pets, Park Edges, and Eastside Moisture
+                    Idylwood Wildlife, Trees, and Plat Rules
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lots that back toward Grass Lawn Park or a wooded rear
-                    neighbor still see the occasional deer, and almost every
-                    household has a dog that will test the bottom of a panel.
-                    We keep the skirt tight to grade and spec latches that
-                    kids can use after a game but a dog cannot walk open.
-                    Pre-stained Western Red Cedar and stainless or hot-dipped
-                    fasteners handle the Eastside rain cycle without rust
-                    streaks down the boards.
+                    Greenbelt edges and the Marymoor corridor still send deer
+                    and raccoons through side yards. We keep the skirt tight
+                    to grade and spec latches that kids can use after a swim
+                    but a dog cannot walk open. Idylwood does not sit under
+                    one master association; some 1970s–1990s plats want
+                    height, stain, and a simple site plan. Everyone else still
+                    follows City of Redmond zoning. We sort which bucket your
+                    parcel is in before we order materials.
                   </p>
                 </div>
               </div>
@@ -436,45 +454,47 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Grass Lawn
+                Fence Installation Cost in Idylwood
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A new fence is a real investment on Grass Lawn lots. These
-                ranges cover typical residential runs; root-zone hand-digging,
-                extra gates, and plat drawing packages can change the final
-                number.
+                A hillside fence on Lake Sammamish is a slope-aware install:
+                stepped posts, lake-side moisture, and parkway access can move
+                the number. These are typical ranges; your on-site
+                measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
                   <li>
                     <span>
                       <strong className="text-foreground">Cedar privacy (6&apos;):</strong>{" "}
-                      $42–$65 per linear foot
+                      $45–$70 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $36–$54 per linear foot
+                      $38–$58 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hybrid aluminum/cedar:</strong>{" "}
-                      $52–$72 per linear foot
+                      $54–$76 per linear foot
                     </span>
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Hand-digging near mature trees and custom gates are itemized
-                  separately. Get an exact quote for your Grass Lawn property
-                  with a free on-site measurement.
+                  Stepped posts on a downhill run, hand-carry on a hillside
+                  driveway, marine-grade hardware near the water, and plat or
+                  shoreline drawing packages may add 10–15%. Get an exact
+                  quote for your Idylwood property with a free on-site
+                  measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
                   <Link href="/quote">
-                    Get an exact quote for your Grass Lawn property
+                    Get an exact quote for your Idylwood property
                   </Link>
                 </Button>
               </div>
@@ -487,16 +507,17 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Grass Lawn
+                Popular Fence Styles in Idylwood
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on lots that face 148th or sit close to a
-                    neighbor. Full screening for evening noise, pre-stained
-                    cedar that holds up to Eastside winters, and a look that
-                    fits 1970s–1990s homes around the park.
+                    The workhorse on the parkway side of a lot and on interior
+                    side yards off 176th and 180th. Full screening from
+                    traffic and neighbors, pre-stained cedar that holds up to
+                    lake-corridor damp, and a look that fits 1960s–1980s
+                    hillside homes.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -508,10 +529,10 @@ const GrassLawnPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for park-edge lots and yards
-                    that want the canopy left open. Dogs stay in, more of the
-                    trees stay in view, and the lighter footprint is easier
-                    around roots than a solid privacy wall.
+                    Cedar frame with black mesh for lots that face the water
+                    or Idylwood Beach Park. Dogs stay in, the lake stays in
+                    view, and the lighter footprint is easier around roots
+                    than a solid wall on a short downhill run.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -524,9 +545,9 @@ const GrassLawnPage = () => {
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
                     Aluminum panels in a cedar frame on steel posts — the
-                    low-maintenance option when a commute down 148th leaves
-                    little time for staining. Strong enough for busy family
-                    yards without looking commercial.
+                    low-maintenance option when a lakeside calendar has no
+                    extra Saturday for staining. Clean enough for a plat
+                    review without looking like a commercial lot.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -545,31 +566,32 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Grass Lawn Installation Process
+                Our Idylwood Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Grass Lawn Site Assessment
+                    1. Idylwood Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the run, mark mature roots, note
-                    the roll toward 148th or the park, and check whether a
-                    plat association or Redmond sight-distance rule applies.
-                    Fence Genius captures grade so panels are built to the
-                    actual line, not a flat-lot assumption.
+                    We walk the lot, measure the run, mark the drop toward
+                    Lake Sammamish, note driveway width off the parkway, and
+                    check whether shoreline review or a plat association
+                    applies. Fence Genius captures grade so panels are built
+                    to the actual hillside, not a flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Grass Lawn Design & HOA Submission
+                    2. Idylwood Design & HOA Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. If your street has a small plat
-                    contact, we prepare a drawing and material list. If it
-                    does not, we still document Redmond height and setback
-                    rules — including sight-distance on 148th, 70th, and 80th
-                    — so the install is clean with the city.
+                    You pick style and height. If your hillside plat has an
+                    architectural contact, we prepare a drawing, stain note,
+                    and height callout. If it does not, we still document
+                    Redmond height, setback, and shoreline rules — including
+                    sight-distance on West Lake Sammamish Parkway, 36th, and
+                    180th — so the install is clean with the city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -579,20 +601,21 @@ const GrassLawnPage = () => {
                   <p className="text-muted-foreground">
                     Panels are built off-site from Fence Genius measurements —
                     pre-stained cedar, hogwire frames, or hybrid modules — so
-                    Grass Lawn install days are mostly setting posts and
-                    hanging finished sections.
+                    Idylwood install days are mostly setting stepped posts and
+                    hanging finished sections instead of ripping lumber on a
+                    narrow hillside driveway.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Grass Lawn Installation
+                    4. Idylwood Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment suited to residential streets
-                    off 148th Avenue NE and 152nd Avenue NE. Hand-digging near
-                    mature roots, careful carry-in on tight side yards, and
-                    full cleanup at the end of each day. Most jobs wrap in one
-                    to three days.
+                    Crews use compact equipment and hand-carry when a driveway
+                    off 176th or 180th will not take a full truck. Stepped
+                    posts, careful placement near mature firs, and full
+                    cleanup at the end of each day. Most jobs wrap in one to
+                    three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -612,20 +635,20 @@ const GrassLawnPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Grass Lawn Fence Installation FAQs"
-          items={GRASS_LAWN_FAQS}
+          title="Idylwood Fence Installation FAQs"
+          items={IDYLWOOD_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Redmond"
-        neighborhoodName="Grass Lawn"
-        attractions={GRASS_LAWN_ATTRACTIONS}
+        neighborhoodName="Idylwood"
+        attractions={IDYLWOOD_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Grass Lawn households sit in the{" "}
+              Idylwood households sit in the{" "}
               <a
                 href="https://www.lwsd.org/"
                 target="_blank"
@@ -634,16 +657,16 @@ const GrassLawnPage = () => {
               >
                 Lake Washington School District
               </a>
-              . Many elementary students head east to{" "}
+              . Many elementary students walk or ride a short hop to{" "}
               <a
-                href="https://redmond.lwsd.org/"
+                href="https://audubon.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Redmond Elementary
+                John James Audubon Elementary
               </a>{" "}
-              on NE 80th Street, then later to{" "}
+              on 180th Avenue NE, then later to{" "}
               <a
                 href="https://rms.lwsd.org/"
                 target="_blank"
@@ -652,7 +675,8 @@ const GrassLawnPage = () => {
               >
                 Redmond Middle School
               </a>
-              . After a Saturday at the park, families often continue to{" "}
+              . After a swim day at the beach, families often continue north
+              to{" "}
               <a
                 href="https://www.redmond.gov/241/Redmond-Community-Center-at-Marymoor-Vil"
                 target="_blank"
@@ -664,18 +688,18 @@ const GrassLawnPage = () => {
               for a class or a field-permit question.
             </p>
             <p>
-              Dinner after a game is usually a short hop toward Old Town rather
-              than a drive across the Eastside —{" "}
+              Dinner after a park afternoon is usually a short hop west toward
+              Town Center rather than a drive across the Eastside —{" "}
               <a
-                href="https://www.matadorrestaurants.com/locations/redmond"
+                href="https://www.mattsrotisserie.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Matador Redmond
+                Matt&apos;s Rotisserie &amp; Oyster Lounge
               </a>{" "}
-              on Leary Way is a regular stop. Commuters heading south catch the
-              2 Line at{" "}
+              is a regular stop. Commuters heading to Bellevue or Seattle
+              catch the 2 Line at{" "}
               <a
                 href="https://www.soundtransit.org/ride-with-us/stops-stations/overlake-village-station"
                 target="_blank"
@@ -684,8 +708,8 @@ const GrassLawnPage = () => {
               >
                 Overlake Village Station
               </a>
-              , or take 148th to NE 70th toward I-405. Height and setback
-              questions are covered in{" "}
+              , or take West Lake Sammamish Parkway toward SR-520. Height and
+              setback questions are covered in{" "}
               <a
                 href="https://www.redmond.gov/526/Fences-Decks"
                 target="_blank"
@@ -703,6 +727,15 @@ const GrassLawnPage = () => {
               >
                 Sammamish River Trail
               </a>
+              . Event listings for the broader city sit on{" "}
+              <a
+                href="https://experienceredmond.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Experience Redmond
+              </a>
               .
             </p>
           </>
@@ -718,19 +751,17 @@ const GrassLawnPage = () => {
                 Also Serving Nearby Redmond Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Redmond. From Grass Lawn we also
-                work in Education Hill to the east, Downtown Redmond toward
-                Town Center, Overlake to the south, and across the city line
-                into Juanita in Kirkland.
+                We install fences throughout Redmond. From Idylwood we also
+                work in Overlake to the west, Downtown Redmond toward Town
+                Center, Grass Lawn farther north, and across the city line
+                into Bellevue along the same lake shore.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond">Redmond overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/education-hill">
-                    Education Hill
-                  </Link>
+                  <Link href="/service-areas/redmond/overlake">Overlake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/downtown-redmond">
@@ -738,13 +769,10 @@ const GrassLawnPage = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/idylwood">Idylwood</Link>
+                  <Link href="/service-areas/redmond/grass-lawn">Grass Lawn</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/kirkland/juanita">Juanita</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/kirkland">Kirkland</Link>
+                  <Link href="/service-areas/bellevue">Bellevue</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
@@ -759,12 +787,12 @@ const GrassLawnPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Grass Lawn Property?
+                Ready to Enhance Your Idylwood Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Grass Lawn. We&apos;ll walk the
-                lot, talk through privacy versus open hogwire around the trees,
-                and quote a fence that fits your Redmond yard.
+                Same-day estimates available in Idylwood. We&apos;ll walk the
+                hillside, talk through privacy versus lake views, and quote a
+                fence that fits your West Lake Sammamish lot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -782,4 +810,4 @@ const GrassLawnPage = () => {
   );
 };
 
-export default GrassLawnPage;
+export default IdylwoodPage;

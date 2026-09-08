@@ -647,6 +647,9 @@ const DowntownRedmondPage = () => {
                   <Link href="/service-areas/redmond/overlake">Overlake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/idylwood">Idylwood</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/juanita">Juanita</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
