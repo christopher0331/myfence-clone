@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  TreePine,
-  PawPrint,
-  FileCheck,
+  Waves,
+  Mountain,
+  Home,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,81 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/sammamish/trossachs";
+const CANONICAL = "https://myfence.com/service-areas/sammamish/inglewood";
 const META_TITLE =
-  "Trossachs Sammamish Fence Installation | Wooded Lots & HOA | MyFence.com";
+  "Inglewood Sammamish Fence Installation | Hillside & Family Lots | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Trossachs, Sammamish, WA. Cedar, hogwire & hybrid fencing for forested lots, wildlife edges, and Trossachs HOA review. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Inglewood, Sammamish, WA. Cedar, hogwire & hybrid fencing for Inglewood Hill slopes, lake-side lots, and school-area yards. Free quotes. (253) 455-1885.";
 
-const TROSSACHS_FAQS: NeighborhoodFaqItem[] = [
+const INGLEWOOD_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Trossachs, Sammamish?",
+    question: "Do I need a permit to build a fence in Inglewood, Sammamish?",
     answer:
-      "The City of Sammamish generally does not require a building permit for residential fences six feet or shorter in side and rear yards. Front-yard fencing is typically limited to four feet, and corner lots have sight-triangle rules. Fences over six feet need a Type I construction permit and a recorded neighbor agreement. Many Trossachs lots also sit next to forested tracts or park buffers along Soaring Eagle, which can add critical-area review even when height is under six feet. MyFence.com checks city rules and Trossachs HOA expectations for your address before we quote.",
+      "The City of Sammamish generally does not require a building permit for residential fences six feet or shorter in side and rear yards. Front-yard fencing is typically limited to four feet, and corner lots on Inglewood Hill Road, NE 8th Street, and 228th Avenue NE must keep sight-distance triangles clear. Fences over six feet need a Type I construction permit and a recorded neighbor agreement. Parcels that drop toward East Lake Sammamish Parkway, or that sit in a mapped shoreline or critical-area buffer, can trigger extra review regardless of height. MyFence.com checks the overlays for your Inglewood address before we quote.",
   },
   {
     question:
-      "What fence styles work best for Trossachs' wooded lots and wildlife edges?",
+      "What fence styles work best for Inglewood's hillside lots and family yards?",
     answer:
-      "Cedar privacy fencing is the usual choice on interior Trossachs cul-de-sacs where families want a solid backyard. On lots that back onto Soaring Eagle Regional Park or a greenbelt, hogwire in a cedar frame is popular because it contains dogs without boxing in the forest view, and deer are less likely to tangle in a well-tensioned mesh than in a decorative rail. Hybrid aluminum-and-cedar systems fit homeowners who want the cedar look with less staining on long runs. Fence Genius maps roots, grade, and post locations so panels follow the lot instead of fighting the trees.",
+      "Interior plateau lots near Inglewood Middle School and Margaret Mead Elementary usually choose six-foot cedar privacy so kids and dogs stay in after school. On the downhill face of Inglewood Hill, hogwire in a cedar frame keeps a sightline toward Lake Sammamish while still containing pets. Hybrid aluminum-and-cedar systems suit homeowners who want the cedar look without restaining in the extra damp that sits at the bottom of the hill along the parkway. Fence Genius maps the grade so panels step with the lot instead of leaving crawl gaps on a 10–20% slope.",
   },
   {
-    question: "How much does fence installation cost in Trossachs, Sammamish?",
+    question: "How much does fence installation cost in Inglewood, Sammamish?",
     answer:
-      "Trossachs fence installation typically runs $45–$68 per linear foot for six-foot cedar privacy, $38–$58 for hogwire with a cedar frame, and $55–$76 for hybrid aluminum/cedar. Longer perimeter runs on larger lots, hand-digging around mature firs, and extra gates on corner properties can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Inglewood fence installation typically runs $45–$68 per linear foot for six-foot cedar privacy, $39–$58 for hogwire with a cedar frame, and $55–$76 for hybrid aluminum/cedar. Stepped runs on Inglewood Hill, hand-digging around mature firs on older hillside streets, and custom gates can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Trossachs?",
+    question: "How long does fence installation take in Inglewood?",
     answer:
-      "Most Trossachs residential projects finish in one to three working days after city and Trossachs HOA paperwork is complete. Pre-fabricated panels cut on-site time. Long rear lots, stepped runs toward the plateau edge, and tight access on courts off Trossachs Boulevard SE are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most Inglewood residential projects finish in one to three working days after any city or small-HOA paperwork is complete. Prefabricated panels keep on-site time short. Extra half-days usually come from stepped posts on the lake-side drop, tight side yards on 1960s–1980s hillside lots, or working around pickup traffic near Inglewood Middle on NE 8th Street. We lock the schedule with you before the crew arrives.",
   },
   {
-    question: "Do I need my neighbor's permission for a fence in Trossachs?",
+    question: "Do I need my neighbor's permission for a fence in Inglewood?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when the city does not require their signature. If you want a fence taller than six feet, Sammamish does require a recorded agreement with the adjoining owner. Trossachs HOA review is a separate step from neighbor consent. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Sammamish does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. Inglewood has many older pin locations on hillside lots, so confirming the line before digging saves a redo. MyFence.com can help share a simple site plan and keep the conversation on height, style, and who pays for which stretch.",
   },
 ];
 
-const TROSSACHS_ATTRACTIONS: LocalAttraction[] = [
+const INGLEWOOD_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Soaring Eagle Regional Park",
-    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle",
+    name: "Sammamish Landing Park",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-landing-park/",
     description:
-      "A 790-acre King County forest that starts at the south end of Trossachs Boulevard. Neighborhood trailheads put hiking, mountain biking, and horse traffic on the same dirt as backyard wildlife, so fence lines here have to respect both dogs and deer.",
+      "The city's public beach on East Lake Sammamish Parkway NE, at the foot of Inglewood Hill. Picnic lawns, two docks, and a short hop from the trail make it the after-school water stop for households that live on the downhill side of the neighborhood.",
   },
   {
-    name: "Cascade Ridge Elementary",
-    url: "https://cascaderidge.isd411.org/",
+    name: "Inglewood Middle School",
+    url: "https://ims.lwsd.org/",
     description:
-      "The Issaquah School District campus at 2020 Trossachs Boulevard SE — a walking school for most neighborhood kids. Morning drop-off and afternoon pickup set the daily rhythm on the boulevard, and many yards need a gate that actually latches after practice.",
+      "The Lake Washington School District campus at 24120 NE 8th Street, where most local sixth-through-eighth graders spend the week. Afternoon pickup stacks on NE 8th and sets the rhythm for nearby family yards.",
   },
   {
-    name: "Beaver Lake Park",
-    url: "https://www.sammamish.us/our-community/recreation/parks-trails/beaver-lake-park/",
+    name: "East Sammamish Park",
+    url: "https://www.sammamish.us/our-community/recreation/parks-trails/east-sammamish-park/",
     description:
-      "The city park just northwest of Trossachs, with a swimming beach, lodge, sports fields, and an off-leash dog area. Weekend traffic from 244th Avenue SE and SE 24th Street is the other reason a solid side-yard fence is popular on the north edge of the neighborhood.",
+      "Ballfields, pickleball, and a playground next to Margaret Mead Elementary on NE 16th Street. Inglewood families treat it as the weekday practice field without driving south to the Commons.",
   },
   {
-    name: "Sammamish Commons",
-    url: "https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-commons/",
+    name: "East Lake Sammamish Trail",
+    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/east-lake-sammamish",
     description:
-      "The civic campus a short drive west on 228th Avenue SE — City Hall, the library, playfields, and the seasonal farmers market. Trossachs households treat it as the weekday errand stop between school and home.",
+      "The paved north-south path along the east shore of the lake. Inglewood riders drop down Inglewood Hill Road to a designated trail access, then roll toward Redmond or Issaquah without getting on 228th.",
   },
   {
-    name: "Duthie Hill Mountain Bike Park",
-    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/duthie-hill",
+    name: "Eastlake High School",
+    url: "https://ehs.lwsd.org/",
     description:
-      "The jump-line park at the south end of SE Duthie Hill Road, a few minutes from Trossachs. After-school bikes and weekend trailers are a regular sight on the corridor, and lots along that approach often want screening from road noise without a fortress look.",
+      "The neighborhood's high school on 228th Avenue NE. Friday-night games and after-practice carpools are part of the weekly traffic pattern Inglewood households plan around.",
   },
 ];
 
-const TrossachsPage = () => {
+const InglewoodPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Trossachs, Sammamish",
-    pageTitle: "Trossachs Sammamish Fence Installation",
+    neighborhoodName: "Inglewood, Sammamish",
+    pageTitle: "Inglewood Sammamish Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: TROSSACHS_FAQS,
+    faqItems: INGLEWOOD_FAQS,
   });
 
   return (
@@ -130,14 +130,14 @@ const TrossachsPage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Trossachs, Sammamish WA
+                    Serving Inglewood, Sammamish WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Trossachs Fence Installation
+                  Inglewood Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Fence work for Trossachs&apos; wooded lots — cedar privacy for family yards, hogwire along the Soaring Eagle edge, and HOA-ready designs that still look like they belong on Trossachs Boulevard SE.
+                  Hillside and plateau fence work for Inglewood homes — cedar privacy for school-area yards, hogwire that keeps the lake in view, and hybrid systems built for the grade drop from 228th down Inglewood Hill Road.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -153,10 +153,10 @@ const TrossachsPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Trossachs, Sammamish"
+                  city="Inglewood, Sammamish"
                   state="Washington"
                   radiusMiles={5}
-                  zoom={13}
+                  zoom={12}
                   showBusinessInfo={true}
                 />
               </div>
@@ -193,13 +193,13 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Building Along the Forest Edge, Not a Tight Grid
+                Fencing a Hill That Drops Straight to the Lake
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Trossachs sits on the east side of the Sammamish Plateau, where Trossachs Boulevard SE loops through larger lots and cul-de-sacs such as 266th Court SE, 263rd Lane SE, and SE 22nd Street. Many rear yards back onto mature firs or the Soaring Eagle trail system instead of a neighbor&apos;s patio. Unlike Klahanie to the west, the typical Trossachs parcel is wider, quieter, and more likely to see deer on the lawn. The Trossachs Homeowners Association still reviews exterior work, so a fence has to clear architectural standards and the trees — not just the tape measure.
+                Inglewood sits on the northwest shoulder of the Sammamish plateau, where Inglewood Hill Road falls from 228th Avenue NE down to East Lake Sammamish Parkway. Lots on the plateau sit relatively flat near Inglewood Middle and Mead Elementary; a few blocks west, the same street grid tilts hard toward the water. Older hillside homes from the 1960s–1980s share the neighborhood with newer plateau builds, and there is no single master association like Klahanie — some cul-de-sacs have small architectural committees, many streets do not. The design conversation starts with the lot: steep grade, lake-side damp, kid-and-dog yards on NE 8th, and the firs that line the downhill side yards.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has installed cedar, hogwire, and hybrid fences throughout south Sammamish, including the Trossachs loop and the Klahanie edge a few blocks west. We use Fence Genius to capture grade and root zones before a post goes in the ground, so long rear runs stay even and the bottom rail does not float over a crawl gap a coyote or a small dog can use. The goal is a fence that reads as part of the street, not a stock panel dropped into a woodland lot.
+                MyFence.com has built cedar, hogwire, and hybrid fences across north Sammamish, including Inglewood Hill runs and the Sahalee edge just to the southeast. We use Fence Genius to capture grade before a post goes in the ground, so stepped panels on the lake face stay even and plateau lots get tight, pet-safe bottoms. The goal is a fence that looks like it belongs on your street — not a flat-lot panel dropped onto a 15% slope.
               </p>
             </div>
           </div>
@@ -210,18 +210,18 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Trossachs Homeowners Trust MyFence.com
+                Why Inglewood Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <FileCheck className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Mountain className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Trossachs HOA Packet Ready
+                        Inglewood Hill Grade Work
                       </h3>
                       <p className="text-muted-foreground">
-                        We prepare height, material, and color notes the Trossachs architectural review expects, then keep Sammamish&apos;s six-foot side-and-rear rule in the same drawing so you are not juggling two sets of comments.
+                        Fence Genius maps the drop from the plateau to the parkway so posts step instead of racking a six-foot bay across a cut. The top rail stays even from the street; the bottom tracks the lawn.
                       </p>
                     </div>
                   </div>
@@ -234,33 +234,33 @@ const TrossachsPage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for damp forest-edge soil. We stand behind the install through Sammamish winters.
+                        Full coverage on materials and labor, including hardware chosen for the extra humidity at the bottom of Inglewood Hill. We stand behind the install through Sammamish winters.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <PawPrint className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Wildlife-Aware Backyard Edges
+                        School-Area Family Yards
                       </h3>
                       <p className="text-muted-foreground">
-                        Lots that face Soaring Eagle need a fence that keeps pets in without inviting deer through a gap. We plan mesh, height, and bottom clearance for that park-edge condition, not a downtown lot.
+                        Self-closing gates, no crawl gaps at the bottom, and latch heights that work for households walking to Inglewood Middle or Mead. Built for after-school backyard use, not just curb appeal.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <TreePine className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Waves className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Root-Safe Post Placement
+                        Lake-Side Moisture Details
                       </h3>
                       <p className="text-muted-foreground">
-                        Hand-digging around the firs that line Trossachs Boulevard and the courts off it. Fence Genius maps the run so we shift a post instead of cutting a root that is holding the slope.
+                        Pre-stained cedar, stainless or hot-dipped fasteners, and optional steel posts where ground contact stays wet along the parkway. Cool air off Lake Sammamish does not get a pass on rot.
                       </p>
                     </div>
                   </div>
@@ -275,7 +275,7 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Trossachs Homeowners Say
+                What Inglewood Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -285,9 +285,9 @@ const TrossachsPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot backs onto the park trails and I did not want a solid wall. They ran hogwire in a cedar frame, kept the dog in, and the deer stopped cutting through the side yard. Crew was careful around the big firs.&rdquo;
+                    &ldquo;Our lot falls toward the parkway and I did not want a solid wall blocking the lake. They stepped a hogwire run with a cedar frame and it still keeps the dog in. Finished before the weekend pickup rush on NE 8th.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Megan in Trossachs</p>
+                  <p className="text-sm font-medium">— Maya in Inglewood</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -297,9 +297,9 @@ const TrossachsPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Long backyard off Trossachs Boulevard. The cedar privacy fence looks like it belongs with the houses on our court, the gates close cleanly after school, and they handled the HOA drawing so we were not guessing at colors.&rdquo;
+                    &ldquo;We needed real privacy for the kids after school at Mead. The cedar looks like it belongs with the older houses on our street, the gates latch well, and they hand-dug around the firs in the side yard.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Raj in Trossachs</p>
+                  <p className="text-sm font-medium">— Chris in Inglewood</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -309,9 +309,9 @@ const TrossachsPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Slope toward the back of the lot and a bunch of roots. They stepped the panels instead of leaving a gap at the bottom. Finished in a couple of days and the street looked tidy each evening.&rdquo;
+                    &ldquo;Small HOA on our cul-de-sac, nothing like Klahanie paperwork. They still put together a simple drawing and material list that the board signed off on the first pass. Appreciate the extra step.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Lauren in Trossachs</p>
+                  <p className="text-sm font-medium">— Lena in Inglewood</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -320,56 +320,56 @@ const TrossachsPage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Trossachs Sammamish fence" />
+        <LeadCaptureTabs fenceStyleName="Inglewood Sammamish fence" />
 
-        {/* 6. Photo Gallery — nearby Sammamish installs until Trossachs-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Sammamish installs until Inglewood-tagged photos exist */}
         <ServiceAreaPhotoGallery
           city="Sammamish"
-          title="Recent Fence Work Near Trossachs"
-          description="These photos are from nearby Sammamish jobs, including Klahanie just west of Trossachs. Same crew, same materials, and the same Fence Genius process we use on Trossachs lots."
+          title="Recent Fence Work Near Inglewood"
+          description="These photos are from nearby Sammamish jobs, including Klahanie on the south plateau. Same crew, same materials, and the same Fence Genius process we use on Inglewood Hill lots."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Sammamish" neighborhood="Trossachs" />
+        <FeaturedProject city="Sammamish" neighborhood="Inglewood" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Trossachs-Specific Fencing Considerations
+                Inglewood-Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Trossachs Terrain and Long Rear Runs
+                    Inglewood Hill Terrain and Stepped Runs
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The boulevard sits on the plateau, but plenty of rear yards fall toward the Patterson Creek side of Soaring Eagle. A fence built as one long level line either buries the bottom rail or leaves a gap. We measure grade with Fence Genius, then step or rack panels so the top stays even and the bottom tracks the lawn. On longer Trossachs perimeters we shorten bays rather than forcing a six-foot panel across a drop.
+                    Inglewood Hill Road is one of the steepest residential climbs on the Eastside. A fence built as one long level line either buries the bottom rail or leaves a gap a small dog can use. We measure grade with Fence Genius, then step or rack panels so the top stays even and the bottom tracks the lawn. On the steepest cuts toward East Lake Sammamish Parkway we shorten panel bays rather than forcing a six-foot bay across a drop.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Trossachs Trees, Roots, and Soil
+                    Inglewood Moisture and Fastener Choice
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Mature Douglas firs and cedars line Trossachs Boulevard SE and the courts that branch from it. Post holes fight roots and stay wetter under the canopy than on a bare Klahanie lot. We hand-dig near trunks, shift post locations when a root is doing structural work, and spec fasteners and post systems that hold up in that damp, organic soil instead of rusting out in a few winters.
+                    Cool air off Lake Sammamish hangs in the lower streets overnight, longer than it does on the plateau near 228th. Raw cedar grays fast on the downhill face, and cheap galvanized nails start showing rust streaks. We spec pre-stained Western Red Cedar and stainless or hot-dipped fasteners, and we talk through steel posts where the soil stays wet at the lower corners of the lot.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Trossachs Wildlife and Pet Containment
+                    Inglewood View Corridors vs. Privacy
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Deer, coyotes, and the occasional bear move between Soaring Eagle, Beaver Lake Preserve, and backyard greenbelts. A decorative rail with a six-inch gap at the lawn is an invitation. Hogwire with a tight bottom, or cedar privacy with no crawl space, is the practical mix. We walk the lot with you and mark where a solid panel helps and where an open run keeps the forest in view without losing the dog.
+                    Hillside lots often want screening from the neighbor without a solid wall across the lake. Hogwire in a cedar frame, or cedar privacy on the side yards with an open run on the downhill edge, is the typical mix. Plateau lots near the schools usually want full-height cedar. We walk the lot with you and mark where a solid panel helps and where it just blocks the reason you bought the house.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Trossachs HOA Review and City Height Rules
+                    Inglewood Trees, Small HOAs, and City Height Rules
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The Trossachs Homeowners Association reviews fence style, height, and finish so the street stays consistent. That is separate from Sammamish&apos;s six-foot side-and-rear limit and four-foot front-yard cap. We put both in one packet — materials, color, and a simple site plan — and we flag any shoreline or critical-area overlay before digging rather than after a hole is already in the ground.
+                    Some cul-de-sacs have small architectural committees; many older hillside streets do not. We still follow Sammamish height rules — six feet in most side and rear yards, four feet in the front setback — and we plan post holes around the firs and cedars that line the downhill side yards and the 216th Avenue NE corridor. If your parcel sits in a shoreline or wetland buffer along the parkway, we flag that before digging rather than after.
                   </p>
                 </div>
               </div>
@@ -382,10 +382,10 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Trossachs
+                Fence Installation Cost in Inglewood
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A Trossachs fence is an investment in a larger, often wooded lot. Linear footage, slope, and tree work move the number. These are typical ranges; your on-site measurement is the real quote.
+                An Inglewood fence is an investment in a school-area lot and, on the downhill side, a view. Slope, gates, and moisture details move the number. These are typical ranges; your on-site measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
@@ -398,7 +398,7 @@ const TrossachsPage = () => {
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $38–$58 per linear foot
+                      $39–$58 per linear foot
                     </span>
                   </li>
                   <li>
@@ -409,12 +409,12 @@ const TrossachsPage = () => {
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Stepped runs toward the park edge and hand-digging near mature trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Trossachs property with a free on-site measurement.
+                  Stepped runs on Inglewood Hill and hand-digging near mature trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Inglewood property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Trossachs property</Link>
+                  <Link href="/quote">Get an exact quote for your Inglewood property</Link>
                 </Button>
               </div>
             </div>
@@ -426,13 +426,13 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Trossachs
+                Popular Fence Styles in Inglewood
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior Trossachs courts near Cascade Ridge. Full screening for after-school play, pre-stained cedar that holds up to Sammamish winters, and a look that fits the two-story homes along the boulevard.
+                    The workhorse on plateau lots near Inglewood Middle and Mead. Full screening for after-school play, pre-stained cedar that holds up to Sammamish winters, and a look that fits both 1970s hillside ranches and newer two-story builds.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -444,7 +444,7 @@ const TrossachsPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for lots that face Soaring Eagle. Dogs stay in, the forest stays in view, and the lighter footprint is easier around roots than a solid privacy wall.
+                    Cedar frame with black mesh for downhill lots that still want the lake. Dogs stay in, the water stays in view, and the lighter footprint is easier around roots than a solid privacy wall.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -456,7 +456,7 @@ const TrossachsPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a Trossachs perimeter is long enough that staining every few years is a real chore.
+                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when lake-side humidity makes staining a chore. Strong enough for busy family yards without looking like a commercial lot.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -475,23 +475,23 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Trossachs Installation Process
+                Our Inglewood Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Trossachs Site Assessment
+                    1. Inglewood Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the run, note slope toward the park, map trees, and check whether the parcel sits in a Sammamish critical-area overlay. Fence Genius captures grade so panels are built to the actual drop, not a flat-lot assumption.
+                    We walk the lot, measure the run, note slope toward the parkway, map trees, and check whether the parcel sits in a Sammamish shoreline or critical-area overlay. Fence Genius captures grade so panels are built to the actual drop, not a flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Trossachs Design & HOA Submission
+                    2. Inglewood Design & HOA Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. We prepare a drawing and material list for Trossachs HOA architectural review, and we still document Sammamish height and setback rules so the install is clean with the city.
+                    You pick style and height. If your cul-de-sac has a small architectural committee, we prepare a simple drawing and material list. If it does not, we still document Sammamish height and setback rules so the install is clean with the city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -499,15 +499,15 @@ const TrossachsPage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Trossachs install days are mostly setting posts and hanging finished sections.
+                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Inglewood install days are mostly setting posts and hanging finished sections.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Trossachs Installation
+                    4. Inglewood Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment suited to residential courts off Trossachs Boulevard SE. Hand-digging near mature roots, stepped posts on downhill rear lots, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets off Inglewood Hill Road, NE 8th, and 228th. Hand-digging near mature roots, stepped posts on the downhill face, and full cleanup at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -525,56 +525,57 @@ const TrossachsPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Trossachs Fence Installation FAQs"
-          items={TROSSACHS_FAQS}
+          title="Inglewood Fence Installation FAQs"
+          items={INGLEWOOD_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Sammamish"
-        neighborhoodName="Trossachs"
-        attractions={TROSSACHS_ATTRACTIONS}
+        neighborhoodName="Inglewood"
+        attractions={INGLEWOOD_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Trossachs families are served by the{" "}
+              Inglewood sits in the{" "}
               <a
-                href="https://www.isd411.org/"
+                href="https://www.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Issaquah School District
+                Lake Washington School District
               </a>
-              . Most kids walk to{" "}
+              , so most families feed{" "}
               <a
-                href="https://cascaderidge.isd411.org/"
+                href="https://mead.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Cascade Ridge Elementary
-              </a>{" "}
-              on Trossachs Boulevard SE, then continue to{" "}
+                Margaret Mead Elementary
+              </a>
+              , then{" "}
               <a
-                href="https://beaverlake.isd411.org/"
+                href="https://ims.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Beaver Lake Middle School
+                Inglewood Middle School
               </a>{" "}
-              on SE 32nd Street and{" "}
+              on NE 8th Street, and later{" "}
               <a
-                href="https://skyline.isd411.org/"
+                href="https://ehs.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Skyline High School
-              </a>{" "}
-              on 228th Avenue SE. Weekday life is built around that school triangle and the short hop west to the{" "}
+                Eastlake High School
+              </a>
+              {" "}
+              on 228th. Weekday life is built around that school triangle and the short hop south on 228th to the{" "}
               <a
                 href="https://kcls.org/locations/sammamish/"
                 target="_blank"
@@ -586,32 +587,32 @@ const TrossachsPage = () => {
               at the Commons.
             </p>
             <p>
-              Weekends split between trail miles in{" "}
+              Groceries and after-practice food cluster along 228th Avenue NE rather than requiring a drive into downtown Redmond. Weekends split between the docks at{" "}
               <a
-                href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle"
+                href="https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-landing-park/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Soaring Eagle Regional Park
+                Sammamish Landing Park
               </a>
-              , swimming and the dog park at{" "}
+              , ballfields at{" "}
               <a
-                href="https://www.sammamish.us/our-community/recreation/parks-trails/beaver-lake-park/"
+                href="https://www.sammamish.us/our-community/recreation/parks-trails/east-sammamish-park/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Beaver Lake Park
+                East Sammamish Park
               </a>
-              , and bike days at{" "}
+              , and bike miles on the{" "}
               <a
-                href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/parks/duthie-hill"
+                href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/east-lake-sammamish"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Duthie Hill Mountain Bike Park
+                East Lake Sammamish Trail
               </a>
               .{" "}
               <a
@@ -622,7 +623,7 @@ const TrossachsPage = () => {
               >
                 The City of Sammamish
               </a>{" "}
-              handles permits and city parks; I-90 is a short run south via Duthie Hill Road when you need Issaquah Highlands or Seattle.
+              handles permits and parks; SR-202 and 228th connect you to Redmond, I-90, and the rest of the Eastside.
             </p>
           </>
         }
@@ -637,17 +638,11 @@ const TrossachsPage = () => {
                 Also Serving Nearby Sammamish Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                From Trossachs we also install in Klahanie just to the west, Pine Lake, Sahalee, Beaver Lake, East Sammamish, and Inglewood. Issaquah Highlands sits a short drive south on Duthie Hill Road.
+                We install fences throughout Sammamish. From Inglewood we also work in Sahalee just to the southeast, Pine Lake, Beaver Lake, Trossachs, and East Sammamish. Redmond sits across the lake via East Lake Sammamish Parkway.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish">Sammamish overview</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/sammamish/klahanie">Klahanie</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/sammamish/pine-lake">Pine Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish/sahalee/hoa-approved-fencing">
@@ -655,10 +650,19 @@ const TrossachsPage = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/sammamish/inglewood">Inglewood</Link>
+                  <Link href="/service-areas/sammamish/pine-lake">Pine Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/issaquah-highlands">Issaquah Highlands</Link>
+                  <Link href="/service-areas/sammamish/beaver-lake">Beaver Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/sammamish/klahanie">Klahanie</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond">Redmond</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>
             </div>
@@ -670,10 +674,10 @@ const TrossachsPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Trossachs Property?
+                Ready to Enhance Your Inglewood Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Trossachs. We&apos;ll walk the trees, talk through HOA review, and quote a fence that fits your Sammamish lot.
+                Same-day estimates available in Inglewood. We&apos;ll walk the slope, talk through view vs. privacy, and quote a fence that fits your Sammamish lot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -691,4 +695,4 @@ const TrossachsPage = () => {
   );
 };
 
-export default TrossachsPage;
+export default InglewoodPage;

@@ -1,4 +1,5 @@
 import serviceAreaPhotos from "@/data/serviceAreaPhotos.json";
+import projectBeforeAfter from "@/data/projectBeforeAfter.json";
 
 export const IMAGEKIT_SERVICE_AREA_BASE =
   "https://ik.imagekit.io/xft9mcl5v/service-area-photos";
@@ -15,6 +16,25 @@ export interface ServiceAreaPhoto {
   lng: number;
   /** Optional full ImageKit URL (same asset as `file`); gallery still uses `file` + transforms. */
   url?: string;
+  phase?: "before" | "after" | "locate";
+  fenceStyle?: string | null;
+  fenceStyleSlug?: string | null;
+  workOrderId?: string;
+}
+
+export interface ProjectBeforeAfterPair {
+  workOrderId: string;
+  completedAt?: string | null;
+  city: string;
+  neighborhood: string | null;
+  fenceStyle: string;
+  fenceStyleSlug: string | null;
+  lat: number;
+  lng: number;
+  beforeFile: string;
+  afterFile: string;
+  beforeAlt: string;
+  afterAlt: string;
 }
 
 /** Section labels in serviceAreaPhotos.json — use `{ "__manifestSection": "..." }` (JSON does not allow // comments). */
@@ -32,6 +52,23 @@ function isManifestPhotoRow(entry: unknown): entry is ServiceAreaPhoto {
 
 const photos = (serviceAreaPhotos as unknown[]).filter(isManifestPhotoRow);
 
+const beforeAfterPairs = (projectBeforeAfter as unknown[]).filter(
+  (entry): entry is ProjectBeforeAfterPair => {
+    if (!entry || typeof entry !== "object") return false;
+    const row = entry as Record<string, unknown>;
+    return (
+      typeof row.workOrderId === "string" &&
+      typeof row.city === "string" &&
+      typeof row.beforeFile === "string" &&
+      typeof row.afterFile === "string"
+    );
+  }
+);
+
+function isGalleryPhoto(photo: ServiceAreaPhoto): boolean {
+  return !photo.phase || photo.phase === "after";
+}
+
 export function slugifyLocation(value: string): string {
   return value
     .toLowerCase()
@@ -40,11 +77,13 @@ export function slugifyLocation(value: string): string {
 }
 
 export function getAllServiceAreaPhotos(): ServiceAreaPhoto[] {
-  return photos;
+  return photos.filter(isGalleryPhoto);
 }
 
 export function getCityPhotosBySlug(citySlug: string): ServiceAreaPhoto[] {
-  return photos.filter((photo) => slugifyLocation(photo.city) === citySlug);
+  return photos.filter(
+    (photo) => isGalleryPhoto(photo) && slugifyLocation(photo.city) === citySlug
+  );
 }
 
 export function getNeighborhoodPhotosBySlugs(
@@ -53,10 +92,41 @@ export function getNeighborhoodPhotosBySlugs(
 ): ServiceAreaPhoto[] {
   return photos.filter(
     (photo) =>
+      isGalleryPhoto(photo) &&
       slugifyLocation(photo.city) === citySlug &&
       photo.neighborhood &&
       slugifyLocation(photo.neighborhood) === neighborhoodSlug
   );
+}
+
+export function getPhotosByFenceStyleSlug(fenceStyleSlug: string): ServiceAreaPhoto[] {
+  return photos.filter(
+    (photo) =>
+      isGalleryPhoto(photo) &&
+      photo.fenceStyleSlug &&
+      photo.fenceStyleSlug === fenceStyleSlug
+  );
+}
+
+export function getProjectBeforeAfterPairs(filter: {
+  city?: string;
+  neighborhood?: string;
+  fenceStyleSlug?: string;
+}): ProjectBeforeAfterPair[] {
+  const citySlug = filter.city ? slugifyLocation(filter.city) : null;
+  const nbSlug = filter.neighborhood ? slugifyLocation(filter.neighborhood) : null;
+  const styleSlug = filter.fenceStyleSlug || null;
+
+  return beforeAfterPairs.filter((pair) => {
+    if (styleSlug && pair.fenceStyleSlug !== styleSlug) return false;
+    if (citySlug && slugifyLocation(pair.city) !== citySlug) return false;
+    if (nbSlug) {
+      return pair.neighborhood
+        ? slugifyLocation(pair.neighborhood) === nbSlug
+        : false;
+    }
+    return true;
+  });
 }
 
 export function getCityNameBySlug(citySlug: string): string | null {
