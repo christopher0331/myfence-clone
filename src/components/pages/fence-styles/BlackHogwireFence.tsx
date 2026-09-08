@@ -7,12 +7,30 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Shield, Eye, Wrench } from "lucide-react";
 import Link from "next/link";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  type ServiceAreaPhoto,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
+
+const klahanieHogwirePhotos = getNeighborhoodPhotosBySlugs("sammamish", "klahanie").filter(
+  (photo) => photo.file.includes("Fence-Installation")
+);
+const KLAHANIE_HOGWIRE_SUFFIXES = [
+  "Klahanie-Fence-Installation-1.webp",
+  "Klahanie-Fence-Installation-3.webp",
+] as const;
+
+const klahanieHogwireGallery = KLAHANIE_HOGWIRE_SUFFIXES.map((suffix) =>
+  klahanieHogwirePhotos.find((photo) => photo.file.endsWith(suffix))
+).filter((photo): photo is ServiceAreaPhoto => Boolean(photo));
 
 const BlackHogwireFence = () => {
   return (
@@ -54,27 +72,31 @@ const BlackHogwireFence = () => {
               "returnFees": "https://schema.org/FreeReturn"
             }
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "112"
-          },
           "manufacturer": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
             "name": "MyFence.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Seattle",
-              "addressRegion": "WA"
-            },
+            "address": SCHEMA_ADDRESS,
             "telephone": "+1-253-455-1885"
           }
         }}
       />
       
       <div className="min-h-screen bg-background">
-        {/* Navigation */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-4">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">Fence Styles</Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">Black Hogwire Fence</span>
+            </div>
+          </div>
+        </nav>
+
+        {/* Back Button */}
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           <Button variant="ghost" asChild className="mb-2">
             <Link href="/fence-styles" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
@@ -156,6 +178,36 @@ const BlackHogwireFence = () => {
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Black Hogwire Fence Gallery</h2>
+
+            {klahanieHogwireGallery.length > 0 && (
+              <div className="max-w-4xl mx-auto mb-12">
+                <Card className="p-6 mb-6 border-primary/20 bg-primary/5">
+                  <p className="text-foreground leading-relaxed">
+                    Black hogwire with a cedar frame on a{" "}
+                    <Link href="/service-areas/sammamish/klahanie" className="text-primary font-medium hover:underline">
+                      Klahanie, Sammamish
+                    </Link>{" "}
+                    lot — pet containment and a clean boundary without blocking light through the neighborhood tree canopy.
+                  </p>
+                </Card>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {klahanieHogwireGallery.map((photo) => (
+                    <AspectRatio key={photo.file} ratio={4 / 3}>
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        alt={
+                          photo.neighborhoodAlt ??
+                          "Black hogwire fence with cedar frame in Klahanie, Sammamish"
+                        }
+                        loading="lazy"
+                        className="h-full w-full rounded-lg object-cover shadow-md"
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <img
                 src="/lovable-uploads/7f467c89-d3c2-4358-8880-019c3b17581a.png"
@@ -292,13 +344,13 @@ const BlackHogwireFence = () => {
                 
                 {/* Right 1/3 - Video */}
                 <div className="lg:col-span-1">
-                  <h3 className="text-xl font-semibold mb-4 text-center">See It In Action</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-center">Hog Wire in Issaquah, WA</h3>
                   <div className="w-full">
                     <AspectRatio ratio={9/16}>
                       <iframe
                         className="rounded-lg shadow-2xl w-full h-full"
-                        src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
-                        title="Black Hogwire Fence Installation"
+                        src="https://www.youtube-nocookie.com/embed/9Wm8SnTomK0?playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                        title="Hog wire fence installation in Issaquah, WA by MyFence.com"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                         loading="lazy"

@@ -3,38 +3,52 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Link from "next/link";
 import OptimizedImage from "@/components/OptimizedImage";
-import { blogArticles } from "@/data/blogArticles";
+import type { BlogPostListItem } from "@/lib/blog";
 
 interface BlogSectionProps {
+  articles: BlogPostListItem[];
   limit?: number;
+  isPage?: boolean;
 }
 
-const BlogSection = ({ limit }: BlogSectionProps) => {
-  const featuredArticles = limit ? blogArticles.slice(0, limit) : blogArticles;
+const BlogSection = ({ articles, limit, isPage }: BlogSectionProps) => {
+  const featuredArticles = limit ? articles.slice(0, limit) : articles;
+  const HeadingTag = (!limit || isPage) ? "h1" : "h2";
 
   return (
     <section className="bg-background pt-8 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <HeadingTag className="text-3xl md:text-4xl font-bold mb-4">
             Expert Fence Insights & Advice
-          </h2>
+          </HeadingTag>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Get professional advice on fence installation, maintenance, and costs from Seattle's trusted fencing experts
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {featuredArticles.map((article) => (
-            <Link key={article.id} href={`/blog/${article.id}`} className="block">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+          {featuredArticles.map((article, index) => {
+            const imgSrc = typeof article.image === "string" ? article.image : article.image?.src;
+            const isFourthOnMobile = limit === 4 && index === 3;
+            return (
+            <Link
+              key={article.id}
+              href={`/blog/${article.id}`}
+              className={`block ${isFourthOnMobile ? "hidden sm:block" : ""}`}
+            >
               <Card className="group cursor-pointer hover:shadow-lg transition-shadow h-full">
                 <CardHeader className="p-0">
                   <AspectRatio ratio={4/3}>
+                    {imgSrc ? (
                     <OptimizedImage
-                      src={article.image}
+                      src={imgSrc}
                       alt={article.title}
                       className="w-full h-full object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300"
                     />
+                    ) : (
+                      <div className="w-full h-full bg-muted flex items-center justify-center rounded-t-lg text-muted-foreground text-sm">No image</div>
+                    )}
                   </AspectRatio>
                 </CardHeader>
                 <CardContent className="p-6">
@@ -63,7 +77,8 @@ const BlogSection = ({ limit }: BlogSectionProps) => {
                 </CardContent>
               </Card>
             </Link>
-          ))}
+          );
+          })}
         </div>
 
         <div className="text-center">

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Sumner from "@/components/service-areas/sumner";
 
 export const metadata: Metadata = {
-  title: "sumner Fence Installation | Valley & Small-Town Properties",
+  title: "Sumner Fence Installation | Valley & Small-Town Properties | MyFence.com",
   description:
-    "Fence installation in sumner, WA. Designed for valley-floor lots, older homes, and small-town neighborhoods.",
+    "Fence installation in Sumner, WA. Designed for valley-floor lots, older homes, and small-town neighborhoods.",
   alternates: { canonical: "https://myfence.com/service-areas/sumner" },
 };
 

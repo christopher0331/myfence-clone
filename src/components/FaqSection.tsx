@@ -5,15 +5,20 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { HelpCircle } from "lucide-react";
 import { faqCategories } from "@/data/faqData";
 
-export const FaqSection = () => {
+interface FaqSectionProps {
+  isPage?: boolean;
+}
+
+export const FaqSection = ({ isPage = false }: FaqSectionProps) => {
   const [selectedCategory, setSelectedCategory] = useState("installation");
   
   const activeCategory = faqCategories.find(cat => cat.id === selectedCategory) || faqCategories[0];
+  const HeadingTag = isPage ? "h1" : "h2";
 
   return (
     <section className="container py-12 md:py-16">
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold">Frequently Asked Questions</h2>
+        <HeadingTag className="text-3xl md:text-4xl font-bold">Frequently Asked Questions</HeadingTag>
         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
           Get answers to common questions about fence installation, pricing, and maintenance in Seattle.
         </p>

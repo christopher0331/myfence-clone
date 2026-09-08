@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -7,22 +9,36 @@ import { imageKitLoader } from "@/lib/imagekit";
 import type { ImageLoader } from "next/image";
 
 interface PopularStylesSectionProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
 const pictureFrameHeroUrl =
   "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/Picture%20Frame/Pictrue%20Frame%20Fence%20Hero.webp?updatedAt=1762037742056";
 
-// Heavier compression + clamp width for mobile; leave desktop quality unchanged.
-const mobileCompressedPictureFrameLoader: ImageLoader = ({ src, width, quality }) => {
-  const targetW = width <= 640 ? 328 : width;
-  const q = width <= 640 ? 32 : quality ?? 80;
-  const url = new URL(src);
-  url.searchParams.set("tr", `w-${targetW},q-${q}`);
-  return url.toString();
-};
+const threeRailHeroUrl =
+  "https://ik.imagekit.io/xft9mcl5v/Webp_Converter_Folder_webp/3%20Rail%20Picture%20Frame/3%20Rail%20Picture%20Frame%20Pre-Stained%20Fence%20Fence%20Genius.webp?updatedAt=1762037642699";
+
+/** Same asset as Horizontal Lattice Fence on /fence-styles */
+const horizontalLatticeHeroUrl = "/lovable-uploads/8f73dbbc-942c-4ab6-9fda-bb95aa702af4.png";
 
 export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionProps) => {
+  const EstimateButton = ({ label }: { label: string }) => {
+    if (onOpenQuoteModal) {
+      return (
+        <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label={`Click here for Free Estimate for ${label}`}>
+          Click here for Free Estimate
+        </Button>
+      );
+    }
+    return (
+      <Button className="mt-3 w-full" asChild>
+        <Link href="/quote" aria-label={`Click here for Free Estimate for ${label}`}>
+          Click here for Free Estimate
+        </Link>
+      </Button>
+    );
+  };
+
   return (
     <section className="container py-12 md:py-16">
       <h2 className="text-2xl md:text-3xl font-bold">Popular Fence Styles in Seattle</h2>
@@ -39,8 +55,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
                       src={pictureFrameHeroUrl}
                       alt="Picture frame cedar fence by MyFence.com in Seattle"
                       fill
-                      // Keep slot size accurate; DPR may still request a larger width for crispness.
-                      sizes="(max-width: 640px) 328px, (max-width: 1024px) 300px, 360px"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
                       className="object-cover"
                     />
                   </div>
@@ -50,7 +65,7 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <div className="p-4 text-center">
               <h3 className="font-semibold">Picture Frame Fences</h3>
               <p className="text-sm text-muted-foreground">Clean lines, framed panels.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for Picture Frame Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="Picture Frame Fence" />
             </div>
           </CardContent>
         </Card>
@@ -59,14 +74,23 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <Link href="/fence-styles/3-rail-picture-frame-fence" className="block">
               <div className="glass-frame hover:opacity-90 transition-opacity">
                 <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/3ec61262-f5b7-49bf-8010-8dff863ca81b.png" alt="3 rail picture frame cedar fence installation in Seattle" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  <div className="relative h-full w-full">
+                    <Image
+                      loader={imageKitLoader}
+                      src={threeRailHeroUrl}
+                      alt="3 rail picture frame cedar fence installation in Seattle"
+                      fill
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                      className="object-cover"
+                    />
+                  </div>
                 </AspectRatio>
               </div>
             </Link>
             <div className="p-4 text-center">
               <h3 className="font-semibold">3 Rail Picture Frame Fence</h3>
               <p className="text-sm text-muted-foreground">Sturdy rails with a premium look.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for 3 Rail Picture Frame Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="3 Rail Picture Frame Fence" />
             </div>
           </CardContent>
         </Card>
@@ -75,14 +99,22 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
             <Link href="/fence-styles/horizontal-lattice-fence" className="block">
               <div className="glass-frame hover:opacity-90 transition-opacity">
                 <AspectRatio ratio={1}>
-                  <img src="/lovable-uploads/6ca53c52-066f-4174-81fb-cf30fd6b64fd.png" alt="Horizontal lattice top cedar fence by MyFence.com" loading="lazy" className="w-full h-full object-cover" width={1080} height={1080} />
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={horizontalLatticeHeroUrl}
+                      alt="Horizontal lattice top cedar fence by MyFence.com"
+                      fill
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+                      className="object-cover"
+                    />
+                  </div>
                 </AspectRatio>
               </div>
             </Link>
             <div className="p-4 text-center">
               <h3 className="font-semibold">Horizontal Lattice & Trellis Systems</h3>
               <p className="text-sm text-muted-foreground">Modern privacy with airflow.</p>
-              <Button className="mt-3 w-full" onClick={onOpenQuoteModal} aria-label="Click here for Free Estimate for Horizontal Lattice Fence">Click here for Free Estimate</Button>
+              <EstimateButton label="Horizontal Lattice Fence" />
             </div>
           </CardContent>
         </Card>

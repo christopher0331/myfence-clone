@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Shield, Sparkles, DollarSign, Clock, Palette, Lock } from "lucide-react";
 import Link from "next/link";
 import Seo from "@/components/Seo";
+import { SCHEMA_ADDRESS } from "@/constants/siteConfig";
 import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
@@ -17,9 +18,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  getNeighborhoodPhotosBySlugs,
+  buildImageUrl,
+  buildResponsiveSrcSet,
+} from "@/lib/serviceAreaPhotoUtils";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
-const heroImg = "/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png";
+const heroImg = "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp";
 const diagramImg = "/lovable-uploads/cedar-aluminum-hybrid-diagram.png";
 const panelSingleImg = "/lovable-uploads/barrier-boss-panel-single.png";
 const panelsCloseupImg = "/lovable-uploads/barrier-boss-panels-closeup.png";
@@ -69,7 +75,7 @@ const CedarAluminumHybridFence = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cedar/Steel Hybrid Fence",
-    "image": "https://myfence.com/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png",
+    "image": "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp",
     "description": "Modern industrial fence combining 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Ultimate privacy with zero maintenance on panels. Starting at $80/LF.",
     "brand": {
       "@type": "Brand",
@@ -113,21 +119,10 @@ const CedarAluminumHybridFence = () => {
         "returnFees": "https://schema.org/FreeReturn"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "247",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "manufacturer": {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       "name": "MyFence.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Seattle",
-        "addressRegion": "WA"
-      },
+      "address": SCHEMA_ADDRESS,
       "telephone": "+1-253-455-1885"
     }
   };
@@ -138,13 +133,26 @@ const CedarAluminumHybridFence = () => {
         title="Cedar/Steel Hybrid Fence Seattle | Modern Privacy Fence"
         description="Premium cedar/steel hybrid fence in Seattle. 26 gauge corrugated steel panels with HDP NoFade™ paint and cedar framing. Zero maintenance, ultimate privacy. Starting at $80/LF. Call (253) 455-1885."
         canonical="https://myfence.com/fence-styles/cedar-steel-hybrid-fence"
-        image="/lovable-uploads/cedar-aluminum-hybrid-fence-hero.png"
+        image="https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Daybreak-at-River-Ridge-Steel-Cedar-Hybrid-4.webp"
         structuredData={[productStructuredData, faqStructuredData]}
       />
       
       <div className="min-h-screen bg-background">
-        {/* Navigation */}
-        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-4">
+        {/* Breadcrumb Navigation */}
+        <nav className="bg-background pt-4 pb-2 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+              <span className="text-muted-foreground">/</span>
+              <Link href="/fence-styles" className="text-muted-foreground hover:text-primary transition-colors">Fence Styles</Link>
+              <span className="text-muted-foreground">/</span>
+              <span className="text-foreground font-medium">Cedar/Steel Hybrid Fence</span>
+            </div>
+          </div>
+        </nav>
+
+        {/* Back Button */}
+        <div className="container mx-auto px-4 pt-4 md:pt-28 pb-6">
           <Button variant="ghost" asChild className="mb-2">
             <Link href="/fence-styles" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
@@ -181,7 +189,7 @@ const CedarAluminumHybridFence = () => {
                 <img
                   src={heroImg}
                   alt="Cedar/Steel Hybrid Fence with black corrugated steel panels and natural cedar framing installed in backyard"
-                  className="rounded-lg shadow-2xl w-full"
+                  className="rounded-lg shadow-2xl w-3/4 mx-auto block"
                   loading="eager"
                 />
               </div>
@@ -291,10 +299,94 @@ const CedarAluminumHybridFence = () => {
           </div>
         </section>
 
+        {/* ColorMax Night Sky Gallery — Daybreak at River Ridge, Maple Valley */}
+        {(() => {
+          const photos = getNeighborhoodPhotosBySlugs("maple-valley", "daybreak-at-river-ridge");
+          if (!photos.length) return null;
+          return (
+            <section className="py-16">
+              <div className="container mx-auto px-4">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold mb-4">Steel Cedar Hybrid — ColorMax Night Sky</h2>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Shown in <span className="font-semibold text-foreground">ColorMax Night Sky</span> — a deep, rich black finish that contrasts beautifully with natural cedar framing. Installed in Daybreak at River Ridge, Maple Valley.
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {photos.map((photo, i) => (
+                    <div key={photo.file} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={buildImageUrl(photo.file, 800)}
+                        srcSet={buildResponsiveSrcSet(photo.file, 800)}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        alt={photo.neighborhoodAlt ?? `Steel cedar hybrid fence ColorMax Night Sky ${i + 1}`}
+                        width={photo.width}
+                        height={photo.height}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <p className="text-white text-sm font-medium">{photo.neighborhoodAlt}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground text-center mt-6">
+                  ColorMax Night Sky is one of many HDP NoFade™ paint options available. Contact us for the full color selection.
+                </p>
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Installation Video */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+              <div className="w-full md:w-56 shrink-0">
+                <AspectRatio ratio={9 / 16}>
+                  <iframe
+                    className="rounded-lg shadow-2xl w-full h-full"
+                    src="https://www.youtube-nocookie.com/embed/Z3kSNBDkHck?playsinline=1&rel=0&modestbranding=1&vq=hd1080"
+                    title="Steel Cedar Hybrid Fence Gate — Maple Valley"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Completed Project — Maple Valley</h2>
+                <p className="text-muted-foreground">
+                  A finished steel cedar hybrid fence installed in Maple Valley. This clip shows the completed gate — smooth operation, matching corrugated steel panels, and the same cedar framing as the fence line.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Panel Gallery */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Barrier Boss Deep Groove Panels</h2>
+            <div className="max-w-4xl mx-auto mb-12">
+              <Card className="overflow-hidden pointer-events-none">
+                <CardContent className="p-0">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      className="w-full h-full pointer-events-none"
+                      src="https://www.youtube.com/embed/y1gHU5GDPt4?autoplay=1&mute=1&loop=1&playlist=y1gHU5GDPt4&controls=0&playsinline=1&modestbranding=1&rel=0"
+                      title="Barrier Boss Deep Groove Panels"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+                </CardContent>
+              </Card>
+            </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div>
                 <img
@@ -489,6 +581,32 @@ const CedarAluminumHybridFence = () => {
 
         {/* Virtual Quote Tool */}
         <VirtualQuoteTool fenceStyleName="Cedar/Steel Hybrid Fence" />
+
+        {/* Further Reading */}
+        <section className="py-12 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl font-bold mb-4">Further Reading</h2>
+              <p className="text-muted-foreground mb-6">
+                Learn more about this fence style and how it compares to traditional options.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link
+                  href="/blog/cedar-steel-hybrid-fence"
+                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                >
+                  Deep Dive: Cedar/Steel Hybrid Fence Guide →
+                </Link>
+                <Link
+                  href="/blog/six-ft-fence-cost"
+                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                >
+                  What Does a 6-Foot Fence Cost? →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Form */}
         <section className="py-16">

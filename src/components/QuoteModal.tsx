@@ -1,16 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { AddressAutocomplete } from "@/components/ui/AddressAutocomplete";
+import ServiceProviderRecommendations from "@/components/ServiceProviderRecommendations";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
+import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+
+const FORM_KEY = "quote-modal";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -19,64 +27,119 @@ interface QuoteModalProps {
 
 const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
+  const [textConsentError, setTextConsentError] = useState(false);
+  const [addressValid, setAddressValid] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     address: "",
-    projectDescription: ""
+    projectDescription: "",
+    textConsent: false,
   });
   const { toast } = useToast();
+
+  // Record the modal open as a quote CTA (the open buttons live on multiple fence-style pages).
+  useEffect(() => {
+    if (isOpen) trackCtaClick({ ctaType: "quote", ctaDestination: "quote-modal" });
+  }, [isOpen]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
+      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
+    if (name === "phone" && value.trim() === "") {
+      setTextConsentError(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.address.trim() || !addressValid) {
+      toast({
+        title: !formData.address.trim() ? "Address required" : "Invalid address",
+        description: !formData.address.trim()
+          ? "Please enter your property address."
+          : "Please select an address from the dropdown suggestions.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      setTextConsentError(true);
+      document.getElementById("quote-modal-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      const sourcePage = buildSourcePage(FORM_KEY);
+      const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.fullName || "").trim().split(/\s+/).filter(Boolean);
 
-      let leadError: string | null = null;
+      // Keep dual-path delivery for reliability: CRM first, then the email notification.
+      const crm = await submitLeadToCrm({
+        firstName: first || "",
+        lastName: rest.join(" "),
+        email: formData.email,
+        phone: formData.phone,
+        propertyAddress: formData.address,
+        fenceType: "Quote Modal",
+        message: formData.projectDescription,
+        textConsent: formData.textConsent,
+        sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+      });
+
+      let emailError: string | null = null;
       try {
-        const lead = await supabase.functions.invoke("send-website-lead-webhook", {
+        const legacy = await supabase.functions.invoke("send-contact-form", {
           body: {
             firstName: first || "",
             lastName: rest.join(" "),
             email: formData.email,
             phone: formData.phone,
-            propertyAddress: formData.address,
-            fenceType: "Quote Modal",
-            message: formData.projectDescription,
+            address: formData.address,
+            description: `${crmFailureNotice(crm)}[Quote Request]\n${formData.projectDescription}`,
+            textConsent: formData.textConsent,
+            sourcePage,
+            site: attribution.site,
+            formId: attribution.formId,
+            formSku: deriveFormSku(),
+            originPage: attribution.originPage,
           },
-        });
-        if (lead.error) leadError = lead.error.message;
-      } catch (e) {
-        leadError = e instanceof Error ? e.message : String(e);
-      }
-
-      // Always send the legacy quote email notification too (info@myfence.com).
-      let emailError: string | null = null;
-      try {
-        const legacy = await supabase.functions.invoke("send-quote-request", {
-          body: formData,
         });
         if (legacy.error) emailError = legacy.error.message;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
 
-      // Only fail if BOTH webhook + email failed.
-      if (leadError && emailError) {
-        throw new Error(leadError || emailError || "Failed to send quote request");
+      // Only fail if BOTH the CRM and the email notification fail.
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError || "Failed to send quote request");
       }
-      
+
+      trackFormSubmit(FORM_KEY, { formType: "quote" });
+
       // Trigger fireworks animation
       burstFirework();
 
@@ -84,17 +147,14 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours with a detailed quote.",
       });
-      
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        address: "",
-        projectDescription: ""
+
+      setSubmittedData({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
       });
-      
-      onClose();
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Quote request submission error:', error);
       toast({
@@ -107,9 +167,38 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     }
   };
 
+  const handleClose = () => {
+    if (isSubmitted) {
+      setIsSubmitted(false);
+      setSubmittedData(null);
+      setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "", textConsent: false });
+    }
+    onClose();
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+    <Dialog open={isOpen} onOpenChange={handleClose}>
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+        {isSubmitted && submittedData ? (
+          <>
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-center">Quote Request Sent! 🎉</DialogTitle>
+              <p className="text-muted-foreground text-center">
+                We'll get back to you within 24 hours with a detailed quote.
+              </p>
+            </DialogHeader>
+            <ServiceProviderRecommendations
+              customerName={submittedData.name}
+              customerEmail={submittedData.email}
+              customerPhone={submittedData.phone}
+              customerAddress={submittedData.address}
+            />
+            <Button variant="outline" onClick={handleClose} className="w-full mt-2">
+              Close
+            </Button>
+          </>
+        ) : (
+          <>
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">Get Your Free Quote</DialogTitle>
           <p className="text-muted-foreground text-center">
@@ -160,17 +249,43 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               inputMode="tel"
             />
           </div>
+          {formData.phone.trim() ? (
+            <>
+              <div
+                id="quote-modal-text-consent-row"
+                className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+              >
+                <Checkbox
+                  id="quote-modal-text-consent"
+                  checked={formData.textConsent}
+                  onCheckedChange={(checked) => {
+                    const consentGiven = checked === true;
+                    setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
+                    if (consentGiven) setTextConsentError(false);
+                  }}
+                />
+                <Label
+                  htmlFor="quote-modal-text-consent"
+                  className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                >
+                  {TEXT_CONSENT_MESSAGE}
+                </Label>
+              </div>
+              {textConsentError ? (
+                <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+              ) : null}
+            </>
+          ) : null}
 
           <div className="space-y-2">
             <Label htmlFor="address">Project Address *</Label>
-            <Input
+            <AddressAutocomplete
               id="address"
-              name="address"
               value={formData.address}
-              onChange={handleInputChange}
+              onChange={(val) => setFormData((prev) => ({ ...prev, address: val }))}
+              onValidChange={setAddressValid}
               required
               placeholder="Street address, City, State, ZIP"
-              autoComplete="street-address"
             />
           </div>
 
@@ -192,7 +307,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             <Button
               type="button"
               variant="outline"
-              onClick={onClose}
+              onClick={handleClose}
               className="w-full sm:flex-1"
               disabled={isSubmitting}
             >
@@ -219,6 +334,8 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
           <p>✓ <strong>{WARRANTY_CONSTANTS.TITLE}</strong> on all installations</p>
           <p>Questions? Call us directly at <strong>(253) 455-1885</strong></p>
         </div>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );

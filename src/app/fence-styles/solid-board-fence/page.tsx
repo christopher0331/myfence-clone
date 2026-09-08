@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://myfence.com/fence-styles/solid-board-fence",
   },
+  openGraph: {
+    title: "Budget Solid Board Fence Seattle | Economical Cedar Privacy Fencing",
+    description: "Affordable solid board cedar fence in Seattle. Budget-friendly option with 2 rails, stainless steel fasteners. Quality installation. Call (253) 455-1885.",
+    url: "https://myfence.com/fence-styles/solid-board-fence",
+    images: [
+      {
+        url: "https://myfence.com/lovable-uploads/641f2848-38da-4ddc-aeae-4d93503830ca.png",
+        width: 1200,
+        height: 630,
+        alt: "Solid board cedar fence in Seattle by MyFence.com",
+      },
+    ],
+  },
 };
 
 export default function SolidBoardFencePage() {

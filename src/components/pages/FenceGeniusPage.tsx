@@ -435,6 +435,26 @@ const FenceGeniusPage = () => {
         </div>
       </section>
 
+      {/* Further Reading */}
+      <section className="py-10 bg-muted/20">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-4">Helpful Resources</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/blog/virtual-quote-tool" className="text-primary hover:underline font-medium">
+                How Our Virtual Quote Tool Works →
+              </Link>
+              <Link href="/blog/six-ft-fence-cost" className="text-primary hover:underline font-medium">
+                What Does a 6-Foot Fence Cost? →
+              </Link>
+              <Link href="/fence-styles" className="text-primary hover:underline font-medium">
+                Browse All Fence Styles →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Summary */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container">

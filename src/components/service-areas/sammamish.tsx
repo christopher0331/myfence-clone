@@ -1,12 +1,12 @@
 import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
-import Seo from "@/components/Seo";
+import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const SammamishArticle = () => (
   <div className="space-y-8">
     <section>
-      <h2 className="text-3xl font-bold mb-6">Professional Fence Installation in Sammamish</h2>
+      <h2 className="text-3xl font-bold mb-6">Professional Fence Installation</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           Sammamish represents the pinnacle of family-oriented suburban living in the Pacific Northwest. With top-rated schools, large properties, and abundant natural beauty, Sammamish homeowners demand fencing solutions that provide security for children and pets while enhancing their property's aesthetic appeal.
@@ -17,29 +17,10 @@ const SammamishArticle = () => (
       </div>
     </section>
 
-    <section>
-      <h2 className="text-3xl font-bold mb-6">Why Sammamish Families Choose {SITE_CONFIG.shortName}</h2>
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">12+</div>
-          <div className="text-lg font-semibold mb-2">Years Experience</div>
-          <p className="text-muted-foreground">Trusted by Sammamish families throughout the Eastside</p>
-        </div>
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">98%</div>
-          <div className="text-lg font-semibold mb-2">Customer Satisfaction</div>
-          <p className="text-muted-foreground">Backed by hundreds of 5-star reviews from Sammamish neighbors</p>
-        </div>
-        <div className="bg-card p-6 rounded-lg border">
-          <div className="text-4xl font-bold text-primary mb-2">{WARRANTY_CONSTANTS.YEARS}-Year</div>
-          <div className="text-lg font-semibold mb-2">Workmanship Warranty</div>
-          <p className="text-muted-foreground">Comprehensive coverage on all installations for your peace of mind</p>
-        </div>
-      </div>
-    </section>
+    
 
     <section>
-      <h2 className="text-3xl font-bold mb-6">Flexible Financing Options in Sammamish</h2>
+      <h2 className="text-3xl font-bold mb-6">Flexible Financing Options</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           We know that protecting your family and property is a priority. Through our partnership with Wisetack, Sammamish homeowners can access flexible financing solutions that make quality fencing affordable. Get approved in minutes with no impact to your credit score during the application process.
@@ -69,7 +50,7 @@ const SammamishArticle = () => (
     </section>
 
     <section>
-      <h2 className="text-3xl font-bold mb-6">Sammamish Climate Considerations</h2>
+      <h2 className="text-3xl font-bold mb-6">Local Climate Considerations</h2>
       <div className="prose prose-lg max-w-none space-y-4">
         <p>
           Sammamish's Eastside plateau location provides a slightly drier climate than Seattle, though Pacific Northwest moisture still demands quality materials and proper installation techniques. Our fences are designed to handle the region's wet winters while maintaining their beauty through sunny summers.
@@ -194,53 +175,85 @@ const sammamishLocalBusinessLd = {
       "name": "Washington"
     }
   },
-  "url": `${SITE_CONFIG.url}/service-areas/sammamish`,
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247"
-  }
+  "url": `${SITE_CONFIG.url}/service-areas/sammamish`
 };
 
 const Sammamish = () => {
-  const structuredData = [sammamishFaqLd, sammamishLocalBusinessLd];
-  
+  const sammamishAttractions: LocalAttraction[] = [
+    {
+      name: "Lake Sammamish State Park",
+      description: "A beautiful 531-acre park offering two large swimming beaches, extensive trails, and excellent water access.",
+      url: "https://parks.wa.gov/find-parks/state-parks/lake-sammamish-state-park"
+    },
+    {
+      name: "Pine Lake Park",
+      description: "A peaceful community park nestled under tall evergreens, featuring a swimming beach, fishing dock, and summer concert series.",
+      url: "https://www.sammamish.us/our-community/recreation/parks-trails/pine-lake-park/"
+    },
+    {
+      name: "Soaring Eagle Regional Park",
+      description: "A sprawling 600-acre natural area with a vast network of trails popular among mountain bikers, trail runners, and equestrians.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle"
+    },
+    {
+      name: "Beaver Lake Park",
+      description: "A tranquil 54-acre park offering forested walking trails, a lodge for events, and access to the serene Beaver Lake.",
+      url: "https://www.sammamish.us/our-community/recreation/parks-trails/beaver-lake-park/"
+    },
+    {
+      name: "East Lake Sammamish Trail",
+      description: "An 11-mile paved trail following a historic railroad route, providing a safe and scenic path for cyclists and pedestrians.",
+      url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/east-lake-sammamish"
+    }
+  ];
+
+  const sammamishLivingContent = (
+    <div className="space-y-4 text-muted-foreground leading-relaxed">
+      <p>
+        Consistently ranked as one of the best places to live in the United States, Sammamish is a family-centric city characterized by its excellent education system and stunning natural environment. The community is served by two top-tier districts: the <a href="https://www.isd411.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Issaquah School District</a> and the <a href="https://www.lwsd.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Washington School District</a>, drawing families who prioritize academic excellence. Community life often revolves around the <a href="https://www.sammamish.us/our-community/recreation/parks-trails/sammamish-commons/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Sammamish Commons</a>, a central civic campus that hosts the local library, city hall, and popular seasonal events like the Farmers Market.
+      </p>
+      <p>
+        The lifestyle in Sammamish is deeply connected to the outdoors, with the city offering an impressive array of recreational opportunities right at residents' doorsteps. Whether it's boating on <a href="https://parks.wa.gov/find-parks/state-parks/lake-sammamish-state-park" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Lake Sammamish</a> during the summer, or exploring the dense forests of <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/backcounty-trails/soaring-eagle" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Soaring Eagle Park</a>, the area caters to nature lovers. The active <a href="https://www.sammamish.us/our-community/recreation/parks-trails/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline decoration-2 underline-offset-4">Parks and Recreation department</a> ensures well-maintained facilities and programs for all ages, creating a tight-knit, upscale suburban community that feels miles away from the bustle of the city, yet remains conveniently close to major Eastside employment hubs.
+      </p>
+    </div>
+  );
+
   return (
     <>
-      <Seo
-        title="Sammamish Fence Installation | Safe Family Neighborhoods"
-        description="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 478-8589."
-        canonical={`${SITE_CONFIG.url}/service-areas/sammamish`}
-        structuredData={structuredData}
-      />
       <ServiceAreaTemplate 
         city="Sammamish" 
         state="WA"
         heroTitle="Premium Fencing for Sammamish's Family-Focused Communities"
         heroDescription="Serving Sammamish's top-rated school neighborhoods with safe, durable fencing solutions. From Pine Lake to Sahalee, we build backyard boundaries that let kids and pets play while maintaining your property's natural beauty."
         metaTitle="Sammamish Fence Installation | Safe Family Neighborhoods"
-        metaDescription="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 478-8589."
+        metaDescription="Premium fencing for Sammamish's top-rated school neighborhoods. Safe, durable solutions for families. Pine Lake to Sahalee. Kid & pet-friendly designs with natural beauty. Call (253) 455-1885."
       zipCodes={["98074", "98075"]}
       neighborhoods={[
         {
           name: "Pine Lake",
-          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views"
+          description: "Lakeside community with water access properties requiring moisture-resistant installations and designs that preserve recreational lake views. Click to learn more →",
+          link: "/service-areas/sammamish/pine-lake"
         },
         {
           name: "Beaver Lake",
-          description: "Family-oriented neighborhood with top-rated schools needing secure fencing for children and pets with high-quality materials"
+          description: "Family-oriented neighborhood around two kettle lakes, with school-area yards and forest-edge lots needing secure fencing for children and pets. Click to learn more →",
+          link: "/service-areas/sammamish/beaver-lake"
         },
         {
           name: "Sahalee",
-          description: "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards"
+          description:
+            "Exclusive golf course community with luxury estates demanding premium clear cedar and custom designs meeting strict HOA standards. Download Sahalee HOA fence forms →",
+          link: "/service-areas/sammamish/sahalee/hoa-approved-fencing",
         },
         {
           name: "Trossachs",
-          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration"
+          description: "Upscale wooded neighborhood with large lots backing onto forests requiring wildlife-deterrent fencing and natural aesthetic integration. Click to learn more →",
+          link: "/service-areas/sammamish/trossachs"
         },
         {
           name: "Klahanie",
-          description: "Master-planned community with detailed architectural guidelines requiring approved designs and committee review for all installations"
+          description: "Master-planned community with detailed architectural guidelines requiring approved designs and committee review for all installations. Click to learn more →",
+          link: "/service-areas/sammamish/klahanie"
         },
         {
           name: "East Sammamish",
@@ -248,7 +261,8 @@ const Sammamish = () => {
         },
         {
           name: "Inglewood",
-          description: "Growing family neighborhood with newer construction requiring modern fence designs that complement contemporary architecture"
+          description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
+          link: "/service-areas/sammamish/inglewood"
         }
       ]}
       landmarks={[
@@ -279,6 +293,11 @@ const Sammamish = () => {
       faqStructuredData={sammamishFaqLd}
       enhancedBusinessData={sammamishLocalBusinessLd}
     />
+      <AboutTheArea 
+        cityName="Sammamish"
+        attractions={sammamishAttractions}
+        localLivingContent={sammamishLivingContent}
+      />
     </>
   );
 };

@@ -5,17 +5,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, CheckCircle, Sun } from "lucide-react";
 import Seo from "@/components/Seo";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
-import { useMemo, useEffect, useRef, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
+import { useMemo, useState } from "react";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArticleSummary } from "@/components/ArticleSummary";
 import FenceStylesPreview from "@/components/FenceStylesPreview";
+import { useTrustindexReviews } from "@/hooks/useTrustindexReviews";
+import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
+import FeaturedProject from "@/components/service-areas/FeaturedProject";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 export interface Neighborhood {
   name: string;
   description: string;
   link?: string;
+}
+
+export interface VideoTag {
+  label: string;
+  link: string;
 }
 
 interface ServiceAreaTemplateProps {
@@ -34,6 +43,166 @@ interface ServiceAreaTemplateProps {
   articleContent?: React.ReactNode;
   faqStructuredData?: any;
   enhancedBusinessData?: any;
+  videoTags?: VideoTag[];
+  galleryForceGrid?: boolean;
+}
+
+const DEFAULT_BUSINESS_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: SITE_CONFIG.address.street,
+  addressLocality: SITE_CONFIG.address.city,
+  addressRegion: SITE_CONFIG.address.state,
+  postalCode: SITE_CONFIG.address.zip,
+  addressCountry: SITE_CONFIG.address.country,
+} as const;
+
+function sanitizeLocalBusinessNodes(value: any, isRoot = false): any {
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeLocalBusinessNodes(item, false));
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  const result: Record<string, any> = {};
+  for (const [key, child] of Object.entries(value)) {
+    result[key] = sanitizeLocalBusinessNodes(child, false);
+  }
+
+  const typeField = result["@type"];
+  const includesLocalBusiness = Array.isArray(typeField)
+    ? typeField.includes("LocalBusiness")
+    : typeField === "LocalBusiness";
+
+  if (includesLocalBusiness && !result.address) {
+    if (isRoot) {
+      result.address = DEFAULT_BUSINESS_ADDRESS;
+    } else {
+      // Nested providers without an address should be Organization to avoid invalid LocalBusiness warnings.
+      result["@type"] = "Organization";
+    }
+  }
+
+  return result;
+}
+
+const DISALLOWED_SERVICE_KEYWORDS = ["vinyl", "composite"];
+const SERVICE_RADIUS_METERS = "6437"; // 4 miles
+
+function toNumber(value: unknown): number | null {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string") {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+}
+
+function isLocalBusinessType(typeValue: unknown): boolean {
+  if (Array.isArray(typeValue)) return typeValue.includes("LocalBusiness");
+  return typeValue === "LocalBusiness";
+}
+
+function normalizeBusinessTypes(typeValue: unknown): string[] {
+  const asArray = Array.isArray(typeValue)
+    ? typeValue.filter((t): t is string => typeof t === "string")
+    : typeof typeValue === "string"
+      ? [typeValue]
+      : [];
+
+  const withLocalBusiness = asArray.includes("LocalBusiness")
+    ? asArray
+    : ["LocalBusiness", ...asArray];
+
+  return withLocalBusiness.includes("HomeAndConstructionBusiness")
+    ? withLocalBusiness
+    : [...withLocalBusiness, "HomeAndConstructionBusiness"];
+}
+
+function filterUnsupportedOfferCatalogServices(data: any) {
+  const offerCatalog = data?.hasOfferCatalog;
+  const itemList = offerCatalog?.itemListElement;
+  if (!Array.isArray(itemList)) return;
+
+  data.hasOfferCatalog.itemListElement = itemList.filter((offer: any) => {
+    const service = offer?.itemOffered ?? {};
+    const haystack = `${service?.name ?? ""} ${service?.serviceType ?? ""} ${service?.description ?? ""}`.toLowerCase();
+    return !DISALLOWED_SERVICE_KEYWORDS.some((keyword) => haystack.includes(keyword));
+  });
+}
+
+function ensureAreaServedShape(data: any, city: string) {
+  const cityServed = { "@type": "City", name: city };
+  const lat = toNumber(data?.geo?.latitude);
+  const lng = toNumber(data?.geo?.longitude);
+  const geoCircle =
+    lat !== null && lng !== null
+      ? {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: lat,
+            longitude: lng,
+          },
+          geoRadius: SERVICE_RADIUS_METERS,
+        }
+      : null;
+
+  if (!data.areaServed) {
+    data.areaServed = geoCircle ? [cityServed, geoCircle] : cityServed;
+    return;
+  }
+
+  if (Array.isArray(data.areaServed)) {
+    const hasCity = data.areaServed.some(
+      (item: any) => item?.["@type"] === "City" && typeof item?.name === "string",
+    );
+    if (!hasCity) data.areaServed.unshift(cityServed);
+
+    if (geoCircle) {
+      const hasGeoCircle = data.areaServed.some(
+        (item: any) => item?.["@type"] === "GeoCircle",
+      );
+      if (!hasGeoCircle) data.areaServed.push(geoCircle);
+    }
+    return;
+  }
+
+  if (data.areaServed?.["@type"] === "City") return;
+  data.areaServed = geoCircle ? [cityServed, geoCircle] : cityServed;
+}
+
+function normalizeEnhancedBusinessData(
+  rawData: any,
+  city: string,
+  citySlug: string,
+) {
+  const data = sanitizeLocalBusinessNodes(rawData, true);
+  const canonicalUrl = `${SITE_CONFIG.url}/service-areas/${citySlug}`;
+
+  // Keep this object anchored to the actual service-area page URL.
+  data["@context"] = "https://schema.org";
+  data["@type"] = normalizeBusinessTypes(data["@type"]);
+  data["@id"] = canonicalUrl;
+  data.url = canonicalUrl;
+  data.name = `MyFence.com - ${city} Fence Installation`;
+  data.image = SITE_CONFIG.logoUrl;
+  data.logo = data.logo ?? { "@type": "ImageObject", url: SITE_CONFIG.logoUrl };
+
+  data.address = DEFAULT_BUSINESS_ADDRESS;
+
+  // Prevent structured-data/content mismatch by removing unsupported service claims.
+  filterUnsupportedOfferCatalogServices(data);
+
+  // Keep areaServed consistent across all service-area pages.
+  ensureAreaServedShape(data, city);
+
+  // Self-serving review markup is intentionally excluded from LocalBusiness schema.
+  delete data.review;
+  delete data.aggregateRating;
+
+  return data;
 }
 
 const ServiceAreaTemplate = ({ 
@@ -51,53 +220,13 @@ const ServiceAreaTemplate = ({
   climateDescription = "",
   articleContent,
   faqStructuredData,
-  enhancedBusinessData
+  enhancedBusinessData,
+  videoTags = [],
+  galleryForceGrid = false,
 }: ServiceAreaTemplateProps) => {
   const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-  const reviewsRef = useRef<HTMLDivElement | null>(null);
-  const [reviews, setReviews] = useState<any[]>([]);
+  const { reviews, reviewsRef } = useTrustindexReviews();
   const [showFullClimate, setShowFullClimate] = useState(false);
-  
-  // Load reviews from Supabase
-  useEffect(() => {
-    const loadReviews = async () => {
-      const { data, error } = await supabase
-        .from('reviews')
-        .select('*')
-        .order('review_date', { ascending: false });
-      
-      if (error) {
-        console.error('Error loading reviews:', error);
-      } else if (data) {
-        setReviews(data);
-      }
-    };
-
-    loadReviews();
-  }, []);
-  
-  // Load Trustindex reviews widget
-  useEffect(() => {
-    console.log('[ServiceArea] useEffect - Trustindex widget setup running');
-    if (!reviewsRef.current) return;
-    // Defer Trustindex loader (prevents main-thread work near LCP)
-    import("@/lib/trustindex").then(({ mountTrustindexWidget }) => {
-      if (!reviewsRef.current) return;
-      const cleanup = mountTrustindexWidget(reviewsRef.current, {
-        immediate: true,
-        delayMs: 0,
-      });
-
-      // attach cleanup to ref so unmount clears it
-      (reviewsRef.current as any).__trustindexCleanup = cleanup;
-    });
-
-    return () => {
-      const c = (reviewsRef.current as any)?.__trustindexCleanup as undefined | (() => void);
-      c?.();
-      if (reviewsRef.current) reviewsRef.current.innerHTML = "";
-    };
-  }, []);
   
   const breadcrumbData = useMemo(() => ({
     "@context": "https://schema.org",
@@ -163,25 +292,6 @@ const ServiceAreaTemplate = ({
       "opens": "00:00",
       "closes": "23:59"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": reviews.length > 0 ? reviews.length.toString() : "150"
-    },
-    "review": reviews.map(review => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.author_name
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": review.rating.toString(),
-        "bestRating": "5"
-      },
-      "datePublished": review.review_date,
-      "reviewBody": review.review_text
-    })),
     "founder": {
       "@type": "Person",
       "name": "Andrew Knudsen"
@@ -261,7 +371,20 @@ const ServiceAreaTemplate = ({
       "https://www.pinterest.com/MyFenceDotCom/",
       "https://www.tiktok.com/@myfence.com"
     ]
-  }), [city, citySlug, state, reviews]);
+  }), [city, citySlug, state]);
+
+  // Merge enhanced business data with reviews and other dynamic fields if provided
+  const finalBusinessData = useMemo(() => {
+    // Normalize both enhanced and fallback schemas so every service-area page
+    // follows the same structured-data standard.
+    const data = normalizeEnhancedBusinessData(
+      enhancedBusinessData ?? structuredData,
+      city,
+      citySlug,
+    );
+    
+    return data;
+  }, [enhancedBusinessData, structuredData, city, citySlug]);
 
   return (
     <>
@@ -271,7 +394,7 @@ const ServiceAreaTemplate = ({
         canonical={`https://myfence.com/service-areas/${citySlug}`}
         structuredData={[
           breadcrumbData,
-          ...(enhancedBusinessData ? [enhancedBusinessData] : [structuredData]),
+          finalBusinessData,
           ...(faqStructuredData ? (Array.isArray(faqStructuredData) ? faqStructuredData : [faqStructuredData]) : [])
         ]}
       />
@@ -444,6 +567,9 @@ const ServiceAreaTemplate = ({
           </div>
         </section>
 
+        {/* Contact + Virtual Quote Tool */}
+        <LeadCaptureTabs />
+
         {/* North Bend Fencing Video Section */}
         {city === "North Bend" && (
           <section className="py-12 md:py-16">
@@ -512,6 +638,62 @@ const ServiceAreaTemplate = ({
         </section>
         )}
 
+        {/* Renton Fencing Video Section */}
+        {city === "Renton" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Renton Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Renton. We specialize in durable cedar systems engineered for the unique terrain and climate of the South End.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Highlands neighborhoods to Kennydale lakefront craftsman spindle-top privacy fences, we build quality fences that provide privacy, security, and lasting value for your Renton property.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/iUUnbPpWYvo?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Renton fence installation by MyFence.com"
+                    />
+                  </AspectRatio>
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Craftsman style cedar fence walkthrough in Kennydale, Renton by MyFence.com"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Issaquah Fencing Video Section */}
         {city === "Issaquah" && (
           <section className="py-12 md:py-16">
@@ -528,17 +710,281 @@ const ServiceAreaTemplate = ({
                   <p className="text-muted-foreground leading-relaxed">
                     Every Issaquah fence balances privacy with your property's natural beauty—protecting your outdoor living spaces while preserving the mountain views that make this community special.
                   </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link
+                          key={tag.label}
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(["4Ls-aTAtQsw", "9Wm8SnTomK0"] as const).map((videoId) => (
+                    <AspectRatio key={videoId} ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080${videoId === "4Ls-aTAtQsw" ? "&mute=1" : ""}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                        title={
+                          videoId === "9Wm8SnTomK0"
+                            ? "Hog wire fence installation in Issaquah, WA by MyFence.com"
+                            : "Issaquah fence installation by MyFence.com"
+                        }
+                      />
+                    </AspectRatio>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Maple Valley Fencing Video Section */}
+        {city === "Maple Valley" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Maple Valley Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our expert fence installation process in Maple Valley. We combine traditional craftsmanship with exclusive Fence Genius technology to build fences that handle the Plateau's unique terrain.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Summit neighborhoods to Wilderness Rim slopes, every Maple Valley fence we build is engineered for maximum durability in our local climate.
+                  </p>
                 </div>
                 <div className="w-full">
                   <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.youtube-nocookie.com/embed/4Ls-aTAtQsw?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080&mute=1"
+                      src="https://www.youtube-nocookie.com/embed/Tct8oXAwQ04?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full"
-                      title="Issaquah Fencing"
+                      title="Maple Valley Fencing"
                     />
                   </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Covington Fencing Video Section */}
+        {city === "Covington" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Covington Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Experience our professional fence installation in Covington. We specialize in durable cedar and hybrid systems designed to withstand the Pacific Northwest's varied weather conditions.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From family-oriented neighborhoods to larger residential lots, every Covington fence we build combines engineering precision with local craftsmanship to protect and enhance your property.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/2nysklK-lZ0?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Covington Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* SeaTac Fencing Video Section */}
+        {city === "SeaTac" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  SeaTac Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our expert fence installation process in SeaTac. We specialize in high-density privacy solutions designed to handle the unique noise and environment challenges of the SeaTac plateau.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Angle Lake waterfronts to McMicken Heights neighborhoods, we build durable fences that provide peace, security, and lasting beauty for your SeaTac home.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/iS2gYdbPO9k?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="SeaTac Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Tukwila Fencing Video Section */}
+        {city === "Tukwila" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Tukwila Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Tukwila. We specialize in precision-engineered cedar and hybrid systems built to handle the unique river valley terrain.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Riverton Heights hillsides to Foster neighborhood lots, we deliver quality fences that combine durability with local craftsmanship.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/8nMPyw4JjW8?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Tukwila Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Black Diamond Fencing Video Section */}
+        {city === "Black Diamond" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Black Diamond Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Black Diamond. We specialize in Ten Trails HOA-approved designs and durable solutions for the foothills environment.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From master-planned communities to historic properties, every Black Diamond fence we build is engineered for moisture, wind, and lasting beauty.
+                  </p>
+                </div>
+                <div className="w-full">
+                  <AspectRatio ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/1bbv1lVJv2Y?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                      title="Black Diamond Fencing"
+                    />
+                  </AspectRatio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* Seattle Fencing Video Section */}
+        {city === "Seattle" && (
+          <section className="py-12 md:py-16">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  Seattle Fencing
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8 items-start">
+                  <div className="md:col-span-2 space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Watch our professional fence installation process in Seattle. We build city-smart cedar and hybrid systems for tight urban lots, hillside grades, and the year-round moisture that defines the Emerald City.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    From Capitol Hill townhomes to Ravenna side yards and West Seattle slopes, every Seattle fence we install is measured with Fence Genius and built for privacy, durability, and neighborhood character.
+                  </p>
+                  {videoTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {videoTags.map((tag) => (
+                        <Link 
+                          key={tag.label} 
+                          href={tag.link}
+                          className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                        >
+                          {tag.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(["vQOFuZl-WfA", "vDRIC7VGrz8"] as const).map((videoId) => (
+                    <AspectRatio key={videoId} ratio={9/16} className="bg-muted rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                        title={`Seattle fence installation — ${videoId}`}
+                      />
+                    </AspectRatio>
+                  ))}
                 </div>
               </div>
             </div>
@@ -608,7 +1054,7 @@ const ServiceAreaTemplate = ({
 
                       if (link) {
                         return (
-                          <Link key={name} href={link}>
+                          <Link key={name} href={link} className="block h-full">
                             <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-105 transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
                               {cardContent}
                               <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
@@ -662,6 +1108,10 @@ const ServiceAreaTemplate = ({
           </div>
         </section>
 
+        <ServiceAreaPhotoGallery city={city} forceGrid={galleryForceGrid} />
+
+        <FeaturedProject city={city} />
+
         {/* Fence Styles Preview */}
         <FenceStylesPreview city={city} />
 
@@ -693,58 +1143,6 @@ const ServiceAreaTemplate = ({
           </section>
         )}
 
-        {/* Google Business Location */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                  Our Location
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  Serving {city} and the greater Seattle area
-                </p>
-              </div>
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2706.5849474493!2d-122.04876700000001!3d47.389384699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906119f98d5b73%3A0x8ce80c589db968c5!2sMyFence.com%20-%20Wood%20Fence%20Contractor!5e0!3m2!1sen!2sus!4v1701500000000!5m2!1sen!2sus"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`MyFence.com location serving ${city}`}
-                    className="w-full"
-                  />
-                  <div className="p-4 bg-muted/30">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-                      <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">22927 257th Ave SE, Maple Valley, WA 98038</span>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-primary" />
-                          <span className="text-muted-foreground">Open 24/7</span>
-                        </div>
-                        <a 
-                          href="https://www.google.com/maps/place/MyFence.com+-+Wood+Fence+Contractor/@47.3893847,-122.048767,17z" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline font-medium"
-                        >
-                          Directions →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
