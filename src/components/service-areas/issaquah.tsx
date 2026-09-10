@@ -549,7 +549,8 @@ const Issaquah = () => {
         },
         {
           name: "Olde Town Issaquah",
-          description: "Historic downtown area with traditional homes requiring classic fence styles that preserve small-town character"
+          description: "Historic downtown area with traditional homes requiring classic fence styles that preserve small-town character. Click to learn more →",
+          link: "/service-areas/issaquah/olde-town"
         },
         {
           name: "Talus",
