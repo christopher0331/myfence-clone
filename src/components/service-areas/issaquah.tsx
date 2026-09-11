@@ -557,7 +557,8 @@ const Issaquah = () => {
         },
         {
           name: "Providence Point",
-          description: "Active adult community with specific design guidelines requiring low-maintenance solutions and committee-approved installations"
+          description: "Active adult community with specific design guidelines requiring low-maintenance solutions and committee-approved installations. Click to learn more →",
+          link: "/service-areas/issaquah/providence-point"
         },
         {
           name: "Grand Ridge",
