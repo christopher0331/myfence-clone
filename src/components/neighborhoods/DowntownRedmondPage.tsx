@@ -629,7 +629,7 @@ const DowntownRedmondPage = () => {
                 Also Serving Nearby Redmond Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Redmond. From Downtown we also work in Education Hill to the north, Overlake to the south, Grass Lawn to the west, and across the city line into Kirkland and Bellevue.
+                We install fences throughout Redmond. From Downtown we also work in Education Hill to the north, Willows/Rose Hill to the northwest, Overlake to the south, Grass Lawn to the west, and across the city line into Kirkland and Bellevue.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -637,6 +637,11 @@ const DowntownRedmondPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/grass-lawn">Grass Lawn</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/willows-rose-hill">
+                    Willows/Rose Hill
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/education-hill">

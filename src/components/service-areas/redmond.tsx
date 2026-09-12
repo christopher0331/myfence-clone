@@ -490,7 +490,8 @@ const Redmond = () => {
         },
         {
           name: "Willows/Rose Hill",
-          description: "Diverse residential area with varied housing types requiring flexible fence solutions from starter homes to luxury properties"
+          description: "Diverse residential area with varied housing types requiring flexible fence solutions from starter homes to luxury properties. Click to learn more →",
+          link: "/service-areas/redmond/willows-rose-hill"
         },
         {
           name: "Idylwood",
