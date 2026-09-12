@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Building2,
+  Home,
   Volume2,
-  Ruler,
+  Droplets,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,82 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/redmond/downtown-redmond";
+const CANONICAL = "https://myfence.com/service-areas/redmond/willows-rose-hill";
 const META_TITLE =
-  "Downtown Redmond Fence Installation | Townhome & Mixed-Use Lots | MyFence.com";
+  "Willows/Rose Hill Redmond Fence Installation | Mixed Lots & Willows Road | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Downtown Redmond, WA. Cedar, hogwire & hybrid fencing for townhomes, alley lots, and mixed-use yards near Town Center and the 2 Line. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Willows/Rose Hill, Redmond, WA. Cedar, hogwire & hybrid fencing for mixed lots between Willows Road NE and the Kirkland line. Free quotes. (253) 455-1885.";
 
-const DOWNTOWN_REDMOND_FAQS: NeighborhoodFaqItem[] = [
+const WILLOWS_ROSE_HILL_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Downtown Redmond?",
+    question: "Do I need a permit to build a fence in Willows/Rose Hill, Redmond?",
     answer:
-      "The City of Redmond generally does not require a building permit for fences seven feet or shorter, but zoning still controls height, materials, and placement. Downtown parcels sit in a mix of Downtown mixed-use zones and leftover residential lots, so the allowed height can be six feet on one block and eight feet on the next. Front setbacks along Cleveland Street, Redmond Way, and 164th Avenue NE also have to clear sight triangles at corners. Townhome HOAs around Redmond Town Center often want drawings even when the city does not. MyFence.com checks the parcel zone, HOA packet, and Redmond Development Services rules before we quote.",
+      "The City of Redmond generally does not require a building permit for residential fences under eight feet, but zoning still controls height and setbacks. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Corner lots on Willows Road NE, 132nd Avenue NE, NE 90th Street, and NE 80th Street have sight-distance triangle rules that can shorten a run near the sidewalk. Parcels that sit in a Willows Creek or wetland overlay may need extra review even when height is ordinary. A few plats ask for drawings even when the city does not. MyFence.com checks the parcel, any CC&Rs, and Redmond Development Services rules before we quote.",
   },
   {
     question:
-      "What fence styles work best for Downtown Redmond's townhome and mixed-use lots?",
+      "What fence styles work best for Willows/Rose Hill's mix of housing and traffic corridors?",
     answer:
-      "Six-foot cedar privacy is the usual choice on interior townhome yards that back to an alley or a neighbor's patio, where screening and dog containment matter more than a view. Along the Sammamish River and the Redmond Central Connector, hogwire in a cedar frame keeps the trail and water in sight without turning the lot into a solid wall. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a compact urban lot. Fence Genius maps the short runs and grade changes so panels fit the actual alley, not a suburban six-foot bay assumed from a catalog.",
+      "Six-foot cedar privacy is the usual choice on interior streets that sit close to a neighbor or take evening traffic from Willows Road NE or 132nd Avenue NE. On larger lots that open toward the Sammamish River valley or keep a stand of firs along a rear line, hogwire in a cedar frame screens pets without boxing in the canopy. Hybrid aluminum-and-cedar systems suit households that would rather skip staining on a weekday commute toward Microsoft or the 2 Line. Fence Genius maps grade, roots, and the occasional creek setback so panels follow the lot instead of leaving a gap a dog can use.",
   },
   {
-    question: "How much does fence installation cost in Downtown Redmond?",
+    question: "How much does fence installation cost in Willows/Rose Hill, Redmond?",
     answer:
-      "Downtown Redmond fence installation typically runs $46–$70 per linear foot for six-foot cedar privacy, $40–$58 for hogwire with a cedar frame, and $56–$78 for hybrid aluminum/cedar. Tight alley access, custom gates for shared side yards, and HOA drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Willows/Rose Hill fence installation typically runs $42–$66 per linear foot for six-foot cedar privacy, $36–$55 for hogwire with a cedar frame, and $52–$74 for hybrid aluminum/cedar. Hand-digging around mature roots, extra gates for side-yard access off 132nd or NE 90th, creek-buffer setbacks, and plat drawing packages can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Downtown Redmond?",
+    question: "How long does fence installation take in Willows/Rose Hill?",
     answer:
-      "Most Downtown Redmond residential and townhome projects finish in one to three working days after any city or HOA paperwork is complete. Pre-fabricated panels cut on-site time. Short bays, hand-carrying materials down alleys off Leary Way or NE 76th Street, and parking around Town Center are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
+      "Most Willows/Rose Hill residential projects finish in one to three working days after any city or plat paperwork is complete. Pre-fabricated panels cut on-site time. Hand-digging near older firs, stepped posts on the downhill side toward the river valley, tight side yards between 1970s–1990s homes, and staging around Willows Road commute traffic are the usual reasons a job stretches an extra half day. We set the schedule with you before the crew arrives.",
   },
   {
-    question:
-      "Do I need my neighbor's permission for a fence in Downtown Redmond?",
+    question: "Do I need my neighbor's permission for a fence in Willows/Rose Hill?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Redmond does not require their signature. On townhome rows, the HOA or the adjoining owner may already control the shared side yard, so we confirm who owns which stretch before digging. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which run.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Redmond does not require their signature. Lots along 132nd Avenue NE sit on the Kirkland city line, so the pin can fall between two cities and two sets of street trees. If your street has a small plat association, the architectural contact may want both owners listed on the application. MyFence.com can help you confirm pins, share a simple site plan, and keep the conversation focused on height, style, and who pays for which stretch.",
   },
 ];
 
-const DOWNTOWN_REDMOND_ATTRACTIONS: LocalAttraction[] = [
+const WILLOWS_ROSE_HILL_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Anderson Park",
-    url: "https://www.redmond.gov/facilities/facility/details/Anderson-Park-59",
+    name: "Willows Run Golf Complex",
+    url: "https://www.willowsrun.com/",
     description:
-      "Redmond's oldest city park sits in the middle of downtown — lawn, evergreens, historic cabins, a brick plaza, and community garden beds a short walk from Cleveland Street townhomes.",
+      "The 45-hole public complex at 10402 Willows Road NE — two full courses, a short nine, and a family putting course. Saturday tee times fill the corridor parking; weekdays the fairways are the open backdrop for lots that sit just west of the road.",
   },
   {
-    name: "Redmond Town Center",
-    url: "https://www.redmondtowncenter.com/",
+    name: "Redmond Watershed Preserve",
+    url: "https://www.redmond.gov/facilities/facility/details/Watershed-Preserve-56",
     description:
-      "The open-air retail and residential campus south of NE 76th Street, where downtown residents walk for groceries, dinner, and the light-rail station sitting just to the north.",
+      "An 800-acre trail system off Novelty Hill Road, a short drive north of the neighborhood. Soft-surface loops for hiking and bikes give Willows/Rose Hill households a woods outing when the river-valley fields are booked for games.",
   },
   {
-    name: "Redmond Central Connector",
-    url: "https://www.redmond.gov/1717/Redmond-Central-Connector-Trail",
+    name: "Sammamish River Trail",
+    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/sammamish-river-trail",
     description:
-      "A paved linear park on the old rail corridor that cuts through downtown. Morning bike commutes and evening dog walks share the same path that now sits under the Downtown Redmond Station.",
+      "The paved King County path along the river, reachable from the east edge of the neighborhood without getting on Redmond Way. Morning bike commutes toward downtown and evening walks share the same corridor that skips Willows Road traffic.",
   },
   {
-    name: "Luke McRedmond Landing",
-    url: "https://www.redmond.gov/facilities/facility/details/Luke-McRedmond-Landing-65",
+    name: "Downtown Redmond Station",
+    url: "https://www.soundtransit.org/ride-with-us/stops-stations/downtown-redmond-station",
     description:
-      "A small riverfront park on the Sammamish with a canoe launch, fishing pier, and picnic tables — the closest put-in for downtown households that want water without driving to Marymoor.",
+      "The 2 Line terminus at 16620 NE 76th Street. Willows/Rose Hill riders usually drop south on 132nd or cut across NE 80th or NE 90th instead of fighting the parkway all the way around Town Center.",
   },
   {
-    name: "Old Redmond Schoolhouse Community Center",
-    url: "https://www.redmond.gov/facilities/facility/details/Old-Redmond-Schoolhouse-Community-Center-67",
+    name: "Farrel-McWhirter Park",
+    url: "https://www.redmond.gov/288/Farrel-McWhirter-Park",
     description:
-      "The 1922 schoolhouse on 168th Avenue NE, now a community center and preschool campus a few blocks from the downtown core. Evening classes and weekend rentals keep the block active after shops close.",
+      "A working-farm park a few minutes east toward Avondale, with trails, farm animals, and seasonal youth programs. A quieter weekend stop when you want pasture and woods instead of golf-course parking or river-valley soccer lots.",
   },
 ];
 
-const DowntownRedmondPage = () => {
+const WillowsRoseHillPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Downtown Redmond, Redmond",
-    pageTitle: "Downtown Redmond Fence Installation",
+    neighborhoodName: "Willows/Rose Hill, Redmond",
+    pageTitle: "Willows/Rose Hill Redmond Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: DOWNTOWN_REDMOND_FAQS,
+    faqItems: WILLOWS_ROSE_HILL_FAQS,
   });
 
   return (
@@ -131,14 +130,17 @@ const DowntownRedmondPage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Downtown Redmond, Redmond WA
+                    Serving Willows/Rose Hill, Redmond WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Downtown Redmond Fence Installation
+                  Willows/Rose Hill Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Townhome, alley, and mixed-use fence work for Downtown Redmond — cedar privacy for compact yards, hogwire that keeps the river trail in view, and hybrid systems built for busy urban lots.
+                  Fence work for Redmond&apos;s northwest corridor — cedar that
+                  quiets Willows Road NE, hogwire on larger valley-edge lots, and
+                  hybrid systems for mixed streets between 132nd Avenue NE and
+                  downtown.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -154,7 +156,7 @@ const DowntownRedmondPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Downtown Redmond, Redmond"
+                  city="Willows/Rose Hill, Redmond"
                   state="Washington"
                   radiusMiles={4}
                   zoom={13}
@@ -194,13 +196,32 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing a Walkable Core, Not a Cul-de-Sac
+                Mixed Streets Between the Kirkland Line and Willows Road
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Downtown Redmond is a mixed-use grid, not a hillside subdivision. Lots sit on Cleveland Street, Redmond Way, Leary Way, and the numbered avenues around 164th and 166th. Many are townhomes with alley gates, shared side yards, and a patio that faces another patio. The Sammamish River and Bear Creek cut through the district, the Redmond Central Connector runs under the 2 Line station at NE 76th Street, and Redmond Town Center is the daily errand loop. A fence here has to fit a short run, a HOA packet, and a neighbor who lives six feet away — not a 150-foot suburban back line.
+                Willows/Rose Hill is Redmond&apos;s northwest neighborhood — a
+                band of 1970s–1990s homes, later infill, and a few larger lots
+                stacked between 132nd Avenue NE on the Kirkland line and Willows
+                Road NE on the east. NE 80th Street and NE 90th Street carry
+                school and commute traffic across the grid; Rose Hill Middle
+                School sits on the south edge at 13505 NE 75th Street. There is
+                no single master association. Some cul-de-sacs have small plat
+                committees, many interior streets do not, and a handful of
+                parcels drain toward Willows Creek or the Sammamish River
+                valley. The design conversation starts with the lot: starter
+                ranch, two-story rebuild, or a wider yard that still wants the
+                corridor quieted.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com installs cedar, hogwire, and hybrid fences across Redmond&apos;s Eastside core, including downtown townhome rows and the residential pockets that still sit between the retail blocks. We use Fence Genius to capture the actual bay lengths and any grade drop toward the river before a post goes in the ground, so panels arrive cut for the alley instead of getting ripped down on a busy street. The goal is a fence that looks like it belongs on Cleveland, not a catalog panel dropped onto a zero-lot-line yard.
+                MyFence.com installs cedar, hogwire, and hybrid fences across
+                Willows/Rose Hill, including privacy runs that face Willows Road
+                and open hogwire on lots that step toward the river. Fence
+                Genius captures grade, roots, and any creek or wetland overlay
+                before a post goes in the ground, so panels arrive cut for the
+                actual line instead of getting ripped down on a side yard that
+                already has little room to stage lumber. The goal is a fence
+                that belongs on your street — not a one-size panel dropped onto
+                a corridor lot.
               </p>
             </div>
           </div>
@@ -211,18 +232,21 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Downtown Redmond Homeowners Trust MyFence.com
+                Why Willows/Rose Hill Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Building2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Townhome HOA Drawings
+                        Flexible Designs for Mixed Housing
                       </h3>
                       <p className="text-muted-foreground">
-                        Compact associations around Town Center and Cleveland Street often want a simple elevation, stain note, and height callout. We put that packet together so the board is not guessing from a photo of someone else&apos;s yard.
+                        Starter lots, 1990s two-stories, and wider valley-edge
+                        parcels sit on the same street grid. We match height,
+                        style, and gate layout to the house you have — not a
+                        single HOA template copied from Education Hill.
                       </p>
                     </div>
                   </div>
@@ -235,7 +259,10 @@ const DowntownRedmondPage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for the extra damp that sits along the Sammamish River corridor. We stand behind the install through Redmond winters.
+                        Full coverage on materials and labor, including hardware
+                        chosen for the extra damp that sits in creek-side corners
+                        and north-facing side yards. We stand behind the install
+                        through Redmond winters.
                       </p>
                     </div>
                   </div>
@@ -245,23 +272,29 @@ const DowntownRedmondPage = () => {
                     <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Street-Noise Screening
+                        Willows Road Noise Buffering
                       </h3>
                       <p className="text-muted-foreground">
-                        Solid cedar on the Redmond Way and 164th sides of a lot takes the edge off traffic and light-rail ambient noise. We keep hogwire or lower runs where you still want eyes on the Connector or the river.
+                        Solid cedar on the corridor side of a lot cuts evening
+                        traffic from Willows Road NE and 132nd without turning
+                        the backyard into a box. We mark where a full panel
+                        helps and where an open run still makes sense.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Ruler className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Droplets className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Alley-Width Installations
+                        Creek and Overlay Awareness
                       </h3>
                       <p className="text-muted-foreground">
-                        Compact equipment and hand-carry days for alleys that will not take a full truck. Fence Genius shortens panel bays so a 12-foot townhome run does not get a leftover gap at the gate.
+                        Willows Creek and wetland buffers show up on more
+                        parcels here than on a flat Grass Lawn interior lot. We
+                        flag overlays before digging so a post hole does not
+                        land in a setback the city will later ask you to move.
                       </p>
                     </div>
                   </div>
@@ -276,7 +309,7 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Downtown Redmond Homeowners Say
+                What Willows/Rose Hill Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -286,9 +319,12 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Townhome patio off the alley — we needed privacy from the neighbor without blocking the walkway. They built a short cedar run with a self-closing gate and it fits the HOA notes. Crew was in and out before the weekend market crowd hit Cleveland.&rdquo;
+                    &ldquo;We sit one block off Willows Road and wanted real
+                    privacy without looking like a commercial lot. The cedar
+                    run faces the corridor, the side yards stay lower, and they
+                    finished before the weekday commute stacked on 90th.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Maya in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Priya in Willows/Rose Hill</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -298,9 +334,12 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot backs toward the Connector. Hogwire in a cedar frame keeps the dog in and we still see people on the trail. They measured the slope down to the river so the bottom rail does not float.&rdquo;
+                    &ldquo;Our pin is basically on 132nd at the Kirkland line.
+                    They walked both sides, marked the line with us and the
+                    neighbor, and hand-dug around the firs. Gates latch well
+                    after school at Rose Hill Middle.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Jordan in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Evan in Willows/Rose Hill</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -310,9 +349,12 @@ const DowntownRedmondPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Redmond Way noise was the issue, not a giant backyard. Solid cedar on the street side, open run on the patio. The townhome board signed off on the first drawing they sent.&rdquo;
+                    &ldquo;Small plat committee, not a big HOA packet. They
+                    still sent a simple drawing and stain note that the board
+                    signed off on the first pass. Appreciate not treating it
+                    like downtown mixed-use.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Priya in Downtown Redmond</p>
+                  <p className="text-sm font-medium">— Nora in Willows/Rose Hill</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -321,56 +363,81 @@ const DowntownRedmondPage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Downtown Redmond fence" />
+        <LeadCaptureTabs fenceStyleName="Willows/Rose Hill Redmond fence" />
 
-        {/* 6. Photo Gallery — nearby Eastside installs until downtown-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Redmond installs until neighborhood-tagged photos exist */}
         <ServiceAreaPhotoGallery
-          city="Kirkland"
-          title="Recent Fence Work Near Downtown Redmond"
-          description="These photos are from nearby Eastside jobs, including Kirkland just west of Downtown Redmond. Same crew, same materials, and the same Fence Genius process we use on downtown townhome and mixed-use lots."
+          city="Redmond"
+          title="Recent Fence Work Near Willows/Rose Hill"
+          description="These photos are from nearby Redmond jobs, including Grass Lawn and Education Hill. Same crew, same materials, and the same Fence Genius process we use on Willows Road and 132nd Avenue lots."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Redmond" neighborhood="Downtown Redmond" />
+        <FeaturedProject city="Redmond" neighborhood="Willows/Rose Hill" />
 
         {/* 8. Neighborhood-Specific Considerations */}
         <section className="py-16 bg-muted/50">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Downtown Redmond–Specific Fencing Considerations
+                Willows/Rose Hill-Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Lot Width and Alley Access
+                    Willows/Rose Hill Lot Mix and Grade
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Townhome yards off Cleveland Street and the alleys behind 164th Avenue NE are often one patio deep. A six-foot privacy panel that works on Education Hill can swallow the whole space here. We measure the usable run, place gates where trash and bikes actually move, and shorten bays so the last panel is not a leftover stub. Crews hand-carry material when a truck cannot sit in the alley through the afternoon.
+                    Interior streets west of Willows Road are mostly gentle, but
+                    lots that drop toward the Sammamish River valley or sit
+                    against a cut near NE 90th need stepped panels. A fence
+                    built as one long level line either buries the bottom rail
+                    or leaves a gap a small dog can use. We measure with Fence
+                    Genius, then step or rack bays so the top stays even from
+                    the street and the bottom tracks the lawn.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Mixed-Use Zoning and Height
+                    Willows/Rose Hill Traffic Noise and Privacy
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Downtown zones and remaining residential parcels sit next to each other. Mixed-use lots can allow a taller fence than a leftover R-zone lot a block north. Front setbacks on Redmond Way and 166th still have to keep sight triangles at corners near the station. We read the parcel zone before we promise a height, then match the townhome HOA if it is stricter than the city.
+                    Willows Road NE carries office and golf traffic all day;
+                    132nd Avenue NE is the Kirkland commute spine. Solid cedar
+                    on those faces quiets the yard without requiring a wall
+                    around the entire lot. Interior streets near Rose Hill
+                    Middle usually want full-height privacy for after-school
+                    play. We walk the lot and mark where a solid panel earns
+                    its keep and where hogwire still belongs.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond River Moisture and Trail Edges
+                    Willows Creek Moisture and Soil
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lots that step down toward the Sammamish River or Bear Creek stay damp longer than the plateau on Education Hill. Raw cedar grays fast, and cheap fasteners streak. We spec pre-stained Western Red Cedar and stainless or hot-dipped hardware. Where a lot backs to the Central Connector, hogwire or a mixed-height run keeps eyes on the trail while still containing pets — and we flag critical-area buffers before digging rather than after.
+                    Creek-adjacent parcels and north-facing side yards hold
+                    moisture longer than a dry Grass Lawn interior lot. Raw
+                    cedar grays fast in those corners, and cheap fasteners start
+                    showing rust streaks. We spec pre-stained Western Red Cedar
+                    and stainless or hot-dipped hardware, and we talk through
+                    steel posts where ground contact stays wet. If a wetland or
+                    stream overlay sits on the survey, we flag it before the
+                    first hole.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Downtown Redmond Noise, Neighbors, and Shared Walls
+                    Willows/Rose Hill Plats, Trees, and City Height Rules
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Redmond Way, the 2 Line, and Town Center parking all add ambient noise that a solid cedar run can soften on the street side of a patio. The other three sides are often another owner&apos;s wall or a shared HOA strip. We confirm who owns the line, talk through stain so two attached yards do not clash, and keep post holes off buried utilities that are denser downtown than on a suburban cul-de-sac.
+                    Some cul-de-sacs have small architectural committees; many
+                    older streets do not. We still follow Redmond height rules
+                    — six feet in most side and rear yards, four feet in the
+                    front setback — and we plan post holes around the firs and
+                    cedars that line 132nd and the NE 80th corridor. Border lots
+                    on the Kirkland line get an extra pin check so the fence
+                    does not drift onto the wrong side of the city limit.
                   </p>
                 </div>
               </div>
@@ -383,39 +450,48 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Downtown Redmond
+                Fence Installation Cost in Willows/Rose Hill
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A downtown fence is a short-run urban install: alley access, HOA notes, and river-side moisture can move the number. These are typical ranges; your on-site measurement is the real quote.
+                A Willows/Rose Hill fence is an investment in a mixed
+                residential lot — sometimes a quiet interior street, sometimes a
+                corridor that needs screening. Slope, gates, and moisture
+                details move the number. These are typical ranges; your on-site
+                measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
                   <li>
                     <span>
                       <strong className="text-foreground">Cedar privacy (6&apos;):</strong>{" "}
-                      $46–$70 per linear foot
+                      $42–$66 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $40–$58 per linear foot
+                      $36–$55 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hybrid aluminum/cedar:</strong>{" "}
-                      $56–$78 per linear foot
+                      $52–$74 per linear foot
                     </span>
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Alley hand-carry, custom gates, and HOA drawing packages may add 10–15%. Get an exact quote for your Downtown Redmond property with a free on-site measurement.
+                  Stepped runs toward the river valley and hand-digging near
+                  mature trees may add 10–15%. Custom gates are itemized
+                  separately. Get an exact quote for your Willows/Rose Hill
+                  property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Downtown Redmond property</Link>
+                  <Link href="/quote">
+                    Get an exact quote for your Willows/Rose Hill property
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -427,13 +503,17 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Downtown Redmond
+                Popular Fence Styles in Willows/Rose Hill
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on interior townhome patios and alley lots. Full screening from the neighbor, pre-stained cedar that holds up to river-corridor damp, and a look that fits mixed-use blocks around Cleveland and 164th.
+                    The workhorse on interior streets and corridor lots that
+                    face Willows Road or 132nd. Full screening for after-school
+                    play, pre-stained cedar that holds up to Redmond winters,
+                    and a look that fits both 1970s ranches and newer two-story
+                    rebuilds.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -445,7 +525,10 @@ const DowntownRedmondPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for lots that face the Connector, the Sammamish, or a courtyard. Dogs stay in, the trail stays in view, and the lighter footprint is easier in a 20-foot yard than a solid wall.
+                    Cedar frame with black mesh for wider lots that still want
+                    the valley or a tree line in view. Dogs stay in, the canopy
+                    stays open, and the lighter footprint is easier around roots
+                    than a solid privacy wall.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -457,7 +540,10 @@ const DowntownRedmondPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a downtown calendar has no extra Saturday for staining. Clean enough for HOA review without looking like a commercial lot.
+                    Aluminum panels in a cedar frame on steel posts — the
+                    low-maintenance option when weekday commutes leave no time
+                    for stain. Strong enough for busy family yards without
+                    looking like an office park on Willows Road.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -476,23 +562,31 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Downtown Redmond Installation Process
+                Our Willows/Rose Hill Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Downtown Redmond Site Assessment
+                    1. Willows/Rose Hill Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the short run, note alley width, map utilities, and check whether the parcel sits in a Downtown mixed-use zone or a leftover residential zone. Fence Genius captures bay lengths and any drop toward the river so panels are built to the actual space.
+                    We walk the lot, measure the run, note slope toward the
+                    river valley, map trees, and check whether the parcel sits
+                    in a Willows Creek or critical-area overlay. Fence Genius
+                    captures grade so panels are built to the actual line, not a
+                    flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Downtown Redmond Design & HOA Submission
+                    2. Willows/Rose Hill Design & Plat Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. If your townhome row has an architectural committee, we prepare a simple drawing, stain note, and height callout. If it does not, we still document Redmond height and sight-triangle rules so the install is clean with the city.
+                    You pick style and height. If your cul-de-sac has a small
+                    architectural committee, we prepare a simple drawing and
+                    material list. If it does not, we still document Redmond
+                    height and setback rules so the install is clean with the
+                    city.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -500,15 +594,22 @@ const DowntownRedmondPage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so downtown install days are mostly setting posts and hanging finished sections instead of ripping lumber on Cleveland Street.
+                    Panels are built off-site from Fence Genius measurements —
+                    pre-stained cedar, hogwire frames, or hybrid modules — so
+                    Willows/Rose Hill install days are mostly setting posts and
+                    hanging finished sections.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Downtown Redmond Installation
+                    4. Willows/Rose Hill Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment and hand-carry when alleys off Leary Way or NE 76th will not take a full truck. Short bays, careful post placement near shared walls, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets
+                    off Willows Road NE, 132nd Avenue NE, NE 80th, and NE 90th.
+                    Hand-digging near mature roots, stepped posts on downhill
+                    faces, and full cleanup at the end of each day. Most jobs
+                    wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -516,7 +617,9 @@ const DowntownRedmondPage = () => {
                     5. Walkthrough & {WARRANTY_CONSTANTS.YEARS}-Year Warranty
                   </h3>
                   <p className="text-muted-foreground">
-                    Final walkthrough covering every panel, post, and gate. Full {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty starts when the job is complete.
+                    Final walkthrough covering every panel, post, and gate. Full{" "}
+                    {WARRANTY_CONSTANTS.YEARS}-year workmanship warranty starts
+                    when the job is complete.
                   </p>
                 </Card>
               </div>
@@ -526,20 +629,20 @@ const DowntownRedmondPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Downtown Redmond Fence Installation FAQs"
-          items={DOWNTOWN_REDMOND_FAQS}
+          title="Willows/Rose Hill Fence Installation FAQs"
+          items={WILLOWS_ROSE_HILL_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Redmond"
-        neighborhoodName="Downtown Redmond"
-        attractions={DOWNTOWN_REDMOND_ATTRACTIONS}
+        neighborhoodName="Willows/Rose Hill"
+        attractions={WILLOWS_ROSE_HILL_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Downtown Redmond households sit in the{" "}
+              Willows/Rose Hill sits in the{" "}
               <a
                 href="https://www.lwsd.org/"
                 target="_blank"
@@ -548,25 +651,36 @@ const DowntownRedmondPage = () => {
               >
                 Lake Washington School District
               </a>
-              , with many elementary students at{" "}
+              . Many middle-schoolers walk or get dropped at{" "}
               <a
-                href="https://redmond.lwsd.org/"
+                href="https://rhms.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Redmond Elementary
+                Rose Hill Middle School
               </a>{" "}
-              and middle-schoolers a short hop to{" "}
+              on NE 75th Street, then later head east to{" "}
               <a
-                href="https://rms.lwsd.org/"
+                href="https://rhs.lwsd.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Redmond Middle School
+                Redmond High School
               </a>
-              . After school, the{" "}
+              {" "}
+              on NE 104th. Elementary assignments split across nearby campuses,
+              including{" "}
+              <a
+                href="https://ein.lwsd.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Albert Einstein Elementary
+              </a>
+              . Homework stops and weekend browsing often land at the{" "}
               <a
                 href="https://kcls.org/locations/redmond/"
                 target="_blank"
@@ -575,10 +689,28 @@ const DowntownRedmondPage = () => {
               >
                 Redmond Library
               </a>{" "}
-              on NE 85th Street is the indoor fallback when the plaza at Anderson Park is packed.
+              on NE 85th Street.
             </p>
             <p>
-              Weekdays are built around walking to Town Center and boarding the 2 Line at{" "}
+              After a tee time at{" "}
+              <a
+                href="https://www.willowsrun.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Willows Run Golf Complex
+              </a>
+              , households usually cut south toward{" "}
+              <a
+                href="https://www.redmondtowncenter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Redmond Town Center
+              </a>{" "}
+              rather than driving across the lake. Commuters catch the 2 Line at{" "}
               <a
                 href="https://www.soundtransit.org/ride-with-us/stops-stations/downtown-redmond-station"
                 target="_blank"
@@ -587,7 +719,17 @@ const DowntownRedmondPage = () => {
               >
                 Downtown Redmond Station
               </a>
-              . Weekends split between the river path at{" "}
+              {" "}
+              via NE 80th or NE 90th. Height and setback questions are covered in{" "}
+              <a
+                href="https://www.redmond.gov/526/Fences-Decks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                the City of Redmond&apos;s fence guidelines
+              </a>
+              ; weekend trail miles live on the{" "}
               <a
                 href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/trails/leafline-trails/sammamish-river-trail"
                 target="_blank"
@@ -596,25 +738,7 @@ const DowntownRedmondPage = () => {
               >
                 Sammamish River Trail
               </a>
-              , dinner and errands listed by{" "}
-              <a
-                href="https://experienceredmond.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Experience Redmond
-              </a>
-              , and city permits or park questions through{" "}
-              <a
-                href="https://www.redmond.gov/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                the City of Redmond
-              </a>
-              . SR-520 and Redmond Way still carry the car trips; a lot of downtown life never needs them.
+              .
             </p>
           </>
         }
@@ -629,7 +753,10 @@ const DowntownRedmondPage = () => {
                 Also Serving Nearby Redmond Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Redmond. From Downtown we also work in Education Hill to the north, Willows/Rose Hill to the northwest, Overlake to the south, Grass Lawn to the west, and across the city line into Kirkland and Bellevue.
+                We install fences throughout Redmond. From Willows/Rose Hill we
+                also work in Grass Lawn to the south, Education Hill to the
+                east, Downtown Redmond toward Town Center, and across 132nd into
+                Juanita and the rest of Kirkland.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -639,17 +766,14 @@ const DowntownRedmondPage = () => {
                   <Link href="/service-areas/redmond/grass-lawn">Grass Lawn</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/willows-rose-hill">
-                    Willows/Rose Hill
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/education-hill">
                     Education Hill
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/redmond/overlake">Overlake</Link>
+                  <Link href="/service-areas/redmond/downtown-redmond">
+                    Downtown Redmond
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/idylwood">Idylwood</Link>
@@ -659,9 +783,6 @@ const DowntownRedmondPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland">Kirkland</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/bellevue">Bellevue</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
@@ -676,10 +797,12 @@ const DowntownRedmondPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Downtown Redmond Property?
+                Ready to Enhance Your Willows/Rose Hill Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Downtown Redmond. We&apos;ll walk the alley, talk through privacy vs. trail views, and quote a fence that fits your townhome or mixed-use lot.
+                Same-day estimates available in Willows/Rose Hill. We&apos;ll
+                walk the lot, talk through corridor privacy versus an open
+                valley edge, and quote a fence that fits your Redmond street.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -697,4 +820,4 @@ const DowntownRedmondPage = () => {
   );
 };
 
-export default DowntownRedmondPage;
+export default WillowsRoseHillPage;
