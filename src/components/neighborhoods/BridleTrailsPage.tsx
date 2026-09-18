@@ -196,7 +196,7 @@ const BridleTrailsPage = () => {
                 {['Cedar Privacy Fence', 'Hogwire Garden Fence', 'Hybrid Aluminum Cedar Fence'].map((style) => (
                   <Card key={style} className='overflow-hidden'>
                     <div className='aspect-[4/3] relative bg-muted/50'>
-                      <OptimizedImage src={PHOTO_SRC} alt={`${style} project example in Bellevue`} fill className='object-cover' />
+                      <OptimizedImage src={PHOTO_SRC} alt={`${style} project example in Bellevue`} className='absolute inset-0 h-full w-full object-cover' />
                     </div>
                     <div className='p-5'>
                       <h3 className='font-semibold mb-2'>{style}</h3>
@@ -215,7 +215,7 @@ const BridleTrailsPage = () => {
               <h2 className='text-3xl md:text-4xl font-bold mb-4'>Featured Bridle Trails Installation</h2>
               <div className='grid md:grid-cols-2 gap-6 items-center'>
                 <div className='aspect-[4/3] relative rounded-lg overflow-hidden bg-muted'>
-                  <OptimizedImage src={PHOTO_SRC} alt='Cedar privacy fence example for a wooded Bellevue property' fill className='object-cover' />
+                  <OptimizedImage src={PHOTO_SRC} alt='Cedar privacy fence example for a wooded Bellevue property' className='absolute inset-0 h-full w-full object-cover' />
                 </div>
                 <div className='space-y-4'>
                   <p className='text-muted-foreground leading-relaxed'>
