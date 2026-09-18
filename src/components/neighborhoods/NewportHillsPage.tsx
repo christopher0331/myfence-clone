@@ -510,6 +510,9 @@ const NewportHillsPage = () => {
                   <Link href="/service-areas/bellevue/sherwood-forest">Sherwood Forest</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bellevue/crossroads">Crossroads</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/issaquah">Issaquah</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

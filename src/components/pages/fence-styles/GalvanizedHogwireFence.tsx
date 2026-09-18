@@ -12,6 +12,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const fatherSonImg = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
@@ -116,6 +117,23 @@ const GalvanizedHogwireFence = () => {
                   className="rounded-lg shadow-2xl w-full h-auto object-cover"
                   loading="eager"
                   fetchPriority="high"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-4">Galvanized hogwire in Issaquah</h2>
+              <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+                A five-foot galvanized hogwire run with cedar framing — the same mid-height system on this page.
+              </p>
+              <div className="max-w-[340px] mx-auto">
+                <YouTubeShortEmbed
+                  videoId="2_uI03s4nT8"
+                  title="5 Foot Galvanized Hogwire Fence in Issaquah"
                 />
               </div>
             </div>

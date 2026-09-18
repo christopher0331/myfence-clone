@@ -8,6 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const HERO = "/images/upgrades/mounded-concrete/hero-line.png";
 
@@ -82,6 +83,21 @@ const MoundedConcretePage = () => {
               fetchPriority="high"
             />
           </AspectRatio>
+        </div>
+      </section>
+
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4">Mounding concrete for wood posts</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            Watch the dome get shaped so water runs off the post instead of sitting against the wood.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="-7mIKk40Qwo"
+              title="Mounding Concrete: Improved Water Runoff For Wood Posts"
+            />
+          </div>
         </div>
       </section>
 

@@ -491,11 +491,12 @@ const Kirkland = () => {
         },
         {
           name: "Finn Hill",
-          description: "Established residential area with mature properties needing installations that work around 50+ year old trees and landscaping"
+          description: "Established residential area with mature properties needing installations that work around 50+ year old trees and landscaping. Click to learn more →",
+          link: "/service-areas/kirkland/finn-hill"
         },
         {
           name: "Kingsgate",
-          description: "Diverse family neighborhoods with active outdoor spaces requiring durable privacy fencing for children, pets, and entertaining",
+          description: "Diverse family neighborhoods with active outdoor spaces requiring durable privacy fencing for children, pets, and entertaining. Click to learn more →",
           link: "/service-areas/kirkland/kingsgate"
         },
         {
@@ -504,11 +505,13 @@ const Kirkland = () => {
         },
         {
           name: "Market",
-          description: "Upscale lakefront district with premium properties demanding high-end materials and designs worthy of million-dollar views"
+          description: "Historic hillside lots along Waverly Way and Market Street — cedar, hogwire, and hybrid fencing that keeps Lake Washington in view. Click to learn more →",
+          link: "/service-areas/kirkland/market"
         },
         {
           name: "Moss Bay",
-          description: "Waterfront luxury condos and townhomes needing HOA-compliant installations and saltwater-resistant materials"
+          description: "Waterfront condos, townhomes, and hillside lots along Lake Street S and Lake Washington Blvd. Click to learn more →",
+          link: "/service-areas/kirkland/moss-bay"
         }
       ]}
       landmarks={[

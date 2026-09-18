@@ -257,7 +257,8 @@ const Sammamish = () => {
         },
         {
           name: "East Sammamish",
-          description: "Established residential area with mature landscaping needing installations that work around 20+ year old trees and existing gardens"
+          description: "Established residential area with mature landscaping needing installations that work around 20+ year old trees and existing gardens. Click to learn more →",
+          link: "/service-areas/sammamish/east-sammamish"
         },
         {
           name: "Inglewood",

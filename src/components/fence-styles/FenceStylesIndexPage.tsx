@@ -19,6 +19,7 @@ import Link from "next/link";
 import boardOnBoardImg from "@/assets/fences/board-on-board-updated.png";
 import cedarPostOnPipeImg from "@/assets/cedar-post-on-pipe.jpg";
 import { ChevronDown } from "lucide-react";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const styles = [
   { img: "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png", title: "Picture Frame Fence", desc: "Refined border trim framing each panel for a premium look.", link: "/fence-styles/picture-frame-fence", badge: "Most Popular" },
@@ -260,6 +261,19 @@ const FenceStylesIndexPage = () => {
             </Card>
           ))}
         </div>
+      </section>
+
+      <section className="container pb-10">
+        <YouTubeShortsGallery
+          heading="Gate walkthroughs"
+          description="Latch operation, hardware details, and a horizontal cedar gate — the same construction we spec with every style."
+          videos={[
+            { videoId: "6wKJ14G4kOU", title: "DONT make this mistake for your new fence gate!" },
+            { videoId: "6mHu-tQY2_s", title: "MyFence.com Gate Walkthrough" },
+            { videoId: "oiAB648CnnY", title: "MyFence.com Gate Info & Latch Operation" },
+            { videoId: "qrEgcvQkbCw", title: "Horizontal Cedar Gate Walkthrough" },
+          ]}
+        />
       </section>
 
       <section className="container py-10">

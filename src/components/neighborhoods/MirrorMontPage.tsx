@@ -414,14 +414,20 @@ const MirrorMontPage = () => {
                 Also Serving Nearby Issaquah Communities
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Issaquah and the surrounding foothills. If you're near Mirrormont, we also serve Squak Mountain, Grand Ridge, Talus, and Issaquah Highlands.
+                We install fences throughout Issaquah and the surrounding foothills. If you're near Mirrormont, we also serve Squak Mountain, Grand Ridge, Talus, Olde Town, and Issaquah Highlands.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/issaquah">Issaquah overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/issaquah/talus">Talus</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/issaquah-highlands">Issaquah Highlands</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/issaquah/olde-town">Olde Town</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/sammamish">Sammamish</Link>

@@ -752,6 +752,9 @@ const OverlakePage = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/idylwood">Idylwood</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/bellevue">Bellevue</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

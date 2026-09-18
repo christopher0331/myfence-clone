@@ -7,6 +7,7 @@ import { Phone } from "lucide-react";
 import Seo from "@/components/Seo";
 import trellisArtisanGate from "@/assets/trellis-artisan-gate.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const TrellisSystemsPage = () => {
   const structuredData = {
@@ -56,6 +57,21 @@ const TrellisSystemsPage = () => {
             <p className="text-xl text-foreground/90 max-w-2xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
               Stunning architectural elements that combine beauty with structural integrity
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Cedar trellis near Seattle</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            A finished cedar trellis system on a Seattle-area gate — the same structure and slat work we build as this upgrade.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="6DshwPn78FY"
+              title="MyFence.com installs a Cedar Trellis System near Seattle"
+            />
           </div>
         </div>
       </section>

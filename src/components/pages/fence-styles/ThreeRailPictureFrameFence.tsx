@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -294,6 +295,13 @@ const ThreeRailPictureFrameFence = () => {
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 See the strength and craftsmanship of our 3 rail picture frame fences with enhanced structural design.
               </p>
+            </div>
+
+            <div className="max-w-[340px] mx-auto mb-10">
+              <YouTubeShortEmbed
+                videoId="rjdljZMsQYo"
+                title="180 Foot Three Rail Picture Frame Fence in Maple Valley"
+              />
             </div>
 
             {timberlaneFieldGallery.length > 0 && (

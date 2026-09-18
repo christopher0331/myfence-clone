@@ -16,6 +16,7 @@ import Link from "next/link";
 import { getFenceStyleImages } from "@/data/fenceImages";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -379,6 +380,17 @@ const PictureFrameFence = () => {
                 </div>
               </div>
             )}
+
+            <YouTubeShortsGallery
+              className="max-w-5xl mx-auto mb-10"
+              heading="Picture frame fence Shorts"
+              description="Pre-stained picture frame installs, including board-on-board and post-on-pipe details."
+              videos={[
+                { videoId: "MAaTNUxiA_0", title: "MyFence.com installs a picture frame fence that is pre stained with the post on pipe fence posts" },
+                { videoId: "drwdTbZL42I", title: "Quick Look into our board on board picture frame style which is pre-stained!" },
+                { videoId: "rjdljZMsQYo", title: "180 Foot Three Rail Picture Frame Fence in Maple Valley" },
+              ]}
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {images.gallery.slice(0, 4).map((image, index) => (
