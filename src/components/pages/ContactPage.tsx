@@ -14,7 +14,13 @@ import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import {
+  TEXT_CONSENT_MESSAGE,
+  TEXT_CONSENT_NUDGE_DESCRIPTION,
+  TEXT_CONSENT_NUDGE_TITLE,
+} from "@/constants/textConsent";
+import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
+import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadIntentOnce, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
@@ -24,8 +30,9 @@ const FORM_KEY = "contact-page";
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [textConsentError, setTextConsentError] = useState(false);
   const [addressValid, setAddressValid] = useState(false);
+  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
+    useOptionalTextConsentNudge();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -44,7 +51,7 @@ const ContactPage = () => {
       textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
     if (name === "phone" && value.trim() === "") {
-      setTextConsentError(false);
+      clearNudge();
     }
   };
 
@@ -72,16 +79,10 @@ const ContactPage = () => {
       return;
     }
 
-    if (formData.phone.trim() && !formData.textConsent) {
-      setTextConsentError(true);
-      document.getElementById("contact-page-text-consent-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, "contact-page-text-consent-row")) {
       toast({
-        title: "Consent required",
-        description: "Please consent to receive text messages before submitting your phone number.",
-        variant: "destructive",
+        title: TEXT_CONSENT_NUDGE_TITLE,
+        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
       });
       return;
     }
@@ -309,7 +310,7 @@ const ContactPage = () => {
                   </div>
                   <div
                     id="contact-page-text-consent-row"
-                    className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                    className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
                   >
                     <Checkbox
                       id="contact-page-text-consent"
@@ -317,21 +318,17 @@ const ContactPage = () => {
                       onCheckedChange={(checked) => {
                         const consentGiven = checked === true;
                         setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                        if (consentGiven) setTextConsentError(false);
+                        onConsentChange(consentGiven);
                       }}
                     />
                     <Label
                       htmlFor="contact-page-text-consent"
-                      className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                      className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
                     >
                       {TEXT_CONSENT_MESSAGE}
                     </Label>
                   </div>
-                  {textConsentError ? (
-                    <p className="text-sm font-semibold text-amber-800 mt-1">
-                      ⚠ Required: check this box to submit when a phone number is entered.
-                    </p>
-                  ) : null}
+                  <TextConsentNudgeNote visible={showNudge} />
                   <div>
                     <Label htmlFor="address">Address</Label>
                     <AddressAutocomplete

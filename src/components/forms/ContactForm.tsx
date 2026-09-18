@@ -15,11 +15,16 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
-import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import {
+  TEXT_CONSENT_MESSAGE,
+  TEXT_CONSENT_NUDGE_DESCRIPTION,
+  TEXT_CONSENT_NUDGE_TITLE,
+} from "@/constants/textConsent";
+import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
+import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
-import type { FieldErrors } from "react-hook-form";
 
 const FORM_KEY = "home-contact";
 
@@ -30,7 +35,7 @@ const formSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   address: z.string().trim().min(1, "Address is required").max(255),
   description: z.string().trim().min(1, "Message is required").max(1000),
-  textConsent: z.boolean().refine((value) => value, "Consent is required to receive text messages."),
+  textConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -41,6 +46,7 @@ export function ContactForm() {
   const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
   const { toast } = useToast();
+  const { showNudge, interceptUncheckedSubmit, onConsentChange } = useOptionalTextConsentNudge();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -69,6 +75,13 @@ export function ContactForm() {
     });
     if (!gate.ok) {
       form.setError("address", { message: "Please enter your property address." });
+      return;
+    }
+    if (interceptUncheckedSubmit(data.phone, data.textConsent, "contact-form-text-consent-row")) {
+      toast({
+        title: TEXT_CONSENT_NUDGE_TITLE,
+        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
+      });
       return;
     }
     setIsSubmitting(true);
@@ -142,20 +155,6 @@ export function ContactForm() {
     }
   };
 
-  const onInvalid = (errors: FieldErrors<FormData>) => {
-    if (errors.textConsent) {
-      document.getElementById("contact-form-text-consent-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      toast({
-        title: "Consent required",
-        description: "Please check the text consent box before submitting your phone number.",
-        variant: "destructive",
-      });
-    }
-  };
-
   if (isSubmitted && submittedData) {
     return (
       <div>
@@ -176,7 +175,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <FormField
             control={form.control}
@@ -278,28 +277,27 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem
               id="contact-form-text-consent-row"
-              className={`flex items-start space-x-2 rounded-md ${form.formState.errors.textConsent ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+              className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
             >
               <FormControl>
                 <Checkbox
                   id="contact-text-consent"
                   checked={field.value}
-                  onCheckedChange={(checked) => field.onChange(checked === true)}
+                  onCheckedChange={(checked) => {
+                    const consentGiven = checked === true;
+                    field.onChange(consentGiven);
+                    onConsentChange(consentGiven);
+                  }}
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel
                   htmlFor="contact-text-consent"
-                  className={`text-xs ${form.formState.errors.textConsent ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                  className={`text-xs ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
                 >
                   {TEXT_CONSENT_MESSAGE}
                 </FormLabel>
-                <FormMessage />
-                {form.formState.errors.textConsent ? (
-                  <p className="text-sm font-semibold text-amber-800">
-                    ⚠ Required: check this box to submit when a phone number is entered.
-                  </p>
-                ) : null}
+                <TextConsentNudgeNote visible={showNudge} />
               </div>
             </FormItem>
           )}
