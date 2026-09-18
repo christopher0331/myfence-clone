@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { leadSubmitWarnings, shouldDeliverLead } from "../src/lib/leadSubmitPolicy.ts";
 
 const droppedSession = {
@@ -36,5 +37,28 @@ assert.deepEqual(
   }),
   [],
 );
+
+const formFiles = [
+  "src/components/pages/ContactPage.tsx",
+  "src/components/forms/ContactForm.tsx",
+  "src/components/forms/ServiceAreaContactForm.tsx",
+  "src/components/forms/InlineQuoteForm.tsx",
+  "src/components/home/InlineContactSection.tsx",
+  "src/components/QuoteModal.tsx",
+  "src/components/pages/DiscountsPage.tsx",
+];
+const banned = [
+  "Please select an address from the dropdown suggestions",
+  "Consent required",
+  "before submitting your phone number",
+  "check this box to submit when a phone number is entered",
+];
+for (const file of formFiles) {
+  const src = readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
+  for (const needle of banned) {
+    assert.equal(src.includes(needle), false, `${file} still contains: ${needle}`);
+  }
+  assert.match(src, /trackLeadSubmitAttempt/, `${file} must record submit attempts`);
+}
 
 console.log("leadSubmitPolicy: all assertions passed");
