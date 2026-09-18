@@ -9,7 +9,7 @@ export type YouTubeShort = {
   hideControls?: boolean;
 };
 
-export function youtubeShortEmbedSrc(videoId: string, mute = false, hideControls = false) {
+function youtubeShortEmbedSrc(videoId: string, mute = false, hideControls = false) {
   const params = new URLSearchParams({
     playsinline: "1",
     rel: "0",
