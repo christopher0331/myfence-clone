@@ -313,7 +313,8 @@ const BellevueArticle = () => (
         },
         {
           name: "Factoria",
-          description: "Family-oriented neighborhoods with active HOAs requiring committee-approved designs and durable materials for high child/pet activity"
+          description: "Family-oriented neighborhoods near I-90/I-405 and Newport High, with HOA-reviewed townhomes and Monthaven hillside lots. Click to learn more →",
+          link: "/service-areas/bellevue/factoria"
         },
         {
           name: "Eastgate",
