@@ -9,6 +9,7 @@ import { Check, Eye, Shield, Dog } from "lucide-react";
 import boardOnBoardCraftsman from "@/assets/fences/board-on-board-craftsman.png";
 import boardOnBoardCorner from "@/assets/fences/board-on-board-corner.png";
 import OptimizedImage from "@/components/OptimizedImage";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const BoardOnBoard = () => {
   return (
@@ -49,6 +50,21 @@ const BoardOnBoard = () => {
           <p className="text-xl text-muted-foreground max-w-3xl">
             One of our personal favorites for both visual appeal and utility—overlapping boards eliminate gaps for complete privacy year-round while creating a beautiful 3D effect.
           </p>
+        </div>
+      </section>
+
+      <section className="container py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Board-on-board picture frame Short</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            A pre-stained board-on-board picture frame run — overlapping boards with the same privacy detail on this page.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="drwdTbZL42I"
+              title="Quick Look into our board on board picture frame style which is pre-stained!"
+            />
+          </div>
         </div>
       </section>
 

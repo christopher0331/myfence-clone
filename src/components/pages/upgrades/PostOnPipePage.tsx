@@ -11,6 +11,7 @@ import { Check, X, Shield, Wrench, DollarSign } from "lucide-react";
 import postOnPipeView from "@/assets/post-on-pipe-view.webp";
 import postOnPipe from "@/assets/post-on-pipe.webp";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const PostOnPipePage = () => {
   const breadcrumbData = {
@@ -78,6 +79,21 @@ const PostOnPipePage = () => {
               />
             </AspectRatio>
           </Card>
+        </div>
+      </section>
+
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4">Cedar post on pipe walkthrough</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            Watch a finished cedar fence sitting on galvanized pipe foundations — the same rot-resistant post detail described here.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="m0v2Y7z44Uc"
+              title="Cedar Post on Pipe Fence"
+            />
+          </div>
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Shield, Droplets, Eye, Clock, TreePine, Hammer, Paintbrush2, Target } from "lucide-react";
 import Link from "next/link";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const PreStainingPage = () => {
   const structuredData = {
@@ -138,6 +139,19 @@ const PreStainingPage = () => {
               </Card>
             </div>
           </div>
+        </section>
+
+        <section className="container mx-auto px-4 py-12">
+          <YouTubeShortsGallery
+            heading="Pre-stain shop & finished installs"
+            description="Culling and drying in the shop, then pre-stained cedar on the job — the same process described on this page."
+            videos={[
+              { videoId: "ud839tV-4-Y", title: "Pre Dry And Cull Before We Pre Stain" },
+              { videoId: "vS7Yswm0y2A", title: "POV: Building a premium cedar fence panel in the Fence Genius shop" },
+              { videoId: "fbjj-uak5U4", title: "Pre Stained Cedar Fence in Ravensdale by MyFence.com" },
+              { videoId: "gzAzQLdfqDA", title: "MyFence.com installing another perfect pre stained cedar fence in Washington!" },
+            ]}
+          />
         </section>
 
         {/* Our Process */}

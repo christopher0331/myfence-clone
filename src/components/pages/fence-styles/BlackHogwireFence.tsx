@@ -12,6 +12,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -360,6 +361,16 @@ const BlackHogwireFence = () => {
                 </div>
               </div>
             </div>
+            <YouTubeShortsGallery
+              className="max-w-7xl mx-auto mt-12"
+              heading="More hog wire installs"
+              description="King County, Washington, and Issaquah/High Valley hog wire jobs — same cedar frame and black mesh system."
+              videos={[
+                { videoId: "yxXlZXlHZww", title: "MyFence.com: Hog Wire Fence in King County" },
+                { videoId: "NzhRkv9N9dM", title: "MyFence.com: Hog Wire Fence in Washington" },
+                { videoId: "krIoTEuYyrY", title: "MyFence.com: Hog Wire Fence in Issaquah/High Valley, WA" },
+              ]}
+            />
           </div>
         </section>
 

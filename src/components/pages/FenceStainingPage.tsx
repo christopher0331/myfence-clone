@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, CloudRain, Shield, Palette, Clock, TreePine, Droplets, Sun } from "lucide-react";
 import Link from "next/link";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const FenceStainingPage = () => {
   const structuredData = {
@@ -99,6 +100,17 @@ const FenceStainingPage = () => {
               </div>
             </CardContent>
           </Card>
+        </section>
+
+        <section className="container mx-auto px-4 py-12">
+          <YouTubeShortsGallery
+            heading="Pre-stained cedar in the field"
+            description="Finished stained cedar installs that show why shop staining beats a last-minute brush job on site."
+            videos={[
+              { videoId: "gzAzQLdfqDA", title: "MyFence.com installing another perfect pre stained cedar fence in Washington!" },
+              { videoId: "fbjj-uak5U4", title: "Pre Stained Cedar Fence in Ravensdale by MyFence.com" },
+            ]}
+          />
         </section>
 
         {/* Why Stain Section */}

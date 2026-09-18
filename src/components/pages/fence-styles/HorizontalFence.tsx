@@ -12,6 +12,7 @@ import PaymentCalculator from '@/components/PaymentCalculator';
 import Seo from '@/components/Seo';
 import Link from 'next/link';
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -200,6 +201,13 @@ const HorizontalFence = () => {
               .
             </p>
           )}
+
+          <div className="max-w-[340px] mx-auto mb-10">
+            <YouTubeShortEmbed
+              videoId="qrEgcvQkbCw"
+              title="Horizontal Cedar Gate Walkthrough"
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {ravennaFieldGallery.map((photo) => (

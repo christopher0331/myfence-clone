@@ -8,6 +8,7 @@ import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import SeattleFenceQuoteEmbed from "@/components/SeattleFenceQuoteEmbed";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 
 const QuoteToolPage = () => {
   const isMobile = useIsMobile();
@@ -137,6 +138,21 @@ const QuoteToolPage = () => {
           </p>
         </section>
       )}
+
+      <section className="container py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Fence style and online pricing walkthrough</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            See how homeowners pick a style and get real-time pricing in the same quote flow you are using here.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="Y52NKWHWW54"
+              title="Fence Style And Online Pricing Walkthrough"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
