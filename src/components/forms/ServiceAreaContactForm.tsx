@@ -260,8 +260,9 @@ const ServiceAreaContactForm = () => {
           <>
             <div
               id={`sa-contact-consent-${sku}`}
-              className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+              className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
             >
+              <div className="flex items-start space-x-2">
               <Checkbox
                 id={`sa-consent-check-${sku}`}
                 checked={formData.textConsent}
@@ -277,8 +278,9 @@ const ServiceAreaContactForm = () => {
               >
                 {TEXT_CONSENT_MESSAGE}
               </Label>
+              </div>
+              <TextConsentNudgeNote visible={showNudge} />
             </div>
-            <TextConsentNudgeNote visible={showNudge} />
           </>
         ) : null}
 
