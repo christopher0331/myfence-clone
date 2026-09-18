@@ -515,8 +515,8 @@ export default function EastgatePage() {
         </section>
 
         <AboutTheArea
-          title="Discover Eastgate"
-          description="Eastgate combines Bellevue convenience with wooded residential pockets, schools, parks, and quick access to I-90."
+          cityName="Bellevue"
+          neighborhoodName="Eastgate"
           attractions={[
             {
               name: "Eastgate Park",
@@ -534,44 +534,11 @@ export default function EastgatePage() {
               description: "A nearby shopping and services district for errands, dining, and daily convenience.",
             },
           ]}
-          popularServices={[
-            {
-              title: "Fence Installation",
-              href: "/service-areas/bellevue",
-              description: "Professional fencing for Bellevue homes and properties.",
-            },
-            {
-              title: "Privacy Fencing",
-              href: "/fence-styles/picture-frame-fence",
-              description: "Solid privacy solutions for residential lots.",
-            },
-            {
-              title: "Modern Hybrid Fences",
-              href: "/fence-styles/cedar-steel-hybrid-fence",
-              description: "A clean, durable option for contemporary homes.",
-            },
-          ]}
-          relatedAreas={[
-            {
-              title: "Bellevue",
-              href: "/bellevue",
-              description: "Explore our Bellevue service area coverage.",
-            },
-            {
-              title: "Newport Hills",
-              href: "/service-areas/bellevue/newport-hills",
-              description: "Another hillside Bellevue neighborhood we serve.",
-            },
-            {
-              title: "Factoria",
-              href: "/bellevue",
-              description: "Nearby area information and service access.",
-            },
-          ]}
           localLivingContent={
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Eastgate sits between major commuter routes and established residential streets, giving homeowners a mix of privacy, convenience, and access to everyday services. For city and neighborhood context, many residents look to <a href="/bellevue">Bellevue</a> resources when planning exterior improvements.
+                Eastgate sits between major commuter routes and established residential streets, giving homeowners a mix of privacy, convenience, and access to everyday services. For city and neighborhood context, many residents look to{" "}
+                <a href="/service-areas/bellevue">Bellevue</a> resources when planning exterior improvements.
               </p>
               <p>
                 Homeowners with sloped or wooded lots often need a fence approach that handles drainage and changing elevations. That is especially true for homes closer to Eastgate Park, the I-90 corridor, and the greenbelts that shape the area.
