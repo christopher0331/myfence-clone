@@ -504,7 +504,8 @@ const Kirkland = () => {
         },
         {
           name: "Market",
-          description: "Upscale lakefront district with premium properties demanding high-end materials and designs worthy of million-dollar views"
+          description: "Historic hillside lots along Waverly Way and Market Street — cedar, hogwire, and hybrid fencing that keeps Lake Washington in view. Click to learn more →",
+          link: "/service-areas/kirkland/market"
         },
         {
           name: "Moss Bay",
