@@ -615,7 +615,8 @@ const Bellevue = () => {
         },
         {
           name: "Wilburton",
-          description: "Established neighborhoods with mature landscaping requiring careful installation around 50+ year old trees and root systems"
+          description: "Established neighborhoods with mature landscaping requiring careful installation around 50+ year old trees and root systems. Click to learn more →",
+          link: "/service-areas/bellevue/wilburton"
         },
         {
           name: "Newport Hills",
