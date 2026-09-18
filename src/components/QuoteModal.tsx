@@ -19,7 +19,7 @@ import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
-import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "quote-modal";
 
@@ -74,7 +74,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
       formType: "quote",
       warnings,
       blocked: !gate.ok,
-      blockReason: gate.ok ? undefined : gate.reason,
+      blockReason: leadSubmitBlockReason(gate),
     });
 
     if (!gate.ok) {

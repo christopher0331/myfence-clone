@@ -25,7 +25,7 @@ import {
   trackLeadSubmitAttempt,
 } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
-import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
 const ServiceAreaContactForm = () => {
@@ -79,7 +79,7 @@ const ServiceAreaContactForm = () => {
       formId: sku,
       warnings,
       blocked: !gate.ok,
-      blockReason: gate.ok ? undefined : gate.reason,
+      blockReason: leadSubmitBlockReason(gate),
     });
 
     if (!gate.ok) {

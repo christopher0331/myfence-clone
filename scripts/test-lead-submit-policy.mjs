@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { leadSubmitWarnings, shouldDeliverLead } from "../src/lib/leadSubmitPolicy.ts";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "../src/lib/leadSubmitPolicy.ts";
 
 assert.deepEqual(
   shouldDeliverLead({ address: "123 Main St Seattle WA", requireAddress: true }),
@@ -15,9 +15,17 @@ assert.deepEqual(
   ["typed_address"],
 );
 
+assert.equal(
+  leadSubmitBlockReason(shouldDeliverLead({ address: "123 Main St Seattle WA" })),
+  undefined,
+);
 assert.deepEqual(
   shouldDeliverLead({ address: "", requireAddress: true }),
   { ok: false, reason: "missing_address" },
+);
+assert.equal(
+  leadSubmitBlockReason(shouldDeliverLead({ address: "", requireAddress: true })),
+  "missing_address",
 );
 assert.deepEqual(
   shouldDeliverLead({ address: "", requireAddress: false }),

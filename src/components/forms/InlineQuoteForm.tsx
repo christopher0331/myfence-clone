@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
-import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
@@ -77,7 +77,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       formId: sku,
       warnings,
       blocked: !gate.ok,
-      blockReason: gate.ok ? undefined : gate.reason,
+      blockReason: leadSubmitBlockReason(gate),
     });
 
     if (!gate.ok) {

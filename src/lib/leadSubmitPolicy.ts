@@ -14,15 +14,22 @@ export type LeadSubmitBlockReason = "missing_address";
 
 export type LeadSubmitWarning = "typed_address";
 
+export type LeadSubmitGate = { ok: true } | { ok: false; reason: LeadSubmitBlockReason };
+
 export function shouldDeliverLead(args: {
   address?: string;
   requireAddress?: boolean;
-}): { ok: true } | { ok: false; reason: LeadSubmitBlockReason } {
+}): LeadSubmitGate {
   const requireAddress = args.requireAddress !== false;
   if (requireAddress && !String(args.address ?? "").trim()) {
     return { ok: false, reason: "missing_address" };
   }
   return { ok: true };
+}
+
+export function leadSubmitBlockReason(gate: LeadSubmitGate): LeadSubmitBlockReason | undefined {
+  if (gate.ok) return undefined;
+  return gate.reason;
 }
 
 export function leadSubmitWarnings(args: {
