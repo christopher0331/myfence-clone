@@ -27,7 +27,7 @@ export const AboutUsSection = () => {
           </p>
           <div className="mt-5 flex justify-center relative">
             <Button size="lg" variant="secondary" asChild className="hover-scale px-16 sm:px-12 text-base sm:text-lg relative">
-              <Link href="/quote">Free Quotes</Link>
+              <Link href="/contact">Free Quotes</Link>
             </Button>
             <span className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-40 text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
           </div>
