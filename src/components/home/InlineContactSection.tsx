@@ -15,8 +15,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "inline-contact";
 
@@ -51,10 +52,25 @@ export const InlineContactSection = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formData.address.trim() && !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+    });
+    // Homepage inline form can omit address; a typed address must still deliver.
+    const gate = shouldDeliverLead({
+      address: formData.address,
+      requireAddress: false,
+    });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "contact",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+    if (!gate.ok) {
       toast({
-        title: "Invalid address",
-        description: "Please select an address from the dropdown suggestions.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;

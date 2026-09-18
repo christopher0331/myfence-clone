@@ -21,8 +21,9 @@ import {
 } from "@/constants/textConsent";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadIntentOnce, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "contact-page";
 
@@ -57,12 +58,22 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "contact",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+
+    if (!gate.ok) {
       toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;
@@ -239,7 +250,11 @@ const ContactPage = () => {
                 for superior build quality and unmatched customer clarity from estimate to final walkthrough.
               </p>
 
-              <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6 mt-6">
+              <form
+                onSubmit={handleSubmit}
+                onFocusCapture={() => trackLeadIntentOnce("form_start")}
+                className="grid md:grid-cols-2 gap-6 mt-6"
+              >
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>

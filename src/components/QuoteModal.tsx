@@ -17,8 +17,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "quote-modal";
 
@@ -64,12 +65,22 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "quote",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+
+    if (!gate.ok) {
       toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;

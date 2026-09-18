@@ -22,8 +22,10 @@ import {
   getLeadAttributionById,
   trackFormSubmit,
   trackLeadIntentOnce,
+  trackLeadSubmitAttempt,
 } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
 const ServiceAreaContactForm = () => {
@@ -67,12 +69,23 @@ const ServiceAreaContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt("service-area-contact", {
+      formType: "contact",
+      formId: sku,
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+
+    if (!gate.ok) {
       toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;

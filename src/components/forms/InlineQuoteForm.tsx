@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
@@ -24,6 +25,7 @@ import {
   getLeadAttributionById,
   trackFormSubmit,
   trackLeadIntentOnce,
+  trackLeadSubmitAttempt,
 } from "@/lib/analytics";
 
 interface InlineQuoteFormProps {
@@ -65,12 +67,23 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt("inline-quote", {
+      formType: "quote",
+      formId: sku,
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+
+    if (!gate.ok) {
       toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;

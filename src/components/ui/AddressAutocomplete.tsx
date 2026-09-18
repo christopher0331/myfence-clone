@@ -84,14 +84,14 @@ function AutocompleteInner({
           value={value}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className={`${className ?? ""} ${showError ? "border-destructive ring-destructive" : ""}`}
+          className={`${className ?? ""}`}
           required={required}
           autoComplete="new-password"
         />
       </Autocomplete>
       {showError && (
-        <p className="text-sm font-medium text-destructive mt-1">
-          Please select an address from the dropdown suggestions.
+        <p className="text-sm text-muted-foreground mt-1">
+          Pick a suggestion if you see one. A typed address still submits.
         </p>
       )}
     </div>

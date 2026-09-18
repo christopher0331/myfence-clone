@@ -22,8 +22,9 @@ import {
 } from "@/constants/textConsent";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "home-contact";
 
@@ -61,8 +62,19 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: FormData) => {
-    if (!addressValid) {
-      form.setError("address", { message: "Please select an address from the dropdown suggestions." });
+    const warnings = leadSubmitWarnings({
+      address: data.address,
+      addressFromPlaces: addressValid,
+    });
+    const gate = shouldDeliverLead({ address: data.address, requireAddress: true });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "contact",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: leadSubmitBlockReason(gate),
+    });
+    if (!gate.ok) {
+      form.setError("address", { message: "Please enter your property address." });
       return;
     }
     if (interceptUncheckedSubmit(data.phone, data.textConsent, "contact-form-text-consent-row")) {
