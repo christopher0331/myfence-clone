@@ -46,10 +46,16 @@ for (const file of formFiles) {
     assert.equal(src.includes(needle), false, `${file} still contains: ${needle}`);
   }
   assert.match(src, /trackLeadSubmitAttempt/, `${file} must record submit attempts`);
+  assert.match(src, /shouldDeliverLead/, `${file} must use the typed-address delivery policy`);
   assert.match(
     src,
-    /Please consent to receive text messages before submitting your phone number|Consent is required to receive text messages/,
-    `${file} must keep the SMS consent submit gate`,
+    /interceptUncheckedSubmit/,
+    `${file} must keep the optional SMS consent nudge`,
+  );
+  assert.equal(
+    /Please consent to receive text messages before submitting your phone number|Consent is required to receive text messages/.test(src),
+    false,
+    `${file} must not hard-block submit on SMS consent`,
   );
 }
 
