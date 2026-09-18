@@ -14,6 +14,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArrowLeft } from "lucide-react";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -364,7 +365,7 @@ const CraftsmanStyleFence = () => {
                     View Kennydale project photos &rarr;
                   </Link>
                 </div>
-                <div className="w-full max-w-[340px] mx-auto md:mx-0 md:ml-auto">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 max-w-[340px] mx-auto md:mx-0 md:ml-auto">
                   <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden shadow-lg">
                     <iframe
                       src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
@@ -374,6 +375,11 @@ const CraftsmanStyleFence = () => {
                       title="Craftsman style cedar fence walkthrough by MyFence.com"
                     />
                   </AspectRatio>
+                  <YouTubeShortEmbed
+                    videoId="5Uf0VWTzBC8"
+                    title="Modern Craftsman Cedar Fence in Newcastle, WA"
+                    className="bg-muted rounded-lg overflow-hidden shadow-lg"
+                  />
                 </div>
               </div>
             </div>
