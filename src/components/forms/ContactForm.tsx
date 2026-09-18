@@ -16,9 +16,9 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
-import type { FieldErrors } from "react-hook-form";
+import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "home-contact";
 
@@ -29,7 +29,7 @@ const formSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   address: z.string().trim().min(1, "Address is required").max(255),
   description: z.string().trim().min(1, "Message is required").max(1000),
-  textConsent: z.boolean().refine((value) => value, "Consent is required to receive text messages."),
+  textConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -55,8 +55,21 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: FormData) => {
-    if (!addressValid) {
-      form.setError("address", { message: "Please select an address from the dropdown suggestions." });
+    const warnings = leadSubmitWarnings({
+      address: data.address,
+      addressFromPlaces: addressValid,
+      phone: data.phone,
+      textConsent: data.textConsent,
+    });
+    const gate = shouldDeliverLead({ address: data.address, requireAddress: true });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "contact",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: gate.ok ? undefined : gate.reason,
+    });
+    if (!gate.ok) {
+      form.setError("address", { message: "Please enter your property address." });
       return;
     }
     setIsSubmitting(true);
@@ -130,20 +143,6 @@ export function ContactForm() {
     }
   };
 
-  const onInvalid = (errors: FieldErrors<FormData>) => {
-    if (errors.textConsent) {
-      document.getElementById("contact-form-text-consent-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      toast({
-        title: "Consent required",
-        description: "Please check the text consent box before submitting your phone number.",
-        variant: "destructive",
-      });
-    }
-  };
-
   if (isSubmitted && submittedData) {
     return (
       <div>
@@ -164,7 +163,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <FormField
             control={form.control}
@@ -285,7 +284,7 @@ export function ContactForm() {
                 <FormMessage />
                 {form.formState.errors.textConsent ? (
                   <p className="text-sm font-semibold text-amber-800">
-                    ⚠ Required: check this box to submit when a phone number is entered.
+                    Check this box if we may text you. You can still send the form without it.
                   </p>
                 ) : null}
               </div>

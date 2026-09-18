@@ -15,8 +15,9 @@ import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "quote-modal";
 
@@ -61,26 +62,24 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
-      toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
-        variant: "destructive",
-      });
-      return;
-    }
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+      phone: formData.phone,
+      textConsent: formData.textConsent,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "quote",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: gate.ok ? undefined : gate.reason,
+    });
 
-    if (formData.phone.trim() && !formData.textConsent) {
-      setTextConsentError(true);
-      document.getElementById("quote-modal-text-consent-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+    if (!gate.ok) {
       toast({
-        title: "Consent required",
-        description: "Please consent to receive text messages before submitting your phone number.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;
@@ -272,7 +271,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                 </Label>
               </div>
               {textConsentError ? (
-                <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
+                <p className="text-sm font-semibold text-amber-800">⚠ Check this box if we may text you. You can still send the form without it.</p>
               ) : null}
             </>
           ) : null}

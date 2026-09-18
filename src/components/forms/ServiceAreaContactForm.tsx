@@ -20,8 +20,10 @@ import {
   getLeadAttributionById,
   trackFormSubmit,
   trackLeadIntentOnce,
+  trackLeadSubmitAttempt,
 } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
 const ServiceAreaContactForm = () => {
@@ -64,26 +66,25 @@ const ServiceAreaContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.address.trim() || !addressValid) {
-      toast({
-        title: !formData.address.trim() ? "Address required" : "Invalid address",
-        description: !formData.address.trim()
-          ? "Please enter your property address."
-          : "Please select an address from the dropdown suggestions.",
-        variant: "destructive",
-      });
-      return;
-    }
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+      phone: formData.phone,
+      textConsent: formData.textConsent,
+    });
+    const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
+    trackLeadSubmitAttempt("service-area-contact", {
+      formType: "contact",
+      formId: sku,
+      warnings,
+      blocked: !gate.ok,
+      blockReason: gate.ok ? undefined : gate.reason,
+    });
 
-    if (formData.phone.trim() && !formData.textConsent) {
-      setTextConsentError(true);
-      document.getElementById(`sa-contact-consent-${sku}`)?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+    if (!gate.ok) {
       toast({
-        title: "Consent required",
-        description: "Please consent to receive text messages before submitting your phone number.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;
@@ -270,7 +271,7 @@ const ServiceAreaContactForm = () => {
             </div>
             {textConsentError ? (
               <p className="text-sm font-semibold text-amber-800">
-                ⚠ Required: check this box to submit when a phone number is entered.
+                ⚠ Check this box if we may text you. You can still send the form without it.
               </p>
             ) : null}
           </>

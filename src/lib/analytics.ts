@@ -348,6 +348,36 @@ function sourcePageFor(idValue: string): string {
   return parts.join(" | ");
 }
 
+/**
+ * Fire when the visitor actually clicks Send — including attempts that we later
+ * block. PostHog autocapture "submitted form" is the native submit event and is
+ * not proof the lead reached CRM/email.
+ */
+export function trackLeadSubmitAttempt(
+  formKey: string,
+  args?: {
+    formType?: FormType;
+    formId?: string;
+    blocked?: boolean;
+    blockReason?: string;
+    warnings?: string[];
+  },
+): void {
+  if (!isBrowser()) return;
+  const path = normalizePath(window.location.pathname);
+  const formIdValue = args?.formId ?? formId(formKey);
+  capturePosthog(
+    "lead_submit_attempt",
+    geoProperties(path, {
+      form_type: args?.formType,
+      form_id: formIdValue,
+      blocked: args?.blocked === true,
+      block_reason: args?.blockReason,
+      warnings: args?.warnings,
+    }),
+  );
+}
+
 /** Fire a form_submit on successful lead submission. Pass `formId` to override the default. */
 export function trackFormSubmit(
   formKey: string,

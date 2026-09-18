@@ -13,8 +13,9 @@ import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "inline-contact";
 
@@ -48,24 +49,27 @@ export const InlineContactSection = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formData.address.trim() && !addressValid) {
+    const warnings = leadSubmitWarnings({
+      address: formData.address,
+      addressFromPlaces: addressValid,
+      phone: formData.phone,
+      textConsent: formData.textConsent,
+    });
+    // Homepage inline form can omit address; a typed address must still deliver.
+    const gate = shouldDeliverLead({
+      address: formData.address,
+      requireAddress: false,
+    });
+    trackLeadSubmitAttempt(FORM_KEY, {
+      formType: "contact",
+      warnings,
+      blocked: !gate.ok,
+      blockReason: gate.ok ? undefined : gate.reason,
+    });
+    if (!gate.ok) {
       toast({
-        title: "Invalid address",
-        description: "Please select an address from the dropdown suggestions.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (formData.phone.trim() && !formData.textConsent) {
-      setTextConsentError(true);
-      document.getElementById("inline-text-consent-row")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      toast({
-        title: "Consent required",
-        description: "Please consent to receive text messages before submitting your phone number.",
+        title: "Address required",
+        description: "Please enter your property address.",
         variant: "destructive",
       });
       return;
@@ -244,7 +248,7 @@ export const InlineContactSection = () => {
                 </div>
                 {textConsentError ? (
                   <p className="text-sm font-semibold text-amber-800 mt-1">
-                    ⚠ Required: check this box to submit when a phone number is entered.
+                    ⚠ Check this box if we may text you. You can still send the form without it.
                   </p>
                 ) : null}
                 <div>

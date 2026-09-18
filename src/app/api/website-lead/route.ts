@@ -126,7 +126,7 @@ export async function POST(req: Request) {
     noteParts.push(`Estimated Cost: $${body.totalCost.toLocaleString()}`);
   }
   pushNote("Timeline", body.projectTimeline);
-  pushNote("Text consent", body.textConsent === true ? "Yes" : "");
+  pushNote("Text consent", body.textConsent === true ? "Yes" : "No");
   pushNote("Submitted from page", body.sourcePage);
   pushNote("Site", body.site);
   pushNote("Form SKU", body.formSku ?? body.form_sku);
