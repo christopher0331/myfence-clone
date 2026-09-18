@@ -564,7 +564,8 @@ const Issaquah = () => {
         },
         {
           name: "Grand Ridge",
-          description: "Family-focused neighborhood with larger lots needing secure boundary fencing for children, pets, and outdoor living spaces"
+          description: "Family-focused plateau neighborhood with larger lots, Grand Ridge Elementary on NE Park Drive, and trail-edge yards along Grand Ridge Park. Click to learn more →",
+          link: "/service-areas/issaquah/grand-ridge"
         },
         {
           name: "Newcastle",
