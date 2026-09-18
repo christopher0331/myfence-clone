@@ -497,7 +497,7 @@ const JuanitaPage = () => {
                 Also Serving Nearby Kirkland Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Kirkland. If you&apos;re near Juanita, we also serve Finn Hill to the north, plus Downtown Kirkland, Kingsgate, Bridle Trails, Market, and Moss Bay.
+                We install fences throughout Kirkland. If you&apos;re near Juanita, we also serve Finn Hill to the north, Kingsgate east of I-405, plus Downtown Kirkland, Bridle Trails, Market, and Moss Bay.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -505,6 +505,9 @@ const JuanitaPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/finn-hill">Finn Hill</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/kirkland/kingsgate">Kingsgate</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/downtown-kirkland">
