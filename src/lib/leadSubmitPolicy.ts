@@ -14,7 +14,10 @@ export type LeadSubmitBlockReason = "missing_address";
 
 export type LeadSubmitWarning = "typed_address";
 
-export type LeadSubmitGate = { ok: true } | { ok: false; reason: LeadSubmitBlockReason };
+export type LeadSubmitGate = {
+  ok: boolean;
+  reason?: LeadSubmitBlockReason;
+};
 
 export function shouldDeliverLead(args: {
   address?: string;
@@ -28,7 +31,6 @@ export function shouldDeliverLead(args: {
 }
 
 export function leadSubmitBlockReason(gate: LeadSubmitGate): LeadSubmitBlockReason | undefined {
-  if (gate.ok) return undefined;
   return gate.reason;
 }
 
