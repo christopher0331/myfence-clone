@@ -54,8 +54,6 @@ const ContactPage = () => {
     const warnings = leadSubmitWarnings({
       address: formData.address,
       addressFromPlaces: addressValid,
-      phone: formData.phone,
-      textConsent: formData.textConsent,
     });
     const gate = shouldDeliverLead({ address: formData.address, requireAddress: true });
     trackLeadSubmitAttempt(FORM_KEY, {
@@ -69,6 +67,20 @@ const ContactPage = () => {
       toast({
         title: "Address required",
         description: "Please enter your property address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.phone.trim() && !formData.textConsent) {
+      setTextConsentError(true);
+      document.getElementById("contact-page-text-consent-row")?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      toast({
+        title: "Consent required",
+        description: "Please consent to receive text messages before submitting your phone number.",
         variant: "destructive",
       });
       return;
@@ -317,7 +329,7 @@ const ContactPage = () => {
                   </div>
                   {textConsentError ? (
                     <p className="text-sm font-semibold text-amber-800 mt-1">
-                      Check this box if we may text you. You can still send the form without it.
+                      ⚠ Required: check this box to submit when a phone number is entered.
                     </p>
                   ) : null}
                   <div>

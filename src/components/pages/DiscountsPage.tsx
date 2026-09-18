@@ -13,9 +13,8 @@ import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
 import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
-import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
+import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
-import { leadSubmitWarnings } from "@/lib/leadSubmitPolicy";
 
 const WHEEL_FORM_KEY = "discount-wheel";
 const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
@@ -321,13 +320,15 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
-      trackLeadSubmitAttempt(ALREADY_PLAYED_FORM_KEY, {
-        formType: "quote",
-        warnings: leadSubmitWarnings({
-          phone: formPhone,
-          textConsent: formTextConsent,
-        }),
-      });
+      if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("already-played-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        toast.error("Please consent to receive text messages before submitting your phone number.");
+        return;
+      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
@@ -409,13 +410,15 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
-      trackLeadSubmitAttempt(WHEEL_FORM_KEY, {
-        formType: "quote",
-        warnings: leadSubmitWarnings({
-          phone: formPhone,
-          textConsent: formTextConsent,
-        }),
-      });
+      if (formPhone.trim() && !formTextConsent) {
+        setTextConsentError(true);
+        document.getElementById("discounts-text-consent-row")?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        toast.error("Please consent to receive text messages before submitting your phone number.");
+        return;
+      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
@@ -754,7 +757,7 @@ const DiscountsPage = () => {
                         </Label>
                       </div>
                       {textConsentError ? (
-                        <p className="text-sm font-semibold text-amber-800">⚠ Check this box if we may text you. You can still send the form without it.</p>
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
                       ) : null}
                     </>
                   ) : null}
@@ -869,7 +872,7 @@ const DiscountsPage = () => {
                         </Label>
                       </div>
                       {textConsentError ? (
-                        <p className="text-sm font-semibold text-amber-800">⚠ Check this box if we may text you. You can still send the form without it.</p>
+                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
                       ) : null}
                     </>
                   ) : null}
