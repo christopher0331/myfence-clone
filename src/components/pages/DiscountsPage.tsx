@@ -12,7 +12,9 @@ import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
-import { TEXT_CONSENT_MESSAGE } from "@/constants/textConsent";
+import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
+import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
+import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
 
@@ -144,7 +146,8 @@ const DiscountsPage = () => {
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
   const [formTextConsent, setFormTextConsent] = useState(false);
-  const [textConsentError, setTextConsentError] = useState(false);
+  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
+    useOptionalTextConsentNudge();
 
   useEffect(() => {
     const today = new Date();
@@ -320,13 +323,8 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
-      if (formPhone.trim() && !formTextConsent) {
-        setTextConsentError(true);
-        document.getElementById("already-played-text-consent-row")?.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-        toast.error("Please consent to receive text messages before submitting your phone number.");
+      if (interceptUncheckedSubmit(formPhone, formTextConsent, "already-played-text-consent-row")) {
+        toast(TEXT_CONSENT_NUDGE_TITLE, { description: TEXT_CONSENT_NUDGE_DESCRIPTION });
         return;
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -410,13 +408,8 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
-      if (formPhone.trim() && !formTextConsent) {
-        setTextConsentError(true);
-        document.getElementById("discounts-text-consent-row")?.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-        toast.error("Please consent to receive text messages before submitting your phone number.");
+      if (interceptUncheckedSubmit(formPhone, formTextConsent, "discounts-text-consent-row")) {
+        toast(TEXT_CONSENT_NUDGE_TITLE, { description: TEXT_CONSENT_NUDGE_DESCRIPTION });
         return;
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -728,7 +721,7 @@ const DiscountsPage = () => {
                         setFormPhone(value);
                         if (!value.trim()) {
                           setFormTextConsent(false);
-                          setTextConsentError(false);
+                          clearNudge();
                         }
                       }}
                       required
@@ -738,7 +731,7 @@ const DiscountsPage = () => {
                     <>
                       <div
                         id="discounts-text-consent-row"
-                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                        className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
                       >
                         <Checkbox
                           id="discounts-text-consent"
@@ -746,19 +739,17 @@ const DiscountsPage = () => {
                           onCheckedChange={(checked) => {
                             const consentGiven = checked === true;
                             setFormTextConsent(consentGiven);
-                            if (consentGiven) setTextConsentError(false);
+                            onConsentChange(consentGiven);
                           }}
                         />
                         <Label
                           htmlFor="discounts-text-consent"
-                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                          className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
                         >
                           {TEXT_CONSENT_MESSAGE}
                         </Label>
                       </div>
-                      {textConsentError ? (
-                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
-                      ) : null}
+                      <TextConsentNudgeNote visible={showNudge} />
                     </>
                   ) : null}
 
@@ -843,7 +834,7 @@ const DiscountsPage = () => {
                         setFormPhone(value);
                         if (!value.trim()) {
                           setFormTextConsent(false);
-                          setTextConsentError(false);
+                          clearNudge();
                         }
                       }}
                       required
@@ -853,7 +844,7 @@ const DiscountsPage = () => {
                     <>
                       <div
                         id="already-played-text-consent-row"
-                        className={`flex items-start space-x-2 rounded-md ${textConsentError ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+                        className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
                       >
                         <Checkbox
                           id="already-played-text-consent"
@@ -861,19 +852,17 @@ const DiscountsPage = () => {
                           onCheckedChange={(checked) => {
                             const consentGiven = checked === true;
                             setFormTextConsent(consentGiven);
-                            if (consentGiven) setTextConsentError(false);
+                            onConsentChange(consentGiven);
                           }}
                         />
                         <Label
                           htmlFor="already-played-text-consent"
-                          className={`text-xs leading-5 ${textConsentError ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
+                          className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
                         >
                           {TEXT_CONSENT_MESSAGE}
                         </Label>
                       </div>
-                      {textConsentError ? (
-                        <p className="text-sm font-semibold text-amber-800">⚠ Required: check this box to submit when a phone number is entered.</p>
-                      ) : null}
+                      <TextConsentNudgeNote visible={showNudge} />
                     </>
                   ) : null}
 
