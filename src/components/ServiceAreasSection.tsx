@@ -58,6 +58,7 @@ const serviceAreasByRegion = [
   {
     region: "Neighborhoods",
     areas: [
+      { to: "/service-areas/bellevue/crossroads", label: "Crossroads (Bellevue)" },
       { to: "/service-areas/bellevue/sherwood-forest", label: "Sherwood Forest (Bellevue)" },
       { to: "/service-areas/black-diamond/lawson-hill-estates", label: "Lawson Hill Estates (Black Diamond)" },
       { to: "/service-areas/issaquah/mirrormont", label: "Mirrormont (Issaquah)" },

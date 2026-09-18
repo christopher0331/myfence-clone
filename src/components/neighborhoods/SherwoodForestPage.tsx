@@ -439,6 +439,9 @@ const SherwoodForestPage = () => {
                   <Link href="/service-areas/bellevue/newport-hills">Newport Hills</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bellevue/crossroads">Crossroads</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
                 </Button>
               </div>

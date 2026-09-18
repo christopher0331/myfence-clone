@@ -308,7 +308,8 @@ const BellevueArticle = () => (
         },
         {
           name: "Crossroads",
-          description: "Diverse residential area with mid-century homes and new townhome developments requiring varied fence solutions"
+          description: "Townhomes, mid-century lots, and arterial yards along NE 8th Street and 156th Avenue NE. Cedar, hogwire, and hybrid fencing for compact Crossroads properties. Click to learn more →",
+          link: "/service-areas/bellevue/crossroads"
         },
         {
           name: "Factoria",
