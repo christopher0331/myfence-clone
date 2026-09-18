@@ -421,6 +421,9 @@ const MirrorMontPage = () => {
                   <Link href="/service-areas/issaquah">Issaquah overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/issaquah/talus">Talus</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/issaquah-highlands">Issaquah Highlands</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

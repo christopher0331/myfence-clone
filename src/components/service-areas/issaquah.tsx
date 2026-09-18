@@ -553,7 +553,8 @@ const Issaquah = () => {
         },
         {
           name: "Talus",
-          description: "Luxury hillside development with steep slopes demanding expert terrain-adaptive installations and reinforced anchoring"
+          description: "Hillside planned community on Cougar Mountain with TRA architectural review, steep lots off NW Talus Drive, and trail-edge yards. Click to learn more →",
+          link: "/service-areas/issaquah/talus"
         },
         {
           name: "Providence Point",
