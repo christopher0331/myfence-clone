@@ -15,6 +15,7 @@ import {
   type ServiceAreaPhoto,
 } from "@/lib/serviceAreaPhotoUtils";
 import dynamic from "next/dynamic";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 // Lazy-load Google Maps to keep it off the initial critical path
 const GoogleBusinessMap = dynamic(() => import("@/components/GoogleBusinessMap"), {
@@ -128,6 +129,20 @@ const SteelPostsPage = () => {
                 </Button>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-12 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <YouTubeShortsGallery
+              heading="Steel post Shorts"
+              description="Why we offer black steel posts, and what to watch for before you pick your next post system."
+              videos={[
+                { videoId: "JBrmR16irxw", title: "MyFence.com Now Offers Steel Fence Posts" },
+                { videoId: "ZBzaCrDfXfQ", title: "MyFence.com: Black Steel Fence Posts" },
+                { videoId: "6tdiroTqWOQ", title: "Watch this before choosing your next fence posts!" },
+              ]}
+            />
           </div>
         </section>
 

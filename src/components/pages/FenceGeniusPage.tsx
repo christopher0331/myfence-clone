@@ -3,6 +3,7 @@
 import Seo from "@/components/Seo";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const FenceGeniusPage = () => {
   const structuredData = {
@@ -156,6 +157,20 @@ const FenceGeniusPage = () => {
                 />
               </div>
             </div>
+
+            <YouTubeShortsGallery
+              className="mb-8 md:mb-12"
+              heading="Fence Genius shop & install Shorts"
+              description="Shop fabrication, pre-stain culling, contour-following panels, and finished pre-stained installs — the same process behind every Fence Genius job."
+              videos={[
+                { videoId: "2ogeKm_9RgE", title: "Installing the Fence Genius Contour Following Panels" },
+                { videoId: "vS7Yswm0y2A", title: "POV: Building a premium cedar fence panel in the Fence Genius shop" },
+                { videoId: "ud839tV-4-Y", title: "Pre Dry And Cull Before We Pre Stain" },
+                { videoId: "fbjj-uak5U4", title: "Pre Stained Cedar Fence in Ravensdale by MyFence.com" },
+                { videoId: "gzAzQLdfqDA", title: "MyFence.com installing another perfect pre stained cedar fence in Washington!" },
+                { videoId: "ovihLTny8Hg", title: "MyFence.com: Extreme Terrain Fence Installation - Pre Fabricated!" },
+              ]}
+            />
 
             {/* Process Steps */}
             <div className="space-y-8">

@@ -549,11 +549,13 @@ const Issaquah = () => {
         },
         {
           name: "Olde Town Issaquah",
-          description: "Historic downtown area with traditional homes requiring classic fence styles that preserve small-town character"
+          description: "Historic downtown area with traditional homes requiring classic fence styles that preserve small-town character. Click to learn more →",
+          link: "/service-areas/issaquah/olde-town"
         },
         {
           name: "Talus",
-          description: "Luxury hillside development with steep slopes demanding expert terrain-adaptive installations and reinforced anchoring"
+          description: "Hillside planned community on Cougar Mountain with TRA architectural review, steep lots off NW Talus Drive, and trail-edge yards. Click to learn more →",
+          link: "/service-areas/issaquah/talus"
         },
         {
           name: "Providence Point",

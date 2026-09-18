@@ -719,13 +719,18 @@ const GrassLawnPage = () => {
               </h2>
               <p className="text-muted-foreground text-center mb-8">
                 We install fences throughout Redmond. From Grass Lawn we also
-                work in Education Hill to the east, Downtown Redmond toward
-                Town Center, Overlake to the south, and across the city line
-                into Juanita in Kirkland.
+                work in Willows/Rose Hill to the north, Education Hill to the
+                east, Downtown Redmond toward Town Center, Overlake to the
+                south, and across the city line into Juanita in Kirkland.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond">Redmond overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/redmond/willows-rose-hill">
+                    Willows/Rose Hill
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/redmond/education-hill">

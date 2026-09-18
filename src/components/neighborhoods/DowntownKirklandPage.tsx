@@ -746,6 +746,9 @@ const DowntownKirklandPage = () => {
                   <Link href="/service-areas/kirkland/juanita">Juanita</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/kirkland/market">Market</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/moss-bay">Moss Bay</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
