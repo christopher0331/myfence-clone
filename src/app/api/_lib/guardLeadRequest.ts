@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import {
+  botGateBlockReason,
   clientIpFromHeaders,
   consumeRateLimit,
   evaluateFormBotGate,
@@ -17,8 +18,9 @@ export type GuardResult =
 export function guardLeadRequest(req: Request, body: Record<string, unknown>): GuardResult {
   const verdict = evaluateFormBotGate(body);
   if (!verdict.allow) {
-    console.warn(`[bot-gate] suppressed submission (${verdict.reason})`);
-    return { blocked: true, reason: verdict.reason };
+    const reason = botGateBlockReason(verdict) ?? "honeypot";
+    console.warn(`[bot-gate] suppressed submission (${reason})`);
+    return { blocked: true, reason };
   }
 
   const ip = clientIpFromHeaders(req.headers);

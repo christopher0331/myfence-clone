@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
+  botGateBlockReason,
   consumeRateLimit,
   evaluateClientBotGate,
   evaluateFormBotGate,
@@ -26,6 +27,11 @@ function allowedBody(overrides = {}) {
 }
 
 assert.equal(evaluateFormBotGate(allowedBody(), { now }).allow, true, "real lead must pass");
+assert.equal(botGateBlockReason(evaluateFormBotGate(allowedBody(), { now })), undefined);
+assert.equal(
+  botGateBlockReason(evaluateFormBotGate(allowedBody({ website: "https://spam.test" }), { now })),
+  "honeypot",
+);
 
 assert.deepEqual(
   evaluateFormBotGate(allowedBody({ website: "https://spam.test" }), { now }),

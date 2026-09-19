@@ -35,6 +35,15 @@ export type BotGateVerdict =
   | { allow: true }
   | { allow: false; reason: BotGateReason };
 
+/**
+ * Read the block reason without relying on `!verdict.allow` narrowing.
+ * Next's `tsc` run uses `strictNullChecks: false`, which does not narrow
+ * this discriminated union on a negated boolean.
+ */
+export function botGateBlockReason(verdict: BotGateVerdict): BotGateReason | undefined {
+  return "reason" in verdict ? verdict.reason : undefined;
+}
+
 export type BotGateFields = {
   website?: string;
   fax_number?: string;
@@ -203,9 +212,9 @@ export function consumeRateLimit(
   now = Date.now(),
 ): boolean {
   if (rateBuckets.size > 2000) {
-    for (const [k, bucket] of rateBuckets) {
+    rateBuckets.forEach((bucket, k) => {
       if (now >= bucket.resetAt) rateBuckets.delete(k);
-    }
+    });
   }
 
   const existing = rateBuckets.get(key);

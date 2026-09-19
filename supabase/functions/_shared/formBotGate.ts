@@ -22,6 +22,10 @@ export type BotGateVerdict =
   | { allow: true }
   | { allow: false; reason: BotGateReason };
 
+export function botGateBlockReason(verdict: BotGateVerdict): BotGateReason | undefined {
+  return "reason" in verdict ? verdict.reason : undefined;
+}
+
 function toTrimmedString(value: unknown): string {
   if (typeof value === "string") return value.trim();
   if (value == null) return "";
