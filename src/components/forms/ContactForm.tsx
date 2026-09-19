@@ -13,8 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import {
   TEXT_CONSENT_MESSAGE,
   TEXT_CONSENT_NUDGE_DESCRIPTION,
@@ -23,7 +23,7 @@ import {
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "home-contact";
@@ -47,6 +47,7 @@ export function ContactForm() {
   const [addressValid, setAddressValid] = useState(false);
   const { toast } = useToast();
   const { showNudge, interceptUncheckedSubmit, onConsentChange } = useOptionalTextConsentNudge();
+  const botGate = useFormBotGate("home-contact-");
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -84,9 +85,25 @@ export function ContactForm() {
       });
       return;
     }
+    if (botGate.shouldFakeSuccess()) {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setSubmittedData({
+        name: `${data.firstName} ${data.lastName}`.trim(),
+        email: data.email,
+        phone: data.phone,
+        address: data.address,
+      });
+      setIsSubmitted(true);
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     const sourcePage = buildSourcePage(FORM_KEY);
     const attribution = getLeadAttribution(FORM_KEY);
+    const gateFields = botGate.getFields();
     try {
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
       const crm = await submitLeadToCrm({
@@ -103,22 +120,22 @@ export function ContactForm() {
         formId: attribution.formId,
         formSku: deriveFormSku(),
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            ...data,
-            description: `${crmFailureNotice(crm)}${data.description}`,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: deriveFormSku(),
-            originPage: attribution.originPage,
-          },
+        const legacy = await submitContactNotification({
+          ...data,
+          description: `${crmFailureNotice(crm)}${data.description}`,
+          sourcePage,
+          site: attribution.site,
+          formId: attribution.formId,
+          formSku: deriveFormSku(),
+          originPage: attribution.originPage,
+          ...gateFields,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
@@ -175,7 +192,8 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative">
+        {botGate.trap}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <FormField
             control={form.control}

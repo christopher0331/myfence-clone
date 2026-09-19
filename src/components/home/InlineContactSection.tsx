@@ -11,12 +11,12 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "inline-contact";
@@ -25,6 +25,7 @@ export const InlineContactSection = () => {
   const [addressValid, setAddressValid] = useState(false);
   const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
     useOptionalTextConsentNudge();
+  const botGate = useFormBotGate("inline-contact-");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -84,12 +85,22 @@ export const InlineContactSection = () => {
       return;
     }
 
+    if (botGate.shouldFakeSuccess()) {
+      setIsFormSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const sourcePage = buildSourcePage(FORM_KEY);
       const attribution = getLeadAttribution(FORM_KEY);
       const [first, ...rest] = (formData.name || "").trim().split(/\s+/).filter(Boolean);
+      const gateFields = botGate.getFields();
 
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
       const crm = await submitLeadToCrm({
@@ -106,27 +117,27 @@ export const InlineContactSection = () => {
         formId: attribution.formId,
         formSku: deriveFormSku(),
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            address: formData.address,
-            description: `${crmFailureNotice(crm)}${formData.message}`,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: deriveFormSku(),
-            originPage: attribution.originPage,
-          },
+        const legacy = await submitContactNotification({
+          firstName: first || "",
+          lastName: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          description: `${crmFailureNotice(crm)}${formData.message}`,
+          textConsent: formData.textConsent,
+          sourcePage,
+          site: attribution.site,
+          formId: attribution.formId,
+          formSku: deriveFormSku(),
+          originPage: attribution.originPage,
+          ...gateFields,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
@@ -196,9 +207,10 @@ export const InlineContactSection = () => {
           ) : (
             <form
               id="inline-contact-form"
-              className="grid lg:grid-cols-2 gap-6"
+              className="grid lg:grid-cols-2 gap-6 relative"
               onSubmit={handleSubmit}
             >
+              {botGate.trap}
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="inline-name" className="text-sm font-medium">Name *</Label>

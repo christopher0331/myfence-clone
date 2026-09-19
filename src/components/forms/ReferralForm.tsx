@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,9 +10,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { Loader2 } from "lucide-react";
 import { buildSourcePage, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
+import { submitReferralNotification } from "@/lib/leads";
 
 const FORM_KEY = "referral";
 
@@ -38,6 +41,7 @@ type FormData = z.infer<typeof formSchema>;
 export function ReferralForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const botGate = useFormBotGate("referral-");
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -57,20 +61,27 @@ export function ReferralForm() {
   });
 
   const onSubmit = async (data: FormData) => {
+    if (botGate.shouldFakeSuccess()) {
+      toast({
+        title: "Referral submitted!",
+        description: "Thank you! We'll reach out to your friend soon.",
+      });
+      form.reset();
+      return;
+    }
     setIsSubmitting(true);
     try {
       const attribution = getLeadAttribution(FORM_KEY);
-      const { error } = await supabase.functions.invoke("send-referral-email", {
-        body: {
-          ...data,
-          sourcePage: buildSourcePage(FORM_KEY),
-          site: attribution.site,
-          formId: attribution.formId,
-          originPage: attribution.originPage,
-        },
+      const result = await submitReferralNotification({
+        ...data,
+        sourcePage: buildSourcePage(FORM_KEY),
+        site: attribution.site,
+        formId: attribution.formId,
+        originPage: attribution.originPage,
+        ...botGate.getFields(),
       });
 
-      if (error) throw error;
+      if (!result.ok) throw new Error(result.error || "Failed to submit referral");
 
       trackFormSubmit(FORM_KEY, { formType: "referral" });
 
@@ -93,7 +104,8 @@ export function ReferralForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 relative">
+        {botGate.trap}
         {/* Referrer Section */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-foreground">Your Information</h3>

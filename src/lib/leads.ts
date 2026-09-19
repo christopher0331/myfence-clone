@@ -1,9 +1,11 @@
+import { attachBotGateFields } from "@/lib/formBotGate";
+
 /**
- * Lead delivery to the CRM.
+ * Lead delivery to the CRM and notification emails.
  *
- * Goes through the `/api/website-lead` server route rather than a Supabase edge
- * function: the route holds the CRM credential itself, so delivery does not depend
- * on the browser presenting a valid Supabase JWT.
+ * Goes through Next.js `/api/*` routes rather than a Supabase edge function from
+ * the browser: the routes run the bot gate on the server, then the CRM route
+ * holds WEBSITE_LEADS_API itself so delivery does not depend on a browser JWT.
  */
 
 export interface LeadPayload {
@@ -30,6 +32,9 @@ export interface LeadPayload {
   formId?: string;
   formSku?: string;
   originPage?: string;
+  website?: string;
+  fax_number?: string;
+  form_loaded_at?: number | string;
 }
 
 export interface LeadDeliveryResult {
@@ -37,12 +42,16 @@ export interface LeadDeliveryResult {
   error: string | null;
 }
 
-export async function submitLeadToCrm(payload: LeadPayload): Promise<LeadDeliveryResult> {
+async function postLeadRoute(
+  path: string,
+  payload: Record<string, unknown>,
+  fallbackError: string,
+): Promise<LeadDeliveryResult> {
   try {
-    const res = await fetch("/api/website-lead", {
+    const res = await fetch(path, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(attachBotGateFields(payload)),
     });
 
     const data = (await res.json().catch(() => null)) as
@@ -53,12 +62,28 @@ export async function submitLeadToCrm(payload: LeadPayload): Promise<LeadDeliver
       return { ok: false, error: data?.error || `Request failed (${res.status})` };
     }
     if (!data?.ok) {
-      return { ok: false, error: data?.error || "CRM delivery failed" };
+      return { ok: false, error: data?.error || fallbackError };
     }
     return { ok: true, error: null };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : String(e) };
   }
+}
+
+export async function submitLeadToCrm(payload: LeadPayload): Promise<LeadDeliveryResult> {
+  return postLeadRoute("/api/website-lead", payload as Record<string, unknown>, "CRM delivery failed");
+}
+
+export async function submitContactNotification(
+  payload: Record<string, unknown>,
+): Promise<LeadDeliveryResult> {
+  return postLeadRoute("/api/contact-email", payload, "Contact email failed");
+}
+
+export async function submitReferralNotification(
+  payload: Record<string, unknown>,
+): Promise<LeadDeliveryResult> {
+  return postLeadRoute("/api/referral", payload, "Referral email failed");
 }
 
 /**
