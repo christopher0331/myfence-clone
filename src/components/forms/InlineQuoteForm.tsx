@@ -12,10 +12,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
-import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
@@ -42,6 +42,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
   const [addressValid, setAddressValid] = useState(false);
   const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
     useOptionalTextConsentNudge();
+  const botGate = useFormBotGate(`inline-quote-${sku}-`);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -97,6 +98,21 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       return;
     }
 
+    if (botGate.shouldFakeSuccess()) {
+      toast({
+        title: "Quote request sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setSubmittedData({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+      });
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -106,6 +122,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       const message = context
         ? `[Source: ${context}]\n${formData.projectDescription}`
         : formData.projectDescription;
+      const gateFields = botGate.getFields();
 
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
       const crm = await submitLeadToCrm({
@@ -122,27 +139,27 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         formId: attribution.formId,
         formSku: sku,
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            address: formData.address,
-            description: `${crmFailureNotice(crm)}[Quote Request]\n${message}`,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: sku,
-            originPage: attribution.originPage,
-          },
+        const legacy = await submitContactNotification({
+          firstName: first || "",
+          lastName: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          description: `${crmFailureNotice(crm)}[Quote Request]\n${message}`,
+          textConsent: formData.textConsent,
+          sourcePage,
+          site: attribution.site,
+          formId: attribution.formId,
+          formSku: sku,
+          originPage: attribution.originPage,
+          ...gateFields,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
@@ -218,8 +235,9 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
       <form
         onSubmit={handleSubmit}
         onFocusCapture={() => trackLeadIntentOnce("form_start")}
-        className="space-y-4"
+        className="space-y-4 relative"
       >
+        {botGate.trap}
         <div className="space-y-2">
           <Label htmlFor="fullName">Full Name *</Label>
           <Input

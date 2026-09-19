@@ -16,7 +16,8 @@ import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDG
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 
 const WHEEL_FORM_KEY = "discount-wheel";
 const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
@@ -148,6 +149,7 @@ const DiscountsPage = () => {
   const [formTextConsent, setFormTextConsent] = useState(false);
   const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
     useOptionalTextConsentNudge();
+  const botGate = useFormBotGate("discounts-");
 
   useEffect(() => {
     const today = new Date();
@@ -333,8 +335,22 @@ const DiscountsPage = () => {
         return;
       }
 
+      if (botGate.shouldFakeSuccess()) {
+        toast.success("Thank you! We'll contact you soon about your fencing project.");
+        setShowAlreadyPlayedForm(false);
+        setFormFirstName("");
+        setFormLastName("");
+        setFormAddress("");
+        setFormEmail("");
+        setFormPhone("");
+        setFormDescription("");
+        setFormTextConsent(false);
+        return;
+      }
+
       const sourcePage = buildSourcePage(ALREADY_PLAYED_FORM_KEY);
       const attribution = getLeadAttribution(ALREADY_PLAYED_FORM_KEY);
+      const gateFields = botGate.getFields();
       const emailData = {
         firstName: formFirstName,
         lastName: formLastName,
@@ -348,6 +364,7 @@ const DiscountsPage = () => {
         formId: attribution.formId,
         formSku: deriveFormSku(),
         originPage: attribution.originPage,
+        ...gateFields,
       };
 
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
@@ -365,17 +382,16 @@ const DiscountsPage = () => {
         formId: attribution.formId,
         formSku: deriveFormSku(),
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            ...emailData,
-            description: `${crmFailureNotice(crm)}${emailData.description}`,
-          },
+        const legacy = await submitContactNotification({
+          ...emailData,
+          description: `${crmFailureNotice(crm)}${emailData.description}`,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
@@ -781,7 +797,8 @@ const DiscountsPage = () => {
                 </DialogDescription>
               </DialogHeader>
               <div className="space-y-4">
-                <form onSubmit={onSubmitAlreadyPlayed} className="space-y-4">
+                <form onSubmit={onSubmitAlreadyPlayed} className="space-y-4 relative">
+                  {botGate.trap}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="alreadyPlayedFirstName">First Name</Label>

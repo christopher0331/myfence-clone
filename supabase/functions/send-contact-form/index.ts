@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@4.0.0";
+import { guardLeadBody } from "../_shared/formBotGate.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -77,6 +78,15 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const body: ContactFormRequest = await req.json();
+
+    const gate = guardLeadBody(body as Record<string, unknown>, req.headers);
+    if (!gate.allow) {
+      console.warn(`send-contact-form suppressed (${gate.reason})`);
+      return new Response(JSON.stringify({ id: "suppressed" }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     const {
       name,

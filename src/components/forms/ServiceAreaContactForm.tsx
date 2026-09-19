@@ -12,8 +12,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
-import { supabase } from "@/integrations/supabase/client";
 import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import {
@@ -24,7 +24,7 @@ import {
   trackLeadIntentOnce,
   trackLeadSubmitAttempt,
 } from "@/lib/analytics";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
@@ -44,6 +44,7 @@ const ServiceAreaContactForm = () => {
   const [addressValid, setAddressValid] = useState(false);
   const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
     useOptionalTextConsentNudge();
+  const botGate = useFormBotGate(`sa-contact-${sku}-`);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -99,6 +100,22 @@ const ServiceAreaContactForm = () => {
       return;
     }
 
+    if (botGate.shouldFakeSuccess()) {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setSubmittedData({
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+      });
+      setIsSubmitted(true);
+      setFormData({ fullName: "", email: "", phone: "", address: "", message: "", textConsent: false });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -108,6 +125,7 @@ const ServiceAreaContactForm = () => {
       const message = location
         ? `[Service Area: ${location}] [SKU: ${sku}]\n${formData.message}`
         : `[SKU: ${sku}]\n${formData.message}`;
+      const gateFields = botGate.getFields();
 
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
       const crm = await submitLeadToCrm({
@@ -124,27 +142,27 @@ const ServiceAreaContactForm = () => {
         formId: attribution.formId,
         formSku: sku,
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            firstName: first || "",
-            lastName: rest.join(" "),
-            email: formData.email,
-            phone: formData.phone,
-            address: formData.address,
-            description: `${crmFailureNotice(crm)}${message}`,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: sku,
-            originPage: attribution.originPage,
-          },
+        const legacy = await submitContactNotification({
+          firstName: first || "",
+          lastName: rest.join(" "),
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          description: `${crmFailureNotice(crm)}${message}`,
+          textConsent: formData.textConsent,
+          sourcePage,
+          site: attribution.site,
+          formId: attribution.formId,
+          formSku: sku,
+          originPage: attribution.originPage,
+          ...gateFields,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (err) {
         emailError = err instanceof Error ? err.message : String(err);
       }
@@ -212,8 +230,9 @@ const ServiceAreaContactForm = () => {
       <form
         onSubmit={handleSubmit}
         onFocusCapture={() => trackLeadIntentOnce("form_start")}
-        className="space-y-4"
+        className="space-y-4 relative"
       >
+        {botGate.trap}
         <div className="space-y-2">
           <Label htmlFor={`sa-name-${sku}`}>Full Name *</Label>
           <Input

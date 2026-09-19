@@ -13,7 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { useFormBotGate } from "@/hooks/useFormBotGate";
 import {
   TEXT_CONSENT_MESSAGE,
   TEXT_CONSENT_NUDGE_DESCRIPTION,
@@ -22,7 +22,7 @@ import {
 import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
 import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadIntentOnce, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitLeadToCrm } from "@/lib/leads";
+import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "contact-page";
@@ -33,6 +33,7 @@ const ContactPage = () => {
   const [addressValid, setAddressValid] = useState(false);
   const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
     useOptionalTextConsentNudge();
+  const botGate = useFormBotGate("contact-page-");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -87,11 +88,18 @@ const ContactPage = () => {
       return;
     }
 
+    if (botGate.shouldFakeSuccess()) {
+      toast({ title: "Message sent", description: "Thanks! We'll reach out ASAP." });
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       const sourcePage = buildSourcePage(FORM_KEY);
       const attribution = getLeadAttribution(FORM_KEY);
+      const gateFields = botGate.getFields();
       // Keep dual-path delivery for reliability: CRM first, then the email notification.
       const crm = await submitLeadToCrm({
         firstName: formData.firstName,
@@ -107,27 +115,27 @@ const ContactPage = () => {
         formId: attribution.formId,
         formSku: deriveFormSku(),
         originPage: attribution.originPage,
+        ...gateFields,
       });
 
       let emailError: string | null = null;
       try {
-        const legacy = await supabase.functions.invoke("send-contact-form", {
-          body: {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            phone: formData.phone,
-            address: formData.address,
-            description: `${crmFailureNotice(crm)}${formData.message}`,
-            textConsent: formData.textConsent,
-            sourcePage,
-            site: attribution.site,
-            formId: attribution.formId,
-            formSku: deriveFormSku(),
-            originPage: attribution.originPage,
-          },
+        const legacy = await submitContactNotification({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          description: `${crmFailureNotice(crm)}${formData.message}`,
+          textConsent: formData.textConsent,
+          sourcePage,
+          site: attribution.site,
+          formId: attribution.formId,
+          formSku: deriveFormSku(),
+          originPage: attribution.originPage,
+          ...gateFields,
         });
-        if (legacy.error) emailError = legacy.error.message;
+        if (!legacy.ok) emailError = legacy.error;
       } catch (e) {
         emailError = e instanceof Error ? e.message : String(e);
       }
@@ -253,8 +261,9 @@ const ContactPage = () => {
               <form
                 onSubmit={handleSubmit}
                 onFocusCapture={() => trackLeadIntentOnce("form_start")}
-                className="grid md:grid-cols-2 gap-6 mt-6"
+                className="grid md:grid-cols-2 gap-6 mt-6 relative"
               >
+                {botGate.trap}
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>

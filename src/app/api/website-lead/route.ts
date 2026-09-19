@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { fakeLeadSuccess, guardLeadRequest } from "../_lib/guardLeadRequest";
 
 /**
  * Server-side lead delivery to the MyFence CRM.
@@ -50,6 +51,19 @@ function parseAddressParts(input: string): {
 }
 
 export async function POST(req: Request) {
+  let body: Record<string, unknown>;
+  try {
+    body = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
+  }
+
+  const gate = guardLeadRequest(req, body);
+  if (gate.blocked) {
+    // Fake success so scrapers/bots do not iterate on the response.
+    return fakeLeadSuccess();
+  }
+
   const apiKey = process.env.WEBSITE_LEADS_API;
   if (!apiKey) {
     console.error("[website-lead] Missing server env var WEBSITE_LEADS_API — lead not delivered");
@@ -61,13 +75,6 @@ export async function POST(req: Request) {
   }
 
   const webhookUrl = process.env.WEBSITE_LEADS_WEBHOOK_URL || DEFAULT_WEBHOOK_URL;
-
-  let body: Record<string, unknown>;
-  try {
-    body = (await req.json()) as Record<string, unknown>;
-  } catch {
-    return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
-  }
 
   // Accept either snake_case or camelCase from the client
   const rawFirstName = toStringOrEmpty(body.first_name ?? body.firstName).trim();
