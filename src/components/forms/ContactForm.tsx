@@ -295,8 +295,9 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem
               id="contact-form-text-consent-row"
-              className={`flex items-start space-x-2 rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
+              className={`rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
             >
+              <div className="flex items-start space-x-2">
               <FormControl>
                 <Checkbox
                   id="contact-text-consent"
@@ -308,15 +309,14 @@ export function ContactForm() {
                   }}
                 />
               </FormControl>
-              <div className="space-y-1 leading-none">
                 <FormLabel
                   htmlFor="contact-text-consent"
                   className={`text-xs ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
                 >
                   {TEXT_CONSENT_MESSAGE}
                 </FormLabel>
-                <TextConsentNudgeNote visible={showNudge} />
               </div>
+              <TextConsentNudgeNote visible={showNudge} />
             </FormItem>
           )}
         />
