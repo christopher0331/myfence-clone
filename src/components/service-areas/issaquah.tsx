@@ -572,7 +572,8 @@ const Issaquah = () => {
         },
         {
           name: "Montreux",
-          description: "Exclusive golf course community with premium properties demanding high-end custom designs and luxury materials"
+          description: "Cougar Mountain planned community with Lake Sammamish views, MHA architectural review, and wooded common-area lots. Click to learn more →",
+          link: "/service-areas/issaquah/montreux"
         },
         {
           name: "Mirrormont",
