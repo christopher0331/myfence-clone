@@ -89,10 +89,10 @@ const WEST_BELLEVUE_ATTRACTIONS: LocalAttraction[] = [
       "Twenty-one acres of promenade, canal, and open lawn at 10201 NE 4th Street. West Bellevue streets feed this park on foot from Main Street, which is why so many Old Bellevue side yards want a gate that opens toward the downtown walk, not only the driveway.",
   },
   {
-    name: "Bellevue Arts Museum",
-    url: "https://www.bellevuearts.org/",
+    name: "KidsQuest Children's Museum",
+    url: "https://kidsquestmuseum.org/",
     description:
-      "The museum at 510 Bellevue Way NE sits a few blocks from the lakeshore streets. Weekend exhibits and the walk down Bellevue Way are part of the weekly rhythm for households that live between the towers and the water.",
+      "A hands-on STEM museum a few blocks inland from the lakeshore streets. Weekend exhibits and the walk up from Main Street are part of the weekly rhythm for West Bellevue households that live between the towers and the water.",
   },
 ];
 
@@ -603,25 +603,25 @@ const WestBellevuePage = () => {
               for East Link trips into Seattle or out toward Redmond.
             </p>
             <p>
-              Groceries and after-work food cluster on Main Street in Old Bellevue and a few blocks east in the downtown core. Dinner reservations often land at{" "}
+              Groceries and after-work food cluster on Main Street in Old Bellevue and a few blocks east in the downtown core. Weeknight pickup often lands at{" "}
               <a
-                href="https://cactusrestaurants.com/location/bellevue/"
+                href="https://www.pagliacci.com/locations/bellevue-main-street"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Cactus Bellevue
+                Pagliacci Pizza
               </a>{" "}
-              on Main Street or{" "}
+              on Main Street, and dinner reservations at{" "}
               <a
-                href="https://dintaifungusa.com/location/bellevue/"
+                href="https://elgaucho.com/bellevue/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Din Tai Fung
+                El Gaucho Bellevue
               </a>{" "}
-              at Bellevue Square — both a walk or a few minutes from the lakeshore streets, not a drive to Seattle. Weekends split between Meydenbauer Bay, Chism, Enatai Beach, and the rest of the{" "}
+              a few blocks inland — both a walk or a short hop from the lakeshore streets, not a drive to Seattle. Weekends split between Meydenbauer Bay, Chism, Enatai Beach, and the rest of the{" "}
               <a
                 href="https://bellevuewa.gov/city-government/departments/parks"
                 target="_blank"
