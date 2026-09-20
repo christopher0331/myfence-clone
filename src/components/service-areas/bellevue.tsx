@@ -615,7 +615,8 @@ const Bellevue = () => {
         },
         {
           name: "West Bellevue",
-          description: "Waterfront luxury estates along Lake Washington requiring marine-grade corrosion-resistant installations and architectural elegance"
+          description: "Waterfront lots along Lake Washington from Meydenbauer Bay to Enatai — humidity-ready cedar, hogwire, and hybrid fencing that keeps shoreline views. Click to learn more →",
+          link: "/service-areas/bellevue/west-bellevue"
         },
         {
           name: "Wilburton",
