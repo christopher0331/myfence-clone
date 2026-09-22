@@ -236,7 +236,8 @@ const Renton = () => {
       neighborhoods={[
         {
           name: "Renton Highlands",
-          description: "Elevated hillside community with stunning views demanding slope installations that preserve vistas while providing privacy"
+          description: "Elevated hillside community with stunning views demanding slope installations that preserve vistas while providing privacy. Click to learn more →",
+          link: "/service-areas/renton/renton-highlands"
         },
         {
           name: "Kennydale",
