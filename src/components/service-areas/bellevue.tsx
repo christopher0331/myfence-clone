@@ -576,7 +576,8 @@ const Bellevue = () => {
       neighborhoods={[
         {
           name: "Downtown Bellevue",
-          description: "Urban luxury high-rises and condominiums with strict architectural standards and rooftop/balcony privacy screening requirements"
+          description: "Urban townhomes, Old Bellevue lots, and ground-floor patio screens with condo architectural review, I-405 noise, and tight downtown staging. Click to learn more →",
+          link: "/service-areas/bellevue/downtown-bellevue"
         },
         {
           name: "Bridle Trails",
