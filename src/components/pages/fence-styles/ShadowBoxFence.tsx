@@ -22,14 +22,14 @@ const shadowBoxPhotos = getNeighborhoodPhotosBySlugs(
   "maple-valley",
   "maple-woods"
 );
-// Hand-picked hero so the top-of-page image is independent of JSON ordering.
+// Branded square hero (1080x1080) — same asset as the fence-styles index card.
+const SHADOW_BOX_HERO_IMG =
+  "https://ik.imagekit.io/xft9mcl5v/hero-images/Shadow-Box-Hero.webp";
 const HERO_FILE_SUFFIX = "Maple-Woods-Shadow-Box-Fence-8.webp";
 const heroPhoto =
   shadowBoxPhotos.find((photo) => photo.file.endsWith(HERO_FILE_SUFFIX)) ??
   shadowBoxPhotos[0];
-const heroImg = heroPhoto
-  ? buildImageUrl(heroPhoto.file, 1200)
-  : "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
+const heroImg = SHADOW_BOX_HERO_IMG;
 
 // Hand-picked pair for the top gallery row so the two shots aren't visually
 // redundant. Both files are confirmed landscape (1920x1440) in the manifest.
@@ -281,21 +281,12 @@ const ShadowBoxFence = () => {
                   </Button>
                 </div>
               </div>
-              <div>
-                <AspectRatio ratio={4 / 3}>
+              <div className="w-full max-w-[220px] md:max-w-[260px] mx-auto md:ml-auto md:mr-0">
+                <AspectRatio ratio={1}>
                   <img
                     src={heroImg}
-                    srcSet={
-                      heroPhoto
-                        ? buildResponsiveSrcSet(heroPhoto.file, 1200)
-                        : undefined
-                    }
-                    sizes="(max-width: 768px) 100vw, 600px"
-                    alt={
-                      heroPhoto?.neighborhoodAlt ??
-                      heroPhoto?.cityAlt ??
-                      "Cedar shadow box fence installation in Maple Woods, Maple Valley, WA by MyFence.com"
-                    }
+                    sizes="(max-width: 768px) 220px, 260px"
+                    alt="Cedar shadow box fence by MyFence.com — powered by Fence Genius"
                     loading="eager"
                     className="h-full w-full rounded-md object-cover"
                   />

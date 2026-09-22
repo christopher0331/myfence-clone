@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://myfence.com/fence-styles/shadow-box-fence",
     images: [
       {
-        url: "https://ik.imagekit.io/xft9mcl5v/service-area-photos/Maple-Valley/Maple-Woods-Shadow-Box-Fence-1.webp",
+        url: "https://ik.imagekit.io/xft9mcl5v/hero-images/Shadow-Box-Hero.webp",
         width: 1200,
         height: 630,
         alt: "Cedar shadow box fence in Maple Woods, Maple Valley, WA by MyFence.com",
