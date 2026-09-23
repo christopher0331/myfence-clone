@@ -246,7 +246,8 @@ const Renton = () => {
         },
         {
           name: "Fairwood",
-          description: "Large suburban development with family-oriented properties needing extensive fence runs and secure boundaries for active lifestyles"
+          description: "Large suburban development with family-oriented properties needing extensive fence runs and secure boundaries for active lifestyles. Click to learn more →",
+          link: "/service-areas/renton/fairwood"
         },
         {
           name: "Cascade",
