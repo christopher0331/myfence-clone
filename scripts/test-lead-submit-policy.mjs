@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "../src/lib/leadSubmitPolicy.ts";
+import { TEXT_CONSENT_NUDGE_INLINE } from "../src/constants/textConsent.ts";
 
 assert.deepEqual(
   shouldDeliverLead({ address: "123 Main St Seattle WA", requireAddress: true }),
@@ -39,6 +40,12 @@ assert.deepEqual(
   [],
 );
 
+assert.match(
+  TEXT_CONSENT_NUDGE_INLINE,
+  /click Send again/,
+  "nudge copy must tell the visitor to click Send again if they skip texts",
+);
+
 const formFiles = [
   "src/components/pages/ContactPage.tsx",
   "src/components/forms/ContactForm.tsx",
@@ -59,6 +66,11 @@ for (const file of formFiles) {
     src,
     /interceptUncheckedSubmit/,
     `${file} must keep the optional SMS consent nudge`,
+  );
+  assert.match(
+    src,
+    /<TextConsentNudgeNote visible=\{showNudge\} \/>\s*<\//s,
+    `${file} must keep the nudge copy inside the highlighted consent box`,
   );
   assert.equal(
     /Please consent to receive text messages before submitting your phone number|Consent is required to receive text messages/.test(src),
