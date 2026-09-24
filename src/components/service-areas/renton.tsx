@@ -251,7 +251,8 @@ const Renton = () => {
         },
         {
           name: "Cascade",
-          description: "Established residential area with mix of property ages requiring flexible solutions from repairs to complete replacements"
+          description: "Established residential area with mix of property ages requiring flexible solutions from repairs to complete replacements. Click to learn more →",
+          link: "/service-areas/renton/cascade"
         },
         {
           name: "East Renton Plateau",
