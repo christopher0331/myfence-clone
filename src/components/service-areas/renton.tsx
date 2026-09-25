@@ -256,7 +256,8 @@ const Renton = () => {
         },
         {
           name: "East Renton Plateau",
-          description: "Newer developments with modern homes demanding contemporary fence designs and HOA-compliant installations"
+          description: "Newer developments with modern homes demanding contemporary fence designs and HOA-compliant installations. Click to learn more →",
+          link: "/service-areas/renton/east-renton-plateau"
         },
         {
           name: "Sunset",
