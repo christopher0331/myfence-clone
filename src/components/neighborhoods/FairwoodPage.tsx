@@ -646,11 +646,14 @@ const FairwoodPage = () => {
                 Also Serving Nearby Renton Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Renton. From Fairwood we also work in Maple Ridge Estates and Maple Valley Heights on the East Plateau, The Grove at Spring Lake, Renton Highlands to the north, and Cascade toward the valley.
+                We install fences throughout Renton. From Fairwood we also work in East Renton Plateau, Maple Ridge Estates and Maple Valley Heights on the East Plateau, The Grove at Spring Lake, Renton Highlands to the north, and Cascade toward the valley.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton">Renton overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/east-renton-plateau">East Renton Plateau</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/maple-ridge-estates">Maple Ridge Estates</Link>

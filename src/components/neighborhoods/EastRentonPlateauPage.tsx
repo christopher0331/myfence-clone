@@ -12,9 +12,9 @@ import {
   ArrowLeft,
   MapPin,
   Phone,
-  Home,
-  RefreshCw,
-  Volume2,
+  Mountain,
+  Scale,
+  Wind,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,81 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/renton/cascade";
+const CANONICAL = "https://myfence.com/service-areas/renton/east-renton-plateau";
 const META_TITLE =
-  "Cascade Fence Installation | Replacement & Mid-Century Lots | MyFence.com";
+  "East Renton Plateau Fence Installation | Slope & Dual-Jurisdiction Lots | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Cascade, Renton, WA. Cedar, hogwire & hybrid fencing for 116th Avenue SE lots, Cascade Park yards, and mid-century replacements. Free quotes. (253) 455-1885.";
+  "Professional fence installation in East Renton Plateau, Renton, WA. Cedar, hogwire & hybrid fencing for 196th Avenue SE lots, May Creek grades, and mixed City/County parcels. Free quotes. (253) 455-1885.";
 
-const CASCADE_FAQS: NeighborhoodFaqItem[] = [
+const EAST_RENTON_PLATEAU_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Cascade, Renton?",
+    question: "Do I need a permit to build a fence in East Renton Plateau?",
     answer:
-      "Most Cascade lots sit inside City of Renton limits, so Renton Municipal Code 4-4-040 applies. Side- and rear-yard fences six feet or under typically do not need a building permit; a fence taller than six feet does. Front-yard fencing in the required setback is usually limited to four feet, and corner lots on 116th Avenue SE, SE 160th Street, and SE 168th Street must keep sight triangles clear. A handful of 98058 parcels on the south edge sit in unincorporated King County instead — we check the parcel before we quote so you are not following the wrong book.",
+      "It depends on the parcel. Annexed streets on the west and north edges sit inside the City of Renton, so Renton Municipal Code 4-4-040 applies: side- and rear-yard fences six feet or under typically do not need a building permit, a fence taller than six feet does, and front-yard fencing in the required setback is usually limited to four feet. A large share of 98059 lots still sit in unincorporated King County, where Local Services — not City Hall — reviews height, setback, and critical-area overlays. Corner lots on 196th Avenue SE, SE 128th Street, and Duvall Avenue NE must keep sight triangles clear. MyFence.com checks the jurisdiction and any plat packet before we quote so you are not following the wrong book.",
   },
   {
     question:
-      "What fence styles work best for Cascade's mid-century lots and replacement jobs?",
+      "What fence styles work best for East Renton Plateau's slopes and view lots?",
     answer:
-      "Six-foot cedar privacy is the usual choice when a 1960s–1980s run has finally given out on SE 164th or 120th Avenue SE — it matches the height most neighbors already have and screens the side yards that sit close together. On lots that back toward Cascade Park or a wooded drainage, hogwire in a cedar frame holds dogs without walling off the trees. Hybrid aluminum-and-cedar on steel posts suits homeowners who are replacing a fence for the second time and do not want to restain every few winters. Fence Genius maps the existing pins so the new line meets the neighbor fence without a jog.",
+      "Six-foot cedar privacy is the usual choice on shared side yards off SE 144th and 180th Avenue SE, where two-story plats sit close enough that a shorter screen still reads the neighbor's second floor. Lots that drop toward May Creek or look east toward the Cascades often mix styles: full-height cedar on the neighbor sides, then hogwire in a cedar frame on the downhill face so the view and the trees stay in the room. Hybrid aluminum-and-cedar on steel posts suits ridge lots that take more wind and homeowners who do not want to restain after every plateau winter. Fence Genius maps the grade so panels step with the hill instead of leaving a crawl gap at the low rail.",
   },
   {
-    question: "How much does fence installation cost in Cascade?",
+    question: "How much does fence installation cost in East Renton Plateau?",
     answer:
-      "Cascade fence installation typically runs $43–$65 per linear foot for six-foot cedar privacy, $38–$57 for hogwire with a cedar frame, and $53–$75 for hybrid aluminum/cedar. Tear-out of a failing mid-century fence, tight side-yard access off 116th, and hand-digging near older firs can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "East Renton Plateau fence installation typically runs $44–$67 per linear foot for six-foot cedar privacy, $39–$58 for hogwire with a cedar frame, and $54–$77 for hybrid aluminum/cedar. Stepped runs on May Creek-facing grades, extra gates on 196th, and hand-digging near older firs can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Cascade?",
+    question: "How long does fence installation take in East Renton Plateau?",
     answer:
-      "Most Cascade residential projects finish in one to three working days after any city paperwork is complete. Prefabricated panels keep on-site time short. Extra time usually comes from removing a leaning 1970s run, compact access on SE 162nd or 117th during Cascade Elementary pickup, or matching an existing neighbor height on a shared side. We lock the schedule with you before the crew arrives.",
+      "Most East Renton Plateau residential projects finish in one to three working days after any city, county, or HOA paperwork is complete. Prefabricated panels keep on-site time short. Extra time usually comes from a 200-foot perimeter on a plateau lot, compact access during Sierra Heights pickup on Union Avenue NE, or matching an existing neighbor height on a shared side. We lock the schedule with you before the crew arrives.",
   },
   {
-    question: "Do I need my neighbor's permission for a fence in Cascade?",
+    question: "Do I need my neighbor's permission for a fence in East Renton Plateau?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Renton does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. Cascade pins from the 1960s and 1970s do not always match later infill, so confirming the line before digging saves a redo on a tight side yard. MyFence.com can help share a simple site plan and keep the conversation on height, style, and who pays for which stretch.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Renton or King County does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. Plateau plats mix 1970s pins with later 2000s courts, so confirming the line before digging saves a redo on a long side yard. MyFence.com can help share a simple site plan and keep the conversation on height, style, and who pays for which stretch.",
   },
 ];
 
-const CASCADE_ATTRACTIONS: LocalAttraction[] = [
+const EAST_RENTON_PLATEAU_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Cascade Park",
-    url: "https://www.rentonwa.gov/Government/Departments-and-Offices/Parks-and-Recreation/Parks-and-Trails",
+    name: "Sierra Heights Elementary School",
+    url: "https://sierraheights.rentonschools.us/",
     description:
-      "A 10.9-acre wooded park at 16165 126th Avenue SE, four blocks east of Cascade Elementary. Walking paths, a playground, and picnic tables sit among the trees — lots that back this way usually want a fence that holds pets without boxing out the canopy.",
+      "The plateau campus at 2501 Union Avenue NE. Morning drop-off stacks on Union and the courts that feed SE 128th; we time material drops so a trailer is not sitting in that queue.",
   },
   {
-    name: "Cascade Elementary School",
-    url: "https://cascade.rentonschools.us/",
+    name: "Hazen High School",
+    url: "https://hazen.rentonschools.us/",
     description:
-      "The neighborhood campus at 16022 116th Avenue SE. Morning drop-off and afternoon pickup stack on 116th and the courts off SE 160th; we time material drops so a trailer is not sitting in that queue.",
+      "The Renton School District high school at 1101 Hoquiam Avenue NE that serves East Plateau families. Friday traffic on Hoquiam and the climb from Sunset is how we stage equipment so a game-day stack does not sit behind a trailer.",
   },
   {
-    name: "Philip Arnold Park",
-    url: "https://www.rentonwa.gov/city_hall/community_services/parks_and_trails/philip_arnold_park",
+    name: "McKnight Middle School",
+    url: "https://mcknight.rentonschools.us/",
     description:
-      "Hilltop fields and playgrounds at 720 Jones Avenue S, a short drive west toward Nelsen Middle School. Weekend tournaments fill Jones; fence jobs on that corridor get staged so game-day parking is not the problem.",
+      "The middle-school campus at 1200 Edmonds Avenue NE. After-school activity nights pull cars onto Edmonds; fence jobs on that corridor get staged so pickup is not the problem.",
   },
   {
-    name: "Henry Moses Aquatic Center",
-    url: "https://www.rentonwa.gov/Government/Departments-and-Offices/Parks-and-Recreation/Parks-and-Trails",
+    name: "Northeast Renton Park",
+    url: "https://yourvoice.rentonwa.gov/northeastrentonpark",
     description:
-      "The city pool at 1719 Maple Valley Highway, next to the Renton Community Center. Summer lesson traffic on the highway is part of how we plan crew arrivals from the north edge of Cascade.",
+      "An 18.5-acre park in design on the north edge of the East Plateau, between May Creek and Duvall Avenue NE. Lots that back this greenway usually want a fence that holds pets without walling off the trees and wetlands.",
   },
   {
-    name: "Lindbergh High School",
-    url: "https://lindbergh.rentonschools.us/",
+    name: "Maplewood Golf Course",
+    url: "https://www.rentonwa.gov/Activities-Events/Maplewood-Golf-Course",
     description:
-      "The Renton School District high school that serves Cascade families. Friday traffic on the approach streets is how we stage equipment so a game-day stack does not sit behind a trailer.",
+      "The city course at 4050 Maple Valley Highway, down the hill from the plateau. Weekend tee times fill the highway; we plan crew arrivals from 196th so we are not fighting that stack.",
   },
 ];
 
-const CascadePage = () => {
+const EastRentonPlateauPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Cascade, Renton",
-    pageTitle: "Cascade Renton Fence Installation",
+    neighborhoodName: "East Renton Plateau, Renton",
+    pageTitle: "East Renton Plateau Renton Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: CASCADE_FAQS,
+    faqItems: EAST_RENTON_PLATEAU_FAQS,
   });
 
   return (
@@ -130,14 +130,14 @@ const CascadePage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Cascade, Renton WA
+                    Serving East Renton Plateau, Renton WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Cascade Fence Installation
+                  East Renton Plateau Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Replacement cedar for mid-century lots, hogwire toward Cascade Park, and hybrid systems built for the mix of 1960s pins and later infill along 116th Avenue SE.
+                  Stepped cedar on May Creek grades, hogwire that keeps a Cascade view, and hybrid systems built for ridge wind and the mix of City of Renton and King County parcels along 196th Avenue SE.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -153,7 +153,7 @@ const CascadePage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Cascade, Renton"
+                  city="East Renton Plateau, Renton"
                   state="Washington"
                   radiusMiles={5}
                   zoom={12}
@@ -193,13 +193,13 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Replacing Tired Lines on 116th Avenue SE
+                Stepped Runs on the Ridge Above May Creek
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Cascade is the established south-Renton neighborhood that grew up around Cascade Elementary at 16022 116th Avenue SE. SE 160th, SE 164th, and SE 168th run east–west through ramblers from the 1960s and 1970s, later two-story infill, and the courts that feed 117th, 120th, and 126th. Cascade Park sits four blocks east of the school at 16165 126th. Lots here are tighter than a Fairwood plateau backyard and older than most East Plateau plats — the design conversation starts with what is already leaning, where the pins actually sit, and whether the street face on 116th needs to mute pickup traffic.
+                East Renton Plateau sits on the rise east of I-405 and the Cedar River valley, with 196th Avenue SE running north–south through 98059 and SE 128th, SE 144th, and Petrovitsky tying the courts together. Duvall Avenue NE and Union Avenue NE mark the north and school-side edges; May Creek and the planned Northeast Renton Park sit on the drop toward Newcastle. Lots here are larger than a downtown Renton side yard and windier than a Cascade rambler — 1970s streets share the plateau with 2000s two-story plats that sometimes carry architectural review. The design conversation starts with the grade, which book of rules applies, and whether the downhill face should stay open to the view.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has installed cedar, hogwire, and hybrid fences across Renton, including full replacements in Cascade and neighboring Fairwood. We use Fence Genius to capture the existing line, tree locations, and the true length of a side yard before a post goes in the ground, so a 140-foot replacement meets the neighbor fence without a jog and the wet corner toward Maple Valley Highway gets hardware that will still be tight after a few Cascade winters. The goal is a fence that belongs on a mid-century street — not a new-construction panel forced onto a 1972 lot.
+                MyFence.com has installed cedar, hogwire, and hybrid fences across Renton, including slope work on the East Plateau and neighboring Maple Ridge Estates. We use Fence Genius to capture the drop toward May Creek, tree locations, and the true length of a 196th side yard before a post goes in the ground, so a 180-foot run steps instead of leaving a gap a small dog can use. The goal is a fence that belongs on a ridge lot — not a flat-panel kit forced onto a hillside that also happens to sit in the wrong jurisdiction.
               </p>
             </div>
           </div>
@@ -210,31 +210,44 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Cascade Homeowners Trust MyFence.com
+                Why East Renton Plateau Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <RefreshCw className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Scale className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Mid-Century Replacements
+                        City or County, Checked First
                       </h3>
                       <p className="text-muted-foreground">
-                        Most Cascade jobs start with a fence that has already done thirty or forty years. We tear out the lean, match the neighbor height that is staying, and set a new line on the pins — not on the old posts that drifted.
+                        Annexed blocks follow Renton code; many 98059 parcels still sit in unincorporated King County. We confirm the jurisdiction and any plat review before we quote, so the height on Duvall or 196th is not a surprise at inspection.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Mountain className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        116th Avenue Screening
+                        May Creek Grade Mapping
                       </h3>
                       <p className="text-muted-foreground">
-                        Solid cedar on the school-street face takes the edge off drop-off traffic; a more open back line toward Cascade Park keeps the yard from feeling boxed. We mix styles on one property so you are not choosing between quiet and light.
+                        Fence Genius records the drop on north-facing lots so panels step with the hill. We do not leave a triangular gap at the low rail or force a flat run across a rear line that falls toward the greenway.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Wind className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        Ridge Wind and Mixed Styles
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Open hogwire on the downhill face cuts wind load and keeps the Cascade view; solid cedar on the neighbor sides handles privacy. Hybrid on steel posts is the option when a ridge lot has already eaten one fence.
                       </p>
                     </div>
                   </div>
@@ -247,20 +260,7 @@ const CascadePage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for the extra damp that sits on lower Cascade lots toward Maple Valley Highway. We stand behind the install through south King County winters.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Home className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">
-                        Renton Code, Not Guesswork
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Cascade is mostly City of Renton, not a single master HOA. We document height and setback under RMC 4-4-040, flag corner-lot sight triangles on 116th, and check the few 98058 parcels that sit in the county instead.
+                        Full coverage on materials and labor, including hardware chosen for wind and the extra damp that sits on north-facing May Creek slopes. We stand behind the install through south King County winters.
                       </p>
                     </div>
                   </div>
@@ -275,7 +275,7 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Cascade Homeowners Say
+                What East Renton Plateau Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -285,9 +285,9 @@ const CascadePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;The old fence had been leaning toward the neighbor since we bought the house. They pulled it, found the pins, and the new cedar actually meets their remaining run instead of overlapping it.&rdquo;
+                    &ldquo;Our rear line drops toward May Creek. They stepped the cedar so the dog cannot crawl under, then used hogwire on the view side so we still see the trees. They also caught that we are county, not city, before anyone pulled the wrong permit.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Priya in Cascade</p>
+                  <p className="text-sm font-medium">— Dana in East Renton Plateau</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -297,9 +297,9 @@ const CascadePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We are on 116th across from the school. They used full cedar on the street so pickup noise dropped, then hogwire toward the park. They finished before afternoon pickup so we were not blocking the street.&rdquo;
+                    &ldquo;We are on 196th and wanted a quieter street face without boxing the backyard. Full cedar on 196th, open rail in back. They finished around Sierra Heights pickup so we were not blocking Union.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Andre in Cascade</p>
+                  <p className="text-sm font-medium">— Marcus in East Renton Plateau</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -309,9 +309,9 @@ const CascadePage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;This is our second fence on the same lot. They put hybrid on steel posts at the wet corner so we are not staining again in five years. The walkthrough was picky in a good way.&rdquo;
+                    &ldquo;The last fence leaned after two windy winters on the ridge. They put hybrid on steel posts at the exposed corner. The walkthrough was picky in a good way — every gate latch got checked.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Helen in Cascade</p>
+                  <p className="text-sm font-medium">— Linh in East Renton Plateau</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -320,30 +320,30 @@ const CascadePage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Cascade Renton fence" />
+        <LeadCaptureTabs fenceStyleName="East Renton Plateau Renton fence" />
 
-        {/* 6. Photo Gallery — nearby Renton installs until Cascade-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Renton installs until East Plateau-tagged photos exist */}
         <ServiceAreaPhotoGallery
           city="Renton"
-          title="Recent Fence Work Near Cascade"
-          description="These photos are from nearby Renton jobs, including Fairwood, Maple Ridge Estates, and The Grove at Spring Lake. Same crew, same materials, and the same Fence Genius process we use on Cascade lots along 116th Avenue SE, SE 164th, and 126th near Cascade Park."
+          title="Recent Fence Work Near East Renton Plateau"
+          description="These photos are from nearby Renton jobs, including Maple Ridge Estates, Fairwood, The Grove at Spring Lake, and Renton Highlands. Same crew, same materials, and the same Fence Genius process we use on East Renton Plateau lots along 196th Avenue SE, SE 144th, and the May Creek drop off Duvall Avenue NE."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Renton" neighborhood="Cascade" />
+        <FeaturedProject city="Renton" neighborhood="East Renton Plateau" />
 
         {/* Featured case study copy */}
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Featured Cascade Installation
+                Featured East Renton Plateau Installation
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A typical Cascade cedar privacy run sits on a mid-century lot south of SE 160th, close enough to 116th that weekday school traffic is part of the soundtrack. The job is usually a full replacement: tear out a leaning 1970s line, then one backyard plus two tight side yards. Full-height cedar screens the neighbors who sit close; hogwire or a mixed rail faces Cascade Park or a drainage so the trees stay in the room. Fence Genius maps the pins so panels do not creep onto the wrong lot, and we set footings so winter runoff from the Maple Valley Highway side does not pond against the bottom board.
+                A typical East Renton Plateau cedar-and-hogwire run sits on a north-facing lot off SE 128th or Duvall Avenue NE, close enough to May Creek that a solid downhill wall would erase the reason the house was sited on the ridge. The job is usually two fences in one: full-height cedar on the neighbor and 196th sides, then a lighter hogwire stretch toward the greenway so the living room still reads the trees. Fence Genius maps the drop so panels step instead of leaving a gap, and we set footings so winter runoff on the creek-facing slope does not pond against the bottom board.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Most comparable Cascade yards run 110–190 linear feet and wrap in one to three working days after any city paperwork. We use generic cedar privacy, hogwire, or hybrid aluminum/cedar — no unverified construction claims — and we walk the line with you before posts go in so the school-street face and the wet corner are both accounted for.
+                Most comparable East Plateau yards run 140–220 linear feet and wrap in one to three working days after any city, county, or plat paperwork. We use generic cedar privacy, hogwire, or hybrid aluminum/cedar — no unverified construction claims — and we walk the line with you before posts go in so the street face, the wet corner, and the view side are all accounted for.
               </p>
             </div>
           </div>
@@ -354,39 +354,39 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Cascade-Specific Fencing Considerations
+                East Renton Plateau-Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Cascade Property Ages and Shared Pins
+                    East Renton Plateau Jurisdiction Split
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Streets off 116th, 120th, and SE 164th mix original ramblers with later infill. The fence you are replacing may not sit on the recorded line, and the neighbor&apos;s remaining run may be a different height. We treat that as a layout problem, not a surprise on install day: Fence Genius captures both fences, we mark where the new line should land, and we talk through who owns which stretch before a post hole is dug.
+                    The plateau is not one permitting office. Annexed streets follow City of Renton height and setback rules under RMC 4-4-040. A large share of 98059 parcels still sit in unincorporated King County, where Local Services handles permits and critical-area overlays near May Creek. We check the parcel map first so a six-foot rear run on SE 144th is not quoted under the wrong code, and we flag corner-lot sight triangles on 196th and Duvall before a post hole is dug.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Cascade Moisture Toward Maple Valley Highway
+                    East Renton Plateau Terrain Toward May Creek
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The north and west edges of Cascade sit closer to the Cedar River valley and Maple Valley Highway than the Fairwood plateau. Lower yards hold water longer after a December rain. Pre-stained Western Red Cedar, stainless or hot-dipped fasteners, and optional steel posts at the wettest corners last longer than raw cedar and light galvanized nails. We also keep dirt from piling against the bottom rail so the first board does not sit in a puddle all winter.
+                    North and northeast lots fall toward May Creek, the planned Northeast Renton Park, and the Newcastle line. A flat-lot crew will either leave a triangular gap or bury the low rail in dirt. Fence Genius records the grade so panels step; we use deeper footings on the downhill stretch and keep soil off the first board so winter seepage does not sit against cedar all season.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Cascade Park Edges and Tree Roots
+                    East Renton Plateau Wind, Views, and Wildlife
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Lots that back to Cascade Park or the wooded stretch near 126th Avenue SE usually want a fence that holds dogs without looking like a warehouse wall against the trees. Hogwire in a cedar frame, or cedar on the neighbor sides with an open run toward the park, is the usual mix. We hand-dig around older firs rather than forcing an auger through a root that has had fifty years to own the side yard.
+                    Ridge lots take more wind than a valley rambler, and many were sited for a Cascade or tree-line view. Walling the downhill edge in solid cedar is the most common regret we hear. Hogwire in a cedar frame, or cedar on the sides with an open run toward the creek, is the usual mix. Deer move along the May Creek corridor; we talk through height and mesh so pets stay in without pretending a fence is a wildlife barrier.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Cascade School-Street Staging
+                    East Renton Plateau Plats and School-Street Staging
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    116th Avenue SE is the neighborhood&apos;s weekday spine. Cascade Elementary pickup stacks on 116th and SE 160th; Nelsen Middle School on Jones Avenue S and Lindbergh to the south set the rest of the pattern. A six-foot cedar street face is the practical noise buffer; we do not claim it is a sound wall. We stage compact equipment so we are not blocking a queue, and we plan material drops away from the school lot when that block is already full.
+                    Newer courts near Maple Ridge Estates and The Grove at Spring Lake sometimes have architectural review even when the city or county does not ask for a permit. Older streets off 180th and SE 144th often do not. 196th Avenue SE and Union Avenue NE are the weekday spines — Sierra Heights pickup and Hazen game nights set the pattern. We stage compact equipment so we are not blocking a queue, and we plan material drops away from the school lot when that block is already full.
                   </p>
                 </div>
               </div>
@@ -399,39 +399,39 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Cascade
+                Fence Installation Cost in East Renton Plateau
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A Cascade fence is often a replacement on a mid-century lot, plus a quieter face on 116th. Tear-out, gates, and mixed-style runs move the number. These are typical ranges; your on-site measurement is the real quote.
+                An East Renton Plateau fence is often a stepped run on a ridge lot, plus a quieter face on 196th. Slope, gates, and mixed-style runs move the number. These are typical ranges; your on-site measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
                   <li>
                     <span>
                       <strong className="text-foreground">Cedar privacy (6&apos;):</strong>{" "}
-                      $43–$65 per linear foot
+                      $44–$67 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hogwire (cedar frame):</strong>{" "}
-                      $38–$57 per linear foot
+                      $39–$58 per linear foot
                     </span>
                   </li>
                   <li>
                     <span>
                       <strong className="text-foreground">Hybrid aluminum/cedar:</strong>{" "}
-                      $53–$75 per linear foot
+                      $54–$77 per linear foot
                     </span>
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Tear-out of an existing fence, tight side-yard access, and hand-digging near older trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Cascade property with a free on-site measurement.
+                  Stepped hillside runs, tear-out of an existing fence, and hand-digging near older trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your East Renton Plateau property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Cascade property</Link>
+                  <Link href="/quote">Get an exact quote for your East Renton Plateau property</Link>
                 </Button>
               </div>
             </div>
@@ -443,13 +443,13 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Cascade
+                Popular Fence Styles in East Renton Plateau
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on neighbor sides and 116th street faces. Full height to match the run that is staying, pre-stained cedar that holds up on a wet corner, and a look that fits both 1970s ramblers and later two-story infill.
+                    The workhorse on neighbor sides and 196th street faces. Full height for two-story plats, pre-stained cedar that holds up on a wet north slope, and a look that fits both 1970s ramblers and later courts.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -461,7 +461,7 @@ const CascadePage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for park-edge lots that still want the trees in the room. Dogs stay in, the lighter footprint is easier around fir roots than a solid wall, and the yard does not feel boxed after a replacement.
+                    Cedar frame with black mesh for May Creek-facing lots that still want the trees in the room. Dogs stay in, the lighter footprint takes less wind than a solid wall, and the view does not disappear after a replacement.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -473,7 +473,7 @@ const CascadePage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a second replacement on the same lot makes staining a chore. Strong enough for family yards without looking commercial on SE 164th or 120th.
+                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when ridge wind has already leaned one fence. Strong enough for family yards without looking commercial on SE 144th or 180th.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -492,23 +492,23 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Cascade Installation Process
+                Our East Renton Plateau Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Cascade Site Assessment
+                    1. East Renton Plateau Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the existing line, note the wet corner, map trees, and check whether a 116th or park-facing stretch should stay more open. Fence Genius captures length, grade, and the neighbor fence so panels are built to the actual yard, not a new-construction assumption.
+                    We walk the lot, measure the drop toward May Creek, note the windward corner, map trees, and check whether a 196th or view-facing stretch should stay more open. Fence Genius captures length, grade, and the neighbor fence so panels are built to the actual yard, not a flat-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Cascade Design & City Review
+                    2. East Renton Plateau Design & Jurisdiction Review
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. Cascade does not have a single master HOA; we still document City of Renton height and setback rules under RMC 4-4-040 so the install is clean with the city. If your parcel sits in unincorporated King County, we follow county rules instead.
+                    You pick style and height. We document City of Renton rules under RMC 4-4-040 or King County Local Services rules for unincorporated parcels, plus any plat architectural packet near Maple Ridge Estates or The Grove. Corner-lot sight triangles on 196th and Duvall get marked before we draw the line.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -516,15 +516,15 @@ const CascadePage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Cascade install days are mostly setting posts and hanging finished sections after the old line comes out.
+                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so East Plateau install days are mostly setting posts and hanging finished sections that already match the grade.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Cascade Installation
+                    4. East Renton Plateau Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment suited to residential streets off 116th, SE 160th, SE 164th, and 126th. Tear-out first, drainage-aware footings on the wet corner, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets off 196th, SE 128th, SE 144th, and Union Avenue NE. Stepped footings on the creek-facing slope, drainage-aware hardware on the wet corner, and full cleanup at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -542,20 +542,20 @@ const CascadePage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Cascade Fence Installation FAQs"
-          items={CASCADE_FAQS}
+          title="East Renton Plateau Fence Installation FAQs"
+          items={EAST_RENTON_PLATEAU_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Renton"
-        neighborhoodName="Cascade"
-        attractions={CASCADE_ATTRACTIONS}
+        neighborhoodName="East Renton Plateau"
+        attractions={EAST_RENTON_PLATEAU_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Cascade families are served by the{" "}
+              East Renton Plateau families are served by the{" "}
               <a
                 href="https://www.rentonschools.us/"
                 target="_blank"
@@ -566,64 +566,53 @@ const CascadePage = () => {
               </a>
               , with{" "}
               <a
-                href="https://cascade.rentonschools.us/"
+                href="https://sierraheights.rentonschools.us/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Cascade Elementary
+                Sierra Heights Elementary
               </a>{" "}
-              on 116th Avenue SE as the neighborhood campus. Most addresses then feed{" "}
+              on Union Avenue NE as the neighborhood campus. Most addresses then feed{" "}
               <a
-                href="https://nelsen.rentonschools.us/"
+                href="https://mcknight.rentonschools.us/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Nelsen Middle School
+                McKnight Middle School
               </a>{" "}
-              on Jones Avenue S and{" "}
+              on Edmonds Avenue NE and{" "}
               <a
-                href="https://lindbergh.rentonschools.us/"
+                href="https://hazen.rentonschools.us/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Lindbergh High School
+                Hazen High School
               </a>
-              . Weekday life is built around those campuses, Cascade Park on 126th, and the short hop north to Maple Valley Highway for the rest of Renton.
+              . Weekday life is built around those campuses, the May Creek edge, and the short hop down to Maple Valley Highway.
             </p>
             <p>
-              After-school hours split between Cascade Park and the hilltop fields at{" "}
+              After-school hours split between school fields and a round at{" "}
               <a
-                href="https://www.rentonwa.gov/city_hall/community_services/parks_and_trails/philip_arnold_park"
+                href="https://www.rentonwa.gov/Activities-Events/Maplewood-Golf-Course"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Philip Arnold Park
+                Maplewood Golf Course
               </a>
-              . Summer swim lessons land at{" "}
+              . The city is designing{" "}
               <a
-                href="https://www.rentonwa.gov/Government/Departments-and-Offices/Parks-and-Recreation/Parks-and-Trails"
+                href="https://yourvoice.rentonwa.gov/northeastrentonpark"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Henry Moses Aquatic Center
-              </a>
-              {" "}
-              on Maple Valley Highway. Homework nights often use the{" "}
-              <a
-                href="https://kcls.org/locations/fairwood/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Fairwood Library
-              </a>
-              {" "}
-              a few minutes south. For fence height and permit questions,{" "}
+                Northeast Renton Park
+              </a>{" "}
+              on the Duvall and May Creek edge to close a long park-access gap on the plateau. For fence height and permit questions, start with{" "}
               <a
                 href="https://www.rentonwa.gov/City-Services/Permit-Services"
                 target="_blank"
@@ -631,8 +620,8 @@ const CascadePage = () => {
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
                 City of Renton Permit Services
-              </a>{" "}
-              and{" "}
+              </a>
+              {", "}
               <a
                 href="https://www.codepublishing.com/WA/Renton/html/Renton04/Renton0404/Renton0404040.html"
                 target="_blank"
@@ -640,8 +629,17 @@ const CascadePage = () => {
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
                 Renton fence code 4-4-040
+              </a>
+              {", or "}
+              <a
+                href="https://kingcounty.gov/en/dept/local-services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                King County Local Services
               </a>{" "}
-              are the first check before we draw a line. 116th Avenue SE and Maple Valley Highway put I-405 and downtown Renton within a short drive — which is why so many Cascade lots want a fence that works as hard as the commute.
+              if your 98059 parcel is still unincorporated. 196th Avenue SE and Maple Valley Highway put I-405 and downtown Renton within a short drive — which is why so many plateau lots want a fence that works as hard as the commute.
             </p>
           </>
         }
@@ -656,17 +654,11 @@ const CascadePage = () => {
                 Also Serving Nearby Renton Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Renton. From Cascade we also work in Fairwood on the plateau to the south, East Renton Plateau plus Maple Ridge Estates and Maple Valley Heights on the East Plateau, The Grove at Spring Lake, and Renton Highlands to the north.
+                We install fences throughout Renton. From East Renton Plateau we also work in Maple Ridge Estates and Maple Valley Heights on the same ridge, The Grove at Spring Lake, Fairwood to the south, Cascade toward the valley, and Renton Highlands to the west.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton">Renton overview</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/renton/fairwood">Fairwood</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/renton/east-renton-plateau">East Renton Plateau</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/maple-ridge-estates">Maple Ridge Estates</Link>
@@ -676,6 +668,12 @@ const CascadePage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/the-grove-at-spring-lake">The Grove at Spring Lake</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/fairwood">Fairwood</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/cascade">Cascade</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/renton-highlands">Renton Highlands</Link>
@@ -693,10 +691,10 @@ const CascadePage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Cascade Property?
+                Ready to Enhance Your East Renton Plateau Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Cascade. We&apos;ll walk the lot, talk through a mid-century replacement vs. a 116th street face, and quote a fence that fits your property.
+                Same-day estimates available in East Renton Plateau. We&apos;ll walk the lot, talk through a May Creek grade vs. a 196th street face, and quote a fence that fits your property.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -714,4 +712,4 @@ const CascadePage = () => {
   );
 };
 
-export default CascadePage;
+export default EastRentonPlateauPage;
