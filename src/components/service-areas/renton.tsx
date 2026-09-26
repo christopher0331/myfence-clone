@@ -261,7 +261,8 @@ const Renton = () => {
         },
         {
           name: "Sunset",
-          description: "Valley-floor neighborhood with moisture considerations requiring enhanced drainage and rot-resistant materials"
+          description: "Redeveloped Highlands core along NE Sunset Boulevard with compact lots, park-and-library blocks, and I-405 noise buffering. Click to learn more →",
+          link: "/service-areas/renton/sunset"
         },
         {
           name: "Downtown Renton",
