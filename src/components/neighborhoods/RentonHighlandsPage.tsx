@@ -656,6 +656,12 @@ const RentonHighlandsPage = () => {
                   <Link href="/service-areas/renton/kennydale">Kennydale</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/downtown-renton">Downtown Renton</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/sunset">Sunset</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/maple-ridge-estates">Maple Ridge Estates</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

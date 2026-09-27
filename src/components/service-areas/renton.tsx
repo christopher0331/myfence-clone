@@ -266,7 +266,8 @@ const Renton = () => {
         },
         {
           name: "Downtown Renton",
-          description: "Urban core with mixed housing types needing compact installations and solutions for smaller city lots"
+          description: "Urban civic core along the Cedar River with compact lots, alley yards, and Rainier Avenue noise buffering. Click to learn more →",
+          link: "/service-areas/renton/downtown-renton"
         },
         {
           name: "Maple Ridge Estates",
