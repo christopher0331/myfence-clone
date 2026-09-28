@@ -6,7 +6,33 @@ import { fakeLeadSuccess, guardLeadRequest } from "../_lib/guardLeadRequest";
  *
  * Runs on the server so it authenticates to the CRM with WEBSITE_LEADS_API directly,
  * rather than going through a Supabase edge function that requires a browser JWT.
+ *
+ * Shared by both company sites: seattlefence.com posts here cross-origin, and the
+ * `send-website-lead-webhook` edge function forwards here, so every lead uses this
+ * one credential.
  */
+
+const ALLOWED_ORIGINS = new Set([
+  "https://myfence.com",
+  "https://www.myfence.com",
+  "https://seattlefence.com",
+  "https://www.seattlefence.com",
+]);
+
+function corsHeaders(req: Request): Record<string, string> {
+  const origin = req.headers.get("origin");
+  if (!origin || !ALLOWED_ORIGINS.has(origin)) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "content-type",
+    Vary: "Origin",
+  };
+}
+
+export function OPTIONS(req: Request) {
+  return new Response(null, { status: 204, headers: corsHeaders(req) });
+}
 
 const DEFAULT_WEBHOOK_URL =
   "https://mdcbcpowsrrebtustwwp.supabase.co/functions/v1/receive-website-lead-webhook";
@@ -51,6 +77,14 @@ function parseAddressParts(input: string): {
 }
 
 export async function POST(req: Request) {
+  const res = await deliverLead(req);
+  for (const [key, value] of Object.entries(corsHeaders(req))) {
+    res.headers.set(key, value);
+  }
+  return res;
+}
+
+async function deliverLead(req: Request): Promise<Response> {
   let body: Record<string, unknown>;
   try {
     body = (await req.json()) as Record<string, unknown>;
