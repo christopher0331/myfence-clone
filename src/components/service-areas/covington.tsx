@@ -55,7 +55,8 @@ const Covington = () => {
       neighborhoods={[
         {
           name: "Jenkins Creek",
-          description: "Newer family-friendly development with modern homes requiring privacy fencing for growing families and active yards"
+          description: "Creek-adjacent family lots near Jenkins Creek Park and Jenkins Creek Elementary, where wet soils and trail-edge yards need moisture-aware fencing. Click to learn more →",
+          link: "/service-areas/covington/jenkins-creek"
         },
         {
           name: "Maple Hills",
