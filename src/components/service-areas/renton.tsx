@@ -255,6 +255,11 @@ const Renton = () => {
           link: "/service-areas/renton/cascade"
         },
         {
+          name: "Benson Hill",
+          description: "South and southeast Renton hillside community along 116th Avenue SE, with Petrovitsky traffic, wooded lots, and mixed city and HOA review. Click to learn more →",
+          link: "/service-areas/renton/benson-hill"
+        },
+        {
           name: "East Renton Plateau",
           description: "Newer developments with modern homes demanding contemporary fence designs and HOA-compliant installations. Click to learn more →",
           link: "/service-areas/renton/east-renton-plateau"
