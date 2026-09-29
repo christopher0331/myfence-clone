@@ -9,3 +9,4 @@ export { highlandsAtCedarDownsHoaConfig } from "./highlands-at-cedar-downs";
 export { elkRunHoaConfig } from "./elk-run";
 export { tenTrailsHoaConfig } from "./ten-trails";
 export { fallingWaterHoaConfig } from "./falling-water";
+export { fairwoodGreensHoaConfig } from "./fairwood-greens";

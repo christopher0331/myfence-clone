@@ -56,20 +56,35 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
       <main className="min-h-screen">
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
-            <Link
-              href={config.parentHref}
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {config.parentLinkLabel}
-            </Link>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2 mb-6">
+              <Link
+                href={config.parentHref}
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {config.parentLinkLabel}
+              </Link>
+              {config.hubHref && config.hubLinkLabel ? (
+                <Link
+                  href={config.hubHref}
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  {config.hubLinkLabel}
+                </Link>
+              ) : null}
+            </div>
             <div className="max-w-4xl mx-auto text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
-                <MapPin className="h-6 w-6 text-primary" />
+                <MapPin className="h-6 w-6 text-primary shrink-0" />
                 <span className="text-lg text-muted-foreground">{config.locationLabel}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{config.h1}</h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl">{config.heroIntro}</p>
+              {config.disclaimer ? (
+                <p className="text-sm text-muted-foreground border border-border rounded-lg p-4 mb-8 max-w-3xl text-left leading-relaxed">
+                  {config.disclaimer}
+                </p>
+              ) : null}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="#hoa-forms">
                   <Button size="lg" variant="hero" className="w-full sm:w-auto">
@@ -233,6 +248,16 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
                 </Link>
                 {config.reviewFooterAfterLink ?? "."}
               </p>
+              {config.hubHref && config.hubLinkLabel ? (
+                <p className="text-muted-foreground leading-relaxed">
+                  <Link
+                    href={config.hubHref}
+                    className="text-primary underline decoration-2 underline-offset-2"
+                  >
+                    {config.hubLinkLabel}
+                  </Link>
+                </p>
+              ) : null}
             </div>
           </div>
         </section>
@@ -290,6 +315,11 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
                   <Link href="/quote">Get Free Quote</Link>
                 </Button>
+                {config.contactCtaLabel ? (
+                  <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                    <Link href="/contact">{config.contactCtaLabel}</Link>
+                  </Button>
+                ) : null}
               </div>
             </div>
           </div>

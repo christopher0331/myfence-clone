@@ -606,11 +606,14 @@ const BensonHillPage = () => {
                 Also Serving Nearby Renton Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Renton. From Benson Hill we also work in Cascade along the same 116th corridor, Fairwood to the east, East Renton Plateau farther up the plateau, Downtown Renton in the valley, and Renton Highlands to the north.
+                We install fences throughout Renton. From Benson Hill we also work in Talbot Hill to the northwest, Cascade along the same 116th corridor, Fairwood to the east, East Renton Plateau farther up the plateau, Downtown Renton in the valley, and Renton Highlands to the north.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton">Renton overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/talbot-hill">Talbot Hill</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/cascade">Cascade</Link>
