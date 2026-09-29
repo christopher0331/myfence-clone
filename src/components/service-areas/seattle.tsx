@@ -55,7 +55,8 @@ const Seattle = () => {
       neighborhoods={[
         {
           name: "Capitol Hill",
-          description: "Historic urban neighborhood with compact lots requiring creative privacy solutions and designs compliant with landmark district regulations"
+          description: "Historic urban neighborhood with compact lots requiring creative privacy solutions and designs compliant with landmark district regulations. Click to learn more →",
+          link: "/service-areas/seattle/capitol-hill"
         },
         {
           name: "Ballard",
