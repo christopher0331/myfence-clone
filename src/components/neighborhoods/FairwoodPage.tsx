@@ -38,7 +38,7 @@ const FAIRWOOD_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Fairwood?",
     answer:
-      "Most Fairwood lots sit in unincorporated King County with a Renton 98058 mailing address, so county rules apply rather than City of Renton code. Fences six feet or under typically do not need a building permit. Front-yard fencing in the required setback is usually limited to four feet, and corner lots on Petrovitsky Road, 140th Avenue SE, and 148th Avenue SE must keep sight triangles clear. Fairwood Greens and a few other plats add an architectural review even when the county does not ask for a permit. MyFence.com checks your parcel against King County overlays and any association packet before we quote.",
+      "Most Fairwood lots sit in unincorporated King County with a Renton 98058 mailing address, so county rules apply rather than City of Renton code. King County's permit page says fences six feet high or less do not need a building permit unless the property contains critical areas. Corner lots on Petrovitsky Road, 140th Avenue SE, and 148th Avenue SE still need clear sight lines. Fairwood Greens publishes its own Architectural Control Committee rules and requires written approval before fence work; that review is separate from the county. See the Fairwood Greens HOA fencing guide on this site, then confirm the current packet with the association. Other plats may have their own review. MyFence.com checks your parcel against King County overlays and any association packet before we quote.",
   },
   {
     question:
@@ -80,7 +80,7 @@ const FAIRWOOD_ATTRACTIONS: LocalAttraction[] = [
     name: "Fairwood Golf & Country Club",
     url: "https://www.fairwood.org/",
     description:
-      "The 18-hole course and clubhouse at 17070 140th Avenue SE sit at the center of Fairwood Greens. Homes that back to a fairway usually want a fence that holds dogs without walling off the green — hogwire or a mixed-height cedar run is the typical conversation.",
+      "The 18-hole course and clubhouse at 17070 140th Avenue SE sit at the center of Fairwood Greens. Homes that back a fairway are in that association, which publishes setback and gate rules for those fences. Confirm the current ACC guidelines before you draw a course-side line.",
   },
   {
     name: "Fairwood Elementary",
@@ -356,6 +356,22 @@ const FairwoodPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold">
                 Fairwood-Specific Fencing Considerations
               </h2>
+              <Link
+                href="/service-areas/renton/fairwood/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Fairwood Greens HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Open the association&apos;s Architectural Control Approval Form, ACC Guidelines, and rule 3.070.0. Height, front-yard, corner, and fairway rules are summarized there, with King County permit notes. MyFence.com is not the HOA.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
@@ -378,7 +394,14 @@ const FairwoodPage = () => {
                     Fairwood Greens and Course-Edge Lots
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Streets that wrap the golf course often have an architectural packet: height caps, material notes, and a preference that the course face not look like a solid warehouse wall. We mix cedar privacy on the neighbor sides with hogwire or a lower rail toward the fairway so dogs stay in and the green stays in the living room. If your street has no association — which is common outside Greens — we still document King County height and setback rules so the install is clean with the county.
+                    Streets around the golf course are Fairwood Greens. The association publishes ACC guidelines — including a six-foot height cap, no front-yard fence, and fairway setbacks with a required gate — and written approval is required before work. Read the{" "}
+                    <Link
+                      href="/service-areas/renton/fairwood/hoa-approved-fencing"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      Fairwood Greens HOA fencing guide
+                    </Link>{" "}
+                    and confirm the current packet with the committee. If your street has no association, which is common outside Greens, we still document King County height and permit rules so the install is clean with the county.
                   </p>
                 </div>
                 <div>

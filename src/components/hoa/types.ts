@@ -86,4 +86,11 @@ export interface HoaApprovedFencingConfig {
   schemaFaqs: NeighborhoodFaqItem[];
   ctaHeading: string;
   ctaBody: string;
+  /** Shown under the hero. Use for non-affiliation language. */
+  disclaimer?: string;
+  /** Optional second hero/body link, usually the city service hub. */
+  hubHref?: string;
+  hubLinkLabel?: string;
+  /** When set, the closing CTA includes a contact button. */
+  contactCtaLabel?: string;
 }

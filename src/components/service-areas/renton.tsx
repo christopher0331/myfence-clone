@@ -70,7 +70,7 @@ const RentonArticle = () => (
         <div>
           <h3 className="text-xl font-semibold mb-2">Do you install fences in all Renton neighborhoods?</h3>
           <p className="text-muted-foreground">
-            Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, and Downtown Renton. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations.
+            Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, and Talbot Hill. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations.
           </p>
         </div>
         <div>
@@ -113,7 +113,7 @@ const rentonFaqLd = {
       "name": "Do you install fences in all Renton neighborhoods?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, and Downtown Renton. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations."
+        "text": "Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, and Talbot Hill. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations."
       }
     },
     {
@@ -273,6 +273,11 @@ const Renton = () => {
           name: "Downtown Renton",
           description: "Urban civic core along the Cedar River with compact lots, alley yards, and Rainier Avenue noise buffering. Click to learn more →",
           link: "/service-areas/renton/downtown-renton"
+        },
+        {
+          name: "Talbot Hill",
+          description: "Hillside streets south of downtown along Talbot Road S and S Puget Drive, beside the Valley Medical campus. Click to learn more →",
+          link: "/service-areas/renton/talbot-hill"
         },
         {
           name: "Maple Ridge Estates",
