@@ -70,7 +70,7 @@ const RentonArticle = () => (
         <div>
           <h3 className="text-xl font-semibold mb-2">Do you install fences in all Renton neighborhoods?</h3>
           <p className="text-muted-foreground">
-            Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, and Talbot Hill. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations.
+            Yes, we serve Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, Talbot Hill, and West Hill on the west ridge near Skyway and Bryn Mawr. Much of West Hill is unincorporated King County; we install there and on the Renton side of that line. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations.
           </p>
         </div>
         <div>
@@ -113,7 +113,7 @@ const rentonFaqLd = {
       "name": "Do you install fences in all Renton neighborhoods?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we serve all Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, and Talbot Hill. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations."
+        "text": "Yes, we serve Renton neighborhoods including Renton Highlands, Kennydale, Fairwood, Cascade, East Renton Plateau, Sunset, Downtown Renton, Benson Hill, Talbot Hill, and West Hill on the west ridge near Skyway and Bryn Mawr. Much of West Hill is unincorporated King County; we install there and on the Renton side of that line. Our team is experienced with the unique terrain and requirements of each area, from lakefront properties to hillside installations."
       }
     },
     {
@@ -278,6 +278,11 @@ const Renton = () => {
           name: "Talbot Hill",
           description: "Hillside streets south of downtown along Talbot Road S and S Puget Drive, beside the Valley Medical campus. Click to learn more →",
           link: "/service-areas/renton/talbot-hill"
+        },
+        {
+          name: "West Hill",
+          description: "Hillside community on Renton's west ridge near Skyway and Bryn Mawr, overlooking the valley and Lake Washington. Much of it is unincorporated King County. Click to learn more →",
+          link: "/service-areas/renton/west-hill"
         },
         {
           name: "Maple Ridge Estates",
