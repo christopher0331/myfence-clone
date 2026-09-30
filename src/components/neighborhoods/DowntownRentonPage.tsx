@@ -654,11 +654,14 @@ const DowntownRentonPage = () => {
                 Also Serving Nearby Renton Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Renton. From downtown we also work in Talbot Hill on the hillside just south, Kennydale toward the lake, Sunset and Renton Highlands up the hill, Cascade toward the valley, and Fairwood to the southeast.
+                We install fences throughout Renton. From downtown we also work in West Hill on the ridge to the west, Talbot Hill on the hillside just south, Kennydale toward the lake, Sunset and Renton Highlands up the hill, Cascade toward the valley, and Fairwood to the southeast.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton">Renton overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/west-hill">West Hill</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/talbot-hill">Talbot Hill</Link>

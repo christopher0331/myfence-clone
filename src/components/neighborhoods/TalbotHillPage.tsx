@@ -530,7 +530,7 @@ const TalbotHillPage = () => {
                 Also Serving Nearby Renton Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Renton. From Talbot Hill we also work in Downtown Renton in the valley just north, Benson Hill farther south along the hill, Kennydale toward the lake, and Cascade to the east.
+                We install fences throughout Renton. From Talbot Hill we also work in Downtown Renton in the valley just north, West Hill on the ridge west of the valley, Benson Hill farther south along the hill, Kennydale toward the lake, and Cascade to the east.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -538,6 +538,9 @@ const TalbotHillPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/downtown-renton">Downtown Renton</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/renton/west-hill">West Hill</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/renton/benson-hill">Benson Hill</Link>
