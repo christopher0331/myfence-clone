@@ -363,6 +363,22 @@ export default function EastgatePage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
                 Eastgate-Specific Fencing Considerations
               </h2>
+              <Link
+                href="/service-areas/bellevue/eastgate/hoa-approved-fencing"
+                className="block h-full mb-8"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Horizon Crest HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Horizon Crest publishes Eaglesmere Division CC&amp;Rs: street setbacks, a 6-foot cap on Divisions 2, 3, and 4, and a note that the architectural committee no longer exists. City of Bellevue fence rules are summarized alongside them. MyFence.com is not the association.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Eastgate Terrain Engineering</h3>
@@ -488,7 +504,14 @@ export default function EastgatePage() {
                 <Card className="p-5">
                   <h3 className="font-semibold mb-2">2. Eastgate Design & HOA Submission</h3>
                   <p className="text-sm text-muted-foreground">
-                    If your property has covenant or community requirements, we help prepare a design that fits them.
+                    If the lot is in Horizon Crest, start with the{" "}
+                    <Link
+                      href="/service-areas/bellevue/eastgate/hoa-approved-fencing"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      Horizon Crest fencing guide
+                    </Link>
+                    . Other Eastgate streets may have different covenants. We prepare a drawing; the association and the city decide.
                   </p>
                 </Card>
                 <Card className="p-5">
