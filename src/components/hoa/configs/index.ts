@@ -10,3 +10,4 @@ export { elkRunHoaConfig } from "./elk-run";
 export { tenTrailsHoaConfig } from "./ten-trails";
 export { fallingWaterHoaConfig } from "./falling-water";
 export { fairwoodGreensHoaConfig } from "./fairwood-greens";
+export { horizonCrestHoaConfig } from "./horizon-crest";

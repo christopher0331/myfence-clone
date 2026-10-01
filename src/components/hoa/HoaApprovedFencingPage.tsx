@@ -123,7 +123,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{config.formsHeading}</h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-muted-foreground mb-8 leading-relaxed break-words">
                 {config.formsIntro}
                 {config.formsSubmitEmail ? (
                   <>
@@ -214,7 +214,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-semibold">
                       {index + 1}
                     </div>
-                    <div>
+                    <div className="min-w-0 break-words">
                       <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                       <p className="text-muted-foreground leading-relaxed">{step.body}</p>
                     </div>
@@ -292,7 +292,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
                 {config.faqs.map((item) => (
                   <div key={item.q}>
                     <h3 className="text-xl font-semibold mb-2">{item.q}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.a}</p>
+                    <p className="text-muted-foreground leading-relaxed break-words">{item.a}</p>
                   </div>
                 ))}
               </div>
