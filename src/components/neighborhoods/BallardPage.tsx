@@ -13,8 +13,8 @@ import {
   MapPin,
   Phone,
   Landmark,
-  Volume2,
-  Ruler,
+  Wind,
+  Waves,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
@@ -28,81 +28,81 @@ import {
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
 
-const CANONICAL = "https://myfence.com/service-areas/seattle/capitol-hill";
+const CANONICAL = "https://myfence.com/service-areas/seattle/ballard";
 const META_TITLE =
-  "Capitol Hill Fence Installation | Seattle | Historic District Compliant | MyFence.com";
+  "Ballard Fence Installation | Seattle | Salt-Air Craftsman Lots | MyFence.com";
 const META_DESCRIPTION =
-  "Professional fence installation in Capitol Hill, Seattle, WA. Cedar, hogwire & hybrid fencing for compact lots, Harvard-Belmont review, and Broadway-adjacent yards. Free quotes. (253) 455-1885.";
+  "Professional fence installation in Ballard, Seattle, WA. Cedar, hogwire & hybrid fencing for craftsman lots, Sunset Hill wind, and Ballard Avenue review. Free quotes. (253) 455-1885.";
 
-const CAPITOL_HILL_FAQS: NeighborhoodFaqItem[] = [
+const BALLARD_FAQS: NeighborhoodFaqItem[] = [
   {
-    question: "Do I need a permit to build a fence in Capitol Hill, Seattle?",
+    question: "Do I need a permit to build a fence in Ballard, Seattle?",
     answer:
-      "Most Capitol Hill side- and rear-yard fences six feet or under do not need a Seattle Department of Construction and Inspections building permit. Front and street-side setbacks are usually capped at four feet, and a solid fence taller than six feet is not the typical path even with paperwork. Lots inside the Harvard-Belmont Landmark District still need a Certificate of Approval from the Landmarks Preservation Board for work visible from the street, even when SDCI does not ask for a construction permit. Corner lots on Broadway, 15th Avenue E, E John Street, and Madison must keep sight triangles clear. MyFence.com checks the parcel zone and any landmark overlay before we quote.",
+      "Most Ballard side- and rear-yard fences six feet or under do not need a Seattle Department of Construction and Inspections building permit. Front and street-side setbacks are usually capped at four feet. Corner lots on 15th Avenue NW, NW Market Street, 24th Avenue NW, and NW 65th Street must keep sight triangles clear. Work visible from the street inside the Ballard Avenue Landmark District can still need a Certificate of Approval from the Landmarks Preservation Board even when SDCI does not ask for a construction permit. MyFence.com checks the parcel zone and any landmark overlay before we quote.",
   },
   {
     question:
-      "What fence styles work best for Capitol Hill's compact lots and landmark streets?",
+      "What fence styles work best for Ballard's salt air and craftsman lots?",
     answer:
-      "Six-foot cedar privacy is the usual choice on alley lots and shared side yards off 10th, 12th, and 15th Avenue E, where the neighbor's deck sits close enough that a shorter screen still reads the second floor. Broadway- and Pike-Pine-facing yards often want a solid street face for nightlife noise, then a lighter hogwire stretch toward Volunteer Park or Interlaken so the trees stay in view. Hybrid aluminum-and-cedar on steel posts suits homeowners who do not want to restain after every wet Seattle winter. In Harvard-Belmont, we keep the street-facing run quieter in detail so it reads as a residential fence, not a commercial wall. Fence Genius maps short bays and alley gates so panels fit without blocking the only walk to the RPZ curb.",
+      "Six-foot cedar privacy is the usual choice on alley lots and shared side yards off 24th, 28th, and 32nd Avenue NW, where craftsman bungalows sit close enough that a shorter screen still reads the neighbor's second floor. Sunset Hill and Shilshole-facing yards often want a solid neighbor face, then a lighter hogwire stretch toward the Sound so the Olympic view stays in the room and the fence takes less wind. Hybrid aluminum-and-cedar on steel posts suits homeowners who do not want to restain after every wet, salty winter near Golden Gardens or Salmon Bay. On Ballard Avenue, we keep the street-facing run quieter in detail so it reads as a residential fence, not a commercial wall. Fence Genius maps short bays and alley gates so panels fit without blocking the only walk to the curb.",
   },
   {
-    question: "How much does fence installation cost in Capitol Hill, Seattle?",
+    question: "How much does fence installation cost in Ballard, Seattle?",
     answer:
-      "Capitol Hill fence installation typically runs $50–$74 per linear foot for six-foot cedar privacy, $45–$62 for hogwire with a cedar frame, and $58–$80 for hybrid aluminum/cedar. Tight alley access off Roy, Aloha, and Republican, extra gates on townhome courts, and hand-digging near older trees on Harvard Avenue E or Volunteer Park Way can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "Ballard fence installation typically runs $50–$74 per linear foot for six-foot cedar privacy, $45–$62 for hogwire with a cedar frame, and $58–$80 for hybrid aluminum/cedar. Tight alley access off Market, extra gates on townhome courts near 15th Avenue NW, and marine-grade hardware on Sunset Hill or Shilshole lots can move a quote. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
-    question: "How long does fence installation take in Capitol Hill?",
+    question: "How long does fence installation take in Ballard?",
     answer:
-      "Most Capitol Hill residential and townhome projects finish in one to three working days after any SDCI or Landmarks paperwork is complete. Prefabricated panels keep on-site time short. Extra time usually comes from hand-carrying materials down an alley off 12th or 13th, parking around Capitol Hill Station pickup on Broadway, or matching an existing neighbor height on a six-foot side yard. We lock the schedule with you before the crew arrives.",
+      "Most Ballard residential and townhome projects finish in one to three working days after any SDCI or Landmarks paperwork is complete. Prefabricated panels keep on-site time short. Extra time usually comes from hand-carrying materials down an alley off 24th or 28th, parking around Sunday market hours on Ballard Avenue, or matching an existing neighbor height on a six-foot side yard. We lock the schedule with you before the crew arrives.",
   },
   {
-    question: "Do I need my neighbor's permission for a fence in Capitol Hill?",
+    question: "Do I need my neighbor's permission for a fence in Ballard?",
     answer:
-      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Seattle does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. Capitol Hill mixes century-old pins on Harvard and Belmont with later townhome courts near Cal Anderson and the light-rail station, so confirming the line before digging saves a redo on a short side yard. MyFence.com can help share a simple site plan and keep the conversation on height, style, and who pays for which stretch.",
+      "Washington treats a fence on the property line as a potential shared improvement, so talking with the neighbor early is the practical path even when Seattle does not require a signature. A fence taller than six feet does require a recorded agreement with the adjoining owner. Ballard mixes century-old pins on the old street grid west of 24th with later townhome courts near 15th and Market, so confirming the line before digging saves a redo on a short side yard. MyFence.com can help share a simple site plan and keep the conversation on height, style, and who pays for which stretch.",
   },
 ];
 
-const CAPITOL_HILL_ATTRACTIONS: LocalAttraction[] = [
+const BALLARD_ATTRACTIONS: LocalAttraction[] = [
   {
-    name: "Volunteer Park",
-    url: "https://www.seattle.gov/parks/allparks/volunteer-park",
+    name: "Golden Gardens Park",
+    url: "https://www.seattle.gov/parks/parks/golden-gardens-park",
     description:
-      "The 48-acre hilltop park at 1247 15th Avenue E — conservatory, water tower, and lawns that look west toward the Sound. Lots that face this green usually want a fence that holds pets without walling off the walk up Volunteer Park Way.",
+      "The Sound-side beach and upland trails at 8498 Seaview Place NW. Lots that sit between here and Sunset Hill usually want a fence that holds dogs without turning the Olympic view into a solid wall.",
   },
   {
-    name: "Cal Anderson Park",
-    url: "https://www.seattle.gov/parks/allparks/cal-anderson-park",
+    name: "Hiram M. Chittenden Locks",
+    url: "https://www.nws.usace.army.mil/Missions/Civil-Works/Locks-and-Dams/Chittenden-Locks/",
     description:
-      "The neighborhood lawn and reservoir park on 11th Avenue, a block off Broadway and the light-rail station. Event days and evening use fill the surrounding alleys; we stage material drops so a trailer is not sitting in that curb lane.",
+      "The Army Corps locks at 3015 NW 54th Street, where Salmon Bay meets Puget Sound. Weekend walk traffic on NW 54th and the canal path is part of how we time material drops on those blocks.",
   },
   {
-    name: "Seattle Asian Art Museum",
-    url: "https://seattleartmuseum.org/asianartmuseum",
+    name: "National Nordic Museum",
+    url: "https://nordicmuseum.org/",
     description:
-      "The 1933 Art Deco museum inside Volunteer Park. Nearby lots on 14th and 15th sit in the same tree-lined grid — we keep equipment off the small front lot that museum visitors use on weekend afternoons.",
+      "The museum at 2655 NW Market Street, on the west end of Ballard's commercial spine. Nearby lots hear Market Street traffic; we stage so a trailer is not sitting in that curb lane on a weekend.",
   },
   {
-    name: "Interlaken Park",
-    url: "https://www.seattle.gov/parks/allparks/interlaken-park",
+    name: "Ballard Commons Park",
+    url: "https://www.seattle.gov/parks/parks/ballard-commons-park",
     description:
-      "The wooded ravine between Capitol Hill and the Arboretum, reached from Interlaken Boulevard and 24th Avenue E. Yards that drop toward this canopy often keep a hogwire stretch so the trees stay in view instead of disappearing behind a solid downhill wall.",
+      "The municipal-center lawn and skate bowl at 5701 22nd Avenue NW, next to the library. Townhome courts around 22nd use this park as the daily walk — we keep alley gates swinging toward the sidewalk, not into that path.",
   },
   {
-    name: "Elliott Bay Book Company",
-    url: "https://www.elliottbaybook.com/",
+    name: "Sunset Hill Park",
+    url: "https://www.seattle.gov/parks/parks/sunset-hill-park",
     description:
-      "The independent bookstore at 1521 10th Avenue, in the Pike-Pine corridor. Evening foot traffic on 10th and Pine is part of how we time a crew on those blocks so the sidewalk stays open.",
+      "The viewpoint at 7531 34th Avenue NW, looking west across Shilshole Bay. Yards on 34th and 36th often keep a hogwire stretch so the Sound stays in the living room after a replacement.",
   },
 ];
 
-const CapitolHillPage = () => {
+const BallardPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
     canonical: CANONICAL,
-    neighborhoodName: "Capitol Hill, Seattle",
-    pageTitle: "Capitol Hill Seattle Fence Installation",
+    neighborhoodName: "Ballard, Seattle",
+    pageTitle: "Ballard Seattle Fence Installation",
     description: META_DESCRIPTION,
-    faqItems: CAPITOL_HILL_FAQS,
+    faqItems: BALLARD_FAQS,
   });
 
   return (
@@ -130,14 +130,14 @@ const CapitolHillPage = () => {
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-lg text-muted-foreground">
-                    Serving Capitol Hill, Seattle WA
+                    Serving Ballard, Seattle WA
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Capitol Hill Fence Installation
+                  Ballard Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Cedar privacy on alley lots, hogwire that keeps Volunteer Park in view, and hybrid systems built for Broadway noise, Harvard-Belmont review, and the compact yards around Cal Anderson.
+                  Cedar privacy on craftsman alley lots, hogwire that keeps the Sound in view, and hybrid systems built for Shilshole salt air, Sunset Hill wind, and the compact yards around Market Street.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -153,7 +153,7 @@ const CapitolHillPage = () => {
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
                 <GoogleBusinessMap
-                  city="Capitol Hill, Seattle"
+                  city="Ballard, Seattle"
                   state="Washington"
                   radiusMiles={3}
                   zoom={14}
@@ -193,13 +193,13 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Fencing Tight Lots Between Broadway and Volunteer Park
+                Fencing Craftsman Lots Between Market Street and Shilshole
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Capitol Hill is the dense ridge east of downtown Seattle, west of the Arboretum and north of First Hill. Broadway and 15th Avenue E carry the commercial spine; Pike and Pine fill evenings; E John, E Thomas, and E Harrison drop toward the light-rail station; Harvard Avenue E, Belmont Avenue E, and 10th Avenue E hold the quieter residential blocks of the Harvard-Belmont Landmark District. Older craftsman and brick apartment yards sit a few streets off Volunteer Park while newer townhome courts fill infill parcels toward Cal Anderson. Yards here are shorter than a Ravenna side yard and louder than a Madison Park lot. The design conversation starts with how close the neighbor sits, whether the street face should mute Broadway, and whether a landmark packet is required before a post goes in.
+                Ballard is the northwest Seattle neighborhood north of the Ship Canal and west of Phinney Ridge, with Crown Hill climbing north and Magnolia sitting across Salmon Bay. NW Market Street and 15th Avenue NW carry the commercial spine; Ballard Avenue NW holds the landmark commercial blocks; 24th, 28th, and 32nd Avenue NW keep the quieter bungalow grid; NW 65th, 70th, and 75th climb into Loyal Heights. Older craftsman yards sit a few streets off Sunset Hill Park while newer townhome courts fill infill parcels toward 15th and the library. Yards here are shorter than an Eastside lot and saltier than a Ravenna side yard. The design conversation starts with how close the neighbor sits, whether the west face should stay open to the Sound, and whether a landmark packet is required before a post goes in.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has installed cedar, hogwire, and hybrid fences across Seattle, including compact-lot work on Capitol Hill and neighboring Ravenna. We use Fence Genius to capture tight alley widths, grade changes toward Interlaken, and the true length of a 12th Avenue run before a crew arrives. The goal is a fence that belongs on a hilltop city lot — not a long suburban kit squeezed onto a six-foot side yard that also happens to sit next to a bus stop on 15th.
+                MyFence.com has installed cedar, hogwire, and hybrid fences across Seattle, including compact-lot work in Ballard and neighboring Ravenna. We use Fence Genius to capture tight alley widths, grade changes toward Sunset Hill, and the true length of a 28th Avenue run before a crew arrives. The goal is a fence that belongs on a maritime city lot — not a long suburban kit squeezed onto a six-foot side yard that also happens to sit next to a bus stop on 15th.
               </p>
             </div>
           </div>
@@ -210,7 +210,7 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Why Capitol Hill Homeowners Trust MyFence.com
+                Why Ballard Homeowners Trust MyFence.com
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="p-6">
@@ -218,36 +218,36 @@ const CapitolHillPage = () => {
                     <Landmark className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Harvard-Belmont Packet Ready
+                        Ballard Avenue Packet Ready
                       </h3>
                       <p className="text-muted-foreground">
-                        Street-visible work inside the landmark district needs a Certificate of Approval, not just an SDCI height check. We document style, height, and a simple site plan so the Landmarks conversation happens before installation, not after a stop-work notice.
+                        Street-visible work inside the Ballard Avenue Landmark District needs a Certificate of Approval, not just an SDCI height check. We document style, height, and a simple site plan so the Landmarks conversation happens before installation, not after a stop-work notice.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Ruler className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Waves className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Alley Lots, Measured First
+                        Hardware for Salt and Canal Moisture
                       </h3>
                       <p className="text-muted-foreground">
-                        Townhome courts and bungalow side yards off 10th, 12th, and 15th leave little room for a misplaced post. Fence Genius records the alley, the meter, and the neighbor fence so a gate still opens after the panels go up.
+                        Shilshole, Golden Gardens, and the locks keep salt and damp in the air year-round. We spec fasteners and posts that hold up on a west-facing lot instead of treating Ballard like an inland side yard.
                       </p>
                     </div>
                   </div>
                 </Card>
                 <Card className="p-6">
                   <div className="flex items-start gap-4">
-                    <Volume2 className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+                    <Wind className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Broadway and Pike-Pine Noise
+                        Sunset Hill Wind and Views
                       </h3>
                       <p className="text-muted-foreground">
-                        Broadway, Pine, and the station plaza sit close enough that a solid cedar street face is often the first request. We keep the park-facing stretch lighter when you still want to see Volunteer Park or the Interlaken canopy.
+                        West-facing yards on 32nd, 34th, and 36th take Sound wind that will rack a tall solid wall. We keep the neighbor sides private and the view stretch lighter so the fence stays up and the Olympics stay in the room.
                       </p>
                     </div>
                   </div>
@@ -260,7 +260,7 @@ const CapitolHillPage = () => {
                         {WARRANTY_CONSTANTS.YEARS}-Year Workmanship Warranty
                       </h3>
                       <p className="text-muted-foreground">
-                        Full coverage on materials and labor, including hardware chosen for damp hilltop yards and boulevard wind. We stand behind the install through Seattle winters.
+                        Full coverage on materials and labor, including hardware chosen for damp maritime yards and boulevard wind. We stand behind the install through Seattle winters.
                       </p>
                     </div>
                   </div>
@@ -275,7 +275,7 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Capitol Hill Homeowners Say
+                What Ballard Homeowners Say
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
@@ -285,9 +285,9 @@ const CapitolHillPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We sit one block off Broadway and wanted a quieter backyard without boxing the park walk. Full cedar on the street side, hogwire toward 15th. They finished around station hours so E John stayed open.&rdquo;
+                    &ldquo;We sit west of 32nd and wanted privacy from the alley without losing the Sound. Full cedar on the neighbor sides, hogwire toward Sunset Hill. They staged around Market Street hours so 65th stayed open.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Jules in Capitol Hill</p>
+                  <p className="text-sm font-medium">— Mara in Ballard</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -297,9 +297,9 @@ const CapitolHillPage = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our Harvard Avenue side yard is barely wide enough for a wheelbarrow. They measured twice, kept the gate off the only walkway, and walked us through the landmark packet before a post went in.&rdquo;
+                    &ldquo;Our 28th Avenue side yard is barely wide enough for a wheelbarrow. They measured twice, kept the gate off the only walkway, and used hardware that will not rust out after one winter near the canal.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Nadia in Capitol Hill</p>
+                  <p className="text-sm font-medium">— Erik in Ballard</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
                 <Card className="p-6">
@@ -311,7 +311,7 @@ const CapitolHillPage = () => {
                   <p className="text-muted-foreground italic mb-4">
                     &ldquo;The last fence sat in a puddle all winter next to the alley drain. They lifted the bottom board and used hybrid on the wet corner. The walkthrough checked every latch before they left.&rdquo;
                   </p>
-                  <p className="text-sm font-medium">— Theo in Capitol Hill</p>
+                  <p className="text-sm font-medium">— Priya in Ballard</p>
                   <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
@@ -320,30 +320,30 @@ const CapitolHillPage = () => {
         </section>
 
         {/* 11. Virtual Quote Tool */}
-        <LeadCaptureTabs fenceStyleName="Capitol Hill Seattle fence" />
+        <LeadCaptureTabs fenceStyleName="Ballard Seattle fence" />
 
-        {/* 6. Photo Gallery — nearby Seattle installs until Capitol Hill-tagged photos exist */}
+        {/* 6. Photo Gallery — nearby Seattle installs until Ballard-tagged photos exist */}
         <ServiceAreaPhotoGallery
           city="Seattle"
-          title="Recent Fence Work Near Capitol Hill"
-          description="These photos are from nearby Seattle jobs, including Ravenna and other city lots. Same crew, same materials, and the same Fence Genius process we use on Capitol Hill lots along 12th Avenue, Harvard Avenue E, and Volunteer Park Way."
+          title="Recent Fence Work Near Ballard"
+          description="These photos are from nearby Seattle jobs, including Ravenna and other city lots. Same crew, same materials, and the same Fence Genius process we use on Ballard lots along 24th Avenue NW, 28th Avenue NW, and Sunset Hill."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
-        <FeaturedProject city="Seattle" neighborhood="Capitol Hill" />
+        <FeaturedProject city="Seattle" neighborhood="Ballard" />
 
         {/* Featured case study copy */}
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Featured Capitol Hill Installation
+                Featured Ballard Installation
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A typical Capitol Hill cedar-and-hogwire run sits on a small lot off 12th Avenue or Harvard Avenue E, close enough to Volunteer Park that a solid downhill wall would erase the reason the house faces the trees. The job is usually two fences in one: full-height cedar on the Broadway and neighbor sides, then a lighter hogwire stretch toward the park so the living room still reads the canopy. Fence Genius maps the tight alley so panels fit without blocking the walk to E John, and we set footings so winter runoff between two roofs does not pond against the bottom board.
+                A typical Ballard cedar-and-hogwire run sits on a small lot off 28th Avenue NW or NW 70th Street, close enough to Sunset Hill that a solid west wall would erase the reason the house faces the water. The job is usually two fences in one: full-height cedar on the alley and neighbor sides, then a lighter hogwire stretch toward Shilshole so the living room still reads the Sound. Fence Genius maps the tight alley so panels fit without blocking the walk to Market Street, and we set footings so winter runoff between two roofs does not pond against the bottom board.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Most comparable Capitol Hill yards run 60–140 linear feet and wrap in one to three working days after any city or landmark paperwork. We use generic cedar privacy, hogwire, or hybrid aluminum/cedar — no unverified construction claims — and we walk the line with you before posts go in so the street face, the wet corner, and the park side are all accounted for.
+                Most comparable Ballard yards run 60–140 linear feet and wrap in one to three working days after any city or landmark paperwork. We use generic cedar privacy, hogwire, or hybrid aluminum/cedar — no unverified construction claims — and we walk the line with you before posts go in so the salt-facing stretch, the wet corner, and the Sound side are all accounted for.
               </p>
             </div>
           </div>
@@ -354,39 +354,39 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Capitol Hill–Specific Fencing Considerations
+                Ballard-Specific Fencing Considerations
               </h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Compact Lots and Alley Staging
+                    Ballard Terrain Toward Sunset Hill
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Infill around Broadway and Cal Anderson produced townhome courts and leftover bungalow lots whose side yards are measured in feet, not tens of feet. A panel that works on an Eastside acre lot will not swing a gate here. We measure the alley, the utility meters, and the neighbor fence first, then build panels that leave a usable path to 12th, 15th, and E John. Restricted parking zones on Capitol Hill also mean we plan material drops instead of leaving a trailer in an RPZ stall all afternoon.
+                    The grid climbs west from 15th toward 36th and drops south toward the Ship Canal. A flat-lot crew will leave a stepped gap or bury the low rail. Fence Genius maps the grade so each bay follows the yard instead of fighting it. On a sloping site Seattle allows the high point to read taller as long as the average height between posts stays within the six-foot rule — we design to that average instead of guessing from the sidewalk on 32nd.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Harvard-Belmont Landmark Review
+                    Salt Air, Canal Moisture, and Wind
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The Harvard-Belmont Landmark District covers the west-slope blocks of Harvard Avenue E, Belmont Avenue E, and neighboring streets. Work visible from the public right-of-way can require a Certificate of Approval from the Landmarks Preservation Board even when SDCI does not ask for a construction permit. We treat that packet as part of the design — height, finish, and a simple site plan — so you are not surprised after a neighbor flags the street face. Lots outside the district still follow Seattle height rules: six feet in side and rear yards, four feet in most front and street-side setbacks.
+                    Shilshole Bay and Golden Gardens keep salt in the west wind; the locks and Salmon Bay keep the south edge damp. Hardware that lasts on a Ravenna side yard can pit here in a few seasons. We keep soil off the first board and talk through whether the wet corner should be hybrid instead of a second round of stain. Walling every side in the same height is the most common regret we hear when the Sound view was the reason someone bought the lot.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Broadway Nightlife and Hilltop Moisture
+                    Ballard Avenue Landmark Review
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Broadway and the Pike-Pine corridor keep evenings loud; I-5 sits just west of the ridge. Lots that face those corridors usually want a solid cedar street face. Walling every side in the same height is the most common regret we hear when the Volunteer Park walk or Interlaken view was the reason someone bought the lot. Mixed styles — solid on the noisy face, open toward the trees — are the usual fix. Two roofs and a short side yard also dump a surprising amount of water into one strip. We keep soil off the first board and talk through whether the wet corner should be hybrid instead of a second round of stain.
+                    The Ballard Avenue Landmark District covers the historic commercial blocks of Ballard Avenue NW. Work visible from the public right-of-way can require a Certificate of Approval from the Landmarks Preservation Board even when SDCI does not ask for a construction permit. We treat that packet as part of the design — height, finish, and a simple site plan — so you are not surprised after a neighbor flags the street face. Lots outside the district still follow Seattle height rules: six feet in side and rear yards, four feet in most front and street-side setbacks.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
-                    Capitol Hill Terrain Toward Interlaken
+                    Compact Lots and Alley Staging in Ballard
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    The ridge drops east toward Interlaken Park and the Arboretum and west toward downtown. A flat-lot crew will leave a stepped gap or bury the low rail. Fence Genius maps the grade so each bay follows the yard instead of fighting it. On a sloping site Seattle allows the high point to read taller as long as the average height between posts stays within the six-foot rule — we design to that average instead of guessing from the sidewalk.
+                    Infill around 15th Avenue NW and Market Street produced townhome courts and leftover bungalow lots whose side yards are measured in feet, not tens of feet. A panel that works on an Eastside acre lot will not swing a gate here. We measure the alley, the utility meters, and the neighbor fence first, then build panels that leave a usable path to 24th, 28th, and NW 65th. Restricted parking and Sunday market hours also mean we plan material drops instead of leaving a trailer on Ballard Avenue all afternoon.
                   </p>
                 </div>
               </div>
@@ -399,10 +399,10 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-                Fence Installation Cost in Capitol Hill
+                Fence Installation Cost in Ballard
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                A Capitol Hill fence is often a short, mixed-style run: a quieter face on Broadway plus an open stretch toward Volunteer Park. Access, gates, and landmark review move the number. These are typical ranges; your on-site measurement is the real quote.
+                A Ballard fence is often a short, mixed-style run: a quieter neighbor face plus an open stretch toward the Sound. Access, gates, salt-air hardware, and landmark review move the number. These are typical ranges; your on-site measurement is the real quote.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
@@ -426,12 +426,12 @@ const CapitolHillPage = () => {
                   </li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Tear-out of an existing fence, extra gates on a townhome court, and hand-digging near older trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Capitol Hill property with a free on-site measurement.
+                  Tear-out of an existing fence, extra gates on a townhome court, and hand-digging near older trees may add 10–15%. Custom gates are itemized separately. Get an exact quote for your Ballard property with a free on-site measurement.
                 </p>
               </Card>
               <div className="text-center">
                 <Button asChild size="lg">
-                  <Link href="/quote">Get an exact quote for your Capitol Hill property</Link>
+                  <Link href="/quote">Get an exact quote for your Ballard property</Link>
                 </Button>
               </div>
             </div>
@@ -443,13 +443,13 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Popular Fence Styles in Capitol Hill
+                Popular Fence Styles in Ballard
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The workhorse on neighbor sides and Broadway street faces. Full height for two-story townhomes, pre-stained cedar that holds up in a wet side yard, and a look that fits both older craftsman houses and later courts.
+                    The workhorse on neighbor sides and alley faces. Full height for two-story townhomes, pre-stained cedar that holds up in a wet side yard, and a look that fits both older craftsman houses and later courts off 15th.
                   </p>
                   <Link
                     href="/fence-styles/picture-frame-fence"
@@ -461,7 +461,7 @@ const CapitolHillPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Cedar frame with black mesh for lots that still want Volunteer Park or Interlaken in the room. Dogs stay in, the lighter footprint takes less wind than a solid wall, and the trees do not disappear after a replacement.
+                    Cedar frame with black mesh for lots that still want Shilshole or Sunset Hill in the room. Dogs stay in, the lighter footprint takes less Sound wind than a solid wall, and the water does not disappear after a replacement.
                   </p>
                   <Link
                     href="/fence-styles/black-hogwire-fence"
@@ -473,7 +473,7 @@ const CapitolHillPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hybrid Aluminum/Cedar</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a wet alley corner has already eaten one fence. Strong enough for family yards without looking commercial on 15th or Broadway.
+                    Aluminum panels in a cedar frame on steel posts — the low-maintenance option when a wet alley corner or salt-facing stretch has already eaten one fence. Strong enough for family yards without looking commercial on Market.
                   </p>
                   <Link
                     href="/fence-styles/cedar-steel-hybrid-fence"
@@ -492,23 +492,23 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Our Capitol Hill Installation Process
+                Our Ballard Installation Process
               </h2>
               <div className="space-y-6">
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    1. Capitol Hill Site Assessment
+                    1. Ballard Site Assessment
                   </h3>
                   <p className="text-muted-foreground">
-                    We walk the lot, measure the tight side yards, note the Broadway-facing stretch, map utilities, and check whether a park-facing run should stay more open. Fence Genius captures length, grade, and the neighbor fence so panels are built to the actual yard, not a wide-lot assumption.
+                    We walk the lot, measure the tight side yards, note the Sound-facing stretch, map utilities, and check whether a west run should stay more open. Fence Genius captures length, grade, and the neighbor fence so panels are built to the actual yard, not a wide-lot assumption.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    2. Capitol Hill Design & Landmark Submission
+                    2. Ballard Design & Landmark Submission
                   </h3>
                   <p className="text-muted-foreground">
-                    You pick style and height. We document Seattle height rules plus any Harvard-Belmont Certificate of Approval packet. Corner-lot sight triangles on Broadway, 15th Avenue E, E John Street, and Madison get marked before we draw the line.
+                    You pick style and height. We document Seattle height rules plus any Ballard Avenue Certificate of Approval packet. Corner-lot sight triangles on 15th Avenue NW, NW Market Street, 24th Avenue NW, and NW 65th Street get marked before we draw the line.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -516,15 +516,15 @@ const CapitolHillPage = () => {
                     3. Custom Panel Manufacturing
                   </h3>
                   <p className="text-muted-foreground">
-                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Capitol Hill install days are mostly setting posts and hanging finished sections that already match the tight side yard.
+                    Panels are built off-site from Fence Genius measurements — pre-stained cedar, hogwire frames, or hybrid modules — so Ballard install days are mostly setting posts and hanging finished sections that already match the tight side yard.
                   </p>
                 </Card>
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
-                    4. Capitol Hill Installation
+                    4. Ballard Installation
                   </h3>
                   <p className="text-muted-foreground">
-                    Crews use compact equipment suited to residential streets off 12th, Harvard, 15th, and Aloha. Drainage-aware hardware on the wet corner, and full cleanup at the end of each day. Most jobs wrap in one to three days.
+                    Crews use compact equipment suited to residential streets off 24th, 28th, 32nd, and NW 70th. Drainage-aware hardware on the wet corner, and full cleanup at the end of each day. Most jobs wrap in one to three days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -542,20 +542,20 @@ const CapitolHillPage = () => {
 
         {/* FAQ — visible content matches FAQPage JSON-LD */}
         <NeighborhoodFaqSection
-          title="Capitol Hill Fence Installation FAQs"
-          items={CAPITOL_HILL_FAQS}
+          title="Ballard Fence Installation FAQs"
+          items={BALLARD_FAQS}
         />
       </main>
 
       {/* 13. About the Area — full width, outside max-w article wrapper */}
       <AboutTheArea
         cityName="Seattle"
-        neighborhoodName="Capitol Hill"
-        attractions={CAPITOL_HILL_ATTRACTIONS}
+        neighborhoodName="Ballard"
+        attractions={BALLARD_ATTRACTIONS}
         localLivingContent={
           <>
             <p>
-              Capitol Hill households sit in{" "}
+              Ballard households sit in{" "}
               <a
                 href="https://www.seattleschools.org/"
                 target="_blank"
@@ -566,62 +566,53 @@ const CapitolHillPage = () => {
               </a>
               .{" "}
               <a
-                href="https://stevenses.seattleschools.org/"
+                href="https://adamses.seattleschools.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Stevens Elementary
+                Adams Elementary
               </a>{" "}
-              is at 1242 18th Avenue E, near Volunteer Park, and{" "}
+              is at 6110 28th Avenue NW, in the bungalow grid west of 15th, and{" "}
               <a
-                href="https://lowelles.seattleschools.org/"
+                href="https://whittieres.seattleschools.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Lowell Elementary
+                Whittier Elementary
               </a>{" "}
-              sits on E Mercer Street. Many families later attend{" "}
+              sits on NW 75th Street in Loyal Heights. Many families later attend{" "}
               <a
-                href="https://garfieldhs.seattleschools.org/"
+                href="https://ballardhs.seattleschools.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Garfield High School
-              </a>
-              {" "}on 23rd Avenue. After school, the{" "}
-              <a
-                href="https://www.spl.org/hours-and-locations/capitol-hill-branch"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Capitol Hill Branch of the Seattle Public Library
+                Ballard High School
               </a>{" "}
-              on Republican Street is a short walk from Broadway.
+              on NW 65th Street. After school, the{" "}
+              <a
+                href="https://www.spl.org/hours-and-locations/ballard-branch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline decoration-2 underline-offset-4"
+              >
+                Ballard Branch of the Seattle Public Library
+              </a>{" "}
+              on 22nd Avenue NW is a short walk from Ballard Commons.
             </p>
             <p>
-              Weekday life also clusters around{" "}
+              Weekday life also clusters around NW Market Street and the{" "}
               <a
-                href="https://seattlecentral.edu/"
+                href="https://www.seattle.gov/neighborhoods/historic-preservation/historic-districts/ballard-avenue-landmark-district"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-primary underline decoration-2 underline-offset-4"
               >
-                Seattle Central College
-              </a>{" "}
-              on Broadway and{" "}
-              <a
-                href="https://www.soundtransit.org/ride-with-us/stops-stations/capitol-hill-station"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Capitol Hill Station
+                Ballard Avenue Landmark District
               </a>
-              , which is why we schedule crews around station hours on E John. For fence height and permit questions, start with{" "}
+              , which is why we schedule crews around weekend market hours on those blocks. For fence height and permit questions, start with{" "}
               <a
                 href="https://www.seattle.gov/construction-and-inspections/permits/common-projects/fences"
                 target="_blank"
@@ -630,16 +621,7 @@ const CapitolHillPage = () => {
               >
                 Seattle SDCI fence guidance
               </a>
-              {" or the "}
-              <a
-                href="https://www.seattle.gov/neighborhoods/historic-preservation/historic-districts/harvard-belmont-landmark-district"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-2 underline-offset-4"
-              >
-                Harvard-Belmont Landmark District
-              </a>{" "}
-              page if your lot sits inside those west-slope blocks. The ridge puts downtown, the University District, and Madison Park within a short ride — which is why so many Capitol Hill lots want a fence that works as hard as the commute.
+              . The canal puts Fremont, Queen Anne, and Magnolia within a short ride — which is why so many Ballard lots want a fence that works as hard as the commute and still leaves a window to the water.
             </p>
           </>
         }
@@ -654,23 +636,23 @@ const CapitolHillPage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Capitol Hill we also work in Ravenna toward the University District and Ballard toward the Ship Canal, and we quote Queen Anne and Madison Park from the Seattle service-area page.
+                We install fences throughout Seattle. From Ballard we also work in Ravenna and Capitol Hill, and we quote Fremont, Queen Anne, and Green Lake from the Seattle service-area page.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle">Seattle overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/capitol-hill">Capitol Hill</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/ravenna">Ravenna</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/seattle">Madison Park</Link>
+                  <Link href="/service-areas/seattle">Fremont</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle">Queen Anne</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/seattle/ballard">Ballard</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
@@ -685,10 +667,10 @@ const CapitolHillPage = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Enhance Your Capitol Hill Property?
+                Ready to Enhance Your Ballard Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Same-day estimates available in Capitol Hill. We&apos;ll walk the lot, talk through a Broadway street face vs. a park-side stretch, and quote a fence that fits your property.
+                Same-day estimates available in Ballard. We&apos;ll walk the lot, talk through a Sound-facing stretch vs. a private alley face, and quote a fence that fits your property.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">
@@ -706,4 +688,4 @@ const CapitolHillPage = () => {
   );
 };
 
-export default CapitolHillPage;
+export default BallardPage;

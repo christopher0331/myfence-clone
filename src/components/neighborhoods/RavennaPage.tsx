@@ -438,6 +438,9 @@ const RavennaPage = () => {
                   <Link href="/service-areas/seattle/capitol-hill">Capitol Hill</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/ballard">Ballard</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle">University District area</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

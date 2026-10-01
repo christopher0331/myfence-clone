@@ -60,7 +60,8 @@ const Seattle = () => {
         },
         {
           name: "Ballard",
-          description: "Maritime district with Scandinavian heritage demanding salt-resistant installations and styles that complement historic craftsman architecture"
+          description: "Maritime district with Scandinavian heritage demanding salt-resistant installations and styles that complement historic craftsman architecture. Click to learn more →",
+          link: "/service-areas/seattle/ballard"
         },
         {
           name: "Fremont",
