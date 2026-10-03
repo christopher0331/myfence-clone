@@ -52,7 +52,6 @@ const serviceAreasByRegion = [
       { to: "/service-areas/bonney-lake/falling-water", label: "Falling Water" },
       { to: "/service-areas/bonney-lake/lower-tehaleh", label: "Lower Tehaleh" },
       { to: "/service-areas/bonney-lake/mountain-creek", label: "Mountain Creek" },
-      { to: "/service-areas/bonney-lake/tehaleh", label: "Tehaleh" },
       { to: "/service-areas/bonney-lake/upper-tehaleh", label: "Upper Tehaleh" },
     ],
   },
