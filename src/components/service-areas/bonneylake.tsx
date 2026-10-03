@@ -321,7 +321,7 @@ const BonneyLakeArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">What are Tehaleh's HOA fence requirements?</h4>
           <p className="text-muted-foreground">
-            Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly — our estimates include guidance on meeting your specific CC&R requirements.
+            Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly — our estimates include guidance on meeting your specific CC&R requirements. See our <Link href="/service-areas/bonney-lake/tehaleh/hoa-approved-fencing" className="text-primary underline decoration-2 underline-offset-2">Tehaleh HOA approved fencing guide</Link> for the Design Review checklist, or start with our <Link href="/service-areas/bonney-lake/upper-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Upper Tehaleh</Link> and <Link href="/service-areas/bonney-lake/lower-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Lower Tehaleh</Link> fence installation pages.
           </p>
         </div>
         <div>
@@ -561,11 +561,6 @@ const BonneyLake = () => {
       metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. 5.0-star rating. Free quotes. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
-        {
-          name: "Tehaleh",
-          description: "Bonney Lake's master-planned community in Pierce County. Our Tehaleh hub covers the Design Manual fence standards, design review, and links to Upper & Lower Tehaleh and our HOA approved fencing guide. Click to learn more →",
-          link: "/service-areas/bonney-lake/tehaleh"
-        },
         {
           name: "Upper Tehaleh",
           description: "Elevated homesites and neighborhoods in the upper plateau of Tehaleh. We provide HOA-compliant fencing for premium lots with mountain views. Click to learn more →",
