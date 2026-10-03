@@ -24,6 +24,7 @@ Pages edited or created during the neighborhood/service-area template rollout. U
 | Angle Lake       | SeaTac      | `/service-areas/seatac/angle-lake`        | https://myfence.com/service-areas/seatac/angle-lake |
 | McMicken Heights | SeaTac      | `/service-areas/seatac/mcmicken-heights`  | https://myfence.com/service-areas/seatac/mcmicken-heights |
 | Bow Lake         | SeaTac      | `/service-areas/seatac/bow-lake`          | https://myfence.com/service-areas/seatac/bow-lake |
+| Tehaleh (hub)    | Bonney Lake | `/service-areas/bonney-lake/tehaleh`      | https://myfence.com/service-areas/bonney-lake/tehaleh |
 
 ---
 
@@ -52,6 +53,8 @@ https://myfence.com/service-areas/bonney-lake/lake-tapps
 https://myfence.com/service-areas/seatac/angle-lake
 https://myfence.com/service-areas/seatac/mcmicken-heights
 https://myfence.com/service-areas/seatac/bow-lake
+https://myfence.com/service-areas/bonney-lake/tehaleh
+https://myfence.com/service-areas/bonney-lake/tehaleh/hoa-approved-fencing
 https://myfence.com/service-areas/kirkland/juanita
 https://myfence.com/service-areas/bellevue/somerset
 https://myfence.com/service-areas/issaquah-highlands
@@ -67,7 +70,7 @@ https://myfence.com/service-areas/bonney-lake/downtown-bonney-lake
 ## Component files (for reference)
 
 - **Service areas (edited):** `issaquah.tsx`, `seatac.tsx`
-- **Neighborhoods created:** `NewportHillsPage.tsx`, `LakeTappsPage.tsx`, `AngleLakePage.tsx`, `McMickenHeightsPage.tsx`, `BowLakePage.tsx`
+- **Neighborhoods created:** `NewportHillsPage.tsx`, `LakeTappsPage.tsx`, `AngleLakePage.tsx`, `McMickenHeightsPage.tsx`, `BowLakePage.tsx`, `TehalehHubPage.tsx`
 - **Neighborhoods edited:** `JuanitaPage.tsx`, `SomersetPage.tsx`, `IssaquahHighlandsPage.tsx`, `TehalehPage.tsx`, `FallingWaterPage.tsx`, `MountainCreekPage.tsx`, `DowntownBonneyLakePage.tsx`
 
-*Last updated: 2025-02-20*
+*Last updated: 2026-10-03*
