@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -174,16 +172,8 @@ const DowntownBellevuePage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -265,55 +255,6 @@ const DowntownBellevuePage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Downtown Bellevue Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our townhome patio on 108th looks straight into the next unit. They built a six-foot cedar screen on that side and left the park-facing edge more open. The courtyard is actually private now without feeling boxed in.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Maya in Downtown Bellevue</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Old Bellevue lot south of Main, tight side yard, and a board that wanted stain chips before we could start. They sent a drawing that passed on the first try and hand-carried every panel so the alley stayed open.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Chris in Downtown Bellevue</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We sit close enough to I-405 that evenings were loud. Solid cedar on the freeway side, hogwire toward the bay, and they finished in two days around the shared walk. Exactly the split we asked for.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Jordan in Downtown Bellevue</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
             </div>

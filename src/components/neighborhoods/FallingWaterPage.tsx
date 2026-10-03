@@ -4,7 +4,7 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star, FileDown } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, FileDown } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -103,16 +103,8 @@ const FallingWaterPage = ({
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -172,43 +164,6 @@ const FallingWaterPage = ({
                       <p className="text-muted-foreground">We help you choose a fence style that balances privacy, appearance, and upkeep based on how your yard is actually used.</p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Falling Water Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "Our yard has a pretty good slope and we needed something that would follow it. MyFence.com measured everything and the panels fit perfectly. The crew was fast and left the place clean. Very happy."
-                  </p>
-                  <p className="text-sm font-medium">— Tom in Falling Water</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "We wanted a fence for the kids and dog that would still look good from the street. They suggested cedar with a stain that matches the neighborhood. HOA had no issues and the warranty is a nice bonus."
-                  </p>
-                  <p className="text-sm font-medium">— Rachel in Falling Water</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
               </div>
             </div>

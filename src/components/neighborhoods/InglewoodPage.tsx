@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -173,16 +171,8 @@ const InglewoodPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -264,55 +254,6 @@ const InglewoodPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Inglewood Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot falls toward the parkway and I did not want a solid wall blocking the lake. They stepped a hogwire run with a cedar frame and it still keeps the dog in. Finished before the weekend pickup rush on NE 8th.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Maya in Inglewood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We needed real privacy for the kids after school at Mead. The cedar looks like it belongs with the older houses on our street, the gates latch well, and they hand-dug around the firs in the side yard.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Chris in Inglewood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Small HOA on our cul-de-sac, nothing like Klahanie paperwork. They still put together a simple drawing and material list that the board signed off on the first pass. Appreciate the extra step.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Lena in Inglewood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
             </div>

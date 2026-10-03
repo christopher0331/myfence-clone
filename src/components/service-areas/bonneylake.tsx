@@ -13,7 +13,7 @@ const BonneyLakeArticle = () => (
       <h2 className="text-3xl md:text-4xl font-bold">
         Your Local Fence Installation Experts
       </h2>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">30+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -21,14 +21,6 @@ const BonneyLakeArticle = () => (
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">98%+</div>
           <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
-          <div className="text-sm text-muted-foreground">Average Star Rating</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
-          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
         </Card>
       </div>
       <p className="text-muted-foreground leading-relaxed text-lg">
@@ -205,7 +197,7 @@ const BonneyLakeArticle = () => (
         MyFence.com has built its reputation as a trusted Bonney Lake fence contractor through consistent delivery of exceptional results over three decades. As a father-son operation, we bring personal accountability and dedication to craftsmanship that large corporate contractors cannot replicate. We manufacture and install every fence according to your exact specifications, utilizing proven methodologies refined through thousands of successful installations. Our integration of advanced Fence Genius technology with traditional hand-craftsmanship delivers the ideal combination: precision measurements with expert finishing touches.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        Upon project completion, we conduct a thorough quality inspection and walk through every detail of your installation with you. Your project isn't finished until you're completely satisfied. This commitment to excellence has earned us a perfect 5.0-star rating and over 150 five-star reviews from satisfied customers throughout the Puget Sound region. We're fully licensed, bonded, and insured, providing complete peace of mind from initial consultation through final inspection and beyond.
+        Upon project completion, we conduct a thorough quality inspection and walk through every detail of your installation with you. Your project isn't finished until you're completely satisfied. We're fully licensed, bonded, and insured, providing complete peace of mind from initial consultation through final inspection and beyond.
       </p>
     </section>
 
@@ -292,7 +284,7 @@ const BonneyLakeArticle = () => (
     <section className="space-y-4">
       <h3 className="text-2xl font-semibold">Permits and Property Line Requirements</h3>
       <p className="text-muted-foreground leading-relaxed">
-        Understanding Bonney Lake's permit requirements starts with knowing when permits are necessary. According to the <a href="https://www.ci.bonney-lake.wa.us/Government/Departments/Public_Services/Planning_Building" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Planning & Building page</a>, residential fences under 8 feet in height generally do not require building permits, but you must still comply with all zoning codes and setback requirements. Height restrictions typically limit fences to 6 feet in side and rear yards, with more restrictive limits (often 3-4 feet) in front yard setback areas.
+        Understanding Bonney Lake's permit requirements starts with knowing when permits are necessary. According to the <a href="https://www.bonneylake.gov/279/Building-Permits" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">City of Bonney Lake Building Permits page</a>, fences up to 6 feet tall are exempt from a building permit inside city limits, and a taller fence needs one. Exempt fences must still comply with all zoning codes and setback requirements. Height restrictions typically limit fences to 6 feet in side and rear yards, with more restrictive limits (often 3-4 feet) in front yard setback areas. Tehaleh is different: although it has a Bonney Lake mailing address, it sits in unincorporated Pierce County, so county rules apply instead of city code. <a href="https://www.piercecountywa.gov/FAQ.aspx?QID=677" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Pierce County Planning & Public Works</a> requires a building permit for any fence taller than 6 feet (measured from the top of the fence to the adjacent ground), and the fence must meet county setbacks.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         Property line considerations are critical in Bonney Lake. Washington State law requires building on your side of the property line, and setback requirements may add additional distance from the boundary. We strongly recommend obtaining a professional property survey before installation to avoid costly disputes or required fence removal. For properties within HOA-governed communities like <a href="https://tehaleh.com/life-at-tehaleh/community/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tehaleh</a> or <Link href="/service-areas/bonney-lake/falling-water" className="text-primary underline decoration-2 underline-offset-2">Falling Water</Link>, additional architectural review processes may apply, often requiring design approval before construction begins.
@@ -413,7 +405,7 @@ const BonneyLake = () => {
     "@id": "https://myfence.com/service-areas/bonney-lake",
     "name": "MyFence.com - Expert Installation in Your Area",
     "alternateName": ["MyFence Bonney Lake", "Bonney Lake Fence Company"],
-    "description": "Premium fence installation and repair services in Bonney Lake, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for residential and commercial properties. 30+ years experience, 5.0-star rating.",
+    "description": "Premium fence installation and repair services in Bonney Lake, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for residential and commercial properties. 30+ years experience.",
     "image": "https://myfence.com/myfence-logo.png",
     "logo": {
       "@type": "ImageObject",
@@ -558,7 +550,7 @@ const BonneyLake = () => {
       state="Washington"
       heroTitle="Professional Fence Installation in Bonney Lake, WA"
       metaTitle="Expert Installation in Your Area | MyFence.com"
-      metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. 5.0-star rating. Free quotes. Call (253) 455-1885."
+      metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. Free quotes. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
         {

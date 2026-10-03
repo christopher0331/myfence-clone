@@ -133,7 +133,7 @@ The `{City}Article` component holds the main SEO and trust content. Structure it
 
 ### A1. Company Introduction
 - H2: "Your Local {City} Fence Company" (vary the heading — don't always start with city name)
-- 4-column stat cards: Years Experience | On-Time Rate | Star Rating | Review Count
+- 2-column stat cards: Years Experience | On-Time Rate (do not hardcode star ratings or review counts)
 - Intro paragraph about MyFence.com serving this city
 
 ### A2. Fence Installation Details

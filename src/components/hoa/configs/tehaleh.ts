@@ -25,7 +25,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   ],
   formsHeading: "Downloads for Tehaleh HOA approved fencing",
   formsIntro:
-    "Tehaleh’s official Design Review packet is issued by association management (Cohere / Tehaleh Owner's Association)—it is not a single public fence PDF. Use our checklist to prep a complete package, then request the current forms when you file. Contact: 253-205-8190 · tehaleh.com/contact-us.",
+    "Tehaleh’s official Design Review packet is issued by association management (Cohere / Tehaleh Owner's Association)—it is not a single public fence PDF. Use our checklist to prep a complete package, then request the current forms when you file. Note: 253-205-8190 (tehaleh.com/contact-us) is the Tehaleh Welcome Center, the community's visitor information center, not the association; ask association management for Design Review forms.",
   forms: [
     {
       href: "/docs/hoa/tehaleh-hoa-fence-submission-checklist.pdf",
@@ -42,8 +42,8 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
       body: "Upper Tehaleh, Lower Tehaleh, Trilogy, and Discovery Park can differ slightly on placement and style. Confirm which guidelines apply to your lot before drawing the fence.",
     },
     {
-      title: "Prep drawings to earth-tone standards",
-      body: "Most Tehaleh areas require earth-tone stains and prohibit chain-link. Assemble a site plan, elevations, materials list, and stain/color samples.",
+      title: "Prep drawings to the Design Manual standards",
+      body: "The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) semi-transparent stain or a clear stain for standard fences and does not allow chain-link or vinyl without committee approval. Assemble a site plan, elevations, materials list, and stain/color samples, and confirm the finish with the review committee.",
     },
     {
       title: "Request the current ARC packet and submit",
@@ -56,9 +56,9 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   ],
   reviewHeading: "What makes fencing HOA-approved in Tehaleh",
   reviewIntro:
-    "Tehaleh’s Design Review Committee looks for neighborhood-character designs: earth-tone finishes, appropriate height and placement, and materials that fit the master-planned setting. Trail-adjacent and plateau lots add setback and wind considerations. MyFence.com prepares packages that already match what reviewers expect.",
+    "Tehaleh’s Design Review Committee looks for neighborhood-character designs: the Design Manual stain (Sherwin-Williams Cedar Bark SW 3511, or clear), appropriate height and placement, and materials that fit the master-planned setting. Trail-adjacent and plateau lots add setback and wind considerations. MyFence.com prepares packages that already match what reviewers expect.",
   reviewBullets: [
-    "Earth-tone stains and HOA-friendly materials (no chain-link)",
+    "Sherwin-Williams Cedar Bark (SW 3511) or clear stain per the Tehaleh Design Manual, confirmed with the review committee (no chain-link)",
     "Site plans with lot lines, trailside setbacks, and gate locations",
     "Elevation drawings and stain/color samples ready for Design Review",
     "Wind-ready hybrid options for Upper Tehaleh; family-safe builds for Lower Tehaleh",
@@ -76,7 +76,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
     {
       icon: "mapPin",
       title: "Phase-aware designs",
-      body: "Upper plateau wind loads, Lower Tehaleh trail setbacks, and earth-tone finishes matched to your neighborhood phase.",
+      body: "Upper plateau wind loads, Lower Tehaleh trail setbacks, and the Design Manual stain finish confirmed with the review committee.",
     },
     {
       icon: "clipboard",
@@ -89,7 +89,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   faqs: [
     {
       q: "What is Tehaleh HOA approved fencing?",
-      a: "It means your design, materials, height, color, and placement pass Tehaleh Design Review before install. Earth-tone cedar, hogwire with cedar frame, and hybrid aluminum/cedar are commonly approved; chain-link is typically prohibited.",
+      a: "It means your design, materials, height, color, and placement pass Tehaleh Design Review before install. Cedar, hogwire with cedar frame, and hybrid aluminum/cedar are commonly approved; the Design Manual's standard stain is Sherwin-Williams Cedar Bark (SW 3511) or clear, and chain-link is typically prohibited. Confirm your finish with the review committee.",
     },
     {
       q: "Where can I get the official Tehaleh fence forms?",
@@ -97,7 +97,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Do Upper and Lower Tehaleh have the same rules?",
-      a: "Core earth-tone and style expectations are similar, but phase-specific placement and trail/plateau details can differ. We confirm your phase guidelines before drawing the package.",
+      a: "Core stain and style standards are similar, but phase-specific placement and trail/plateau details can differ. We confirm your phase guidelines before drawing the package.",
     },
     {
       q: "Do I need approval before installation?",
@@ -108,17 +108,17 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "What is Tehaleh HOA approved fencing?",
       answer:
-        "Tehaleh HOA approved fencing means your design, materials, height, color, and placement pass Tehaleh Design Review before install. Earth-tone cedar, hogwire, and hybrid systems are commonly approved; chain-link is typically prohibited. MyFence.com prepares Design Review packages for Upper and Lower Tehaleh.",
+        "Tehaleh HOA approved fencing means your design, materials, height, color, and placement pass Tehaleh Design Review before install. Cedar, hogwire, and hybrid systems are commonly approved; the Design Manual's standard stain is Sherwin-Williams Cedar Bark (SW 3511) or clear, and chain-link is typically prohibited. MyFence.com prepares Design Review packages for Upper and Lower Tehaleh.",
     },
     {
       question: "Where can I get the official Tehaleh fence forms?",
       answer:
-        "Request the current Design Review packet from Tehaleh Owner's Association management (Cohere) via tehaleh.com/contact-us or 253-205-8190. Download the Tehaleh HOA Fence Submission Checklist on this page to prepare your drawings and samples.",
+        "Request the current Design Review packet from Tehaleh Owner's Association management (Cohere). Download the Tehaleh HOA Fence Submission Checklist on this page to prepare your drawings and samples.",
     },
     {
       question: "Do Upper and Lower Tehaleh have the same fence rules?",
       answer:
-        "Core earth-tone and style expectations are similar across Tehaleh, but phase-specific placement, trail setbacks, and plateau wind considerations can differ. Confirm your neighborhood phase when submitting to Design Review.",
+        "Core stain and style standards are similar across Tehaleh, but phase-specific placement, trail setbacks, and plateau wind considerations can differ. Confirm your neighborhood phase when submitting to Design Review.",
     },
     {
       question: "Do I need Design Review approval before MyFence installs in Tehaleh?",

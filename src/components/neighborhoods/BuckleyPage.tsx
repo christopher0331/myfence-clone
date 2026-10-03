@@ -6,9 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -160,16 +158,8 @@ const BuckleyPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -278,43 +268,6 @@ const BuckleyPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Testimonials */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Buckley-Area Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "We have a big rural lot out near Buckley and needed a long fence run to contain our dogs and keep deer out. MyFence.com came out, measured everything precisely, and built a solid cedar fence that's held up through two winters so far. Professional from start to finish."
-                  </p>
-                  <p className="text-sm font-medium">— Mark in Buckley</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "Our yard has a pretty good slope toward the back and we were worried about gaps under the fence line. They used their Fence Genius system to follow the grade and it looks perfect — no gaps, clean lines. Really happy with how it turned out."
-                  </p>
-                  <p className="text-sm font-medium">— Carrie near Enumclaw/Buckley</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
               </div>
             </div>

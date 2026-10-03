@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Award,
   ArrowLeft,
-  CheckCircle2,
   MapPin,
   Mountain,
   Phone,
@@ -237,16 +236,8 @@ export default function DaybreakAtRiverRidgePage() {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -361,106 +352,61 @@ export default function DaybreakAtRiverRidgePage() {
           </div>
         </section>
 
-        {/* 5. Local Reviews / Testimonials */}
-        <section className="py-16">
+        {/* 5. Local Reviews (live Trustindex/Google data only; hidden until real reviews load) */}
+        <section className={matchedForCards.length > 0 ? "py-16" : undefined}>
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Daybreak at River Ridge Homeowners Say
-              </h2>
-
               {/* Mount the Trustindex widget so it can sync new reviews in the background. */}
               <div ref={reviewsRef} className="sr-only" aria-live="polite" />
 
-              <div className="grid md:grid-cols-2 gap-6">
-                {matchedForCards.length > 0 ? (
-                  matchedForCards.map((review) => {
-                    const starCount = Math.round(review.rating || 5);
-                    const isDaybreak =
-                      daybreakKeywords.some((k) =>
-                        review._text.includes(k.toLowerCase())
+              {matchedForCards.length > 0 && (
+                <>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                    What Daybreak at River Ridge Homeowners Say
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {matchedForCards.map((review) => {
+                      const starCount = Math.round(review.rating || 5);
+                      const isDaybreak =
+                        daybreakKeywords.some((k) =>
+                          review._text.includes(k.toLowerCase())
+                        );
+                      const locationLabel = isDaybreak
+                        ? "Daybreak at River Ridge"
+                        : "Maple Valley";
+                      const year = new Date(review.review_date).getFullYear();
+
+                      return (
+                        <Card key={review.id ?? `${review.author_name}-${year}`} className="p-6">
+                          <div className="flex gap-1 mb-3">
+                            {[1, 2, 3, 4, 5].map((i) => (
+                              <Star
+                                key={i}
+                                className={
+                                  i <= starCount
+                                    ? "h-5 w-5 text-primary fill-primary"
+                                    : "h-5 w-5 text-muted-foreground"
+                                }
+                              />
+                            ))}
+                          </div>
+
+                          <p className="text-muted-foreground italic mb-4">
+                            &ldquo;{truncate(review.review_text, 240)}&rdquo;
+                          </p>
+
+                          <p className="text-sm font-medium">
+                            &mdash; {review.author_name} in {locationLabel}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            Review date: {year}
+                          </p>
+                        </Card>
                       );
-                    const locationLabel = isDaybreak
-                      ? "Daybreak at River Ridge"
-                      : "Maple Valley";
-                    const year = new Date(review.review_date).getFullYear();
-
-                    return (
-                      <Card key={review.id ?? `${review.author_name}-${year}`} className="p-6">
-                        <div className="flex gap-1 mb-3">
-                          {[1, 2, 3, 4, 5].map((i) => (
-                            <Star
-                              key={i}
-                              className={
-                                i <= starCount
-                                  ? "h-5 w-5 text-primary fill-primary"
-                                  : "h-5 w-5 text-muted-foreground"
-                              }
-                            />
-                          ))}
-                        </div>
-
-                        <p className="text-muted-foreground italic mb-4">
-                          &ldquo;{truncate(review.review_text, 240)}&rdquo;
-                        </p>
-
-                        <p className="text-sm font-medium">
-                          &mdash; {review.author_name} in {locationLabel}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          Review date: {year}
-                        </p>
-                      </Card>
-                    );
-                  })
-                ) : (
-                  <>
-                    {/* Fallback if reviews haven’t loaded yet */}
-                    <Card className="p-6">
-                      <div className="flex gap-1 mb-3">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                          <Star
-                            key={i}
-                            className="h-5 w-5 text-primary fill-primary"
-                          />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground italic mb-4">
-                        &ldquo;Great communication from the first visit through
-                        installation. The fence looks sharp and fits the yard
-                        nicely.&rdquo;
-                      </p>
-                      <p className="text-sm font-medium">
-                        &mdash; Local homeowner in Daybreak at River Ridge
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Review date: 2026
-                      </p>
-                    </Card>
-                    <Card className="p-6">
-                      <div className="flex gap-1 mb-3">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                          <Star
-                            key={i}
-                            className="h-5 w-5 text-primary fill-primary"
-                          />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground italic mb-4">
-                        &ldquo;They handled HOA-style details and made sure
-                        everything lined up cleanly. The crew left the yard
-                        tidy and the fence works perfectly for privacy.&rdquo;
-                      </p>
-                      <p className="text-sm font-medium">
-                        &mdash; Local homeowner in Daybreak at River Ridge
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Review date: 2026
-                      </p>
-                    </Card>
-                  </>
-                )}
-              </div>
+                    })}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>

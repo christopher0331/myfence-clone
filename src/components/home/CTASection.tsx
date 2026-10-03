@@ -18,7 +18,7 @@ export const CTASection = () => {
           </Button>
         </div>
         <p className="text-sm text-muted-foreground mt-6">
-          ⭐ 4.9/5 Stars • 100+ Happy Customers • Licensed & Insured
+          Licensed & Insured
         </p>
       </div>
     </section>

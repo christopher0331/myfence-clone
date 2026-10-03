@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -120,16 +118,8 @@ const CovingtonWoodsPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -203,43 +193,6 @@ const CovingtonWoodsPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Covington Woods Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "We had three other companies tell us they couldn't work around our trees. MyFence.com came out, mapped everything, and found a way to set posts without cutting any major roots. The cedar fence looks like it's always been part of the yard."
-                  </p>
-                  <p className="text-sm font-medium">— Karen in Covington Woods</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "The clay soil here has shifted other fences in the neighborhood, but ours hasn't moved an inch after two rainy seasons. They used deeper footings with drainage gravel — you can tell they know what Covington soil does."
-                  </p>
-                  <p className="text-sm font-medium">— Mike in Covington Woods</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
               </div>
             </div>

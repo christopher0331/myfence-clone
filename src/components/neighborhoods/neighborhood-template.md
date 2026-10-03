@@ -144,8 +144,9 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 
 ### 2. Trust Badges Bar
 - Horizontal strip below hero with quick-scan credentials
-- Items: "Licensed & Insured" | "5.0 ★ Google Rating" | "{WARRANTY_YEARS}-Year Warranty" | "150+ Five-Star Reviews"
-- Use small Lucide icons (Shield, Star, Award, CheckCircle2) + text
+- Items: "Licensed & Insured" | "{WARRANTY_YEARS}-Year Warranty"
+- Use small Lucide icons (Shield, Award) + text
+- **Do not hardcode rating or review-count badges** (e.g., "5.0 ★", "150+ reviews"). Only show ratings that come from a live source such as `GoogleBusinessMap` (Places data) or the Trustindex widget.
 - Keeps trust signals visible before user scrolls
 
 ### 3. Introduction
@@ -164,15 +165,10 @@ Plus update the **parent city** component to add a `link` to the neighborhood ca
 - Common cards: HOA Compliance, Warranty, one neighborhood-specific challenge, one neighborhood-specific benefit
 - **NOTE:** If the parent city template already renders a "Why Choose Us" section, do NOT duplicate it here with identical content. Neighborhood pages are standalone, so their own version is fine — but make the content unique to the neighborhood.
 
-### 5. Local Reviews / Testimonials ⭐ HIGH PRIORITY
-- H2: "What {Neighborhood} Homeowners Say"
-- 2-3 testimonial cards with:
-  - Customer first name + neighborhood (e.g., "Sarah in Somerset")
-  - Star rating (5 stars)
-  - 2-3 sentence quote mentioning the neighborhood or specific project
-  - Date of review
-- Pull from Trustindex reviews that mention the area, or use real customer feedback
-- **This is the #1 trust signal for local pages — don't skip it**
+### 5. Local Reviews / Testimonials (only with real, sourced reviews)
+- **Never write or paraphrase testimonials.** Made-up or unverifiable quotes violate Google review policy and FTC rules.
+- Only render reviews loaded at runtime from the live Trustindex/Google data (`useTrustindexReviews`), as `DaybreakAtRiverRidgePage.tsx` does, and hide the section entirely when none match.
+- If no live reviews are available, omit this section rather than adding placeholder or fallback quotes.
 
 ### 6. Before/After Project Gallery ⭐ HIGH PRIORITY
 - H2: "Recent {Neighborhood} Projects" or "Our Work in {Neighborhood}"
@@ -336,8 +332,6 @@ Add these to `buildNeighborhoodStructuredData` or inline in the component:
 |--------|---------|----------|
 | `GeoCoordinates` (lat/long for neighborhood center) | Helps Google Maps and AI understand exact service area | High |
 | `GeoCircle` with `geoRadius` | Defines service boundary radius | Medium |
-| `Review` schema (1-2 real reviews) | Triggers rich snippet star ratings in SERPs | High |
-| `AggregateRating` | Shows star count in search results | High |
 | Nested `areaServed` (neighborhood → city → state) | Shows geographic hierarchy | Medium |
 
 ---
@@ -401,7 +395,6 @@ These rules are based on 2025/2026 local SEO best practices for contractor neigh
 - Include **real project photos** from the neighborhood (or nearest available)
 - Use the **neighborhood name in H2/H3 subheadings** naturally (not keyword-stuffed)
 - **Vary H2/H3 headings** — NOT every heading should start with the neighborhood name. Mix in variations. Over-optimized headings trigger Google penalties.
-- Add **local testimonials** with customer first name + neighborhood
 - Provide **visible pricing ranges** — converts 23% better
 - Link to **adjacent neighborhood pages** for hub-and-spoke internal linking
 - Include **3+ FAQs** in both visible content and structured data

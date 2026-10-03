@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -167,16 +165,8 @@ const MapleWoodsPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -289,53 +279,6 @@ const MapleWoodsPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Maple Woods Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We wanted a fence that looked nice on our
-                    neighbor&apos;s side too, and the shadow box style was
-                    exactly the right call. The crew was in and out in two
-                    days, and we&apos;ve had compliments from both
-                    directions. Pre-stained cedar made the finish look
-                    professional from day one.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Jess in Maple Woods</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our side-yard run between houses was narrow and
-                    I was worried about the install scuffing up our siding
-                    or our neighbor&apos;s. The MyFence team protected
-                    everything and got the panels in cleanly. The custom
-                    gate matches the rest of the fence
-                    perfectly.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Brian in Maple Woods</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
             </div>

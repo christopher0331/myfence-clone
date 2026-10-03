@@ -4,7 +4,7 @@ import Link from "next/link";
 import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone, Star } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Award, ArrowLeft, MapPin, Phone } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
@@ -103,16 +103,8 @@ const MountainCreekPage = ({
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -172,43 +164,6 @@ const MountainCreekPage = ({
                       <p className="text-muted-foreground">We help you choose a fence style that balances privacy, appearance, and upkeep based on how your yard is actually used.</p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Mountain Creek Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "Our lot has a significant slope and we were worried about finding someone who could handle it. MyFence.com came out, measured everything, and the fence follows the grade perfectly. Looks great and they were done in two days."
-                  </p>
-                  <p className="text-sm font-medium">— Dave in Mountain Creek</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    "We wanted to keep our view but add some privacy from the street. They suggested hogwire with cedar posts—approved by the HOA and the fence has held up through two wet winters. Very professional crew."
-                  </p>
-                  <p className="text-sm font-medium">— Karen in Mountain Creek</p>
-                  <p className="text-xs text-muted-foreground">Google review, 2025</p>
                 </Card>
               </div>
             </div>

@@ -3,7 +3,7 @@ import ServiceAreaTemplate from "@/components/templates/ServiceAreaTemplate";
 import AboutTheArea, { type LocalAttraction } from "@/components/AboutTheArea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Shield, Clock, Award, CheckCircle2 } from "lucide-react";
+import { Clock, CheckCircle2 } from "lucide-react";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 
 const LakeTapps = () => {
@@ -87,7 +87,7 @@ const LakeTapps = () => {
           hardware, moisture-resistant treatments, and view-friendly designs that complement your waterfront lifestyle.
         </p>
         
-        <div className="grid md:grid-cols-4 gap-4 my-8">
+        <div className="grid md:grid-cols-2 gap-4 my-8">
           <Card className="p-4 text-center">
             <Clock className="w-8 h-8 mx-auto mb-2 text-primary" />
             <div className="font-bold text-2xl">30+ Years</div>
@@ -97,16 +97,6 @@ const LakeTapps = () => {
             <CheckCircle2 className="w-8 h-8 mx-auto mb-2 text-primary" />
             <div className="font-bold text-2xl">98%+</div>
             <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-          </Card>
-          <Card className="p-4 text-center">
-            <Award className="w-8 h-8 mx-auto mb-2 text-primary" />
-            <div className="font-bold text-2xl">5.0</div>
-            <div className="text-sm text-muted-foreground">Average Star Rating</div>
-          </Card>
-          <Card className="p-4 text-center">
-            <Shield className="w-8 h-8 mx-auto mb-2 text-primary" />
-            <div className="font-bold text-2xl">150+</div>
-            <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
           </Card>
         </div>
       </section>

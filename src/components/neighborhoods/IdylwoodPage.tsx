@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -176,16 +174,8 @@ const IdylwoodPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -296,64 +286,6 @@ const IdylwoodPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Idylwood Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our lot drops from the parkway toward the water. They
-                    stepped the posts so the bottom rail follows the grade, and
-                    we still see the lake past the hogwire. The crew staged off
-                    180th and did not block the driveway for three days.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Priya in Idylwood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;West Lake Sammamish Parkway noise was the issue, not
-                    a giant backyard. Solid cedar on the street, open run on
-                    the park side. The dog cannot walk the latch, and the firs
-                    along the rear line are still standing.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Marcus in Idylwood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We sit a short walk from Idylwood Beach Park and
-                    wanted screening from the weekend crowd without a solid
-                    wall. They measured the slope, sent a simple drawing, and
-                    wrapped before a Saturday swim day filled the parkway.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Helen in Idylwood</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
             </div>

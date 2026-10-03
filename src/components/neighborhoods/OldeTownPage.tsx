@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -173,16 +171,8 @@ const OldeTownPage = () => {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -264,55 +254,6 @@ const OldeTownPage = () => {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Local Reviews */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Olde Town Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;Our side yard is barely wide enough for a wheelbarrow. They stepped a cedar run that still leaves the front porch visible from the street, and the dog cannot squeeze under the bottom rail toward Sunset Way.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Priya in Olde Town</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;We sit closer to the creek than to I-90 and did not want a solid wall. Hogwire in a cedar frame keeps the kids in and the water in view. They flagged the buffer before quoting, which saved a redo.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Marcus in Olde Town</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">
-                    &ldquo;No HOA packet like the Highlands, but the city still cares about front-yard height. They put together a simple drawing that matched the four-foot front / six-foot side rules. Finished before the Salmon Days weekend.&rdquo;
-                  </p>
-                  <p className="text-sm font-medium">— Elena in Olde Town</p>
-                  <p className="text-xs text-muted-foreground">Customer review, 2026</p>
                 </Card>
               </div>
             </div>

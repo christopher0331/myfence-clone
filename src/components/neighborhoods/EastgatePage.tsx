@@ -5,9 +5,7 @@ import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
   Shield,
-  Star,
   Award,
   ArrowLeft,
   MapPin,
@@ -124,16 +122,8 @@ export default function EastgatePage() {
                 Licensed & Insured
               </span>
               <span className="flex items-center gap-2 text-muted-foreground">
-                <Star className="h-5 w-5 text-primary fill-primary" />
-                5.0 ★ Google Rating
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
                 <Award className="h-5 w-5 text-primary" />
                 {WARRANTY_CONSTANTS.YEARS}-Year Warranty
-              </span>
-              <span className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                150+ Five-Star Reviews
               </span>
             </div>
           </div>
@@ -205,60 +195,6 @@ export default function EastgatePage() {
                       </p>
                     </div>
                   </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                What Eastgate Homeowners Say
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <div className="flex items-center gap-1 mb-4 text-primary">
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "Our Eastgate yard slopes more than we expected, and the crew handled it cleanly. The new cedar fence follows the grade, looks great from the street, and gives our kids a safer backyard."
-                  </p>
-                  <div className="text-sm font-medium">Megan in Eastgate</div>
-                  <div className="text-sm text-muted-foreground">May 2026</div>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex items-center gap-1 mb-4 text-primary">
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "We needed a fence that worked around mature trees near Eastgate Park. MyFence.com planned the post locations carefully and left our landscape looking intact."
-                  </p>
-                  <div className="text-sm font-medium">Daniel in Eastgate</div>
-                  <div className="text-sm text-muted-foreground">April 2026</div>
-                </Card>
-                <Card className="p-6">
-                  <div className="flex items-center gap-1 mb-4 text-primary">
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                    <Star className="h-4 w-4 fill-primary" />
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    "From estimate to cleanup, everything was straightforward. They helped us choose a privacy fence that fit our lot near Factoria and handled the whole job without delays."
-                  </p>
-                  <div className="text-sm font-medium">Priya in Eastgate</div>
-                  <div className="text-sm text-muted-foreground">March 2026</div>
                 </Card>
               </div>
             </div>

@@ -46,7 +46,7 @@ const BellevueArticle = () => (
       <h2 className="text-3xl md:text-4xl font-bold">
         Your Local Bellevue Fence Company
       </h2>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">30+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -54,14 +54,6 @@ const BellevueArticle = () => (
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">98%+</div>
           <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
-          <div className="text-sm text-muted-foreground">Average Star Rating</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
-          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
         </Card>
       </div>
       <p className="text-muted-foreground leading-relaxed text-lg">
@@ -416,7 +408,7 @@ const Bellevue = () => {
     "@id": "https://myfence.com/service-areas/bellevue",
     "name": "MyFence.com - Bellevue Fence Installation",
     "alternateName": ["MyFence Bellevue", "Bellevue Fence Company"],
-    "description": "Premium fence installation and repair services in Bellevue, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for luxury properties and HOA-compliant designs. 30+ years experience, 5.0-star rating.",
+    "description": "Premium fence installation and repair services in Bellevue, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for luxury properties and HOA-compliant designs. 30+ years experience.",
     "image": "https://myfence.com/myfence-logo.png",
     "logo": {
       "@type": "ImageObject",
@@ -571,7 +563,7 @@ const Bellevue = () => {
       heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
       heroDescription="Serving waterfront estates and luxury properties with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
       metaTitle="Bellevue Fence Installation | Luxury & HOA-Compliant"
-      metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, composite, vinyl & aluminum. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. 5.0-star rated. Call (253) 455-1885 for free quote."
+      metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, composite, vinyl & aluminum. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. Call (253) 455-1885 for free quote."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
         {
