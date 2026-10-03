@@ -562,6 +562,11 @@ const BonneyLake = () => {
       zipCodes={["98391"]}
       neighborhoods={[
         {
+          name: "Tehaleh",
+          description: "Bonney Lake's master-planned community in Pierce County. Our Tehaleh hub covers the Design Manual fence standards, design review, and links to Upper & Lower Tehaleh and our HOA approved fencing guide. Click to learn more →",
+          link: "/service-areas/bonney-lake/tehaleh"
+        },
+        {
           name: "Upper Tehaleh",
           description: "Elevated homesites and neighborhoods in the upper plateau of Tehaleh. We provide HOA-compliant fencing for premium lots with mountain views. Click to learn more →",
           link: "/service-areas/bonney-lake/upper-tehaleh"
