@@ -607,6 +607,14 @@ const TehalehPage = ({
                   <Link href="/service-areas/bonney-lake">Bonney Lake overview</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/bonney-lake/tehaleh">Tehaleh overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href={isUpper ? "/service-areas/bonney-lake/lower-tehaleh" : "/service-areas/bonney-lake/upper-tehaleh"}>
+                    {isUpper ? "Lower Tehaleh" : "Upper Tehaleh"}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/bonney-lake/falling-water">Falling Water</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">

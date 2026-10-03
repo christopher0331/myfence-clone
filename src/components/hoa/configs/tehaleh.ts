@@ -1,13 +1,15 @@
 import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 
-const PARENT_URL = "https://myfence.com/service-areas/bonney-lake/lower-tehaleh";
+const PARENT_URL = "https://myfence.com/service-areas/bonney-lake/tehaleh";
 
 export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   canonical: "https://myfence.com/service-areas/bonney-lake/tehaleh/hoa-approved-fencing",
   parentUrl: PARENT_URL,
-  parentHref: "/service-areas/bonney-lake/lower-tehaleh",
+  parentHref: "/service-areas/bonney-lake/tehaleh",
   parentLinkLabel: "Back to Tehaleh fence installation",
-  parentCrumbName: "Tehaleh, Bonney Lake",
+  parentCrumbName: "Tehaleh",
+  hubHref: "/service-areas/bonney-lake",
+  hubLinkLabel: "Bonney Lake fence installation",
   metaTitle: "Tehaleh HOA Approved Fencing | Design Review | Bonney Lake | MyFence.com",
   metaDescription:
     "Tehaleh HOA approved fencing in Bonney Lake. Download our Design Review checklist, earth-tone compliant installs for Upper & Lower Tehaleh. Free quotes. (253) 455-1885.",
@@ -61,10 +63,9 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
     "Elevation drawings and stain/color samples ready for Design Review",
     "Wind-ready hybrid options for Upper Tehaleh; family-safe builds for Lower Tehaleh",
   ],
-  reviewFooterBeforeLink: "For Upper or Lower install detail, start with the",
-  reviewFooterLinkLabel: "Lower Tehaleh fence installation page",
-  reviewFooterAfterLink:
-    " or visit Upper Tehaleh from Bonney Lake service areas.",
+  reviewFooterBeforeLink: "For the Design Manual fence standards and Upper or Lower Tehaleh install detail, start with the",
+  reviewFooterLinkLabel: "Tehaleh fence installation hub",
+  reviewFooterAfterLink: ".",
   helpHeading: "How MyFence.com helps Tehaleh homeowners",
   helpCards: [
     {
