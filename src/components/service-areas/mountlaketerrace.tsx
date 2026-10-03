@@ -239,7 +239,7 @@ const MountlakeTerraceArticle = () => (
         Permits and Local Regulations
       </h2>
       <p className="text-muted-foreground leading-relaxed">
-        The City of Mountlake Terrace follows standard Washington State regulations for residential fencing. Fences under 8 feet in height typically do not require building permits, but must comply with zoning requirements including height limits and setback rules. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
+        The City of Mountlake Terrace requires a fence permit to build any new fence or rebuild an existing one (incidental repairs are exempt). The permit review checks the fence against the zoning code's height limits and setback rules under MTMC 19.120.200. Front yard fences are generally limited to 4 feet, while side and rear yard fences can be constructed up to 6 feet without special approval.
       </p>
       <p className="text-muted-foreground leading-relaxed">
         Property line verification is essential before installation to prevent disputes with neighbors and ensure compliance with setback requirements. We recommend obtaining a current survey if one isn't available. For properties near designated critical areas or in neighborhoods with HOA oversight, additional approvals may be required. For specific questions about your Mountlake Terrace property, contact the <a href="https://www.cityofmlt.com/169/Community-and-Economic-Development" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Mountlake Terrace Community Development Department</a> at (425) 776-1220.
@@ -270,7 +270,7 @@ const MountlakeTerraceArticle = () => (
         <div>
           <h3 className="font-semibold mb-2">Do I need a permit for my fence in Mountlake Terrace?</h3>
           <p className="text-muted-foreground">
-            Fences under 8 feet typically don't require permits in Mountlake Terrace, but must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals. We handle the research for your specific lot.
+            Mountlake Terrace requires a fence permit for any new or rebuilt fence, and the fence must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals. We handle the research for your specific lot.
           </p>
         </div>
         <div>
@@ -318,7 +318,7 @@ const MountlakeTerrace = () => {
         "name": "Do I need a permit for my fence in Mountlake Terrace?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fences under 8 feet typically don't require permits in Mountlake Terrace, but must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals."
+          "text": "Mountlake Terrace requires a fence permit for any new or rebuilt fence, and the fence must meet setback and height requirements. Front yard fences are limited to 4 feet; side and rear can go up to 6 feet. Properties near critical areas or with HOA oversight may need additional approvals."
         }
       },
       {

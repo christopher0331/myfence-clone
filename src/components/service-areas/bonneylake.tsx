@@ -89,7 +89,7 @@ const BonneyLakeArticle = () => (
           Young families moving to Tehaleh often relocate from areas where fence maintenance consumed entire weekends. They want the backyard enclosed for kids and dogs but have zero interest in staining schedules. Our hybrid system answers that — powder-coated black aluminum panels that look identical in year fifteen as they did at installation. No annual staining, no pressure washing, no fading to manage.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          The cedar post-and-rail frame keeps the fence from looking industrial while meeting Tehaleh's earth-tone aesthetic requirements. Pressure-treated posts handle the volcanic soil contact. And unlike all-aluminum fences that feel cold and commercial, the wood framing adds warmth that fits Bonney Lake's mountain-community character. We're installing more hybrid systems each year as word spreads through the Tehaleh neighborhood Facebook groups — the "set it and forget it" appeal resonates with busy commuters who'd rather spend weekends at the lake than maintaining their property.
+          The cedar post-and-rail frame keeps the fence from looking industrial and can be stained Sherwin-Williams Cedar Bark (SW 3511) or clear to match the Tehaleh Design Manual. Pressure-treated posts handle the volcanic soil contact. And unlike all-aluminum fences that feel cold and commercial, the wood framing adds warmth that fits Bonney Lake's mountain-community character. We're installing more hybrid systems each year as word spreads through the Tehaleh neighborhood Facebook groups — the "set it and forget it" appeal resonates with busy commuters who'd rather spend weekends at the lake than maintaining their property.
         </p>
       </div>
     </section>
@@ -313,7 +313,7 @@ const BonneyLakeArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">What are Tehaleh's HOA fence requirements?</h4>
           <p className="text-muted-foreground">
-            Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly — our estimates include guidance on meeting your specific CC&R requirements. See our <Link href="/service-areas/bonney-lake/tehaleh/hoa-approved-fencing" className="text-primary underline decoration-2 underline-offset-2">Tehaleh HOA approved fencing guide</Link> for the Design Review checklist, or start with our <Link href="/service-areas/bonney-lake/upper-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Upper Tehaleh</Link> and <Link href="/service-areas/bonney-lake/lower-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Lower Tehaleh</Link> fence installation pages.
+            Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) or clear stain for standard fences and does not allow chain-link without committee approval. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly — our estimates include guidance on meeting your specific CC&R requirements. See our <Link href="/service-areas/bonney-lake/tehaleh/hoa-approved-fencing" className="text-primary underline decoration-2 underline-offset-2">Tehaleh HOA approved fencing guide</Link> for the Design Review checklist, or start with our <Link href="/service-areas/bonney-lake/upper-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Upper Tehaleh</Link> and <Link href="/service-areas/bonney-lake/lower-tehaleh" className="text-primary underline decoration-2 underline-offset-2">Lower Tehaleh</Link> fence installation pages.
           </p>
         </div>
         <div>
@@ -361,7 +361,7 @@ const BonneyLake = () => {
         "name": "What are Tehaleh's HOA fence requirements?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly."
+          "text": "Tehaleh has specific architectural guidelines covering fence styles, heights, and colors. The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) or clear stain for standard fences and does not allow chain-link without committee approval. Some neighborhoods restrict front-yard fencing entirely. We've installed throughout Tehaleh's various phases and know which styles get approved quickly."
         }
       },
       {
