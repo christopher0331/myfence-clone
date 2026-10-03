@@ -118,13 +118,6 @@ const ThreeRailPictureFrameFence = () => {
       "Cedar 3 rail picture frame fence with extra rail and trim for added structure and a refined craftsman look.",
     image: "https://myfence.com/lovable-uploads/dca011a1-b730-4b73-b631-80847936dfcd.png",
     brand: { "@type": "Brand", name: "MyFence.com" },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "176",
-    },
     review: [
       {
         "@type": "Review",
