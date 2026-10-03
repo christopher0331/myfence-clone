@@ -1,5 +1,5 @@
 export const TEXT_CONSENT_MESSAGE =
-  "I consent to follow-up & informational text messages. Frequency varies. Msg & day rates may apply. Reply STOP to opt out.";
+  "I consent to follow-up & informational text messages. Frequency varies. Msg & data rates may apply. Reply STOP to opt out.";
 
 export const TEXT_CONSENT_NUDGE_TITLE = "Mind checking the text updates box?";
 
