@@ -121,30 +121,6 @@ const ThreeRailPictureFrameFence = () => {
     review: [
       {
         "@type": "Review",
-        author: { "@type": "Person", name: "Ross Y" },
-        datePublished: "2026-06-24",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Our fence looks amazing. Highly recommend the picture frame design. No-pressure quote appointment, competitive pricing, and the job was complete within 72 hours with no mistakes.",
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Mike Prillwitz" },
-        datePublished: "2026-07-12",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Just had our fence installed and could not be happier! From the first meeting to the final walkthrough these guys were awesome. Professional from website to bidding process, fair price, and done right the first time.",
-      },
-      {
-        "@type": "Review",
         author: { "@type": "Person", name: "Austin Mulcahey" },
         datePublished: "2026-07-10",
         reviewRating: {
@@ -153,7 +129,7 @@ const ThreeRailPictureFrameFence = () => {
           bestRating: "5",
         },
         reviewBody:
-          "I would recommend this company to everyone. They’re punctual, communicative, and deliver a quality product at an affordable price.",
+          "I would recommend this company to everyone. They’re punctual, communicative, and deliver a quality product at an affordable price. Don’t hesitate to call on them!",
       },
     ],
     offers: {
