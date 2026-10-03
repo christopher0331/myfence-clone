@@ -37,7 +37,7 @@ const MARKET_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Market, Kirkland?",
     answer:
-      "The City of Kirkland generally does not require a building permit for residential fences under eight feet, but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Lots on Waverly Way, 6th Street West, and the corners at Market Street and 7th Avenue have extra sight-distance rules near the sidewalk. Properties within 200 feet of Lake Washington's ordinary high water mark may also need shoreline review. A few historic or subdivided parcels ask for a simple drawing even when the city does not. MyFence.com checks the parcel, any plat notes, and Kirkland Planning and Building rules before we quote.",
+      "The City of Kirkland does not require a building permit for residential fences six feet or shorter (a fence over six feet needs one), but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Lots on Waverly Way, 6th Street West, and the corners at Market Street and 7th Avenue have extra sight-distance rules near the sidewalk. Properties within 200 feet of Lake Washington's ordinary high water mark may also need shoreline review. A few historic or subdivided parcels ask for a simple drawing even when the city does not. MyFence.com checks the parcel, any plat notes, and Kirkland Planning and Building rules before we quote.",
   },
   {
     question:

@@ -35,7 +35,7 @@ const JuanitaPage = () => {
       {
         question: "Do I need a permit to build a fence in Juanita, Kirkland?",
         answer:
-          "Fences under 8 feet typically don't require a Kirkland building permit, but must meet height and setback rules. Waterfront properties within 200 feet of Lake Washington may need shoreline review. MyFence.com handles permit research and can prepare any required HOA or shoreline documentation for your Juanita property.",
+          "Kirkland does not require a building permit for fences six feet or shorter; a fence over six feet needs one. Every fence still has to meet height and setback rules. Waterfront properties within 200 feet of Lake Washington may need shoreline review. MyFence.com handles permit research and can prepare any required HOA or shoreline documentation for your Juanita property.",
       },
       {
         question: "What fence materials hold up best on Juanita's waterfront?",
@@ -320,7 +320,7 @@ const JuanitaPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Shoreline & Permits in Juanita</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    If your property is within 200 feet of Lake Washington's ordinary high water mark, Kirkland's shoreline regulations may apply. We can help you understand whether your fence needs shoreline review and what to submit. For standard residential fences under 8 ft, Kirkland usually doesn't require a building permit, but we always confirm current rules for your address.
+                    If your property is within 200 feet of Lake Washington's ordinary high water mark, Kirkland's shoreline regulations may apply. We can help you understand whether your fence needs shoreline review and what to submit. Kirkland doesn't require a building permit for residential fences 6 ft or shorter, but a fence over 6 ft needs one; we always confirm current rules for your address.
                   </p>
                 </div>
               </div>

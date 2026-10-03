@@ -36,7 +36,7 @@ const WEST_BELLEVUE_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in West Bellevue?",
     answer:
-      "The City of Bellevue typically requires a building permit for fences taller than six feet, and for any fence that sits in a mapped critical area, wetland buffer, or shoreline jurisdiction. Lakeshore parcels along Lake Washington Boulevard, 100th Avenue SE, and the streets that drop toward Meydenbauer Bay can fall under Bellevue's Shoreline Master Program even when the fence itself is six feet. Front-yard fencing is usually limited to four feet, and corner lots on Bellevue Way and Main Street must keep sight triangles clear. MyFence.com checks overlays for your West Bellevue address before we quote and handles the paperwork when a permit is required.",
+      "The City of Bellevue requires a building permit for a residential fence taller than eight feet, built of concrete block or similar material, or sitting in a critical area or critical-area buffer, and lakeshore lots can also fall under shoreline rules. Lakeshore parcels along Lake Washington Boulevard, 100th Avenue SE, and the streets that drop toward Meydenbauer Bay can fall under Bellevue's Shoreline Master Program even when the fence itself is six feet. Front-yard fencing is usually limited to four feet, and corner lots on Bellevue Way and Main Street must keep sight triangles clear. MyFence.com checks overlays for your West Bellevue address before we quote and handles the paperwork when a permit is required.",
   },
   {
     question:
