@@ -72,7 +72,7 @@ const DAYBREAK_AT_RIVER_RIDGE_FAQS: NeighborhoodFaqItem[] = [
     question:
       "Do I need a permit to build a fence in Daybreak at River Ridge, Maple Valley?",
     answer:
-      "Many residential fence installs in Maple Valley are handled under King County rules, and fences that stay within typical height limits often don’t require a building permit. Daybreak at River Ridge properties also fall under HOA review through the River Ridge at Daybreak Homeowners Association, so architectural approval is commonly required before work starts. MyFence.com helps coordinate the permitting/approval path for your specific address so you don’t get delayed after measurements.",
+      "Inside Maple Valley city limits, the City of Maple Valley requires a permit for fences over 6 feet in height; fences under 6 feet do not need one. Daybreak at River Ridge properties also fall under HOA review through the River Ridge at Daybreak Homeowners Association, so architectural approval is commonly required before work starts. MyFence.com helps coordinate the permitting/approval path for your specific address so you don’t get delayed after measurements.",
   },
   {
     question:

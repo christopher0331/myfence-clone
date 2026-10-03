@@ -16,7 +16,7 @@ const Sumner = () => {
         "name": "Do I need a permit for a fence in Sumner?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most residential fences in Sumner require a permit through Pierce County. Fences over 6 feet tall or within setback areas have additional requirements. We handle all permit applications and ensure your fence meets local codes including historic district requirements downtown."
+          "text": "Sumner is its own city, so fence permits go through the City of Sumner, not Pierce County. The city requires a building permit for a fence over 6 feet tall or one in the front or street-side setback that doesn't meet the setback height limits. We handle all permit applications and ensure your fence meets local codes including historic district requirements downtown."
         }
       },
       {
@@ -301,24 +301,24 @@ const Sumner = () => {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Permits & Regulations</h2>
         <p className="text-lg mb-4">
-          Sumner falls under Pierce County jurisdiction for building permits and regulations. Most residential fences require 
-          permits, particularly those in the historic downtown district or exceeding standard height limits. Properties in the 
+          Sumner is an incorporated city, so the City of Sumner handles fence permits. A fence 6 feet or lower outside the front and 
+          street-side setback doesn't need a permit; a taller fence, or one that doesn't meet the setback limits, does. Properties in the 
           downtown preservation district have additional aesthetic requirements.
         </p>
         <p className="text-lg mb-4">
-          We handle all permit applications and ensure your fence complies with Pierce County codes and Sumner's historic 
+          We handle all permit applications and ensure your fence complies with City of Sumner codes and Sumner's historic 
           preservation guidelines. Our experience with downtown requirements streamlines the approval process for period 
           properties.
         </p>
         <p className="text-lg mb-4">
           For official permit information, visit the{" "}
           <a 
-            href="https://www.piercecountywa.gov/903/Development-Center"
+            href="https://sumnerwa.gov/fences/"
             target="_blank" 
             rel="noopener noreferrer"
             className="text-primary hover:underline font-semibold"
           >
-            Pierce County Building Permits page
+            City of Sumner fence permit page
           </a>. For historic district requirements, contact the{" "}
           <a 
             href="https://www.sumnerwa.gov/departments/community-development" 
@@ -338,8 +338,8 @@ const Sumner = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Do I need a permit for a fence in Sumner?</h3>
             <p className="text-lg">
-              Most residential fences in Sumner require a permit through Pierce County. Fences over 6 feet tall or within 
-              setback areas have additional requirements. We handle all permit applications and ensure your fence meets local 
+              Sumner is its own city, so fence permits go through the City of Sumner, not Pierce County. The city requires a 
+              building permit for a fence over 6 feet tall or one in the front or street-side setback that doesn't meet the setback height limits. We handle all permit applications and ensure your fence meets local 
               codes including historic district requirements downtown.
             </p>
           </div>

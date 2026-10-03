@@ -12,11 +12,11 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   hubLinkLabel: "Upper Tehaleh fence installation",
   metaTitle: "Tehaleh HOA Approved Fencing | Design Review | Bonney Lake | MyFence.com",
   metaDescription:
-    "Tehaleh HOA approved fencing in Bonney Lake. Download our Design Review checklist, earth-tone compliant installs for Upper & Lower Tehaleh. Free quotes. (253) 455-1885.",
+    "Tehaleh HOA approved fencing in Bonney Lake. Download our Design Review checklist; installs stained Cedar Bark (SW 3511) or clear for Upper & Lower Tehaleh. Free quotes. (253) 455-1885.",
   locationLabel: "Tehaleh Owner's Association · Bonney Lake, WA",
   h1: "Tehaleh HOA Approved Fencing",
   heroIntro:
-    "Design Review steps, a submission checklist, and earth-tone fence builds that pass Tehaleh review for Upper and Lower neighborhoods—without chain-link shortcuts that get rejected.",
+    "Design Review steps, a submission checklist, and fence builds stained Sherwin-Williams Cedar Bark (SW 3511) or clear, per the Tehaleh Design Manual, that pass Tehaleh review for Upper and Lower neighborhoods—without chain-link shortcuts that get rejected.",
   downloadCtaLabel: "Download submission checklist",
   trustItems: [
     { icon: "clipboard", label: "Tehaleh fence submission checklist" },
@@ -32,7 +32,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
       title: "Tehaleh HOA Fence Submission Checklist",
       timing: "Prep guide",
       blurb:
-        "MyFence.com homeowner checklist covering phase confirmation, earth-tone requirements, site plan, drawings, and association contact steps. Not a substitute for the official ARC packet.",
+        "MyFence.com homeowner checklist covering phase confirmation, the Design Manual stain (Cedar Bark SW 3511 or clear), site plan, drawings, and association contact steps. Not a substitute for the official ARC packet.",
     },
   ],
   processHeading: "Tehaleh Design Review fence process",

@@ -36,7 +36,7 @@ const LakeTappsPage = () => {
       {
         question: "Do I need a permit to build a fence near Lake Tapps?",
         answer:
-          "Bonney Lake and Pierce County generally don't require building permits for residential fences under 8 feet, but you must meet zoning and setback rules. Lake Tapps area properties may have covenants; we can help verify requirements for your address.",
+          "The City of Bonney Lake and unincorporated Pierce County both require a building permit for fences over 6 feet, and every fence must meet zoning and setback rules. Lake Tapps area properties may have covenants; we can help verify requirements for your address.",
       },
       {
         question: "What fence materials hold up best in Lake Tapps' climate?",
@@ -321,7 +321,7 @@ const LakeTappsPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Permits & Covenants Near Lake Tapps</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Residential fences under 8 feet generally don't require a Bonney Lake building permit, but you must comply with setbacks and zoning. Some Lake Tapps area properties have covenants; we can help verify requirements for your address so your project stays compliant.
+                    The City of Bonney Lake and unincorporated Pierce County both require a building permit for fences over 6 feet, and every fence must comply with setbacks and zoning. Some Lake Tapps area properties have covenants; we can help verify requirements for your address so your project stays compliant.
                   </p>
                 </div>
               </div>

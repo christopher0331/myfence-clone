@@ -16,7 +16,7 @@ const LakeTapps = () => {
         "name": "Do I need a permit for a fence in Lake Tapps?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most residential fences in Lake Tapps require a permit through Pierce County. Fences over 6 feet tall or within setback areas have additional requirements. We handle all permit applications and ensure your fence meets local codes and waterfront regulations."
+          "text": "Lake Tapps homes sit either inside City of Bonney Lake limits or in unincorporated Pierce County. Both require a building permit for fences over 6 feet tall, and waterfront or setback areas can add requirements. We handle all permit applications and ensure your fence meets local codes and waterfront regulations."
         }
       },
       {
@@ -289,8 +289,8 @@ const LakeTapps = () => {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Permits & Regulations</h2>
         <p className="text-lg mb-4">
-          Lake Tapps falls under Pierce County jurisdiction for building permits and regulations. Most residential fences 
-          require permits, particularly those near waterfront setback areas or exceeding standard height limits.
+          Depending on the parcel, Lake Tapps homes fall under the City of Bonney Lake or unincorporated Pierce County for 
+          building permits. Both require a building permit for fences over 6 feet, and waterfront setback areas can add requirements.
         </p>
         <p className="text-lg mb-4">
           We handle all permit applications and ensure your waterfront fence complies with Pierce County codes and any 
@@ -317,8 +317,8 @@ const LakeTapps = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Do I need a permit for a fence in Lake Tapps?</h3>
             <p className="text-lg">
-              Most residential fences in Lake Tapps require a permit through Pierce County. Fences over 6 feet tall or 
-              within setback areas have additional requirements. We handle all permit applications and ensure your fence 
+              Lake Tapps homes sit either inside City of Bonney Lake limits or in unincorporated Pierce County. Both require a 
+              building permit for fences over 6 feet tall, and waterfront or setback areas can add requirements. We handle all permit applications and ensure your fence 
               meets local codes and waterfront regulations.
             </p>
           </div>

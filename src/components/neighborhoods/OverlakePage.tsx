@@ -36,7 +36,7 @@ const OVERLAKE_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Overlake, Redmond?",
     answer:
-      "The City of Redmond generally does not require a building permit for residential fences under eight feet, but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Overlake parcels sit in a mix of single-family streets north of NE 40th and Overlake Village mixed-use zones along 152nd Avenue NE, so the allowed height can change from one block to the next. Townhome and condo associations around the village and Village at Overlake Station often want architectural drawings even when the city does not. Lots that sit on the Bellevue side of NE 24th or 148th Avenue NE follow Bellevue rules instead. MyFence.com checks the parcel city, zone, and HOA packet before we quote.",
+      "The City of Redmond generally does not require a building permit for fences seven feet or shorter, but zoning still controls height, setbacks, and corner sight triangles. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet. Overlake parcels sit in a mix of single-family streets north of NE 40th and Overlake Village mixed-use zones along 152nd Avenue NE, so the allowed height can change from one block to the next. Townhome and condo associations around the village and Village at Overlake Station often want architectural drawings even when the city does not. Lots that sit on the Bellevue side of NE 24th or 148th Avenue NE follow Bellevue rules instead. MyFence.com checks the parcel city, zone, and HOA packet before we quote.",
   },
   {
     question:

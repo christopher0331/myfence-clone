@@ -250,7 +250,7 @@ const TukwilaArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">Do I need a permit for my fence in Tukwila?</h4>
           <p className="text-muted-foreground">
-            Fences under 8 feet typically don't require permits in Tukwila, but must meet setback and height requirements. Front yard fences are generally limited to 4 feet; side and rear can go up to 6 feet. Properties in certain zones may have additional requirements. Contact the <a href="https://www.tukwilawa.gov/departments/community-development/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tukwila Community Development Department</a> for specific guidance.
+            Tukwila exempts fences not over 6 feet high from a building permit; a fence over 6 feet requires one. Every fence must still meet setback and height requirements. Front yard fences are generally limited to 4 feet; side and rear can go up to 6 feet. Properties in certain zones may have additional requirements. Contact the <a href="https://www.tukwilawa.gov/departments/community-development/" target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-2 underline-offset-2">Tukwila Community Development Department</a> for specific guidance.
           </p>
         </div>
         <div>
@@ -297,7 +297,7 @@ const Tukwila = () => {
         "name": "Do I need a permit for my fence in Tukwila?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fences under 8 feet typically don't require permits in Tukwila, but must meet setback and height requirements. Front yard fences are generally limited to 4 feet; side and rear can go up to 6 feet. Properties in certain zones may have additional requirements."
+          "text": "Tukwila exempts fences not over 6 feet high from a building permit; a fence over 6 feet requires one. Every fence must still meet setback and height requirements. Front yard fences are generally limited to 4 feet; side and rear can go up to 6 feet. Properties in certain zones may have additional requirements."
         }
       },
       {

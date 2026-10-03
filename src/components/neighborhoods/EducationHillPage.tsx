@@ -36,7 +36,7 @@ const EDUCATION_HILL_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Education Hill, Redmond?",
     answer:
-      "The City of Redmond generally does not require a building permit for residential fences under eight feet, but the fence still has to meet zoning height and setback rules. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet without special approval. Corner lots along 166th Avenue NE and NE 104th Street have sight-distance triangle rules that can shorten a run near the sidewalk. Pocket HOAs on Education Hill — including some condo and planned-unit clusters — may still require architectural review even when the city does not. MyFence.com checks the parcel, HOA paperwork, and Redmond Development Services rules before we quote.",
+      "The City of Redmond generally does not require a building permit for fences seven feet or shorter, but the fence still has to meet zoning height and setback rules. Front-yard fencing is typically limited to four feet; side and rear yards are usually allowed up to six feet without special approval. Corner lots along 166th Avenue NE and NE 104th Street have sight-distance triangle rules that can shorten a run near the sidewalk. Pocket HOAs on Education Hill — including some condo and planned-unit clusters — may still require architectural review even when the city does not. MyFence.com checks the parcel, HOA paperwork, and Redmond Development Services rules before we quote.",
   },
   {
     question:

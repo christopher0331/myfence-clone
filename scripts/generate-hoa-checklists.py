@@ -146,6 +146,29 @@ CHECKLISTS = [
             "Call (253) 455-1885 or visit myfence.com/quote",
         ],
     },
+    {
+        "filename": "tehaleh-hoa-fence-submission-checklist.pdf",
+        "title": "Tehaleh HOA Fence Submission Checklist",
+        "lines": [
+            "MyFence.com homeowner prep guide (not an official association form)",
+            "",
+            "Before submitting to Tehaleh Owner's Association / Design Review:",
+            "1. Confirm your neighborhood phase (Upper / Lower / Trilogy / Discovery Park).",
+            "2. Stain: Sherwin-Williams Cedar Bark (SW 3511) or clear, per the Design",
+            "   Manual. Chain-link and vinyl need committee approval; confirm your finish.",
+            "3. Prepare a site plan with lot lines, house, and proposed fence location.",
+            "4. Include style drawings, heights, materials, and stain/color samples.",
+            "5. Check front-yard fencing restrictions for your specific phase.",
+            "6. Request the current ARC packet from association management (Cohere).",
+            "   Tehaleh Welcome Center (visitor info, not the HOA): 253-205-8190",
+            "   tehaleh.com/contact-us. Ask association management for Design Review forms.",
+            "7. Do not start construction until written approval is received.",
+            "8. After install, keep photos and approval docs for closeout/resale.",
+            "",
+            "MyFence.com prepares HOA-ready Tehaleh packages at no extra fee.",
+            "Call (253) 455-1885 or visit myfence.com/quote",
+        ],
+    },
 ]
 
 

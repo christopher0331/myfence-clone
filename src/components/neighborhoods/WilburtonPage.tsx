@@ -36,7 +36,7 @@ const WILBURTON_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Wilburton, Bellevue?",
     answer:
-      "The City of Bellevue typically requires a building permit for fences taller than six feet, and for any fence that sits in a mapped critical area, wetland buffer, or stream corridor. Lots that drain toward Kelsey Creek or sit near Mercer Slough can trigger extra review even when the fence itself is six feet. Front-yard fencing is usually limited to four feet, and corner lots on 116th Avenue NE, Main Street, and NE 8th Street must keep sight triangles clear. MyFence.com checks overlays for your Wilburton address before we quote and handles the paperwork when a permit is required.",
+      "The City of Bellevue requires a building permit for a residential fence taller than eight feet, built of concrete block or similar material, or sitting in a critical area or critical-area buffer such as a wetland or stream corridor. Lots that drain toward Kelsey Creek or sit near Mercer Slough can trigger extra review even when the fence itself is six feet. Front-yard fencing is usually limited to four feet, and corner lots on 116th Avenue NE, Main Street, and NE 8th Street must keep sight triangles clear. MyFence.com checks overlays for your Wilburton address before we quote and handles the paperwork when a permit is required.",
   },
   {
     question:

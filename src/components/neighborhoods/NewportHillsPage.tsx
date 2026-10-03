@@ -35,7 +35,7 @@ const NewportHillsPage = () => {
       {
         question: "Do I need a permit to build a fence in Newport Hills, Bellevue?",
         answer:
-          "Bellevue typically requires a building permit for fences over 6 feet. Newport Hills properties may also be subject to HOA or covenant review. MyFence.com handles permit research and can prepare any required documentation for your Newport Hills lot.",
+          "Bellevue does not require a building permit for a residential fence unless it is over 8 feet, sits in a critical area or critical-area buffer, or is built of concrete block or similar material. Newport Hills properties may also be subject to HOA or covenant review. MyFence.com handles permit research and can prepare any required documentation for your Newport Hills lot.",
       },
       {
         question: "What fence styles work best on Newport Hills' steep, wooded lots?",
@@ -320,7 +320,7 @@ const NewportHillsPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Permits & HOAs in Newport Hills</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Bellevue generally requires a building permit for fences over 6 feet. Some Newport Hills areas have covenants or HOAs with design review. We can research requirements for your address and prepare any needed submissions so your project stays compliant.
+                    Bellevue requires a building permit for a residential fence over 8 feet, in a critical area or buffer, or built of concrete block or similar material. Some Newport Hills areas have covenants or HOAs with design review. We can research requirements for your address and prepare any needed submissions so your project stays compliant.
                   </p>
                 </div>
               </div>

@@ -33,7 +33,7 @@ const SHERWOOD_FOREST_FAQS: NeighborhoodFaqItem[] = [
   {
     question: "Do I need a permit to build a fence in Sherwood Forest, Bellevue?",
     answer:
-      "Bellevue requires a building permit for fences over 6 feet in height or those located in critical areas. Sherwood Forest properties near Phantom Lake may fall under additional shoreline or wetland buffer regulations. MyFence.com researches the specific requirements for your Sherwood Forest address and handles all permitting paperwork.",
+      "Bellevue requires a building permit for residential fences over 8 feet in height, those located in a critical area or critical-area buffer, or those built of concrete block or similar material. Sherwood Forest properties near Phantom Lake may fall under additional shoreline or wetland buffer regulations. MyFence.com researches the specific requirements for your Sherwood Forest address and handles all permitting paperwork.",
   },
   {
     question: "What fence styles work best on Sherwood Forest's wooded lots?",

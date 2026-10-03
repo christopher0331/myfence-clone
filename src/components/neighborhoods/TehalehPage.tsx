@@ -45,7 +45,7 @@ const TehalehPage = ({
     faqItems: [
       {
         question: `Do I need HOA approval to build a fence in ${neighborhoodLabel}?`,
-        answer: "Yes. Tehaleh has architectural guidelines covering fence styles, heights, and colors. Most areas require earth-tone stains and prohibit chain-link. We prepare submission packages for the Tehaleh Design Review Committee and ensure your project meets requirements for first-time approval.",
+        answer: "Yes. Tehaleh has architectural guidelines covering fence styles, heights, and colors. The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) or clear stain for standard fences and does not allow chain-link without committee approval. We prepare submission packages for the Tehaleh Design Review Committee and ensure your project meets requirements for first-time approval.",
       },
       {
         question: `What fence styles work best in ${neighborhoodLabel}?`,
@@ -331,7 +331,7 @@ const TehalehPage = ({
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Download our Design Review submission checklist, learn the Tehaleh Owner&apos;s
-                      Association process, and get earth-tone installs built for Upper and Lower
+                      Association process, and get installs stained Cedar Bark (SW 3511) or clear for Upper and Lower
                       Tehaleh approval.
                     </p>
                     <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
@@ -441,7 +441,7 @@ const TehalehPage = ({
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    {isUpper ? "Meets Tehaleh design standards with earth-tone stain options. Board-on-board adds privacy and wind buffering on the plateau." : "The most popular choice for Lower Tehaleh backyards. Timeless cedar that fits the walkable neighborhood character and HOA requirements."}
+                    {isUpper ? "Stained Sherwin-Williams Cedar Bark (SW 3511) or clear per the Tehaleh Design Manual. Board-on-board adds privacy and wind buffering on the plateau." : "The most popular choice for Lower Tehaleh backyards. Timeless cedar that fits the walkable neighborhood character and HOA requirements."}
                   </p>
                   <Link href="/fence-styles/picture-frame-fence" className="text-primary text-sm font-medium hover:underline">
                     View cedar styles →
