@@ -27,7 +27,7 @@ const IssaquahArticle = () => (
       <h2 className="text-3xl md:text-4xl font-bold">
         Your Local Fence Installation Experts
       </h2>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">30+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -35,14 +35,6 @@ const IssaquahArticle = () => (
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">98%+</div>
           <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
-          <div className="text-sm text-muted-foreground">Average Star Rating</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
-          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
         </Card>
       </div>
       <p className="text-muted-foreground leading-relaxed text-lg">
@@ -396,7 +388,7 @@ const Issaquah = () => {
     "@id": "https://myfence.com/service-areas/issaquah",
     "name": "MyFence.com - Expert Installation in Your Area",
     "alternateName": ["MyFence Issaquah", "Issaquah Fence Company"],
-    "description": "Premium fence installation in Issaquah, WA. Cedar, hogwire, and hybrid fencing for mountain terrain, wildlife-smart designs, and HOA-compliant installations. 30+ years experience, 5.0-star rating.",
+    "description": "Premium fence installation in Issaquah, WA. Cedar, hogwire, and hybrid fencing for mountain terrain, wildlife-smart designs, and HOA-compliant installations. 30+ years experience.",
     "image": "https://myfence.com/myfence-logo.png",
     "url": "https://myfence.com",
     "telephone": "+12534551885",
