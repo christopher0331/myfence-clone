@@ -13,7 +13,7 @@ const KirklandArticle = () => (
       <h2 className="text-3xl md:text-4xl font-bold">
         Kirkland Fence Company - MyFence.com
       </h2>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">30+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -21,14 +21,6 @@ const KirklandArticle = () => (
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">98%+</div>
           <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
-          <div className="text-sm text-muted-foreground">Average Star Rating</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
-          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
         </Card>
       </div>
       <p className="text-muted-foreground leading-relaxed text-lg">

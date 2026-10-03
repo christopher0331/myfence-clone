@@ -13,7 +13,7 @@ const NorthBendArticle = () => (
       <h2 className="text-3xl md:text-4xl font-bold">
         Your Local Fence Installation Experts
       </h2>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">30+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
@@ -21,14 +21,6 @@ const NorthBendArticle = () => (
         <Card className="p-6 text-center">
           <div className="text-3xl font-bold text-primary mb-2">98%+</div>
           <div className="text-sm text-muted-foreground">On-Time Installation Rate</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">5.0</div>
-          <div className="text-sm text-muted-foreground">Average Star Rating</div>
-        </Card>
-        <Card className="p-6 text-center">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
-          <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
         </Card>
       </div>
       <p className="text-muted-foreground leading-relaxed text-lg">
@@ -216,7 +208,7 @@ const NorthBendArticle = () => (
         MyFence.com serves as North Bend's mountain fencing specialist with three decades of experience building in challenging terrain. Our father-son team combines traditional mountain construction knowledge with modern precision technology. We understand the difference between building fences at sea level versus the Upper Valley - from soil composition to snow loads to wildlife pressures. Every installation reflects this deep expertise, engineered specifically for the conditions your North Bend property faces rather than generic suburban techniques.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        When your fence is complete, we conduct a detailed walkthrough covering every aspect of the installation and demonstrating the mountain-specific features we've incorporated. We provide documentation of all reinforcements, material specifications, and maintenance recommendations specific to North Bend's climate. Our 5.0-star rating comes from delivering exactly what we promise - professional mountain fence construction that performs year after year. We're fully licensed, bonded, and insured for work throughout King County's mountain corridor.
+        When your fence is complete, we conduct a detailed walkthrough covering every aspect of the installation and demonstrating the mountain-specific features we've incorporated. We provide documentation of all reinforcements, material specifications, and maintenance recommendations specific to North Bend's climate. We're fully licensed, bonded, and insured for work throughout King County's mountain corridor.
       </p>
     </section>
 
