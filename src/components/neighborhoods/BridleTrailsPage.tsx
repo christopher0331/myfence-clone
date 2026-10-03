@@ -133,9 +133,7 @@ const BridleTrailsPage = () => {
           <div className='container'>
             <div className='flex flex-wrap justify-center items-center gap-8 md:gap-12 text-sm'>
               <span className='flex items-center gap-2 text-muted-foreground'><Shield className='h-5 w-5 text-primary' />Licensed & Insured</span>
-              <span className='flex items-center gap-2 text-muted-foreground'><Star className='h-5 w-5 text-primary fill-primary' />5.0 ★ Google Rating</span>
               <span className='flex items-center gap-2 text-muted-foreground'><Award className='h-5 w-5 text-primary' />{WARRANTY_CONSTANTS.YEARS}-Year Warranty</span>
-              <span className='flex items-center gap-2 text-muted-foreground'><CheckCircle2 className='h-5 w-5 text-primary' />150+ Five-Star Reviews</span>
             </div>
           </div>
         </section>
@@ -172,12 +170,7 @@ const BridleTrailsPage = () => {
           <div className='container'>
             <div className='max-w-4xl mx-auto'>
               <h2 className='text-3xl md:text-4xl font-bold mb-8 text-center'>What Bridle Trails Homeowners Can Expect</h2>
-              <div className='grid md:grid-cols-2 gap-6'>
-                <Card className='p-6'>
-                  <div className='flex gap-1 mb-3'>{[1, 2, 3, 4, 5].map((i) => <Star key={i} className='h-5 w-5 text-primary fill-primary' />)}</div>
-                  <p className='text-muted-foreground mb-4'>MyFence.com has 150+ five-star reviews across its service area. For Bridle Trails projects, we focus on careful communication, clean installation and protection of mature yard features.</p>
-                  <p className='text-sm font-medium'>Verified review signals</p>
-                </Card>
+              <div className='grid gap-6'>
                 <Card className='p-6'>
                   <div className='flex gap-1 mb-3'>{[1, 2, 3, 4, 5].map((i) => <Star key={i} className='h-5 w-5 text-primary fill-primary' />)}</div>
                   <p className='text-muted-foreground mb-4'>Homeowners choosing cedar, hogwire or hybrid fencing can expect a clear scope, a practical installation plan and a walkthrough before the project is considered complete.</p>
