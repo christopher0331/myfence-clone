@@ -810,7 +810,3 @@
   from = "/wp-content/uploads/2024/02/Download-Flat-Gate-Sheet.pdf"
   to = "/fence-styles"
   status = 301
-[[redirects]]
-  from = "/service-areas/bonney-lake/tehaleh"
-  to = "/service-areas/bonney-lake/lower-tehaleh"
-  status = 301

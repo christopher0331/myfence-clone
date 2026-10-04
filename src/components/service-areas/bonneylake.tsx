@@ -554,6 +554,11 @@ const BonneyLake = () => {
       zipCodes={["98391"]}
       neighborhoods={[
         {
+          name: "Tehaleh",
+          description: "Master-planned community in Bonney Lake. Start here for Upper Tehaleh, Lower Tehaleh, and HOA-approved fencing. Click to learn more →",
+          link: "/service-areas/bonney-lake/tehaleh"
+        },
+        {
           name: "Upper Tehaleh",
           description: "Elevated homesites and neighborhoods in the upper plateau of Tehaleh. We provide HOA-compliant fencing for premium lots with mountain views. Click to learn more →",
           link: "/service-areas/bonney-lake/upper-tehaleh"

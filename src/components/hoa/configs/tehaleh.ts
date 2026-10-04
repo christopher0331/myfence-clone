@@ -1,13 +1,14 @@
 import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 
-const PARENT_URL = "https://myfence.com/service-areas/bonney-lake/lower-tehaleh";
+const TEHALEH_HUB_URL = "https://myfence.com/service-areas/bonney-lake/tehaleh";
 
 export const tehalehHoaConfig: HoaApprovedFencingConfig = {
   canonical: "https://myfence.com/service-areas/bonney-lake/tehaleh/hoa-approved-fencing",
-  parentUrl: PARENT_URL,
+  parentUrl: TEHALEH_HUB_URL,
   parentHref: "/service-areas/bonney-lake/lower-tehaleh",
   parentLinkLabel: "Back to Tehaleh fence installation",
-  parentCrumbName: "Tehaleh, Bonney Lake",
+  parentCrumbName: "Tehaleh",
+  showBreadcrumb: true,
   hubHref: "/service-areas/bonney-lake/upper-tehaleh",
   hubLinkLabel: "Upper Tehaleh fence installation",
   metaTitle: "Tehaleh HOA Approved Fencing | Design Review | Bonney Lake | MyFence.com",

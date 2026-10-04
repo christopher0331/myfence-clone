@@ -51,6 +51,8 @@ export interface HoaApprovedFencingConfig {
   parentLinkLabel: string;
   /** Breadcrumb parent name (e.g. "Klahanie, Sammamish") */
   parentCrumbName: string;
+  /** Render the BreadcrumbList trail above the hero. */
+  showBreadcrumb?: boolean;
   metaTitle: string;
   metaDescription: string;
   /** Location line under the map pin */
