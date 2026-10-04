@@ -586,7 +586,7 @@ const MontreuxPage = () => {
                 Also Serving Nearby Issaquah Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Issaquah. From Montreux we also work in Talus on the west face of Cougar Mountain, Issaquah Highlands across I-90, Mirrormont on Squak Mountain, and Newcastle on the wooded ridge toward Bellevue.
+                We install fences throughout Issaquah. From Montreux we also work in Talus on the west face of Cougar Mountain, Issaquah Highlands across I-90, Mirrormont in the Tiger Mountain foothills, and Newcastle on the wooded ridge toward Bellevue.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">

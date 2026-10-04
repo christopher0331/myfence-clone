@@ -25,7 +25,7 @@ import FeaturedProject from "@/components/service-areas/FeaturedProject";
 const CANONICAL = "https://myfence.com/service-areas/maple-valley/cherokee-bay-park";
 const META_TITLE = "Cherokee Bay Park Fence Installation | Maple Valley | MyFence.com";
 const META_DESCRIPTION =
-  "Lakeside fence installation in Cherokee Bay Park, Maple Valley. Download the HOA fence application. View-preserving cedar & hogwire. Free quotes. (253) 455-1885.";
+  "Fence installation in Cherokee Bay Park on Pipe Lake and Lake Lucerne, Maple Valley. Download the HOA fence application. View-preserving cedar and hogwire. Free quotes. (253) 455-1885.";
 
 const CherokeeBayParkPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
@@ -35,9 +35,9 @@ const CherokeeBayParkPage = () => {
     description: META_DESCRIPTION,
     faqItems: [
       {
-        question: "Are there special permit requirements for fences near Lake Wilderness in Cherokee Bay Park?",
+        question: "Are there special permit requirements for fences near Pipe Lake or Lake Lucerne in Cherokee Bay Park?",
         answer:
-          "Properties near Lake Wilderness may fall within King County's Shoreline Management area or critical-area buffers. These designations can restrict fence height, placement distance from the water, and materials. MyFence.com researches your specific parcel before quoting, determines which buffers or setbacks apply, and designs a compliant fence layout. We handle all King County permit paperwork so you don't have to navigate the process yourself.",
+          "The City of Maple Valley lists Pipe Lake at 52 acres, so properties on that shore may fall within King County shoreline review or critical-area buffers. Lake Lucerne, the connected lake, is listed at 16 acres. These designations can restrict fence height, placement distance from the water, and materials. MyFence.com researches your specific parcel before quoting and designs the layout. The Cherokee Bay fence application is a separate association step. Confirm both with King County and the association before posts go in.",
       },
       {
         question: "Does Cherokee Bay require an HOA fence application?",
@@ -47,7 +47,7 @@ const CherokeeBayParkPage = () => {
       {
         question: "What fence options preserve lake views in Cherokee Bay Park?",
         answer:
-          "Hogwire fencing with a cedar frame is the most popular view-preserving option—it defines your property line without blocking sight lines to Lake Wilderness. Our hybrid aluminum/cedar system with horizontal slat spacing also allows partial views while adding privacy. For homeowners who want full privacy on one side and open views on another, we commonly combine solid cedar panels along neighbor boundaries with hogwire sections facing the lake.",
+          "Hogwire fencing with a cedar frame is a common view-preserving option. It defines the property line without blocking sight lines to Pipe Lake or Lake Lucerne. Our hybrid aluminum/cedar system with horizontal slat spacing also allows partial views while adding privacy. For full privacy on one side and an open view on the other, we combine solid cedar panels along neighbor boundaries with hogwire sections facing the water. Confirm the layout with the association before installation.",
       },
       {
         question: "How much does fence installation cost in Cherokee Bay Park, Maple Valley?",
@@ -89,7 +89,7 @@ const CherokeeBayParkPage = () => {
                   Cherokee Bay Park Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Lakeside fence specialists for Cherokee Bay Park near Lake Wilderness. View-preserving cedar, hogwire, and hybrid fencing engineered for sloped lakefront lots and moisture-rich conditions.
+                  Lakeside fence specialists for Cherokee Bay Park on Pipe Lake and Lake Lucerne. View-preserving cedar, hogwire, and hybrid fencing engineered for sloped lakefront lots and moisture-rich conditions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -140,7 +140,34 @@ const CherokeeBayParkPage = () => {
                 Fencing for Cherokee Bay Park&apos;s Lakeside Properties
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Cherokee Bay Park is a lakeside residential neighborhood near Lake Wilderness in Maple Valley, where homeowners enjoy water access, mature tree cover, and a mix of older and newer homes on lots that often slope toward the lake. The proximity to the water is the neighborhood&apos;s defining feature—but it also introduces fencing challenges that flat-land contractors routinely underestimate: downhill grades, saturated soils, shoreline buffer restrictions, and the competing desire for privacy without sacrificing the lake views that make this area special.
+                Cherokee Bay Park is a lakeside neighborhood in Maple Valley on{" "}
+                <a
+                  href="https://voiceofthevalley.com/2019/09/10/1939-cherokee-bay-resort/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  Pipe Lake
+                </a>
+                , with the connected{" "}
+                <a
+                  href="https://www.maplevalleywa.gov/government/departments/public_records_request/about_our_lakes/index.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  Lake Lucerne
+                </a>{" "}
+                beside it. The{" "}
+                <a
+                  href="https://www.cherokeebaycc.com/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  Cherokee Bay Community Club
+                </a>{" "}
+                describes a lakefront community with two local lakes, a swimming beach, and shared club facilities. Lots often slope toward the water, with mature tree cover and a mix of older and newer homes. That shoreline is what makes fencing here different from a flat inland lot: downhill grades, saturated soils, possible shoreline or critical-area limits, and the wish for privacy that still leaves the lake view.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 MyFence.com has built fences across Maple Valley&apos;s lakeside neighborhoods and understands the specific engineering required for Cherokee Bay Park properties. We know how to design fence layouts that comply with King County&apos;s shoreline setbacks, select materials that resist the persistent moisture near the lake, and balance privacy with view preservation. Our Fence Genius system maps your lot&apos;s slope and property lines precisely, so every panel is manufactured to fit before we arrive on site.
@@ -185,7 +212,7 @@ const CherokeeBayParkPage = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">View-Preserving Designs</h3>
                       <p className="text-muted-foreground">
-                        We design fences that provide privacy where you need it while keeping Lake Wilderness views open. Mixed-style layouts—solid panels along neighbors, hogwire toward the water—are our specialty.
+                        We design fences that provide privacy where you need it while keeping Pipe Lake and Lake Lucerne views open. Mixed-style layouts—solid panels along neighbors, hogwire toward the water—are our specialty.
                       </p>
                     </div>
                   </div>
@@ -245,25 +272,34 @@ const CherokeeBayParkPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Lakeside Slopes & Grade Changes</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Many Cherokee Bay Park lots slope downhill toward Lake Wilderness, with grade changes of 8–15 feet across a single property. Flat-ground fence panels leave widening gaps at the base on these slopes, and poorly planned installations end up with uneven sight lines. Fence Genius captures the exact elevation profile of your fence run and manufactures panels that step or rack to follow the terrain. Deeper post holes with reinforced footings provide stability on sloped ground, and our steel Post-on-Pipe upgrade handles the lateral pressure that gravity exerts on hillside fences over time.
+                    Many Cherokee Bay Park lots slope downhill toward Pipe Lake or Lake Lucerne. Flat-ground fence panels leave widening gaps at the base on these slopes, and poorly planned installations end up with uneven sight lines. Fence Genius captures the elevation profile of the fence run and manufactures panels that step or rack to follow the terrain. Deeper post holes with reinforced footings provide stability on sloped ground, and our steel Post-on-Pipe upgrade handles the lateral pressure that gravity exerts on hillside fences over time.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Lake Proximity Moisture & Soil Conditions</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Properties near Lake Wilderness contend with elevated ground moisture, seasonal water table fluctuations, and soil that stays saturated longer than inland lots. Standard wood posts set in concrete can wick moisture and rot from the base up within a few years. We address this with our Post-on-Pipe system that keeps the cedar post above ground contact, pressure-treated post bases where traditional installation is used, marine-grade stainless steel fasteners throughout, and premium Western Red Cedar selected for tight grain and high natural oil content that resists rot.
+                    Properties near Pipe Lake and Lake Lucerne contend with elevated ground moisture, seasonal water table fluctuations, and soil that stays saturated longer than inland lots. Standard wood posts set in concrete can wick moisture and rot from the base up within a few years. We address this with our Post-on-Pipe system that keeps the cedar post above ground contact, pressure-treated post bases where traditional installation is used, marine-grade stainless steel fasteners throughout, and premium Western Red Cedar selected for tight grain and high natural oil content that resists rot.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Balancing Privacy with Lake Views</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Cherokee Bay Park homeowners face a unique tension: wanting privacy from neighbors and the street while preserving their connection to Lake Wilderness. We solve this with mixed-style fence designs. Solid cedar privacy panels along side property lines and street-facing boundaries provide complete screening. Along lakeside edges, hogwire fencing with a cedar frame or our hybrid system with horizontal slat spacing maintains the property boundary and keeps pets contained without blocking the water view. Fence Genius lets us precisely plan where each style transitions for a cohesive look.
+                    Cherokee Bay Park homeowners often want privacy from neighbors and the street while keeping a view of Pipe Lake or Lake Lucerne. We solve this with mixed-style fence designs. Solid cedar privacy panels along side property lines and street-facing boundaries provide complete screening. Along lakeside edges, hogwire fencing with a cedar frame or our hybrid system with horizontal slat spacing maintains the property boundary and keeps pets contained without blocking the water view. Fence Genius lets us precisely plan where each style transitions for a cohesive look.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Shoreline Buffers & King County Regulations</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Cherokee Bay Park properties closest to Lake Wilderness may fall within King County&apos;s Shoreline Management Program area or critical-area buffers. These designations can restrict how close a fence can be placed to the ordinary high water mark, limit fence height, and require specific materials. MyFence.com researches the environmental designations for your specific parcel before quoting, designs fence layouts that comply with all applicable regulations, and handles the permit process. We ensure your fence is both legal and practical.
+                    Cherokee Bay Park properties closest to Pipe Lake may fall within King County shoreline review. The{" "}
+                    <a
+                      href="https://www.maplevalleywa.gov/government/departments/public_records_request/about_our_lakes/index.php"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      City of Maple Valley
+                    </a>{" "}
+                    lists Pipe Lake at 52 acres and Lake Lucerne at 16 acres. Shoreline or critical-area rules can limit how close a fence sits to the water, how tall it is, and which materials are used. We research the parcel before quoting and handle the county permit when one is required. The association&apos;s fence application is a separate approval. Confirm both before posts go in.
                   </p>
                 </div>
                 <div>
@@ -354,7 +390,7 @@ const CherokeeBayParkPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The go-to for neighbor-side and street-side boundaries in Cherokee Bay Park. Board-on-board construction provides full screening and noise reduction. Pre-stained Western Red Cedar resists the high moisture near Lake Wilderness and weathers beautifully over time.
+                    The go-to for neighbor-side and street-side boundaries in Cherokee Bay Park. Board-on-board construction provides full screening and noise reduction. Pre-stained Western Red Cedar resists the high moisture near Pipe Lake and Lake Lucerne and weathers over time.
                   </p>
                   <Link href="/fence-styles/picture-frame-fence" className="text-primary text-sm font-medium hover:underline">
                     View cedar styles &rarr;
@@ -363,7 +399,7 @@ const CherokeeBayParkPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The most popular choice for lakeside boundaries. A cedar frame with black or galvanized mesh defines your property line and contains pets without blocking Lake Wilderness views. Lower wind load makes it ideal for exposed lakefront positions.
+                    A common choice for lakeside boundaries. A cedar frame with black or galvanized mesh defines the property line and contains pets without blocking Pipe Lake or Lake Lucerne views. Lower wind load suits an exposed lakefront run. Confirm the style with the association before installation.
                   </p>
                   <Link href="/fence-styles/black-hogwire-fence" className="text-primary text-sm font-medium hover:underline">
                     View hogwire styles &rarr;

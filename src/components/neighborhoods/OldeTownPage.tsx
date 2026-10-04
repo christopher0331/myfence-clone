@@ -569,7 +569,7 @@ const OldeTownPage = () => {
                 Also Serving Nearby Issaquah Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Issaquah. From Olde Town we also work in Issaquah Highlands on the plateau, Mirrormont on Squak Mountain, and Newcastle on the Cougar Mountain side. Sammamish sits just north of Lake Sammamish State Park.
+                We install fences throughout Issaquah. From Olde Town we also work in Issaquah Highlands on the plateau, Mirrormont in the Tiger Mountain foothills, and Newcastle on the Cougar Mountain side. Sammamish sits just north of Lake Sammamish State Park.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">

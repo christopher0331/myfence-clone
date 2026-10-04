@@ -23,7 +23,7 @@ import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/stru
 const CANONICAL = "https://myfence.com/service-areas/issaquah/mirrormont";
 const META_TITLE = "Mirrormont Fence Installation | Issaquah | MyFence.com";
 const META_DESCRIPTION =
-  "Mountain fence installation in Mirrormont, Issaquah. Wildlife-resistant cedar, hogwire & hybrid fencing for Squak Mountain properties. Free quotes. (253) 455-1885.";
+  "Fence installation in Mirrormont, in the Tiger Mountain foothills southeast of Issaquah. Cedar and hybrid fencing, with covenant review before wire mesh. Free quotes. (253) 455-1885.";
 
 const MirrorMontPage = () => {
   const structuredData = buildNeighborhoodStructuredData({
@@ -33,19 +33,19 @@ const MirrorMontPage = () => {
     description: META_DESCRIPTION,
     faqItems: [
       {
-        question: "Do I need a permit to build a fence on Squak Mountain in Mirrormont?",
+        question: "Do I need a permit to build a fence in Mirrormont?",
         answer:
-          "Yes — King County and the City of Issaquah require building permits for most fences over 6 feet, and Squak Mountain properties may have additional critical-area setback requirements due to steep slopes and environmentally sensitive zones. MyFence.com handles the full permit process for Mirrormont homeowners, including any geotechnical documentation needed for mountain lots.",
+          "King County is the permitting authority. King County says fences 6 feet high or less do not need a building permit unless the property contains critical areas, and fences over 6 feet do (https://kingcounty.gov/en/dept/local-services/certificates-permits-licenses/permits/permits-inspections-codes-buildings-land-use/do-you-need-a-permit). Steep lots in the Tiger Mountain foothills can fall in that review. We research the parcel and file county paperwork when it is required. Fence plans still go to the Mirrormont Architectural Committee before installation.",
       },
       {
         question: "What fence styles are best for wildlife resistance in Mirrormont?",
         answer:
-          "Cedar privacy fences with reinforced bottom rails and no-dig barriers deter deer and small animals effectively. For bear country, we recommend our hybrid aluminum/cedar system with steel posts — it provides the structural strength needed to withstand large-animal contact. Hogwire with a cedar frame is also popular in Mirrormont for defining property lines while maintaining the natural forest aesthetic.",
+          "Cedar privacy fences with reinforced bottom rails and no-dig barriers deter deer and small animals. A hybrid aluminum/cedar system on steel posts adds impact resistance where larger animals pass through. Hogwire is wire mesh. The Mirrormont covenants do not allow chain-link or other wire mesh where it is visible from the adjacent road. The Architectural Committee may approve wire mesh in other locations. Submit the plan to the committee before panels are ordered.",
       },
       {
         question: "How much does fence installation cost for Mirrormont mountain properties?",
         answer:
-          "Mirrormont fence costs carry a mountain premium due to steep terrain, remote access, and reinforced engineering. Cedar privacy typically runs $45–$65 per linear foot, hogwire $38–$55, and hybrid aluminum/cedar $55–$75. Exact pricing depends on slope severity, access difficulty, and linear footage. Contact us for a free on-site estimate specific to your Squak Mountain property.",
+          "Mirrormont fence costs carry a mountain premium due to steep terrain, access, and reinforced engineering. Cedar privacy typically runs $45–$65 per linear foot, hogwire $38–$55, and hybrid aluminum/cedar $55–$75. Wire mesh, including hogwire, still has to clear the Architectural Committee and cannot be visible from the adjacent road. Exact pricing depends on slope, access, and linear footage. Contact us for a free on-site estimate for your Tiger Mountain foothill property.",
       },
     ],
   });
@@ -82,7 +82,7 @@ const MirrorMontPage = () => {
                   Mirrormont Fence Installation
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Mountain fence specialists for Mirrormont's Squak Mountain properties. Wildlife-resistant cedar, hogwire, and hybrid fencing engineered for steep forested terrain and rugged elevation changes.
+                  Mountain fence specialists for Mirrormont in the Tiger Mountain foothills. Wildlife-resistant cedar and hybrid fencing for steep forested lots, with covenant review before any wire mesh.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="tel:12534551885">
@@ -133,10 +133,37 @@ const MirrorMontPage = () => {
                 Fencing for Mirrormont's Mountain Properties
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Mirrormont is a secluded, wooded residential community perched on Squak Mountain in Issaquah. Properties here sit on larger, heavily forested lots at elevation — with steep driveways, rugged terrain, and a rural character that feels miles from the city despite being minutes from downtown Issaquah. There's no HOA and the roads are private, but the mountain environment creates fencing challenges that most contractors simply aren't prepared for.
+                Mirrormont is a wooded residential community in the Tiger Mountain foothills, southeast of Issaquah in unincorporated King County. Lots here are larger and forested, with steep driveways and grade changes along the property line. The{" "}
+                <a
+                  href="https://www.mirrormont.org/covenants"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  Mirrormont Community Association covenants
+                </a>{" "}
+                require Architectural Committee approval before a fence is built. Chain-link and other wire mesh are not permitted where they can be seen from the adjacent road. The streets are{" "}
+                <a
+                  href="https://www.mirrormont.org/new-resident-faq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  King County roads
+                </a>
+                . The foothill setting still asks more of a fence than a flat suburban lot.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                MyFence.com has built fences throughout Mirrormont and understands what mountain lots demand: reinforced post foundations for steep grades, wildlife-resistant designs that hold up against deer, bears, and coyotes, and materials that perform in the wetter, cooler microclimate of Squak Mountain's forest canopy. Our Fence Genius technology maps the exact terrain of your lot so every panel follows the grade — no gaps, no shortcuts.
+                MyFence.com builds fences throughout Mirrormont and plans for what these lots demand: reinforced post foundations for steep grades, wildlife-resistant designs, and materials that hold up under the wetter forest canopy of the{" "}
+                <a
+                  href="https://www.mirrormont.org/park-committee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline decoration-2 underline-offset-2"
+                >
+                  Tiger Mountain foothills
+                </a>
+                . Fence Genius maps the grade so every panel follows the slope. Fence drawings go to the Architectural Committee before installation.
               </p>
             </div>
           </div>
@@ -167,7 +194,7 @@ const MirrorMontPage = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Wildlife-Resistant Designs</h3>
                       <p className="text-muted-foreground">
-                        Fences built to deter deer, bears, and coyotes common on Squak Mountain. Reinforced bottom rails, no-dig barriers, and structural strength to withstand large-animal contact.
+                        Fences built for deer, bears, and coyotes that move through the Tiger Mountain foothills. Reinforced bottom rails, no-dig barriers, and structural strength for large-animal contact.
                       </p>
                     </div>
                   </div>
@@ -189,7 +216,7 @@ const MirrorMontPage = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Remote-Access Experience</h3>
                       <p className="text-muted-foreground">
-                        Mirrormont's private roads and steep driveways require equipment and logistics planning that general contractors overlook. We've done it before and know how to get the job done efficiently.
+                        King County maintains Mirrormont's roads, and many driveways are still steep and narrow. We plan equipment staging and material delivery around those county-road conditions.
                       </p>
                     </div>
                   </div>
@@ -219,13 +246,13 @@ const MirrorMontPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Steep Mountain Terrain</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Mirrormont lots routinely have 25–45 degree grade changes across a single property line. Many driveways alone climb hundreds of feet from the private roads below. Standard fence panels can't follow this kind of terrain — you end up with large triangular gaps at the bottom or panels that jut out at odd angles. Our Fence Genius system maps the exact slope profile and we manufacture custom racked panels that follow it precisely. Posts are set 36–48 inches deep with reinforced concrete to resist the lateral forces that mountain slopes produce over time.
+                    Mirrormont lots often change grade along a single property line, and many driveways climb from the King County road below. Standard fence panels leave gaps or jut at odd angles on that kind of slope. Fence Genius maps the slope profile and we manufacture custom racked panels that follow it. Posts are set deep with reinforced concrete so the line stays put on a foothill grade.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Wildlife Pressure</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Mirrormont sits in the middle of active wildlife habitat. Deer are a daily presence, black bears pass through regularly, and coyotes are common after dark. A fence here isn't just a boundary marker — it needs structural integrity to resist animal contact. We use reinforced bottom rails with no-dig barriers for deer, and our hybrid aluminum/cedar system on steel posts provides the impact resistance needed for larger animals. Hogwire sections can be used strategically to maintain sightlines while keeping wildlife out of gardens and play areas.
+                    Mirrormont sits in active wildlife habitat in the Tiger Mountain foothills. Deer, black bears, and coyotes use these lots. A fence here needs structural integrity for animal contact. We use reinforced bottom rails with no-dig barriers for deer, and a hybrid aluminum/cedar system on steel posts where larger animals are the concern. Hogwire is wire mesh. The covenants allow the Architectural Committee to approve it only where it is not visible from the adjacent road.
                   </p>
                 </div>
                 <div>
@@ -235,9 +262,42 @@ const MirrorMontPage = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Access & Logistics on Private Roads</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Covenants and the Architectural Committee</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Mirrormont's private roads are narrow, winding, and steep. Getting materials and equipment to your property requires advance planning — standard delivery trucks can't always make the climb. We coordinate equipment staging, use compact machinery where needed, and plan material delivery around Mirrormont's road conditions so your project stays on schedule without disrupting neighbors.
+                    Mirrormont has recorded covenants and a{" "}
+                    <a
+                      href="https://www.mirrormont.org/architectural-committee-faq"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      Mirrormont Architectural Committee
+                    </a>{" "}
+                    (MARC). Fence plans go to the committee before installation. The published guidelines list split rail, cedar plank privacy, and picket fencing among acceptable materials. Chain-link and other wire mesh are not permitted where they are visible from the adjacent roadway. The committee may approve wire mesh in other locations, depending on proximity to roads, neighboring properties, and wooded buffers. Written approval names the property and the conditions. Contact the committee at marc@mirrormont.org and read the{" "}
+                    <a
+                      href="https://www.mirrormont.org/covenants"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      covenant fence guidelines
+                    </a>{" "}
+                    before you lock a style. The association describes itself as a community association. Confirm anything that is not in those published pages with the committee.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">Access on King County Roads</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Mirrormont&apos;s roads are maintained by King County. The association directs street maintenance, paving, and snow plowing to the county, and its{" "}
+                    <a
+                      href="https://www.mirrormont.org/_files/ugd/c88aa2_5cbdb279c1ca42b0863cad0a531859a3.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      roads newsletter
+                    </a>{" "}
+                    describes county maintenance on the main roads. Those roads are still narrow, winding, and steep. We stage equipment, use compact machinery where the climb requires it, and plan delivery so the project stays on schedule.
                   </p>
                 </div>
               </div>
@@ -253,7 +313,7 @@ const MirrorMontPage = () => {
                 Fence Installation Cost in Mirrormont
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                Mountain fencing is an investment that reflects the terrain and logistics of Squak Mountain. Below are typical ranges for Mirrormont; exact pricing depends on slope severity, access difficulty, wildlife requirements, and linear footage.
+                Mountain fencing is an investment that reflects the terrain and logistics of the Tiger Mountain foothills. Below are typical ranges for Mirrormont; exact pricing depends on slope, access, wildlife requirements, and linear footage. Wire mesh still needs Architectural Committee approval and cannot face the road.
               </p>
               <Card className="p-6 mb-6">
                 <ul className="space-y-3 text-muted-foreground">
@@ -289,7 +349,7 @@ const MirrorMontPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Cedar Privacy Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    The top choice for Mirrormont properties needing privacy and wildlife deterrence. Board-on-board construction with reinforced bottom rails handles deer pressure. Pre-stained options blend with Squak Mountain's natural surroundings.
+                    A covenant-listed option for Mirrormont properties that need privacy and wildlife deterrence. Board-on-board construction with reinforced bottom rails handles deer pressure. Pre-stained cedar fits the forested Tiger Mountain foothills. Submit the plan to the Architectural Committee.
                   </p>
                   <Link href="/fence-styles/picture-frame-fence" className="text-primary text-sm font-medium hover:underline">
                     View cedar styles →
@@ -298,7 +358,7 @@ const MirrorMontPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">Hogwire Fence</h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Defines property lines while preserving Mirrormont's forest views and natural feel. Cedar frame with black or galvanized mesh. Lower wind load makes it ideal for exposed mountain slopes.
+                    Wire mesh, including hogwire, is not permitted where it is visible from the adjacent road. The Architectural Committee may approve it elsewhere, depending on buffers and neighboring lots. Confirm placement in writing before you choose this style.
                   </p>
                   <Link href="/fence-styles/black-hogwire-fence" className="text-primary text-sm font-medium hover:underline">
                     View hogwire styles →
@@ -333,7 +393,7 @@ const MirrorMontPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">2. Design & Permits</h3>
                   <p className="text-muted-foreground">
-                    Choose from cedar, hogwire, or hybrid styles. We handle Issaquah/King County permit applications and any critical-area documentation required for Squak Mountain properties.
+                    Choose cedar, hybrid, or a wire-mesh layout the Architectural Committee can approve. We handle King County permit applications and any critical-area documentation for Tiger Mountain foothill lots.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -345,7 +405,7 @@ const MirrorMontPage = () => {
                 <Card className="p-6">
                   <h3 className="text-xl font-semibold mb-3">4. Mountain Installation</h3>
                   <p className="text-muted-foreground">
-                    Our crew arrives with pre-fabricated panels and compact equipment suited for Mirrormont's private roads. Deep post foundations, reinforced bracing, and precision panel fitting. Most projects complete in 2–4 days.
+                    Our crew arrives with pre-fabricated panels and compact equipment suited to Mirrormont&apos;s steep King County roads. Deep post foundations, reinforced bracing, and precision panel fitting. Most projects complete in 2–4 days.
                   </p>
                 </Card>
                 <Card className="p-6">
@@ -404,7 +464,7 @@ const MirrorMontPage = () => {
                 Ready to Fence Your Mirrormont Property?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Get a free on-site estimate from Issaquah's mountain fence specialists. We'll assess your Squak Mountain slope, discuss wildlife-resistant options, and recommend the best solution for your property.
+                Get a free on-site estimate from fence specialists who work the Tiger Mountain foothills. We&apos;ll assess the slope, review the covenant limits on wire mesh, and recommend a design you can take to the Architectural Committee.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="px-8 py-4" variant="default">

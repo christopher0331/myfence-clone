@@ -267,7 +267,7 @@ const ProvidencePointPage = () => {
         <ServiceAreaPhotoGallery
           city="Issaquah"
           title="Recent Fence Work Near Providence Point"
-          description="These photos are from nearby Issaquah jobs, including Mirrormont on Squak Mountain. Same crew, same materials, and the same Fence Genius process we use on Providence Point village lots."
+          description="These photos are from nearby Issaquah jobs, including Mirrormont in the Tiger Mountain foothills. Same crew, same materials, and the same Fence Genius process we use on Providence Point village lots."
         />
 
         {/* 7. Featured project — renders only if a matching city/neighborhood photo exists */}
@@ -560,7 +560,7 @@ const ProvidencePointPage = () => {
                 Also Serving Nearby Issaquah Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Issaquah. From Providence Point we also work in Issaquah Highlands just up the hill, Mirrormont on Squak Mountain, and Klahanie across SE 43rd Way in Sammamish.
+                We install fences throughout Issaquah. From Providence Point we also work in Issaquah Highlands just up the hill, Mirrormont in the Tiger Mountain foothills, and Klahanie across SE 43rd Way in Sammamish.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
