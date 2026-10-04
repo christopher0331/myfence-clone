@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/three-ft-black-hogwire-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "3' Black Hogwire Fence - Budget-Friendly Open Fencing | MyFence.com",
     description: "Affordable 3' Black Hogwire Fence with cedar frame. Ideal for flat terrain and wooded backdrops. Maintains visual openness while providing boundary definition.",
     url: "https://myfence.com/fence-styles/three-ft-black-hogwire-fence",

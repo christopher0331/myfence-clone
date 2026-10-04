@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/picture-frame-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Picture Frame Cedar Fence Seattle | Premium Privacy Fencing",
     description: "Seattle's most popular picture frame cedar fence. Clean trim details, strong construction, 30+ years experience. Free estimates. Call (253) 455-1885.",
     url: "https://myfence.com/fence-styles/picture-frame-fence",

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/horizontal-lattice-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Horizontal Lattice Fence Seattle | Premium 5/8 Inch Thick Cedar Strips",
     description: "Premium horizontal lattice fence with 5/8 inch thick strips, craftsman foundation, stainless steel fasteners. Seattle's finest lattice work. Call (253) 455-1885.",
     url: "https://myfence.com/fence-styles/horizontal-lattice-fence",

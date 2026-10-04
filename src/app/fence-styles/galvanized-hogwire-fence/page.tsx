@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/galvanized-hogwire-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "5' Galvanized Hogwire Fence Seattle | Durable & Cost-Effective",
     description: "Affordable 5' galvanized hogwire fence for Seattle homes. Strong wire panels with cedar frame - perfect for moderate height privacy. Call (253) 455-1885.",
     url: "https://myfence.com/fence-styles/galvanized-hogwire-fence",

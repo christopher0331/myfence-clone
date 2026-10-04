@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://myfence.com/fence-styles/modified-picture-frame-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Modified Picture Frame Fence | HOA-Approved | MyFence.com",
     description:
       "Cedar modified picture frame fence with top cap and side trim — no bottom board. HOA-approved, more economical than full picture frame. Stainless steel fasteners standard.",

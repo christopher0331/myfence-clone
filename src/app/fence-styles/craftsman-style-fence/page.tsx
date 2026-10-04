@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/craftsman-style-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Craftsman Style Fence | Seattle | MyFence.com",
     description: "Cedar craftsman style fences in Seattle with alternating board pattern for wind flow and visibility. 3 rails, 3 trim, top cap. Get a fast quote today.",
     url: "https://myfence.com/fence-styles/craftsman-style-fence",
