@@ -10,11 +10,7 @@ import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import OptimizedImage from "@/components/OptimizedImage";
-import NeighborhoodBreadcrumb from "@/components/neighborhoods/NeighborhoodBreadcrumb";
-import {
-  buildNeighborhoodBreadcrumbTrail,
-  buildNeighborhoodStructuredData,
-} from "@/components/neighborhoods/structuredData";
+import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 
 interface TehalehPageProps {
   canonical?: string;
@@ -41,16 +37,11 @@ const TehalehPage = ({
     ? "Expert fence installation for Upper Tehaleh's elevated homesites. HOA-compliant cedar and hybrid fencing built for mountain views and plateau winds." 
     : "Professional fence installation for Lower Tehaleh's family neighborhoods. Serving walkable communities with HOA-approved cedar and hogwire fencing.");
   const neighborhoodLabel = isUpper ? "Upper Tehaleh" : "Lower Tehaleh";
-  const tehalehParent = {
-    name: "Tehaleh",
-    url: "https://myfence.com/service-areas/bonney-lake/tehaleh",
-  };
   const structuredData = buildNeighborhoodStructuredData({
     canonical,
     neighborhoodName: `${neighborhoodLabel}, Bonney Lake`,
     pageTitle: displayTitle,
     description: displayMetaDesc,
-    parent: tehalehParent,
     faqItems: [
       {
         question: `Do I need HOA approval to build a fence in ${neighborhoodLabel}?`,
@@ -72,11 +63,6 @@ const TehalehPage = ({
       },
     ],
   });
-  const breadcrumb = buildNeighborhoodBreadcrumbTrail({
-    canonical,
-    neighborhoodName: `${neighborhoodLabel}, Bonney Lake`,
-    parent: tehalehParent,
-  });
 
   return (
     <>
@@ -91,7 +77,6 @@ const TehalehPage = ({
         {/* Hero Section */}
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
-            <NeighborhoodBreadcrumb items={breadcrumb} />
             <Link
               href="/service-areas/bonney-lake"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors"

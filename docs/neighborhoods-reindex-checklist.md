@@ -24,7 +24,6 @@ Pages edited or created during the neighborhood/service-area template rollout. U
 | Angle Lake       | SeaTac      | `/service-areas/seatac/angle-lake`        | https://myfence.com/service-areas/seatac/angle-lake |
 | McMicken Heights | SeaTac      | `/service-areas/seatac/mcmicken-heights`  | https://myfence.com/service-areas/seatac/mcmicken-heights |
 | Bow Lake         | SeaTac      | `/service-areas/seatac/bow-lake`          | https://myfence.com/service-areas/seatac/bow-lake |
-| Tehaleh          | Bonney Lake | `/service-areas/bonney-lake/tehaleh`      | https://myfence.com/service-areas/bonney-lake/tehaleh |
 
 ---
 
@@ -61,7 +60,6 @@ https://myfence.com/service-areas/bonney-lake/lower-tehaleh
 https://myfence.com/service-areas/bonney-lake/falling-water
 https://myfence.com/service-areas/bonney-lake/mountain-creek
 https://myfence.com/service-areas/bonney-lake/downtown-bonney-lake
-https://myfence.com/service-areas/bonney-lake/tehaleh
 ```
 
 ---
