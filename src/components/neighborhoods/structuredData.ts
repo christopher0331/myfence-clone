@@ -5,61 +5,57 @@ export interface NeighborhoodFaqItem {
   answer: string;
 }
 
-export interface NeighborhoodBreadcrumbCrumb {
-  name: string;
-  url: string;
-}
-
-function cityFromCanonical(canonical: string): { slug: string; name: string } {
+function buildBreadcrumbItems(
+  canonical: string,
+  neighborhoodName: string,
+  parent?: { name: string; url: string },
+) {
   const parts = canonical.replace("https://myfence.com/", "").split("/");
   const citySlug = parts[1] || "bonney-lake";
   const cityName = citySlug
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
-  return { slug: citySlug, name: cityName };
-}
 
-/** Shared trail for the visible breadcrumb and BreadcrumbList JSON-LD. */
-export function buildNeighborhoodBreadcrumbTrail({
-  canonical,
-  neighborhoodName,
-  parent,
-}: {
-  canonical: string;
-  neighborhoodName: string;
-  parent?: { name: string; url: string };
-}): NeighborhoodBreadcrumbCrumb[] {
-  const city = cityFromCanonical(canonical);
-  const items: NeighborhoodBreadcrumbCrumb[] = [
-    { name: "Home", url: "https://myfence.com" },
-    { name: "Service Areas", url: "https://myfence.com/service-areas" },
-    { name: city.name, url: `https://myfence.com/service-areas/${city.slug}` },
+  const items: Array<Record<string, unknown>> = [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://myfence.com" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Service Areas",
+      item: "https://myfence.com/service-areas",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: cityName,
+      item: `https://myfence.com/service-areas/${citySlug}`,
+    },
   ];
 
   if (parent) {
-    items.push({ name: parent.name, url: parent.url });
+    items.push({
+      "@type": "ListItem",
+      position: 4,
+      name: parent.name,
+      item: parent.url,
+    });
+    items.push({
+      "@type": "ListItem",
+      position: 5,
+      name: neighborhoodName,
+      item: canonical,
+    });
+  } else {
+    items.push({
+      "@type": "ListItem",
+      position: 4,
+      name: neighborhoodName,
+      item: canonical,
+    });
   }
 
-  items.push({ name: neighborhoodName, url: canonical });
   return items;
-}
-
-function buildBreadcrumbItems(
-  canonical: string,
-  neighborhoodName: string,
-  parent?: { name: string; url: string },
-) {
-  return buildNeighborhoodBreadcrumbTrail({
-    canonical,
-    neighborhoodName,
-    parent,
-  }).map((crumb, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    name: crumb.name,
-    item: crumb.url,
-  }));
 }
 
 interface NeighborhoodSchemaConfig {
