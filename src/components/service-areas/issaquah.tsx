@@ -570,7 +570,7 @@ const Issaquah = () => {
         },
         {
           name: "Mirrormont",
-          description: "Secluded Squak Mountain community with heavily forested lots requiring wildlife-resistant fencing and steep-terrain installation expertise. Click to learn more →",
+          description: "Secluded Tiger Mountain foothills community with covenants, an architectural committee, and forested lots that need wildlife-resistant fencing. Click to learn more →",
           link: "/service-areas/issaquah/mirrormont"
         }
       ]}

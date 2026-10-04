@@ -32,14 +32,14 @@ interface IssaquahHighlandsPageProps {
 const IssaquahHighlandsPage = ({ 
   canonical = "https://myfence.com/service-areas/issaquah-highlands",
   videoTags = [
-    { label: "Galvanized Hog Wire", link: "/fence-styles/galvanized-hogwire-fence" }
+    { label: "Black Hogwire", link: "/fence-styles/black-hogwire-fence" }
   ]
 }: IssaquahHighlandsPageProps) => {
   return (
     <>
       <Seo
         title="Issaquah Highlands Fence Installation | HOA-Compliant Experts"
-        description="Professional fence installation for Issaquah Highlands. Specializing in HOA-compliant designs, hillside engineering, and premium cedar & hogwire systems."
+        description="Professional fence installation for Issaquah Highlands. HOA-compliant hillside designs using stained cedar and black powder-coated or vinyl-coated metal."
         canonical={canonical}
       />
 
@@ -105,7 +105,7 @@ const IssaquahHighlandsPage = ({
                 The Issaquah Highlands represents a premier master-planned community where urban convenience meets mountain proximity. Living here offers stunning views of the Issaquah Alps and Lake Sammamish, but it also brings unique challenges for fencing—including strict HOA guidelines and varied hillside topography.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We specialize in 'Highlands-smart' installations. Our hogwire and premium cedar systems are particularly popular here, providing the security you need for pets and children without obstructing the views that make this community so special. We ensure every fence meets the specific architectural standards of the Highlands while maximizing the longevity of your investment.
+                We specialize in Highlands installations that follow the IHCA Architectural Review Committee guidelines. Black powder-coated or vinyl-coated metal, and stained cedar, provide security for pets and children while keeping the view. Every fence is built to those architectural standards.
               </p>
             </div>
           </div>
@@ -202,7 +202,16 @@ const IssaquahHighlandsPage = ({
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">HOA Architectural Standards</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Issaquah Highlands maintains rigorous architectural review standards. We're intimately familiar with the Highlands Fiber Co-op and neighborhood-specific requirements. Our team prepares comprehensive submission packages to ensure swift approval.
+                    Issaquah Highlands maintains rigorous architectural review standards.{" "}
+                    <a
+                      href="https://issaquahhighlands.com/for-residents/homeowner-resources/make-home-landscape-changes/arc-guidelines/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      Section 8 of the IHCA ARC Guidelines
+                    </a>{" "}
+                    requires metal fencing to be powder-coated or vinyl-coated black. Our team prepares the submission package for the Architectural Review Committee.
                   </p>
                   <Card className="p-5 mt-5">
                     <h4 className="font-semibold mb-3">Download Highlands HOA Fence Forms</h4>
@@ -253,7 +262,7 @@ const IssaquahHighlandsPage = ({
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">View-Preserving Designs</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    For many Highlands homes, the view is the primary asset. Our galvanized hogwire systems provide the security of a full fence while remaining nearly invisible from a distance, preserving your vista of the valley or the Cascades.
+                    For many Highlands homes, the view is the primary asset. Where an open metal fence fits the lot, we use black powder-coated or vinyl-coated panels so the finish matches section 8 of the IHCA guidelines and the valley or Cascade view stays open.
                   </p>
                 </div>
               </div>
@@ -275,7 +284,7 @@ const IssaquahHighlandsPage = ({
                     Watch our expert installation process in the Issaquah Highlands. We specialize in precision-engineered solutions designed for hillside properties and strict architectural requirements.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    From view-preserving hogwire to premium privacy cedar, we deliver durable fences that enhance the beauty and value of your Highlands home.
+                    From black powder-coated metal to stained privacy cedar, we deliver durable fences that enhance the beauty and value of your Highlands home.
                   </p>
                   {videoTags.length > 0 && (
                     <div className="flex flex-wrap gap-2 pt-2">

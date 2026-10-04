@@ -580,7 +580,7 @@ const TalusPage = () => {
                 Also Serving Nearby Issaquah Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Issaquah. From Talus we also work in Issaquah Highlands across I-90, Mirrormont on Squak Mountain, Newcastle on the west slope, and Olde Town at the base of the hill.
+                We install fences throughout Issaquah. From Talus we also work in Issaquah Highlands across I-90, Mirrormont in the Tiger Mountain foothills, Newcastle on the west slope, and Olde Town at the base of the hill.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">

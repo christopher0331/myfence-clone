@@ -4,7 +4,7 @@ import IssaquahHighlandsPage from "@/components/neighborhoods/IssaquahHighlandsP
 export const metadata: Metadata = {
   title: "Issaquah Highlands Fence Installation | HOA-Compliant Experts | MyFence.com",
   description:
-    "Professional fence installation in Issaquah Highlands. Specialized in HOA-compliant designs for hillside homes. Cedar, hogwire & hybrid fencing solutions. Free quotes.",
+    "Professional fence installation in Issaquah Highlands. HOA-compliant hillside designs using stained cedar and black powder-coated or vinyl-coated metal. Free quotes.",
   alternates: {
     canonical: "https://myfence.com/service-areas/issaquah-highlands",
   },

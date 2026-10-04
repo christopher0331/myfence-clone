@@ -11,11 +11,11 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
   metaTitle:
     "Cherokee Bay HOA Approved Fencing | Application | Maple Valley | MyFence.com",
   metaDescription:
-    "Cherokee Bay HOA approved fencing in Maple Valley. Download the HOA fence application and get lakeside ARC-ready installs. Free quotes. (253) 455-1885.",
+    "Cherokee Bay HOA fencing in Maple Valley on Pipe Lake and Lake Lucerne. Download the fence application and get lakeside installs ready for association review. Free quotes. (253) 455-1885.",
   locationLabel: "Cherokee Bay HOA · Maple Valley, WA",
   h1: "Cherokee Bay HOA Approved Fencing",
   heroIntro:
-    "Download the official HOA fence application, learn how closeout works after install, and get lakeside fencing designed to clear association paperwork without fighting Lake Wilderness views.",
+    "Download the official HOA fence application, learn how closeout works after install, and get lakeside fencing designed for views of Pipe Lake and Lake Lucerne.",
   downloadCtaLabel: "Download HOA application",
   trustItems: [
     { icon: "clipboard", label: "Official HOA application PDF" },
@@ -26,6 +26,24 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
   formsIntro:
     "Start with the association's fence application before install. When the project is finished, mail the completed documents to",
   formsSubmitEmail: "service@agynbyte.com",
+  officialLinksHeading: "Community and lake sources",
+  officialLinks: [
+    {
+      label: "Cherokee Bay Community Club",
+      href: "https://www.cherokeebaycc.com/about/",
+      note: "Lakefront community at 21700 SE 265th Way, Maple Valley, with two local lakes",
+    },
+    {
+      label: "City of Maple Valley: About our Lakes",
+      href: "https://www.maplevalleywa.gov/government/departments/public_records_request/about_our_lakes/index.php",
+      note: "Pipe Lake is 52 acres, partly in Maple Valley and Covington, and drains to Lake Lucerne (16 acres, Maple Valley)",
+    },
+    {
+      label: "Voice of the Valley: 1939 Cherokee Bay Resort",
+      href: "https://voiceofthevalley.com/2019/09/10/1939-cherokee-bay-resort/",
+      note: "Maple Valley Historical Society photo history: Cherokee Bay on Pipe Lake, later platted as Cherokee Bay Park",
+    },
+  ],
   forms: [
     {
       href: "/docs/hoa/cherokee-bay-hoa-fence-application.pdf",
@@ -43,7 +61,7 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "Plan for lakeside and county rules",
-      body: "Cherokee Bay Park lots near Lake Wilderness may also face King County shoreline buffers or critical-area limits. We check your parcel so the HOA plan and county rules don’t conflict.",
+      body: "Cherokee Bay Park lots along Pipe Lake and Lake Lucerne may also face King County shoreline or critical-area limits. The City of Maple Valley lists Pipe Lake at 52 acres and Lake Lucerne at 16 acres. We check your parcel so the HOA plan and county rules don’t conflict. Confirm placement with the association before posts go in.",
     },
     {
       title: "Install to the approved plan",
@@ -56,10 +74,10 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
   ],
   reviewHeading: "HOA paperwork meets lakeside realities",
   reviewIntro:
-    "Cherokee Bay Park is not a flat inland subdivision. Slope toward Lake Wilderness, wet soils, and shoreline buffers can change what you can build—even when the HOA application looks straightforward. We design with both layers in mind so you are not rewriting forms after a county setback surprise.",
+    "Cherokee Bay Park is a lakeside neighborhood on Pipe Lake and the connected Lake Lucerne. Slope toward the water, wet soils, and shoreline or critical-area buffers can change what you can build—even when the HOA application looks straightforward. We design with both layers in mind and confirm the parcel with King County and the association.",
   reviewBullets: [
     "HOA application filled with a clear style and materials plan",
-    "Parcel check for shoreline / critical-area constraints near Lake Wilderness",
+    "Parcel check for shoreline / critical-area constraints near Pipe Lake and Lake Lucerne",
     "View-preserving designs that still satisfy privacy along neighbors",
     "Moisture-ready materials and foundations for lakeside lots",
   ],
@@ -100,7 +118,7 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       q: "Do I also need King County shoreline review?",
-      a: "Maybe—lots near Lake Wilderness can fall in shoreline or critical-area buffers. We check your parcel before quoting.",
+      a: "Maybe. Lots along Pipe Lake or Lake Lucerne can fall in shoreline or critical-area buffers. Pipe Lake is the larger lake. We check your parcel before quoting, and the association reviews the fence application separately.",
     },
   ],
   schemaFaqs: [
@@ -122,7 +140,7 @@ export const cherokeeBayHoaConfig: HoaApprovedFencingConfig = {
     {
       question: "Do Cherokee Bay Park fences also need King County shoreline review?",
       answer:
-        "Properties closest to Lake Wilderness may fall within shoreline or critical-area buffers that limit height, placement, or materials. MyFence.com researches your parcel before quoting and designs a plan that can satisfy both HOA paperwork and county rules.",
+        "Properties closest to Pipe Lake or Lake Lucerne may fall within shoreline or critical-area buffers that limit height, placement, or materials. The City of Maple Valley lists Pipe Lake at 52 acres and Lake Lucerne at 16 acres. MyFence.com researches your parcel before quoting and designs a plan that can satisfy both HOA paperwork and county rules.",
     },
   ],
   ctaHeading: "Ready for Cherokee Bay HOA approved fencing?",

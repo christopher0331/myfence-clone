@@ -237,7 +237,7 @@ const MapleValley = () => {
         },
         {
           name: "Cherokee Bay Park",
-          description: "Lakeside neighborhood near Lake Wilderness with water-adjacent properties requiring moisture-resistant fencing. Click to learn more →",
+          description: "Lakeside neighborhood on Pipe Lake and Lake Lucerne, with water-adjacent properties that need moisture-resistant fencing. Click to learn more →",
           link: "/service-areas/maple-valley/cherokee-bay-park"
         },
         {
