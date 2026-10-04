@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/shadow-box-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Shadow Box Fence Installation | Good Neighbor Cedar Fence | MyFence.com",
     description:
       "Cedar shadow box fence with alternating boards on both sides of the rails. Identical finished appearance from either yard, with airflow between boards.",

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/black-hogwire-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "6' Black Hogwire Fence Seattle | Security & Style Combined",
     description: "Secure 6' black hogwire fence for Seattle properties. Perfect for wooded backyards - keeps animals out while maintaining openness. Call (253) 455-1885.",
     url: "https://myfence.com/fence-styles/black-hogwire-fence",

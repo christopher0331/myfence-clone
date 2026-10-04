@@ -14,7 +14,7 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Seattle Fence Installation | Local Fence Company",
+  title: "Seattle Fence Installation | Local Fence Company | MyFence.com",
   description:
     "Local Seattle fence company for cedar, hogwire, and hybrid fence installation. Father & son team using Fence Genius. Free quotes. Call (253) 455-1885.",
   alternates: {
@@ -33,6 +33,13 @@ const ContactForm = dynamic(
 
 export default function HomePage() {
   const faqSchema = generateFaqSchema();
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "MyFence.com",
+    alternateName: "MyFence",
+    url: "https://myfence.com/",
+  };
   const orgLd = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
@@ -67,7 +74,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([orgLd, faqSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteLd, orgLd, faqSchema]) }}
       />
 
       <HeroVideoSection />

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Seattle Cedar Fence Styles: Picture Frame, Horizontal",
     description:
       "Expert fence styles in Seattle, WA: picture frame cedar, horizontal, hogwire, craftsman designs. 30+ years experience. Call (253) 455-1885.",

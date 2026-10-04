@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-upgrades/mounded-concrete",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     images: ["/images/upgrades/mounded-concrete/hero-line.png"],
   },
 };

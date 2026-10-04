@@ -56,6 +56,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       description: mdxPost.description || "",
       alternates: { canonical: `https://myfence.com/blog/${slug}` },
       openGraph: {
+        siteName: "MyFence.com",
+        locale: "en_US",
         title: mdxPost.title,
         description: mdxPost.description || "",
         url: `https://myfence.com/blog/${slug}`,
@@ -83,6 +85,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     description: article.description,
     alternates: { canonical: `https://myfence.com/blog/${slug}` },
     openGraph: {
+      siteName: "MyFence.com",
+      locale: "en_US",
       title: socialTitle,
       description: article.description,
       url: `https://myfence.com/blog/${slug}`,

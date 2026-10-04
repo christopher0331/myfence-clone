@@ -19,6 +19,24 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
+  // Child routes that export their own openGraph replace this object entirely
+  // (Next.js does not deep-merge it). Those pages set siteName themselves.
+  openGraph: {
+    siteName: SITE_CONFIG.fullName,
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/myfence-logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "MyFence.com",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

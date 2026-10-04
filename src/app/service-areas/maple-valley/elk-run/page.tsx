@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Professional fence installation in Elk Run, Maple Valley. Cedar picture frame and privacy fencing for HOA-governed lots near the former golf course. Free quotes. (253) 455-1885.",
   alternates: { canonical: "https://myfence.com/service-areas/maple-valley/elk-run" },
   openGraph: {
+    siteName: "MyFence.com",
+    locale: "en_US",
     title: "Elk Run Fence Installation | Maple Valley | MyFence.com",
     description:
       "Professional fence installation in Elk Run, Maple Valley. Cedar picture frame and privacy fencing for HOA-governed lots near the former golf course.",

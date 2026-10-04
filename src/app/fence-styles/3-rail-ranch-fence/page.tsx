@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/fence-styles/3-rail-ranch-fence",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "3-Rail Ranch Fence Installation | Pressure Treated Post-and-Rail | MyFence.com",
     description:
       "3-rail ranch fence — 6x6 pressure treated posts with three pressure treated 2x8 horizontal rails. Open, post-and-rail style for driveways, property lines, and large lots.",

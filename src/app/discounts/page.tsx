@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://myfence.com/discounts",
   },
   openGraph: {
+    siteName: "MyFence.com",
+    type: "website",
+    locale: "en_US",
     title: "Mystery Fence Discount | MyFence.com Seattle",
     description:
       "Solve our daily riddle and spin the wheel for exclusive fence discounts. Get up to 15% off cedar fencing, free processing, and more!",
