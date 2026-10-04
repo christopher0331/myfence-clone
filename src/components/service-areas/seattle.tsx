@@ -69,7 +69,8 @@ const Seattle = () => {
         },
         {
           name: "Queen Anne",
-          description: "Historic hilltop neighborhood with steep slopes requiring terraced installations and preservation-approved designs for landmark homes"
+          description: "Historic hilltop neighborhood with steep slopes requiring terraced installations and preservation-approved designs for landmark homes. Click to learn more →",
+          link: "/service-areas/seattle/queen-anne"
         },
         {
           name: "Wallingford",
