@@ -18,7 +18,11 @@ import {
   Waves,
 } from "lucide-react";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
-import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
+import NeighborhoodBreadcrumb from "@/components/neighborhoods/NeighborhoodBreadcrumb";
+import {
+  buildNeighborhoodBreadcrumbTrail,
+  buildNeighborhoodStructuredData,
+} from "@/components/neighborhoods/structuredData";
 import type { HoaApprovedFencingConfig, HoaTrustIcon } from "@/components/hoa/types";
 
 const TRUST_ICONS: Record<HoaTrustIcon, typeof ClipboardList> = {
@@ -35,13 +39,19 @@ const TRUST_ICONS: Record<HoaTrustIcon, typeof ClipboardList> = {
  * Pass a config from `src/components/hoa/configs/` — see README in this folder.
  */
 export default function HoaApprovedFencingPage({ config }: { config: HoaApprovedFencingConfig }) {
+  const parentCrumb = { name: config.parentCrumbName, url: config.parentUrl };
   const structuredData = buildNeighborhoodStructuredData({
     canonical: config.canonical,
     neighborhoodName: config.h1,
     pageTitle: config.h1,
     description: config.metaDescription,
-    parent: { name: config.parentCrumbName, url: config.parentUrl },
+    parent: parentCrumb,
     faqItems: config.schemaFaqs,
+  });
+  const breadcrumb = buildNeighborhoodBreadcrumbTrail({
+    canonical: config.canonical,
+    neighborhoodName: config.h1,
+    parent: parentCrumb,
   });
 
   return (
@@ -56,6 +66,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
       <main className="min-h-screen">
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
+            {config.showBreadcrumb ? <NeighborhoodBreadcrumb items={breadcrumb} /> : null}
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2 mb-6">
               <Link
                 href={config.parentHref}
