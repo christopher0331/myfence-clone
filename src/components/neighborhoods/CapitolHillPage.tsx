@@ -595,7 +595,7 @@ const CapitolHillPage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Capitol Hill we also work in Ravenna toward the University District and Ballard toward the Ship Canal, and we quote Queen Anne and Madison Park from the Seattle service-area page.
+                We install fences throughout Seattle. From Capitol Hill we also work in Ravenna toward the University District, Ballard toward the Ship Canal, and Queen Anne toward Seattle Center, and we quote Madison Park from the Seattle service-area page.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -608,7 +608,7 @@ const CapitolHillPage = () => {
                   <Link href="/service-areas/seattle">Madison Park</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/seattle">Queen Anne</Link>
+                  <Link href="/service-areas/seattle/queen-anne">Queen Anne</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/ballard">Ballard</Link>
