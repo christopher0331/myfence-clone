@@ -65,7 +65,8 @@ const Seattle = () => {
         },
         {
           name: "Fremont",
-          description: "Eclectic arts district with unique properties needing custom designs that match the neighborhood's creative character"
+          description: "Eclectic arts district with unique properties needing custom designs that match the neighborhood's creative character. Click to learn more →",
+          link: "/service-areas/seattle/fremont"
         },
         {
           name: "Queen Anne",
