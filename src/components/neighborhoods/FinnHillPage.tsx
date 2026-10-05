@@ -315,6 +315,22 @@ const FinnHillPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold">
                 Finn Hill-Specific Fencing Considerations
               </h2>
+              <Link
+                href="/service-areas/kirkland/finn-hill/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Overlook at Finn Hill HOA Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    A four-house association on NE 117th Street, confirmed in Kirkland&apos;s short-plat file. No published fence rules were found. See the guide, then ask the architectural review committee before you build. MyFence.com is not the HOA.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Learn More <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">
@@ -689,6 +705,11 @@ const FinnHillPage = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland">Kirkland overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/kirkland/finn-hill/hoa-approved-fencing">
+                    Overlook at Finn Hill HOA fencing
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/kirkland/juanita">Juanita</Link>
