@@ -75,7 +75,8 @@ const Seattle = () => {
         },
         {
           name: "Wallingford",
-          description: "Family-friendly residential area with bungalows needing traditional fence styles that maintain neighborhood charm and period character"
+          description: "Family-friendly residential area with bungalows needing traditional fence styles that maintain neighborhood charm and period character. Click to learn more →",
+          link: "/service-areas/seattle/wallingford"
         },
         {
           name: "Green Lake",
