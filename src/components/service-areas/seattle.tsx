@@ -79,7 +79,8 @@ const Seattle = () => {
         },
         {
           name: "Green Lake",
-          description: "Active lakeside community with recreational properties requiring durable fencing that handles high foot traffic and pet activity"
+          description: "Active lakeside community with recreational properties requiring durable fencing that handles high foot traffic and pet activity. Click to learn more →",
+          link: "/service-areas/seattle/green-lake"
         },
         {
           name: "Magnolia",
