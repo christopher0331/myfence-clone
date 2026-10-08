@@ -158,6 +158,11 @@ export function getNeighborhoodsForCity(citySlug: string): string[] {
 }
 
 export function buildImageUrl(file: string, width?: number): string {
+  // Site-root paths are files under public/ (this batch has no ImageKit upload).
+  // ImageKit width transforms do not apply to those local files.
+  if (file.startsWith("/")) {
+    return file;
+  }
   const base = `${IMAGEKIT_SERVICE_AREA_BASE}/${file}`;
   if (!width) return base;
   return `${base}?tr=w-${width}`;

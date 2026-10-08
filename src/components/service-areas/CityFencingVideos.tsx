@@ -38,6 +38,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
     videos: [
       { videoId: "iUUnbPpWYvo", title: "Renton fence installation by MyFence.com" },
       { videoId: "1oVcsgarR6o", title: "Craftsman style cedar fence walkthrough in Kennydale, Renton by MyFence.com" },
+      { videoId: "CmE1vqMtePU", title: "Renton Fence Installation by MyFence.com" },
     ],
   },
   Issaquah: {
@@ -63,6 +64,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
       { videoId: "Tct8oXAwQ04", title: "Maple Valley Fencing" },
       { videoId: "rjdljZMsQYo", title: "180 Foot Three Rail Picture Frame Fence in Maple Valley by MyFence.com" },
       { videoId: "fpBjboqMwZE", title: "HOA Compliant Fence in Maple Valley by MyFence.com" },
+      { videoId: "qttpUZ4eXkI", title: "Setting Fence Posts in Maple Valley by MyFence.com" },
     ],
   },
   Covington: {
@@ -113,6 +115,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
       { videoId: "6DshwPn78FY", title: "MyFence.com installs a Cedar Trellis System near Seattle" },
       { videoId: "ElK4fA4nhEc", title: "MyFence.com: Best Fence Contractor in Seattle, WA" },
       { videoId: "1tfZDonClrA", title: "What does a fence cost? Find out at SeattleFenceQuote.com" },
+      { videoId: "NvXlZs0NT5M", title: "MyFence.com Experience Fence Build in Seattle" },
     ],
   },
   Kirkland: {
