@@ -162,8 +162,9 @@ const DiscountsPage = () => {
 
   const playClickSound = () => {
     try {
-      const audioWindow = window as Window & { webkitAudioContext?: typeof AudioContext };
-      const AudioCtx = audioWindow.AudioContext || audioWindow.webkitAudioContext;
+      const webkitAudio = (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      const AudioCtx = (typeof AudioContext !== "undefined" ? AudioContext : undefined) || webkitAudio;
+      if (!AudioCtx) return;
       const audioContext = new AudioCtx();
 
       const oscillator1 = audioContext.createOscillator();
