@@ -8,23 +8,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "inline-contact";
 
 export const InlineContactSection = () => {
   const [addressValid, setAddressValid] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate("inline-contact-");
   const [formData, setFormData] = useState({
     name: '',
@@ -32,7 +27,6 @@ export const InlineContactSection = () => {
     phone: '',
     address: '',
     message: '',
-    textConsent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -43,11 +37,7 @@ export const InlineContactSection = () => {
     setFormData(prev => ({
       ...prev,
       [name]: value,
-      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
-    if (name === "phone" && value.trim() === "") {
-      clearNudge();
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,14 +63,6 @@ export const InlineContactSection = () => {
         title: "Address required",
         description: "Please enter your property address.",
         variant: "destructive",
-      });
-      return;
-    }
-
-    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, "inline-text-consent-row")) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
       });
       return;
     }
@@ -111,7 +93,7 @@ export const InlineContactSection = () => {
         propertyAddress: formData.address,
         fenceType: "Inline Contact",
         message: formData.message,
-        textConsent: formData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -129,7 +111,7 @@ export const InlineContactSection = () => {
           phone: formData.phone,
           address: formData.address,
           description: `${crmFailureNotice(crm)}${formData.message}`,
-          textConsent: formData.textConsent,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           sourcePage,
           site: attribution.site,
           formId: attribution.formId,
@@ -247,29 +229,6 @@ export const InlineContactSection = () => {
                     className="mt-1"
                   />
                 </div>
-                <div
-                  id="inline-text-consent-row"
-                  className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                >
-                  <div className="flex items-start space-x-2">
-                  <Checkbox
-                    id="inline-text-consent"
-                    checked={formData.textConsent}
-                    onCheckedChange={(checked) => {
-                      const consentGiven = checked === true;
-                      setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                      onConsentChange(consentGiven);
-                    }}
-                  />
-                  <Label
-                    htmlFor="inline-text-consent"
-                    className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                  >
-                    {TEXT_CONSENT_MESSAGE}
-                  </Label>
-                  </div>
-                  <TextConsentNudgeNote visible={showNudge} />
-                </div>
                 <div>
                   <Label htmlFor="inline-address" className="text-sm font-medium">Property Address</Label>
                   <div className="mt-1">
@@ -302,6 +261,7 @@ export const InlineContactSection = () => {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+                <SmsSubmitDisclosure buttonLabel="Send Message" />
               </div>
             </form>
           )}

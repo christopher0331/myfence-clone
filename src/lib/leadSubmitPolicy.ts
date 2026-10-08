@@ -6,8 +6,8 @@
  * return early when the address was typed instead of picked from Google Places.
  * The visitor saw a corner toast; CRM and email never ran.
  *
- * Typed addresses are delivered as-is. SMS consent is optional (one-time
- * nudge on first submit, then the lead still delivers).
+ * Typed addresses are delivered as-is. SMS consent is disclosed in fine print
+ * under the submit button; submitting the form records consent.
  */
 
 export type LeadSubmitBlockReason = "missing_address";

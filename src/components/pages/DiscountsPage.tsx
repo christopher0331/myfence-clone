@@ -7,16 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
-import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
 
 const WHEEL_FORM_KEY = "discount-wheel";
@@ -146,9 +143,6 @@ const DiscountsPage = () => {
   const [formEmail, setFormEmail] = useState("");
   const [formPhone, setFormPhone] = useState("");
   const [formDescription, setFormDescription] = useState("");
-  const [formTextConsent, setFormTextConsent] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate("discounts-");
 
   useEffect(() => {
@@ -168,7 +162,8 @@ const DiscountsPage = () => {
 
   const playClickSound = () => {
     try {
-      const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
+      const audioWindow = window as Window & { webkitAudioContext?: typeof AudioContext };
+      const AudioCtx = audioWindow.AudioContext || audioWindow.webkitAudioContext;
       const audioContext = new AudioCtx();
 
       const oscillator1 = audioContext.createOscillator();
@@ -325,10 +320,6 @@ const DiscountsPage = () => {
         toast.error("Please fill in all required fields.");
         return;
       }
-      if (interceptUncheckedSubmit(formPhone, formTextConsent, "already-played-text-consent-row")) {
-        toast(TEXT_CONSENT_NUDGE_TITLE, { description: TEXT_CONSENT_NUDGE_DESCRIPTION });
-        return;
-      }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(formEmail)) {
         toast.error("Please enter a valid email address.");
@@ -344,7 +335,6 @@ const DiscountsPage = () => {
         setFormEmail("");
         setFormPhone("");
         setFormDescription("");
-        setFormTextConsent(false);
         return;
       }
 
@@ -357,7 +347,7 @@ const DiscountsPage = () => {
         address: formAddress,
         email: formEmail,
         phone: formPhone,
-        textConsent: formTextConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         description: formDescription || "General inquiry from discount page",
         sourcePage,
         site: attribution.site,
@@ -376,7 +366,7 @@ const DiscountsPage = () => {
         propertyAddress: emailData.address || "",
         fenceType: "Discounts Page",
         message: emailData.description || "General inquiry from discount page",
-        textConsent: emailData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage: emailData.sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -411,7 +401,6 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
-      setFormTextConsent(false);
     } catch {
       toast.error("There was an error submitting your information. Please try again.");
     }
@@ -422,10 +411,6 @@ const DiscountsPage = () => {
     try {
       if (!formFirstName.trim() || !formLastName.trim() || !formEmail.trim() || !formPhone.trim()) {
         toast.error("Please fill in all required fields.");
-        return;
-      }
-      if (interceptUncheckedSubmit(formPhone, formTextConsent, "discounts-text-consent-row")) {
-        toast(TEXT_CONSENT_NUDGE_TITLE, { description: TEXT_CONSENT_NUDGE_DESCRIPTION });
         return;
       }
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -445,7 +430,7 @@ const DiscountsPage = () => {
         riddle: riddles[currentRiddleIndex].question,
         answer: riddles[currentRiddleIndex].answers[0],
         discount: selectedDiscount,
-        textConsent: formTextConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         description: formDescription || "Discount wheel submission",
         sourcePage,
         site: attribution.site,
@@ -478,7 +463,6 @@ const DiscountsPage = () => {
       setFormEmail("");
       setFormPhone("");
       setFormDescription("");
-      setFormTextConsent(false);
 
       setShouldClick(false);
       if (clickTimeout) {
@@ -732,44 +716,10 @@ const DiscountsPage = () => {
                     <Input
                       id="phone"
                       value={formPhone}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        setFormPhone(value);
-                        if (!value.trim()) {
-                          setFormTextConsent(false);
-                          clearNudge();
-                        }
-                      }}
+                      onChange={(e) => setFormPhone(e.target.value)}
                       required
                     />
                   </div>
-                  {formPhone.trim() ? (
-                    <>
-                      <div
-                        id="discounts-text-consent-row"
-                        className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                      >
-                        <div className="flex items-start space-x-2">
-                        <Checkbox
-                          id="discounts-text-consent"
-                          checked={formTextConsent}
-                          onCheckedChange={(checked) => {
-                            const consentGiven = checked === true;
-                            setFormTextConsent(consentGiven);
-                            onConsentChange(consentGiven);
-                          }}
-                        />
-                        <Label
-                          htmlFor="discounts-text-consent"
-                          className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                        >
-                          {TEXT_CONSENT_MESSAGE}
-                        </Label>
-                        </div>
-                        <TextConsentNudgeNote visible={showNudge} />
-                      </div>
-                    </>
-                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="description">Project Description</Label>
@@ -782,9 +732,12 @@ const DiscountsPage = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
-                    Claim My Discount!
-                  </Button>
+                  <div>
+                    <Button type="submit" className="w-full">
+                      Claim My Discount!
+                    </Button>
+                    <SmsSubmitDisclosure buttonLabel="Claim My Discount!" />
+                  </div>
                 </form>
               </div>
             </DialogContent>
@@ -848,44 +801,10 @@ const DiscountsPage = () => {
                     <Input
                       id="alreadyPlayedPhone"
                       value={formPhone}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        setFormPhone(value);
-                        if (!value.trim()) {
-                          setFormTextConsent(false);
-                          clearNudge();
-                        }
-                      }}
+                      onChange={(e) => setFormPhone(e.target.value)}
                       required
                     />
                   </div>
-                  {formPhone.trim() ? (
-                    <>
-                      <div
-                        id="already-played-text-consent-row"
-                        className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                      >
-                        <div className="flex items-start space-x-2">
-                        <Checkbox
-                          id="already-played-text-consent"
-                          checked={formTextConsent}
-                          onCheckedChange={(checked) => {
-                            const consentGiven = checked === true;
-                            setFormTextConsent(consentGiven);
-                            onConsentChange(consentGiven);
-                          }}
-                        />
-                        <Label
-                          htmlFor="already-played-text-consent"
-                          className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                        >
-                          {TEXT_CONSENT_MESSAGE}
-                        </Label>
-                        </div>
-                        <TextConsentNudgeNote visible={showNudge} />
-                      </div>
-                    </>
-                  ) : null}
 
                   <div className="space-y-2">
                     <Label htmlFor="alreadyPlayedDescription">Project Description</Label>
@@ -898,9 +817,12 @@ const DiscountsPage = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
-                    Get My Free Quote!
-                  </Button>
+                  <div>
+                    <Button type="submit" className="w-full">
+                      Get My Free Quote!
+                    </Button>
+                    <SmsSubmitDisclosure buttonLabel="Get My Free Quote!" />
+                  </div>
                 </form>
               </div>
             </DialogContent>

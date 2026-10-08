@@ -8,14 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
-import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import {
   buildSourcePageById,
   deriveFormSku,
@@ -24,7 +21,7 @@ import {
   trackLeadIntentOnce,
   trackLeadSubmitAttempt,
 } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { locationLabelFromPath } from "@/lib/serviceAreaLabel";
 
@@ -42,8 +39,6 @@ const ServiceAreaContactForm = () => {
     address: string;
   } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate(`sa-contact-${sku}-`);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -51,7 +46,6 @@ const ServiceAreaContactForm = () => {
     phone: "",
     address: "",
     message: "",
-    textConsent: false,
   });
   const { toast } = useToast();
 
@@ -60,11 +54,7 @@ const ServiceAreaContactForm = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
-    if (name === "phone" && value.trim() === "") {
-      clearNudge();
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,14 +82,6 @@ const ServiceAreaContactForm = () => {
       return;
     }
 
-    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, `sa-contact-consent-${sku}`)) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
-      });
-      return;
-    }
-
     if (botGate.shouldFakeSuccess()) {
       toast({
         title: "Message sent!",
@@ -112,7 +94,7 @@ const ServiceAreaContactForm = () => {
         address: formData.address,
       });
       setIsSubmitted(true);
-      setFormData({ fullName: "", email: "", phone: "", address: "", message: "", textConsent: false });
+      setFormData({ fullName: "", email: "", phone: "", address: "", message: "" });
       return;
     }
 
@@ -136,7 +118,7 @@ const ServiceAreaContactForm = () => {
         propertyAddress: formData.address,
         fenceType: "Service Area Contact",
         message,
-        textConsent: formData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -154,7 +136,7 @@ const ServiceAreaContactForm = () => {
           phone: formData.phone,
           address: formData.address,
           description: `${crmFailureNotice(crm)}${message}`,
-          textConsent: formData.textConsent,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           sourcePage,
           site: attribution.site,
           formId: attribution.formId,
@@ -188,7 +170,7 @@ const ServiceAreaContactForm = () => {
         address: formData.address,
       });
       setIsSubmitted(true);
-      setFormData({ fullName: "", email: "", phone: "", address: "", message: "", textConsent: false });
+      setFormData({ fullName: "", email: "", phone: "", address: "", message: "" });
     } catch (err) {
       console.error("Service area contact submission error:", err);
       toast({
@@ -275,34 +257,6 @@ const ServiceAreaContactForm = () => {
             inputMode="tel"
           />
         </div>
-        {formData.phone.trim() ? (
-          <>
-            <div
-              id={`sa-contact-consent-${sku}`}
-              className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-            >
-              <div className="flex items-start space-x-2">
-              <Checkbox
-                id={`sa-consent-check-${sku}`}
-                checked={formData.textConsent}
-                onCheckedChange={(checked) => {
-                  const consentGiven = checked === true;
-                  setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                  onConsentChange(consentGiven);
-                }}
-              />
-              <Label
-                htmlFor={`sa-consent-check-${sku}`}
-                className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-              >
-                {TEXT_CONSENT_MESSAGE}
-              </Label>
-              </div>
-              <TextConsentNudgeNote visible={showNudge} />
-            </div>
-          </>
-        ) : null}
-
         <div className="space-y-2">
           <Label htmlFor={`sa-address-${sku}`}>Property Address *</Label>
           <AddressAutocomplete
@@ -338,6 +292,7 @@ const ServiceAreaContactForm = () => {
             "Send Message"
           )}
         </Button>
+        <SmsSubmitDisclosure buttonLabel="Send Message" />
       </form>
       <p className="mt-4 text-center text-xs text-muted-foreground">
         Prefer to talk? Call us at <strong>(253) 455-1885</strong>

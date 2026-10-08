@@ -8,17 +8,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
-import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "quote-modal";
@@ -33,8 +30,6 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate("quote-modal-");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -42,7 +37,6 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     phone: "",
     address: "",
     projectDescription: "",
-    textConsent: false,
   });
   const { toast } = useToast();
 
@@ -56,11 +50,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     setFormData(prev => ({
       ...prev,
       [name]: value,
-      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
-    if (name === "phone" && value.trim() === "") {
-      clearNudge();
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,14 +73,6 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         title: "Address required",
         description: "Please enter your property address.",
         variant: "destructive",
-      });
-      return;
-    }
-
-    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, "quote-modal-text-consent-row")) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
       });
       return;
     }
@@ -127,7 +109,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         propertyAddress: formData.address,
         fenceType: "Quote Modal",
         message: formData.projectDescription,
-        textConsent: formData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -145,7 +127,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
           phone: formData.phone,
           address: formData.address,
           description: `${crmFailureNotice(crm)}[Quote Request]\n${formData.projectDescription}`,
-          textConsent: formData.textConsent,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           sourcePage,
           site: attribution.site,
           formId: attribution.formId,
@@ -196,7 +178,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     if (isSubmitted) {
       setIsSubmitted(false);
       setSubmittedData(null);
-      setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "", textConsent: false });
+      setFormData({ fullName: "", email: "", phone: "", address: "", projectDescription: "" });
     }
     onClose();
   };
@@ -275,34 +257,6 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               inputMode="tel"
             />
           </div>
-          {formData.phone.trim() ? (
-            <>
-              <div
-                id="quote-modal-text-consent-row"
-                className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-              >
-                <div className="flex items-start space-x-2">
-                <Checkbox
-                  id="quote-modal-text-consent"
-                  checked={formData.textConsent}
-                  onCheckedChange={(checked) => {
-                    const consentGiven = checked === true;
-                    setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                    onConsentChange(consentGiven);
-                  }}
-                />
-                <Label
-                  htmlFor="quote-modal-text-consent"
-                  className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                >
-                  {TEXT_CONSENT_MESSAGE}
-                </Label>
-                </div>
-                <TextConsentNudgeNote visible={showNudge} />
-              </div>
-            </>
-          ) : null}
-
           <div className="space-y-2">
             <Label htmlFor="address">Project Address *</Label>
             <AddressAutocomplete
@@ -354,6 +308,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
               )}
             </Button>
           </div>
+          <SmsSubmitDisclosure buttonLabel="Send Quote Request" />
         </form>
 
         <div className="text-center text-sm text-muted-foreground border-t pt-4 space-y-2">
