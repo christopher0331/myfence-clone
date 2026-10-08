@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
@@ -12,10 +12,18 @@ export type YouTubeShort = {
   hideControls?: boolean;
 };
 
-/** Fixed card width. Height follows 9:16. The row never wraps. */
+/** Resting card width. Playing cards grow 75% (180 → 315) and stay 9:16. */
 const CARD_PX = 180;
+const ENLARGED_PX = 315;
 const GAP_PX = 16;
 const SCROLL_STEP = CARD_PX + GAP_PX;
+/** Room for the arrow buttons and edge fade so a playing card stays inside the row. */
+const ENLARGED_MARGIN_PX = 48;
+
+function enlargedCardWidth(scrollerWidth: number): number {
+  const cap = Math.max(CARD_PX, scrollerWidth - ENLARGED_MARGIN_PX);
+  return Math.min(ENLARGED_PX, cap);
+}
 
 function youtubeShortEmbedSrc(
   videoId: string,
@@ -58,16 +66,35 @@ export function YouTubeShortEmbed({
   );
 }
 
-function YouTubeShortCard({ videoId, title, mute = false, hideControls = false }: YouTubeShort) {
-  const [playing, setPlaying] = useState(false);
+function YouTubeShortCard({
+  videoId,
+  title,
+  mute = false,
+  hideControls = false,
+  expanded,
+  width,
+  onPlay,
+}: YouTubeShort & {
+  expanded: boolean;
+  width: number;
+  onPlay: (videoId: string) => void;
+}) {
   const [poster, setPoster] = useState(
     `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`
   );
 
   return (
-    <figure className="flex w-[180px] shrink-0 snap-start flex-col gap-2">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-muted shadow-lg ring-1 ring-border">
-        {playing ? (
+    <figure
+      data-video-id={videoId}
+      data-expanded={expanded ? "true" : "false"}
+      className={cn(
+        "flex max-w-full shrink-0 flex-col gap-2 transition-[width] duration-300 ease-out",
+        expanded ? "snap-center" : "snap-start"
+      )}
+      style={{ width }}
+    >
+      <div className="relative aspect-[9/16] w-full overflow-hidden rounded-lg bg-muted shadow-lg ring-1 ring-border">
+        {expanded ? (
           <iframe
             src={youtubeShortEmbedSrc(videoId, mute, hideControls, true)}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -78,7 +105,7 @@ function YouTubeShortCard({ videoId, title, mute = false, hideControls = false }
         ) : (
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            onClick={() => onPlay(videoId)}
             aria-label={`Play video: ${title}`}
             className="group absolute inset-0 h-full w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
@@ -127,8 +154,11 @@ export function YouTubeShortsGallery({
   const [overflows, setOverflows] = useState(false);
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeWidth, setActiveWidth] = useState(ENLARGED_PX);
+  const [scrollerWidth, setScrollerWidth] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = scrollerRef.current;
     if (!el) return;
 
@@ -138,6 +168,10 @@ export function YouTubeShortsGallery({
       setOverflows(nextOverflows);
       setCanLeft(nextOverflows && el.scrollLeft > 4);
       setCanRight(nextOverflows && el.scrollLeft < max - 4);
+      setActiveWidth(enlargedCardWidth(el.clientWidth));
+      setScrollerWidth((current) =>
+        Math.abs(current - el.clientWidth) > 1 ? el.clientWidth : current
+      );
     };
 
     update();
@@ -148,7 +182,29 @@ export function YouTubeShortsGallery({
       el.removeEventListener("scroll", update);
       observer.disconnect();
     };
-  }, [videos.length]);
+  }, [videos.length, activeId]);
+
+  const sidePad = activeId && overflows ? Math.max(0, (scrollerWidth - activeWidth) / 2) : 0;
+
+  useEffect(() => {
+    if (!activeId) return;
+    const scroller = scrollerRef.current;
+    const card = scroller?.querySelector<HTMLElement>(`[data-video-id="${CSS.escape(activeId)}"]`);
+    if (!scroller || !card) return;
+
+    const center = () => {
+      const target = card.offsetLeft - (scroller.clientWidth - card.offsetWidth) / 2;
+      const max = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      scroller.scrollTo({ left: Math.max(0, Math.min(max, target)), behavior: "smooth" });
+    };
+
+    const frame = window.requestAnimationFrame(center);
+    const timer = window.setTimeout(center, 320);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [activeId, activeWidth, overflows, sidePad]);
 
   const scrollByDir = (direction: -1 | 1) => {
     scrollerRef.current?.scrollBy({ left: direction * SCROLL_STEP, behavior: "smooth" });
@@ -163,8 +219,10 @@ export function YouTubeShortsGallery({
 
   if (videos.length === 0) return null;
 
+  const videoWidth = activeId ? activeWidth : CARD_PX;
+  const arrowTop = 8 + (videoWidth * 16) / 9 / 2;
   const arrowClass =
-    "absolute top-[168px] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
+    "absolute z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-[top,background-color] duration-300 ease-out hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
   return (
     <div className={className}>
@@ -198,6 +256,7 @@ export function YouTubeShortsGallery({
           <button
             type="button"
             className={cn(arrowClass, "left-1")}
+            style={{ top: arrowTop }}
             aria-label="Show previous videos"
             onClick={() => scrollByDir(-1)}
           >
@@ -208,6 +267,7 @@ export function YouTubeShortsGallery({
           <button
             type="button"
             className={cn(arrowClass, "right-1")}
+            style={{ top: arrowTop }}
             aria-label="Show next videos"
             onClick={() => scrollByDir(1)}
           >
@@ -219,12 +279,19 @@ export function YouTubeShortsGallery({
           data-shorts-gallery=""
           data-shorts-overflow={overflows ? "true" : "false"}
           className={cn(
-            "flex w-full flex-nowrap gap-4 overflow-x-auto overscroll-x-contain py-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+            "flex w-full min-w-0 flex-nowrap items-start gap-4 overflow-x-auto overscroll-x-contain py-2 snap-x snap-mandatory scroll-smooth transition-[padding] duration-300 ease-out [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
             overflows ? "justify-start" : "justify-center"
           )}
+          style={sidePad > 0 ? { paddingLeft: sidePad, paddingRight: sidePad } : undefined}
         >
           {videos.map((video) => (
-            <YouTubeShortCard key={video.videoId} {...video} />
+            <YouTubeShortCard
+              key={video.videoId}
+              {...video}
+              expanded={video.videoId === activeId}
+              width={video.videoId === activeId ? activeWidth : CARD_PX}
+              onPlay={setActiveId}
+            />
           ))}
         </div>
       </div>
