@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { YouTubeShortEmbed, type YouTubeShort } from "@/components/YouTubeShortEmbed";
+import { YouTubeShortsGallery, type YouTubeShort } from "@/components/YouTubeShortEmbed";
 
 type VideoTag = {
   label: string;
@@ -38,6 +38,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
     videos: [
       { videoId: "iUUnbPpWYvo", title: "Renton fence installation by MyFence.com" },
       { videoId: "1oVcsgarR6o", title: "Craftsman style cedar fence walkthrough in Kennydale, Renton by MyFence.com" },
+      { videoId: "CmE1vqMtePU", title: "Renton Fence Installation by MyFence.com" },
     ],
   },
   Issaquah: {
@@ -63,6 +64,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
       { videoId: "Tct8oXAwQ04", title: "Maple Valley Fencing" },
       { videoId: "rjdljZMsQYo", title: "180 Foot Three Rail Picture Frame Fence in Maple Valley by MyFence.com" },
       { videoId: "fpBjboqMwZE", title: "HOA Compliant Fence in Maple Valley by MyFence.com" },
+      { videoId: "qttpUZ4eXkI", title: "Setting Fence Posts in Maple Valley by MyFence.com" },
     ],
   },
   Covington: {
@@ -113,6 +115,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
       { videoId: "6DshwPn78FY", title: "MyFence.com installs a Cedar Trellis System near Seattle" },
       { videoId: "ElK4fA4nhEc", title: "MyFence.com: Best Fence Contractor in Seattle, WA" },
       { videoId: "1tfZDonClrA", title: "What does a fence cost? Find out at SeattleFenceQuote.com" },
+      { videoId: "NvXlZs0NT5M", title: "MyFence.com Experience Fence Build in Seattle" },
     ],
   },
   Kirkland: {
@@ -139,74 +142,32 @@ export default function CityFencingVideos({
   const section = CITY_FENCING[city];
   if (!section) return null;
 
-  const manyVideos = section.videos.length > 2;
-
   return (
     <section className="py-12 md:py-16">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">{city} Fencing</h2>
-          {manyVideos ? (
-            <>
-              <div className="space-y-4 mb-8">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)} className="text-muted-foreground leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-                {section.showVideoTags && videoTags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {videoTags.map((tag) => (
-                      <Link
-                        key={tag.label}
-                        href={tag.link}
-                        className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
-                      >
-                        {tag.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {section.videos.map((video) => (
-                  <YouTubeShortEmbed key={video.videoId} {...video} hideControls />
+          <div className="space-y-4 mb-8">
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="text-muted-foreground leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+            {section.showVideoTags && videoTags.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-2">
+                {videoTags.map((tag) => (
+                  <Link
+                    key={tag.label}
+                    href={tag.link}
+                    className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                  >
+                    {tag.label}
+                  </Link>
                 ))}
               </div>
-            </>
-          ) : (
-            <div className="grid md:grid-cols-3 gap-8 items-start">
-              <div className="md:col-span-2 space-y-4">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)} className="text-muted-foreground leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-                {section.showVideoTags && videoTags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {videoTags.map((tag) => (
-                      <Link
-                        key={tag.label}
-                        href={tag.link}
-                        className="px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
-                      >
-                        {tag.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div
-                className={
-                  section.videos.length > 1 ? "w-full grid grid-cols-1 sm:grid-cols-2 gap-4" : "w-full"
-                }
-              >
-                {section.videos.map((video) => (
-                  <YouTubeShortEmbed key={video.videoId} {...video} hideControls />
-                ))}
-              </div>
-            </div>
-          )}
+            )}
+          </div>
+          <YouTubeShortsGallery videos={section.videos} />
         </div>
       </div>
     </section>

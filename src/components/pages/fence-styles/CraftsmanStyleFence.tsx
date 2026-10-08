@@ -14,7 +14,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import Link from "next/link";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { ArrowLeft } from "lucide-react";
-import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 import {
   getNeighborhoodPhotosBySlugs,
   buildImageUrl,
@@ -348,40 +348,28 @@ const CraftsmanStyleFence = () => {
             )}
 
             <div className="max-w-5xl mx-auto mb-10">
-              <div className="grid md:grid-cols-3 gap-8 items-start">
-                <div className="md:col-span-2 space-y-4">
-                  <h3 className="text-xl font-semibold">Craftsman style cedar fence walkthrough</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Walk a finished craftsman spindle-top privacy run on a{" "}
-                    <Link href="/service-areas/renton/kennydale" className="text-primary font-medium hover:underline">
-                      Kennydale, Renton
-                    </Link>{" "}
-                    lot — alternating board pattern, top cap detail, and street-facing spindle work built for Lake Washington exposure.
-                  </p>
-                  <Link
-                    href="/service-areas/renton/kennydale"
-                    className="inline-flex px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
-                  >
-                    View Kennydale project photos &rarr;
-                  </Link>
-                </div>
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 max-w-[340px] mx-auto md:mx-0 md:ml-auto">
-                  <AspectRatio ratio={9 / 16} className="bg-muted rounded-lg overflow-hidden shadow-lg">
-                    <iframe
-                      src="https://www.youtube-nocookie.com/embed/1oVcsgarR6o?playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&vq=hd1080"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full border-0"
-                      title="Craftsman style cedar fence walkthrough by MyFence.com"
-                    />
-                  </AspectRatio>
-                  <YouTubeShortEmbed
-                    videoId="5Uf0VWTzBC8"
-                    title="Modern Craftsman Cedar Fence in Newcastle, WA"
-                    className="bg-muted rounded-lg overflow-hidden shadow-lg"
-                  />
-                </div>
+              <div className="max-w-3xl space-y-4 mb-8">
+                <h3 className="text-xl font-semibold">Craftsman style cedar fence walkthrough</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Walk a finished craftsman spindle-top privacy run on a{" "}
+                  <Link href="/service-areas/renton/kennydale" className="text-primary font-medium hover:underline">
+                    Kennydale, Renton
+                  </Link>{" "}
+                  lot — alternating board pattern, top cap detail, and street-facing spindle work built for Lake Washington exposure.
+                </p>
+                <Link
+                  href="/service-areas/renton/kennydale"
+                  className="inline-flex px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 rounded-full text-sm font-medium transition-colors"
+                >
+                  View Kennydale project photos &rarr;
+                </Link>
               </div>
+              <YouTubeShortsGallery
+                videos={[
+                  { videoId: "1oVcsgarR6o", title: "Craftsman style cedar fence walkthrough by MyFence.com" },
+                  { videoId: "5Uf0VWTzBC8", title: "Modern Craftsman Cedar Fence in Newcastle, WA" },
+                ]}
+              />
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
