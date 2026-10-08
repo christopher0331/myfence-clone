@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
-import { Play } from "lucide-react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
 
@@ -12,9 +12,10 @@ export type YouTubeShort = {
   hideControls?: boolean;
 };
 
-/** Fixed card width. Height follows 9:16, so the grid stays even instead of stretching. */
+/** Fixed card width. Height follows 9:16. The row never wraps. */
 const CARD_PX = 180;
 const GAP_PX = 16;
+const SCROLL_STEP = CARD_PX + GAP_PX;
 
 function youtubeShortEmbedSrc(
   videoId: string,
@@ -33,24 +34,6 @@ function youtubeShortEmbedSrc(
   if (hideControls) params.set("controls", "0");
   if (mute) params.set("mute", "1");
   return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
-}
-
-/**
- * Column count that keeps a full last row when the count divides evenly:
- * 1, 2, 3 in one row; 4 as a 2×2; 6 and 9 as rows of 3; 8 as rows of 4.
- * Leftover counts (5, 7) use 3 columns so the last row centers.
- */
-function desktopColumns(count: number): number {
-  if (count <= 1) return 1;
-  if (count === 2 || count === 4) return 2;
-  if (count === 3 || count % 3 === 0) return 3;
-  if (count % 4 === 0) return 4;
-  return 3;
-}
-
-function desktopMaxWidth(count: number): number {
-  const cols = Math.min(desktopColumns(count), count);
-  return cols * CARD_PX + Math.max(0, cols - 1) * GAP_PX;
 }
 
 /** Vertical YouTube Short iframe matching existing service-area / style-page embeds. */
@@ -82,7 +65,7 @@ function YouTubeShortCard({ videoId, title, mute = false, hideControls = false }
   );
 
   return (
-    <figure className="flex w-[180px] shrink-0 snap-center flex-col gap-2">
+    <figure className="flex w-[180px] shrink-0 snap-start flex-col gap-2">
       <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-muted shadow-lg ring-1 ring-border">
         {playing ? (
           <iframe
@@ -140,9 +123,48 @@ export function YouTubeShortsGallery({
   description?: string;
   className?: string;
 }) {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [overflows, setOverflows] = useState(false);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const max = el.scrollWidth - el.clientWidth;
+      const nextOverflows = max > 4;
+      setOverflows(nextOverflows);
+      setCanLeft(nextOverflows && el.scrollLeft > 4);
+      setCanRight(nextOverflows && el.scrollLeft < max - 4);
+    };
+
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => {
+      el.removeEventListener("scroll", update);
+      observer.disconnect();
+    };
+  }, [videos.length]);
+
+  const scrollByDir = (direction: -1 | 1) => {
+    scrollerRef.current?.scrollBy({ left: direction * SCROLL_STEP, behavior: "smooth" });
+  };
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    if (!overflows) return;
+    event.preventDefault();
+    scrollByDir(event.key === "ArrowRight" ? 1 : -1);
+  };
+
   if (videos.length === 0) return null;
 
-  const scrollable = videos.length > 1;
+  const arrowClass =
+    "absolute top-[168px] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
   return (
     <div className={className}>
@@ -153,22 +175,58 @@ export function YouTubeShortsGallery({
         <p className="mx-auto mb-6 max-w-2xl text-center text-muted-foreground">{description}</p>
       )}
       <div
-        data-shorts-gallery=""
-        className={cn(
-          "mx-auto flex w-full gap-4 py-2",
-          scrollable
-            ? "max-w-full snap-x snap-mandatory flex-nowrap overflow-x-auto [scrollbar-width:thin] md:flex-wrap md:justify-center md:overflow-visible md:snap-none md:[max-width:var(--shorts-max)]"
-            : "justify-center"
-        )}
-        style={
-          scrollable
-            ? ({ "--shorts-max": `${desktopMaxWidth(videos.length)}px` } as CSSProperties)
-            : undefined
-        }
+        className="relative outline-none focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-ring"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={heading || "Video shorts"}
+        tabIndex={overflows ? 0 : undefined}
+        onKeyDown={onKeyDown}
       >
-        {videos.map((video) => (
-          <YouTubeShortCard key={video.videoId} {...video} />
-        ))}
+        {canLeft && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-2 left-0 z-10 w-10 bg-gradient-to-r from-background to-transparent"
+          />
+        )}
+        {canRight && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-2 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent"
+          />
+        )}
+        {canLeft && (
+          <button
+            type="button"
+            className={cn(arrowClass, "left-1")}
+            aria-label="Show previous videos"
+            onClick={() => scrollByDir(-1)}
+          >
+            <ChevronLeft className="h-5 w-5" aria-hidden />
+          </button>
+        )}
+        {canRight && (
+          <button
+            type="button"
+            className={cn(arrowClass, "right-1")}
+            aria-label="Show next videos"
+            onClick={() => scrollByDir(1)}
+          >
+            <ChevronRight className="h-5 w-5" aria-hidden />
+          </button>
+        )}
+        <div
+          ref={scrollerRef}
+          data-shorts-gallery=""
+          data-shorts-overflow={overflows ? "true" : "false"}
+          className={cn(
+            "flex w-full flex-nowrap gap-4 overflow-x-auto overscroll-x-contain py-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+            overflows ? "justify-start" : "justify-center"
+          )}
+        >
+          {videos.map((video) => (
+            <YouTubeShortCard key={video.videoId} {...video} />
+          ))}
+        </div>
       </div>
     </div>
   );
