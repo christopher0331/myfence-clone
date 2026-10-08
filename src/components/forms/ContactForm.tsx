@@ -13,17 +13,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
-import {
-  TEXT_CONSENT_MESSAGE,
-  TEXT_CONSENT_NUDGE_DESCRIPTION,
-  TEXT_CONSENT_NUDGE_TITLE,
-} from "@/constants/textConsent";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "home-contact";
@@ -35,7 +28,6 @@ const formSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   address: z.string().trim().min(1, "Address is required").max(255),
   description: z.string().trim().min(1, "Message is required").max(1000),
-  textConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -46,7 +38,6 @@ export function ContactForm() {
   const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
   const { toast } = useToast();
-  const { showNudge, interceptUncheckedSubmit, onConsentChange } = useOptionalTextConsentNudge();
   const botGate = useFormBotGate("home-contact-");
 
   const form = useForm<FormData>({
@@ -58,7 +49,6 @@ export function ContactForm() {
       phone: "",
       address: "",
       description: "",
-      textConsent: false,
     },
   });
 
@@ -76,13 +66,6 @@ export function ContactForm() {
     });
     if (!gate.ok) {
       form.setError("address", { message: "Please enter your property address." });
-      return;
-    }
-    if (interceptUncheckedSubmit(data.phone, data.textConsent, "contact-form-text-consent-row")) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
-      });
       return;
     }
     if (botGate.shouldFakeSuccess()) {
@@ -114,7 +97,7 @@ export function ContactForm() {
         propertyAddress: data.address,
         fenceType: "Contact Form",
         message: data.description,
-        textConsent: data.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -127,6 +110,7 @@ export function ContactForm() {
       try {
         const legacy = await submitContactNotification({
           ...data,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           description: `${crmFailureNotice(crm)}${data.description}`,
           sourcePage,
           site: attribution.site,
@@ -289,42 +273,13 @@ export function ContactForm() {
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="textConsent"
-          render={({ field }) => (
-            <FormItem
-              id="contact-form-text-consent-row"
-              className={`rounded-md ${showNudge ? "border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-            >
-              <div className="flex items-start space-x-2">
-              <FormControl>
-                <Checkbox
-                  id="contact-text-consent"
-                  checked={field.value}
-                  onCheckedChange={(checked) => {
-                    const consentGiven = checked === true;
-                    field.onChange(consentGiven);
-                    onConsentChange(consentGiven);
-                  }}
-                />
-              </FormControl>
-                <FormLabel
-                  htmlFor="contact-text-consent"
-                  className={`text-xs ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                >
-                  {TEXT_CONSENT_MESSAGE}
-                </FormLabel>
-              </div>
-              <TextConsentNudgeNote visible={showNudge} />
-            </FormItem>
-          )}
-        />
-
-        <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto">
-          {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Send Message
-        </Button>
+        <div>
+          <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto">
+            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Send Message
+          </Button>
+          <SmsSubmitDisclosure buttonLabel="Send Message" />
+        </div>
       </form>
     </Form>
   );
