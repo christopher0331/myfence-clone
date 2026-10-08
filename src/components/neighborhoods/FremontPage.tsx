@@ -530,7 +530,7 @@ const FremontPage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Fremont we also work in Ballard toward the locks, Queen Anne across the canal, and Capitol Hill and Ravenna farther east.
+                We install fences throughout Seattle. From Fremont we also work in Ballard toward the locks, Queen Anne and Magnolia across the canal, and Capitol Hill and Ravenna farther east.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -541,6 +541,9 @@ const FremontPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/queen-anne">Queen Anne</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/magnolia">Magnolia</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/capitol-hill">Capitol Hill</Link>
