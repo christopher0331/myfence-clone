@@ -162,8 +162,11 @@ const DiscountsPage = () => {
 
   const playClickSound = () => {
     try {
-      const webkitAudio = (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-      const AudioCtx = (typeof AudioContext !== "undefined" ? AudioContext : undefined) || webkitAudio;
+      const audioWindow = window as Window & {
+        AudioContext?: typeof AudioContext;
+        webkitAudioContext?: typeof AudioContext;
+      };
+      const AudioCtx = audioWindow.AudioContext || audioWindow.webkitAudioContext;
       if (!AudioCtx) return;
       const audioContext = new AudioCtx();
 
