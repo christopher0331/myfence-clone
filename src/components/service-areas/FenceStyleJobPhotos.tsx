@@ -8,7 +8,7 @@ import {
 } from "@/lib/serviceAreaPhotoUtils";
 import ProjectBeforeAfter from "@/components/service-areas/ProjectBeforeAfter";
 
-const MAX_STYLE_PHOTOS = 12;
+const MAX_STYLE_PHOTOS = 24;
 
 export default function FenceStyleJobPhotos() {
   const pathname = usePathname() || "";
