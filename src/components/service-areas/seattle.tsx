@@ -87,7 +87,8 @@ const Seattle = () => {
         },
         {
           name: "West Seattle",
-          description: "Diverse hillside neighborhoods with beach access requiring slope installations and salt-air resistant materials for waterfront proximity"
+          description: "Diverse hillside neighborhoods with beach access requiring slope installations and salt-air resistant materials for waterfront proximity. Click to learn more →",
+          link: "/service-areas/seattle/west-seattle"
         },
         {
           name: "Georgetown",
