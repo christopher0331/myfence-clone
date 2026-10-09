@@ -540,7 +540,7 @@ const SteelVsWoodPosts = () => {
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 {[
                   { name: "Enumclaw", path: "/service-areas/enumclaw", desc: "Foothills clay soil" },
-                  { name: "West Seattle", path: "/service-areas/seattle", desc: "Marine moisture" },
+                  { name: "West Seattle", path: "/service-areas/seattle/west-seattle", desc: "Marine moisture" },
                   { name: "Kirkland", path: "/service-areas/kirkland", desc: "Lakefront conditions" },
                   { name: "Newcastle", path: "/service-areas/bellevue/newcastle", desc: "Hillside drainage" },
                   { name: "Issaquah", path: "/service-areas/issaquah", desc: "Mountain runoff" },
