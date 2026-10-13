@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import DeferredGTM from "@/components/DeferredGTM";
 import DeferredPostHog from "@/components/DeferredPostHog";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
+import { Toaster as SonnerToaster } from "sonner";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 // next/font self-hosts Inter with font-display: swap — no Google Fonts CDN needed
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main className="flex-1 pt-24 md:pt-32">{children}</main>
         <Footer />
+        <SonnerToaster position="top-center" richColors closeButton />
       </body>
     </html>
   );
