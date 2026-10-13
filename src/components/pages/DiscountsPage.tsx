@@ -442,12 +442,50 @@ const DiscountsPage = () => {
         originPage: attribution.originPage,
       };
 
-      const { error } = await supabase.functions.invoke("send-discount-email", {
-        body: emailData,
+      // Same dual-path delivery as the quote form: CRM first, then the email
+      // notification. The legacy Supabase discount email stays as a third path.
+      const gateFields = botGate.getFields();
+      const crm = await submitLeadToCrm({
+        firstName: emailData.firstName,
+        lastName: emailData.lastName,
+        email: emailData.email,
+        phone: emailData.phone,
+        propertyAddress: emailData.address || "",
+        fenceType: "Discounts Page",
+        message: `Discount wheel win: ${emailData.discount}\n${emailData.description}`,
+        ...SUBMIT_DISCLOSURE_CONSENT,
+        sourcePage: emailData.sourcePage,
+        site: attribution.site,
+        formId: attribution.formId,
+        formSku: deriveFormSku(),
+        originPage: attribution.originPage,
+        ...gateFields,
       });
 
-      if (error) {
-        throw error;
+      let emailError: string | null = null;
+      try {
+        const { error } = await supabase.functions.invoke("send-discount-email", {
+          body: emailData,
+        });
+        if (error) emailError = error.message || String(error);
+      } catch (err) {
+        emailError = err instanceof Error ? err.message : String(err);
+      }
+      if (!crm.ok) {
+        try {
+          const legacy = await submitContactNotification({
+            ...emailData,
+            ...gateFields,
+            description: `${crmFailureNotice(crm)}Discount wheel win: ${emailData.discount}\n${emailData.description}`,
+          });
+          if (legacy.ok) emailError = null;
+        } catch {
+          /* keep emailError */
+        }
+      }
+
+      if (!crm.ok && emailError) {
+        throw new Error(crm.error || emailError);
       }
 
       trackFormSubmit(WHEEL_FORM_KEY, { formType: "discount" });
@@ -672,7 +710,8 @@ const DiscountsPage = () => {
                   <p className="font-semibold text-green-800">You won: {selectedDiscount}</p>
                 </div>
 
-                <form onSubmit={onSubmit} className="space-y-4">
+                <form onSubmit={onSubmit} className="space-y-4 relative">
+                  {botGate.trap}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
