@@ -91,7 +91,8 @@ const Seattle = () => {
         },
         {
           name: "Georgetown",
-          description: "Industrial-adjacent neighborhood with urban properties needing sound-dampening fence designs and secure boundary installations"
+          description: "Industrial-adjacent neighborhood with urban properties needing sound-dampening fence designs and secure boundary installations. Click to learn more →",
+          link: "/service-areas/seattle/georgetown"
         },
         {
           name: "Beacon Hill",
