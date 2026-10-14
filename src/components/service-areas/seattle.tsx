@@ -83,7 +83,8 @@ const Seattle = () => {
         },
         {
           name: "Magnolia",
-          description: "Waterfront peninsula with Puget Sound exposure demanding marine-grade materials and wind-resistant installations"
+          description: "Waterfront peninsula with Puget Sound exposure demanding marine-grade materials and wind-resistant installations. Click to learn more →",
+          link: "/service-areas/seattle/magnolia"
         },
         {
           name: "West Seattle",
