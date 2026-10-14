@@ -109,6 +109,7 @@ const FenceStainingPage = () => {
             videos={[
               { videoId: "gzAzQLdfqDA", title: "MyFence.com installing another perfect pre stained cedar fence in Washington!" },
               { videoId: "fbjj-uak5U4", title: "Pre Stained Cedar Fence in Ravensdale by MyFence.com" },
+              { videoId: "P8I-fsgexEQ", title: "Popular Fence Upgrades" },
             ]}
           />
         </section>
