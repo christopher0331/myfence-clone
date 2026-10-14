@@ -15,6 +15,7 @@ import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const WHEEL_FORM_KEY = "discount-wheel";
 const ALREADY_PLAYED_FORM_KEY = "discount-already-played";
@@ -696,6 +697,15 @@ const DiscountsPage = () => {
               )}
             </CardContent>
           </Card>
+
+          <YouTubeShortsGallery
+            className="mb-8"
+            heading="How the riddle works"
+            description="Solve today's fence riddle, then spin the wheel for your discount."
+            videos={[
+              { videoId: "P8rVUH7N0HA", title: "Solve Our Fence Riddle for a Discount" },
+            ]}
+          />
 
           <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
             <DialogContent className="max-w-lg">
