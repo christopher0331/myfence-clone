@@ -2874,6 +2874,25 @@
     "workOrderId": "dedd8e8d"
   },
   {
+    "file": "/service-area-photos/myfence-maple-valley-picture-frame-a533b497-after-01.jpg",
+    "originalFile": "myfence-maple-valley-picture-frame-a533b497-after-01.jpg",
+    "width": 1600,
+    "height": 1200,
+    "sizeBytes": 345042,
+    "size": "337.0 KB",
+    "city": "Maple Valley",
+    "neighborhood": null,
+    "cityAlt": "Penofin-stained cedar picture frame privacy fence and walk gate in Maple Valley, WA",
+    "neighborhoodAlt": null,
+    "lat": 47.3928,
+    "lng": -122.0456,
+    "url": "/service-area-photos/myfence-maple-valley-picture-frame-a533b497-after-01.jpg",
+    "phase": "after",
+    "fenceStyle": "Picture Frame Fence",
+    "fenceStyleSlug": "picture-frame-fence",
+    "workOrderId": "a533b497"
+  },
+  {
     "file": "/service-area-photos/Maple-Valley/Maple-Valley-Picture-Frame-Cedar-Privacy-Fence-04.jpg",
     "originalFile": "myfence-maple-valley-picture-frame-cedar-dedd8e8d-after-04.jpg",
     "width": 1600,
