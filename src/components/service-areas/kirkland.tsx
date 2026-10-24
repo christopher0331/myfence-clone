@@ -504,6 +504,11 @@ const Kirkland = () => {
           name: "Moss Bay",
           description: "Waterfront condos, townhomes, and hillside lots along Lake Street S and Lake Washington Blvd. Click to learn more →",
           link: "/service-areas/kirkland/moss-bay"
+        },
+        {
+          name: "Norkirk",
+          description: "Historic bungalow blocks and alley-grid yards between Market Street and the Cross Kirkland Corridor, near Crestwoods Park. Click to learn more →",
+          link: "/service-areas/kirkland/norkirk"
         }
       ]}
       landmarks={[
