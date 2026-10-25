@@ -264,6 +264,11 @@ const Sammamish = () => {
           name: "Inglewood",
           description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
           link: "/service-areas/sammamish/inglewood"
+        },
+        {
+          name: "Heritage Hills",
+          description: "HOA-reviewed yards where fences need Architectural Chair approval and must also meet Sammamish height rules. See the neighborhood page or the HOA fencing guide. Click to learn more →",
+          link: "/service-areas/sammamish/heritage-hills"
         }
       ]}
       landmarks={[
