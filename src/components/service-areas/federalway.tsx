@@ -405,7 +405,8 @@ const FederalWay = () => {
         },
         {
           name: "Twin Lakes",
-          description: "Lakeside neighborhood with high moisture levels demanding enhanced weatherproofing and rot-resistant fence materials"
+          description: "Lakeside neighborhood with high moisture levels demanding enhanced weatherproofing and rot-resistant fence materials. Click to learn more →",
+          link: "/service-areas/federal-way/twin-lakes"
         },
         {
           name: "Steel Lake",
