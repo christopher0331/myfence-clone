@@ -13,3 +13,4 @@ export { fairwoodGreensHoaConfig } from "./fairwood-greens";
 export { horizonCrestHoaConfig } from "./horizon-crest";
 export { overlookAtFinnHillHoaConfig } from "./overlook-at-finn-hill";
 export { heritageHillsHoaConfig } from "./heritage-hills";
+export { lakelandHillsHoaConfig } from "./lakeland-hills";
