@@ -271,19 +271,19 @@ const Sammamish = () => {
           link: "/service-areas/sammamish/heritage-hills"
         },
         {
-          name: "Autumn Wind HOA",
-          description: "Autumn Wind's published fence guidelines: 5 to 6 ft wood or wood-look fences, no front-yard fences, and written ACC approval first. See the HOA fencing guide →",
-          link: "/service-areas/sammamish/autumn-wind/hoa-approved-fencing"
+          name: "Autumn Wind",
+          description: "71-home neighborhood off 232nd Avenue NE with its own HOA fence guidelines and ACC review. Click to learn more →",
+          link: "/service-areas/sammamish/autumn-wind"
         },
         {
-          name: "Cimarron HOA",
-          description: "Cimarron's board approves fence replacement under its CC&Rs. See the request form and approval steps in the HOA fencing guide →",
-          link: "/service-areas/sammamish/cimarron/hoa-approved-fencing"
+          name: "Cimarron",
+          description: "Mid-1980s neighborhood near the city center with greenbelt-edge lots and board-approved fence replacement. Click to learn more →",
+          link: "/service-areas/sammamish/cimarron"
         },
         {
-          name: "Summer Ridge HOA",
-          description: "Summer Ridge's standard is 6 ft vertical cedar with a top rail and a clear, tan, or light-brown stain, approved by the ACC. See the HOA fencing guide →",
-          link: "/service-areas/sammamish/summer-ridge/hoa-approved-fencing"
+          name: "Summer Ridge",
+          description: "356-home community off NE 25th Way with a single 6 ft vertical cedar fence standard. Click to learn more →",
+          link: "/service-areas/sammamish/summer-ridge"
         }
       ]}
       landmarks={[

@@ -3,10 +3,10 @@ import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 // Sources: association's public website only (see officialLinks). No contact details published.
 export const cimarronHoaConfig: HoaApprovedFencingConfig = {
   canonical: "https://myfence.com/service-areas/sammamish/cimarron/hoa-approved-fencing",
-  parentUrl: "https://myfence.com/service-areas/sammamish",
-  parentHref: "/service-areas/sammamish",
-  parentLinkLabel: "Back to Sammamish fence installation",
-  parentCrumbName: "Sammamish",
+  parentUrl: "https://myfence.com/service-areas/sammamish/cimarron",
+  parentHref: "/service-areas/sammamish/cimarron",
+  parentLinkLabel: "Back to Cimarron fence installation",
+  parentCrumbName: "Cimarron, Sammamish",
   hubHref: "/service-areas/sammamish",
   hubLinkLabel: "Sammamish fence installation",
   metaTitle: "Cimarron HOA of Sammamish Fencing Guide | Sammamish | MyFence",
