@@ -269,6 +269,21 @@ const Sammamish = () => {
           name: "Heritage Hills",
           description: "HOA-reviewed yards where fences need Architectural Chair approval and must also meet Sammamish height rules. See the neighborhood page or the HOA fencing guide. Click to learn more →",
           link: "/service-areas/sammamish/heritage-hills"
+        },
+        {
+          name: "Autumn Wind HOA",
+          description: "Autumn Wind's published fence guidelines: 5 to 6 ft wood or wood-look fences, no front-yard fences, and written ACC approval first. See the HOA fencing guide →",
+          link: "/service-areas/sammamish/autumn-wind/hoa-approved-fencing"
+        },
+        {
+          name: "Cimarron HOA",
+          description: "Cimarron's board approves fence replacement under its CC&Rs. See the request form and approval steps in the HOA fencing guide →",
+          link: "/service-areas/sammamish/cimarron/hoa-approved-fencing"
+        },
+        {
+          name: "Summer Ridge HOA",
+          description: "Summer Ridge's standard is 6 ft vertical cedar with a top rail and a clear, tan, or light-brown stain, approved by the ACC. See the HOA fencing guide →",
+          link: "/service-areas/sammamish/summer-ridge/hoa-approved-fencing"
         }
       ]}
       landmarks={[
