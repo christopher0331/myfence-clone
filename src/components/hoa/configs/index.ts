@@ -15,3 +15,6 @@ export { overlookAtFinnHillHoaConfig } from "./overlook-at-finn-hill";
 export { heritageHillsHoaConfig } from "./heritage-hills";
 export { lakelandHillsHoaConfig } from "./lakeland-hills";
 export { kentonFirsHoaConfig } from "./kenton-firs";
+export { autumnWindHoaConfig } from "./autumn-wind";
+export { cimarronHoaConfig } from "./cimarron";
+export { summerRidgeHoaConfig } from "./summer-ridge";
