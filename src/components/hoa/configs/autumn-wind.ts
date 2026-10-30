@@ -3,10 +3,10 @@ import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 // Sources: association's public website only (see officialLinks). No contact details published.
 export const autumnWindHoaConfig: HoaApprovedFencingConfig = {
   canonical: "https://myfence.com/service-areas/sammamish/autumn-wind/hoa-approved-fencing",
-  parentUrl: "https://myfence.com/service-areas/sammamish",
-  parentHref: "/service-areas/sammamish",
-  parentLinkLabel: "Back to Sammamish fence installation",
-  parentCrumbName: "Sammamish",
+  parentUrl: "https://myfence.com/service-areas/sammamish/autumn-wind",
+  parentHref: "/service-areas/sammamish/autumn-wind",
+  parentLinkLabel: "Back to Autumn Wind fence installation",
+  parentCrumbName: "Autumn Wind, Sammamish",
   hubHref: "/service-areas/sammamish",
   hubLinkLabel: "Sammamish fence installation",
   metaTitle: "Autumn Wind Homeowners Association Fencing Guide | Sammamish | MyFence",

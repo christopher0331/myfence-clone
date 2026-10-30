@@ -3,10 +3,10 @@ import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 // Sources: association's public website only (see officialLinks). No contact details published.
 export const summerRidgeHoaConfig: HoaApprovedFencingConfig = {
   canonical: "https://myfence.com/service-areas/sammamish/summer-ridge/hoa-approved-fencing",
-  parentUrl: "https://myfence.com/service-areas/sammamish",
-  parentHref: "/service-areas/sammamish",
-  parentLinkLabel: "Back to Sammamish fence installation",
-  parentCrumbName: "Sammamish",
+  parentUrl: "https://myfence.com/service-areas/sammamish/summer-ridge",
+  parentHref: "/service-areas/sammamish/summer-ridge",
+  parentLinkLabel: "Back to Summer Ridge fence installation",
+  parentCrumbName: "Summer Ridge, Sammamish",
   hubHref: "/service-areas/sammamish",
   hubLinkLabel: "Sammamish fence installation",
   metaTitle: "Summer Ridge HOA Fencing Guide | Sammamish | MyFence",
