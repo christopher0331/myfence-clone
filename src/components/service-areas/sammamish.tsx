@@ -264,6 +264,26 @@ const Sammamish = () => {
           name: "Inglewood",
           description: "Hillside and plateau lots off Inglewood Hill Road, with lake-side moisture, steep grade, and family yards near Inglewood Middle School. Click to learn more →",
           link: "/service-areas/sammamish/inglewood"
+        },
+        {
+          name: "Heritage Hills",
+          description: "HOA-reviewed yards where fences need Architectural Chair approval and must also meet Sammamish height rules. See the neighborhood page or the HOA fencing guide. Click to learn more →",
+          link: "/service-areas/sammamish/heritage-hills"
+        },
+        {
+          name: "Autumn Wind",
+          description: "71-home neighborhood off 232nd Avenue NE with its own HOA fence guidelines and ACC review. Click to learn more →",
+          link: "/service-areas/sammamish/autumn-wind"
+        },
+        {
+          name: "Cimarron",
+          description: "Mid-1980s neighborhood near the city center with greenbelt-edge lots and board-approved fence replacement. Click to learn more →",
+          link: "/service-areas/sammamish/cimarron"
+        },
+        {
+          name: "Summer Ridge",
+          description: "356-home community off NE 25th Way with a single 6 ft vertical cedar fence standard. Click to learn more →",
+          link: "/service-areas/sammamish/summer-ridge"
         }
       ]}
       landmarks={[

@@ -21,6 +21,13 @@ export default function AuburnPage() {
     link: `/service-areas/auburn/${slugifyLocation(name)}`,
   }));
 
+  neighborhoods.push({
+    name: "Lakeland Hills",
+    description:
+      "Planned hillside community in south Auburn where fences follow Auburn height rules and the Lakeland Hills HOA's published fence guidelines. See the neighborhood page or the HOA fencing guide. Click to learn more →",
+    link: "/service-areas/auburn/lakeland-hills",
+  });
+
   return (
     <ServiceAreaTemplate
       city="Auburn"
