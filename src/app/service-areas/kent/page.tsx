@@ -28,6 +28,13 @@ export default function KentPage() {
     link: "/service-areas/kent/kenton-firs",
   });
 
+  neighborhoods.push({
+    name: "East Hill",
+    description:
+      "Kent's residential plateau above the valley, where fences follow City of Kent rules, corner-lot sight triangles, and any HOA covenants. Click to learn more →",
+    link: "/service-areas/kent/east-hill",
+  });
+
   return (
     <ServiceAreaTemplate
       city="Kent"
