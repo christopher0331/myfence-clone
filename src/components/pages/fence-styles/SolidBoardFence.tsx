@@ -12,6 +12,7 @@ import VirtualQuoteTool from "@/components/VirtualQuoteTool";
 import PaymentCalculator from "@/components/PaymentCalculator";
 import Seo from "@/components/Seo";
 import Link from "next/link";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 // Images for Solid Board Fence
 const heroImg = "/lovable-uploads/ee554667-1407-47ea-a6f4-ec25700f4bcb.png"; // New cedar fence installation
@@ -249,6 +250,17 @@ const SolidBoardFence = () => {
                 </div>
               ))}
             </div>
+          </section>
+
+          <section className="mb-12">
+            <YouTubeShortsGallery
+              heading="Batten strip privacy detail"
+              description="Thin cedar strips cover the seams between vertical boards and meet the top rail, so a solid-board run reads as a tighter privacy face."
+              videos={[
+                { videoId: "Xq-XwCKmMVI", title: "Batten Strip Walkthrough by MyFence.com" },
+                { videoId: "EZk3S7EeA_Y", title: "Batten Strips for Enhanced Privacy by MyFence.com" },
+              ]}
+            />
           </section>
 
           {/* Important Considerations */}

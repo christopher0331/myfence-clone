@@ -9,20 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
-import {
-  TEXT_CONSENT_MESSAGE,
-  TEXT_CONSENT_NUDGE_DESCRIPTION,
-  TEXT_CONSENT_NUDGE_TITLE,
-} from "@/constants/textConsent";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadIntentOnce, trackLeadSubmitAttempt } from "@/lib/analytics";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 
 const FORM_KEY = "contact-page";
@@ -31,8 +24,6 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [addressValid, setAddressValid] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate("contact-page-");
   const [formData, setFormData] = useState({
     firstName: "",
@@ -41,7 +32,6 @@ const ContactPage = () => {
     phone: "",
     address: "",
     message: "",
-    textConsent: false,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,11 +39,7 @@ const ContactPage = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
-    if (name === "phone" && value.trim() === "") {
-      clearNudge();
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,14 +66,6 @@ const ContactPage = () => {
       return;
     }
 
-    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, "contact-page-text-consent-row")) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
-      });
-      return;
-    }
-
     if (botGate.shouldFakeSuccess()) {
       toast({ title: "Message sent", description: "Thanks! We'll reach out ASAP." });
       setIsSubmitted(true);
@@ -109,7 +87,7 @@ const ContactPage = () => {
         propertyAddress: formData.address,
         fenceType: "Contact Page",
         message: formData.message,
-        textConsent: formData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -127,7 +105,7 @@ const ContactPage = () => {
           phone: formData.phone,
           address: formData.address,
           description: `${crmFailureNotice(crm)}${formData.message}`,
-          textConsent: formData.textConsent,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           sourcePage,
           site: attribution.site,
           formId: attribution.formId,
@@ -317,29 +295,6 @@ const ContactPage = () => {
                       maxLength={20}
                     />
                   </div>
-                  <div
-                    id="contact-page-text-consent-row"
-                    className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-                  >
-                    <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="contact-page-text-consent"
-                      checked={formData.textConsent}
-                      onCheckedChange={(checked) => {
-                        const consentGiven = checked === true;
-                        setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                        onConsentChange(consentGiven);
-                      }}
-                    />
-                    <Label
-                      htmlFor="contact-page-text-consent"
-                      className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-                    >
-                      {TEXT_CONSENT_MESSAGE}
-                    </Label>
-                    </div>
-                    <TextConsentNudgeNote visible={showNudge} />
-                  </div>
                   <div>
                     <Label htmlFor="address">Address</Label>
                     <AddressAutocomplete
@@ -385,6 +340,7 @@ const ContactPage = () => {
                       Call Now
                     </Button>
                   </div>
+                  <SmsSubmitDisclosure buttonLabel="Send Message" />
                 </div>
               </form>
             </div>

@@ -18,7 +18,8 @@ export default function BothellPage() {
       neighborhoods={[
         {
           name: "Canyon Park",
-          description: "Newer developments and HOA communities near I-405 that often specify modified picture frame fencing.",
+          description: "Newer developments and HOA communities near I-405 that often specify modified picture frame fencing. Click to learn more →",
+          link: "/service-areas/bothell/canyon-park",
         },
         {
           name: "North Creek",
