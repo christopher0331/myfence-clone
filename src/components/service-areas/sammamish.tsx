@@ -284,6 +284,11 @@ const Sammamish = () => {
           name: "Summer Ridge",
           description: "356-home community off NE 25th Way with a single 6 ft vertical cedar fence standard. Click to learn more →",
           link: "/service-areas/sammamish/summer-ridge"
+        },
+        {
+          name: "Timberline Ridge",
+          description: "North Sammamish neighborhood where new fences match the original 6 ft standard-style wood fence and need ACC review. Click to learn more →",
+          link: "/service-areas/sammamish/timberline-ridge"
         }
       ]}
       landmarks={[
