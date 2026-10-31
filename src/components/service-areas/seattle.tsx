@@ -97,7 +97,8 @@ const Seattle = () => {
         },
         {
           name: "Beacon Hill",
-          description: "Multicultural hillside community with varied housing types requiring flexible solutions from small city lots to larger properties"
+          description: "Multicultural hillside community with varied housing types requiring flexible solutions from small city lots to larger properties. Click to learn more →",
+          link: "/service-areas/seattle/beacon-hill"
         },
         {
           name: "Columbia City",
