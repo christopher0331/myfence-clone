@@ -577,7 +577,7 @@ const BallardPage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Ballard we also work in Fremont and Wallingford east of the locks, plus Ravenna, Capitol Hill, and Queen Anne.
+                We install fences throughout Seattle. From Ballard we also work in Fremont and Wallingford east of the locks, plus Ravenna, Capitol Hill, Queen Anne, and Green Lake.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -597,6 +597,9 @@ const BallardPage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/queen-anne">Queen Anne</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/green-lake">Green Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
