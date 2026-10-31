@@ -27,6 +27,8 @@ export interface LeadPayload {
   additionalNotes?: string;
   message?: string;
   textConsent?: boolean;
+  /** How SMS consent was collected. Ignored by /api/website-lead if present. */
+  consent_method?: string;
   sourcePage?: string;
   site?: string;
   formId?: string;
@@ -36,6 +38,16 @@ export interface LeadPayload {
   fax_number?: string;
   form_loaded_at?: number | string;
 }
+
+/**
+ * Submitting a form is the consent action. The disclosure under the button
+ * replaces the old checkbox, so every lead from these forms records consent.
+ * /api/website-lead already ignores unknown JSON keys, so consent_method is safe.
+ */
+export const SUBMIT_DISCLOSURE_CONSENT = {
+  textConsent: true,
+  consent_method: "submit_disclosure",
+} as const;
 
 export interface LeadDeliveryResult {
   ok: boolean;

@@ -8,17 +8,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
-import { crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
+import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
-import { TEXT_CONSENT_MESSAGE, TEXT_CONSENT_NUDGE_DESCRIPTION, TEXT_CONSENT_NUDGE_TITLE } from "@/constants/textConsent";
-import { TextConsentNudgeNote } from "@/components/forms/TextConsentNudgeNote";
-import { useOptionalTextConsentNudge } from "@/hooks/useOptionalTextConsentNudge";
+import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import {
   buildSourcePageById,
   deriveFormSku,
@@ -40,8 +37,6 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<{ name: string; email: string; phone: string; address: string } | null>(null);
   const [addressValid, setAddressValid] = useState(false);
-  const { showNudge, interceptUncheckedSubmit, onConsentChange, clearNudge } =
-    useOptionalTextConsentNudge();
   const botGate = useFormBotGate(`inline-quote-${sku}-`);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -49,7 +44,6 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     phone: "",
     address: "",
     projectDescription: "",
-    textConsent: false,
   });
   const { toast } = useToast();
 
@@ -58,11 +52,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      textConsent: name === "phone" && value.trim() === "" ? false : prev.textConsent,
     }));
-    if (name === "phone" && value.trim() === "") {
-      clearNudge();
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -86,14 +76,6 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         title: "Address required",
         description: "Please enter your property address.",
         variant: "destructive",
-      });
-      return;
-    }
-
-    if (interceptUncheckedSubmit(formData.phone, formData.textConsent, "inline-quote-text-consent-row")) {
-      toast({
-        title: TEXT_CONSENT_NUDGE_TITLE,
-        description: TEXT_CONSENT_NUDGE_DESCRIPTION,
       });
       return;
     }
@@ -133,7 +115,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         propertyAddress: formData.address,
         fenceType: "Quote Request",
         message,
-        textConsent: formData.textConsent,
+        ...SUBMIT_DISCLOSURE_CONSENT,
         sourcePage,
         site: attribution.site,
         formId: attribution.formId,
@@ -151,7 +133,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           phone: formData.phone,
           address: formData.address,
           description: `${crmFailureNotice(crm)}[Quote Request]\n${message}`,
-          textConsent: formData.textConsent,
+          ...SUBMIT_DISCLOSURE_CONSENT,
           sourcePage,
           site: attribution.site,
           formId: attribution.formId,
@@ -193,7 +175,6 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
         phone: "",
         address: "",
         projectDescription: "",
-        textConsent: false,
       });
     } catch (err) {
       console.error('Quote request submission error:', err);
@@ -280,34 +261,6 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             inputMode="tel"
           />
         </div>
-        {formData.phone.trim() ? (
-          <>
-            <div
-              id="inline-quote-text-consent-row"
-              className={`rounded-md ${showNudge ? "space-y-2 border-2 border-amber-500 bg-amber-50 p-3 ring-2 ring-amber-200" : ""}`}
-            >
-              <div className="flex items-start space-x-2">
-              <Checkbox
-                id="inline-quote-text-consent"
-                checked={formData.textConsent}
-                onCheckedChange={(checked) => {
-                  const consentGiven = checked === true;
-                  setFormData((prev) => ({ ...prev, textConsent: consentGiven }));
-                  onConsentChange(consentGiven);
-                }}
-              />
-              <Label
-                htmlFor="inline-quote-text-consent"
-                className={`text-xs leading-5 ${showNudge ? "text-amber-900 font-semibold" : "text-muted-foreground"}`}
-              >
-                {TEXT_CONSENT_MESSAGE}
-              </Label>
-              </div>
-              <TextConsentNudgeNote visible={showNudge} />
-            </div>
-          </>
-        ) : null}
-
         <div className="space-y-2">
           <Label htmlFor="address">Project Address *</Label>
           <AddressAutocomplete
@@ -343,6 +296,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
             "Send Quote Request"
           )}
         </Button>
+        <SmsSubmitDisclosure buttonLabel="Send Quote Request" />
       </form>
       <div className="text-center text-xs text-muted-foreground mt-4 space-y-2">
         <p>✓ <strong>{WARRANTY_CONSTANTS.TITLE}</strong> on all installations</p>

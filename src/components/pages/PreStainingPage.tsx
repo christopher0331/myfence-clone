@@ -147,6 +147,7 @@ const PreStainingPage = () => {
             description="Culling and drying in the shop, then pre-stained cedar on the job — the same process described on this page."
             videos={[
               { videoId: "ud839tV-4-Y", title: "Pre Dry And Cull Before We Pre Stain" },
+              { videoId: "vAI4nxutV6g", title: "How We Dry Cedar Before Pre-Staining" },
               { videoId: "vS7Yswm0y2A", title: "POV: Building a premium cedar fence panel in the Fence Genius shop" },
               { videoId: "fbjj-uak5U4", title: "Pre Stained Cedar Fence in Ravensdale by MyFence.com" },
               { videoId: "gzAzQLdfqDA", title: "MyFence.com installing another perfect pre stained cedar fence in Washington!" },
