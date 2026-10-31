@@ -586,7 +586,7 @@ const QueenAnnePage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Queen Anne we also work in Ballard toward the Ship Canal, Fremont and Wallingford north of the canal, Capitol Hill toward downtown, and Green Lake around the park loop. We quote Magnolia from the Seattle service-area page.
+                We install fences throughout Seattle. From Queen Anne we also work in Ballard toward the Ship Canal, Magnolia across Interbay, Fremont and Wallingford north of the canal, Capitol Hill toward downtown, and Green Lake around the park loop.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
@@ -605,7 +605,7 @@ const QueenAnnePage = () => {
                   <Link href="/service-areas/seattle/wallingford">Wallingford</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/service-areas/seattle">Magnolia</Link>
+                  <Link href="/service-areas/seattle/magnolia">Magnolia</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/green-lake">Green Lake</Link>
