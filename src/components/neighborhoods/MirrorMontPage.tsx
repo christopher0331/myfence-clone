@@ -282,7 +282,15 @@ const MirrorMontPage = () => {
                     >
                       covenant fence guidelines
                     </a>{" "}
-                    before you lock a style. The association describes itself as a community association. Confirm anything that is not in those published pages with the committee.
+                    before you lock a style. The association describes itself as a community association. Confirm anything that is not in those published pages with the committee.{" "}
+                    See our{" "}
+                    <Link
+                      href="/service-areas/issaquah/mirrormont/hoa-approved-fencing"
+                      className="text-primary underline decoration-2 underline-offset-2"
+                    >
+                      Mirrormont HOA fencing guide
+                    </Link>{" "}
+                    for the approval steps; MyFence handles the committee application for you.
                   </p>
                 </div>
                 <div>

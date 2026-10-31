@@ -75,15 +75,18 @@ const Seattle = () => {
         },
         {
           name: "Wallingford",
-          description: "Family-friendly residential area with bungalows needing traditional fence styles that maintain neighborhood charm and period character"
+          description: "Family-friendly residential area with bungalows needing traditional fence styles that maintain neighborhood charm and period character. Click to learn more →",
+          link: "/service-areas/seattle/wallingford"
         },
         {
           name: "Green Lake",
-          description: "Active lakeside community with recreational properties requiring durable fencing that handles high foot traffic and pet activity"
+          description: "Active lakeside community with recreational properties requiring durable fencing that handles high foot traffic and pet activity. Click to learn more →",
+          link: "/service-areas/seattle/green-lake"
         },
         {
           name: "Magnolia",
-          description: "Waterfront peninsula with Puget Sound exposure demanding marine-grade materials and wind-resistant installations"
+          description: "Waterfront peninsula with Puget Sound exposure demanding marine-grade materials and wind-resistant installations. Click to learn more →",
+          link: "/service-areas/seattle/magnolia"
         },
         {
           name: "West Seattle",
@@ -92,11 +95,13 @@ const Seattle = () => {
         },
         {
           name: "Georgetown",
-          description: "Industrial-adjacent neighborhood with urban properties needing sound-dampening fence designs and secure boundary installations"
+          description: "Industrial-adjacent neighborhood with urban properties needing sound-dampening fence designs and secure boundary installations. Click to learn more →",
+          link: "/service-areas/seattle/georgetown"
         },
         {
           name: "Beacon Hill",
-          description: "Multicultural hillside community with varied housing types requiring flexible solutions from small city lots to larger properties"
+          description: "Multicultural hillside community with varied housing types requiring flexible solutions from small city lots to larger properties. Click to learn more →",
+          link: "/service-areas/seattle/beacon-hill"
         },
         {
           name: "Columbia City",

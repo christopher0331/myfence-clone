@@ -530,11 +530,14 @@ const FremontPage = () => {
                 Also Serving Nearby Seattle Neighborhoods
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                We install fences throughout Seattle. From Fremont we also work in Ballard toward the locks, Queen Anne across the canal, West Seattle across Elliott Bay, and Capitol Hill and Ravenna farther east.
+                We install fences throughout Seattle. From Fremont we also work in Wallingford across Stone Way N, Ballard toward the locks, Queen Anne and Magnolia across the canal, Green Lake around the park loop, West Seattle across Elliott Bay, and Capitol Hill and Ravenna farther east.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle">Seattle overview</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/wallingford">Wallingford</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/ballard">Ballard</Link>
@@ -543,10 +546,16 @@ const FremontPage = () => {
                   <Link href="/service-areas/seattle/queen-anne">Queen Anne</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/magnolia">Magnolia</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/capitol-hill">Capitol Hill</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/ravenna">Ravenna</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/seattle/green-lake">Green Lake</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/seattle/west-seattle">West Seattle</Link>
