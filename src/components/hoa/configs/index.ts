@@ -19,3 +19,5 @@ export { autumnWindHoaConfig } from "./autumn-wind";
 export { cimarronHoaConfig } from "./cimarron";
 export { summerRidgeHoaConfig } from "./summer-ridge";
 export { timberlineRidgeHoaConfig } from "./timberline-ridge";
+export { mirrormontHoaConfig } from "./mirrormont";
+export { meadowparkHoaConfig } from "./meadowpark";
