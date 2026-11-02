@@ -289,6 +289,11 @@ const Sammamish = () => {
           name: "Timberline Ridge",
           description: "North Sammamish neighborhood where new fences match the original 6 ft standard-style wood fence and need ACC review. Click to learn more →",
           link: "/service-areas/sammamish/timberline-ridge"
+        },
+        {
+          name: "Timberline Park",
+          description: "Sammamish plat where the lot owners association's ACC approves every fence and bans chain link. Click to learn more →",
+          link: "/service-areas/sammamish/timberline-park"
         }
       ]}
       landmarks={[
