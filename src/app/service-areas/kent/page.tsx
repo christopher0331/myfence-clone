@@ -35,6 +35,13 @@ export default function KentPage() {
     link: "/service-areas/kent/east-hill",
   });
 
+  neighborhoods.push({
+    name: "Panther Lake",
+    description:
+      "North Kent neighborhood annexed in 2010, where fences now follow City of Kent rules, corner-lot sight triangles, and any HOA covenants. Click to learn more →",
+    link: "/service-areas/kent/panther-lake",
+  });
+
   return (
     <ServiceAreaTemplate
       city="Kent"
