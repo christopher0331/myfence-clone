@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Check, X, Shield, Wrench, DollarSign, Anchor } from "lucide-react";
 import cedarPostOnPipe from "@/assets/cedar-post-on-pipe.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
 import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
@@ -132,6 +133,21 @@ const CedarPostOnPipe = () => {
               />
             </AspectRatio>
           </Card>
+        </div>
+      </section>
+
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4">Cedar Fence Posts Sleeved Over Steel Pipe</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            Pre stained cedar fence, built for Northwest weather. Every cedar post on this one is sleeved over a steel pipe, so you get the warm look of cedar with steel strength right where posts take the most abuse.
+          </p>
+          <div className="max-w-[340px] mx-auto">
+            <YouTubeShortEmbed
+              videoId="h_PTPsRQj-Q"
+              title="Cedar Fence Posts Sleeved Over Steel Pipe"
+            />
+          </div>
         </div>
       </section>
 
@@ -427,7 +443,7 @@ const CedarPostOnPipe = () => {
             <Button asChild variant="outline" className="h-auto py-4">
               <Link href="/fence-posts/steel-posts" className="flex flex-col items-start text-left">
                 <span className="font-semibold">4x4 Steel Posts</span>
-                <span className="text-sm text-muted-foreground">40-year warranty</span>
+                <span className="text-sm text-muted-foreground">Powder-coated, won't rot</span>
               </Link>
             </Button>
             <Button asChild variant="outline" className="h-auto py-4">
