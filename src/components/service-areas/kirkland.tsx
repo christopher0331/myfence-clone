@@ -509,6 +509,11 @@ const Kirkland = () => {
           name: "Norkirk",
           description: "Historic bungalow blocks and alley-grid yards between Market Street and the Cross Kirkland Corridor, near Crestwoods Park. Click to learn more →",
           link: "/service-areas/kirkland/norkirk"
+        },
+        {
+          name: "Central Houghton",
+          description: "Mostly single-family streets between the Cross Kirkland Corridor and I-405, south of NE 68th Street, with wooded lots near Watershed Park. Click to learn more →",
+          link: "/service-areas/kirkland/central-houghton"
         }
       ]}
       landmarks={[
