@@ -138,6 +138,7 @@ const SteelPostsPage = () => {
               heading="Steel post Shorts"
               description="Why we offer black steel posts, and what to watch for before you pick your next post system."
               videos={[
+                { videoId: "82eserLkCpc", title: "Steel Fence Posts That Don't Rot, With a Cedar Privacy Fence" },
                 { videoId: "JBrmR16irxw", title: "MyFence.com Now Offers Steel Fence Posts" },
                 { videoId: "ZBzaCrDfXfQ", title: "MyFence.com: Black Steel Fence Posts" },
                 { videoId: "6tdiroTqWOQ", title: "Watch this before choosing your next fence posts!" },
@@ -653,11 +654,6 @@ const SteelPostsPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-t border-border">
-                    <td className="p-4 text-foreground">Warranty</td>
-                    <td className="p-4 text-center text-primary font-semibold">40 Years</td>
-                    <td className="p-4 text-center text-muted-foreground">None (material)</td>
-                  </tr>
                   <tr className="border-t border-border bg-muted/30">
                     <td className="p-4 text-foreground">Rot Resistance</td>
                     <td className="p-4 text-center text-primary font-semibold">100% Immune</td>
