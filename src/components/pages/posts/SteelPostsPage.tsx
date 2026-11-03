@@ -654,11 +654,6 @@ const SteelPostsPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-t border-border">
-                    <td className="p-4 text-foreground">Warranty</td>
-                    <td className="p-4 text-center text-primary font-semibold">40 Years</td>
-                    <td className="p-4 text-center text-muted-foreground">None (material)</td>
-                  </tr>
                   <tr className="border-t border-border bg-muted/30">
                     <td className="p-4 text-foreground">Rot Resistance</td>
                     <td className="p-4 text-center text-primary font-semibold">100% Immune</td>
