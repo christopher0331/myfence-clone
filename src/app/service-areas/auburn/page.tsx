@@ -22,6 +22,13 @@ export default function AuburnPage() {
   }));
 
   neighborhoods.push({
+    name: "Highlands at Woodbrook",
+    description:
+      "56-home Auburn neighborhood where the community organization's Architectural Control Committee reviews exterior improvements. See the neighborhood page for fence rules and HOA help. Click to learn more →",
+    link: "/service-areas/auburn/highlands-at-woodbrook",
+  });
+
+  neighborhoods.push({
     name: "Lakeland Hills",
     description:
       "Planned hillside community in south Auburn where fences follow Auburn height rules and the Lakeland Hills HOA's published fence guidelines. See the neighborhood page or the HOA fencing guide. Click to learn more →",
