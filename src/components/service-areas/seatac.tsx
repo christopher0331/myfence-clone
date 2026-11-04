@@ -70,10 +70,10 @@ const SeaTacArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>We provide this information to help you compare options. MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing.</em>
+          <em>We provide this information to help you compare options. MyFence.com does not install composite or standalone aluminum/steel fencing.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vinyl and composite have merit in other markets; we focus on cedar, hogwire, and hybrid systems where we deliver the best results and warranty for SeaTac conditions.
+          Composite has merit in other markets; we focus on cedar, hogwire, and hybrid systems where we deliver the best results and warranty for SeaTac conditions.
         </p>
       </div>
 

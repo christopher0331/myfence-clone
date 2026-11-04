@@ -77,7 +77,7 @@ const TukwilaArticle = () => (
           <em>Sharing this so you can make informed comparisons—not to talk you out of options we don't carry.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vinyl becomes brittle after UV exposure and cracks in temperature swings—we've seen failures throughout older Tukwila neighborhoods. Chain-link and ornamental iron rust despite galvanizing claims, especially in the river valley's constant humidity. Composite boards handle moisture but expand and contract with temperature changes, creating gaps over time. We'd rather focus on materials we can warranty with confidence.
+          Chain-link and ornamental iron rust despite galvanizing claims, especially in the river valley's constant humidity. Composite boards handle moisture but expand and contract with temperature changes, creating gaps over time. We'd rather focus on materials we can warranty with confidence.
         </p>
       </div>
 

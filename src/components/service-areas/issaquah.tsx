@@ -92,7 +92,7 @@ const IssaquahArticle = () => (
           <em>Transparency matters: here's what we don't offer and why mountain conditions guided our decision.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Vinyl</strong> becomes brittle during Issaquah's winter freezes and can crack under snow load - we've seen too many failures above 400 feet elevation. <strong>Composite boards</strong> handle moisture well but lack the structural rigidity needed for steep-grade installations. <strong>Ornamental metal</strong> works for flat lots but doesn't step gracefully down slopes. By concentrating on cedar, hogwire, and our hybrid system, we've mastered what actually performs in the Issaquah Alps.
+          <strong>Composite boards</strong> handle moisture well but lack the structural rigidity needed for steep-grade installations. <strong>Ornamental metal</strong> works for flat lots but doesn't step gracefully down slopes. By concentrating on cedar, hogwire, and our hybrid system, we've mastered what actually performs in the Issaquah Alps.
         </p>
       </div>
 

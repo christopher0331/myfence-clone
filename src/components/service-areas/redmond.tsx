@@ -103,10 +103,10 @@ const RedmondArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install composite or standalone aluminum/steel fencing systems.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite materials</strong> offer wood-like aesthetics without regular staining, though at 60-80% higher cost. The time savings appeal to busy professionals, but composites lack the natural warmth many prefer. <strong>Vinyl fencing</strong> requires minimal maintenance but lacks character. <strong>Ornamental aluminum and steel</strong> provide security with sight lines. While these materials have merit, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee the contemporary aesthetics and precision installation Redmond's tech-savvy homeowners expect.
+          <strong>Composite materials</strong> offer wood-like aesthetics without regular staining, though at 60-80% higher cost. The time savings appeal to busy professionals, but composites lack the natural warmth many prefer. <strong>Ornamental aluminum and steel</strong> provide security with sight lines. While these materials have merit, we've specialized in cedar, hogwire, and hybrid systems where we can guarantee the contemporary aesthetics and precision installation Redmond's tech-savvy homeowners expect.
         </p>
       </div>
 

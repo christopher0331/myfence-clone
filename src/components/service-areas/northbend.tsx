@@ -97,10 +97,10 @@ const NorthBendArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install composite or standalone aluminum/steel fencing systems.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> from manufacturers like Trex offers 20-25 year lifespans without maintenance, ideal for forested properties with constant moisture. <strong>Vinyl fencing</strong> requires minimal upkeep but struggles with temperature extremes at elevation. <strong>Steel fencing</strong> provides maximum wildlife resistance and fire safety. While these materials have merit for mountain applications, we've specialized in cedar, hogwire, and hybrid systems where we can ensure proper installation for North Bend's unique conditions.
+          <strong>Composite fencing</strong> from manufacturers like Trex offers 20-25 year lifespans without maintenance, ideal for forested properties with constant moisture. <strong>Steel fencing</strong> provides maximum wildlife resistance and fire safety. While these materials have merit for mountain applications, we've specialized in cedar, hogwire, and hybrid systems where we can ensure proper installation for North Bend's unique conditions.
         </p>
       </div>
     </section>
@@ -338,7 +338,7 @@ const NorthBendArticle = () => (
         <div>
           <h4 className="font-semibold mb-2">How do I handle wildlife with my fence?</h4>
           <p className="text-muted-foreground">
-            Wildlife management requires proper fence design rather than just height. We recommend 7-8 foot heights for deer exclusion, with reinforced lower sections to resist probing and digging. Buried barrier extensions deter animals from burrowing under, while angled top sections discourage jumping. Material selection matters - steel and aluminum withstand wildlife impacts better than wood or vinyl which can be damaged by repeated contact.
+            Wildlife management requires proper fence design rather than just height. We recommend 7-8 foot heights for deer exclusion, with reinforced lower sections to resist probing and digging. Buried barrier extensions deter animals from burrowing under, while angled top sections discourage jumping. Material selection matters - steel and aluminum withstand wildlife impacts better than wood, which can be damaged by repeated contact.
           </p>
         </div>
         <div>
@@ -384,7 +384,7 @@ const NorthBend = () => {
         "name": "How do I handle wildlife with my fence?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wildlife management requires proper fence design rather than just height. We recommend 7-8 foot heights for deer exclusion, with reinforced lower sections to resist probing and digging. Buried barrier extensions deter animals from burrowing under, while angled top sections discourage jumping. Steel and aluminum withstand wildlife impacts better than wood or vinyl."
+          "text": "Wildlife management requires proper fence design rather than just height. We recommend 7-8 foot heights for deer exclusion, with reinforced lower sections to resist probing and digging. Buried barrier extensions deter animals from burrowing under, while angled top sections discourage jumping. Steel and aluminum withstand wildlife impacts better than wood."
         }
       },
       {
