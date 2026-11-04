@@ -24,15 +24,21 @@ export interface SammamishHoaNeighborhoodConfig {
   considerations: { title: string; body: string }[];
   faqs: { question: string; answer: string }[];
   nearby: { label: string; href: string }[];
+  /** City display name; defaults to Sammamish. */
+  city?: string;
+  /** City URL slug; defaults to sammamish. */
+  citySlug?: string;
 }
 
 const SammamishHoaNeighborhoodPage = ({ config }: { config: SammamishHoaNeighborhoodConfig }) => {
-  const canonical = `https://myfence.com/service-areas/sammamish/${config.slug}`;
-  const hoaHref = `/service-areas/sammamish/${config.slug}/hoa-approved-fencing`;
+  const city = config.city ?? "Sammamish";
+  const citySlug = config.citySlug ?? "sammamish";
+  const canonical = `https://myfence.com/service-areas/${citySlug}/${config.slug}`;
+  const hoaHref = `/service-areas/${citySlug}/${config.slug}/hoa-approved-fencing`;
   const structuredData = buildNeighborhoodStructuredData({
     canonical,
-    neighborhoodName: `${config.name}, Sammamish`,
-    pageTitle: `${config.name} Sammamish Fence Installation`,
+    neighborhoodName: `${config.name}, ${city}`,
+    pageTitle: `${config.name} ${city} Fence Installation`,
     description: config.metaDescription,
     faqItems: config.faqs,
   });
@@ -43,15 +49,15 @@ const SammamishHoaNeighborhoodPage = ({ config }: { config: SammamishHoaNeighbor
       <main className="min-h-screen">
         <section className="pt-20 md:pt-24 py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
-            <Link href="/service-areas/sammamish" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors">
+            <Link href={`/service-areas/${citySlug}`} className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6 transition-colors">
               <ArrowLeft className="h-4 w-4" />
-              Back to Sammamish
+              Back to {city}
             </Link>
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
-                  <span className="text-lg text-muted-foreground">Serving {config.name}, Sammamish WA</span>
+                  <span className="text-lg text-muted-foreground">Serving {config.name}, {city} WA</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{config.name} Fence Installation</h1>
                 <p className="text-xl text-muted-foreground mb-8">{config.heroIntro}</p>
@@ -68,7 +74,7 @@ const SammamishHoaNeighborhoodPage = ({ config }: { config: SammamishHoaNeighbor
                 </div>
               </div>
               <div className="w-full rounded-lg overflow-hidden shadow-lg min-h-[280px]">
-                <GoogleBusinessMap city={`${config.name}, Sammamish`} state="Washington" radiusMiles={5} zoom={11} showBusinessInfo={true} />
+                <GoogleBusinessMap city={`${config.name}, ${city}`} state="Washington" radiusMiles={5} zoom={11} showBusinessInfo={true} />
               </div>
             </div>
           </div>
@@ -116,9 +122,9 @@ const SammamishHoaNeighborhoodPage = ({ config }: { config: SammamishHoaNeighbor
           </div>
         </section>
 
-        <LeadCaptureTabs fenceStyleName={`${config.name} Sammamish fence`} />
+        <LeadCaptureTabs fenceStyleName={`${config.name} ${city} fence`} />
 
-        <ServiceAreaPhotoGallery city="Sammamish" neighborhood={config.name} />
+        <ServiceAreaPhotoGallery city={city} neighborhood={config.name} />
 
         <section className="py-16">
           <div className="container">
@@ -153,9 +159,9 @@ const SammamishHoaNeighborhoodPage = ({ config }: { config: SammamishHoaNeighbor
         <section className="py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Also Serving Nearby Sammamish Neighborhoods</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Also Serving Nearby {city} Neighborhoods</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild variant="outline" size="sm"><Link href="/service-areas/sammamish">Sammamish overview</Link></Button>
+                <Button asChild variant="outline" size="sm"><Link href={`/service-areas/${citySlug}`}>{city} overview</Link></Button>
                 {config.nearby.map((n) => (
                   <Button key={n.href} asChild variant="outline" size="sm"><Link href={n.href}>{n.label}</Link></Button>
                 ))}
