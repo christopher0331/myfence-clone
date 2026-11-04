@@ -28,6 +28,13 @@ export default function AuburnPage() {
     link: "/service-areas/auburn/lakeland-hills",
   });
 
+  neighborhoods.push({
+    name: "Riverpointe",
+    description:
+      "Auburn neighborhood where the Riverpointe HOA's published guidelines call for matching stained wood fences with arched gates. See the neighborhood page for fence rules and HOA help. Click to learn more →",
+    link: "/service-areas/auburn/riverpointe",
+  });
+
   return (
     <ServiceAreaTemplate
       city="Auburn"
