@@ -89,8 +89,8 @@ export const faqCategories: FAQCategory[] = [
         answer: "Absolutely! Many customers combine styles—for example, solid board for privacy in the backyard and picket or horizontal lattice in the front for curb appeal. We can design a cohesive look using consistent colors, post styles, and heights while varying the panel designs."
       },
       {
-        question: "Do you install metal or vinyl fences?",
-        answer: "We specialize in wood fencing and offer metal hogwire accents, but we don't install all-metal or vinyl fencing. Our expertise is in premium wood construction using Fence Genius technology. If you're interested in metal or vinyl, we can refer you to trusted partners in the Seattle area."
+        question: "Do you install cedar/steel hybrid fences?",
+        answer: "Yes. We specialize in cedar fencing and also build cedar/steel hybrid fences, which pair cedar framing with 26 gauge corrugated steel panels for low-maintenance privacy. Every fence is built with Fence Genius technology, and we offer metal hogwire accents too."
       }
     ]
   },
