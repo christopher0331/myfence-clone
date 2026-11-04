@@ -74,9 +74,13 @@ interface ServiceAreasSectionProps {
    * promotes the heading to the page h1 and clears the fixed header.
    */
   isPage?: boolean;
+  /** Homepage: show city hubs only, not one-off community/neighborhood pages. */
+  hubsOnly?: boolean;
 }
 
-const ServiceAreasSection = ({ isPage = false }: ServiceAreasSectionProps) => {
+const COMMUNITY_REGIONS = new Set(["Bonney Lake Communities", "Neighborhoods"]);
+
+const ServiceAreasSection = ({ isPage = false, hubsOnly = false }: ServiceAreasSectionProps) => {
   const Heading = isPage ? "h1" : "h2";
   return (
     <section
@@ -92,7 +96,9 @@ const ServiceAreasSection = ({ isPage = false }: ServiceAreasSectionProps) => {
       </div>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {serviceAreasByRegion.map((region) => (
+        {serviceAreasByRegion
+          .filter((region) => !hubsOnly || !COMMUNITY_REGIONS.has(region.region))
+          .map((region) => (
           <Card key={region.region} className="border-2 hover:border-primary/50 transition-colors">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-4 text-foreground text-center">{region.region}</h3>

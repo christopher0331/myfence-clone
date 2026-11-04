@@ -16,7 +16,12 @@ interface MobileMenuProps {
 }
 
 const navItems = [
-  { to: "/quote", label: "Virtual Quote Tool" },
+  { to: "/privacy-fences", label: "Privacy Fences" },
+  { to: "/pre-staining-cedar-fence", label: "Cedar Fences" },
+  { to: "/fence-styles/cedar-steel-hybrid-fence", label: "Hybrid Fences" },
+  { to: "/service-areas", label: "Service Areas" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/quote", label: "Free Quote" },
   { to: "/discounts", label: "Discounts" },
   { to: "/financing", label: "Financing" },
   { to: "/blog", label: "FAQ" },
@@ -53,19 +58,14 @@ const serviceAreasByRegion = [
     region: "Pierce County",
     areas: [
       { to: "/service-areas/bonney-lake", label: "Bonney Lake" },
-      { to: "/service-areas/bonney-lake/downtown-bonney-lake", label: "Downtown Bonney Lake" },
-      { to: "/service-areas/bonney-lake/falling-water", label: "Falling Water" },
       { to: "/service-areas/federal-way", label: "Federal Way" },
       { to: "/service-areas/gig-harbor", label: "Gig Harbor" },
       { to: "/service-areas/lake-tapps", label: "Lake Tapps" },
-      { to: "/service-areas/bonney-lake/lower-tehaleh", label: "Lower Tehaleh" },
-      { to: "/service-areas/bonney-lake/mountain-creek", label: "Mountain Creek" },
       { to: "/service-areas/orting", label: "Orting" },
       { to: "/service-areas/puyallup", label: "Puyallup" },
       { to: "/service-areas/riverpoint", label: "Riverpoint" },
       { to: "/service-areas/sumner", label: "Sumner" },
       { to: "/service-areas/university-place", label: "University Place" },
-      { to: "/service-areas/bonney-lake/upper-tehaleh", label: "Upper Tehaleh" },
     ],
   },
   {
