@@ -118,43 +118,51 @@ const Header = () => {
         </div>
 
         <nav className="hidden lg:flex items-center gap-8 pt-3">
+          {[
+            { to: "/privacy-fences", label: "Privacy Fences" },
+            { to: "/pre-staining-cedar-fence", label: "Cedar Fences" },
+            { to: "/fence-styles/cedar-steel-hybrid-fence", label: "Hybrid Fences" },
+          ].map((item) => (
+            <Link
+              key={item.to}
+              href={item.to}
+              className={`text-base transition-colors hover:text-primary ${pathname === item.to ? "text-primary" : "text-muted-foreground"}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <ServiceAreasDropdown />
+          <Link
+            href="/gallery"
+            className={`text-base transition-colors hover:text-primary ${pathname === "/gallery" ? "text-primary" : "text-muted-foreground"}`}
+          >
+            Gallery
+          </Link>
+          <Link href="/quote" className="text-base font-semibold text-primary transition-colors hover:underline">
+            Free Quote
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="text-base text-muted-foreground transition-colors hover:text-primary flex items-center gap-1">
-              Fence Styles
+              More
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-background border z-50">
               {[
-                { label: "Fence Styles", hash: "#fence-styles" },
-                { label: "Fence Post Options", hash: "#post-options" },
-                { label: "Upgrade Options", hash: "#add-on-options" },
-              ].map((section) => (
-                <DropdownMenuItem key={section.hash} asChild>
-                  <Link href={`/fence-styles${section.hash}`} scroll={false}>
-                    {section.label}
+                { label: "All Fence Styles", href: "/fence-styles#fence-styles" },
+                { label: "Fence Post Options", href: "/fence-styles#post-options" },
+                { label: "Upgrade Options", href: "/fence-styles#add-on-options" },
+                { label: "Financing", href: "/financing" },
+                { label: "FAQ", href: "/blog" },
+                { label: "Contact us", href: "/contact" },
+              ].map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link href={item.href} scroll={false}>
+                    {item.label}
                   </Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {[
-            { to: "/quote", label: "Virtual Quote Tool" },
-            { to: "/financing", label: "Financing" },
-            { to: "/blog", label: "FAQ" },
-            { to: "/contact", label: "Contact us" },
-          ].map((item) => {
-            const isActive = pathname === item.to;
-            return (
-              <Link
-                key={item.to}
-                href={item.to}
-                className={`px-2 text-base transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"} ${item.to === '/contact' ? 'font-semibold !text-primary' : ''}`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <ServiceAreasDropdown />
           <div className="flex flex-col items-center gap-1 ml-4">
             <Link href="/contact">
               <Button variant="hero" size="lg">(253) 455-1885</Button>

@@ -74,7 +74,7 @@ export default function HomeDeferredSections({ eager = false }: { eager?: boolea
         <EagerCTA />
         <EagerFaq />
         <EagerBlog />
-        <EagerServiceAreas />
+        <EagerServiceAreas hubsOnly />
       </>
     );
   }
@@ -128,7 +128,12 @@ export default function HomeDeferredSections({ eager = false }: { eager?: boolea
       />
 
       <DeferredSection
-        importFn={() => import("@/components/ServiceAreasSection")}
+        importFn={() =>
+          import("@/components/ServiceAreasSection").then((m) => {
+            const HubsOnlyServiceAreas = () => <m.default hubsOnly />;
+            return HubsOnlyServiceAreas;
+          })
+        }
         placeholder={<div className="container py-12 md:py-16 h-48 bg-muted/10 animate-pulse rounded-lg" />}
       />
     </>

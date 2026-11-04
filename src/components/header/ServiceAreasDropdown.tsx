@@ -165,6 +165,11 @@ export default function ServiceAreasDropdown() {
             );
           })}
         </div>
+        <div className="mt-4 border-t pt-3 text-center">
+          <Link href="/service-areas" onClick={close} className="text-sm font-semibold text-primary hover:underline">
+            View all service areas
+          </Link>
+        </div>
       </FocusScope>
     </DismissableLayer>
   ) : null;

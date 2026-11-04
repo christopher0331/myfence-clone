@@ -13,12 +13,28 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 // Do NOT read headers()/cookies() here — that forces cache-control: no-store.
 export const revalidate = 3600;
 
+const HOME_TITLE = "Privacy Fence Installation in Auburn & South King County | MyFence";
+const HOME_DESCRIPTION =
+  "Skip the staining. Our pre-stained, pre-built cedar privacy fences go up fast across Auburn, Kent and Federal Way. Free quote: (253) 455-1885.";
+
 export const metadata: Metadata = {
-  title: "Seattle Fence Installation | Local Fence Company | MyFence.com",
-  description:
-    "Local Seattle fence company for cedar, hogwire, and hybrid fence installation. Father & son team using Fence Genius. Free quotes. Call (253) 455-1885.",
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
   alternates: {
     canonical: SITE_CONFIG.url + "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "MyFence",
+    url: SITE_CONFIG.url + "/",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
 };
 
@@ -53,7 +69,9 @@ export default function HomePage() {
       url: SITE_CONFIG.logoUrl,
     },
     url: SITE_CONFIG.url,
-    telephone: `+1-253-455-1885`,
+    telephone: "+1-253-455-1885",
+    priceRange: "$$",
+    areaServed: ["Auburn, WA", "Kent, WA", "Federal Way, WA", "South King County, WA"],
     address: SCHEMA_ADDRESS,
     geo: {
       "@type": "GeoCoordinates",
