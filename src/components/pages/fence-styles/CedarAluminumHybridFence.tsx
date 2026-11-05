@@ -159,6 +159,13 @@ const CedarAluminumHybridFence = () => {
               Back to Fence Styles
             </Link>
           </Button>
+          <p className="text-sm text-muted-foreground mb-4">
+            Comparing privacy options? See our{" "}
+            <Link href="/privacy-fences" className="text-primary hover:underline">
+              privacy fence styles hub
+            </Link>
+            .
+          </p>
         </div>
 
         {/* Hero Section */}

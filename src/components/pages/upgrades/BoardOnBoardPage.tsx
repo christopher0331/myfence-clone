@@ -355,6 +355,9 @@ const BoardOnBoard = () => {
             <Button asChild variant="outline" size="lg">
               <Link href="/fence-styles">View All Fence Styles</Link>
             </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/privacy-fences">Privacy Fence Hub</Link>
+            </Button>
           </div>
         </div>
       </section>

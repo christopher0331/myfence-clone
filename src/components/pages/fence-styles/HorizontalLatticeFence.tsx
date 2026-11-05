@@ -94,6 +94,13 @@ const HorizontalLatticeFence = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Fence Styles
           </Link>
+          <p className="text-sm text-muted-foreground mb-6">
+            Comparing privacy options? See our{" "}
+            <Link href="/privacy-fences" className="text-primary hover:underline">
+              privacy fence styles hub
+            </Link>
+            .
+          </p>
 
           {/* Hero Section */}
           <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">

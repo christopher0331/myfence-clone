@@ -127,6 +127,13 @@ export const PopularStylesSection = ({ onOpenQuoteModal }: PopularStylesSectionP
         </Link>
         <span className="absolute top-1/2 -translate-y-1/2 right-[calc(50%-120px)] sm:right-[calc(50%-140px)] text-4xl sm:text-5xl animate-pulse -rotate-45 pointer-events-none z-10" aria-hidden="true">👆</span>
       </div>
+      <p className="text-center mt-4 text-sm text-muted-foreground">
+        Shopping for backyard privacy? Compare{" "}
+        <Link href="/privacy-fences" className="text-primary hover:underline font-medium">
+          privacy fence styles
+        </Link>
+        .
+      </p>
     </section>
   );
 };
