@@ -1,7 +1,7 @@
 import SammamishHoaNeighborhoodPage, { type SammamishHoaNeighborhoodConfig } from "@/components/neighborhoods/SammamishHoaNeighborhoodPage";
 
-// Sources: Riverpointe HOA public pages on MyHOA-online:
-// https://myhoa-online.com/article/fence_guidelines and https://myhoa-online.com/Article/rulesandregs?act=36. No contact details published.
+// Official Riverpointe association portals (myhoa-online.com / riverpointeauburn.org)
+// no longer resolve with a working page. Soften claims; no unverified links.
 const config: SammamishHoaNeighborhoodConfig = {
   slug: "riverpointe",
   name: "Riverpointe",
@@ -9,42 +9,47 @@ const config: SammamishHoaNeighborhoodConfig = {
   citySlug: "auburn",
   hoaName: "Riverpointe Homeowners Association",
   metaTitle: "Riverpointe Fence Installation | Auburn | MyFence",
-  metaDescription: "Fence installation in Riverpointe, Auburn. Riverpointe HOA fence guidelines: wood only, 6 ft max, arched gates, preapproved stains, and we handle the ACC request. Free quotes. (253) 455-1885.",
-  heroIntro: "Wood fencing for Riverpointe homes built to the homeowners association's published fence guidelines. MyFence handles the Architectural Control Committee request for you.",
+  metaDescription:
+    "Fence installation in Riverpointe, Auburn. Confirm current Riverpointe ACC fence rules in writing. MyFence handles the ACC request. Free quotes. (253) 455-1885.",
+  heroIntro:
+    "Wood fencing for Riverpointe homes, planned around what the homeowners association's Architectural Control Committee confirms in writing. MyFence handles the ACC request for you.",
   aboutParagraphs: [
-    "Riverpointe is an Auburn neighborhood governed by the Riverpointe Homeowners Association, which publishes its rules and regulations and a dedicated fence guidelines page.",
-    "The association's goal is a matching look across the community: its guidelines say all fences should match, and older fences that don't match the current examples must be brought up to the guidelines when they are rebuilt. That makes most Riverpointe fence jobs a matching wood replacement that needs approval before work begins.",
+    "Riverpointe is an Auburn neighborhood governed by the Riverpointe Homeowners Association. Public association guideline pages that once listed fence rules are no longer available online, so homeowners should confirm current materials, height, gate, and stain rules with the ACC before they design.",
+    "Most Riverpointe fence jobs are matching wood replacements on shared lot lines. Agree with neighbors on style and finish, get ACC approval in writing, and check City of Auburn limits for your lot before work begins.",
   ],
-  hoaSummary: "The Riverpointe HOA's Board or Architectural Control Committee (ACC) approves fences. Its published rules require a written request at least 30 days before installation, and work may not start until written approval is received.",
+  hoaSummary:
+    "The Riverpointe HOA's Board or Architectural Control Committee (ACC) reviews fences. Confirm the current request process, lead time, and design rules with the ACC in writing before you build. MyFence prepares the request for you.",
   hoaBullets: [
-    "Wood is the only approved fence material; no chain link",
-    "Fences cannot exceed 6 feet; front yard fences are prohibited",
-    "Gates must be arched and boards no wider than 4 inches",
-    "Preapproved stain colors are SW 3505 and SW 3507",
-    "Replacements need an ACC request; repairs of 20% or less of the fence do not",
+    "Confirm allowed materials, height, gates, and stain colors with the ACC",
+    "Ask whether front-yard fences or chain link are allowed",
+    "Confirm repair-versus-replacement rules before you start",
+    "Get written ACC approval before a new or replacement fence",
+    "Check City of Auburn approvals separately from the association",
   ],
   considerations: [
     {
       title: "Matching your neighbors",
-      body: "The guidelines say adjoining fences should be stained to match, and in some cases you may need to work with your neighbor to replace a whole run so it all matches. We can quote the shared section and work with both households.",
+      body: "Shared lot-line fences often need both households to agree on style and finish so the run matches. Confirm any match requirement with the ACC, and we can quote the shared section for both households.",
     },
     {
       title: "Repair or replacement",
-      body: "The association treats work on 20% or less of the total fence as a repair, which doesn't need an ACC request. More than that is a replacement, which does. We'll tell you honestly which one your fence needs.",
+      body: "Ask the ACC how it treats repairs versus full replacements. We'll tell you honestly which scope your fence needs, then follow the association's current process.",
     },
     {
       title: "City approval too",
-      body: "Riverpointe's rules say owners must also get any required City of Auburn approvals before installing a new fence. We check the city rules for your lot as part of the design.",
+      body: "Association approval does not replace City of Auburn fence rules. We check the city limits for your lot as part of the design.",
     },
   ],
   faqs: [
     {
       question: "Do I need HOA approval for a fence in Riverpointe?",
-      answer: "Yes, for a new or replacement fence. Riverpointe's rules say a written request must reach the Board 30 days before installation, and work may not start until written approval is received. A repair covering 20% or less of the fence does not need an ACC request. MyFence prepares the ACC request for you.",
+      answer:
+        "Usually yes for a new or replacement fence. Confirm the current lead time and submission process with the Riverpointe ACC, and do not start until you have written approval. MyFence prepares the ACC request for you.",
     },
     {
       question: "What fence can I build in Riverpointe?",
-      answer: "The published guidelines allow wood fences only, up to 6 feet tall, with boards no wider than 4 inches, arched gates, and SW 3505 or SW 3507 stain. Chain link and front yard fences are not allowed. See our Riverpointe HOA fencing guide for details.",
+      answer:
+        "Ask the Riverpointe ACC for the current materials, height, gate, and stain rules. Older public association pages are offline, so do not design from memory. See our Riverpointe HOA fencing guide for the checklist we use with homeowners.",
     },
   ],
   nearby: [

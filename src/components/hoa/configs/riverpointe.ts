@@ -1,18 +1,35 @@
 import type { HoaApprovedFencingConfig } from "@/components/hoa/types";
 
-// Sources: the association's public pages on MyHOA-online only (see officialLinks). No contact details published.
-const PORTAL = "https://riverpointeauburn.org/";
-const FENCE = "https://myhoa-online.com/article/fence_guidelines";
-const RULES = "https://myhoa-online.com/Article/rulesandregs?act=36";
-const CCR5 = "https://www.myhoa-online.com/Article/ccr5?act=36";
+// Official Riverpointe association portals (riverpointeauburn.org, myhoa-online.com
+// fence guidelines / rules / CCR Article 5) no longer resolve with a working page.
+// Do not link unverified URLs. Soften claims and point readers to the ACC.
+const AUBURN_FENCE_CODE = "https://auburn.municipal.codes/ACC/18.31.020";
 
 const faqs = [
-  { q: "What fences does Riverpointe allow?", a: "The Riverpointe HOA fence guidelines say wood is the only approved fence material, fences cannot exceed 6 feet, gates must be arched and may not exceed the fence height, and each board should be no wider than 4 inches. The association's rules say fences must be the same style and size as installed by the declarant, and chain link fences are not permitted." },
-  { q: "Can I put a fence in my front yard in Riverpointe?", a: "No. The fence guidelines say front yard fences are strictly prohibited." },
-  { q: "What stain colors are approved in Riverpointe?", a: "The guidelines say fences should be stained, the preapproved stain colors are SW 3505 and SW 3507, and adjoining fences should be stained to match so there is no visible color difference." },
-  { q: "Do I need ACC approval to repair my Riverpointe fence?", a: "Not for a repair. The guidelines treat work on 20% or less of the total fence as a repair, which does not require an ACC request. Anything more is a replacement, which needs an ACC request." },
-  { q: "How far ahead do I submit a Riverpointe fence request?", a: "The association's rules say the request must be received 30 days before the installation date, installation may not start until written Board approval is received, and owners must also get any required City of Auburn approvals." },
-  { q: "Does MyFence handle the Riverpointe ACC application?", a: "Yes. MyFence prepares and handles the ACC request for the homeowner, including the fence diagram, placement, stain color, materials and installation method the rules ask for, and builds only after the association approves. The association makes the decision." },
+  {
+    q: "What fences does Riverpointe allow?",
+    a: "Riverpointe's Board or Architectural Control Committee (ACC) reviews fence projects. Older public guideline pages previously described wood as the only approved material, a 6-foot maximum height, arched gates, and stained fences that match neighbors, and they said chain link and front-yard fences were not allowed. Those association pages are no longer available online, so treat those details as unverified until you confirm the current rules with the ACC in writing.",
+  },
+  {
+    q: "Can I put a fence in my front yard in Riverpointe?",
+    a: "Confirm with the Riverpointe ACC before you plan a front-yard fence. Older public association guidelines said front-yard fences were prohibited, but that source is no longer online. Get the current rule in writing from the ACC.",
+  },
+  {
+    q: "What stain colors are approved in Riverpointe?",
+    a: "Ask the Riverpointe ACC for the current approved stain list. Older public guidelines named Sherwin-Williams SW 3505 and SW 3507, but that source is no longer online, so do not order stain until the ACC confirms.",
+  },
+  {
+    q: "Do I need ACC approval to repair my Riverpointe fence?",
+    a: "Ask the Riverpointe ACC. Older public guidelines treated work on about 20% or less of the fence as a repair that did not need a request, and anything more as a replacement that did. Confirm the current repair-versus-replacement rule with the ACC before you start.",
+  },
+  {
+    q: "How far ahead do I submit a Riverpointe fence request?",
+    a: "Ask the Riverpointe ACC for the current lead time and submission process. Older public rules asked for a written request about 30 days before installation and said work could not start until written approval, plus any City of Auburn approvals. Confirm both with the ACC and the city.",
+  },
+  {
+    q: "Does MyFence handle the Riverpointe ACC application?",
+    a: "Yes. MyFence prepares and handles the ACC request for the homeowner, including the fence diagram, placement, materials, and installation details the association asks for, and builds only after the association approves. The association makes the decision.",
+  },
 ];
 
 export const riverpointeHoaConfig: HoaApprovedFencingConfig = {
@@ -24,60 +41,95 @@ export const riverpointeHoaConfig: HoaApprovedFencingConfig = {
   hubHref: "/service-areas/auburn",
   hubLinkLabel: "Auburn fence installation",
   metaTitle: "Riverpointe HOA Fencing Guide | Auburn | MyFence",
-  metaDescription: "Riverpointe HOA fence rules in Auburn from the association's published guidelines: written approval 30 days ahead, wood only, 6 ft max, arched gates, SW 3505 or SW 3507 stain, no chain link or front-yard fences. MyFence handles the HOA application. Not affiliated with the association.",
+  metaDescription:
+    "Riverpointe HOA fencing in Auburn: confirm current ACC fence rules in writing before you build. MyFence handles the HOA application and follows City of Auburn limits. Not affiliated with the association.",
   locationLabel: "Riverpointe Homeowners Association · Auburn, WA",
   h1: "Riverpointe HOA Fencing Guide, Auburn",
-  heroIntro: "The Riverpointe Homeowners Association approves new and replacement fences in writing through its Board or Architectural Control Committee (ACC). Its published guidelines allow wood fences only, up to 6 feet, with arched gates, boards no wider than 4 inches and a preapproved SW 3505 or SW 3507 stain. HOA-friendly choices are stained wood privacy fences that match the community examples and your neighbors' fences. MyFence handles the ACC application for the homeowner.",
-  disclaimer: "MyFence is not affiliated with the Riverpointe Homeowners Association, is not an approved vendor, and does not speak for the association, its board or its architectural committee. Every association rule on this page comes from the association's own public fence guidelines and rules, linked below. Associations can change their rules, so confirm the current version with the association before you build. Where this page does not cover a detail, check with the association's architectural committee.",
-  downloadCtaLabel: "Open HOA forms",
+  heroIntro:
+    "The Riverpointe Homeowners Association's Board or Architectural Control Committee (ACC) reviews new and replacement fences. Public association guideline pages that once listed materials, height, gate style, and stain colors are no longer available online, so confirm every rule with the ACC in writing before you design or order materials. MyFence handles the ACC application for the homeowner and builds only after approval.",
+  disclaimer:
+    "MyFence is not affiliated with the Riverpointe Homeowners Association, is not an approved vendor, and does not speak for the association, its board, or its architectural committee. Older public association pages that described fence rules are no longer reachable, so this page does not treat those details as current. Confirm the current rules with the association's architectural committee before you build. Where this page does not cover a detail, check with the ACC.",
+  downloadCtaLabel: "ACC approval guidance",
   contactCtaLabel: "Contact Us",
   trustItems: [
-    { icon: "clipboard", label: "Written approval before installing" },
-    { icon: "file", label: "Request 30 days before install" },
-    { icon: "shield", label: "Wood only, 6 ft max, arched gates" },
+    { icon: "clipboard", label: "Confirm rules with the ACC in writing" },
+    { icon: "file", label: "MyFence handles the HOA application" },
+    { icon: "shield", label: "City of Auburn rules are a separate step" },
   ],
   formsHeading: "Forms: Riverpointe architectural approval",
-  formsIntro: "These are direct links to the association's own public pages, so you always see the current version. The guidelines say the ACC request is filed online through the association's resident portal (registration required). MyFence handles the HOA application for the homeowner: we prepare the fence diagram and material details, help submit the request, and build only after approval.",
-  officialLinksHeading: "Association sources",
+  formsIntro:
+    "The association's former public portal and MyHOA-online guideline pages no longer load, so we do not link them. Ask the Riverpointe ACC (or the board, if the board reviews exterior work) for the current application form, lead time, materials, height, gate, and stain rules, and keep the answer in writing. MyFence prepares the fence diagram and material details for that request and builds only after approval. Separately, follow City of Auburn fence limits for your lot.",
+  officialLinksHeading: "Verified city source",
   officialLinks: [
-    { label: "Riverpointe HOA Fence Guidelines", href: FENCE, note: "Approved material, height, board width, gate shape, preapproved stains, repair vs. replacement, and how to file the ACC request" },
-    { label: "Riverpointe HOA Rules and Regulations", href: RULES, note: "Architectural control and fence rules: 30-day written request, Board approval, no chain link, City of Auburn approvals" },
-    { label: "Riverpointe CC&R Article 5: Architectural Control", href: CCR5, note: "The covenant section that gives the Board or ACC its approval powers" },
+    {
+      label: "Auburn City Code 18.31.020, Fences",
+      href: AUBURN_FENCE_CODE,
+      note: "City height and permit rules that apply in Auburn, separate from association approval",
+    },
   ],
   forms: [
-    { href: PORTAL, title: "ACC/PIC Request (online, resident portal)", timing: "30+ days before install", source: "Official association", ctaLabel: "Open association portal", blurb: "Per the guidelines, sign in, go to Issues, choose ACC/PIC Request (Property Change Request) and the Fence Addition or Change category, and include a diagram of the fence location." },
-    { href: FENCE, title: "Fence Guidelines (web page)", timing: "Before you design", source: "Official association", ctaLabel: "Open association page", blurb: "The association's fence specifications and example photos of a compliant fence." },
+    {
+      href: AUBURN_FENCE_CODE,
+      title: "City of Auburn fence code (not HOA)",
+      timing: "City zoning rules",
+      source: "City of Auburn",
+      ctaLabel: "Open city code",
+      blurb:
+        "Use this for city height and permit limits only. It does not replace Riverpointe ACC approval. Ask the ACC for the current association form and rules.",
+    },
   ],
   processHeading: "Riverpointe fence approval process",
   steps: [
-    { title: "Design within the guidelines", body: "Wood only, no taller than 6 feet, boards no wider than 4 inches, arched gates no taller than the fence, and no front yard fences or chain link. The rules say fences must be the same style and size as installed by the declarant and match the guideline examples." },
-    { title: "Coordinate with your neighbors", body: "Adjoining fences should match and be stained to match. The guidelines note you may need to work with your neighbor to replace a whole section so it all matches." },
-    { title: "Submit the ACC request 30 days ahead", body: "File the ACC/PIC request online with a diagram of the fence location. The rules ask for placement, stain color, materials, installation method and other information the Board requests, and for any required City of Auburn approvals." },
-    { title: "Build after approval", body: "Installation may not begin until written approval is received. The guidelines say the association inspects new fences in person or during monthly audits, and deviations may need modification. For review timing, check with the association's architectural committee." },
+    {
+      title: "Get the current ACC rules in writing",
+      body: "Ask the Riverpointe ACC what materials, heights, gate styles, stain colors, and placement rules apply now, and whether a repair needs a request. Do not rely on older public pages that are no longer online.",
+    },
+    {
+      title: "Coordinate with your neighbors",
+      body: "Shared lot-line fences often need both households to agree on style and finish so the run matches. Confirm any match requirement with the ACC.",
+    },
+    {
+      title: "Submit the ACC request before you build",
+      body: "Use the association's current request process. MyFence prepares the diagram, placement, materials, and installation details the ACC asks for. Also confirm any City of Auburn approvals your lot needs.",
+    },
+    {
+      title: "Build after approval",
+      body: "Schedule installation only after written association approval (and any required city approval). For review timing, check with the ACC.",
+    },
   ],
-  reviewHeading: "What the Riverpointe rules ask for",
-  reviewIntro: "From the association's published fence guidelines and rules. Anything not listed here, check with the association's architectural committee.",
+  reviewHeading: "What to confirm with the Riverpointe ACC",
+  reviewIntro:
+    "Because the association's public guideline pages are offline, treat the list below as a checklist to confirm, not as current published rules.",
   reviewBullets: [
-    "Written approval before a new or replacement fence is installed",
-    "Request received at least 30 days before the installation date",
-    "Wood is the only approved material; chain link is not permitted",
-    "Maximum height 6 feet; arched gates no taller than the fence",
-    "Boards no wider than 4 inches",
-    "Stained in preapproved SW 3505 or SW 3507, matching adjoining fences",
-    "No front yard fences",
+    "Whether written ACC or Board approval is required before a new or replacement fence",
+    "Current lead time and what drawings or photos the request must include",
+    "Allowed materials, maximum height, gate style, board width, and stain colors",
+    "Whether front-yard fences or chain link are allowed",
+    "How the association treats repairs versus full replacements",
+    "Any City of Auburn approvals required for your lot, checked separately from the ACC",
   ],
   reviewFooterBeforeLink: "For citywide install coverage, see our",
   reviewFooterLinkLabel: "Auburn fence installation page",
   helpHeading: "How MyFence helps Riverpointe homeowners",
   helpCards: [
-    { title: "We handle the HOA application", body: "We prepare the fence diagram, placement, stain, materials and installation details the ACC request asks for and handle the application for you." },
-    { title: "Built to the guidelines", body: "We design wood fences with arched gates, boards 4 inches or narrower, a 6-foot maximum height and an approved stain, matched to your neighbors' fences." },
-    { title: "Build after approval", body: "We schedule installation only after the association approves in writing, so you avoid rework." },
+    {
+      title: "We handle the HOA application",
+      body: "We prepare the fence diagram, placement, materials, and installation details the ACC asks for and handle the application for you.",
+    },
+    {
+      title: "Designed to what the ACC confirms",
+      body: "We design after you have the association's current rules in writing, so the plan matches what they expect.",
+    },
+    {
+      title: "Build after approval",
+      body: "We schedule installation only after the association approves in writing, so you avoid rework.",
+    },
   ],
   leadFenceStyleName: "Riverpointe HOA fence",
   faqHeading: "Riverpointe fencing FAQs",
   faqs,
   schemaFaqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
   ctaHeading: "Get a quote for your Riverpointe fence",
-  ctaBody: "Free on-site estimate. MyFence handles the HOA application and builds after approval.",
+  ctaBody:
+    "Free on-site estimate. MyFence handles the HOA application and builds after approval.",
 };
