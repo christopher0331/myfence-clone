@@ -556,6 +556,9 @@ const PreStainingPage = () => {
               <Button asChild variant="outline" size="lg" className="px-8">
                 <Link href="/fence-styles">View Fence Styles</Link>
               </Button>
+              <Button asChild variant="outline" size="lg" className="px-8">
+                <Link href="/privacy-fences">Privacy Fence Hub</Link>
+              </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
               Ask about adding pre-staining to any of our cedar fence styles during your consultation.

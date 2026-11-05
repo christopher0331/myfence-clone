@@ -249,6 +249,13 @@ const ShadowBoxFence = () => {
               Back to Fence Styles
             </Link>
           </Button>
+          <p className="text-sm text-muted-foreground mb-6">
+            Comparing privacy options? See our{" "}
+            <Link href="/privacy-fences" className="text-primary hover:underline">
+              privacy fence styles hub
+            </Link>
+            .
+          </p>
 
           <article className="pt-2 md:pt-4 pb-10">
             {/* Hero */}

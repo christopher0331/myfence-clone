@@ -202,6 +202,13 @@ const ThreeRailPictureFrameFence = () => {
               and a distinctive craftsman profile. Built in #1 grade cedar and planned with Fence Genius,
               it delivers a premium, long‑lasting privacy fence.
             </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Comparing privacy options? See our{" "}
+              <Link href="/privacy-fences" className="text-primary hover:underline">
+                privacy fence styles hub
+              </Link>
+              .
+            </p>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">Craftsman Look</Badge>
               <Badge variant="secondary">Added Structure</Badge>
