@@ -42,6 +42,13 @@ export default function KentPage() {
     link: "/service-areas/kent/panther-lake",
   });
 
+  neighborhoods.push({
+    name: "Meridian Valley",
+    description:
+      "Golf-course community with a Kent address where the Meridian Valley Maintenance Association's covenants allow fences only around swimming pools. See the neighborhood page for the rules and HOA help. Click to learn more →",
+    link: "/service-areas/kent/meridian-valley",
+  });
+
   return (
     <ServiceAreaTemplate
       city="Kent"

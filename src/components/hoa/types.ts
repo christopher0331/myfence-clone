@@ -41,6 +41,19 @@ export interface HoaFaqItem {
   a: string;
 }
 
+export interface HoaTocItem {
+  /** Section id: hoa-callouts, hoa-forms, hoa-process, hoa-rules, hoa-help, hoa-faq */
+  id: string;
+  label: string;
+}
+
+export interface HoaCallout {
+  title: string;
+  body: string;
+  /** Defaults to "info" */
+  variant?: "warning" | "success" | "info";
+}
+
 export interface HoaApprovedFencingConfig {
   /** Absolute canonical URL for the HOA page */
   canonical: string;
@@ -93,4 +106,9 @@ export interface HoaApprovedFencingConfig {
   hubLinkLabel?: string;
   /** When set, the closing CTA includes a contact button. */
   contactCtaLabel?: string;
+  /** Optional in-page table of contents, rendered under the trust bar. */
+  tocItems?: HoaTocItem[];
+  /** Optional callouts rendered in a "Key points" section (id: hoa-callouts). */
+  calloutsHeading?: string;
+  callouts?: HoaCallout[];
 }

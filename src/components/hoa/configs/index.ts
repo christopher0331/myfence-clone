@@ -22,3 +22,5 @@ export { timberlineRidgeHoaConfig } from "./timberline-ridge";
 export { mirrormontHoaConfig } from "./mirrormont";
 export { meadowparkHoaConfig } from "./meadowpark";
 export { timberlineParkHoaConfig } from "./timberline-park";
+export { meridianValleyHoaConfig } from "./meridian-valley";
+export { twinLakesHoaConfig } from "./twin-lakes";
