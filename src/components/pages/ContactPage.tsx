@@ -181,19 +181,19 @@ const ContactPage = () => {
   return (
     <main>
       <Seo
-        title="Contact MyFence | Seattle Fence Contractor"
-        description="Talk with a Seattle fence contractor about installation, pricing, or a site visit. Call (253) 455-1885 or send a message."
+        title="Contact MyFence | Talk to Our Team"
+        description="Talk to our team about fence installation, pricing, or a site visit. Call (253) 455-1885 or send a message."
         canonical="https://myfence.com/contact"
         structuredData={[breadcrumbData, orgLd]}
       />
       <section className="container py-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact a Seattle Fence Contractor</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-3">Contact MyFence</h1>
         <p className="text-muted-foreground max-w-2xl">
-          We&apos;re here to help with fence installation questions or a quote. Call
-          <a className="text-primary underline-offset-4 hover:underline" href="tel:12534551885">
+          Talk to our team about your fence:{" "}
+          <a className="text-primary underline-offset-4 hover:underline" href="tel:+12534551885">
             (253) 455-1885
           </a>
-          or send us a message below.
+          . Or send us a message below.
         </p>
 
         {isSubmitted ? (
@@ -209,7 +209,7 @@ const ContactPage = () => {
                   Send Another Message
                 </Button>
                 <Button
-                  onClick={() => (window.location.href = "tel:12534551885")}
+                  onClick={() => (window.location.href = "tel:+12534551885")}
                   variant="hero"
                 >
                   Call Us Now
@@ -335,7 +335,7 @@ const ContactPage = () => {
                       type="button"
                       variant="secondary"
                       className="w-full sm:w-auto"
-                      onClick={() => (window.location.href = "tel:12534551885")}
+                      onClick={() => (window.location.href = "tel:+12534551885")}
                     >
                       Call Now
                     </Button>

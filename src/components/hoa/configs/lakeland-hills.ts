@@ -6,7 +6,7 @@ const LHHA_STANDARDS =
   "http://auburnlakelandhills.org/sitebuildercontent/sitebuilderfiles/accstandards1-26-26.pdf";
 const LHHA_APPLICATION =
   "http://auburnlakelandhills.org/sitebuildercontent/sitebuilderfiles/application_alterations_1.26.26.pdf";
-const LHHA_FORMS = "https://auburnlakelandhills.org/id7.html";
+const LHHA_FORMS = "http://auburnlakelandhills.org/id7.html";
 const LHHA_CONTACTS = "http://www.auburnlakelandhills.org/id6.html";
 const AUBURN_FENCE_CODE = "https://auburn.municipal.codes/ACC/18.31.020";
 const AUBURN_PERMIT_FAQ =
@@ -60,7 +60,7 @@ export const lakelandHillsHoaConfig: HoaApprovedFencingConfig = {
     {
       label: "Lakeland Hills HOA contacts",
       href: LHHA_CONTACTS,
-      note: "Lists acc@auburnlakelandhills.org for questions about the Architectural Control Committee, and names other homeowners associations within the Lakeland Hills community",
+      note: "Association contacts page that names other homeowners associations within the Lakeland Hills community; use it to reach the ACC through the association's own channels",
     },
     {
       label: "Auburn City Code 18.31.020, Fences",
