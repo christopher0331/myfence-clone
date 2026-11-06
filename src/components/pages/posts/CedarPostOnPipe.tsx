@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Check, X, Shield, Wrench, DollarSign, Anchor } from "lucide-react";
 import cedarPostOnPipe from "@/assets/cedar-post-on-pipe.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 import BlogSectionClient from "@/components/BlogSectionClient";
 import ServiceAreasSection from "@/components/ServiceAreasSection";
 import dynamic from "next/dynamic";
@@ -142,12 +142,18 @@ const CedarPostOnPipe = () => {
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
             Pre stained cedar fence, built for Northwest weather. Every cedar post on this one is sleeved over a steel pipe, so you get the warm look of cedar with steel strength right where posts take the most abuse.
           </p>
-          <div className="max-w-[340px] mx-auto">
-            <YouTubeShortEmbed
-              videoId="h_PTPsRQj-Q"
-              title="Cedar Fence Posts Sleeved Over Steel Pipe"
-            />
-          </div>
+          <YouTubeShortsGallery
+            videos={[
+              {
+                videoId: "V1TyJfVkMS0",
+                title: "Cedar Fence Posts on Pipe With a Steel Core",
+              },
+              {
+                videoId: "h_PTPsRQj-Q",
+                title: "Cedar Fence Posts Sleeved Over Steel Pipe",
+              },
+            ]}
+          />
         </div>
       </section>
 
