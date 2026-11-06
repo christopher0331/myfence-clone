@@ -61,6 +61,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
       "From Summit neighborhoods to Wilderness Rim slopes, every Maple Valley fence we build is engineered for maximum durability in our local climate.",
     ],
     videos: [
+      { videoId: "-rUg4TlAd3g", title: "Black Steel Posts With a Pre-Stained Cedar Fence" },
       { videoId: "Tct8oXAwQ04", title: "Maple Valley Fencing" },
       { videoId: "rjdljZMsQYo", title: "180 Foot Three Rail Picture Frame Fence in Maple Valley by MyFence.com" },
       { videoId: "fpBjboqMwZE", title: "HOA Compliant Fence in Maple Valley by MyFence.com" },
