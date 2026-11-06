@@ -409,6 +409,14 @@ const TwinLakesPage = () => {
                 on-site measurement. Check whether your address is inside the HOA
                 before you plan.
               </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For the association&apos;s forms, the approval steps, and how
+                MyFence handles the HOA application, see our{" "}
+                <Link href="/service-areas/federal-way/twin-lakes/hoa-approved-fencing" className={linkClass}>
+                  Twin Lakes HOA fencing guide
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

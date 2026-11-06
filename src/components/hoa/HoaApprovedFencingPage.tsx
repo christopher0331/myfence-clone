@@ -17,6 +17,8 @@ import {
   Shield,
   Waves,
 } from "lucide-react";
+import Callout from "@/components/blog/Callout";
+import ArticleToc from "@/components/neighborhoods/ArticleToc";
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
 import type { HoaApprovedFencingConfig, HoaTrustIcon } from "@/components/hoa/types";
@@ -119,6 +121,33 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
           </div>
         </section>
 
+        {config.tocItems?.length ? (
+          <section className="pt-12">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                <ArticleToc items={config.tocItems} title="In this guide" />
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {config.callouts?.length ? (
+          <section id="hoa-callouts" className="pt-12 scroll-mt-24">
+            <div className="container">
+              <div className="max-w-4xl mx-auto">
+                {config.calloutsHeading ? (
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2">{config.calloutsHeading}</h2>
+                ) : null}
+                {config.callouts.map((c) => (
+                  <Callout key={c.title} title={c.title} variant={c.variant ?? "info"}>
+                    <p className="leading-relaxed">{c.body}</p>
+                  </Callout>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section id="hoa-forms" className="py-16 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
@@ -204,7 +233,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
           </div>
         </section>
 
-        <section className="py-16 bg-muted/50">
+        <section id="hoa-process" className="py-16 bg-muted/50 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">{config.processHeading}</h2>
@@ -225,7 +254,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
           </div>
         </section>
 
-        <section className="py-16">
+        <section id="hoa-rules" className="py-16 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">{config.reviewHeading}</h2>
@@ -262,7 +291,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
           </div>
         </section>
 
-        <section className="py-16 bg-muted/50">
+        <section id="hoa-help" className="py-16 bg-muted/50 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{config.helpHeading}</h2>
@@ -284,7 +313,7 @@ export default function HoaApprovedFencingPage({ config }: { config: HoaApproved
 
         <LeadCaptureTabs fenceStyleName={config.leadFenceStyleName} />
 
-        <section className="py-16">
+        <section id="hoa-faq" className="py-16 scroll-mt-24">
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">{config.faqHeading}</h2>
