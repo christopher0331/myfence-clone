@@ -214,6 +214,11 @@ const serviceAreasByRegion: RegionGroup[] = [
             to: "/service-areas/sammamish/klahanie/hoa-approved-fencing",
             label: "Klahanie HOA",
           },
+          { to: "/service-areas/sammamish/livingston", label: "Livingston" },
+          {
+            to: "/service-areas/sammamish/livingston/hoa-approved-fencing",
+            label: "Livingston HOA",
+          },
           { to: "/service-areas/sammamish/pine-lake", label: "Pine Lake" },
           {
             to: "/service-areas/sammamish/sahalee/hoa-approved-fencing",
