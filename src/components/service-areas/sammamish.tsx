@@ -256,6 +256,11 @@ const Sammamish = () => {
           link: "/service-areas/sammamish/klahanie"
         },
         {
+          name: "Livingston",
+          description: "88 Buchan-built homes with ACC fence guidelines: vertical cedar up to 6 feet, no plastic or chain link. Click to learn more →",
+          link: "/service-areas/sammamish/livingston"
+        },
+        {
           name: "East Sammamish",
           description: "Established residential area with mature landscaping needing installations that work around 20+ year old trees and existing gardens. Click to learn more →",
           link: "/service-areas/sammamish/east-sammamish"
