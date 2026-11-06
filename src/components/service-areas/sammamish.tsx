@@ -294,6 +294,11 @@ const Sammamish = () => {
           name: "Timberline Park",
           description: "Sammamish plat where the lot owners association's ACC approves every fence and bans chain link. Click to learn more →",
           link: "/service-areas/sammamish/timberline-park"
+        },
+        {
+          name: "Field Rush",
+          description: "Board-run Sammamish neighborhood near Pine Lake where new fences and fence design changes need Architectural Committee approval. Click to learn more →",
+          link: "/service-areas/sammamish/field-rush"
         }
       ]}
       landmarks={[
