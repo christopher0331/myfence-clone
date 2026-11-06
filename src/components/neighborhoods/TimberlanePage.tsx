@@ -215,6 +215,23 @@ const TimberlanePage = () => {
               <h2 className="text-3xl md:text-4xl font-bold">
                 Timberlane–Specific Fencing Considerations
               </h2>
+              
+              <Link
+                href="/service-areas/covington/timberlane/hoa-approved-fencing"
+                className="block h-full"
+              >
+                <Card className="p-5 hover:shadow-xl hover:border-primary hover:scale-[1.02] transition-all duration-300 cursor-pointer h-full bg-gradient-to-br from-background to-primary/5 border-2">
+                  <h3 className="font-semibold text-primary text-lg mb-2">
+                    Timberlane HOA Approved Fencing
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    ACPC approval for fences adjacent to association property, greenbelt encroachment limits, and the posted Rules — cited from Timberlane Homes Association&apos;s own documents.
+                  </p>
+                  <div className="mt-3 text-primary font-semibold text-sm flex items-center gap-1">
+                    Read the HOA fencing guide <span className="text-lg">→</span>
+                  </div>
+                </Card>
+              </Link>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Clay Soil & Post Stability</h3>
@@ -378,6 +395,9 @@ const TimberlanePage = () => {
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas/maple-valley">Maple Valley</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/service-areas/covington/timberlane/hoa-approved-fencing">Timberlane HOA fencing</Link>
                 </Button>
                 <Button asChild variant="outline" size="sm">
                   <Link href="/service-areas">All service areas</Link>
