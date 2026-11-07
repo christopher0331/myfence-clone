@@ -227,7 +227,7 @@ const PrivacyFencesPage = () => {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-background text-background hover:bg-background hover:text-foreground"
+                className="border-background bg-background text-foreground hover:bg-background hover:text-foreground focus-visible:bg-background focus-visible:text-foreground active:bg-background active:text-foreground"
               >
                 <a href="tel:+12534551885">
                   <Phone className="w-4 h-4 mr-2" />
