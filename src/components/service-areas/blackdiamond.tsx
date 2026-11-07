@@ -49,7 +49,7 @@ const BlackDiamondArticle = () => (
     <section className="space-y-4 border-l-4 border-muted pl-4">
       <h3 className="text-2xl font-semibold text-muted-foreground">Specialized Solutions for New Construction</h3>
       <p className="text-muted-foreground leading-relaxed text-sm">
-        <em>Note: MyFence.com does not install vinyl, composite, or chain link fencing.</em>
+        <em>Note: MyFence.com does not install composite or chain link fencing.</em>
       </p>
       <p className="text-muted-foreground leading-relaxed">
         For new homeowners in Black Diamond, we offer "Just-in-Time" installation that works with your move-in schedule. We use superior 4.125" x 4.125" reinforced posts that provide significantly more strength than standard 4x4s, ensuring your fence remains straight and true even as new landscapes settle.

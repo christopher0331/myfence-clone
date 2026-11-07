@@ -41,7 +41,7 @@ const LakeTappsPage = () => {
       {
         question: "What fence materials hold up best in Lake Tapps' climate?",
         answer:
-          "Western Red Cedar with stainless steel fasteners is ideal for the wet, freeze-thaw cycles near Lake Tapps. We avoid vinyl (brittle in cold) and use cedar, hogwire, or our hybrid aluminum/cedar system—all proven in Pierce County conditions.",
+          "Western Red Cedar with stainless steel fasteners is ideal for the wet, freeze-thaw cycles near Lake Tapps. We use cedar, hogwire, or our hybrid aluminum/cedar system—all proven in Pierce County conditions.",
       },
       {
         question: "How much does fence installation cost near Lake Tapps?",
@@ -309,7 +309,7 @@ const LakeTappsPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Lake Tapps & Plateau Climate</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Freeze-thaw cycles and wet winters stress fences. Vinyl becomes brittle; we've replaced cracked vinyl throughout the older neighborhoods. We install cedar, hogwire, and hybrid aluminum/cedar—materials that hold up in Pierce County. Stainless fasteners resist rust from rain and lake-adjacent moisture.
+                    Freeze-thaw cycles and wet winters stress fences. We install cedar, hogwire, and hybrid aluminum/cedar—materials that hold up in Pierce County. Stainless fasteners resist rust from rain and lake-adjacent moisture.
                   </p>
                 </div>
                 <div>
