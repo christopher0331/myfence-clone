@@ -92,7 +92,7 @@ async function deliverLead(req: Request): Promise<Response> {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
-  const gate = guardLeadRequest(req, body);
+  const gate = await guardLeadRequest(req, body);
   if (gate.blocked) {
     // Fake success so scrapers/bots do not iterate on the response.
     return fakeLeadSuccess();
