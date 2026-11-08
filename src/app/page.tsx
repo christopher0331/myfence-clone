@@ -13,7 +13,7 @@ import ServiceAreaMapSection from "@/components/home/ServiceAreaMapSection";
 // Do NOT read headers()/cookies() here — that forces cache-control: no-store.
 export const revalidate = 3600;
 
-const HOME_TITLE = "Privacy Fence Installation | Cedar & Hybrid Fences | MyFence";
+const HOME_TITLE = "Privacy Fence Installation | Cedar and Hog Wire Fences | MyFence.com";
 const HOME_DESCRIPTION =
   "Skip the staining. Our pre-stained, pre-built cedar privacy fences go up fast across Auburn, Kent and Federal Way. Free quote: (253) 455-1885.";
 
