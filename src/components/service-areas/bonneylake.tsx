@@ -73,12 +73,12 @@ const BonneyLakeArticle = () => (
 
       {/* Other Materials - Information Only */}
       <div className="space-y-3 border-l-4 border-muted pl-4">
-        <h3 className="text-2xl font-semibold text-muted-foreground">Why We Skip Vinyl and Composite in Bonney Lake</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Why We Skip Composite and Ornamental Iron in Bonney Lake</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
           <em>We're sharing this to help you compare options — not to sell you something we don't carry.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Bonney Lake's temperature swings stress vinyl panels — they expand in summer heat and turn brittle during plateau cold snaps. We've replaced cracked vinyl fences throughout the older neighborhoods that simply couldn't handle the freeze-thaw cycles. Composite decking has improved, but composite fencing still warps when exposed to direct sun on south-facing lots. Ornamental iron looks sharp initially but rusts despite galvanizing claims, especially where irrigation overspray keeps metal wet. We'd rather install materials we can confidently stand behind than offer everything and hope for the best.
+          Composite decking has improved, but composite fencing still warps when exposed to direct sun on south-facing lots. Ornamental iron looks sharp initially but rusts despite galvanizing claims, especially where irrigation overspray keeps metal wet. We'd rather install materials we can confidently stand behind than offer everything and hope for the best.
         </p>
       </div>
 
@@ -303,7 +303,7 @@ const BonneyLakeArticle = () => (
         Composite fencing has gained substantial popularity in Bonney Lake, especially in new construction areas. These engineered materials combine wood fibers with polymers, creating products that resist moisture and weathering while eliminating maintenance demands. Leading brands offer 25+ year warranties and never require staining or painting. While initial costs exceed cedar by 50-75%, the long-term value proposition appeals to busy homeowners who prefer minimal upkeep.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        MyFence.com installs cedar, hogwire, and hybrid aluminum/cedar systems - each engineered for Bonney Lake's climate. Cedar provides natural warmth and proven longevity. Hogwire offers rustic charm with open views. Our hybrid system delivers low-maintenance performance at competitive pricing. While composite and vinyl have advantages, we've specialized in these three systems to ensure superior installation quality and warranty coverage.
+        MyFence.com installs cedar, hogwire, and hybrid aluminum/cedar systems - each engineered for Bonney Lake's climate. Cedar provides natural warmth and proven longevity. Hogwire offers rustic charm with open views. Our hybrid system delivers low-maintenance performance at competitive pricing. While composite has advantages, we've specialized in these three systems to ensure superior installation quality and warranty coverage.
       </p>
     </section>
 
@@ -405,7 +405,7 @@ const BonneyLake = () => {
     "@id": "https://myfence.com/service-areas/bonney-lake",
     "name": "MyFence.com - Expert Installation in Your Area",
     "alternateName": ["MyFence Bonney Lake", "Bonney Lake Fence Company"],
-    "description": "Premium fence installation and repair services in Bonney Lake, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for residential and commercial properties. 30+ years experience.",
+    "description": "Premium fence installation and repair services in Bonney Lake, WA. Specializing in cedar, hogwire, and hybrid aluminum/cedar fencing for residential and commercial properties. 30+ years experience.",
     "image": "https://myfence.com/myfence-logo.png",
     "logo": {
       "@type": "ImageObject",
@@ -550,7 +550,7 @@ const BonneyLake = () => {
       state="Washington"
       heroTitle="Professional Fence Installation in Bonney Lake, WA"
       metaTitle="Expert Installation in Your Area | MyFence.com"
-      metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, composite, vinyl & aluminum fencing. Free quotes. Call (253) 455-1885."
+      metaDescription="Trusted Bonney Lake fence contractor with 30+ years experience. Cedar, hogwire & hybrid fencing. Free quotes. Call (253) 455-1885."
       zipCodes={["98391"]}
       neighborhoods={[
         {

@@ -189,7 +189,7 @@ const NeighborFenceCostSplit = () => {
                 <div className="relative mb-6">
                   <OptimizedImage
                     src="/lovable-uploads/936790e3-e01a-4dcd-bf22-e5ac97188fd1.png"
-                    alt="Vinyl privacy fence installation along property boundary"
+                    alt="Privacy fence installation along property boundary"
                     className="rounded-lg shadow-lg w-full h-48 object-cover"
                   />
                 </div>

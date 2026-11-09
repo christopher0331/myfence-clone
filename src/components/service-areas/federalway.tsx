@@ -76,10 +76,10 @@ const FederalWayArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Additional Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: This information helps you make educated choices, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Note: This information helps you make educated choices, but MyFence.com does not install composite or standalone aluminum/steel fencing systems.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> has gained popularity for low maintenance and 25-year lifespan potential. <strong>Vinyl fencing</strong> delivers maintenance-free operation but may become brittle under temperature fluctuations. <strong>Ornamental aluminum and steel</strong> create open sight lines for waterfront and equestrian properties. These materials have advantages, but we've focused exclusively on cedar, hogwire, and hybrid systems where we deliver exceptional Federal Way results.
+          <strong>Composite fencing</strong> has gained popularity for low maintenance and 25-year lifespan potential. <strong>Ornamental aluminum and steel</strong> create open sight lines for waterfront and equestrian properties. These materials have advantages, but we've focused exclusively on cedar, hogwire, and hybrid systems where we deliver exceptional Federal Way results.
         </p>
       </div>
 

@@ -79,7 +79,7 @@ const MountlakeTerraceArticle = () => (
           <em>Sharing this so you can make informed comparisons — we're not trying to sell you on materials we don't carry.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vinyl fencing becomes brittle after years of UV exposure and cracks during cold snaps — we've seen failures throughout older Mountlake Terrace subdivisions. Composite boards expand and contract with temperature swings, creating gaps and warping over time. Chain-link and ornamental iron rust despite galvanizing claims, especially near Lake Ballinger's constant humidity. We'd rather specialize in materials we can confidently warranty than offer options we know underperform locally.
+          Composite boards expand and contract with temperature swings, creating gaps and warping over time. Chain-link and ornamental iron rust despite galvanizing claims, especially near Lake Ballinger's constant humidity. We'd rather specialize in materials we can confidently warranty than offer options we know underperform locally.
         </p>
       </div>
 
