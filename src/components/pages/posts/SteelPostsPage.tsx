@@ -138,6 +138,7 @@ const SteelPostsPage = () => {
               heading="Steel post Shorts"
               description="Why we offer black steel posts, and what to watch for before you pick your next post system."
               videos={[
+                { videoId: "aJjzi9gTeuc", title: "Pre-Stained Cedar Fence on Black Steel Posts" },
                 { videoId: "82eserLkCpc", title: "Steel Fence Posts That Don't Rot, With a Cedar Privacy Fence" },
                 { videoId: "JBrmR16irxw", title: "MyFence.com Now Offers Steel Fence Posts" },
                 { videoId: "ZBzaCrDfXfQ", title: "MyFence.com: Black Steel Fence Posts" },
