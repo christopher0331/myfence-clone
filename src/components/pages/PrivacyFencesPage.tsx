@@ -130,7 +130,9 @@ const faqs = [
   },
 ];
 
-const HERO_BG = "/lovable-uploads/4b59fcdd-ded2-42f1-bb1c-9eb01268a427.png";
+/** Maple Valley picture-frame cedar install, work order dedd8e8d. No embedded logo or watermark. */
+const HERO_BG =
+  "/service-area-photos/Maple-Valley/Maple-Valley-Picture-Frame-Cedar-Privacy-Fence-04.jpg";
 const FATHER_SON = "/lovable-uploads/5c7618b0-120d-445a-9d0a-d2bb8269b552.png";
 
 const PrivacyFencesPage = () => {
@@ -193,10 +195,11 @@ const PrivacyFencesPage = () => {
 
       {/* Full-bleed hero — same pattern as /fence-genius */}
       <section className="relative py-20 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-center bg-cover bg-fixed"
-          style={{ backgroundImage: `url('${HERO_BG}')` }}
+        <img
+          src={HERO_BG}
+          alt=""
           aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full max-w-none object-cover object-[28%_center] md:object-[center_24%]"
         />
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
         <div className="container relative z-10">
