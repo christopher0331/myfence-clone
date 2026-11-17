@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "MyFence",
+    siteName: "MyFence.com",
     url: SITE_CONFIG.url + "/",
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
@@ -53,7 +53,9 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "MyFence.com",
-    alternateName: "MyFence",
+    // Preference order: short brand, then the lowercase domain as Google's backup.
+    // https://developers.google.com/search/docs/appearance/site-names
+    alternateName: ["MyFence", "myfence.com"],
     url: "https://myfence.com/",
   };
   const orgLd = {
