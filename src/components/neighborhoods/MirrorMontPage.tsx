@@ -16,9 +16,25 @@ import {
 import LeadCaptureTabs from "@/components/forms/LeadCaptureTabs";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import GoogleBusinessMap from "@/components/GoogleBusinessMap";
+import RelatedArticles, { type RelatedArticle } from "@/components/neighborhoods/RelatedArticles";
 import ServiceAreaPhotoGallery from "@/components/service-areas/ServiceAreaPhotoGallery";
 import FeaturedProject from "@/components/service-areas/FeaturedProject";
 import { buildNeighborhoodStructuredData } from "@/components/neighborhoods/structuredData";
+
+const RELATED_ARTICLES: RelatedArticle[] = [
+  {
+    href: "/blog/cedar-privacy-fence-around-trees-wooded-lots",
+    title: "Building a Cedar Privacy Fence Around Big Trees",
+    description:
+      "How to plan a cedar privacy fence on a wooded lot: root zones, utility locates, permits and buffers, and post placement around mature trees.",
+  },
+  {
+    href: "/blog/how-long-does-a-wood-fence-last-seattle",
+    title: "How Long Does a Wood Fence Last in Seattle?",
+    description:
+      "What decides how long a cedar fence lasts in Puget Sound weather, and the build choices that add years.",
+  },
+];
 
 const CANONICAL = "https://myfence.com/service-areas/issaquah/mirrormont";
 const META_TITLE = "Mirrormont Fence Installation | Issaquah | MyFence.com";
@@ -463,6 +479,8 @@ const MirrorMontPage = () => {
             </div>
           </div>
         </section>
+
+        <RelatedArticles articles={RELATED_ARTICLES} />
 
         {/* 14. CTA */}
         <section className="py-16 bg-primary/5">
