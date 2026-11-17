@@ -205,7 +205,8 @@ const PrivacyFencesPage = () => {
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-background">
-              Privacy Fence Installation in Auburn &amp; South King County
+              <span className="block text-balance">Privacy Fence Installation |</span>{" "}
+              <span className="block text-balance">Cedar and Hog Wire Fences</span>
             </h1>
             <p className="text-lg md:text-xl text-background/90 mb-6 md:mb-8 px-4">
               Cedar and cedar/steel hybrid privacy fences built by a local father &amp; son team —
