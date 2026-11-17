@@ -146,6 +146,7 @@ const PreStainingPage = () => {
             heading="Pre-stain shop & finished installs"
             description="Culling and drying in the shop, then pre-stained cedar on the job — the same process described on this page."
             videos={[
+              { videoId: "khdk2tG3PpA", title: "Why We Dry Cedar Boards Before Pre-Staining" },
               { videoId: "guRs-frir6w", title: "Cedar Bark Semi-Transparent Stain on an HOA Fence" },
               { videoId: "ud839tV-4-Y", title: "Pre Dry And Cull Before We Pre Stain" },
               { videoId: "vAI4nxutV6g", title: "How We Dry Cedar Before Pre-Staining" },
