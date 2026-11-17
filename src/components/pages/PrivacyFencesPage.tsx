@@ -204,9 +204,9 @@ const PrivacyFencesPage = () => {
         <div className="absolute inset-0 bg-foreground/60" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6 text-background">
-              <span className="block text-balance">Privacy Fence Installation |</span>{" "}
-              <span className="block text-balance">Cedar and Hog Wire Fences</span>
+            <h1 className="-mx-8 px-3 text-[1.45rem] min-[380px]:text-[1.65rem] min-[460px]:text-[1.9rem] sm:mx-0 sm:px-0 sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4 md:mb-6 text-background">
+              <span className="block">Cedar and Hog Wire</span>
+              <span className="block">Privacy Fence Installation</span>
             </h1>
             <p className="text-lg md:text-xl text-background/90 mb-6 md:mb-8 px-4">
               Cedar and cedar/steel hybrid privacy fences built by a local father &amp; son team —
