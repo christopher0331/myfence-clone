@@ -8,7 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { Check } from "lucide-react";
-import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
+import { YouTubeShortEmbed, YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const HERO = "/images/upgrades/mounded-concrete/hero-line.png";
 
@@ -83,6 +83,24 @@ const MoundedConcretePage = () => {
               fetchPriority="high"
             />
           </AspectRatio>
+        </div>
+      </section>
+
+      <section className="container py-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4">Mounded concrete on a perimeter fence</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            The crew mounded the concrete footings so they sit above grade and slope away, helping water run off
+            instead of sitting at the base of the 4x4 posts so they don't rot out as quickly.
+          </p>
+          <YouTubeShortsGallery
+            videos={[
+              {
+                videoId: "liZRkVfYpaI",
+                title: "Mounded Concrete Footings Help Wood Posts Last Longer",
+              },
+            ]}
+          />
         </div>
       </section>
 
