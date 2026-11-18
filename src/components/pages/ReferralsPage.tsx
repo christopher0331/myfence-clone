@@ -2,6 +2,7 @@
 
 import Seo from "@/components/Seo";
 import { ReferralForm } from "@/components/forms/ReferralForm";
+import { YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Phone, CheckCircle, Users, DollarSign, Shield } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
@@ -106,6 +107,18 @@ const ReferralsPage = () => {
             >
               Submit a Referral
             </a>
+            <div className="mt-12">
+              <YouTubeShortsGallery
+                heading="Thank You for Your Reviews and Referrals"
+                description="Reviews and referrals are how a small fence company like ours grows. If you've ever passed our name along to a friend or neighbor, thank you. It means more than you know. Thank you for choosing local."
+                videos={[
+                  {
+                    videoId: "l7DWMs74t2I",
+                    title: "Thank You for Your Reviews and Referrals",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </section>
 
