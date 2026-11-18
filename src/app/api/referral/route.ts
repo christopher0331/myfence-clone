@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
-  const gate = guardLeadRequest(req, body);
+  const gate = await guardLeadRequest(req, body);
   if (gate.blocked) {
     return fakeLeadSuccess();
   }
