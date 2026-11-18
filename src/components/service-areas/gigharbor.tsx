@@ -76,10 +76,10 @@ const GigHarborArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: This information helps you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Note: This information helps you make informed decisions, but MyFence.com does not install composite or standalone aluminum/steel fencing systems.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> has gained popularity in waterfront estates for low maintenance and 25-year lifespan potential. <strong>Vinyl fencing</strong> offers maintenance-free operation but can become brittle in temperature extremes. <strong>Ornamental aluminum and steel</strong> provide open sight lines for waterfront and equestrian properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we deliver exceptional Gig Harbor results.
+          <strong>Composite fencing</strong> has gained popularity in waterfront estates for low maintenance and 25-year lifespan potential. <strong>Ornamental aluminum and steel</strong> provide open sight lines for waterfront and equestrian properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we deliver exceptional Gig Harbor results.
         </p>
       </div>
 

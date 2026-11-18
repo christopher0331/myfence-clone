@@ -24,13 +24,13 @@ export const issaquahHighlandsHoaConfig: HoaApprovedFencingConfig = {
   ],
   formsHeading: "Download forms for Issaquah Highlands HOA approved fencing",
   formsIntro:
-    "Use the Fence Installation Notification with the ARC Guidelines before you build. Section 8 of the Issaquah Highlands Community Association guidelines requires metal fencing to be powder-coated or vinyl-coated black. Confirm the current section with the IHCA Architectural Review Committee before you file.",
+    "Use the Fence Installation Notification with the ARC Guidelines before you build. Section 8 of the Issaquah Highlands Community Association guidelines requires metal fencing to be black powder-coated. Confirm the current section with the IHCA Architectural Review Committee before you file.",
   officialLinksHeading: "Issaquah Highlands Community Association",
   officialLinks: [
     {
       label: "IHCA ARC Guidelines, section 8 (Fences)",
       href: "https://issaquahhighlands.com/for-residents/homeowner-resources/make-home-landscape-changes/arc-guidelines/",
-      note: "Metal fences must be powder-coated or vinyl-coated black",
+      note: "Metal fences must be black powder-coated",
     },
     {
       label: "ARC Guidelines PDF (updated March 2025)",
@@ -70,7 +70,7 @@ export const issaquahHighlandsHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "Install to the approved plan",
-      body: "We build slope-following panels to the approved package. Metal fencing in that package is powder-coated or vinyl-coated black, the finish section 8 requires. Stained or painted cedar is the wood option in the same section when the goal is privacy.",
+      body: "We build slope-following panels to the approved package. Metal fencing in that package is black powder-coated, the finish section 8 requires. Stained or painted cedar is the wood option in the same section when the goal is privacy.",
     },
   ],
   reviewHeading: "What makes fencing HOA-approved in the Highlands",
@@ -80,7 +80,7 @@ export const issaquahHighlandsHoaConfig: HoaApprovedFencingConfig = {
     "Notification packet with clear drawings and material specs",
     "Design aligned to Highlands ARC Guidelines",
     "Slope-following Fence Genius panels for hillside lots",
-    "Open metal fencing only in a black powder-coated or vinyl-coated finish, or stained cedar where privacy is required",
+    "Open metal fencing only in a black powder-coated finish, or stained cedar where privacy is required",
   ],
   reviewFooterBeforeLink: "For install pricing, styles, and Highlands project examples, visit the",
   reviewFooterLinkLabel: "Issaquah Highlands fence installation page",
@@ -99,7 +99,7 @@ export const issaquahHighlandsHoaConfig: HoaApprovedFencingConfig = {
     {
       icon: "file",
       title: "Guideline-matched builds",
-      body: "Stained or painted cedar, and black powder-coated or vinyl-coated metal, matched to section 8 and your view priorities. The Architectural Review Committee confirms the package.",
+      body: "Stained or painted cedar, and black powder-coated metal, matched to section 8 and your view priorities. The Architectural Review Committee confirms the package.",
     },
   ],
   leadFenceStyleName: "Issaquah Highlands HOA fence",
