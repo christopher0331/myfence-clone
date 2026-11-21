@@ -8,7 +8,7 @@ import InlineQuoteForm from "@/components/forms/InlineQuoteForm";
 import SeattleFenceQuoteEmbed from "@/components/SeattleFenceQuoteEmbed";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { YouTubeShortEmbed } from "@/components/YouTubeShortEmbed";
+import { YouTubeShortEmbed, YouTubeShortsGallery } from "@/components/YouTubeShortEmbed";
 
 const QuoteToolPage = () => {
   const isMobile = useIsMobile();
@@ -138,6 +138,21 @@ const QuoteToolPage = () => {
           </p>
         </section>
       )}
+
+      <section className="container py-12">
+        <div className="max-w-4xl mx-auto">
+          <YouTubeShortsGallery
+            heading="How the estimator works"
+            description="Pick your fence style, draw your fence on the map, and the online estimating tool shows you a price. No pressure."
+            videos={[
+              {
+                videoId: "y3TF-GnSdDw",
+                title: "Get Your Fence Price in Minutes With Our Online Estimator",
+              },
+            ]}
+          />
+        </div>
+      </section>
 
       <section className="container py-12">
         <div className="max-w-4xl mx-auto">
