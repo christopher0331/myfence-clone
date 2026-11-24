@@ -514,6 +514,11 @@ const Kirkland = () => {
           name: "Central Houghton",
           description: "Mostly single-family streets between the Cross Kirkland Corridor and I-405, south of NE 68th Street, with wooded lots near Watershed Park. Click to learn more →",
           link: "/service-areas/kirkland/central-houghton"
+        },
+        {
+          name: "Everest",
+          description: "A compact neighborhood between the Cross Kirkland Corridor and I-405, from Central Way south to NE 68th Street, home to Everest Park. Click to learn more →",
+          link: "/service-areas/kirkland/everest"
         }
       ]}
       landmarks={[
