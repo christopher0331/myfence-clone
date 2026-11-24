@@ -145,6 +145,10 @@ const CedarPostOnPipe = () => {
           <YouTubeShortsGallery
             videos={[
               {
+                videoId: "lBBWGu_W_Uo",
+                title: "Western Red Cedar Fence on Our Cedar Post on Pipe System",
+              },
+              {
                 videoId: "V1TyJfVkMS0",
                 title: "Cedar Fence Posts on Pipe With a Steel Core",
               },
