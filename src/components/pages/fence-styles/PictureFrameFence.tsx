@@ -391,8 +391,9 @@ const PictureFrameFence = () => {
             <YouTubeShortsGallery
               className="max-w-5xl mx-auto mb-10"
               heading="Picture frame fence Shorts"
-              description="Pre-stained picture frame installs, including board-on-board and post-on-pipe details."
+              description="Rail side versus trim side, plus pre-stained picture frame installs with board-on-board and post-on-pipe details."
               videos={[
+                { videoId: "pn1U8sMcrU4", title: "Rail Side vs Trim Side | Renton Privacy Fence" },
                 { videoId: "MAaTNUxiA_0", title: "MyFence.com installs a picture frame fence that is pre stained with the post on pipe fence posts" },
                 { videoId: "drwdTbZL42I", title: "Quick Look into our board on board picture frame style which is pre-stained!" },
                 { videoId: "rjdljZMsQYo", title: "180 Foot Three Rail Picture Frame Fence in Maple Valley" },
