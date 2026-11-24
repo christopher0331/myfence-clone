@@ -436,8 +436,12 @@ const PrivacyFencesPage = () => {
       <section className="container py-10">
         <YouTubeShortsGallery
           heading="Privacy fence walkthroughs"
-          description="Picture frame, board-on-board, and pre-stained privacy runs — the same construction behind the styles above."
+          description="Rail side versus trim side on a cedar privacy fence, plus picture frame, board-on-board, and pre-stained privacy runs."
           videos={[
+            {
+              videoId: "pn1U8sMcrU4",
+              title: "Rail Side vs Trim Side | Renton Privacy Fence",
+            },
             {
               videoId: "MAaTNUxiA_0",
               title: "Picture frame fence pre-stained with post on pipe",

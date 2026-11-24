@@ -36,6 +36,7 @@ const CITY_FENCING: Record<string, CityFencingCopy> = {
     ],
     showVideoTags: true,
     videos: [
+      { videoId: "pn1U8sMcrU4", title: "Rail Side vs Trim Side | Renton Privacy Fence" },
       { videoId: "iUUnbPpWYvo", title: "Renton fence installation by MyFence.com" },
       { videoId: "1oVcsgarR6o", title: "Craftsman style cedar fence walkthrough in Kennydale, Renton by MyFence.com" },
       { videoId: "CmE1vqMtePU", title: "Renton Fence Installation by MyFence.com" },
