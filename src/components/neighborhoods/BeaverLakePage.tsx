@@ -25,6 +25,22 @@ import {
   type NeighborhoodFaqItem,
 } from "@/components/neighborhoods/structuredData";
 import NeighborhoodFaqSection from "@/components/neighborhoods/NeighborhoodFaqSection";
+import RelatedArticles, { type RelatedArticle } from "@/components/neighborhoods/RelatedArticles";
+
+const RELATED_ARTICLES: RelatedArticle[] = [
+  {
+    href: "/blog/best-time-to-install-a-wood-fence-seattle",
+    title: "When Is the Best Time to Install a Wood Fence in Seattle?",
+    description:
+      "A month-by-month look at Puget Sound rain, temperatures and wood moisture, and why shop pre-stained cedar lets a fence go in during the wet season.",
+  },
+  {
+    href: "/blog/how-long-does-a-wood-fence-last-seattle",
+    title: "How Long Does a Wood Fence Last in Seattle?",
+    description:
+      "What decides how long a cedar fence lasts in Puget Sound weather, and the build choices that add years.",
+  },
+];
 
 const CANONICAL = "https://myfence.com/service-areas/sammamish/beaver-lake";
 const META_TITLE =
@@ -571,6 +587,8 @@ const BeaverLakePage = () => {
       />
 
       <main>
+        <RelatedArticles articles={RELATED_ARTICLES} />
+
         {/* 14. Adjacent Neighborhoods */}
         <section className="py-16 bg-muted/50">
           <div className="container">
