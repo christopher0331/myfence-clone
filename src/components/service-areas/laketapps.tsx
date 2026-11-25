@@ -171,10 +171,6 @@ const LakeTapps = () => {
         <ul className="space-y-2 mb-6">
           <li className="flex items-start">
             <CheckCircle2 className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-1" />
-            <span><strong>Vinyl Fencing:</strong> Low maintenance but can become brittle in temperature fluctuations and may not meet aesthetic standards for lakefront properties (we do not install)</span>
-          </li>
-          <li className="flex items-start">
-            <CheckCircle2 className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-1" />
             <span><strong>Composite Fencing:</strong> Moisture-resistant but lacks the natural aesthetic preferred in Lake Tapps' residential character (we do not install)</span>
           </li>
           <li className="flex items-start">

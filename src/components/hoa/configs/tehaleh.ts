@@ -43,7 +43,7 @@ export const tehalehHoaConfig: HoaApprovedFencingConfig = {
     },
     {
       title: "Prep drawings to the Design Manual standards",
-      body: "The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) semi-transparent stain or a clear stain for standard fences and does not allow chain-link or vinyl without committee approval. Assemble a site plan, elevations, materials list, and stain/color samples, and confirm the finish with the review committee.",
+      body: "The Tehaleh Design Manual lists Sherwin-Williams Cedar Bark (SW 3511) semi-transparent stain or a clear stain for standard fences and does not allow chain-link without committee approval; we build stained cedar to that standard. Assemble a site plan, elevations, materials list, and stain/color samples, and confirm the finish with the review committee.",
     },
     {
       title: "Request the current ARC packet and submit",

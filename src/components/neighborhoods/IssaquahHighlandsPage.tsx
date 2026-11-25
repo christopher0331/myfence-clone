@@ -39,7 +39,7 @@ const IssaquahHighlandsPage = ({
     <>
       <Seo
         title="Issaquah Highlands Fence Installation | HOA-Compliant Experts"
-        description="Professional fence installation for Issaquah Highlands. HOA-compliant hillside designs using stained cedar and black powder-coated or vinyl-coated metal."
+        description="Professional fence installation for Issaquah Highlands. HOA-compliant hillside designs using stained cedar and black powder-coated metal."
         canonical={canonical}
       />
 
@@ -105,7 +105,7 @@ const IssaquahHighlandsPage = ({
                 The Issaquah Highlands represents a premier master-planned community where urban convenience meets mountain proximity. Living here offers stunning views of the Issaquah Alps and Lake Sammamish, but it also brings unique challenges for fencing—including strict HOA guidelines and varied hillside topography.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We specialize in Highlands installations that follow the IHCA Architectural Review Committee guidelines. Black powder-coated or vinyl-coated metal, and stained cedar, provide security for pets and children while keeping the view. Every fence is built to those architectural standards.
+                We specialize in Highlands installations that follow the IHCA Architectural Review Committee guidelines. Black powder-coated metal, and stained cedar, provide security for pets and children while keeping the view. Every fence is built to those architectural standards.
               </p>
             </div>
           </div>
@@ -211,7 +211,7 @@ const IssaquahHighlandsPage = ({
                     >
                       Section 8 of the IHCA ARC Guidelines
                     </a>{" "}
-                    requires metal fencing to be powder-coated or vinyl-coated black. Our team prepares the submission package for the Architectural Review Committee.
+                    requires metal fencing to be black powder-coated. Our team prepares the submission package for the Architectural Review Committee.
                   </p>
                   <Card className="p-5 mt-5">
                     <h4 className="font-semibold mb-3">Download Highlands HOA Fence Forms</h4>
@@ -262,7 +262,7 @@ const IssaquahHighlandsPage = ({
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">View-Preserving Designs</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    For many Highlands homes, the view is the primary asset. Where an open metal fence fits the lot, we use black powder-coated or vinyl-coated panels so the finish matches section 8 of the IHCA guidelines and the valley or Cascade view stays open.
+                    For many Highlands homes, the view is the primary asset. Where an open metal fence fits the lot, we use black powder-coated panels so the finish matches section 8 of the IHCA guidelines and the valley or Cascade view stays open.
                   </p>
                 </div>
               </div>

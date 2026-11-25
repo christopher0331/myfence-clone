@@ -51,10 +51,10 @@ const MapleValleyArticle = () => (
     <section className="space-y-4 border-l-4 border-muted pl-4">
       <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
       <p className="text-muted-foreground leading-relaxed text-sm">
-        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or chain link fencing systems.</em>
+        <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install composite or chain link fencing systems.</em>
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        <strong>Composite materials</strong> handle moisture well and won't warp on sloped properties, though at 60-80% higher cost than cedar. <strong>Vinyl fencing</strong> offers maintenance-free performance but lacks the natural warmth Maple Valley residents prefer. <strong>Chain link</strong> with privacy slats is economical but lacks aesthetic appeal. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can ensure proper installation for Maple Valley's unique terrain and climate challenges.
+        <strong>Composite materials</strong> handle moisture well and won't warp on sloped properties, though at 60-80% higher cost than cedar. <strong>Chain link</strong> with privacy slats is economical but lacks aesthetic appeal. While these materials have applications, we've specialized in cedar, hogwire, and hybrid systems where we can ensure proper installation for Maple Valley's unique terrain and climate challenges.
       </p>
     </section>
 

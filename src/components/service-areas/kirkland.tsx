@@ -73,10 +73,10 @@ const KirklandArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Why We Skip Certain Materials for Lakefront Properties</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Full disclosure: MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing. Here's why that benefits Kirkland homeowners.</em>
+          <em>Full disclosure: MyFence.com does not install composite or standalone aluminum/steel fencing. Here's why that benefits Kirkland homeowners.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Vinyl</strong> becomes brittle in Kirkland's freeze-thaw cycles near the lake and can crack during winter storms. <strong>Composite</strong> expands and contracts significantly with waterfront temperature swings, causing warping and gaps. <strong>Chain-link and ornamental iron</strong> rust quickly from Lake Washington's humidity despite galvanizing claims. We've watched these materials fail prematurely on lakefront properties. By specializing exclusively in cedar, hogwire, and our hybrid system, we install only materials proven to perform in Kirkland's unique waterfront conditions.
+          <strong>Composite</strong> expands and contracts significantly with waterfront temperature swings, causing warping and gaps. <strong>Chain-link and ornamental iron</strong> rust quickly from Lake Washington's humidity despite galvanizing claims. We've watched these materials fail prematurely on lakefront properties. By specializing exclusively in cedar, hogwire, and our hybrid system, we install only materials proven to perform in Kirkland's unique waterfront conditions.
         </p>
       </div>
 
@@ -266,7 +266,7 @@ const KirklandArticle = () => (
         <em>We're transparent about what we don't offer — and why lakefront homeowners benefit from our focused expertise.</em>
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        After three decades installing fences near Lake Washington, we've seen what lasts and what fails. <strong>Vinyl</strong> looks great initially but becomes brittle and cracks in temperature swings between lake-cooled summers and freezing winters. <strong>Composite</strong> boards warp from moisture absorption when humidity rises off the water. <strong>Ornamental iron</strong> rusts within years despite coatings. Our specialization in cedar, hogwire, and hybrid aluminum means we know these systems inside-out — and can warranty our work with confidence.
+        After three decades installing fences near Lake Washington, we've seen what lasts and what fails. <strong>Composite</strong> boards warp from moisture absorption when humidity rises off the water. <strong>Ornamental iron</strong> rusts within years despite coatings. Our specialization in cedar, hogwire, and hybrid aluminum means we know these systems inside-out — and can warranty our work with confidence.
       </p>
     </section>
 

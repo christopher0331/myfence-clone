@@ -47,12 +47,12 @@ const WEST_HILL_FAQS: NeighborhoodFaqItem[] = [
     question:
       "What fence styles work on West Hill slopes, wind, and view lots?",
     answer:
-      "Six-foot cedar privacy is the usual request on shared side yards where houses sit close, including streets around Renton Avenue South in Skyway. Horizontal cedar is a common ask on the same lots when the house face is more contemporary and a vertical board wall would fight the siding. Bryn Mawr and Lakeridge lots that look toward Lake Washington, and east-facing yards that look down into the Renton valley, usually keep hogwire in a cedar frame on the view side so the outlook stays open and the fence takes less wind than a solid wall. Hybrid aluminum-and-cedar on steel posts is the metal option we install when someone is comparing ornamental iron and wants a lower-maintenance face. MyFence.com does not install vinyl, chain link, or standalone ornamental iron. Fence Genius records the grade so a panel follows the slope instead of leaving a gap at the bottom.",
+      "Six-foot cedar privacy is the usual request on shared side yards where houses sit close, including streets around Renton Avenue South in Skyway. Horizontal cedar is a common ask on the same lots when the house face is more contemporary and a vertical board wall would fight the siding. Bryn Mawr and Lakeridge lots that look toward Lake Washington, and east-facing yards that look down into the Renton valley, usually keep hogwire in a cedar frame on the view side so the outlook stays open and the fence takes less wind than a solid wall. Hybrid aluminum-and-cedar on steel posts is the metal option we install when someone is comparing ornamental iron and wants a lower-maintenance face. MyFence.com does not install chain link or standalone ornamental iron. Fence Genius records the grade so a panel follows the slope instead of leaving a gap at the bottom.",
   },
   {
     question: "How much does fence installation cost in West Hill?",
     answer:
-      "West Hill fence installation typically runs $44–$67 per linear foot for six-foot cedar privacy, including horizontal cedar layouts in that same cedar range, $39–$58 for hogwire with a cedar frame, and $54–$76 for hybrid aluminum/cedar. Hillside grade, tear-out of an older fence, extra gates, and hand-digging near mature trees can move a quote. We do not price vinyl, chain link, or ornamental iron because we do not install those systems. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
+      "West Hill fence installation typically runs $44–$67 per linear foot for six-foot cedar privacy, including horizontal cedar layouts in that same cedar range, $39–$58 for hogwire with a cedar frame, and $54–$76 for hybrid aluminum/cedar. Hillside grade, tear-out of an older fence, extra gates, and hand-digging near mature trees can move a quote. We do not price chain link or ornamental iron because we do not install those systems. Use the virtual quote tool for a starting number, then we confirm pricing after an on-site Fence Genius measurement.",
   },
   {
     question: "How long does fence installation take in West Hill?",
@@ -293,7 +293,7 @@ const WestHillPage = () => {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Cedar, Hogwire, and Hybrid — and Materials We Do Not Install</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    MyFence.com installs cedar privacy, horizontal cedar, hogwire with a cedar frame, and hybrid aluminum-and-cedar. Homeowners on this hill sometimes ask about vinyl, chain link, and ornamental iron. We do not install vinyl, chain link, or standalone ornamental iron. Hybrid aluminum panels in a cedar frame are the metal face we build when the comparison is ornamental iron and the goal is a cleaner, lower-maintenance line. Chain link does not give the privacy these close lots usually need, and we will not quote it as a substitute.
+                    MyFence.com installs cedar privacy, horizontal cedar, hogwire with a cedar frame, and hybrid aluminum-and-cedar. Homeowners on this hill sometimes ask about chain link and ornamental iron. We do not install chain link or standalone ornamental iron. Hybrid aluminum panels in a cedar frame are the metal face we build when the comparison is ornamental iron and the goal is a cleaner, lower-maintenance line. Chain link does not give the privacy these close lots usually need, and we will not quote it as a substitute.
                   </p>
                 </div>
                 <div>

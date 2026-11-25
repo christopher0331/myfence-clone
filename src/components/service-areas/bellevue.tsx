@@ -106,10 +106,10 @@ const BellevueArticle = () => (
       <div className="space-y-3 border-l-4 border-muted pl-4">
         <h3 className="text-2xl font-semibold text-muted-foreground">Understanding Other Fence Materials</h3>
         <p className="text-muted-foreground leading-relaxed text-sm">
-          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install vinyl, composite, or standalone aluminum/steel fencing systems.</em>
+          <em>Note: We provide this information to help you make informed decisions, but MyFence.com does not install composite or standalone aluminum/steel fencing systems.</em>
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          <strong>Composite fencing</strong> has become popular in Bellevue's waterfront estates for its low maintenance and 25-year lifespan. <strong>Vinyl fencing</strong> offers maintenance-free performance but can become brittle in temperature extremes. <strong>Ornamental aluminum and steel</strong> provide open sight lines for estates and equestrian properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we can deliver superior results.
+          <strong>Composite fencing</strong> has become popular in Bellevue's waterfront estates for its low maintenance and 25-year lifespan. <strong>Ornamental aluminum and steel</strong> provide open sight lines for estates and equestrian properties. While these materials have merit, we've chosen to focus exclusively on cedar, hogwire, and hybrid systems where we can deliver superior results.
         </p>
       </div>
 
@@ -408,7 +408,7 @@ const Bellevue = () => {
     "@id": "https://myfence.com/service-areas/bellevue",
     "name": "MyFence.com - Bellevue Fence Installation",
     "alternateName": ["MyFence Bellevue", "Bellevue Fence Company"],
-    "description": "Premium fence installation and repair services in Bellevue, WA. Specializing in cedar, composite, vinyl, and aluminum fencing for luxury properties and HOA-compliant designs. 30+ years experience.",
+    "description": "Premium fence installation and repair services in Bellevue, WA. Specializing in cedar, hogwire, and hybrid aluminum/cedar fencing for luxury properties and HOA-compliant designs. 30+ years experience.",
     "image": "https://myfence.com/myfence-logo.png",
     "logo": {
       "@type": "ImageObject",
@@ -563,7 +563,7 @@ const Bellevue = () => {
       heroTitle="Premium Fence Installation for Bellevue's Luxury Properties"
       heroDescription="Serving waterfront estates and luxury properties with architectural fencing solutions designed for Bellevue's unique dual-lake microclimate and strict HOA standards. From Medina mansions to Somerset hillsides."
       metaTitle="Bellevue Fence Installation | Luxury & HOA-Compliant"
-      metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, composite, vinyl & aluminum. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. Call (253) 455-1885 for free quote."
+      metaDescription="Premium Bellevue fence installation for luxury properties. Cedar, hogwire & hybrid fences. 30+ years experience. 98%+ on-time rate. HOA-compliant designs. Marine-grade materials. Call (253) 455-1885 for free quote."
       zipCodes={["98004", "98005", "98006", "98007", "98008", "98009"]}
       neighborhoods={[
         {
