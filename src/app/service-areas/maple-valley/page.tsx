@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MapleValley from "@/components/service-areas/maplevalley";
 
 export const metadata: Metadata = {
-  title: "Maple Valley Fence Installation | Home Turf Experts | MyFence.com",
+  title: "Maple Valley Fence Installation | Cedar Privacy | MyFence.com",
   description:
-    "Fence installation in Maple Valley, WA. Local contractor for cedar and hybrid systems built for the Plateau climate.",
+    "Cedar privacy fence installation in Maple Valley, WA. Pre-stained cedar, hogwire, and hybrid aluminum/cedar systems built for Plateau lots. Call (253) 455-1885.",
   alternates: { canonical: "https://myfence.com/service-areas/maple-valley" },
 };
 
