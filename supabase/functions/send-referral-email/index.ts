@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { Resend } from "https://esm.sh/resend@2.0.0"
 import { guardLeadBody } from "../_shared/formBotGate.ts"
+import { logFilteredSubmission } from "../_shared/logFilteredSubmission.ts"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -22,6 +23,7 @@ serve(async (req) => {
     const gate = guardLeadBody(requestBody as Record<string, unknown>, req.headers)
     if (!gate.allow) {
       console.warn(`send-referral-email suppressed (${gate.reason})`)
+      await logFilteredSubmission(req, requestBody as Record<string, unknown>, gate.reason)
       return new Response(
         JSON.stringify({ success: true, id: "suppressed" }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
