@@ -197,8 +197,8 @@ const MapleValley = () => {
       state="WA"
       heroTitle="Rural & Suburban Fencing for Maple Valley's Forested Communities"
       heroDescription="Expert fence installation for Maple Valley's mix of wooded acreage and family neighborhoods. From Cedar River valleys to Wilderness Rim slopes, we build durable solutions for your property's unique terrain and rural character."
-      metaTitle="Maple Valley Rural Fences | Wooded Property Experts"
-      metaDescription="Rural & suburban fence installation in Maple Valley. Wooded acreage & family neighborhood experts. Cedar River to Wilderness Rim. Terrain specialists for forested properties. Call (253) 455-1885."
+      metaTitle="Maple Valley Fence Installation | Cedar Privacy | MyFence.com"
+      metaDescription="Cedar privacy fence installation in Maple Valley, WA. Pre-stained cedar, hogwire, and hybrid aluminum/cedar systems built for Plateau lots. Call (253) 455-1885."
       zipCodes={["98038"]}
       neighborhoods={[
         {
