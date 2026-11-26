@@ -13,6 +13,7 @@ import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackCtaClick, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
@@ -283,6 +284,7 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             />
           </div>
 
+          <SmsConsentCheckbox id="sms-consent-quote-modal" />
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
               type="button"

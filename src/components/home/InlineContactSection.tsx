@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
@@ -254,6 +255,7 @@ export const InlineContactSection = () => {
                     placeholder="Tell us about your fence project..."
                   />
                 </div>
+                <SmsConsentCheckbox id="sms-consent-inline-contact" />
                 <Button
                   type="submit"
                   disabled={isSubmitting}

@@ -15,6 +15,7 @@ import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification,
 import { useFormBotGate } from "@/hooks/useFormBotGate";
 import { leadSubmitBlockReason, leadSubmitWarnings, shouldDeliverLead } from "@/lib/leadSubmitPolicy";
 import { WARRANTY_CONSTANTS } from "@/constants/warranty";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import {
   buildSourcePageById,
@@ -287,6 +288,7 @@ const InlineQuoteForm = ({ context }: InlineQuoteFormProps) => {
           />
         </div>
 
+        <SmsConsentCheckbox id="sms-consent-inline-quote" />
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
