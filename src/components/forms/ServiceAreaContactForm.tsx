@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { burstFirework } from "@/lib/effects";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import {
   buildSourcePageById,
@@ -283,6 +284,7 @@ const ServiceAreaContactForm = () => {
           />
         </div>
 
+        <SmsConsentCheckbox id="sms-consent-service-area" />
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? (
             <>

@@ -13,6 +13,7 @@ import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { useFormBotGate } from "@/hooks/useFormBotGate";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit, trackLeadIntentOnce, trackLeadSubmitAttempt } from "@/lib/analytics";
 import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
@@ -321,6 +322,7 @@ const ContactPage = () => {
                       maxLength={1000}
                     />
                   </div>
+                  <SmsConsentCheckbox id="sms-consent-contact-page" />
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button type="submit" variant="hero" className="w-full sm:w-auto" disabled={isSubmitting}>
                       {isSubmitting ? (

@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import { burstFirework } from "@/lib/effects";
+import { SmsConsentCheckbox } from "@/components/forms/SmsConsentCheckbox";
 import { SmsSubmitDisclosure } from "@/components/forms/SmsSubmitDisclosure";
 import { buildSourcePage, deriveFormSku, getLeadAttribution, trackFormSubmit } from "@/lib/analytics";
 import { SUBMIT_DISCLOSURE_CONSENT, crmFailureNotice, submitContactNotification, submitLeadToCrm } from "@/lib/leads";
@@ -785,6 +786,7 @@ const DiscountsPage = () => {
                     />
                   </div>
 
+                  <SmsConsentCheckbox id="sms-consent-discount-claim" />
                   <div>
                     <Button type="submit" className="w-full">
                       Claim My Discount!
@@ -870,6 +872,7 @@ const DiscountsPage = () => {
                     />
                   </div>
 
+                  <SmsConsentCheckbox id="sms-consent-discount-quote" />
                   <div>
                     <Button type="submit" className="w-full">
                       Get My Free Quote!
